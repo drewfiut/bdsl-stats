@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+leaderboard.html
+
+# The data/ store is intentionally NOT ignored -- it holds the historical snapshots
+# you want to keep and commit over time.

@@ -1,0 +1,32 @@
+[
+  {
+    "competition": "Premier",
+    "comp_type": "league",
+    "tg": "75159571"
+  },
+  {
+    "competition": "Championship",
+    "comp_type": "league",
+    "tg": "75159575"
+  },
+  {
+    "competition": "1st Division",
+    "comp_type": "league",
+    "tg": "75159573"
+  },
+  {
+    "competition": "2nd Division",
+    "comp_type": "league",
+    "tg": "75159574"
+  },
+  {
+    "competition": "3rd Division",
+    "comp_type": "league",
+    "tg": "75159576"
+  },
+  {
+    "competition": "Over 35",
+    "comp_type": "over35",
+    "tg": "75159577"
+  }
+]

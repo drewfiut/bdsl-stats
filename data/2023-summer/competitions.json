@@ -1,0 +1,52 @@
+[
+  {
+    "competition": "Premier",
+    "comp_type": "league",
+    "tg": "110306216"
+  },
+  {
+    "competition": "Championship",
+    "comp_type": "league",
+    "tg": "110306220"
+  },
+  {
+    "competition": "1st Division",
+    "comp_type": "league",
+    "tg": "110306218"
+  },
+  {
+    "competition": "2nd Division",
+    "comp_type": "league",
+    "tg": "110306219"
+  },
+  {
+    "competition": "3rd Division",
+    "comp_type": "league",
+    "tg": "110306223"
+  },
+  {
+    "competition": "4th Divison",
+    "comp_type": "league",
+    "tg": "110306221"
+  },
+  {
+    "competition": "Over 35",
+    "comp_type": "over35",
+    "tg": "110306222"
+  },
+  {
+    "competition": "Matthews Cup",
+    "comp_type": "cup",
+    "tg": "110731556"
+  },
+  {
+    "competition": "Tehel Cup",
+    "comp_type": "cup",
+    "tg": "110732163"
+  },
+  {
+    "competition": "Wood Cup",
+    "comp_type": "cup",
+    "tg": "110732539"
+  }
+]

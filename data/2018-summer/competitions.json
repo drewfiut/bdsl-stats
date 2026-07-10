@@ -1,0 +1,42 @@
+[
+  {
+    "competition": "Premier",
+    "comp_type": "league",
+    "tg": "91250634"
+  },
+  {
+    "competition": "Championship",
+    "comp_type": "league",
+    "tg": "91250638"
+  },
+  {
+    "competition": "1st Division",
+    "comp_type": "league",
+    "tg": "91250636"
+  },
+  {
+    "competition": "2nd Division",
+    "comp_type": "league",
+    "tg": "91250637"
+  },
+  {
+    "competition": "3rd Division",
+    "comp_type": "league",
+    "tg": "91250639"
+  },
+  {
+    "competition": "Over 35",
+    "comp_type": "over35",
+    "tg": "91250640"
+  },
+  {
+    "competition": "Tehel Cup Bracket",
+    "comp_type": "cup",
+    "tg": "91603845"
+  },
+  {
+    "competition": "BDSL Wood Cup Bracket",
+    "comp_type": "cup",
+    "tg": "92533242"
+  }
+]

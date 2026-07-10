@@ -1,0 +1,142 @@
+{
+  "2026-summer": {
+    "label": "Summer 2026",
+    "league_section": "116112328",
+    "standings_element": "47107",
+    "cup_sections": [
+      "116537215"
+    ],
+    "cup_index_element": "46241",
+    "schedules_year": "2026",
+    "final": false
+  },
+  "2025-summer": {
+    "label": "Summer 2025",
+    "standings_element": "47107",
+    "league_section": "114564109",
+    "cup_sections": [
+      "115095137"
+    ],
+    "cup_index_element": "46241",
+    "schedules_year": "2025",
+    "final": true
+  },
+  "2014-summer": {
+    "label": "Summer 2014",
+    "standings_element": "47107",
+    "league_section": "67523589",
+    "cup_sections": [
+      "68014845"
+    ],
+    "cup_index_element": "46241",
+    "schedules_year": "2014",
+    "final": true
+  },
+  "2015-summer": {
+    "label": "Summer 2015",
+    "standings_element": "47107",
+    "league_section": "75159485",
+    "cup_sections": [],
+    "cup_index_element": "46241",
+    "schedules_year": "2015",
+    "final": true
+  },
+  "2016-summer": {
+    "label": "Summer 2016",
+    "standings_element": "47107",
+    "league_section": "82449156",
+    "cup_sections": [
+      "82835032"
+    ],
+    "cup_index_element": "46241",
+    "schedules_year": "2016",
+    "final": true
+  },
+  "2017-summer": {
+    "label": "Summer 2017",
+    "standings_element": "47107",
+    "league_section": "87148459",
+    "cup_sections": [
+      "87490208",
+      "87493177"
+    ],
+    "cup_index_element": "46241",
+    "schedules_year": "2017",
+    "final": true
+  },
+  "2018-summer": {
+    "label": "Summer 2018",
+    "standings_element": "47107",
+    "league_section": "91250548",
+    "cup_sections": [
+      "91603772",
+      "92533169"
+    ],
+    "cup_index_element": "46241",
+    "schedules_year": "2018",
+    "final": true
+  },
+  "2019-summer": {
+    "label": "Summer 2019",
+    "standings_element": "47107",
+    "league_section": "95086788",
+    "cup_sections": [
+      "95598164",
+      "95615002"
+    ],
+    "cup_index_element": "46241",
+    "schedules_year": "2019",
+    "final": true
+  },
+  "2021-summer": {
+    "label": "Summer 2021",
+    "standings_element": "47107",
+    "league_section": "100605809",
+    "cup_sections": [
+      "101717948",
+      "101849075"
+    ],
+    "cup_index_element": "46241",
+    "schedules_year": "2021",
+    "final": true
+  },
+  "2022-summer": {
+    "label": "Summer 2022",
+    "standings_element": "47107",
+    "league_section": "106800152",
+    "cup_sections": [
+      "107210151",
+      "107211446",
+      "107211556"
+    ],
+    "cup_index_element": "46241",
+    "schedules_year": "2022",
+    "final": true
+  },
+  "2023-summer": {
+    "label": "Summer 2023",
+    "standings_element": "47107",
+    "league_section": "110306130",
+    "cup_sections": [
+      "110731482",
+      "110732089",
+      "110732465"
+    ],
+    "cup_index_element": "46241",
+    "schedules_year": "2023",
+    "final": true
+  },
+  "2024-summer": {
+    "label": "Summer 2024",
+    "standings_element": "47107",
+    "league_section": "112617730",
+    "cup_sections": [
+      "113089761",
+      "113089838",
+      "113089923"
+    ],
+    "cup_index_element": "46241",
+    "schedules_year": "2024",
+    "final": true
+  }
+}
