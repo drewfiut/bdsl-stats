@@ -61,6 +61,12 @@ tbody tr.main.live td:first-child { box-shadow:inset 3px 0 0 var(--gold); }
 .pname { font-weight:650; }
 .season { color:var(--muted); font-weight:600; font-size:12.5px; }
 .teams { color:var(--muted); font-size:12px; }
+/* season + teams folded under the player name; only shown on narrow screens */
+.submeta { display:none; margin-top:2px; color:var(--muted); font-size:12px;
+  white-space:normal; line-height:1.3; }
+.submeta .season { font-size:12px; }
+.submeta .teams { margin-left:4px; }
+.submeta .livetag { margin-left:6px; }
 .pts { font-weight:750; color:var(--navy2); }
 .g { color:var(--g); font-weight:650; } .a { color:var(--a); font-weight:650; }
 .z { color:var(--muted); opacity:.5; }
@@ -78,3 +84,35 @@ footer { max-width:1120px; margin:0 auto; padding:0 14px 40px; color:var(--muted
 .hide { display:none !important; }
 .empty { padding:26px; text-align:center; color:var(--muted); }
 .status { padding:40px 14px; text-align:center; color:var(--muted); }
+
+/* ---- mobile ---- */
+@media (max-width:640px) {
+  header { padding:16px 16px 18px; }
+  h1 { font-size:19px; }
+  header .sub { font-size:12px; }
+  /* keep the one-line description; drop the longer explainer to save vertical space */
+  header .sub.detail { display:none; }
+  .stats { gap:14px 22px; margin-top:12px; }
+  .stat b { font-size:17px; }
+
+  main { padding:14px 10px 48px; }
+  .controls { gap:8px; margin-bottom:12px; }
+  .tabs { flex:1; }
+  .tabs button { flex:1; padding:9px 0; }
+  select#season { flex:1; min-width:0; }
+  input[type=search] { flex-basis:100%; }
+
+  /* hide the low-priority columns; season + teams move under the player name,
+     and the per-competition splits stay reachable via the expand row */
+  .mobhide { display:none !important; }
+  table { min-width:0; font-size:13px; }
+  thead th, tbody td { padding:9px 6px; }
+  .rank { width:26px; }
+  .submeta { display:block; }
+  tr.detail .box { padding:8px 12px 12px 34px; }
+}
+
+@media (max-width:380px) {
+  .tabs button { font-size:12px; }
+  thead th, tbody td { padding:9px 5px; }
+}

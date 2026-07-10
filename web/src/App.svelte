@@ -85,7 +85,7 @@
   <div class="wrap">
     <h1>BDSL Best Single Seasons</h1>
     <div class="sub">Every player&rsquo;s single-season totals across all competitions &middot; {seasonRange}</div>
-    <div class="sub" style="margin-top:3px">
+    <div class="sub detail" style="margin-top:3px">
       Each row is one player in one season (league + cups + Over-35 combined). The in-progress
       season is <b style="color:var(--gold)">highlighted</b> &mdash; current as of <b>{fmtDate(dataAsOf)}</b>.
     </div>
@@ -123,15 +123,15 @@
           <tr>
             <th class="l rank">#</th>
             <th class="l">Player</th>
-            <th class="l">Season</th>
-            <th class="l">Team(s)</th>
+            <th class="l mobhide">Season</th>
+            <th class="l mobhide">Team(s)</th>
             <th class="sortable" class:act={sortKey === 'g'} onclick={() => (sortKey = 'g')}>G</th>
             <th class="sortable" class:act={sortKey === 'a'} onclick={() => (sortKey = 'a')}>A</th>
             <th class="sortable" class:act={sortKey === 'pts'} onclick={() => (sortKey = 'pts')}>Pts</th>
-            <th>GP</th>
-            <th title="League goals / assists">Lg</th>
-            <th title="Cup goals / assists">Cup</th>
-            <th title="Over-35 goals / assists">O35</th>
+            <th class="mobhide">GP</th>
+            <th class="mobhide" title="League goals / assists">Lg</th>
+            <th class="mobhide" title="Cup goals / assists">Cup</th>
+            <th class="mobhide" title="Over-35 goals / assists">O35</th>
             <th style="width:14px"></th>
           </tr>
         </thead>
@@ -140,16 +140,21 @@
             {@const rk = i + 1}
             <tr class="main" class:live={p.live} class:open={open.has(i)} onclick={() => toggle(i)}>
               <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
-              <td class="l"><span class="pname">{p.name}</span></td>
-              <td class="l season">{p.season}{#if p.live}<span class="livetag">In progress</span>{/if}</td>
-              <td class="l teams">{p.teams.join(', ')}</td>
+              <td class="l">
+                <span class="pname">{p.name}</span>
+                <div class="submeta">
+                  <span class="season">{p.season}</span>{#if p.live}<span class="livetag">In progress</span>{/if}{#if p.teams.length}<span class="teams">&middot; {p.teams.join(', ')}</span>{/if}
+                </div>
+              </td>
+              <td class="l season mobhide">{p.season}{#if p.live}<span class="livetag">In progress</span>{/if}</td>
+              <td class="l teams mobhide">{p.teams.join(', ')}</td>
               <td class="g">{#if p.g}{p.g}{:else}<span class="z">0</span>{/if}</td>
               <td class="a">{#if p.a}{p.a}{:else}<span class="z">0</span>{/if}</td>
               <td class="pts">{p.pts}</td>
-              <td>{p.gp}</td>
+              <td class="mobhide">{p.gp}</td>
               {#each [p.lg, p.cup, p.o35] as pair}
                 {@const c = ga(pair)}
-                <td>
+                <td class="mobhide">
                   {#if c.empty}<span class="z">&ndash;</span>
                   {:else}{#if c.g}<span class="g">{c.g}</span>{:else}0{/if}<span class="z">/</span>{#if c.a}<span class="a">{c.a}</span>{:else}0{/if}{/if}
                 </td>
