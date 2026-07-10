@@ -14,11 +14,49 @@
 body { margin:0; background:var(--bg); color:var(--text);
   font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
   font-variant-numeric:tabular-nums; line-height:1.4; }
-header { background:linear-gradient(135deg,var(--navy),var(--navy2)); color:#fff;
+/* page banner (leaderboard + profile) — the old full-bleed gradient header */
+.pagehead, .phead { background:linear-gradient(135deg,var(--navy),var(--navy2)); color:#fff;
   padding:22px 20px; }
-header .wrap { max-width:1120px; margin:0 auto; }
+.pagehead .wrap, .phead .wrap { max-width:1120px; margin:0 auto; }
 h1 { margin:0 0 4px; font-size:22px; letter-spacing:.2px; }
-header .sub { opacity:.85; font-size:13px; }
+.pagehead .sub, .phead .sub { opacity:.85; font-size:13px; }
+
+/* ---- site header / nav bar ---- */
+header.site { background:var(--navy); color:#fff; border-bottom:1px solid rgba(255,255,255,.08); }
+header.site .wrap { max-width:1120px; margin:0 auto; padding:0 14px;
+  display:flex; align-items:center; gap:22px; min-height:52px; flex-wrap:wrap; }
+header.site .brand { color:#fff; font-weight:800; font-size:17px; letter-spacing:.3px;
+  text-decoration:none; }
+header.site nav { display:flex; gap:6px; }
+header.site nav a { color:rgba(255,255,255,.75); text-decoration:none; font-size:13.5px;
+  font-weight:600; padding:6px 11px; border-radius:8px; }
+header.site nav a:hover { color:#fff; background:rgba(255,255,255,.08); }
+header.site nav a.on { color:#fff; background:rgba(255,255,255,.14); }
+
+/* ---- home landing ---- */
+main.home { }
+.home .cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; }
+.home .card { display:block; background:var(--card); border:1px solid var(--line);
+  border-radius:12px; padding:18px; text-decoration:none; color:var(--text);
+  box-shadow:0 1px 3px rgba(0,0,0,.05); transition:border-color .15s, transform .15s; }
+.home .card:hover { border-color:var(--navy2); transform:translateY(-2px); }
+.home .card h2 { margin:0 0 8px; font-size:17px; color:var(--navy2); }
+.home .card p { margin:0 0 12px; color:var(--muted); font-size:13.5px; line-height:1.45; }
+.home .card .go { color:var(--navy2); font-weight:700; font-size:13px; }
+
+/* ---- player profile ---- */
+main.profile { }
+.profile .phead h1 { font-size:26px; }
+.section { max-width:1120px; margin:22px auto 8px; padding:0 14px; font-size:14px;
+  text-transform:uppercase; letter-spacing:.6px; color:var(--muted); }
+.profile section.season { max-width:1120px; margin:0 auto 16px; padding:0 14px; }
+.seasonhead { display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+  flex-wrap:wrap; padding:10px 2px 8px; border-bottom:2px solid var(--line); margin-bottom:8px; }
+.seasonhead .slabel { font-size:16px; font-weight:750; }
+.seasonhead.live .slabel { color:var(--gold); }
+.seasonhead .sagg { display:flex; gap:16px; color:var(--muted); font-size:13px; }
+.seasonhead .sagg b { color:var(--text); font-weight:750; }
+.profile section.season table { min-width:0; }
 .stats { display:flex; gap:22px; margin-top:14px; flex-wrap:wrap; }
 .stat b { font-size:20px; display:block; }
 .stat span { font-size:11px; text-transform:uppercase; letter-spacing:.6px; opacity:.8; }
@@ -58,7 +96,8 @@ tbody tr.main.live td:first-child { box-shadow:inset 3px 0 0 var(--gold); }
   text-transform:uppercase; vertical-align:middle; }
 .rank { color:var(--muted); font-weight:700; width:34px; }
 .rank.m1 { color:#c8961e; } .rank.m2 { color:#8b93a1; } .rank.m3 { color:#b06a35; }
-.pname { font-weight:650; }
+.pname { font-weight:650; color:var(--navy2); text-decoration:none; }
+.pname:hover { text-decoration:underline; }
 .season { color:var(--muted); font-weight:600; font-size:12.5px; }
 .teams { color:var(--muted); font-size:12px; }
 /* season + teams folded under the player name; only shown on narrow screens */
@@ -87,11 +126,12 @@ footer { max-width:1120px; margin:0 auto; padding:0 14px 40px; color:var(--muted
 
 /* ---- mobile ---- */
 @media (max-width:640px) {
-  header { padding:16px 16px 18px; }
+  .pagehead, .phead { padding:16px 16px 18px; }
   h1 { font-size:19px; }
-  header .sub { font-size:12px; }
+  .pagehead .sub, .phead .sub { font-size:12px; }
   /* keep the one-line description; drop the longer explainer to save vertical space */
-  header .sub.detail { display:none; }
+  .pagehead .sub.detail { display:none; }
+  header.site .wrap { gap:10px 16px; min-height:auto; padding:9px 14px; }
   .stats { gap:14px 22px; margin-top:12px; }
   .stat b { font-size:17px; }
 

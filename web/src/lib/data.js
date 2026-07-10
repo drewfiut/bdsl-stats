@@ -41,7 +41,7 @@ const num = (v) => {
 
 // Aggregate one season's tidy stats rows into player-season objects (aggregate.build_from_store
 // + Player.add_row/finalize), then shape each like render_html._player_json.
-function aggregateSeason(rows, seasonLabel, live) {
+function aggregateSeason(rows, sid, seasonLabel, live) {
   const players = new Map(); // person_key -> accumulator
 
   for (const row of rows) {
@@ -50,6 +50,7 @@ function aggregateSeason(rows, seasonLabel, live) {
     let p = players.get(pk);
     if (!p) {
       p = {
+        pk,
         g: 0, a: 0, gp: 0,
         byType: { league: [0, 0], cup: [0, 0], over35: [0, 0] },
         comps: [],
@@ -82,7 +83,9 @@ function aggregateSeason(rows, seasonLabel, live) {
       .sort((x, y) => (-(x.g + x.a) - -(y.g + y.a)) || x.c.localeCompare(y.c));
 
     out.push({
+      pk: p.pk,
       name,
+      sid,
       season: seasonLabel,
       live: live ? 1 : 0,
       teams,
@@ -102,8 +105,11 @@ function aggregateSeason(rows, seasonLabel, live) {
 // The live/in-progress season is the one not yet marked final in seasons.json.
 const isLive = (meta) => meta && meta.final !== true;
 
-export async function loadBoard() {
-  const seasons = await fetchJson('seasons.json');
+async function buildBoard() {
+  const [seasons, playersRegistry] = await Promise.all([
+    fetchJson('seasons.json'),
+    fetchJson('players.json'),
+  ]);
   const ids = Object.keys(seasons).sort(); // oldest -> newest
 
   const perSeason = await Promise.all(
@@ -114,10 +120,10 @@ export async function loadBoard() {
     })
   );
 
-  const players = [];
+  const allPlayers = [];
   let dataAsOf = '';
   for (const s of perSeason) {
-    players.push(...aggregateSeason(s.rows, s.label, s.live));
+    allPlayers.push(...aggregateSeason(s.rows, s.sid, s.label, s.live));
     if (s.live && s.rows.length) {
       // freshest fetched_at of the live season's latest snapshot
       const latest = s.rows.reduce((mx, r) => (r.snapshot_date > mx ? r.snapshot_date : mx), '');
@@ -127,12 +133,92 @@ export async function loadBoard() {
   }
 
   // only player-seasons where someone actually took the field (render_html.render)
-  const active = players.filter((p) => p.gp > 0 || p.pts > 0);
+  const active = allPlayers.filter((p) => p.gp > 0 || p.pts > 0);
 
   const seasonLabels = ids
     .slice()
     .reverse()
     .map((sid) => seasons[sid]?.label || sid); // newest-first, for the filter dropdown
 
-  return { players: active, seasonLabels, dataAsOf };
+  return { players: active, allPlayers, playersRegistry, seasonLabels, dataAsOf };
+}
+
+// Fetch + aggregate once, then share across route navigations (board <-> profile).
+let _boardPromise = null;
+export function loadBoard() {
+  if (!_boardPromise) _boardPromise = buildBoard().catch((e) => { _boardPromise = null; throw e; });
+  return _boardPromise;
+}
+
+// Whole years between an "MM/DD/YYYY" birthdate and today; null if unparseable/missing.
+export function ageFromBirthdate(birthdate) {
+  if (!birthdate) return null;
+  const m = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.exec(birthdate.trim());
+  if (!m) return null;
+  const [, mm, dd, yyyy] = m.map(Number);
+  const now = new Date();
+  let age = now.getFullYear() - yyyy;
+  const hadBirthday = now.getMonth() + 1 > mm || (now.getMonth() + 1 === mm && now.getDate() >= dd);
+  if (!hadBirthday) age -= 1;
+  return age >= 0 && age < 130 ? age : null;
+}
+
+// Build one player's profile from the aggregated player-season objects (all comps they were
+// rostered for, incl. games-played-only rows). Returns null if the person_key isn't found.
+// Best display name: prefer the registry (authoritative) — nickname, else first + last —
+// and fall back to the CSV display name when the registry has no usable value.
+function displayName(reg, fallback) {
+  if (reg) return reg.nickname || [reg.first, reg.last].filter(Boolean).join(' ') || fallback;
+  return fallback;
+}
+
+export function buildProfile(allPlayers, playersRegistry, personKey) {
+  const rows = allPlayers.filter((p) => p.pk === personKey);
+  if (!rows.length) return null;
+
+  // Identity: prefer the registry (authoritative), fall back to the CSV display name.
+  const reg = playersRegistry?.[personKey];
+  const name = displayName(reg, rows[0].name) || '(unknown)';
+  const age = ageFromBirthdate(reg?.birthdate);
+
+  // Newest season first (sid like "2026-summer" sorts correctly as a string).
+  rows.sort((a, b) => b.sid.localeCompare(a.sid));
+
+  const career = { g: 0, a: 0, pts: 0, gp: 0, seasons: rows.length, comps: 0 };
+  const seasons = rows.map((r) => {
+    career.g += r.g; career.a += r.a; career.pts += r.pts; career.gp += r.gp;
+    career.comps += r.comps.length;
+    return {
+      sid: r.sid,
+      label: r.season,
+      live: !!r.live,
+      agg: { g: r.g, a: r.a, pts: r.pts, gp: r.gp },
+      comps: r.comps,
+    };
+  });
+
+  return { pk: personKey, name, age, career, seasons };
+}
+
+// One row per person: their all-time totals summed across every season, sorted by last name.
+export function buildAllPlayers(allPlayers, playersRegistry) {
+  const byPk = new Map();
+  for (const p of allPlayers) {
+    let acc = byPk.get(p.pk);
+    if (!acc) { acc = { pk: p.pk, csvName: p.name, g: 0, a: 0, pts: 0, gp: 0, seasons: 0 }; byPk.set(p.pk, acc); }
+    acc.g += p.g; acc.a += p.a; acc.pts += p.pts; acc.gp += p.gp; acc.seasons += 1;
+  }
+
+  const out = [];
+  for (const acc of byPk.values()) {
+    const reg = playersRegistry?.[acc.pk];
+    out.push({
+      pk: acc.pk,
+      name: displayName(reg, acc.csvName) || '(unknown)',
+      last: (reg?.last || '').trim(),
+      g: acc.g, a: acc.a, pts: acc.pts, gp: acc.gp, seasons: acc.seasons,
+    });
+  }
+  out.sort((a, b) => a.last.localeCompare(b.last) || a.name.localeCompare(b.name));
+  return out;
 }
