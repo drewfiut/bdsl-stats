@@ -7,22 +7,55 @@ three cup tournaments Tehel / Wood / Matthews, and the Over-35 division). Rankin
 surfaces the best individual seasons across BDSL history. A player's league, cup, and Over-35
 lines for a given year collapse into one row; the same person appears once per season played.
 
-Output is a self-contained, sortable **`leaderboard.html`** page (open it in any browser).
+The site is a **Svelte single-page app** in [`web/`](web/) that reads the static `data/` store
+directly in the browser and does all the aggregation client-side — no backend. It's deployed to
+**GitHub Pages** by a GitHub Actions workflow.
 
 ## Usage
 
+Two independent parts: a Python command that **refreshes the data**, and the **Svelte app** that
+renders it.
+
+### Refresh the data (Python)
+
 ```bash
 pip install -r requirements.txt          # requests, beautifulsoup4, lxml
-python leaderboard.py                     # refresh the live season if needed, then build
-python leaderboard.py --refresh           # re-collect the live season first, always
-python leaderboard.py -o out.html         # write to a different file
+python update_data.py                     # refresh the live season into data/ (if not done today)
+python update_data.py --force             # re-collect the live season even if already done today
 python history.py                         # backfill past seasons (see "Historical seasons")
 ```
 
-The script also prints the top 10 single seasons for points, goals, and assists to the
-terminal. Open `leaderboard.html` for the full interactive board: sort by Points / Goals /
-Assists, search by player, team, or season, toggle "scorers only", and click any row to
-expand that season's per-competition breakdown.
+Then commit the changed files so GitHub Pages serves them:
+
+```bash
+git add data/ && git commit -m "Refresh BDSL data" && git push
+```
+
+Pushing to `main` triggers the deploy workflow, which rebuilds and republishes the site.
+
+### Run the app locally (Node)
+
+```bash
+cd web
+npm install
+npm run dev        # dev server; open the printed http://localhost:5173/bdsl-stats/ URL
+npm run build      # production build into web/dist (what CI deploys)
+npm run preview    # serve the production build locally
+```
+
+The board: sort by Points / Goals / Assists, filter by season, search by player or team,
+toggle "scorers only", and click any row to expand that season's per-competition breakdown.
+The in-progress season is highlighted.
+
+## Deployment (GitHub Pages)
+
+`.github/workflows/deploy.yml` builds `web/` and publishes it on every push to `main`. The app
+is a **project page**, so Vite's `base` is `/bdsl-stats/` (see `web/vite.config.js`) — change it
+if the repo is renamed. The `data/` store is served alongside the app via a committed symlink
+`web/public/data -> ../../data`, so there's a single source of truth and no data duplication.
+
+**One-time setup:** in the repo's **Settings → Pages**, set **Source: GitHub Actions**. After the
+first successful run the site is live at `https://<user>.github.io/bdsl-stats/`.
 
 ## How it works
 
@@ -45,7 +78,10 @@ from **persisting**:
   every season into the player-season board. Points = `2 × goals + 1 × assist` (matching
   BDSL's Points Leaders). Merging by a stable id means two different people who share a name
   are never combined — and the same id across years makes career/single-season views trivial.
-- **`render_html.py`** / **`leaderboard.py`** — render the page and drive the run.
+- **`update_data.py`** — the command you run to refresh the live season into `data/`.
+- **`web/`** — the Svelte SPA. `web/src/lib/data.js` is a client-side port of `aggregate.py`
+  (fetch each season's `stats.csv`, merge by `person_key`, shape rows); `web/src/App.svelte`
+  renders the interactive board. The app consumes the static store — it never talks to bdsl.org.
 
 ## Data store
 
@@ -86,10 +122,10 @@ This model is built to grow:
 ## Data freshness
 
 A new snapshot is collected on the **first run after 3am** each day (configurable via
-`STATS_REFRESH_HOUR` in `config.py`); later runs that day reuse the day's stored snapshot and
-are instant. `--refresh` re-collects immediately regardless. The generated page shows both
-"Stats current as of &lt;when the snapshot was fetched&gt;" and when the page itself was
-generated, so you can always tell how current the numbers are.
+`STATS_REFRESH_HOUR` in `config.py`); later `update_data.py` runs that day reuse the day's
+stored snapshot and are instant. `--force` re-collects immediately regardless. The app shows
+"current as of &lt;when the snapshot was fetched&gt;" (read from the live season's latest
+`fetched_at`), so you can always tell how current the numbers are.
 
 ## Historical seasons
 
