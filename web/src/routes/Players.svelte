@@ -8,6 +8,8 @@
   let error = $state('');
   let all = $state([]);
   let search = $state('');
+  let sortColumn = $state('name');
+  let sortAsc = $state(true);
 
   $effect(() => {
     loadBoard()
@@ -21,14 +23,63 @@
     if (!term) return all;
     return all.filter((p) => p.name.toLowerCase().includes(term));
   });
-  const total = $derived(filtered.length);
-  const shown = $derived(total > CAP ? filtered.slice(0, CAP) : filtered);
+
+  const sorted = $derived.by(() => {
+    const copy = [...filtered];
+    copy.sort((a, b) => {
+      let aVal, bVal;
+      switch (sortColumn) {
+        case 'name':
+          aVal = a.name.toLowerCase();
+          bVal = b.name.toLowerCase();
+          break;
+        case 'g':
+          aVal = a.g || 0;
+          bVal = b.g || 0;
+          break;
+        case 'a':
+          aVal = a.a || 0;
+          bVal = b.a || 0;
+          break;
+        case 'pts':
+          aVal = a.pts || 0;
+          bVal = b.pts || 0;
+          break;
+        case 'gp':
+          aVal = a.gp || 0;
+          bVal = b.gp || 0;
+          break;
+        case 'seasons':
+          aVal = a.seasons || 0;
+          bVal = b.seasons || 0;
+          break;
+        default:
+          return 0;
+      }
+      if (aVal < bVal) return sortAsc ? -1 : 1;
+      if (aVal > bVal) return sortAsc ? 1 : -1;
+      return 0;
+    });
+    return copy;
+  });
+
+  const total = $derived(sorted.length);
+  const shown = $derived(total > CAP ? sorted.slice(0, CAP) : sorted);
+
+  function toggleSort(col) {
+    if (sortColumn === col) {
+      sortAsc = !sortAsc;
+    } else {
+      sortColumn = col;
+      sortAsc = true;
+    }
+  }
 </script>
 
 <div class="pagehead">
   <div class="wrap">
     <h1>Players</h1>
-    <div class="sub">Every player in BDSL history with their all-time totals &middot; sorted by last name</div>
+    <div class="sub">Every player in BDSL history with their all-time totals &middot; click column headers to sort</div>
     <div class="stats">
       <div class="stat"><b>{all.length}</b><span>Players</span></div>
     </div>
@@ -49,17 +100,61 @@
       <table>
         <thead>
           <tr>
-            <th class="l">Player</th>
-            <th>G</th>
-            <th>A</th>
-            <th>Pts</th>
-            <th>GP</th>
-            <th class="mobhide">Seasons</th>
+            <th class="rank">#</th>
+            <th class="l">
+              <button class="sort-header" onclick={() => toggleSort('name')}>
+                Player
+                {#if sortColumn === 'name'}
+                  <span class="sort-indicator">{sortAsc ? '▲' : '▼'}</span>
+                {/if}
+              </button>
+            </th>
+            <th>
+              <button class="sort-header" onclick={() => toggleSort('g')}>
+                G
+                {#if sortColumn === 'g'}
+                  <span class="sort-indicator">{sortAsc ? '▲' : '▼'}</span>
+                {/if}
+              </button>
+            </th>
+            <th>
+              <button class="sort-header" onclick={() => toggleSort('a')}>
+                A
+                {#if sortColumn === 'a'}
+                  <span class="sort-indicator">{sortAsc ? '▲' : '▼'}</span>
+                {/if}
+              </button>
+            </th>
+            <th>
+              <button class="sort-header" onclick={() => toggleSort('pts')}>
+                Pts
+                {#if sortColumn === 'pts'}
+                  <span class="sort-indicator">{sortAsc ? '▲' : '▼'}</span>
+                {/if}
+              </button>
+            </th>
+            <th>
+              <button class="sort-header" onclick={() => toggleSort('gp')}>
+                GP
+                {#if sortColumn === 'gp'}
+                  <span class="sort-indicator">{sortAsc ? '▲' : '▼'}</span>
+                {/if}
+              </button>
+            </th>
+            <th class="mobhide">
+              <button class="sort-header" onclick={() => toggleSort('seasons')}>
+                Seasons
+                {#if sortColumn === 'seasons'}
+                  <span class="sort-indicator">{sortAsc ? '▲' : '▼'}</span>
+                {/if}
+              </button>
+            </th>
           </tr>
         </thead>
         <tbody>
-          {#each shown as p (p.pk)}
+          {#each shown as p, i (p.pk)}
             <tr>
+              <td class="rank">{i + 1}</td>
               <td class="l"><a class="pname" href={`#/player/${p.pk}`}>{p.name}</a></td>
               <td class="g">{#if p.g}{p.g}{:else}<span class="z">0</span>{/if}</td>
               <td class="a">{#if p.a}{p.a}{:else}<span class="z">0</span>{/if}</td>
@@ -81,3 +176,32 @@
     </div>
   {/if}
 </main>
+
+<style>
+  :global(button.sort-header) {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    padding: 0;
+    display: inline;
+    text-align: inherit;
+    white-space: nowrap;
+  }
+
+  :global(button.sort-header:hover) {
+    opacity: 0.7;
+  }
+
+  :global(.sort-indicator) {
+    font-size: 0.75em;
+    margin-left: 0.3em;
+  }
+
+  :global(th.rank, td.rank) {
+    width: 3em;
+    text-align: right;
+    padding-right: 0.5em;
+  }
+</style>

@@ -74,9 +74,9 @@ select#season { padding:9px 12px; border:1px solid var(--line); border-radius:9p
 label.toggle { font-size:13px; color:var(--muted); display:flex; align-items:center; gap:6px;
   cursor:pointer; user-select:none; }
 .tablewrap { background:var(--card); border:1px solid var(--line); border-radius:12px;
-  overflow-x:auto; box-shadow:0 1px 3px rgba(0,0,0,.05); }
+  overflow-x:auto; overflow-y:auto; max-height:75vh; box-shadow:0 1px 3px rgba(0,0,0,.05); }
 table { border-collapse:collapse; width:100%; font-size:14px; min-width:780px; }
-thead th { position:sticky; top:0; background:var(--card); text-align:right; color:var(--muted);
+thead th { position:sticky; top:0; z-index:10; background:var(--card); text-align:right; color:var(--muted);
   font-size:11px; text-transform:uppercase; letter-spacing:.5px; padding:11px 10px;
   border-bottom:2px solid var(--line); white-space:nowrap; }
 thead th.l { text-align:left; }
