@@ -62,7 +62,7 @@ function aggregateSeason(rows, sid, seasonLabel, live) {
     p.g += g; p.a += a; p.gp += gp;
     const bt = p.byType[row.comp_type];
     if (bt) { bt[0] += g; bt[1] += a; }
-    p.comps.push({ c: row.competition, t: row.team_name, g, a, gp });
+    p.comps.push({ c: row.competition, t: row.team_name, club: (row.team_id || '').split('-')[0], type: row.comp_type, g, a, gp });
     if (row.name) p.nameCounts.set(row.name, (p.nameCounts.get(row.name) || 0) + 1);
   }
 
@@ -114,16 +114,23 @@ async function buildBoard() {
 
   const perSeason = await Promise.all(
     ids.map(async (sid) => {
-      const rows = await fetchCsv(`${sid}/stats.csv`);
+      const [rows, teams] = await Promise.all([
+        fetchCsv(`${sid}/stats.csv`),
+        fetchJson(`${sid}/teams.json`).catch(() => []), // some seasons may lack standings
+      ]);
       const label = seasons[sid]?.label || sid;
-      return { sid, label, live: isLive(seasons[sid]), rows };
+      return { sid, label, live: isLive(seasons[sid]), rows, teams };
     })
   );
 
   const allPlayers = [];
+  const allTeamStandings = []; // flat teams.json rows tagged with season context
   let dataAsOf = '';
   for (const s of perSeason) {
     allPlayers.push(...aggregateSeason(s.rows, s.sid, s.label, s.live));
+    for (const t of s.teams) {
+      allTeamStandings.push({ ...t, sid: s.sid, seasonLabel: s.label, live: s.live });
+    }
     if (s.live && s.rows.length) {
       // freshest fetched_at of the live season's latest snapshot
       const latest = s.rows.reduce((mx, r) => (r.snapshot_date > mx ? r.snapshot_date : mx), '');
@@ -140,7 +147,7 @@ async function buildBoard() {
     .reverse()
     .map((sid) => seasons[sid]?.label || sid); // newest-first, for the filter dropdown
 
-  return { players: active, allPlayers, playersRegistry, seasonLabels, dataAsOf };
+  return { players: active, allPlayers, allTeamStandings, playersRegistry, seasonLabels, dataAsOf };
 }
 
 // Fetch + aggregate once, then share across route navigations (board <-> profile).
@@ -221,4 +228,114 @@ export function buildAllPlayers(allPlayers, playersRegistry) {
   }
   out.sort((a, b) => a.last.localeCompare(b.last) || a.name.localeCompare(b.name));
   return out;
+}
+
+// ---- clubs (teams) ----
+// A "club" is identified by club_id and may field several sides in one year (league divisions +
+// an Over-35 side, all sharing the club_id). Standings live in teams.json (league + over35 only;
+// cups have no table). Roster/scoring comes from stats.csv via allPlayers' per-comp club tags.
+
+// Sum a club's standings rows into all-time totals. Name = the club's newest-season spelling,
+// since a handful of clubs were renamed over the years.
+function aggregateClub(rows) {
+  const t = { gp: 0, w: 0, l: 0, d: 0, gf: 0, ga: 0, pts: 0, titles: 0 };
+  const sids = new Set();
+  let newestSid = '', name = '';
+  for (const r of rows) {
+    t.gp += num(r.gp); t.w += num(r.w); t.l += num(r.l); t.d += num(r.d);
+    t.gf += num(r.gf); t.ga += num(r.ga); t.pts += num(r.pts);
+    if (num(r.rank) === 1) t.titles += 1;
+    sids.add(r.sid);
+    if (r.sid >= newestSid) { newestSid = r.sid; name = r.name; }
+  }
+  t.gd = t.gf - t.ga;
+  return { name: name || '(unknown)', totals: t, seasons: sids.size };
+}
+
+// One row per club: all-time standings totals, sorted alphabetically by name (like buildAllPlayers).
+export function buildAllClubs(allTeamStandings) {
+  const byClub = new Map();
+  for (const r of allTeamStandings) {
+    const id = r.club_id;
+    if (!id) continue;
+    let g = byClub.get(id);
+    if (!g) { g = []; byClub.set(id, g); }
+    g.push(r);
+  }
+
+  const out = [];
+  for (const [clubId, rows] of byClub) {
+    const { name, totals, seasons } = aggregateClub(rows);
+    out.push({ clubId, name, seasons, ...totals });
+  }
+  out.sort((a, b) => a.name.localeCompare(b.name));
+  return out;
+}
+
+// Full profile for one club: all-time totals, per-season competition history (from teams.json,
+// newest first), and the roster of every player who appeared for the club (from stats.csv, rolled
+// up per person over only that club's competitions). Returns null if the club_id isn't found.
+export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, clubId) {
+  const standings = allTeamStandings.filter((r) => r.club_id === clubId);
+  if (!standings.length) return null;
+
+  const { name, totals } = aggregateClub(standings);
+
+  // Group standings by season, newest sid first; each season lists its competitions.
+  const bySeason = new Map();
+  for (const r of standings) {
+    let s = bySeason.get(r.sid);
+    if (!s) { s = { sid: r.sid, label: r.seasonLabel, live: !!r.live, comps: [] }; bySeason.set(r.sid, s); }
+    s.comps.push({ c: r.competition, rank: num(r.rank), w: num(r.w), l: num(r.l),
+      d: num(r.d), gf: num(r.gf), ga: num(r.ga), pts: num(r.pts) });
+  }
+  const seasons = [...bySeason.values()].sort((a, b) => b.sid.localeCompare(a.sid));
+  for (const s of seasons) s.comps.sort((a, b) => a.rank - b.rank || a.c.localeCompare(b.c));
+
+  // Roster: for each player-season, sum only the comps that were played for this club.
+  // Cups have no standings table (teams.json is league + over35 only), so cup history is
+  // aggregated here from the roster rows: per season + cup, the club's combined goals/assists,
+  // squad size, and games (max player GP ≈ matches the club played that far).
+  const byPk = new Map();
+  const cupSeasons = new Map(); // sid -> { label, live, byCup: Map(cup -> {g,a,pks:Set,gp}) }
+  for (const p of allPlayers) {
+    const mine = p.comps.filter((c) => c.club === clubId);
+    if (!mine.length) continue;
+    let acc = byPk.get(p.pk);
+    if (!acc) { acc = { pk: p.pk, csvName: p.name, g: 0, a: 0, gp: 0, sids: new Set() }; byPk.set(p.pk, acc); }
+    for (const c of mine) {
+      acc.g += c.g; acc.a += c.a; acc.gp += c.gp;
+      if (c.type === 'cup') {
+        let cs = cupSeasons.get(p.sid);
+        if (!cs) { cs = { sid: p.sid, label: p.season, live: !!p.live, byCup: new Map() }; cupSeasons.set(p.sid, cs); }
+        let cup = cs.byCup.get(c.c);
+        if (!cup) { cup = { c: c.c, g: 0, a: 0, pks: new Set(), gp: 0 }; cs.byCup.set(c.c, cup); }
+        cup.g += c.g; cup.a += c.a; cup.pks.add(p.pk);
+        if (c.gp > cup.gp) cup.gp = c.gp;
+      }
+    }
+    acc.sids.add(p.sid);
+  }
+
+  const cups = [...cupSeasons.values()]
+    .sort((a, b) => b.sid.localeCompare(a.sid))
+    .map((cs) => ({
+      sid: cs.sid, label: cs.label, live: cs.live,
+      entries: [...cs.byCup.values()]
+        .map((cup) => ({ c: cup.c, g: cup.g, a: cup.a, players: cup.pks.size, gp: cup.gp }))
+        .sort((a, b) => a.c.localeCompare(b.c)),
+    }));
+  const roster = [];
+  for (const acc of byPk.values()) {
+    const reg = playersRegistry?.[acc.pk];
+    roster.push({
+      pk: acc.pk,
+      name: displayName(reg, acc.csvName) || '(unknown)',
+      g: acc.g, a: acc.a,
+      pts: POINTS_PER_GOAL * acc.g + POINTS_PER_ASSIST * acc.a,
+      gp: acc.gp, seasons: acc.sids.size,
+    });
+  }
+
+  return { clubId, name, totals, seasons, cups, roster };
 }

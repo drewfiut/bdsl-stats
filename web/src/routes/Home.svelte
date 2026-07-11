@@ -15,6 +15,13 @@
         'Every player in BDSL history with their all-time totals. Search by name and open ' +
         'any player’s full profile.',
     },
+    {
+      href: '#/clubs',
+      title: 'Clubs',
+      blurb:
+        'Every club in BDSL history with all-time records, season-by-season competition ' +
+        'history and the full roster of players who suited up.',
+    },
   ];
 </script>
 
