@@ -58,29 +58,28 @@
       </div>
     </div>
 
-    <h2 class="section">Competition history</h2>
-    {#each club.seasons as s}
-      <section class="season">
-        <div class="seasonhead" class:live={s.live}>
-          <div class="slabel">{s.label}{#if s.live}<span class="livetag">In progress</span>{/if}</div>
-        </div>
-        <div class="tablewrap">
-          <table>
-            <thead>
-              <tr>
-                <th class="l">Competition</th>
-                <th>Pos</th>
-                <th>W</th>
-                <th>L</th>
-                <th>D</th>
-                <th>GF</th>
-                <th>GA</th>
-                <th>Pts</th>
-              </tr>
-            </thead>
-            <tbody>
+    <h2 class="section">League History</h2>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l">Season</th>
+              <th class="l">Competition</th>
+              <th>Pos</th>
+              <th>W</th>
+              <th>L</th>
+              <th>D</th>
+              <th>GF</th>
+              <th>GA</th>
+              <th>Pts</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each club.seasons as s}
               {#each s.comps as c}
                 <tr class:champ={c.title}>
+                  <td class="l">{s.label}{#if s.live}<span class="livetag">In progress</span>{/if}</td>
                   <td class="l">{c.c}{#if c.title}<span class="trophy" title="Champion">🏆</span>{/if}</td>
                   <td class="rank" class:m1={c.position === 1} class:m2={c.position === 2} class:m3={c.position === 3}>{c.position || '–'}</td>
                   <td>{c.w}</td>
@@ -91,33 +90,32 @@
                   <td class="pts">{c.pts}</td>
                 </tr>
               {/each}
-            </tbody>
-          </table>
-        </div>
-      </section>
-    {/each}
+            {/each}
+          </tbody>
+        </table>
+      </div>
+    </section>
 
     {#if club.cups.length}
-      <h2 class="section">Cup history</h2>
-      {#each club.cups as s}
-        <section class="season">
-          <div class="seasonhead" class:live={s.live}>
-            <div class="slabel">{s.label}{#if s.live}<span class="livetag">In progress</span>{/if}</div>
-          </div>
-          <div class="tablewrap">
-            <table>
-              <thead>
-                <tr>
-                  <th class="l">Cup</th>
-                  <th>Players</th>
-                  <th>G</th>
-                  <th>A</th>
-                  <th>GP</th>
-                </tr>
-              </thead>
-              <tbody>
+      <h2 class="section">Cup History</h2>
+      <section class="season">
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="l">Season</th>
+                <th class="l">Cup</th>
+                <th>Players</th>
+                <th>G</th>
+                <th>A</th>
+                <th>GP</th>
+              </tr>
+            </thead>
+            <tbody>
+              {#each club.cups as s}
                 {#each s.entries as c}
                   <tr class:champ={c.title}>
+                    <td class="l">{s.label}{#if s.live}<span class="livetag">In progress</span>{/if}</td>
                     <td class="l">{c.c}{#if c.title}<span class="trophy" title="Champion">🏆</span>{/if}</td>
                     <td>{c.players}</td>
                     <td class="g">{#if c.g}{c.g}{:else}<span class="z">0</span>{/if}</td>
@@ -125,11 +123,11 @@
                     <td>{c.gp || '–'}</td>
                   </tr>
                 {/each}
-              </tbody>
-            </table>
-          </div>
-        </section>
-      {/each}
+              {/each}
+            </tbody>
+          </table>
+        </div>
+      </section>
     {/if}
 
     <h2 class="section">Players ({club.roster.length})</h2>
