@@ -106,9 +106,11 @@ def discover_all(season: dict) -> List[StatGroup]:
 def discover_teams(section: str, element: str) -> List[dict]:
     """League + Over-35 teams with their full standings record, for the store's team dimension.
 
-    Captures rank, overall + home/away W/L/T, goals, points, and discipline (yellow/red card
-    totals, present in recent seasons only -- blank when the source omits them). Cup team
-    identities also appear in each stats snapshot (team_key/team_name columns).
+    Captures overall + home/away W/L/T, goals, points, and discipline (yellow/red card totals,
+    present in recent seasons only -- blank when the source omits them). The source `rank` is
+    deliberately dropped (untrusted -- it ignores the playoffs); `collect`/`backfill` compute a
+    trustworthy `position` instead via standings.assign_positions. Cup team identities appear in
+    each stats snapshot (team_key/team_name columns).
     """
     teams = []
     for o in _standings_objs(section, element):
@@ -125,7 +127,6 @@ def discover_teams(section: str, element: str) -> List[dict]:
             "competition": name,
             "comp_type": _comp_type(name),
             "name": (o.get("tmnm") or "").strip(),
-            "rank": _int(o.get("rank")),
             "gp": _int(o.get("TOT_GP")),
             "w": _int(o.get("TOT_W")),
             "l": _int(o.get("TOT_L")),

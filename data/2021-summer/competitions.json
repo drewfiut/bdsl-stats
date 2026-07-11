@@ -2,41 +2,65 @@
   {
     "competition": "Premier",
     "comp_type": "league",
-    "tg": "100605895"
+    "tg": "100605895",
+    "champion_club_id": "10350991",
+    "champion_name": "BSC Raiders",
+    "champion_via": "playoff"
   },
   {
     "competition": "Championship",
     "comp_type": "league",
-    "tg": "100605899"
+    "tg": "100605899",
+    "champion_club_id": "12579600",
+    "champion_name": "Wolves FC",
+    "champion_via": "playoff"
   },
   {
     "competition": "1st Division",
     "comp_type": "league",
-    "tg": "100605897"
+    "tg": "100605897",
+    "champion_club_id": "10359117",
+    "champion_name": "Buffalo Italia FC",
+    "champion_via": "playoff"
   },
   {
     "competition": "2nd Division Pepper",
     "comp_type": "league",
-    "tg": "100605898"
+    "tg": "100605898",
+    "champion_club_id": "98468675",
+    "champion_name": "Kilimanjaro Bandits",
+    "champion_via": "playoff"
   },
   {
     "competition": "3rd Division",
     "comp_type": "league",
-    "tg": "100605900"
+    "tg": "100605900",
+    "champion_club_id": "98469017",
+    "champion_name": "Buffalo Cosmos",
+    "champion_via": "playoff"
   },
   {
     "competition": "Over 35",
     "comp_type": "over35",
-    "tg": "100605901"
+    "tg": "100605901",
+    "champion_club_id": "46512669",
+    "champion_name": "Oranje",
+    "champion_via": "playoff"
   },
   {
     "competition": "Tehel Cup Bracket",
     "comp_type": "cup",
-    "tg": "101718021"
+    "tg": "101718021",
+    "champion_club_id": "26895907",
+    "champion_name": "Amherst Sharpshooters",
+    "champion_via": "playoff"
   },
   {
     "competition": "BDSL Wood Cup Bracket",
     "comp_type": "cup",
-    "tg": "101849148"
+    "tg": "101849148",
+    "champion_club_id": "75159993",
+    "champion_name": "Revolution SC",
+    "champion_via": "playoff"
   }
 ]

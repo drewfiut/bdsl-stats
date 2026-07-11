@@ -2,51 +2,81 @@
   {
     "competition": "Premier",
     "comp_type": "league",
-    "tg": "110306216"
+    "tg": "110306216",
+    "champion_club_id": "18647016",
+    "champion_name": "Buffalo United SS",
+    "champion_via": "playoff"
   },
   {
     "competition": "Championship",
     "comp_type": "league",
-    "tg": "110306220"
+    "tg": "110306220",
+    "champion_club_id": "75159915",
+    "champion_name": "NMB FC",
+    "champion_via": "playoff"
   },
   {
     "competition": "1st Division",
     "comp_type": "league",
-    "tg": "110306218"
+    "tg": "110306218",
+    "champion_club_id": "95088493",
+    "champion_name": "FC Lackawanna",
+    "champion_via": "playoff"
   },
   {
     "competition": "2nd Division",
     "comp_type": "league",
-    "tg": "110306219"
+    "tg": "110306219",
+    "champion_club_id": "95088661",
+    "champion_name": "Westside Blitz",
+    "champion_via": "playoff"
   },
   {
     "competition": "3rd Division",
     "comp_type": "league",
-    "tg": "110306223"
+    "tg": "110306223",
+    "champion_club_id": "91257538",
+    "champion_name": "Medina Mustangs FC",
+    "champion_via": "playoff"
   },
   {
     "competition": "4th Divison",
     "comp_type": "league",
-    "tg": "110306221"
+    "tg": "110306221",
+    "champion_club_id": "75479659",
+    "champion_name": "Bangarang FC",
+    "champion_via": "playoff"
   },
   {
     "competition": "Over 35",
     "comp_type": "over35",
-    "tg": "110306222"
+    "tg": "110306222",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "Matthews Cup",
     "comp_type": "cup",
-    "tg": "110731556"
+    "tg": "110731556",
+    "champion_club_id": "110307763",
+    "champion_name": "Buffalo Night",
+    "champion_via": "playoff"
   },
   {
     "competition": "Tehel Cup",
     "comp_type": "cup",
-    "tg": "110732163"
+    "tg": "110732163",
+    "champion_club_id": "10359035",
+    "champion_name": "Queenston FC",
+    "champion_via": "playoff"
   },
   {
     "competition": "Wood Cup",
     "comp_type": "cup",
-    "tg": "110732539"
+    "tg": "110732539",
+    "champion_club_id": "46021389",
+    "champion_name": "Outlaws",
+    "champion_via": "playoff"
   }
 ]

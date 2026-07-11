@@ -2,36 +2,57 @@
   {
     "competition": "Premier",
     "comp_type": "league",
-    "tg": "67523675"
+    "tg": "67523675",
+    "champion_club_id": "10350991",
+    "champion_name": "BSC Raiders",
+    "champion_via": "playoff"
   },
   {
     "competition": "Championship",
     "comp_type": "league",
-    "tg": "67523679"
+    "tg": "67523679",
+    "champion_club_id": "10359035",
+    "champion_name": "Queenston FC",
+    "champion_via": "playoff"
   },
   {
     "competition": "1st Division",
     "comp_type": "league",
-    "tg": "67523677"
+    "tg": "67523677",
+    "champion_club_id": "59261105",
+    "champion_name": "Celtic Hoops",
+    "champion_via": "playoff"
   },
   {
     "competition": "2nd Division",
     "comp_type": "league",
-    "tg": "67523678"
+    "tg": "67523678",
+    "champion_club_id": "67527661",
+    "champion_name": "East Aurora FC",
+    "champion_via": "playoff"
   },
   {
     "competition": "3rd Division",
     "comp_type": "league",
-    "tg": "67523680"
+    "tg": "67523680",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "Over 35",
     "comp_type": "over35",
-    "tg": "67523681"
+    "tg": "67523681",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "BDSL Wood Cup Bracket",
     "comp_type": "cup",
-    "tg": "68014878"
+    "tg": "68014878",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   }
 ]

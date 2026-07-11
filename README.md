@@ -23,7 +23,12 @@ pip install -r requirements.txt          # requests, beautifulsoup4, lxml
 python update_data.py                     # refresh the live season into data/ (if not done today)
 python update_data.py --force             # re-collect the live season even if already done today
 python history.py                         # backfill past seasons (see "Historical seasons")
+python backfill_games.py                  # one-off: fill games.csv + standings/champion for past seasons
 ```
+
+`update_data.py` also refreshes the live season's **games** (full schedule/results) and, from those,
+each competition's computed standings and true (playoff) champion. `backfill_games.py` is a one-off
+that adds those to already-collected past seasons — see "Historical seasons".
 
 Then commit the changed files so GitHub Pages serves them:
 
@@ -71,8 +76,14 @@ from **persisting**:
   games-played counts. This is the same data behind the site's official "Top 10 Stats"
   leaders, and a superset of the per-team roster pages (it still credits players who later
   left a team but scored earlier).
+- **`schedules.py`** — for a `tg`, fetches the competition's full schedule/results page(s) and
+  parses every game (stable `game_key`, home/away club ids, score, and playoff round label such
+  as `QF`/`SF`/`CHMP`). League/Over-35 schedules are month-paginated, so it walks each month.
+- **`standings.py`** — pure reconciliation over the fetched data: computes each team's `position`
+  (from points/GD/GF, replacing the untrusted source rank) and each competition's true
+  **champion** (the winner of the `CHMP` playoff final — which can differ from the table-topper).
 - **`collect.py`** — the only module that touches the network. Writes the season's data to
-  the store (below) as a dated snapshot.
+  the store (below): a dated stats snapshot plus games, computed standings, and champions.
 - **`aggregate.py`** — merges each season's rows by `PERSONKEY` (so a person is one entry per
   season no matter how many teams they're on), then `build_player_seasons()` concatenates
   every season into the player-season board. Points = `2 × goals + 1 × assist` (matching
@@ -96,16 +107,23 @@ data/
   seasons.json                 registry of seasons -> their Demosphere ids
   players.json                 global person registry: person_key -> name, middle, birthdate
   2026-summer/                 one folder per season (2014-summer ... 2026-summer)
-    competitions.json          the divisions / cups in the season
+    competitions.json          the divisions / cups in the season (+ each one's champion)
     teams.json                 teams + full standings records (see below)
     stats.csv                  tidy, append-only fact table (one block of rows per day)
+    games.csv                  every game played + score + playoff round label (one row per game)
 ```
 
 `stats.csv` is long-format — one row per *player × competition × day*
 (`snapshot_date, fetched_at, person_key, name, tg, competition, comp_type, team_id,
 team_name, jersey, position, g, a, gp`). It opens directly in Excel/Sheets/pandas.
 
-`teams.json` carries each team's rank, overall and **home/away** W/L/T, goals for/against/diff,
+`games.csv` is the match fact table — one row per game (`game_key`, teams + club ids, `date`,
+score, `status`, and `round_label` = `QF`/`SF`/`CHMP` for playoff games). `competitions.json`
+records each competition's **champion** (`champion_club_id`), computed from the `CHMP` game — which
+can differ from the regular-season table-topper. See [`DATA.md`](DATA.md) §4.4 / §5.6.
+
+`teams.json` carries each team's computed **`position`** (regular-season table order — the source
+`rank` is no longer trusted or stored), overall and **home/away** W/L/T, goals for/against/diff,
 points, and **yellow/red card totals** (recent seasons only). Every field the source exposes
 is captured, since historical seasons are fetched once and cached forever.
 
@@ -146,6 +164,13 @@ earlier years exist on the site but have no scorer data. Historical seasons are 
 and **cached indefinitely**: once stored they are skipped on later runs (their numbers never
 change), so `history.py` is safe to re-run and only fills gaps. The result is 12 seasons in the
 store; a career leaderboard is a merge by `person_key` across every season's `stats.csv`.
+
+Because past seasons are cached and skipped, adding a new data set to them needs a dedicated
+backfill. `python backfill_games.py` walks every stored season, fetches each competition's full
+schedule into `games.csv`, and (re)computes the standings `position` + playoff `champion` from
+those games — without re-fetching stats. It skips seasons that already have `games.csv` (use
+`--force` to redo, `--season <id>` for one). Games/results exist for every season back to 2014
+(they're month-paginated on the source; the collector fetches every month).
 
 ## Updating for a new season
 

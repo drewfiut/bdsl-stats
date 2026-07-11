@@ -2,51 +2,81 @@
   {
     "competition": "Premier",
     "comp_type": "league",
-    "tg": "106800238"
+    "tg": "106800238",
+    "champion_club_id": "10350991",
+    "champion_name": "BSC Raiders",
+    "champion_via": "playoff"
   },
   {
     "competition": "Championship",
     "comp_type": "league",
-    "tg": "106800242"
+    "tg": "106800242",
+    "champion_club_id": "45429017",
+    "champion_name": "Borussia Bees",
+    "champion_via": "playoff"
   },
   {
     "competition": "1st Division",
     "comp_type": "league",
-    "tg": "106800240"
+    "tg": "106800240",
+    "champion_club_id": "98468675",
+    "champion_name": "Kilimanjaro Bandits",
+    "champion_via": "playoff"
   },
   {
     "competition": "2nd Division",
     "comp_type": "league",
-    "tg": "106800241"
+    "tg": "106800241",
+    "champion_club_id": "75159993",
+    "champion_name": "Revolution SC",
+    "champion_via": "playoff"
   },
   {
     "competition": "3rd Division",
     "comp_type": "league",
-    "tg": "106800245"
+    "tg": "106800245",
+    "champion_club_id": "98469017",
+    "champion_name": "Buffalo Cosmos",
+    "champion_via": "playoff"
   },
   {
     "competition": "4th Divison",
     "comp_type": "league",
-    "tg": "106800243"
+    "tg": "106800243",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "Over 35",
     "comp_type": "over35",
-    "tg": "106800244"
+    "tg": "106800244",
+    "champion_club_id": "46512672",
+    "champion_name": "Blue Stars FC",
+    "champion_via": "playoff"
   },
   {
     "competition": "Wood Cup",
     "comp_type": "cup",
-    "tg": "107210224"
+    "tg": "107210224",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "Tehel Cup",
     "comp_type": "cup",
-    "tg": "107211519"
+    "tg": "107211519",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "Matthews Cup",
     "comp_type": "cup",
-    "tg": "107211629"
+    "tg": "107211629",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   }
 ]

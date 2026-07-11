@@ -2,51 +2,81 @@
   {
     "competition": "Premier",
     "comp_type": "league",
-    "tg": "116112414"
+    "tg": "116112414",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "Championship",
     "comp_type": "league",
-    "tg": "116112418"
+    "tg": "116112418",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "1st Division",
     "comp_type": "league",
-    "tg": "116112416"
+    "tg": "116112416",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "2nd Division",
     "comp_type": "league",
-    "tg": "116112417"
+    "tg": "116112417",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "3rd Division",
     "comp_type": "league",
-    "tg": "116112421"
+    "tg": "116112421",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "4th Divison",
     "comp_type": "league",
-    "tg": "116112419"
+    "tg": "116112419",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "Over 35",
     "comp_type": "over35",
-    "tg": "116112420"
+    "tg": "116112420",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "Tehel Cup",
     "comp_type": "cup",
-    "tg": "116537290"
+    "tg": "116537290",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "Wood Cup",
     "comp_type": "cup",
-    "tg": "116537289"
+    "tg": "116537289",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "Matthews Cup",
     "comp_type": "cup",
-    "tg": "116537291"
+    "tg": "116537291",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   }
 ]

@@ -2,41 +2,65 @@
   {
     "competition": "Premier",
     "comp_type": "league",
-    "tg": "91250634"
+    "tg": "91250634",
+    "champion_club_id": "10350991",
+    "champion_name": "BSC Raiders",
+    "champion_via": "playoff"
   },
   {
     "competition": "Championship",
     "comp_type": "league",
-    "tg": "91250638"
+    "tg": "91250638",
+    "champion_club_id": "10359047",
+    "champion_name": "BSC International",
+    "champion_via": "playoff"
   },
   {
     "competition": "1st Division",
     "comp_type": "league",
-    "tg": "91250636"
+    "tg": "91250636",
+    "champion_club_id": "75479674",
+    "champion_name": "Los Chupacabras",
+    "champion_via": "playoff"
   },
   {
     "competition": "2nd Division",
     "comp_type": "league",
-    "tg": "91250637"
+    "tg": "91250637",
+    "champion_club_id": "75479647",
+    "champion_name": "Celtic 1888",
+    "champion_via": "playoff"
   },
   {
     "competition": "3rd Division",
     "comp_type": "league",
-    "tg": "91250639"
+    "tg": "91250639",
+    "champion_club_id": "87153546",
+    "champion_name": "Tesla FC",
+    "champion_via": "playoff"
   },
   {
     "competition": "Over 35",
     "comp_type": "over35",
-    "tg": "91250640"
+    "tg": "91250640",
+    "champion_club_id": "46512666",
+    "champion_name": "Aliens",
+    "champion_via": "playoff"
   },
   {
     "competition": "Tehel Cup Bracket",
     "comp_type": "cup",
-    "tg": "91603845"
+    "tg": "91603845",
+    "champion_club_id": "10350991",
+    "champion_name": "BSC Raiders",
+    "champion_via": "playoff"
   },
   {
     "competition": "BDSL Wood Cup Bracket",
     "comp_type": "cup",
-    "tg": "92533242"
+    "tg": "92533242",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   }
 ]

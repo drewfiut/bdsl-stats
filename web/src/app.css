@@ -96,6 +96,9 @@ tbody tr.main.live td:first-child { box-shadow:inset 3px 0 0 var(--gold); }
   text-transform:uppercase; vertical-align:middle; }
 .rank { color:var(--muted); font-weight:700; width:34px; }
 .rank.m1 { color:#c8961e; } .rank.m2 { color:#8b93a1; } .rank.m3 { color:#b06a35; }
+.trophy { margin-left:5px; font-size:12px; vertical-align:middle; }
+tr.champ td { background:color-mix(in srgb, var(--gold) 14%, transparent); }
+tr.champ td.l { font-weight:700; }
 .pname { font-weight:650; color:var(--navy2); text-decoration:none; }
 .pname:hover { text-decoration:underline; }
 .season { color:var(--muted); font-weight:600; font-size:12.5px; }

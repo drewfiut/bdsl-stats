@@ -37,6 +37,16 @@ STATS_COLUMNS = [
     "team_id", "team_name", "jersey", "position", "g", "a", "gp",
 ]
 
+# One row per game (a competition's schedule/results). Keyed by the stable Demosphere game_key;
+# rewritten wholesale each collect (a game's result is its result -- no dated snapshots). See
+# schedules.py for the source and DATA.md §4.4 for the field reference.
+GAMES_COLUMNS = [
+    "game_key", "tg", "competition", "comp_type",
+    "game_number", "round_label", "date", "time",
+    "home_club_id", "home_name", "away_club_id", "away_name",
+    "home_score", "away_score", "status", "result_note", "location",
+]
+
 
 # ---- paths ---------------------------------------------------------------------------
 
@@ -48,6 +58,7 @@ def players_path() -> Path:      return DATA_DIR / "players.json"
 def competitions_path(sid: str): return _season_dir(sid) / "competitions.json"
 def teams_path(sid: str):        return _season_dir(sid) / "teams.json"
 def stats_path(sid: str):        return _season_dir(sid) / "stats.csv"
+def games_path(sid: str):        return _season_dir(sid) / "games.csv"
 
 
 # ---- generic json helpers ------------------------------------------------------------
@@ -101,6 +112,28 @@ def save_teams(sid: str, teams: List[dict]) -> None:
 
 def load_teams(sid: str) -> List[dict]:
     return _load_json(teams_path(sid), [])
+
+
+# ---- games (per season) --------------------------------------------------------------
+
+def save_games(sid: str, games: List[dict]) -> None:
+    """Write the season's games.csv, one row per game (keyed by game_key). Rewrites the file."""
+    path = games_path(sid)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=GAMES_COLUMNS)
+        w.writeheader()
+        for g in games:
+            rec = {c: "" for c in GAMES_COLUMNS}
+            rec.update({k: v for k, v in g.items() if k in GAMES_COLUMNS})
+            w.writerow(rec)
+
+def load_games(sid: str) -> List[dict]:
+    path = games_path(sid)
+    if not path.exists():
+        return []
+    with path.open(newline="", encoding="utf-8") as f:
+        return list(csv.DictReader(f))
 
 
 # ---- players (global registry) -------------------------------------------------------

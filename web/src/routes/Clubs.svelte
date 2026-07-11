@@ -11,7 +11,7 @@
 
   $effect(() => {
     loadBoard()
-      .then((b) => (all = buildAllClubs(b.allTeamStandings)))
+      .then((b) => (all = buildAllClubs(b.allTeamStandings, b.championsByClub)))
       .catch((e) => (error = e.message || String(e)))
       .finally(() => (loading = false));
   });

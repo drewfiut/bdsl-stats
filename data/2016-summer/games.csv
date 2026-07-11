@@ -1,0 +1,409 @@
+game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id,home_name,away_club_id,away_name,home_score,away_score,status,result_note,location
+6100905,82449242,Premier,league,7057,,2016-08-07,6:00 pm,10359008,Roos FC,18647016,Buffalo United SS,7,1,played,,Mulroy Pierce Field
+6100917,82449242,Premier,league,7071,SF1,2016-08-07,6:00 pm,26895907,Amherst Sharpshooters,10359005,Clarence,1,0,played,,Nichols School Peek
+6100918,82449242,Premier,league,7072,SF2,2016-08-07,6:00 pm,10350976,SoHo FC,10350991,BSC Raiders,4,3,played,PK,Nichols School Strauss Truscott
+6100919,82449242,Premier,league,7073,,2016-08-14,6:00 pm,26895907,Amherst Sharpshooters,10350976,SoHo FC,3,2,played,PK,Nichols School Strauss Truscott
+6100892,82449242,Premier,league,7044,,2016-05-01,12:30 pm,10359017,Celtic United,10350976,SoHo FC,2,5,played,,Niagara University 1
+6100895,82449242,Premier,league,7047,,2016-05-01,2:30 pm,10359047,BSC International,10350991,BSC Raiders,2,6,played,,Niagara University 1
+6100894,82449242,Premier,league,7046,,2016-05-01,6:00 pm,10359005,Clarence,10359008,Roos FC,3,1,played,,Clarence Town Hall Park 1
+6100893,82449242,Premier,league,7045,,2016-05-01,6:00 pm,26891564,FC Yemen,10359050,Yemen Elite,4,1,played,,Lackawanna High School 1
+6100891,82449242,Premier,league,7043,,2016-05-01,6:00 pm,26895907,Amherst Sharpshooters,10359035,Queenston FC,3,0,played,,Nichols School Strauss Truscott
+6100896,82449242,Premier,league,7484,,2016-05-01,6:00 pm,18647016,Buffalo United SS,59261102,Rogue FC,2,5,played,,Sahlen's Sportspark 1
+6100899,82449242,Premier,league,7051,,2016-05-08,2:00 pm,10359047,BSC International,10350976,SoHo FC,0,0,played,,Nichols School Peek
+6100901,82449242,Premier,league,7053,,2016-05-08,2:00 pm,26895907,Amherst Sharpshooters,10359017,Celtic United,2,0,played,,Nichols School Strauss Truscott
+6100902,82449242,Premier,league,7054,,2016-05-08,4:00 pm,26891564,FC Yemen,10359035,Queenston FC,1,1,played,,Lackawanna High School 1
+6100898,82449242,Premier,league,7050,,2016-05-08,4:00 pm,59261102,Rogue FC,10359008,Roos FC,3,0,played,,Orchard Park Soccer Complex 1
+6100900,82449242,Premier,league,7052,,2016-05-08,6:00 pm,10359050,Yemen Elite,18647016,Buffalo United SS,2,4,played,,Lackawanna High School 1
+6100897,82449242,Premier,league,7049,,2016-05-08,6:00 pm,10350991,BSC Raiders,10359005,Clarence,4,0,played,,Nichols School Strauss Truscott
+6100861,82449242,Premier,league,7013,,2016-05-15,4:00 pm,26891564,FC Yemen,10359008,Roos FC,2,2,played,,Lackawanna High School 1
+6100862,82449242,Premier,league,7014,,2016-05-15,4:00 pm,10350976,SoHo FC,26895907,Amherst Sharpshooters,0,2,played,,Nichols School Peek
+6100865,82449242,Premier,league,7017,,2016-05-15,4:00 pm,10350991,BSC Raiders,10359017,Celtic United,3,0,played,,Nichols School Strauss Truscott
+6100866,82449242,Premier,league,7018,,2016-05-15,6:00 pm,10359050,Yemen Elite,59261102,Rogue FC,2,2,played,,Lackawanna High School 1
+6100863,82449242,Premier,league,7015,,2016-05-15,6:00 pm,18647016,Buffalo United SS,10359005,Clarence,1,2,played,,Sahlen's Sportspark 1
+6100864,82449242,Premier,league,7016,,2016-05-15,6:00 pm,10359035,Queenston FC,10359047,BSC International,5,0,played,,Veteran's Park (GI) 1
+6100867,82449242,Premier,league,7019,,2016-05-22,2:00 pm,26895907,Amherst Sharpshooters,10350991,BSC Raiders,4,3,played,,Nichols School Peek
+6100869,82449242,Premier,league,7021,,2016-05-22,2:00 pm,10350976,SoHo FC,26891564,FC Yemen,5,1,played,,Nichols School Strauss Truscott
+6100870,82449242,Premier,league,7022,,2016-05-22,4:00 pm,10359008,Roos FC,10359050,Yemen Elite,5,5,played,,Mulroy Pierce Field
+6100868,82449242,Premier,league,7020,,2016-05-22,6:00 pm,10359005,Clarence,59261102,Rogue FC,2,1,played,,Clarence Town Hall Park 1
+6100871,82449242,Premier,league,7023,,2016-05-22,6:00 pm,10359017,Celtic United,10359047,BSC International,3,1,played,,Nichols School Peek
+6100872,82449242,Premier,league,7024,,2016-05-22,6:00 pm,18647016,Buffalo United SS,10359035,Queenston FC,0,4,played,,Sahlen's Sportspark 1
+6100876,82449242,Premier,league,7028,,2016-06-05,2:00 pm,10350976,SoHo FC,10359005,Clarence,2,1,played,,Mulroy Pierce Field
+6100878,82449242,Premier,league,7030,,2016-06-05,4:00 pm,26891564,FC Yemen,26895907,Amherst Sharpshooters,1,3,played,,Lackawanna High School 1
+6100877,82449242,Premier,league,7029,,2016-06-05,4:00 pm,10359008,Roos FC,10350991,BSC Raiders,1,5,played,,Mulroy Pierce Field
+6100873,82449242,Premier,league,7025,,2016-06-05,4:00 pm,10359047,BSC International,10359050,Yemen Elite,3,5,played,,Nichols School Strauss Truscott
+6100874,82449242,Premier,league,7026,,2016-06-05,6:00 pm,18647016,Buffalo United SS,10359017,Celtic United,2,6,played,,Sahlen's Sportspark 1
+6100875,82449242,Premier,league,7027,,2016-06-05,6:00 pm,10359035,Queenston FC,59261102,Rogue FC,3,2,played,,Veteran's Park (GI) 1
+6100881,82449242,Premier,league,7033,,2016-06-12,2:00 pm,10350991,BSC Raiders,26891564,FC Yemen,3,2,played,,Nichols School Strauss Truscott
+6100879,82449242,Premier,league,7031,,2016-06-12,4:00 pm,10350976,SoHo FC,18647016,Buffalo United SS,2,1,played,,Nichols School Peek
+6100882,82449242,Premier,league,7034,,2016-06-12,4:00 pm,10359047,BSC International,59261102,Rogue FC,0,5,played,,Nichols School Strauss Truscott
+6100880,82449242,Premier,league,7032,,2016-06-12,6:00 pm,10359050,Yemen Elite,26895907,Amherst Sharpshooters,2,1,played,,Lackawanna High School 1
+6100883,82449242,Premier,league,7035,,2016-06-12,6:00 pm,10359017,Celtic United,10359008,Roos FC,1,0,played,,Nichols School Strauss Truscott
+6100884,82449242,Premier,league,7036,,2016-06-12,6:00 pm,10359035,Queenston FC,10359005,Clarence,2,3,played,,Veteran's Park (GI) 1
+6100888,82449242,Premier,league,7040,,2016-06-19,2:00 pm,10350991,BSC Raiders,18647016,Buffalo United SS,5,5,played,,Nichols School Strauss Truscott
+6100887,82449242,Premier,league,7039,,2016-06-19,4:00 pm,10359008,Roos FC,10350976,SoHo FC,1,5,played,,Mulroy Pierce Field
+6100886,82449242,Premier,league,7038,,2016-06-19,4:00 pm,10359047,BSC International,26895907,Amherst Sharpshooters,1,6,played,,Nichols School Peek
+6100885,82449242,Premier,league,7037,,2016-06-19,4:00 pm,59261102,Rogue FC,26891564,FC Yemen,0,2,played,FT,Orchard Park Soccer Complex 2
+6100890,82449242,Premier,league,7042,,2016-06-19,6:00 pm,10359017,Celtic United,10359005,Clarence,0,2,played,,Nichols School Strauss Truscott
+6100889,82449242,Premier,league,7041,,2016-06-19,6:00 pm,10359035,Queenston FC,10359050,Yemen Elite,1,3,played,,Veteran's Park (GI) 1
+6100859,82449242,Premier,league,7012,,2016-06-26,2:00 pm,10350976,SoHo FC,10359035,Queenston FC,2,1,played,,Nichols School Strauss Truscott
+6100860,82449242,Premier,league,7711,,2016-06-26,4:00 pm,10359017,Celtic United,59261102,Rogue FC,3,1,played,,Nichols School Strauss Truscott
+6100855,82449242,Premier,league,7007,,2016-06-26,6:00 pm,10359005,Clarence,10359047,BSC International,2,2,played,,Clarence Town Hall Park 1
+6100857,82449242,Premier,league,7009,,2016-06-26,6:00 pm,10350991,BSC Raiders,10359050,Yemen Elite,1,1,played,,Nichols School Strauss Truscott
+6100858,82449242,Premier,league,7010,,2016-06-26,6:00 pm,18647016,Buffalo United SS,26891564,FC Yemen,3,2,played,,Sahlen's Sportspark 1
+6100856,82449242,Premier,league,7008,,2016-06-26,6:45 pm,10359008,Roos FC,26895907,Amherst Sharpshooters,2,2,played,,West Seneca Soccer Complex A
+6100850,82449242,Premier,league,7002,,2016-07-10,2:00 pm,26895907,Amherst Sharpshooters,18647016,Buffalo United SS,3,3,played,,Nichols School Peek
+6100853,82449242,Premier,league,7005,,2016-07-10,4:00 pm,10359008,Roos FC,10359047,BSC International,5,1,played,,Nichols School Strauss Truscott
+6100849,82449242,Premier,league,7001,,2016-07-10,4:00 pm,59261102,Rogue FC,10350976,SoHo FC,1,4,played,,Orchard Park Soccer Complex 1
+6100852,82449242,Premier,league,7004,,2016-07-10,6:00 pm,10359005,Clarence,26891564,FC Yemen,3,0,played,,Clarence Town Hall Park 1
+6100851,82449242,Premier,league,7003,,2016-07-10,6:00 pm,10359050,Yemen Elite,10359017,Celtic United,1,1,played,,Lackawanna High School 1
+6100854,82449242,Premier,league,7006,,2016-07-10,8:30 pm,10350991,BSC Raiders,10359035,Queenston FC,1,1,played,,Niagara University 1
+6100904,82449242,Premier,league,7056,,2016-07-17,2:00 pm,10350976,SoHo FC,10350991,BSC Raiders,2,3,played,,Nichols School Strauss Truscott
+6100903,82449242,Premier,league,7055,,2016-07-17,4:00 pm,10359047,BSC International,26891564,FC Yemen,6,1,played,,Nichols School Peek
+6100906,82449242,Premier,league,7058,,2016-07-17,6:00 pm,10359005,Clarence,10359050,Yemen Elite,0,1,played,,Clarence Town Hall Park 1
+6100907,82449242,Premier,league,7059,,2016-07-17,6:00 pm,59261102,Rogue FC,26895907,Amherst Sharpshooters,1,5,played,,Orchard Park Soccer Complex 1
+6100908,82449242,Premier,league,7060,,2016-07-17,6:00 pm,10359035,Queenston FC,10359017,Celtic United,0,1,played,,Veteran's Park (GI) 1
+6100910,82449242,Premier,league,7062,,2016-07-24,4:00 pm,10359050,Yemen Elite,10350976,SoHo FC,1,3,played,,Lackawanna High School 1
+6100914,82449242,Premier,league,7066,,2016-07-24,4:00 pm,26895907,Amherst Sharpshooters,10359005,Clarence,1,0,played,,Nichols School Peek
+6100911,82449242,Premier,league,7063,,2016-07-24,4:00 pm,59261102,Rogue FC,10350991,BSC Raiders,0,2,played,,Orchard Park Soccer Complex 2
+6100913,82449242,Premier,league,7065,,2016-07-24,6:00 pm,26891564,FC Yemen,10359017,Celtic United,5,2,played,,Lackawanna High School 1
+6100912,82449242,Premier,league,7064,,2016-07-24,6:00 pm,18647016,Buffalo United SS,10359047,BSC International,2,1,played,,Sahlen's Sportspark 1
+6100909,82449242,Premier,league,7061,,2016-07-24,6:00 pm,10359035,Queenston FC,10359008,Roos FC,2,4,played,,Veteran's Park (GI) 1
+6100916,82449242,Premier,league,7070,QF2,2016-07-31,6:00 pm,10359005,Clarence,10359050,Yemen Elite,2,0,played,,Clarence Town Hall Park 1
+6100915,82449242,Premier,league,7069,QF1,2016-07-31,6:00 pm,10350991,BSC Raiders,10359017,Celtic United,5,0,played,,Nichols School Strauss Truscott
+6100989,82449246,Championship,league,7272,SF2,2016-08-07,4:00 pm,67526770,Buffalo Bantu,12579600,Wolfpack,5,3,played,,Nichols School Strauss Truscott
+6100988,82449246,Championship,league,7271,SF1,2016-08-07,6:00 pm,59260537,Southtowns FPFC,67527661,East Aurora FC,1,2,played,,West Seneca Soccer Complex A
+6100990,82449246,Championship,league,7273,,2016-08-14,6:00 pm,67526770,Buffalo Bantu,67527661,East Aurora FC,0,3,played,,Nichols School Peek
+6100933,82449246,Championship,league,7214,,2016-05-01,4:00 pm,59261105,Celtic Hoops,26891552,Buffalo Celtic,1,0,played,,Ellicott Creek Park 1
+6100934,82449246,Championship,league,7215,,2016-05-01,4:00 pm,67527661,East Aurora FC,10359023,Polonia,0,1,played,,Knox Fields 1
+6100935,82449246,Championship,league,7216,,2016-05-01,4:00 pm,10359086,Rangers,15294627,Niagara FC,2,2,played,,Sahlen's Sportspark 1
+6100932,82449246,Championship,league,7213,,2016-05-01,6:00 pm,10358999,Lakeside FC,10359074,Lykan FC,1,3,played,,Nichols School Peek
+6100936,82449246,Championship,league,7217,,2016-05-01,6:00 pm,75159801,OP Alliance,67526770,Buffalo Bantu,0,2,played,,Orchard Park Soccer Complex 1
+6100937,82449246,Championship,league,7218,,2016-05-01,6:00 pm,59260537,Southtowns FPFC,12579600,Wolfpack,3,0,played,,West Seneca Soccer Complex B
+6100930,82449246,Championship,league,7212,,2016-05-08,4:00 pm,59261105,Celtic Hoops,10359086,Rangers,2,5,played,,Ellicott Creek Park 1
+6100929,82449246,Championship,league,7210,,2016-05-08,4:00 pm,67527661,East Aurora FC,10358999,Lakeside FC,6,1,played,,Knox Fields 1
+6100927,82449246,Championship,league,7208,,2016-05-08,4:00 pm,10359074,Lykan FC,26891552,Buffalo Celtic,3,0,played,,Nichols School Peek
+6100931,82449246,Championship,league,7911,,2016-05-08,4:00 pm,12579600,Wolfpack,75159801,OP Alliance,1,0,played,,West Seneca Soccer Complex A
+6100926,82449246,Championship,league,7207,,2016-05-08,6:00 pm,10359023,Polonia,15294627,Niagara FC,2,4,played,,Sahlen's Sportspark 1
+6100928,82449246,Championship,league,7209,,2016-05-08,6:00 pm,67526770,Buffalo Bantu,59260537,Southtowns FPFC,1,1,played,,West Seneca Soccer Complex B
+6100921,82449246,Championship,league,7202,,2016-05-15,4:00 pm,26891552,Buffalo Celtic,67527661,East Aurora FC,0,3,played,,Ellicott Creek Park 1
+6100922,82449246,Championship,league,7203,,2016-05-15,4:00 pm,75159801,OP Alliance,59260537,Southtowns FPFC,1,2,played,,Orchard Park Soccer Complex 2
+6100920,82449246,Championship,league,7201,,2016-05-15,4:00 pm,12579600,Wolfpack,59261105,Celtic Hoops,7,1,played,,West Seneca Soccer Complex A
+6100925,82449246,Championship,league,7206,,2016-05-15,6:00 pm,67526770,Buffalo Bantu,10359086,Rangers,2,2,played,,D'Youville College 1
+6100924,82449246,Championship,league,7205,,2016-05-15,6:00 pm,10359074,Lykan FC,15294627,Niagara FC,2,0,played,,Nichols School Peek
+6100923,82449246,Championship,league,7204,,2016-05-15,6:00 pm,10359023,Polonia,10358999,Lakeside FC,0,2,played,,Sahlen's Sportspark 1
+6100938,82449246,Championship,league,7219,,2016-05-22,4:00 pm,26891552,Buffalo Celtic,67526770,Buffalo Bantu,1,4,played,,Ellicott Creek Park 1
+6100943,82449246,Championship,league,7224,,2016-05-22,4:00 pm,67527661,East Aurora FC,10359086,Rangers,0,4,played,,Knox Fields 1
+6100941,82449246,Championship,league,7222,,2016-05-22,4:00 pm,10359074,Lykan FC,59260537,Southtowns FPFC,0,3,played,,Nichols School Peek
+6100942,82449246,Championship,league,7223,,2016-05-22,6:00 pm,15294627,Niagara FC,75159801,OP Alliance,1,0,played,,Niagara University 1
+6100940,82449246,Championship,league,7221,,2016-05-22,6:00 pm,10358999,Lakeside FC,59261105,Celtic Hoops,3,2,played,,Nichols School Strauss Truscott
+6100939,82449246,Championship,league,7220,,2016-05-22,6:00 pm,10359023,Polonia,12579600,Wolfpack,0,1,played,,Sahlen's Sportspark 1
+6100947,82449246,Championship,league,7228,,2016-06-05,4:00 pm,59261105,Celtic Hoops,10359023,Polonia,2,1,played,,Ellicott Creek Park 1
+6100945,82449246,Championship,league,7226,,2016-06-05,4:00 pm,67527661,East Aurora FC,75159801,OP Alliance,5,2,played,,Knox Fields 1
+6100948,82449246,Championship,league,7229,,2016-06-05,4:00 pm,10359074,Lykan FC,67526770,Buffalo Bantu,0,2,played,,Nichols School Peek
+6100944,82449246,Championship,league,7225,,2016-06-05,6:00 pm,15294627,Niagara FC,59260537,Southtowns FPFC,0,1,played,,Niagara University 1
+6100949,82449246,Championship,league,7230,,2016-06-05,6:00 pm,10358999,Lakeside FC,26891552,Buffalo Celtic,1,0,played,,Nichols School Strauss Truscott
+6100946,82449246,Championship,league,7227,,2016-06-05,6:00 pm,10359086,Rangers,12579600,Wolfpack,2,1,played,,Sahlen's Sportspark 1
+6100950,82449246,Championship,league,7231,,2016-06-12,4:00 pm,59261105,Celtic Hoops,67527661,East Aurora FC,0,4,played,,Ellicott Creek Park 1
+6100953,82449246,Championship,league,7234,,2016-06-12,4:00 pm,15294627,Niagara FC,12579600,Wolfpack,2,1,played,,Niagara University 1
+6100954,82449246,Championship,league,7235,,2016-06-12,4:00 pm,75159801,OP Alliance,10359074,Lykan FC,0,0,played,,Orchard Park Soccer Complex 1
+6100951,82449246,Championship,league,7232,,2016-06-12,4:00 pm,59260537,Southtowns FPFC,26891552,Buffalo Celtic,2,0,played,,West Seneca Soccer Complex A
+6100952,82449246,Championship,league,7233,,2016-06-12,6:00 pm,67526770,Buffalo Bantu,10358999,Lakeside FC,3,1,played,,D'Youville College 1
+6100955,82449246,Championship,league,7236,,2016-06-12,6:00 pm,10359086,Rangers,10359023,Polonia,2,3,played,,Sahlen's Sportspark 1
+6100957,82449246,Championship,league,7238,,2016-06-19,4:00 pm,15294627,Niagara FC,26891552,Buffalo Celtic,2,1,played,,Niagara University 1
+6100961,82449246,Championship,league,7242,,2016-06-19,4:00 pm,75159801,OP Alliance,10359023,Polonia,3,1,played,,Orchard Park Soccer Complex 1
+6100959,82449246,Championship,league,7240,,2016-06-19,6:00 pm,67526770,Buffalo Bantu,67527661,East Aurora FC,1,1,played,,D'Youville College 1
+6100958,82449246,Championship,league,7239,,2016-06-19,6:00 pm,59261105,Celtic Hoops,10359074,Lykan FC,0,2,played,,Ellicott Creek Park 1
+6100960,82449246,Championship,league,7241,,2016-06-19,6:00 pm,10359086,Rangers,59260537,Southtowns FPFC,0,1,played,,Sahlen's Sportspark 1
+6100956,82449246,Championship,league,7237,,2016-06-19,6:00 pm,12579600,Wolfpack,10358999,Lakeside FC,3,2,played,,West Seneca Soccer Complex B
+6100962,82449246,Championship,league,7243,,2016-06-26,4:00 pm,26891552,Buffalo Celtic,10359086,Rangers,1,3,played,,Ellicott Creek Park 1
+6100963,82449246,Championship,league,7244,,2016-06-26,4:00 pm,75159801,OP Alliance,59261105,Celtic Hoops,6,1,played,,Orchard Park Soccer Complex 1
+6100965,82449246,Championship,league,7246,,2016-06-26,4:00 pm,10359023,Polonia,10359074,Lykan FC,0,0,played,,Sahlen's Sportspark 1
+6100966,82449246,Championship,league,7247,,2016-06-26,6:00 pm,67526770,Buffalo Bantu,15294627,Niagara FC,2,1,played,,D'Youville College 1
+6100967,82449246,Championship,league,7684,,2016-06-26,6:00 pm,67527661,East Aurora FC,12579600,Wolfpack,2,0,played,,Knox Fields 1
+6100964,82449246,Championship,league,7245,,2016-06-26,6:00 pm,59260537,Southtowns FPFC,10358999,Lakeside FC,2,0,played,FT,West Seneca Soccer Complex A
+6100972,82449246,Championship,league,7253,,2016-07-10,4:00 pm,26891552,Buffalo Celtic,75159801,OP Alliance,0,1,played,,Ellicott Creek Park 1
+6100970,82449246,Championship,league,7251,,2016-07-10,4:00 pm,15294627,Niagara FC,59261105,Celtic Hoops,2,5,played,,Niagara University 1
+6100971,82449246,Championship,league,7252,,2016-07-10,4:00 pm,59260537,Southtowns FPFC,67527661,East Aurora FC,1,0,played,,West Seneca Soccer Complex B
+6100973,82449246,Championship,league,7254,,2016-07-10,6:00 pm,10358999,Lakeside FC,10359086,Rangers,0,2,played,,Nichols School Peek
+6100968,82449246,Championship,league,7249,,2016-07-10,6:00 pm,10359023,Polonia,67526770,Buffalo Bantu,2,3,played,,Sahlen's Sportspark 1
+6100969,82449246,Championship,league,7250,,2016-07-10,6:00 pm,12579600,Wolfpack,10359074,Lykan FC,2,0,played,,West Seneca Soccer Complex B
+6100975,82449246,Championship,league,7256,,2016-07-17,4:00 pm,59261105,Celtic Hoops,67526770,Buffalo Bantu,2,5,played,,Ellicott Creek Park 1
+6100974,82449246,Championship,league,7255,,2016-07-17,4:00 pm,15294627,Niagara FC,10358999,Lakeside FC,0,2,played,,Niagara University 1
+6100979,82449246,Championship,league,7260,,2016-07-17,4:00 pm,75159801,OP Alliance,10359086,Rangers,1,3,played,,Orchard Park Soccer Complex 1
+6100978,82449246,Championship,league,7259,,2016-07-17,6:00 pm,12579600,Wolfpack,26891552,Buffalo Celtic,7,1,played,,Kenny Field 5
+6100976,82449246,Championship,league,7257,,2016-07-17,6:00 pm,10359074,Lykan FC,67527661,East Aurora FC,0,1,played,,Nichols School Peek
+6100977,82449246,Championship,league,7258,,2016-07-17,6:00 pm,10359023,Polonia,59260537,Southtowns FPFC,1,5,played,,Sahlen's Sportspark 1
+6100985,82449246,Championship,league,7266,,2016-07-24,4:00 pm,26891552,Buffalo Celtic,10359023,Polonia,1,0,played,,Ellicott Creek Park 1
+6100983,82449246,Championship,league,7264,,2016-07-24,4:00 pm,67527661,East Aurora FC,15294627,Niagara FC,2,3,played,,Knox Fields 1
+6100980,82449246,Championship,league,7261,,2016-07-24,4:00 pm,10359086,Rangers,10359074,Lykan FC,1,2,played,,Sahlen's Sportspark 1
+6100984,82449246,Championship,league,7265,,2016-07-24,6:00 pm,10358999,Lakeside FC,75159801,OP Alliance,3,2,played,,Nichols School Peek
+6100981,82449246,Championship,league,7262,,2016-07-24,6:00 pm,59260537,Southtowns FPFC,59261105,Celtic Hoops,2,2,played,,West Seneca Soccer Complex B
+6100982,82449246,Championship,league,7263,,2016-07-24,6:00 pm,12579600,Wolfpack,67526770,Buffalo Bantu,2,1,played,,West Seneca Soccer Complex E
+6100987,82449246,Championship,league,7270,QF2,2016-07-31,6:00 pm,10359086,Rangers,67527661,East Aurora FC,1,5,played,,Sahlen's Sportspark 1
+6100986,82449246,Championship,league,7269,QF1,2016-07-31,6:00 pm,12579600,Wolfpack,10359074,Lykan FC,3,1,played,,West Seneca Soccer Complex A
+6118040,82449244,1st Division,league,7480,,2016-08-07,6:00 pm,10359029,Panthers,59261096,Beast City SC,2,1,played,PK,Buffalo State Coyer Field
+6118041,82449244,1st Division,league,7481,,2016-08-07,6:00 pm,75479641,Williamsville Willies,67527670,FC Quake,2,1,played,,Wendleville Fire Hall 1
+6118042,82449244,1st Division,league,7482,,2016-08-14,3:30 pm,10359029,Panthers,75479641,Williamsville Willies,3,1,played,,Nichols School Strauss Truscott
+6117966,82449244,1st Division,league,7406,,2016-05-01,4:00 pm,75159927,Catan FC,67527670,FC Quake,2,4,played,,Clarence Town Hall Park 1
+6117964,82449244,1st Division,league,7404,,2016-05-01,4:00 pm,59261096,Beast City SC,35214669,Nickel City Wanderers,2,0,played,FT,Sweet Home Middle School Field 1
+6117962,82449244,1st Division,league,7402,,2016-05-01,4:00 pm,75479641,Williamsville Willies,10359080,Alden Eclipse,4,0,played,,Wendleville Fire Hall 1
+6117965,82449244,1st Division,league,7405,,2016-05-01,4:00 pm,62886844,Buffalo Gunners,15296943,Depew Village,4,0,played,,West Seneca Soccer Complex B
+6117961,82449244,1st Division,league,7401,,2016-05-01,6:00 pm,10359029,Panthers,75479644,Elmwood Saints FC,2,0,played,,Buffalo State Coyer Field
+6117963,82449244,1st Division,league,7403,,2016-05-01,6:00 pm,10359038,Hamburg Monarchs,75159915,NMB FC,2,2,played,,Nike Base 1
+6117967,82449244,1st Division,league,7407,,2016-05-01,6:00 pm,67527667,RVS United,10359111,SPAL Buffalo FC,1,2,played,,Westwood Park Turf Field
+6117972,82449244,1st Division,league,7412,,2016-05-08,2:00 pm,67527670,FC Quake,75479644,Elmwood Saints FC,0,4,played,,Pioneer HS Field 1
+6117971,82449244,1st Division,league,7411,,2016-05-08,4:00 pm,10359080,Alden Eclipse,35214669,Nickel City Wanderers,8,0,played,,Nichols School Strauss Truscott
+6117973,82449244,1st Division,league,7413,,2016-05-08,4:00 pm,75479641,Williamsville Willies,59261096,Beast City SC,1,2,played,,Wendleville Fire Hall 1
+6117970,82449244,1st Division,league,7410,,2016-05-08,4:00 pm,75159915,NMB FC,10359029,Panthers,0,2,played,,West Seneca Soccer Complex B
+6117968,82449244,1st Division,league,7408,,2016-05-08,6:00 pm,75159927,Catan FC,15296943,Depew Village,3,1,played,,Clarence Town Hall Park 1
+6117974,82449244,1st Division,league,7414,,2016-05-08,6:00 pm,10359111,SPAL Buffalo FC,10359038,Hamburg Monarchs,2,4,played,,Nichols School Peek
+6117969,82449244,1st Division,league,7409,,2016-05-08,6:00 pm,67527667,RVS United,62886844,Buffalo Gunners,3,2,played,,Westwood Park Turf Field
+6117975,82449244,1st Division,league,7415,,2016-05-15,4:00 pm,59261096,Beast City SC,67527667,RVS United,1,0,played,,Sweet Home Middle School Field 1
+6117976,82449244,1st Division,league,7416,,2016-05-15,4:00 pm,75159915,NMB FC,10359080,Alden Eclipse,4,1,played,,West Seneca Soccer Complex B
+6117981,82449244,1st Division,league,7421,,2016-05-15,4:00 pm,35214669,Nickel City Wanderers,10359029,Panthers,0,4,played,,West Seneca Soccer Complex H
+6117977,82449244,1st Division,league,7417,,2016-05-15,6:00 pm,75159927,Catan FC,75479644,Elmwood Saints FC,0,0,played,,Clarence Town Hall Park 1
+6117978,82449244,1st Division,league,7418,,2016-05-15,6:00 pm,15296943,Depew Village,75479641,Williamsville Willies,0,4,played,,Fireman's Park (Depew) 1
+6117979,82449244,1st Division,league,7419,,2016-05-15,6:00 pm,10359111,SPAL Buffalo FC,62886844,Buffalo Gunners,3,1,played,,Nichols School Strauss Truscott
+6117980,82449244,1st Division,league,7420,,2016-05-15,6:00 pm,10359038,Hamburg Monarchs,67527670,FC Quake,0,2,played,,Nike Base 1
+6117982,82449244,1st Division,league,7422,,2016-05-22,4:00 pm,10359029,Panthers,75159927,Catan FC,1,0,played,,Buffalo State Coyer Field
+6117987,82449244,1st Division,league,7427,,2016-05-22,4:00 pm,15296943,Depew Village,59261096,Beast City SC,2,7,played,,Fireman's Park (Depew) 1
+6117985,82449244,1st Division,league,7425,,2016-05-22,4:00 pm,10359080,Alden Eclipse,67527667,RVS United,3,4,played,,Nichols School Strauss Truscott
+6117983,82449244,1st Division,league,7423,,2016-05-22,4:00 pm,75479641,Williamsville Willies,10359111,SPAL Buffalo FC,3,3,played,,Wendleville Fire Hall 1
+6117988,82449244,1st Division,league,7428,,2016-05-22,4:00 pm,62886844,Buffalo Gunners,35214669,Nickel City Wanderers,9,1,played,,West Seneca Soccer Complex A
+6117984,82449244,1st Division,league,7424,,2016-05-22,4:00 pm,75479644,Elmwood Saints FC,10359038,Hamburg Monarchs,1,0,played,,West Seneca Soccer Complex B
+6117986,82449244,1st Division,league,7426,,2016-05-22,4:00 pm,67527670,FC Quake,75159915,NMB FC,3,1,played,,West Seneca Soccer Complex H
+6117994,82449244,1st Division,league,7434,,2016-06-05,4:00 pm,67527670,FC Quake,15296943,Depew Village,3,2,played,,Hamburg High School Turf Field
+6117990,82449244,1st Division,league,7430,,2016-06-05,4:00 pm,75479641,Williamsville Willies,75159927,Catan FC,4,1,played,,Wendleville Fire Hall 1
+6117995,82449244,1st Division,league,7435,,2016-06-05,4:00 pm,35214669,Nickel City Wanderers,10359038,Hamburg Monarchs,0,0,played,,West Seneca Soccer Complex H
+6117989,82449244,1st Division,league,7429,,2016-06-05,6:00 pm,10359111,SPAL Buffalo FC,10359080,Alden Eclipse,5,2,played,,Nichols School Peek
+6117993,82449244,1st Division,league,7433,,2016-06-05,6:00 pm,62886844,Buffalo Gunners,10359029,Panthers,0,2,played,,West Seneca Soccer Complex E
+6117992,82449244,1st Division,league,7432,,2016-06-05,6:00 pm,75159915,NMB FC,59261096,Beast City SC,0,0,played,,West Seneca Soccer Complex H
+6117991,82449244,1st Division,league,7431,,2016-06-05,6:00 pm,67527667,RVS United,75479644,Elmwood Saints FC,2,1,played,,Westwood Park Turf Field
+6117996,82449244,1st Division,league,7436,,2016-06-12,4:00 pm,59261096,Beast City SC,10359029,Panthers,1,2,played,,Sweet Home Middle School Field 1
+6117999,82449244,1st Division,league,7439,,2016-06-12,6:00 pm,75159927,Catan FC,35214669,Nickel City Wanderers,2,0,played,,Clarence Town Hall Park 1
+6118000,82449244,1st Division,league,7440,,2016-06-12,6:00 pm,67527670,FC Quake,75479641,Williamsville Willies,1,1,played,,Hamburg High School Turf Field
+6117997,82449244,1st Division,league,7437,,2016-06-12,6:00 pm,10359080,Alden Eclipse,62886844,Buffalo Gunners,1,3,played,,Nichols School Peek
+6118001,82449244,1st Division,league,7441,,2016-06-12,6:00 pm,10359038,Hamburg Monarchs,67527667,RVS United,0,3,played,,Nike Base 1
+6118002,82449244,1st Division,league,7442,,2016-06-12,6:00 pm,75159915,NMB FC,10359111,SPAL Buffalo FC,1,2,played,,West Seneca Soccer Complex A
+6117998,82449244,1st Division,league,7438,,2016-06-12,6:00 pm,75479644,Elmwood Saints FC,15296943,Depew Village,6,0,played,,West Seneca Soccer Complex B
+6118005,82449244,1st Division,league,7445,,2016-06-19,4:00 pm,67527670,FC Quake,67527667,RVS United,5,0,played,,Hamburg High School Turf Field
+6118006,82449244,1st Division,league,7446,,2016-06-19,4:00 pm,10359080,Alden Eclipse,59261096,Beast City SC,0,4,played,,Nichols School Strauss Truscott
+6118008,82449244,1st Division,league,7448,,2016-06-19,4:00 pm,62886844,Buffalo Gunners,75159927,Catan FC,2,1,played,,West Seneca Soccer Complex H
+6118009,82449244,1st Division,league,7449,,2016-06-19,6:00 pm,15296943,Depew Village,75159915,NMB FC,0,1,played,,Fireman's Park (Depew) 1
+6118004,82449244,1st Division,league,7444,,2016-06-19,6:00 pm,10359111,SPAL Buffalo FC,10359029,Panthers,0,2,played,,Nichols School Peek
+6118007,82449244,1st Division,league,7447,,2016-06-19,6:00 pm,10359038,Hamburg Monarchs,75479641,Williamsville Willies,0,3,played,,Nike Base 1
+6118003,82449244,1st Division,league,7443,,2016-06-19,6:00 pm,75479644,Elmwood Saints FC,35214669,Nickel City Wanderers,8,0,played,,West Seneca Soccer Complex A
+6118012,82449244,1st Division,league,7452,,2016-06-26,4:00 pm,75159927,Catan FC,10359080,Alden Eclipse,2,2,played,,Clarence Town Hall Park 1
+6118015,82449244,1st Division,league,7455,,2016-06-26,4:00 pm,10359029,Panthers,15296943,Depew Village,7,0,played,,Fireman's Park (Depew) 1
+6118016,82449244,1st Division,league,7456,,2016-06-26,4:00 pm,59261096,Beast City SC,75479644,Elmwood Saints FC,0,2,played,,Sweet Home Middle School Field 1
+6118011,82449244,1st Division,league,7451,,2016-06-26,4:00 pm,35214669,Nickel City Wanderers,75159915,NMB FC,0,8,played,,West Seneca Soccer Complex A
+6118013,82449244,1st Division,league,7453,,2016-06-26,6:00 pm,67527670,FC Quake,10359111,SPAL Buffalo FC,2,2,played,,Hamburg High School Turf Field
+6118010,82449244,1st Division,league,7450,,2016-06-26,6:00 pm,10359038,Hamburg Monarchs,62886844,Buffalo Gunners,0,4,played,,Nike Base 1
+6118014,82449244,1st Division,league,7454,,2016-06-26,6:00 pm,67527667,RVS United,75479641,Williamsville Willies,2,1,played,,Westwood Park Turf Field
+6118020,82449244,1st Division,league,7460,,2016-07-10,2:00 pm,10359111,SPAL Buffalo FC,59261096,Beast City SC,1,0,played,,Nichols School Strauss Truscott
+6118018,82449244,1st Division,league,7458,,2016-07-10,4:00 pm,75159927,Catan FC,10359038,Hamburg Monarchs,2,0,played,,Clarence Town Hall Park 1
+6118019,82449244,1st Division,league,7459,,2016-07-10,4:00 pm,15296943,Depew Village,35214669,Nickel City Wanderers,4,0,played,,Fireman's Park (Depew) 1
+6118017,82449244,1st Division,league,7457,,2016-07-10,4:00 pm,75159915,NMB FC,62886844,Buffalo Gunners,1,2,played,,West Seneca Soccer Complex A
+6118022,82449244,1st Division,league,7462,,2016-07-10,6:00 pm,10359080,Alden Eclipse,67527670,FC Quake,1,3,played,,Nichols School Strauss Truscott
+6118023,82449244,1st Division,league,7463,,2016-07-10,6:00 pm,75479641,Williamsville Willies,75479644,Elmwood Saints FC,5,0,played,,Wendleville Fire Hall 1
+6118021,82449244,1st Division,league,7461,,2016-07-10,6:00 pm,67527667,RVS United,10359029,Panthers,1,2,played,,Westwood Park Turf Field
+6118025,82449244,1st Division,league,7465,,2016-07-17,4:00 pm,35214669,Nickel City Wanderers,67527670,FC Quake,0,8,played,,West Seneca Soccer Complex A
+6118026,82449244,1st Division,league,7466,,2016-07-17,4:00 pm,75159915,NMB FC,75159927,Catan FC,6,1,played,,West Seneca Soccer Complex B
+6118030,82449244,1st Division,league,7470,,2016-07-17,4:00 pm,75479644,Elmwood Saints FC,10359111,SPAL Buffalo FC,3,3,played,,West Seneca Soccer Complex E
+6118029,82449244,1st Division,league,7469,,2016-07-17,4:00 pm,62886844,Buffalo Gunners,59261096,Beast City SC,0,3,played,,West Seneca Soccer Complex H
+6118028,82449244,1st Division,league,7468,,2016-07-17,6:00 pm,10359029,Panthers,75479641,Williamsville Willies,0,2,played,,Buffalo State Coyer Field
+6118024,82449244,1st Division,league,7464,,2016-07-17,6:00 pm,10359038,Hamburg Monarchs,10359080,Alden Eclipse,2,1,played,,Nike Base 1
+6118027,82449244,1st Division,league,7467,,2016-07-17,6:00 pm,67527667,RVS United,15296943,Depew Village,3,0,played,,Westwood Park Turf Field
+6118033,82449244,1st Division,league,7473,,2016-07-24,2:00 pm,10359111,SPAL Buffalo FC,75159927,Catan FC,4,0,played,,Nichols School Peek
+6118035,82449244,1st Division,league,7475,,2016-07-24,4:00 pm,10359029,Panthers,10359080,Alden Eclipse,5,1,played,,Buffalo State Coyer Field
+6118034,82449244,1st Division,league,7474,,2016-07-24,4:00 pm,62886844,Buffalo Gunners,75479641,Williamsville Willies,0,1,played,,West Seneca Soccer Complex A
+6118037,82449244,1st Division,league,7477,,2016-07-24,4:00 pm,35214669,Nickel City Wanderers,67527667,RVS United,2,6,played,,West Seneca Soccer Complex B
+6118036,82449244,1st Division,league,7476,,2016-07-24,6:00 pm,15296943,Depew Village,10359038,Hamburg Monarchs,1,1,played,,Fireman's Park (Depew) 1
+6118031,82449244,1st Division,league,7471,,2016-07-24,6:00 pm,75479644,Elmwood Saints FC,75159915,NMB FC,2,1,played,,West Seneca Soccer Complex A
+6118032,82449244,1st Division,league,7472,,2016-07-24,7:30 pm,59261096,Beast City SC,67527670,FC Quake,5,0,played,,Sweet Home High School Turf
+6118038,82449244,1st Division,league,7478,,2016-07-31,6:00 pm,67527670,FC Quake,67527667,RVS United,2,0,played,,Hamburg High School Turf Field
+6118039,82449244,1st Division,league,7479,,2016-07-31,6:00 pm,59261096,Beast City SC,10359111,SPAL Buffalo FC,3,1,played,,Parker's Pitch Field A
+6118123,82449245,2nd Division,league,7681,SF2,2016-08-07,6:00 pm,10359062,Tonawanda United,75479650,Pendleton United FC,0,2,played,,Ives Pond 1
+6118122,82449245,2nd Division,league,7680,SF1,2016-08-07,6:00 pm,26892099,Rampart FC,75159999,Crimson Fire FC,1,2,played,PK,Veteran's Park (GI) 6 or 8
+6118124,82449245,2nd Division,league,7682,,2016-08-14,3:30 pm,75479650,Pendleton United FC,75159999,Crimson Fire FC,3,1,played,,Nichols School Peek
+6118046,82449245,2nd Division,league,7604,,2016-05-01,4:00 pm,75479656,FC Yemen II,75159924,DSC Buffalo,1,4,played,,Lehigh South Street
+6118045,82449245,2nd Division,league,7603,,2016-05-01,4:00 pm,26892099,Rampart FC,10359123,Cheektowaga,0,0,played,,Veteran's Park (GI) 6 or 8
+6118047,82449245,2nd Division,league,7605,,2016-05-01,4:30 pm,35216066,Meerkats FC,67526455,PLYSA Toros,4,1,played,,Niagara University 1
+6118048,82449245,2nd Division,league,7606,,2016-05-01,6:00 pm,10359062,Tonawanda United,75479647,Celtic 1888,3,0,played,,Ives Pond 1
+6118043,82449245,2nd Division,league,7601,,2016-05-01,6:00 pm,10359092,Ukraine,75159918,Blizzard FC,4,0,played,,Rehm Road
+6118044,82449245,2nd Division,league,7602,,2016-05-01,6:00 pm,75479650,Pendleton United FC,75159999,Crimson Fire FC,3,2,played,,Wendleville Fire Hall 1
+6118049,82449245,2nd Division,league,7607,,2016-05-01,6:00 pm,75159921,West Side FC,10359077,WNY United Reds,0,1,played,,West Seneca Soccer Complex A
+6118056,82449245,2nd Division,league,7614,,2016-05-08,4:00 pm,10359077,WNY United Reds,26892099,Rampart FC,1,2,played,,Fireman's Park (Depew) 1
+6118050,82449245,2nd Division,league,7608,,2016-05-08,6:00 pm,75479647,Celtic 1888,67526455,PLYSA Toros,2,4,played,,Ellicott Creek Park 1
+6118054,82449245,2nd Division,league,7612,,2016-05-08,6:00 pm,10359062,Tonawanda United,75159918,Blizzard FC,2,1,played,,Ives Pond 1
+6118052,82449245,2nd Division,league,7610,,2016-05-08,6:00 pm,10359123,Cheektowaga,10359092,Ukraine,2,2,played,,JFK High School 1
+6118051,82449245,2nd Division,league,7609,,2016-05-08,6:00 pm,35216066,Meerkats FC,75159921,West Side FC,2,1,played,,Niagara University 1
+6118053,82449245,2nd Division,league,7611,,2016-05-08,6:00 pm,75159999,Crimson Fire FC,75479656,FC Yemen II,4,2,played,,Veteran's Park (GI) 1
+6118055,82449245,2nd Division,league,7613,,2016-05-08,6:00 pm,75479650,Pendleton United FC,75159924,DSC Buffalo,1,2,played,,Wendleville Fire Hall 1
+6118061,82449245,2nd Division,league,7619,,2016-05-15,4:00 pm,10359077,WNY United Reds,35216066,Meerkats FC,1,6,played,,Fireman's Park (Depew) 1
+6118062,82449245,2nd Division,league,7620,,2016-05-15,4:00 pm,26892099,Rampart FC,10359062,Tonawanda United,2,2,played,,Veteran's Park (GI) 6 or 8
+6118060,82449245,2nd Division,league,7618,,2016-05-15,4:00 pm,67526455,PLYSA Toros,75479650,Pendleton United FC,0,2,played,,Wendleville Fire Hall 1
+6118057,82449245,2nd Division,league,7615,,2016-05-15,6:00 pm,75159924,DSC Buffalo,75159921,West Side FC,1,3,played,,Buffalo State Coyer Field
+6118058,82449245,2nd Division,league,7616,,2016-05-15,6:00 pm,10359123,Cheektowaga,75159999,Crimson Fire FC,2,4,played,,JFK High School 1
+6118063,82449245,2nd Division,league,7621,,2016-05-15,6:00 pm,75479656,FC Yemen II,10359092,Ukraine,2,1,played,,Lehigh South Street
+6118059,82449245,2nd Division,league,7617,,2016-05-15,6:00 pm,75159918,Blizzard FC,75479647,Celtic 1888,8,0,played,,Mulroy Pierce Field
+6118070,82449245,2nd Division,league,7628,,2016-05-22,4:00 pm,35216066,Meerkats FC,75479656,FC Yemen II,2,4,played,,Niagara University 1
+6118069,82449245,2nd Division,league,7627,,2016-05-22,6:00 pm,75159924,DSC Buffalo,67526455,PLYSA Toros,0,4,played,,Buffalo State Coyer Field
+6118065,82449245,2nd Division,league,7623,,2016-05-22,6:00 pm,10359077,WNY United Reds,75479650,Pendleton United FC,1,1,played,,Fireman's Park (Depew) 1
+6118068,82449245,2nd Division,league,7626,,2016-05-22,6:00 pm,10359062,Tonawanda United,10359123,Cheektowaga,3,0,played,,Ives Pond 1
+6118066,82449245,2nd Division,league,7624,,2016-05-22,6:00 pm,75159918,Blizzard FC,26892099,Rampart FC,1,4,played,,Mulroy Pierce Field
+6118064,82449245,2nd Division,league,7622,,2016-05-22,6:00 pm,10359092,Ukraine,75479647,Celtic 1888,1,2,played,,Rehm Road
+6118067,82449245,2nd Division,league,7625,,2016-05-22,6:00 pm,75159999,Crimson Fire FC,75159921,West Side FC,2,2,played,,Veteran's Park (GI) 1
+6118075,82449245,2nd Division,league,7633,,2016-06-05,4:00 pm,35216066,Meerkats FC,10359092,Ukraine,2,0,played,,Niagara University 1
+6118071,82449245,2nd Division,league,7629,,2016-06-05,4:00 pm,75159999,Crimson Fire FC,10359077,WNY United Reds,9,0,played,,Veteran's Park (GI) 1
+6118073,82449245,2nd Division,league,7631,,2016-06-05,6:00 pm,75159921,West Side FC,75159918,Blizzard FC,5,2,played,,D'Youville College 1
+6118076,82449245,2nd Division,league,7634,,2016-06-05,6:00 pm,10359062,Tonawanda United,67526455,PLYSA Toros,2,1,played,,Ives Pond 2
+6118074,82449245,2nd Division,league,7632,,2016-06-05,6:00 pm,10359123,Cheektowaga,75159924,DSC Buffalo,2,3,played,,JFK High School 1
+6118077,82449245,2nd Division,league,7635,,2016-06-05,6:00 pm,75479656,FC Yemen II,26892099,Rampart FC,0,5,played,,Lehigh South Street
+6118072,82449245,2nd Division,league,7630,,2016-06-05,6:00 pm,75479650,Pendleton United FC,75479647,Celtic 1888,3,1,played,,Wendleville Fire Hall 1
+6118083,82449245,2nd Division,league,7641,,2016-06-12,4:00 pm,75159921,West Side FC,26892099,Rampart FC,0,2,played,,D'Youville College 1
+6118084,82449245,2nd Division,league,7642,,2016-06-12,4:00 pm,10359077,WNY United Reds,10359123,Cheektowaga,1,0,played,,Fireman's Park (Depew) 1
+6118080,82449245,2nd Division,league,7638,,2016-06-12,4:00 pm,75159918,Blizzard FC,67526455,PLYSA Toros,8,0,played,,Mulroy Pierce Field
+6118079,82449245,2nd Division,league,7637,,2016-06-12,4:00 pm,75159999,Crimson Fire FC,35216066,Meerkats FC,5,2,played,,Veteran's Park (GI) 1
+6118078,82449245,2nd Division,league,7636,,2016-06-12,6:00 pm,75159924,DSC Buffalo,10359092,Ukraine,3,0,played,,Buffalo State Coyer Field
+6118081,82449245,2nd Division,league,7639,,2016-06-12,6:00 pm,75479647,Celtic 1888,75479656,FC Yemen II,2,3,played,,Ellicott Creek Park 1
+6118082,82449245,2nd Division,league,7640,,2016-06-12,6:00 pm,75479650,Pendleton United FC,10359062,Tonawanda United,5,2,played,,Wendleville Fire Hall 1
+6118090,82449245,2nd Division,league,7648,,2016-06-19,4:00 pm,75479647,Celtic 1888,35216066,Meerkats FC,5,3,played,,Ellicott Creek Park 1
+6118086,82449245,2nd Division,league,7644,,2016-06-19,4:00 pm,10359077,WNY United Reds,10359092,Ukraine,2,1,played,,Fireman's Park (Depew) 1
+6118088,82449245,2nd Division,league,7646,,2016-06-19,4:00 pm,75159999,Crimson Fire FC,75159924,DSC Buffalo,0,4,played,,Veteran's Park (GI) 1
+6118091,82449245,2nd Division,league,7649,,2016-06-19,4:00 pm,67526455,PLYSA Toros,10359123,Cheektowaga,0,6,played,,Wendleville Fire Hall 1
+6118087,82449245,2nd Division,league,7645,,2016-06-19,6:00 pm,10359062,Tonawanda United,75159921,West Side FC,5,4,played,,Ives Pond 1
+6118085,82449245,2nd Division,league,7643,,2016-06-19,6:00 pm,75159918,Blizzard FC,75479656,FC Yemen II,0,1,played,,Mulroy Pierce Field
+6118089,82449245,2nd Division,league,7647,,2016-06-19,6:00 pm,26892099,Rampart FC,75479650,Pendleton United FC,1,4,played,,Veteran's Park (GI) 6 or 8
+6118098,82449245,2nd Division,league,7656,,2016-06-26,4:00 pm,75159924,DSC Buffalo,75159918,Blizzard FC,1,2,played,,D'Youville College 1
+6118095,82449245,2nd Division,league,7653,,2016-06-26,4:00 pm,10359062,Tonawanda United,10359077,WNY United Reds,3,1,played,,Ives Pond 1
+6118093,82449245,2nd Division,league,7651,,2016-06-26,4:00 pm,75479656,FC Yemen II,10359123,Cheektowaga,4,3,played,,Lehigh South Street
+6118096,82449245,2nd Division,league,7654,,2016-06-26,4:00 pm,75479650,Pendleton United FC,75159921,West Side FC,0,2,played,FT,Wendleville Fire Hall 1
+6118094,82449245,2nd Division,league,7652,,2016-06-26,6:00 pm,75479647,Celtic 1888,75159999,Crimson Fire FC,2,3,played,,Ellicott Creek Park 1
+6118097,82449245,2nd Division,league,7655,,2016-06-26,6:00 pm,10359092,Ukraine,67526455,PLYSA Toros,3,4,played,,Rehm Road
+6118092,82449245,2nd Division,league,7650,,2016-06-26,6:00 pm,26892099,Rampart FC,35216066,Meerkats FC,7,1,played,,Veteran's Park (GI) 6 or 8
+6118102,82449245,2nd Division,league,7660,,2016-07-10,4:00 pm,75159924,DSC Buffalo,10359077,WNY United Reds,2,2,played,,Buffalo State Coyer Field
+6118101,82449245,2nd Division,league,7659,,2016-07-10,4:00 pm,67526455,PLYSA Toros,75479656,FC Yemen II,2,5,played,,Wendleville Fire Hall 1
+6118103,82449245,2nd Division,league,7661,,2016-07-10,6:00 pm,75159921,West Side FC,10359092,Ukraine,2,0,played,,D'Youville College 1
+6118100,82449245,2nd Division,league,7658,,2016-07-10,6:00 pm,75479647,Celtic 1888,26892099,Rampart FC,0,2,played,,Ellicott Creek Park 1
+6118099,82449245,2nd Division,league,7657,,2016-07-10,6:00 pm,10359123,Cheektowaga,35216066,Meerkats FC,0,3,played,,JFK High School 1
+6118105,82449245,2nd Division,league,7663,,2016-07-10,6:00 pm,75159918,Blizzard FC,75479650,Pendleton United FC,1,1,played,,Mulroy Pierce Field
+6118104,82449245,2nd Division,league,7662,,2016-07-10,6:00 pm,75159999,Crimson Fire FC,10359062,Tonawanda United,5,1,played,,Veteran's Park (GI) 1
+6118107,82449245,2nd Division,league,7665,,2016-07-17,4:00 pm,75479656,FC Yemen II,10359062,Tonawanda United,1,4,played,,Lehigh South Street
+6118112,82449245,2nd Division,league,7670,,2016-07-17,4:00 pm,75159918,Blizzard FC,10359077,WNY United Reds,3,1,played,,Mulroy Pierce Field
+6118106,82449245,2nd Division,league,7664,,2016-07-17,4:00 pm,26892099,Rampart FC,75159999,Crimson Fire FC,1,0,played,,Veteran's Park (GI) 6 or 8
+6118108,82449245,2nd Division,league,7666,,2016-07-17,6:00 pm,10359123,Cheektowaga,75479647,Celtic 1888,4,2,played,,JFK High School 1
+6118111,82449245,2nd Division,league,7669,,2016-07-17,6:00 pm,35216066,Meerkats FC,75159924,DSC Buffalo,0,3,played,,Niagara University 1
+6118110,82449245,2nd Division,league,7668,,2016-07-17,6:00 pm,10359092,Ukraine,75479650,Pendleton United FC,2,8,played,,Rehm Road
+6118109,82449245,2nd Division,league,7667,,2016-07-17,6:00 pm,67526455,PLYSA Toros,75159921,West Side FC,1,4,played,,Wendleville Fire Hall 1
+6118115,82449245,2nd Division,league,7673,,2016-07-24,4:00 pm,10359077,WNY United Reds,75479647,Celtic 1888,1,0,played,,Fireman's Park (Depew) 1
+6118116,82449245,2nd Division,league,7674,,2016-07-24,4:00 pm,35216066,Meerkats FC,75479650,Pendleton United FC,2,4,played,,Niagara University 1
+6118118,82449245,2nd Division,league,7676,,2016-07-24,4:00 pm,67526455,PLYSA Toros,26892099,Rampart FC,0,2,played,,Wendleville Fire Hall 1
+6118114,82449245,2nd Division,league,7672,,2016-07-24,6:00 pm,75159924,DSC Buffalo,10359062,Tonawanda United,1,2,played,,Buffalo State Coyer Field
+6118119,82449245,2nd Division,league,7677,,2016-07-24,6:00 pm,75159921,West Side FC,75479656,FC Yemen II,6,2,played,,D'Youville College 1
+6118113,82449245,2nd Division,league,7671,,2016-07-24,6:00 pm,10359123,Cheektowaga,75159918,Blizzard FC,5,2,played,,JFK High School 1
+6118117,82449245,2nd Division,league,7675,,2016-07-24,6:00 pm,10359092,Ukraine,75159999,Crimson Fire FC,3,3,played,,Rehm Road
+6118121,82449245,2nd Division,league,7679,QF2,2016-07-31,6:00 pm,75159999,Crimson Fire FC,75159921,West Side FC,2,1,played,OT,Veteran's Park (GI) 1
+6118120,82449245,2nd Division,league,7678,,2016-07-31,6:00 pm,75479650,Pendleton United FC,75159924,DSC Buffalo,2,0,played,,Wendleville Fire Hall 1
+6113797,82449247,3rd Division,league,9474,SF2,2016-08-07,6:00 pm,75479653,Youngstown Marksmen,75159996,FK Bosna,0,0,played,PK,Veterans Park - Youngstown Pierce Field
+6113796,82449247,3rd Division,league,9473,SF1,2016-08-07,6:00 pm,10359117,Dutch FC,12579571,Devils,1,0,played,,Walden Pond Park 1
+6113798,82449247,3rd Division,league,9475,,2016-08-14,1:30 pm,10359117,Dutch FC,75159996,FK Bosna,1,2,played,,Nichols School Peek
+6113732,82449247,3rd Division,league,9405,,2016-05-01,4:00 pm,75479659,FC Aftershock,12579571,Devils,1,3,played,,Pioneer HS Field 1
+6113730,82449247,3rd Division,league,9403,,2016-05-01,4:00 pm,10359117,Dutch FC,75159990,Great White Buffalo,2,1,played,,Walden Pond Park 1
+6113728,82449247,3rd Division,league,9401,,2016-05-01,6:00 pm,59262126,Celtic Classic,31566782,Rust Belt United,3,3,played,,Ellicott Creek Park 1
+6113729,82449247,3rd Division,league,9402,,2016-05-01,6:00 pm,67526458,Aurora Arsenal II,10359068,Great Lakes FC,3,1,played,,Knox Fields 1
+6113733,82449247,3rd Division,league,9406,,2016-05-01,6:00 pm,10359108,Stone Jug,75159993,Revolution SC,0,3,played,,Thomas Marks Elementary School 1
+6113731,82449247,3rd Division,league,9404,,2016-05-01,6:00 pm,75479665,Lasalle,75159996,FK Bosna,3,1,played,,Veteran's Park (GI) 6 or 8
+6113738,82449247,3rd Division,league,9411,,2016-05-08,4:00 pm,12579571,Devils,10359068,Great Lakes FC,2,2,played,,Edison Elementary 1
+6113736,82449247,3rd Division,league,9409,,2016-05-08,4:00 pm,75479659,FC Aftershock,59262126,Celtic Classic,1,2,played,,Pioneer HS Field 1
+6113735,82449247,3rd Division,league,9408,,2016-05-08,4:00 pm,75479665,Lasalle,67526458,Aurora Arsenal II,3,1,played,,Veteran's Park (GI) 6 or 8
+6113739,82449247,3rd Division,league,9412,,2016-05-08,4:00 pm,75159996,FK Bosna,75159990,Great White Buffalo,5,2,played,,West Seneca Soccer Complex H
+6113737,82449247,3rd Division,league,9410,,2016-05-08,6:00 pm,10359108,Stone Jug,31566782,Rust Belt United,5,0,played,,Thomas Marks Elementary School 1
+6113734,82449247,3rd Division,league,9407,,2016-05-08,6:00 pm,75479653,Youngstown Marksmen,10359117,Dutch FC,2,1,played,,Veterans Park - Youngstown Pierce Field
+6113742,82449247,3rd Division,league,9415,,2016-05-15,4:00 pm,10359068,Great Lakes FC,10359108,Stone Jug,0,1,played,,Ives Pond 1
+6113741,82449247,3rd Division,league,9414,,2016-05-15,4:00 pm,75159990,Great White Buffalo,12579571,Devils,0,5,played,,Walden Pond Park 1
+6113743,82449247,3rd Division,league,9416,,2016-05-15,4:00 pm,31566782,Rust Belt United,75159993,Revolution SC,1,1,played,,West Seneca Soccer Complex E
+6113744,82449247,3rd Division,league,9417,,2016-05-15,6:00 pm,59262126,Celtic Classic,75479665,Lasalle,0,2,played,,Ellicott Creek Park 1
+6113740,82449247,3rd Division,league,9413,,2016-05-15,6:00 pm,75479653,Youngstown Marksmen,75159996,FK Bosna,4,1,played,,Veterans Park - Youngstown Pierce Field
+6113745,82449247,3rd Division,league,9418,,2016-05-15,6:00 pm,10359117,Dutch FC,67526458,Aurora Arsenal II,3,2,played,,Walden Pond Park 1
+6113751,82449247,3rd Division,league,9424,,2016-05-22,4:00 pm,12579571,Devils,75159996,FK Bosna,2,4,played,,Kenny Field 5
+6113747,82449247,3rd Division,league,9420,,2016-05-22,6:00 pm,59262126,Celtic Classic,10359117,Dutch FC,3,6,played,,Ellicott Creek Park 1
+6113746,82449247,3rd Division,league,9419,,2016-05-22,6:00 pm,67526458,Aurora Arsenal II,75479653,Youngstown Marksmen,1,2,played,,Knox Fields 1
+6113750,82449247,3rd Division,league,9423,,2016-05-22,6:00 pm,10359108,Stone Jug,75159990,Great White Buffalo,2,3,played,,Thomas Marks Elementary School 1
+6113749,82449247,3rd Division,league,9422,,2016-05-22,6:00 pm,75159993,Revolution SC,10359068,Great Lakes FC,2,2,played,,Wendleville Fire Hall 1
+6113748,82449247,3rd Division,league,9421,,2016-05-22,6:00 pm,75479659,FC Aftershock,31566782,Rust Belt United,6,3,played,,West Seneca Soccer Complex A
+6113755,82449247,3rd Division,league,9428,,2016-06-05,4:00 pm,10359068,Great Lakes FC,75479659,FC Aftershock,2,2,played,,Ives Pond 1
+6113752,82449247,3rd Division,league,9425,,2016-06-05,4:00 pm,12579571,Devils,75479653,Youngstown Marksmen,1,3,played,,Kenny Field 5
+6113754,82449247,3rd Division,league,9427,,2016-06-05,4:00 pm,75159990,Great White Buffalo,75159993,Revolution SC,1,1,played,,Walden Pond Park 1
+6113756,82449247,3rd Division,league,9429,,2016-06-05,4:00 pm,31566782,Rust Belt United,75479665,Lasalle,2,7,played,,West Seneca Soccer Complex A
+6113753,82449247,3rd Division,league,9426,,2016-06-05,4:00 pm,75159996,FK Bosna,10359108,Stone Jug,2,2,played,,West Seneca Soccer Complex E
+6113757,82449247,3rd Division,league,9430,,2016-06-05,6:00 pm,59262126,Celtic Classic,67526458,Aurora Arsenal II,1,1,played,,Ellicott Creek Park 1
+6113761,82449247,3rd Division,league,9434,,2016-06-12,4:00 pm,75479659,FC Aftershock,75159990,Great White Buffalo,5,0,played,,Hamburg High School Turf Field
+6113759,82449247,3rd Division,league,9432,,2016-06-12,4:00 pm,10359117,Dutch FC,31566782,Rust Belt United,3,0,played,,Walden Pond Park 1
+6113762,82449247,3rd Division,league,9435,,2016-06-12,4:00 pm,75159993,Revolution SC,75159996,FK Bosna,0,2,played,,Wendleville Fire Hall 1
+6113760,82449247,3rd Division,league,9433,,2016-06-12,6:00 pm,75479665,Lasalle,10359068,Great Lakes FC,4,0,played,,Reservoir Park
+6113763,82449247,3rd Division,league,9436,,2016-06-12,6:00 pm,10359108,Stone Jug,12579571,Devils,2,4,played,,Thomas Marks Elementary School 1
+6113758,82449247,3rd Division,league,9431,,2016-06-12,6:00 pm,75479653,Youngstown Marksmen,59262126,Celtic Classic,2,2,played,,Veterans Park - Youngstown Pierce Field
+6113765,82449247,3rd Division,league,9438,,2016-06-19,4:00 pm,12579571,Devils,75159993,Revolution SC,3,0,played,,Edison Elementary 1
+6113768,82449247,3rd Division,league,9441,,2016-06-19,4:00 pm,10359068,Great Lakes FC,10359117,Dutch FC,1,2,played,,Ives Pond 2
+6113767,82449247,3rd Division,league,9440,,2016-06-19,4:00 pm,75159990,Great White Buffalo,75479665,Lasalle,1,4,played,,Walden Pond Park 1
+6113766,82449247,3rd Division,league,9439,,2016-06-19,4:00 pm,75159996,FK Bosna,75479659,FC Aftershock,7,3,played,,West Seneca Soccer Complex A
+6113769,82449247,3rd Division,league,9442,,2016-06-19,4:00 pm,31566782,Rust Belt United,67526458,Aurora Arsenal II,0,1,played,,West Seneca Soccer Complex B
+6113764,82449247,3rd Division,league,9437,,2016-06-19,6:00 pm,75479653,Youngstown Marksmen,10359108,Stone Jug,2,1,played,,Veterans Park - Youngstown Pierce Field
+6113774,82449247,3rd Division,league,9447,,2016-06-26,4:00 pm,67526458,Aurora Arsenal II,75479659,FC Aftershock,4,2,played,,Knox Fields 1
+6113770,82449247,3rd Division,league,9443,,2016-06-26,4:00 pm,75159990,Great White Buffalo,75479653,Youngstown Marksmen,2,1,played,,Walden Pond Park 1
+6113772,82449247,3rd Division,league,9445,,2016-06-26,4:00 pm,31566782,Rust Belt United,12579571,Devils,0,6,played,,West Seneca Soccer Complex B
+6113771,82449247,3rd Division,league,9444,,2016-06-26,6:00 pm,10359068,Great Lakes FC,75159996,FK Bosna,0,3,played,,Ives Pond 1
+6113775,82449247,3rd Division,league,9448,,2016-06-26,6:00 pm,10359117,Dutch FC,75479665,Lasalle,5,0,played,,Walden Pond Park 1
+6113773,82449247,3rd Division,league,9446,,2016-06-26,6:00 pm,75159993,Revolution SC,59262126,Celtic Classic,0,1,played,,Wendleville Fire Hall 1
+6113776,82449247,3rd Division,league,9449,,2016-07-10,4:00 pm,75479659,FC Aftershock,10359117,Dutch FC,1,3,played,,Hamburg High School Turf Field
+6113781,82449247,3rd Division,league,9454,,2016-07-10,4:00 pm,75159990,Great White Buffalo,10359068,Great Lakes FC,8,1,played,,Walden Pond Park 1
+6113780,82449247,3rd Division,league,9453,,2016-07-10,4:00 pm,75159996,FK Bosna,31566782,Rust Belt United,3,1,played,,West Seneca Soccer Complex H
+6113777,82449247,3rd Division,league,9450,,2016-07-10,6:00 pm,67526458,Aurora Arsenal II,75159993,Revolution SC,3,2,played,,Knox Fields 1
+6113779,82449247,3rd Division,league,9452,,2016-07-10,6:00 pm,75479665,Lasalle,75479653,Youngstown Marksmen,3,3,played,,Reservoir Park
+6113778,82449247,3rd Division,league,9451,,2016-07-10,6:00 pm,10359108,Stone Jug,59262126,Celtic Classic,3,0,played,,Thomas Marks Elementary School 1
+6113785,82449247,3rd Division,league,9458,,2016-07-17,4:00 pm,67526458,Aurora Arsenal II,10359108,Stone Jug,2,1,played,,Knox Fields 1
+6113786,82449247,3rd Division,league,9459,,2016-07-17,4:00 pm,75159993,Revolution SC,10359117,Dutch FC,2,4,played,,Wendleville Fire Hall 1
+6113782,82449247,3rd Division,league,9455,,2016-07-17,4:00 pm,31566782,Rust Belt United,75159990,Great White Buffalo,1,3,played,,West Seneca Soccer Complex A
+6113783,82449247,3rd Division,league,9456,,2016-07-17,6:00 pm,10359068,Great Lakes FC,75479653,Youngstown Marksmen,2,3,played,,Ives Pond 1
+6113787,82449247,3rd Division,league,9460,,2016-07-17,6:00 pm,75479665,Lasalle,75479659,FC Aftershock,0,1,played,,Reservoir Park
+6113784,82449247,3rd Division,league,9457,,2016-07-17,8:30 pm,59262126,Celtic Classic,12579571,Devils,7,3,played,,Kenny Field 5
+6113791,82449247,3rd Division,league,9464,,2016-07-24,4:00 pm,12579571,Devils,67526458,Aurora Arsenal II,0,0,played,,Edison Elementary 1
+6113792,82449247,3rd Division,league,9465,,2016-07-24,4:00 pm,75159996,FK Bosna,59262126,Celtic Classic,2,2,played,,West Seneca Soccer Complex H
+6113788,82449247,3rd Division,league,9461,,2016-07-24,6:00 pm,75479653,Youngstown Marksmen,75479659,FC Aftershock,3,0,played,,Veterans Park - Youngstown Pierce Field
+6113790,82449247,3rd Division,league,9463,,2016-07-24,6:00 pm,10359117,Dutch FC,10359108,Stone Jug,1,2,played,,Walden Pond Park 1
+6113789,82449247,3rd Division,league,9462,,2016-07-24,6:00 pm,75159993,Revolution SC,75479665,Lasalle,3,2,played,,Wendleville Fire Hall 1
+6113795,82449247,3rd Division,league,9468,QF2,2016-07-31,6:00 pm,75479665,Lasalle,12579571,Devils,3,2,played,,Veteran's Park (GI) 6 or 8
+6113794,82449247,3rd Division,league,9467,QF1,2016-07-31,6:00 pm,75159996,FK Bosna,67526458,Aurora Arsenal II,2,0,played,,West Seneca Soccer Complex B
+6129701,82449248,Over 35,over35,9477,,2016-05-20,6:30 pm,46512663,Azzurri,46512669,Oranje,5,0,played,,
+6129702,82449248,Over 35,over35,9478,,2016-05-20,6:30 pm,10359105,C.S. Italia,46512675,West United,1,3,played,,
+6129700,82449248,Over 35,over35,9476,,2016-05-20,6:30 pm,46512666,Aliens,46512672,Blue,5,3,played,,Sahlen's Sportspark 1
+6129703,82449248,Over 35,over35,9479,,2016-05-27,6:30 pm,46512672,Blue,10359105,C.S. Italia,3,3,played,,
+6129704,82449248,Over 35,over35,9480,,2016-05-27,6:30 pm,46512669,Oranje,46512675,West United,2,3,played,,
+6129705,82449248,Over 35,over35,9481,,2016-05-27,6:30 pm,46512666,Aliens,46512663,Azzurri,4,2,played,,
+6129706,82449248,Over 35,over35,9482,,2016-06-03,6:30 pm,46512672,Blue,46512675,West United,1,6,played,,
+6129707,82449248,Over 35,over35,9483,,2016-06-10,6:30 pm,46512672,Blue,46512663,Azzurri,3,2,played,,
+6129708,82449248,Over 35,over35,9484,,2016-06-10,6:30 pm,46512666,Aliens,46512675,West United,4,1,played,,
+6129709,82449248,Over 35,over35,9485,,2016-06-10,6:30 pm,46512669,Oranje,10359105,C.S. Italia,1,2,played,,
+6129710,82449248,Over 35,over35,9486,,2016-06-17,6:30 pm,46512666,Aliens,46512672,Blue,1,0,played,,
+6129711,82449248,Over 35,over35,9487,,2016-06-17,6:30 pm,46512663,Azzurri,46512669,Oranje,7,1,played,,
+6129712,82449248,Over 35,over35,9488,,2016-06-17,6:30 pm,10359105,C.S. Italia,46512675,West United,0,6,played,,
+6129713,82449248,Over 35,over35,9489,,2016-06-24,6:30 pm,46512666,Aliens,46512663,Azzurri,8,6,played,,
+6129714,82449248,Over 35,over35,9490,,2016-06-24,6:30 pm,46512672,Blue,10359105,C.S. Italia,6,2,played,,
+6129715,82449248,Over 35,over35,9491,,2016-06-24,6:30 pm,46512669,Oranje,46512675,West United,1,2,played,,
+6129716,82449248,Over 35,over35,9492,,2016-07-01,6:30 pm,46512666,Aliens,46512669,Oranje,3,2,played,,
+6129717,82449248,Over 35,over35,9493,,2016-07-01,6:30 pm,46512663,Azzurri,10359105,C.S. Italia,2,0,played,,
+6129718,82449248,Over 35,over35,9494,,2016-07-08,6:30 pm,46512666,Aliens,10359105,C.S. Italia,4,0,played,,
+6129719,82449248,Over 35,over35,9495,,2016-07-08,6:30 pm,46512669,Oranje,46512672,Blue,0,7,played,,
+6129720,82449248,Over 35,over35,9496,,2016-07-08,6:30 pm,46512663,Azzurri,46512675,West United,2,1,played,,
+6129721,82449248,Over 35,over35,9497,,2016-07-15,6:30 pm,46512666,Aliens,46512669,Oranje,3,2,played,,
+6129722,82449248,Over 35,over35,9498,,2016-07-15,6:30 pm,46512663,Azzurri,10359105,C.S. Italia,6,0,played,,
+6129723,82449248,Over 35,over35,9499,,2016-07-15,6:30 pm,46512672,Blue,46512675,West United,1,0,played,,
+6129724,82449248,Over 35,over35,9500,,2016-07-22,6:30 pm,46512672,Blue,46512663,Azzurri,1,4,played,,
+6129725,82449248,Over 35,over35,9501,,2016-07-22,6:30 pm,46512666,Aliens,46512675,West United,3,1,played,,
+6129726,82449248,Over 35,over35,9502,,2016-07-22,6:30 pm,10359105,C.S. Italia,46512669,Oranje,2,7,played,,
+6129727,82449248,Over 35,over35,9503,,2016-07-29,6:30 pm,46512663,Azzurri,46512675,West United,0,3,played,,
+6129728,82449248,Over 35,over35,9504,,2016-07-29,6:30 pm,46512666,Aliens,10359105,C.S. Italia,6,2,played,,
+6129729,82449248,Over 35,over35,9505,,2016-07-29,6:30 pm,46512672,Blue,46512669,Oranje,6,1,played,,
+6116915,82835105,Tehel Cup Bracket,cup,63,,2016-08-04,6:30 pm,10359017,Celtic United,59261102,Rogue FC,1,0,played,,Nichols School Strauss Truscott
+6116916,82835105,Tehel Cup Bracket,cup,64,,2016-08-11,8:00 pm,10359005,Clarence,10359017,Celtic United,3,1,played,,Sweet Home High School Turf

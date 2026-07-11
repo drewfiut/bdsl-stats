@@ -2,36 +2,57 @@
   {
     "competition": "Premier",
     "comp_type": "league",
-    "tg": "82449242"
+    "tg": "82449242",
+    "champion_club_id": "26895907",
+    "champion_name": "Amherst Sharpshooters",
+    "champion_via": "playoff"
   },
   {
     "competition": "Championship",
     "comp_type": "league",
-    "tg": "82449246"
+    "tg": "82449246",
+    "champion_club_id": "67527661",
+    "champion_name": "East Aurora FC",
+    "champion_via": "playoff"
   },
   {
     "competition": "1st Division",
     "comp_type": "league",
-    "tg": "82449244"
+    "tg": "82449244",
+    "champion_club_id": "10359029",
+    "champion_name": "Panthers",
+    "champion_via": "regular"
   },
   {
     "competition": "2nd Division",
     "comp_type": "league",
-    "tg": "82449245"
+    "tg": "82449245",
+    "champion_club_id": "75479650",
+    "champion_name": "Pendleton United FC",
+    "champion_via": "playoff"
   },
   {
     "competition": "3rd Division",
     "comp_type": "league",
-    "tg": "82449247"
+    "tg": "82449247",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "Over 35",
     "comp_type": "over35",
-    "tg": "82449248"
+    "tg": "82449248",
+    "champion_club_id": "46512666",
+    "champion_name": "Aliens",
+    "champion_via": "regular"
   },
   {
     "competition": "Tehel Cup Bracket",
     "comp_type": "cup",
-    "tg": "82835105"
+    "tg": "82835105",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   }
 ]

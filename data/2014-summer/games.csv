@@ -1,0 +1,194 @@
+game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id,home_name,away_club_id,away_name,home_score,away_score,status,result_note,location
+4505692,67523675,Premier,league,7067,S1,2014-08-03,6:00 pm,26895907,Amherst Sharpshooters,18647016,Buffalo United SS,0,1,played,,Nichols School Peek
+4505693,67523675,Premier,league,7068,S2,2014-08-03,6:00 pm,10350991,BSC Raiders,10350982,Lazio,2,1,played,,Nichols School Strauss Truscott
+4505760,67523675,Premier,league,7069,CHMP,2014-08-10,6:00 pm,18647016,Buffalo United SS,10350991,BSC Raiders,0,1,played,,Nichols School Strauss Truscott
+4505736,67523675,Premier,league,7044,,2014-05-04,4:00 pm,10358999,Lakeside FC,10350991,BSC Raiders,0,1,played,,Nichols School Peek
+4505738,67523675,Premier,league,7046,,2014-05-04,4:00 pm,10350982,Lazio,15295049,Chelsea,4,1,played,,Nichols School Strauss Truscott
+4505739,67523675,Premier,league,7047,,2014-05-04,6:00 pm,10359005,Clarence,26895907,Amherst Sharpshooters,1,2,played,,Clarence Town Hall Park 1
+4505740,67523675,Premier,league,7043,,2014-05-04,6:00 pm,10350979,Azzurri,10359074,Lykan FC,4,0,played,,Nichols School Peek
+4505737,67523675,Premier,league,7045,,2014-05-04,6:00 pm,10350976,SoHo FC,10359017,Celtic United,3,0,played,,Nichols School Strauss Truscott
+4505741,67523675,Premier,league,7048,,2014-05-04,6:00 pm,18647016,Buffalo United SS,10359050,Yemen Elite,2,2,played,,West Seneca Soccer Complex A
+4505701,67523675,Premier,league,7009,,2014-05-11,2:00 pm,26895907,Amherst Sharpshooters,10350976,SoHo FC,2,1,played,,Nichols School Strauss Truscott
+4505703,67523675,Premier,league,7007,,2014-05-11,4:00 pm,10350982,Lazio,10359005,Clarence,1,0,played,,Nichols School Peek
+4505705,67523675,Premier,league,7011,,2014-05-11,4:00 pm,10350991,BSC Raiders,10359074,Lykan FC,7,0,played,,Nichols School Strauss Truscott
+4505702,67523675,Premier,league,7010,,2014-05-11,4:00 pm,18647016,Buffalo United SS,10359017,Celtic United,3,1,played,,West Seneca Soccer Complex A
+4505704,67523675,Premier,league,7012,,2014-05-11,6:00 pm,10359050,Yemen Elite,10358999,Lakeside FC,1,0,played,,Lehigh South Street
+4505700,67523675,Premier,league,7008,,2014-05-11,6:00 pm,15295049,Chelsea,10350979,Azzurri,3,3,played,,Nichols School Strauss Truscott
+4505707,67523675,Premier,league,7013,,2014-05-18,2:00 pm,15295049,Chelsea,10359017,Celtic United,2,1,played,,Nichols School Peek
+4505711,67523675,Premier,league,7018,,2014-05-18,2:00 pm,10350976,SoHo FC,10359050,Yemen Elite,3,0,played,,Nichols School Strauss Truscott
+4505709,67523675,Premier,league,7017,,2014-05-18,4:00 pm,26895907,Amherst Sharpshooters,10358999,Lakeside FC,4,0,played,,Nichols School Peek
+4505708,67523675,Premier,league,7016,,2014-05-18,4:00 pm,10359074,Lykan FC,10359005,Clarence,0,6,played,,Nichols School Strauss Truscott
+4505706,67523675,Premier,league,7014,,2014-05-18,6:00 pm,10350991,BSC Raiders,10350979,Azzurri,2,0,played,,Nichols School Strauss Truscott
+4505710,67523675,Premier,league,7015,,2014-05-18,6:00 pm,18647016,Buffalo United SS,10350982,Lazio,1,2,played,,West Seneca Soccer Complex E
+4505712,67523675,Premier,league,7019,,2014-06-01,2:00 pm,10350979,Azzurri,26895907,Amherst Sharpshooters,3,6,played,,Nichols School Peek
+4505714,67523675,Premier,league,7022,,2014-06-01,2:00 pm,15295049,Chelsea,10350976,SoHo FC,2,3,played,,Nichols School Strauss Truscott
+4505715,67523675,Premier,league,7023,,2014-06-01,4:00 pm,10358999,Lakeside FC,10359005,Clarence,1,1,played,,Nichols School Peek
+4505717,67523675,Premier,league,7020,,2014-06-01,4:00 pm,10350982,Lazio,10359050,Yemen Elite,1,1,played,,Nichols School Strauss Truscott
+4505713,67523675,Premier,league,7021,,2014-06-01,6:00 pm,10359017,Celtic United,10350991,BSC Raiders,2,2,played,,Ellicott Creek Park 1
+4505716,67523675,Premier,league,7024,,2014-06-01,6:00 pm,18647016,Buffalo United SS,10359074,Lykan FC,2,0,played,,West Seneca Soccer Complex A
+4505720,67523675,Premier,league,7025,,2014-06-08,2:00 pm,10350976,SoHo FC,10359005,Clarence,2,4,played,,Nichols School Strauss Truscott
+4505718,67523675,Premier,league,7029,,2014-06-08,4:00 pm,15295049,Chelsea,26895907,Amherst Sharpshooters,0,3,played,,Nichols School Peek
+4505722,67523675,Premier,league,7028,,2014-06-08,4:00 pm,10350991,BSC Raiders,10350982,Lazio,3,1,played,,Nichols School Strauss Truscott
+4505719,67523675,Premier,league,7030,,2014-06-08,6:00 pm,10359017,Celtic United,10350979,Azzurri,2,0,played,,Ellicott Creek Park 1
+4505723,67523675,Premier,league,7027,,2014-06-08,6:00 pm,10359074,Lykan FC,10359050,Yemen Elite,1,5,played,,Nichols School Peek
+4505721,67523675,Premier,league,7026,,2014-06-08,6:00 pm,18647016,Buffalo United SS,10358999,Lakeside FC,4,0,played,,West Seneca Soccer Complex A
+4505727,67523675,Premier,league,7035,,2014-06-15,2:00 pm,10358999,Lakeside FC,15295049,Chelsea,1,2,played,,Nichols School Peek
+4505726,67523675,Premier,league,7033,,2014-06-15,4:00 pm,26895907,Amherst Sharpshooters,10359017,Celtic United,2,1,played,,Nichols School Peek
+4505724,67523675,Premier,league,7032,,2014-06-15,4:00 pm,10350976,SoHo FC,10350979,Azzurri,7,0,played,,Nichols School Strauss Truscott
+4505729,67523675,Premier,league,7034,,2014-06-15,6:00 pm,10359005,Clarence,10359050,Yemen Elite,2,1,played,,Clarence Town Hall Park 1
+4505728,67523675,Premier,league,7036,,2014-06-15,6:00 pm,10359074,Lykan FC,10350982,Lazio,0,6,played,,Nichols School Peek
+4505725,67523675,Premier,league,7031,,2014-06-15,6:00 pm,10350991,BSC Raiders,18647016,Buffalo United SS,0,4,played,,Nichols School Strauss Truscott
+4505733,67523675,Premier,league,7041,,2014-06-22,2:00 pm,10359074,Lykan FC,10350976,SoHo FC,3,3,played,,Nichols School Strauss Truscott
+4505734,67523675,Premier,league,7037,,2014-06-22,4:00 pm,10359050,Yemen Elite,10359017,Celtic United,1,2,played,,Lehigh South Street
+4505731,67523675,Premier,league,7039,,2014-06-22,4:00 pm,15295049,Chelsea,10350991,BSC Raiders,1,7,played,,Nichols School Peek
+4505735,67523675,Premier,league,7042,,2014-06-22,4:00 pm,10358999,Lakeside FC,10350982,Lazio,0,2,played,,Nichols School Strauss Truscott
+4505730,67523675,Premier,league,7038,,2014-06-22,6:00 pm,10359005,Clarence,10350979,Azzurri,2,1,played,,Clarence Town Hall Park 1
+4505732,67523675,Premier,league,7040,,2014-06-22,6:00 pm,26895907,Amherst Sharpshooters,18647016,Buffalo United SS,1,1,played,,Nichols School Strauss Truscott
+4505696,67523675,Premier,league,7003,,2014-06-29,2:00 pm,10358999,Lakeside FC,10350976,SoHo FC,1,3,played,,Nichols School Peek
+4505699,67523675,Premier,league,7006,,2014-06-29,2:00 pm,26895907,Amherst Sharpshooters,10359074,Lykan FC,7,0,played,,Nichols School Strauss Truscott
+4505697,67523675,Premier,league,7004,,2014-06-29,4:00 pm,10350982,Lazio,10359017,Celtic United,2,2,played,,Nichols School Peek
+4505695,67523675,Premier,league,7002,,2014-06-29,4:00 pm,10350979,Azzurri,18647016,Buffalo United SS,0,3,played,,Nichols School Strauss Truscott
+4505698,67523675,Premier,league,7005,,2014-06-29,6:00 pm,10359005,Clarence,15295049,Chelsea,2,0,played,,Clarence Town Hall Park 1
+4505694,67523675,Premier,league,7001,,2014-06-29,6:00 pm,10359050,Yemen Elite,10350991,BSC Raiders,1,3,played,,Lehigh South Street
+4505742,67523675,Premier,league,7049,,2014-07-13,2:00 pm,10350982,Lazio,26895907,Amherst Sharpshooters,1,2,played,,Nichols School Peek
+4505744,67523675,Premier,league,7052,,2014-07-13,2:00 pm,10350976,SoHo FC,18647016,Buffalo United SS,2,1,played,,Nichols School Strauss Truscott
+4505745,67523675,Premier,league,7050,,2014-07-13,4:00 pm,10359050,Yemen Elite,15295049,Chelsea,1,0,played,,Lehigh South Street
+4505743,67523675,Premier,league,7051,,2014-07-13,4:00 pm,10350991,BSC Raiders,10359005,Clarence,3,3,played,,Nichols School Peek
+4505747,67523675,Premier,league,7054,,2014-07-13,6:00 pm,10359017,Celtic United,10359074,Lykan FC,7,0,played,,Ellicott Creek Park 1
+4505746,67523675,Premier,league,7053,,2014-07-13,6:00 pm,10350979,Azzurri,10358999,Lakeside FC,3,2,played,,Nichols School Peek
+4505749,67523675,Premier,league,7057,,2014-07-20,2:00 pm,15295049,Chelsea,18647016,Buffalo United SS,1,3,played,,Nichols School Strauss Truscott
+4505751,67523675,Premier,league,7055,,2014-07-20,4:00 pm,10359017,Celtic United,10359005,Clarence,1,0,played,,Ellicott Creek Park 1
+4505748,67523675,Premier,league,7056,,2014-07-20,4:00 pm,10350991,BSC Raiders,26895907,Amherst Sharpshooters,1,3,played,,Nichols School Peek
+4505752,67523675,Premier,league,7060,,2014-07-20,4:00 pm,10358999,Lakeside FC,10359074,Lykan FC,4,0,played,,Nichols School Strauss Truscott
+4505753,67523675,Premier,league,7059,,2014-07-20,6:00 pm,10359050,Yemen Elite,10350979,Azzurri,2,0,played,,Lehigh South Street
+4505750,67523675,Premier,league,7058,,2014-07-20,6:00 pm,10350982,Lazio,10350976,SoHo FC,1,0,played,,Nichols School Peek
+4505758,67523675,Premier,league,7065,,2014-07-27,4:00 pm,10359017,Celtic United,10358999,Lakeside FC,3,2,played,,Ellicott Creek Park 1
+4505759,67523675,Premier,league,7066,,2014-07-27,4:00 pm,10350979,Azzurri,10350982,Lazio,2,4,played,,Nichols School Peek
+4505755,67523675,Premier,league,7062,,2014-07-27,4:00 pm,10350976,SoHo FC,10350991,BSC Raiders,1,3,played,,Nichols School Strauss Truscott
+4505757,67523675,Premier,league,7064,,2014-07-27,6:00 pm,10359005,Clarence,18647016,Buffalo United SS,2,1,played,,Clarence Town Hall Park 1
+4505754,67523675,Premier,league,7063,,2014-07-27,6:00 pm,10359050,Yemen Elite,26895907,Amherst Sharpshooters,2,5,played,,Lehigh South Street
+4505756,67523675,Premier,league,7061,,2014-07-27,6:00 pm,10359074,Lykan FC,15295049,Chelsea,0,4,played,,Nichols School Strauss Truscott
+4506307,67523679,Championship,league,7268,S2,2014-08-03,6:00 pm,10359008,Roos FC,59260537,Southtowns FPFC,2,1,played,,Orchard Park Soccer Complex 1
+4506306,67523679,Championship,league,7267,S1,2014-08-03,6:00 pm,26404479,Rush FC,10359035,Queenston FC,2,4,played,,Walden Pond Park 1
+4506374,67523679,Championship,league,7269,CHMP,2014-08-10,6:00 pm,10359035,Queenston FC,10359008,Roos FC,2,0,played,,Nichols School Peek
+4506050,67523677,1st Division,league,7467,S1,2014-08-03,6:00 pm,67526770,Buffalo Bantu,59261105,Celtic Hoops,1,2,played,,JH Williams 1
+4506051,67523677,1st Division,league,7468,S2,2014-08-03,6:00 pm,26891564,FC Yemen,62886844,Buffalo Gunners,2,0,played,,Lehigh South Street
+4506118,67523677,1st Division,league,7469,CHMP,2014-08-10,3:30 pm,59261105,Celtic Hoops,26891564,FC Yemen,2,0,played,,Nichols School Strauss Truscott
+4506120,67523678,2nd Division,league,7668,S2,2014-08-03,6:00 pm,35216066,Meerkats FC,67527661,East Aurora FC,0,3,played,,Niagara University 1
+4506119,67523678,2nd Division,league,7667,S1,2014-08-03,6:00 pm,67527667,RVS United,15294627,Niagara FC,2,1,played,,West Seneca Soccer Complex A
+4506187,67523678,2nd Division,league,7669,CHMP,2014-08-10,3:30 pm,67527667,RVS United,67527661,East Aurora FC,1,3,played,,Nichols School Strauss Truscott
+4506248,67523680,3rd Division,league,9458,1,2014-08-03,6:00 pm,26892099,Rampart FC,62886826,Clarence Eagles,2,1,played,,Gateway-Longview 1
+4506249,67523680,3rd Division,league,9459,2,2014-08-03,6:00 pm,10359068,Great Lakes FC,67526455,PLYSA Toros,2,0,played,,Ives Pond 1
+4506250,67523680,3rd Division,league,9460,,2014-08-10,1:30 pm,26892099,Rampart FC,10359068,Great Lakes FC,2,3,played,,Nichols School Peek
+4506378,67523681,Over 35,over35,3506,,2014-05-16,,46512672,Blue,67532893,BYE,,,scheduled,,
+4506379,67523681,Over 35,over35,3504,,2014-05-16,6:30 pm,46512675,West United,46512663,Azzurri,3,3,played,,Sahlen's Sportspark 1
+4506380,67523681,Over 35,over35,3505,,2014-05-16,6:30 pm,46512669,Oranje,46512666,Aliens,2,7,played,,Sahlen's Sportspark 2
+4506383,67523681,Over 35,over35,3509,,2014-05-23,,46512666,Aliens,67532893,BYE,,,scheduled,,
+4506382,67523681,Over 35,over35,3507,,2014-05-23,6:30 pm,46512675,West United,46512672,Blue,0,6,played,,Sahlen's Sportspark 1
+4506381,67523681,Over 35,over35,3508,,2014-05-23,6:30 pm,46512663,Azzurri,46512669,Oranje,6,1,played,,Sahlen's Sportspark 2
+4506385,67523681,Over 35,over35,3512,,2014-05-30,,46512669,Oranje,67532893,BYE,,,scheduled,,
+4506386,67523681,Over 35,over35,3510,,2014-05-30,6:30 pm,46512663,Azzurri,46512672,Blue,0,0,played,,Sahlen's Sportspark 1
+4506384,67523681,Over 35,over35,3511,,2014-05-30,6:30 pm,46512675,West United,46512666,Aliens,0,9,played,,Sahlen's Sportspark 2
+4506389,67523681,Over 35,over35,3515,,2014-06-06,,67532893,BYE,46512663,Azzurri,,,scheduled,,
+4506388,67523681,Over 35,over35,3513,,2014-06-06,6:30 pm,46512666,Aliens,46512672,Blue,2,1,played,,Sahlen's Sportspark 1
+4506387,67523681,Over 35,over35,3514,,2014-06-06,6:30 pm,46512675,West United,46512669,Oranje,0,3,played,,Sahlen's Sportspark 2
+4506392,67523681,Over 35,over35,3517,,2014-06-13,,46512675,West United,67532893,BYE,,,scheduled,,
+4506391,67523681,Over 35,over35,3516,,2014-06-13,6:30 pm,46512672,Blue,46512669,Oranje,3,0,played,,Sahlen's Sportspark 1
+4506390,67523681,Over 35,over35,3518,,2014-06-13,6:30 pm,46512663,Azzurri,46512666,Aliens,0,3,played,,Sahlen's Sportspark 2
+4506393,67523681,Over 35,over35,3519,,2014-06-20,,67532893,BYE,46512672,Blue,,,scheduled,,
+4506394,67523681,Over 35,over35,3520,,2014-06-20,6:30 pm,46512669,Oranje,46512666,Aliens,1,4,played,,Sahlen's Sportspark 1
+4506395,67523681,Over 35,over35,3521,,2014-06-20,6:30 pm,46512675,West United,46512663,Azzurri,1,2,played,,Sahlen's Sportspark 2
+4506396,67523681,Over 35,over35,3523,,2014-06-27,,67532893,BYE,46512666,Aliens,,,scheduled,,
+4506397,67523681,Over 35,over35,3522,,2014-06-27,6:30 pm,46512669,Oranje,46512663,Azzurri,2,4,played,,Sahlen's Sportspark 1
+4506398,67523681,Over 35,over35,3524,,2014-06-27,6:30 pm,46512675,West United,46512672,Blue,0,3,played,,Sahlen's Sportspark 2
+4506401,67523681,Over 35,over35,3526,,2014-07-11,,46512669,Oranje,67532893,BYE,,,scheduled,,
+4506400,67523681,Over 35,over35,3525,,2014-07-11,6:30 pm,46512666,Aliens,46512675,West United,6,2,played,,Sahlen's Sportspark 1
+4506399,67523681,Over 35,over35,3527,,2014-07-11,6:30 pm,46512663,Azzurri,46512672,Blue,2,3,played,,Sahlen's Sportspark 2
+4506404,67523681,Over 35,over35,3529,,2014-07-18,,46512675,West United,67532893,BYE,,,scheduled,,
+4506402,67523681,Over 35,over35,3530,,2014-07-18,6:30 pm,46512672,Blue,46512669,Oranje,4,1,played,,Sahlen's Sportspark 1
+4506403,67523681,Over 35,over35,3528,,2014-07-18,6:30 pm,46512663,Azzurri,46512666,Aliens,0,3,played,,Sahlen's Sportspark 2
+4506405,67523681,Over 35,over35,3533,,2014-07-25,,67532893,BYE,46512663,Azzurri,,,scheduled,,
+4506407,67523681,Over 35,over35,3531,,2014-07-25,6:30 pm,46512669,Oranje,46512675,West United,2,4,played,,Sahlen's Sportspark 1
+4506406,67523681,Over 35,over35,3532,,2014-07-25,6:30 pm,46512666,Aliens,46512672,Blue,,,scheduled,,Sahlen's Sportspark 2
+4506410,67523681,Over 35,over35,3536,,2014-08-01,,,,,,0,0,played,,
+4506408,67523681,Over 35,over35,3534,,2014-08-01,,,,,,,,scheduled,,Sahlen's Sportspark 2
+4506409,67523681,Over 35,over35,3535,,2014-08-01,6:00 pm,46512666,Aliens,46512663,Azzurri,,,scheduled,,West Seneca Soccer Complex A
+4506251,67523681,Over 35,over35,9401,,2014-05-04,4:00 pm,62886826,Clarence Eagles,67526455,PLYSA Toros,1,5,played,,Clarence Town Hall Park 1
+4506255,67523681,Over 35,over35,9402,,2014-05-04,4:00 pm,67526458,Aurora Arsenal II,10359108,Stone Jug,0,3,played,,Knox Fields 1
+4506253,67523681,Over 35,over35,9405,,2014-05-04,6:00 pm,26892099,Rampart FC,31566782,Rust Belt United,4,1,played,,Gateway-Longview 1
+4506254,67523681,Over 35,over35,9404,,2014-05-04,6:00 pm,10359068,Great Lakes FC,10359114,Southtowns,2,0,played,,Ives Pond 2
+4506252,67523681,Over 35,over35,9403,,2014-05-04,6:00 pm,10359105,C.S. Italia,12579571,Devils,1,0,played,,Wendleville Fire Hall 1
+4506259,67523681,Over 35,over35,9409,,2014-05-11,4:00 pm,67526455,PLYSA Toros,10359114,Southtowns,5,2,played,,Wendleville Fire Hall 1
+4506256,67523681,Over 35,over35,9410,,2014-05-11,6:00 pm,62886826,Clarence Eagles,67526458,Aurora Arsenal II,5,1,played,,Clarence Town Hall Park 1
+4506260,67523681,Over 35,over35,9406,,2014-05-11,6:00 pm,31566782,Rust Belt United,10359108,Stone Jug,1,1,played,,Gateway-Longview 1
+4506258,67523681,Over 35,over35,9407,,2014-05-11,6:00 pm,12579571,Devils,26892099,Rampart FC,0,0,played,,Irvington
+4506257,67523681,Over 35,over35,9408,,2014-05-11,6:00 pm,10359105,C.S. Italia,10359068,Great Lakes FC,2,2,played,,Wendleville Fire Hall 1
+4506265,67523681,Over 35,over35,9412,,2014-05-18,4:00 pm,12579571,Devils,31566782,Rust Belt United,1,3,played,,Irvington
+4506261,67523681,Over 35,over35,9413,,2014-05-18,6:00 pm,10359068,Great Lakes FC,62886826,Clarence Eagles,2,0,played,,Ives Pond 1
+4506263,67523681,Over 35,over35,9414,,2014-05-18,6:00 pm,10359114,Southtowns,10359105,C.S. Italia,1,3,played,,Orchard Park Soccer Complex 1
+4506264,67523681,Over 35,over35,9415,,2014-05-18,6:00 pm,10359108,Stone Jug,26892099,Rampart FC,2,3,played,,Thomas Marks Elementary School 1
+4506262,67523681,Over 35,over35,9411,,2014-05-18,6:00 pm,67526455,PLYSA Toros,67526458,Aurora Arsenal II,5,0,played,,Wendleville Fire Hall 1
+4506266,67523681,Over 35,over35,9419,,2014-06-01,4:00 pm,31566782,Rust Belt United,67526455,PLYSA Toros,1,3,played,,Gateway-Longview 1
+4506267,67523681,Over 35,over35,9418,,2014-06-01,6:00 pm,62886826,Clarence Eagles,10359105,C.S. Italia,0,1,played,,Clarence Town Hall Park 1
+4506268,67523681,Over 35,over35,9417,,2014-06-01,6:00 pm,67526458,Aurora Arsenal II,12579571,Devils,1,1,played,,Knox Fields 1
+4506269,67523681,Over 35,over35,9420,,2014-06-01,6:00 pm,10359108,Stone Jug,10359068,Great Lakes FC,0,2,played,,Thomas Marks Elementary School 1
+4506270,67523681,Over 35,over35,9416,,2014-06-01,6:00 pm,26892099,Rampart FC,10359114,Southtowns,2,0,played,,Veteran's Park (GI) 1
+4506273,67523681,Over 35,over35,9421,,2014-06-08,4:00 pm,12579571,Devils,10359068,Great Lakes FC,1,1,played,,Irvington
+4506271,67523681,Over 35,over35,9424,,2014-06-08,6:00 pm,31566782,Rust Belt United,62886826,Clarence Eagles,1,4,played,,Gateway-Longview 1
+4506274,67523681,Over 35,over35,9422,,2014-06-08,6:00 pm,67526458,Aurora Arsenal II,26892099,Rampart FC,0,3,played,,Knox Fields 1
+4506275,67523681,Over 35,over35,9425,,2014-06-08,6:00 pm,10359114,Southtowns,10359108,Stone Jug,2,2,played,,Orchard Park Soccer Complex 1
+4506272,67523681,Over 35,over35,9423,,2014-06-08,6:00 pm,67526455,PLYSA Toros,10359105,C.S. Italia,5,1,played,,Wendleville Fire Hall 1
+4506280,67523681,Over 35,over35,9427,,2014-06-15,6:00 pm,10359068,Great Lakes FC,31566782,Rust Belt United,5,0,played,,Ives Pond 2
+4506279,67523681,Over 35,over35,9429,,2014-06-15,6:00 pm,10359114,Southtowns,12579571,Devils,2,3,played,,Orchard Park Soccer Complex 1
+4506277,67523681,Over 35,over35,9430,,2014-06-15,6:00 pm,10359108,Stone Jug,67526455,PLYSA Toros,3,1,played,,Thomas Marks Elementary School 1
+4506276,67523681,Over 35,over35,9428,,2014-06-15,6:00 pm,26892099,Rampart FC,62886826,Clarence Eagles,3,3,played,,Veteran's Park (GI) 1
+4506278,67523681,Over 35,over35,9426,,2014-06-15,6:00 pm,10359105,C.S. Italia,67526458,Aurora Arsenal II,4,3,played,,Wendleville Fire Hall 1
+4506284,67523681,Over 35,over35,9431,,2014-06-22,4:00 pm,62886826,Clarence Eagles,10359114,Southtowns,4,0,played,,Clarence Town Hall Park 1
+4506281,67523681,Over 35,over35,9432,,2014-06-22,4:00 pm,67526455,PLYSA Toros,10359068,Great Lakes FC,5,1,played,,Wendleville Fire Hall 1
+4506285,67523681,Over 35,over35,9435,,2014-06-22,6:00 pm,12579571,Devils,10359108,Stone Jug,3,1,played,,Irvington
+4506283,67523681,Over 35,over35,9433,,2014-06-22,6:00 pm,67526458,Aurora Arsenal II,31566782,Rust Belt United,1,0,played,,Knox Fields 1
+4506282,67523681,Over 35,over35,9434,,2014-06-22,6:00 pm,10359105,C.S. Italia,26892099,Rampart FC,1,3,played,,Wendleville Fire Hall 1
+4506287,67523681,Over 35,over35,9436,,2014-06-29,4:00 pm,26892099,Rampart FC,67526455,PLYSA Toros,5,1,played,,Veteran's Park (GI) 1
+4506290,67523681,Over 35,over35,9439,,2014-06-29,6:00 pm,31566782,Rust Belt United,10359114,Southtowns,5,4,played,,Gateway-Longview 1
+4506286,67523681,Over 35,over35,9438,,2014-06-29,6:00 pm,12579571,Devils,62886826,Clarence Eagles,0,3,played,,Irvington
+4506288,67523681,Over 35,over35,9437,,2014-06-29,6:00 pm,10359068,Great Lakes FC,67526458,Aurora Arsenal II,2,0,played,,Ives Pond 2
+4506289,67523681,Over 35,over35,9440,,2014-06-29,6:00 pm,10359108,Stone Jug,10359105,C.S. Italia,2,2,played,,Thomas Marks Elementary School 1
+4506292,67523681,Over 35,over35,9441,,2014-07-13,4:00 pm,67526455,PLYSA Toros,12579571,Devils,4,3,played,,Wendleville Fire Hall 1
+4506295,67523681,Over 35,over35,9445,,2014-07-13,6:00 pm,62886826,Clarence Eagles,10359108,Stone Jug,2,0,played,,Clarence Town Hall Park 1
+4506293,67523681,Over 35,over35,9443,,2014-07-13,6:00 pm,10359068,Great Lakes FC,26892099,Rampart FC,3,2,played,,Ives Pond 1
+4506291,67523681,Over 35,over35,9444,,2014-07-13,6:00 pm,10359114,Southtowns,67526458,Aurora Arsenal II,3,4,played,,Orchard Park Soccer Complex 1
+4506294,67523681,Over 35,over35,9442,,2014-07-13,6:00 pm,10359105,C.S. Italia,31566782,Rust Belt United,5,1,played,,Wendleville Fire Hall 1
+4506300,67523681,Over 35,over35,9450,,2014-07-20,6:00 pm,31566782,Rust Belt United,26892099,Rampart FC,0,4,played,,Gateway-Longview 1
+4506298,67523681,Over 35,over35,9448,,2014-07-20,6:00 pm,12579571,Devils,10359105,C.S. Italia,0,1,played,,Irvington
+4506299,67523681,Over 35,over35,9447,,2014-07-20,6:00 pm,10359114,Southtowns,10359068,Great Lakes FC,0,2,played,,Orchard Park Soccer Complex 2
+4506297,67523681,Over 35,over35,9449,,2014-07-20,6:00 pm,10359108,Stone Jug,67526458,Aurora Arsenal II,1,0,played,,Thomas Marks Elementary School 1
+4506296,67523681,Over 35,over35,9446,,2014-07-20,6:00 pm,67526455,PLYSA Toros,62886826,Clarence Eagles,1,2,played,,Wendleville Fire Hall 1
+4506303,67523681,Over 35,over35,9453,,2014-07-27,6:00 pm,10359068,Great Lakes FC,10359105,C.S. Italia,4,0,played,,Ives Pond 1
+4506301,67523681,Over 35,over35,9455,,2014-07-27,6:00 pm,67526458,Aurora Arsenal II,62886826,Clarence Eagles,0,2,played,,Knox Fields 1
+4506302,67523681,Over 35,over35,9454,,2014-07-27,6:00 pm,10359114,Southtowns,67526455,PLYSA Toros,0,2,played,,Orchard Park Soccer Complex 1
+4506305,67523681,Over 35,over35,9451,,2014-07-27,6:00 pm,10359108,Stone Jug,31566782,Rust Belt United,2,1,played,,Thomas Marks Elementary School 1
+4506304,67523681,Over 35,over35,9452,,2014-07-27,6:00 pm,26892099,Rampart FC,12579571,Devils,7,1,played,,Veteran's Park (GI) 1
+4506248,67523681,Over 35,over35,9458,1,2014-08-03,6:00 pm,26892099,Rampart FC,62886826,Clarence Eagles,2,1,played,,Gateway-Longview 1
+4506249,67523681,Over 35,over35,9459,2,2014-08-03,6:00 pm,10359068,Great Lakes FC,67526455,PLYSA Toros,2,0,played,,Ives Pond 1
+4506250,67523681,Over 35,over35,9460,,2014-08-10,1:30 pm,26892099,Rampart FC,10359068,Great Lakes FC,2,3,played,,Nichols School Peek
+4583899,68014878,BDSL Wood Cup Bracket,cup,1,,2014-05-01,6:30 pm,67526458,Aurora Arsenal II,10359114,Southtowns,0,2,played,FT,
+4583900,68014878,BDSL Wood Cup Bracket,cup,2,,2014-05-01,6:30 pm,15296244,Wolf Mill,67527670,FC Quake,2,3,played,PK,
+4588725,68014878,BDSL Wood Cup Bracket,cup,20,,2014-05-01,6:30 pm,31566782,Rust Belt United,67526455,PLYSA Toros,0,2,played,FT,
+4588726,68014878,BDSL Wood Cup Bracket,cup,21,,2014-05-01,6:30 pm,12579571,Devils,67527664,Lakeshore SC,2,0,played,FT,
+4583901,68014878,BDSL Wood Cup Bracket,cup,3,,2014-05-01,6:30 pm,10359105,C.S. Italia,67527661,East Aurora FC,0,2,played,FT,
+4583902,68014878,BDSL Wood Cup Bracket,cup,4,,2014-05-01,6:30 pm,67527667,RVS United,62886826,Clarence Eagles,8,0,played,FT,
+4583908,68014878,BDSL Wood Cup Bracket,cup,10,,2014-05-15,6:30 pm,10359062,Tonawanda United,10359077,WNY United Reds,6,1,played,FT,
+4583909,68014878,BDSL Wood Cup Bracket,cup,11,,2014-05-15,6:30 pm,59262126,Celtic Classic,12579571,Devils,0,1,played,FT,
+4583910,68014878,BDSL Wood Cup Bracket,cup,12,,2014-05-15,6:30 pm,67527667,RVS United,26892099,Rampart FC,0,1,played,OT,
+4583903,68014878,BDSL Wood Cup Bracket,cup,5,,2014-05-15,6:30 pm,10359092,Ukraine,10359114,Southtowns,2,0,played,FT,
+4583904,68014878,BDSL Wood Cup Bracket,cup,6,,2014-05-15,6:30 pm,15294627,Niagara FC,10359068,Great Lakes FC,4,1,played,FT,
+4583905,68014878,BDSL Wood Cup Bracket,cup,7,,2014-05-15,6:30 pm,10359108,Stone Jug,67526455,PLYSA Toros,0,2,played,FT,
+4583906,68014878,BDSL Wood Cup Bracket,cup,8,,2014-05-15,6:30 pm,67527670,FC Quake,59262129,FC Alpacas,2,0,played,FT,
+4583907,68014878,BDSL Wood Cup Bracket,cup,9,,2014-05-15,6:30 pm,35216066,Meerkats FC,67527661,East Aurora FC,2,0,played,FT,
+4583911,68014878,BDSL Wood Cup Bracket,cup,13,,2014-06-05,6:30 pm,10359092,Ukraine,15294627,Niagara FC,1,2,played,OT,
+4583912,68014878,BDSL Wood Cup Bracket,cup,14,,2014-06-05,6:30 pm,67526455,PLYSA Toros,67527670,FC Quake,3,2,played,PK,
+4583913,68014878,BDSL Wood Cup Bracket,cup,15,,2014-06-05,6:30 pm,35216066,Meerkats FC,10359062,Tonawanda United,2,1,played,OT,
+4583914,68014878,BDSL Wood Cup Bracket,cup,16,,2014-06-05,6:30 pm,12579571,Devils,26892099,Rampart FC,0,6,played,FT,
+4583915,68014878,BDSL Wood Cup Bracket,cup,17,,2014-07-10,6:30 pm,15294627,Niagara FC,67526455,PLYSA Toros,4,3,played,PK,
+4583916,68014878,BDSL Wood Cup Bracket,cup,18,,2014-07-10,6:30 pm,35216066,Meerkats FC,26892099,Rampart FC,3,1,played,FT,
+4583917,68014878,BDSL Wood Cup Bracket,cup,19,,2014-08-07,6:30 pm,15294627,Niagara FC,35216066,Meerkats FC,2,1,played,,Nichols School Peek

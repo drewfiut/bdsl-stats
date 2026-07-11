@@ -1,0 +1,532 @@
+game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id,home_name,away_club_id,away_name,home_score,away_score,status,result_note,location
+8075447,95086874,Premier,league,9474,,2019-08-04,6:00 pm,10359050,Lackawanna FCY,26895907,Amherst Sharpshooters,1,1,played,PK,Lehigh
+8075446,95086874,Premier,league,9473,,2019-08-04,8:00 pm,10350991,BSC Raiders,18647016,Buffalo United SS,4,0,played,,Kenmore East Sparky Adams Field
+8075450,95086874,Premier,league,9477,,2019-08-11,6:00 pm,10350991,BSC Raiders,26895907,Amherst Sharpshooters,2,1,played,PK,Nichols School Strauss Truscott
+7994261,95086874,Premier,league,7003,,,,10350991,BSC Raiders,10359017,Celtic United,0,0,played,FT,
+7994262,95086874,Premier,league,7004,,2019-05-05,6:00 pm,12579600,Wolves FC,10359005,Clarence,0,1,played,,Kenmore East Sparky Adams Field
+7994260,95086874,Premier,league,7002,,2019-05-05,6:00 pm,75479641,Williamsville Willies,10359035,Queenston FC,1,0,played,,Nichols School Strauss Truscott
+7994263,95086874,Premier,league,7005,,2019-05-05,6:00 pm,75479650,Pendleton United FC,10359050,Lackawanna FCY,0,4,played,,Sweet Home High School Turf
+7994264,95086874,Premier,league,7006,,2019-05-05,6:00 pm,26895907,Amherst Sharpshooters,59260537,Southtowns FPFC,2,1,played,,Williamsville South HS Athletic Field
+7994259,95086874,Premier,league,7001,,2019-05-05,8:00 pm,18647016,Buffalo United SS,10359047,Inter SC,1,1,played,,D'Youville College 1
+7994269,95086874,Premier,league,7011,,2019-05-12,4:00 pm,75479641,Williamsville Willies,26895907,Amherst Sharpshooters,0,1,played,,Nichols School Strauss Truscott
+7994268,95086874,Premier,league,7010,,2019-05-12,6:00 pm,12579600,Wolves FC,59260537,Southtowns FPFC,3,0,played,,Kenmore East Sparky Adams Field
+7994266,95086874,Premier,league,7008,,2019-05-12,6:00 pm,10359017,Celtic United,10359050,Lackawanna FCY,1,3,played,,Kenmore West Crosby Field
+7994265,95086874,Premier,league,7007,,2019-05-12,6:00 pm,10359005,Clarence,10359047,Inter SC,5,1,played,,Medaille College Sports Complex
+7994267,95086874,Premier,league,7009,,2019-05-12,8:00 pm,10350991,BSC Raiders,18647016,Buffalo United SS,2,0,played,,Kenmore East Sparky Adams Field
+7994270,95086874,Premier,league,7012,,2019-05-12,8:00 pm,10359035,Queenston FC,75479650,Pendleton United FC,1,1,played,,Sweet Home High School Turf
+7994275,95086874,Premier,league,7017,,2019-05-19,12:00 pm,10359035,Queenston FC,10359017,Celtic United,1,4,played,,Sparky Adams Field Turf
+7994271,95086874,Premier,league,7013,,2019-05-19,6:00 pm,18647016,Buffalo United SS,75479641,Williamsville Willies,0,0,played,,D'Youville College 1
+7994273,95086874,Premier,league,7015,,2019-05-19,6:00 pm,10359047,Inter SC,12579600,Wolves FC,4,1,played,,Nichols School Strauss Truscott
+7994276,95086874,Premier,league,7018,,2019-05-19,6:00 pm,26895907,Amherst Sharpshooters,10359005,Clarence,2,2,played,,Williamsville South HS Athletic Field
+7994274,95086874,Premier,league,7016,,2019-05-19,8:00 pm,10350991,BSC Raiders,75479650,Pendleton United FC,3,0,played,,Kenmore East Sparky Adams Field
+7994272,95086874,Premier,league,7014,,2019-05-19,8:00 pm,59260537,Southtowns FPFC,10359050,Lackawanna FCY,1,5,played,,Medaille College Sports Complex
+7994277,95086874,Premier,league,7019,,2019-06-02,4:00 pm,10359017,Celtic United,59260537,Southtowns FPFC,2,6,played,,Kenmore West Crosby Field
+7994280,95086874,Premier,league,7022,,2019-06-02,6:00 pm,10350991,BSC Raiders,10359005,Clarence,6,1,played,,Kenmore East Sparky Adams Field
+7994278,95086874,Premier,league,7020,,2019-06-02,6:00 pm,10359050,Lackawanna FCY,10359047,Inter SC,1,1,played,,Mulroy Pierce Field
+7994282,95086874,Premier,league,7024,,2019-06-02,6:00 pm,26895907,Amherst Sharpshooters,18647016,Buffalo United SS,1,0,played,,Williamsville South HS Athletic Field
+7994279,95086874,Premier,league,7021,,2019-06-02,8:00 pm,12579600,Wolves FC,10359035,Queenston FC,0,2,played,,Kenmore East Sparky Adams Field
+7994281,95086874,Premier,league,7023,,2019-06-02,8:00 pm,75479650,Pendleton United FC,75479641,Williamsville Willies,1,1,played,,Sweet Home High School Turf
+7994284,95086874,Premier,league,7026,,2019-06-09,4:00 pm,10359047,Inter SC,10359017,Celtic United,5,2,played,,Nichols School Strauss Truscott
+7994283,95086874,Premier,league,7025,,2019-06-09,6:00 pm,18647016,Buffalo United SS,10359005,Clarence,5,5,played,,D'Youville College 1
+7994286,95086874,Premier,league,7028,,2019-06-09,6:00 pm,10359050,Lackawanna FCY,12579600,Wolves FC,6,2,played,,Lehigh
+7994285,95086874,Premier,league,7027,,2019-06-09,6:00 pm,75479641,Williamsville Willies,10350991,BSC Raiders,0,3,played,,Nichols School Strauss Truscott
+7994287,95086874,Premier,league,7029,,2019-06-09,6:00 pm,75479650,Pendleton United FC,26895907,Amherst Sharpshooters,0,8,played,,Sweet Home High School Turf
+7994288,95086874,Premier,league,7030,,2019-06-09,8:00 pm,10359035,Queenston FC,59260537,Southtowns FPFC,7,0,played,,D'Youville College 1
+7994291,95086874,Premier,league,7033,,2019-06-16,6:00 pm,18647016,Buffalo United SS,75479650,Pendleton United FC,7,1,played,,D'Youville College 1
+7994289,95086874,Premier,league,7031,,2019-06-16,6:00 pm,10359005,Clarence,75479641,Williamsville Willies,2,4,played,,Kenmore East Sparky Adams Field
+7994290,95086874,Premier,league,7032,,2019-06-16,6:00 pm,10359017,Celtic United,12579600,Wolves FC,2,0,played,,Kenmore West Crosby Field
+7994293,95086874,Premier,league,7035,,2019-06-16,6:00 pm,10359047,Inter SC,59260537,Southtowns FPFC,2,0,played,,Nichols School Strauss Truscott
+7994294,95086874,Premier,league,7036,,2019-06-16,8:00 pm,10350991,BSC Raiders,26895907,Amherst Sharpshooters,0,0,played,,Kenmore East Sparky Adams Field
+7994297,95086874,Premier,league,7039,,2019-06-23,4:00 pm,75479641,Williamsville Willies,12579600,Wolves FC,2,2,played,,Nichols School Strauss Truscott
+7994295,95086874,Premier,league,7037,,2019-06-23,6:00 pm,10359050,Lackawanna FCY,18647016,Buffalo United SS,3,1,played,,Lehigh
+7994299,95086874,Premier,league,7041,,2019-06-23,6:00 pm,10359035,Queenston FC,10359047,Inter SC,0,1,played,,Niagara Falls High School 2
+7994298,95086874,Premier,league,7040,,2019-06-23,6:00 pm,75479650,Pendleton United FC,10359005,Clarence,0,2,played,FT,Sweet Home High School Turf
+7994300,95086874,Premier,league,7042,,2019-06-23,6:00 pm,26895907,Amherst Sharpshooters,10359017,Celtic United,3,2,played,,Williamsville South HS Athletic Field
+7994296,95086874,Premier,league,7038,,2019-06-23,8:00 pm,59260537,Southtowns FPFC,10350991,BSC Raiders,2,6,played,,Medaille College Sports Complex
+7994304,95086874,Premier,league,7046,,2019-06-30,4:00 pm,10359050,Lackawanna FCY,26895907,Amherst Sharpshooters,4,0,played,,Lehigh
+7994302,95086874,Premier,league,7044,,2019-06-30,6:00 pm,10359017,Celtic United,75479641,Williamsville Willies,2,0,played,,Kenmore West Crosby Field
+7994301,95086874,Premier,league,7043,,2019-06-30,6:00 pm,10359005,Clarence,59260537,Southtowns FPFC,1,0,played,,Mulroy Pierce Field
+7994305,95086874,Premier,league,7047,,2019-06-30,6:00 pm,10359047,Inter SC,10350991,BSC Raiders,0,1,played,,Nichols School Strauss Truscott
+7994306,95086874,Premier,league,7048,,2019-06-30,6:00 pm,75479650,Pendleton United FC,12579600,Wolves FC,2,3,played,,Sweet Home High School Turf
+7994303,95086874,Premier,league,7045,,2019-06-30,8:00 pm,18647016,Buffalo United SS,10359035,Queenston FC,4,1,played,,D'Youville College 1
+7994308,95086874,Premier,league,7050,,2019-07-07,6:00 pm,10359005,Clarence,10359017,Celtic United,1,0,played,,Clarence Soccer Center 11
+7994310,95086874,Premier,league,7052,,2019-07-07,6:00 pm,12579600,Wolves FC,18647016,Buffalo United SS,1,3,played,,Kenmore East Sparky Adams Field
+7994307,95086874,Premier,league,7049,,2019-07-07,6:00 pm,59260537,Southtowns FPFC,75479641,Williamsville Willies,2,4,played,,Medaille College Sports Complex
+7994311,95086874,Premier,league,7053,,2019-07-07,6:00 pm,75479650,Pendleton United FC,10359047,Inter SC,1,1,played,,Sweet Home High School Turf
+7994312,95086874,Premier,league,7054,,2019-07-07,6:00 pm,26895907,Amherst Sharpshooters,10359035,Queenston FC,1,2,played,,Williamsville South HS Athletic Field
+7994309,95086874,Premier,league,7051,,2019-07-07,8:00 pm,10350991,BSC Raiders,10359050,Lackawanna FCY,3,0,played,,Kenmore East Sparky Adams Field
+7994313,95086874,Premier,league,7055,,2019-07-14,4:00 pm,10359017,Celtic United,75479650,Pendleton United FC,2,3,played,,Kenmore West Crosby Field
+7994315,95086874,Premier,league,7057,,2019-07-14,6:00 pm,10359050,Lackawanna FCY,75479641,Williamsville Willies,2,1,played,,Lehigh
+7994314,95086874,Premier,league,7056,,2019-07-14,6:00 pm,59260537,Southtowns FPFC,18647016,Buffalo United SS,0,10,played,,Medaille College Sports Complex
+7994316,95086874,Premier,league,7058,,2019-07-14,6:00 pm,10359047,Inter SC,26895907,Amherst Sharpshooters,0,0,played,,Nichols School Strauss Truscott
+7994318,95086874,Premier,league,7060,,2019-07-14,6:00 pm,10359035,Queenston FC,10359005,Clarence,1,3,played,,Veteran's Park (GI) Front Field 3
+7994317,95086874,Premier,league,7059,,2019-07-14,8:00 pm,12579600,Wolves FC,10350991,BSC Raiders,1,3,played,,Kenmore East Sparky Adams Field
+7994292,95086874,Premier,league,7034,,2019-07-17,6:30 pm,10359050,Lackawanna FCY,10359035,Queenston FC,4,0,played,,Lehigh
+7994319,95086874,Premier,league,7061,,2019-07-21,6:00 pm,10359005,Clarence,10359050,Lackawanna FCY,4,2,played,,Clarence Soccer Center 11
+7994320,95086874,Premier,league,7062,,2019-07-21,6:00 pm,10359017,Celtic United,18647016,Buffalo United SS,0,2,played,FT,Kenmore West Crosby Field
+7994321,95086874,Premier,league,7063,,2019-07-21,6:00 pm,59260537,Southtowns FPFC,75479650,Pendleton United FC,0,2,played,FT,Medaille College Sports Complex
+7994322,95086874,Premier,league,7064,,2019-07-21,6:00 pm,75479641,Williamsville Willies,10359047,Inter SC,0,1,played,,Nichols School Strauss Truscott
+7994323,95086874,Premier,league,7065,,2019-07-21,6:00 pm,10359035,Queenston FC,10350991,BSC Raiders,1,2,played,,Veteran's Park (GI) Front Field 3
+7994324,95086874,Premier,league,7066,,2019-07-21,6:00 pm,26895907,Amherst Sharpshooters,12579600,Wolves FC,4,1,played,,Williamsville South HS Athletic Field
+8075448,95086874,Premier,league,9475,QF1,2019-07-28,6:00 pm,10359005,Clarence,18647016,Buffalo United SS,2,4,played,,Clarence Soccer Center 1
+8075449,95086874,Premier,league,9476,QF2,2019-07-28,6:00 pm,26895907,Amherst Sharpshooters,10359047,Inter SC,2,2,played,PK,Williamsville South HS Athletic Field
+8075442,95086878,Championship,league,9469,SF2,2019-08-04,6:00 pm,10359023,Polonia,10359008,Roos FC,1,2,played,,D'Youville College 1
+8075441,95086878,Championship,league,9468,SF1,2019-08-04,8:00 pm,59261096,Beast City SC,75159801,OP Alliance,2,2,played,PK,Sweet Home High School Turf
+8075445,95086878,Championship,league,9472,,2019-08-11,5:50 pm,10359008,Roos FC,75159801,OP Alliance,1,2,played,,Nichols School Peek
+7994327,95086878,Championship,league,7203,,2019-05-05,4:00 pm,10359086,Rangers,10359080,Eclipse,2,2,played,,D'Youville College 1
+7994326,95086878,Championship,league,7202,,2019-05-05,6:00 pm,75159921,West Side FC,10359023,Polonia,0,1,played,,D'Youville College 1
+7994325,95086878,Championship,league,7201,,2019-05-05,6:00 pm,59261105,Celtic Hoops,75479674,Los Chupacabras,2,0,played,,Kenmore West Crosby Field
+7994329,95086878,Championship,league,7205,,2019-05-05,8:00 pm,75159801,OP Alliance,15294627,Niagara FC,4,0,played,,Medaille College Sports Complex
+7994330,95086878,Championship,league,7206,,2019-05-05,8:00 pm,59261096,Beast City SC,10359074,Lykan FC,4,0,played,,Sweet Home High School Turf
+7994331,95086878,Championship,league,7207,,2019-05-12,4:00 pm,59261105,Celtic Hoops,10359074,Lykan FC,1,1,played,,Kenmore West Crosby Field
+7994332,95086878,Championship,league,7208,,2019-05-12,6:00 pm,10359086,Rangers,75479674,Los Chupacabras,1,2,played,,D'Youville College 1
+7994335,95086878,Championship,league,7211,,2019-05-12,6:00 pm,10359080,Eclipse,10359023,Polonia,1,5,played,,Nichols School Strauss Truscott
+7994334,95086878,Championship,league,7210,,2019-05-12,8:00 pm,15294627,Niagara FC,10359008,Roos FC,0,2,played,,Niagara University 1
+7994337,95086878,Championship,league,7213,,2019-05-19,4:00 pm,75159921,West Side FC,10359086,Rangers,3,1,played,,D'Youville College 1
+7994339,95086878,Championship,league,7215,,2019-05-19,4:00 pm,10359008,Roos FC,10359074,Lykan FC,5,0,played,,Medaille College Sports Complex
+7994341,95086878,Championship,league,7217,,2019-05-19,4:00 pm,10359080,Eclipse,15294627,Niagara FC,3,2,played,,Nichols School Strauss Truscott
+7994340,95086878,Championship,league,7216,,2019-05-19,6:00 pm,75479674,Los Chupacabras,59261096,Beast City SC,0,2,played,,Niagara University 1
+7994338,95086878,Championship,league,7214,,2019-05-19,8:00 pm,75159801,OP Alliance,67527661,East Aurora FC,2,1,played,,D'Youville College 1
+7994342,95086878,Championship,league,7218,,2019-05-22,6:30 pm,10359023,Polonia,59261105,Celtic Hoops,6,0,played,,Mulroy Pierce Field
+7994336,95086878,Championship,league,7212,,2019-05-26,6:00 pm,75159801,OP Alliance,59261096,Beast City SC,0,3,played,,Orchard Park Soccer Complex 1
+7994343,95086878,Championship,league,7219,,2019-06-02,4:00 pm,10359086,Rangers,67527661,East Aurora FC,1,1,played,,D'Youville College 1
+7994345,95086878,Championship,league,7221,,2019-06-02,4:00 pm,10359074,Lykan FC,10359080,Eclipse,4,0,played,,Hamburg High School Turf Field
+7994347,95086878,Championship,league,7223,,2019-06-02,4:00 pm,75479674,Los Chupacabras,75159801,OP Alliance,0,3,played,,Niagara University 1
+7994344,95086878,Championship,league,7220,,2019-06-02,6:00 pm,75159921,West Side FC,59261096,Beast City SC,2,2,played,,D'Youville College 1
+7994346,95086878,Championship,league,7222,,2019-06-02,6:00 pm,10359008,Roos FC,59261105,Celtic Hoops,2,1,played,,Medaille College Sports Complex
+7994348,95086878,Championship,league,7224,,2019-06-02,6:00 pm,10359023,Polonia,15294627,Niagara FC,2,4,played,,Walden Pond Park 1
+7994351,95086878,Championship,league,7227,,2019-06-09,6:00 pm,10359074,Lykan FC,15294627,Niagara FC,2,2,played,,Hamburg High School Turf Field
+7994349,95086878,Championship,league,7225,,2019-06-09,6:00 pm,59261105,Celtic Hoops,10359080,Eclipse,5,2,played,,Kenmore West Crosby Field
+7994352,95086878,Championship,league,7228,,2019-06-09,6:00 pm,10359008,Roos FC,10359023,Polonia,2,2,played,,Medaille College Sports Complex
+7994353,95086878,Championship,league,7229,,2019-06-09,6:00 pm,75159801,OP Alliance,10359086,Rangers,1,1,played,,Orchard Park Soccer Complex 1
+7994350,95086878,Championship,league,7226,,2019-06-09,8:00 pm,75479674,Los Chupacabras,75159921,West Side FC,0,4,played,,Niagara University 1
+7994354,95086878,Championship,league,7230,,2019-06-09,8:00 pm,59261096,Beast City SC,67527661,East Aurora FC,3,1,played,,Sweet Home High School Turf
+7994357,95086878,Championship,league,7233,,2019-06-16,4:00 pm,10359080,Eclipse,10359008,Roos FC,2,5,played,,Nichols School Strauss Truscott
+7994360,95086878,Championship,league,7236,,2019-06-16,6:00 pm,10359023,Polonia,10359074,Lykan FC,3,0,played,,Lancaster Middle School 1
+7994356,95086878,Championship,league,7232,,2019-06-16,6:00 pm,75479674,Los Chupacabras,67527661,East Aurora FC,2,1,played,,Niagara University 1
+7994359,95086878,Championship,league,7235,,2019-06-16,6:00 pm,59261096,Beast City SC,10359086,Rangers,0,1,played,,Sweet Home High School Turf
+7994355,95086878,Championship,league,7231,,2019-06-16,8:00 pm,15294627,Niagara FC,59261105,Celtic Hoops,3,1,played,,Niagara University 1
+7994361,95086878,Championship,league,7237,,2019-06-23,6:00 pm,10359086,Rangers,10359008,Roos FC,0,2,played,,D'Youville College 1
+7994362,95086878,Championship,league,7238,,2019-06-23,6:00 pm,67527661,East Aurora FC,59261105,Celtic Hoops,2,1,played,,East Aurora High School Turf
+7994363,95086878,Championship,league,7239,,2019-06-23,6:00 pm,10359074,Lykan FC,75159921,West Side FC,0,0,played,,Hamburg High School Turf Field
+7994364,95086878,Championship,league,7240,,2019-06-23,6:00 pm,15294627,Niagara FC,75479674,Los Chupacabras,0,1,played,,Niagara University 1
+7994365,95086878,Championship,league,7241,,2019-06-23,6:00 pm,10359080,Eclipse,59261096,Beast City SC,1,6,played,,Nichols School Strauss Truscott
+7994366,95086878,Championship,league,7242,,2019-06-23,6:00 pm,10359023,Polonia,75159801,OP Alliance,0,0,played,,Walden Pond Park 1
+7994369,95086878,Championship,league,7245,,2019-06-30,4:00 pm,10359074,Lykan FC,67527661,East Aurora FC,1,1,played,,Hamburg High School Turf Field
+7994367,95086878,Championship,league,7243,,2019-06-30,4:00 pm,59261105,Celtic Hoops,75159921,West Side FC,2,1,played,,Kenmore West Crosby Field
+7994371,95086878,Championship,league,7247,,2019-06-30,4:00 pm,10359080,Eclipse,75479674,Los Chupacabras,2,4,played,,Nichols School Strauss Truscott
+7994368,95086878,Championship,league,7244,,2019-06-30,6:00 pm,10359086,Rangers,10359023,Polonia,0,4,played,,D'Youville College 1
+7994370,95086878,Championship,league,7246,,2019-06-30,6:00 pm,10359008,Roos FC,75159801,OP Alliance,2,2,played,,Medaille College Sports Complex
+7994372,95086878,Championship,league,7248,,2019-06-30,8:00 pm,59261096,Beast City SC,15294627,Niagara FC,5,1,played,,Sweet Home High School Turf
+7994374,95086878,Championship,league,7250,,2019-07-07,6:00 pm,75159921,West Side FC,10359008,Roos FC,1,1,played,,D'Youville College 1
+7994375,95086878,Championship,league,7251,,2019-07-07,6:00 pm,67527661,East Aurora FC,10359023,Polonia,1,3,played,,East Aurora High School Turf
+7994373,95086878,Championship,league,7249,,2019-07-07,6:00 pm,59261105,Celtic Hoops,59261096,Beast City SC,1,7,played,,Kenmore West Crosby Field
+7994376,95086878,Championship,league,7252,,2019-07-07,6:00 pm,75479674,Los Chupacabras,10359074,Lykan FC,1,1,played,,Niagara University 1
+7994378,95086878,Championship,league,7254,,2019-07-07,6:00 pm,10359080,Eclipse,75159801,OP Alliance,2,2,played,,Nichols School Strauss Truscott
+7994377,95086878,Championship,league,7253,,2019-07-07,8:00 pm,15294627,Niagara FC,10359086,Rangers,5,1,played,,Niagara University 1
+7994381,95086878,Championship,league,7257,,2019-07-14,4:00 pm,10359008,Roos FC,75479674,Los Chupacabras,3,0,played,,Medaille College Sports Complex
+7994379,95086878,Championship,league,7255,,2019-07-14,6:00 pm,10359086,Rangers,10359074,Lykan FC,0,2,played,,D'Youville College 1
+7994380,95086878,Championship,league,7256,,2019-07-14,6:00 pm,67527661,East Aurora FC,10359080,Eclipse,6,0,played,,East Aurora High School Turf
+7994383,95086878,Championship,league,7259,,2019-07-14,6:00 pm,75159801,OP Alliance,59261105,Celtic Hoops,5,1,played,,Orchard Park Soccer Complex 1
+7994382,95086878,Championship,league,7258,,2019-07-14,8:00 pm,15294627,Niagara FC,75159921,West Side FC,6,2,played,,Niagara University 1
+7994384,95086878,Championship,league,7260,,2019-07-14,8:00 pm,59261096,Beast City SC,10359023,Polonia,4,2,played,,Sweet Home High School Turf
+7994328,95086878,Championship,league,7204,,2019-07-18,6:30 pm,10359008,Roos FC,67527661,East Aurora FC,1,1,played,,East Aurora High School Turf
+7994358,95086878,Championship,league,7234,,2019-07-18,6:30 pm,75159801,OP Alliance,75159921,West Side FC,1,1,played,,Orchard Park Soccer Complex 1
+7994385,95086878,Championship,league,7261,,2019-07-21,4:00 pm,59261105,Celtic Hoops,10359086,Rangers,4,4,played,,Kenmore West Crosby Field
+7994386,95086878,Championship,league,7262,,2019-07-21,6:00 pm,75159921,West Side FC,10359080,Eclipse,2,0,played,FT,D'Youville College 1
+7994388,95086878,Championship,league,7264,,2019-07-21,6:00 pm,67527661,East Aurora FC,15294627,Niagara FC,5,4,played,,East Aurora High School Turf
+7994387,95086878,Championship,league,7263,,2019-07-21,6:00 pm,10359074,Lykan FC,75159801,OP Alliance,1,0,played,,Hamburg High School Turf Field
+7994389,95086878,Championship,league,7265,,2019-07-21,6:00 pm,59261096,Beast City SC,10359008,Roos FC,4,1,played,,Sweet Home High School Turf
+7994390,95086878,Championship,league,7266,,2019-07-21,6:00 pm,10359023,Polonia,75479674,Los Chupacabras,3,1,played,,Walden Pond Park 1
+7994333,95086878,Championship,league,7209,,2019-07-25,6:30 pm,67527661,East Aurora FC,75159921,West Side FC,1,5,played,,East Aurora High School Turf
+8075443,95086878,Championship,league,9470,QF1,2019-07-28,6:00 pm,10359008,Roos FC,10359074,Lykan FC,3,2,played,,Medaille College Sports Complex
+8075444,95086878,Championship,league,9471,QF2,2019-07-28,6:00 pm,75159801,OP Alliance,75159921,West Side FC,6,0,played,,Orchard Park Soccer Complex 1
+8075456,95086876,1st Division,league,9483,SF2,2019-08-04,4:00 pm,91256977,Lykan United,10359111,Crimson SPAL FC,2,0,played,OT,Hamburg High School Turf Field
+8075455,95086876,1st Division,league,9482,SF1,2019-08-04,4:00 pm,91256980,Olean 1854 FC,10350976,SoHo FC,3,1,played,,St. Bonaventure Marra Fields Complex
+8075457,95086876,1st Division,league,9484,RELEG,2019-08-05,8:00 pm,75479662,Celtic Brigade,95088183,FC Draco,3,1,played,,Sparky Adams Field Turf
+8075458,95086876,1st Division,league,9485,,2019-08-11,4:05 pm,91256980,Olean 1854 FC,91256977,Lykan United,1,0,played,,Nichols School Strauss Truscott
+7994886,95086876,1st Division,league,7403,,2019-05-05,2:00 pm,10350976,SoHo FC,91256977,Lykan United,0,3,played,,Nichols School Strauss Truscott
+7994884,95086876,1st Division,league,7401,,2019-05-05,4:00 pm,75479662,Celtic Brigade,75479647,Celtic 1888,1,3,played,,Kenmore West Crosby Field
+7994890,95086876,1st Division,league,7407,,2019-05-05,4:00 pm,10359002,West Seneca Panthers,91256980,Olean 1854 FC,0,6,played,,West Seneca Soccer Complex A
+7994885,95086876,1st Division,league,7402,,2019-05-05,6:00 pm,67527670,FC Quake,67526452,West Seneca FC,1,0,played,,Medaille College Sports Complex
+7994888,95086876,1st Division,league,7405,,2019-05-05,6:00 pm,10359111,Crimson SPAL FC,75159915,NMB FC,1,4,played,,Niagara Falls High School 2
+7994891,95086876,1st Division,league,7408,,2019-05-05,6:00 pm,75479680,Honey Badgers,95088186,Cavallucci Marini,0,6,played,,West Seneca Soccer Complex A
+7994892,95086876,1st Division,league,7409,,2019-05-05,6:00 pm,10359117,Dutch United FC,26891552,Buffalo Celtic,2,0,played,,Westwood Park Turf Field
+7994897,95086876,1st Division,league,7414,,2019-05-12,2:00 pm,10359092,Ukraine,75479647,Celtic 1888,4,4,played,,Mulroy Pierce Field
+7994894,95086876,1st Division,league,7411,,2019-05-12,4:00 pm,26891552,Buffalo Celtic,10350976,SoHo FC,0,8,played,,Kenmore East Grass
+7994893,95086876,1st Division,league,7410,,2019-05-12,4:00 pm,10359062,Tonawanda United,95088186,Cavallucci Marini,1,2,played,,Niagara University 1
+7994896,95086876,1st Division,league,7413,,2019-05-12,4:00 pm,91256980,Olean 1854 FC,10359117,Dutch United FC,3,3,played,,Olean Middle School Field 1
+7994900,95086876,1st Division,league,7417,,2019-05-12,4:00 pm,75479680,Honey Badgers,75479662,Celtic Brigade,1,0,played,,West Seneca Soccer Complex A
+7994898,95086876,1st Division,league,7415,,2019-05-12,6:00 pm,75159915,NMB FC,95088183,FC Draco,3,1,played,,Sweet Home High School Turf
+7994901,95086876,1st Division,league,7418,,2019-05-12,6:00 pm,10359002,West Seneca Panthers,75479668,Grand Island FC,2,1,played,,West Seneca Soccer Complex A
+7994899,95086876,1st Division,league,7416,,2019-05-12,6:00 pm,67526452,West Seneca FC,10359111,Crimson SPAL FC,2,3,played,,West Seneca Soccer Complex B
+7994895,95086876,1st Division,league,7412,,2019-05-13,6:30 pm,67527670,FC Quake,91256977,Lykan United,2,2,played,,Mulroy Pierce Field
+7994905,95086876,1st Division,league,7422,,2019-05-19,2:00 pm,10350976,SoHo FC,95088183,FC Draco,6,1,played,,Nichols School Strauss Truscott
+7994908,95086876,1st Division,league,7425,,2019-05-19,4:00 pm,75479668,Grand Island FC,91256980,Olean 1854 FC,0,3,played,,Grand Island HS 1
+7994902,95086876,1st Division,league,7419,,2019-05-19,4:00 pm,75479647,Celtic 1888,91256977,Lykan United,0,3,played,,Kenmore West Crosby Field
+7994906,95086876,1st Division,league,7423,,2019-05-19,6:00 pm,10359092,Ukraine,67526452,West Seneca FC,0,5,played,,Kenmore East Sparky Adams Field
+7994903,95086876,1st Division,league,7420,,2019-05-19,6:00 pm,75479662,Celtic Brigade,10359117,Dutch United FC,4,2,played,,Kenmore West Crosby Field
+7994904,95086876,1st Division,league,7421,,2019-05-19,6:00 pm,67527670,FC Quake,10359111,Crimson SPAL FC,3,4,played,,Medaille College Sports Complex
+7994907,95086876,1st Division,league,7424,,2019-05-19,6:00 pm,75159915,NMB FC,10359062,Tonawanda United,2,2,played,,Sweet Home High School Turf
+7994909,95086876,1st Division,league,7426,,2019-05-30,6:30 pm,95088186,Cavallucci Marini,26891552,Buffalo Celtic,5,2,played,,Tri Town United Fields A
+7994912,95086876,1st Division,league,7429,,2019-06-02,4:00 pm,10350976,SoHo FC,67526452,West Seneca FC,1,0,played,,Nichols School Strauss Truscott
+7994913,95086876,1st Division,league,7430,,2019-06-02,4:00 pm,91256980,Olean 1854 FC,10359062,Tonawanda United,4,1,played,,St. Bonaventure Marra Fields Complex
+7994916,95086876,1st Division,league,7433,,2019-06-02,4:00 pm,75479668,Grand Island FC,75479680,Honey Badgers,2,3,played,,Veteran's Park (GI) Front Field 3
+7994918,95086876,1st Division,league,7435,,2019-06-02,4:00 pm,10359002,West Seneca Panthers,26891552,Buffalo Celtic,5,0,played,,West Seneca Soccer Complex A
+7994911,95086876,1st Division,league,7428,,2019-06-02,6:00 pm,75479647,Celtic 1888,95088183,FC Draco,4,4,played,,Kenmore West Crosby Field
+7994914,95086876,1st Division,league,7431,,2019-06-02,6:00 pm,75159915,NMB FC,67527670,FC Quake,2,1,played,,Sweet Home High School Turf
+7994915,95086876,1st Division,league,7432,,2019-06-02,6:00 pm,10359111,Crimson SPAL FC,10359092,Ukraine,5,2,played,,Veteran's Park (GI) Front Field 3
+7994917,95086876,1st Division,league,7434,,2019-06-02,6:00 pm,95088186,Cavallucci Marini,75479662,Celtic Brigade,2,1,played,,West Seneca Soccer Complex A
+7994919,95086876,1st Division,league,7436,,2019-06-02,6:00 pm,10359117,Dutch United FC,91256977,Lykan United,1,1,played,,Westwood Park Turf Field
+7994921,95086876,1st Division,league,7438,,2019-06-09,4:00 pm,91256977,Lykan United,75479680,Honey Badgers,2,0,played,,Hamburg High School Turf Field
+7994920,95086876,1st Division,league,7437,,2019-06-09,4:00 pm,75479662,Celtic Brigade,10359092,Ukraine,3,1,played,,Kenmore West Crosby Field
+7994924,95086876,1st Division,league,7441,,2019-06-09,4:00 pm,95088183,FC Draco,91256980,Olean 1854 FC,0,7,played,,Park School 1
+7994925,95086876,1st Division,league,7442,,2019-06-09,4:00 pm,10359111,Crimson SPAL FC,10359002,West Seneca Panthers,1,1,played,,Veteran's Park (GI) Back Field 6/8
+7994926,95086876,1st Division,league,7443,,2019-06-09,4:00 pm,95088186,Cavallucci Marini,10350976,SoHo FC,0,1,played,,West Seneca Soccer Complex A
+7994922,95086876,1st Division,league,7439,,2019-06-09,6:00 pm,10359062,Tonawanda United,75479647,Celtic 1888,3,1,played,,Ives Pond 1
+7994923,95086876,1st Division,league,7440,,2019-06-09,6:00 pm,26891552,Buffalo Celtic,67527670,FC Quake,0,3,played,,Kenmore East Grass
+7994927,95086876,1st Division,league,7444,,2019-06-09,6:00 pm,67526452,West Seneca FC,75479668,Grand Island FC,1,2,played,,West Seneca Soccer Complex A
+7994928,95086876,1st Division,league,7445,,2019-06-09,6:00 pm,10359117,Dutch United FC,75159915,NMB FC,4,1,played,,Westwood Park Turf Field
+7994929,95086876,1st Division,league,7446,,2019-06-16,4:00 pm,75479647,Celtic 1888,10350976,SoHo FC,2,6,played,,Kenmore West Crosby Field
+7994935,95086876,1st Division,league,7452,,2019-06-16,4:00 pm,75479668,Grand Island FC,10359111,Crimson SPAL FC,0,1,played,,Niagara Falls High School 1
+7994934,95086876,1st Division,league,7451,,2019-06-16,4:00 pm,91256980,Olean 1854 FC,95088186,Cavallucci Marini,4,3,played,,Olean Middle School Field 1
+7994936,95086876,1st Division,league,7453,,2019-06-16,4:00 pm,67526452,West Seneca FC,75159915,NMB FC,2,2,played,,West Seneca Soccer Complex A
+7994930,95086876,1st Division,league,7447,,2019-06-16,6:00 pm,91256977,Lykan United,10359092,Ukraine,5,1,played,,Hamburg High School Turf Field
+7994932,95086876,1st Division,league,7449,,2019-06-16,6:00 pm,26891552,Buffalo Celtic,75479662,Celtic Brigade,6,8,played,,Kenmore East Grass
+7994933,95086876,1st Division,league,7450,,2019-06-16,6:00 pm,67527670,FC Quake,95088183,FC Draco,5,2,played,,Medaille College Sports Complex
+7994937,95086876,1st Division,league,7454,,2019-06-16,6:00 pm,75479680,Honey Badgers,10359117,Dutch United FC,2,4,played,,West Seneca Soccer Complex A
+7994940,95086876,1st Division,league,7457,,2019-06-23,2:00 pm,10350976,SoHo FC,10359092,Ukraine,7,4,played,,Mulroy Pierce Field
+7994939,95086876,1st Division,league,7456,,2019-06-23,4:00 pm,75479662,Celtic Brigade,91256980,Olean 1854 FC,1,4,played,,Kenmore West Crosby Field
+7994941,95086876,1st Division,league,7458,,2019-06-23,4:00 pm,95088183,FC Draco,10359111,Crimson SPAL FC,0,2,played,FT,Mulroy Pierce Field
+7994943,95086876,1st Division,league,7460,,2019-06-23,4:00 pm,95088186,Cavallucci Marini,75479668,Grand Island FC,4,0,played,,West Seneca Soccer Complex A
+7994938,95086876,1st Division,league,7455,,2019-06-23,6:00 pm,75479647,Celtic 1888,67527670,FC Quake,0,1,played,,Kenmore West Crosby Field
+7994944,95086876,1st Division,league,7461,,2019-06-23,6:00 pm,75479680,Honey Badgers,26891552,Buffalo Celtic,2,3,played,,West Seneca Soccer Complex A
+7994945,95086876,1st Division,league,7462,,2019-06-23,6:00 pm,10359002,West Seneca Panthers,67526452,West Seneca FC,1,2,played,,West Seneca Soccer Complex B
+7994946,95086876,1st Division,league,7463,,2019-06-23,6:00 pm,10359117,Dutch United FC,10359062,Tonawanda United,4,2,played,,Westwood Park Turf Field
+7994942,95086876,1st Division,league,7459,,2019-06-23,8:00 pm,75159915,NMB FC,91256977,Lykan United,0,0,played,,Sweet Home High School Turf
+7994952,95086876,1st Division,league,7469,,2019-06-30,4:00 pm,10359111,Crimson SPAL FC,10350976,SoHo FC,5,2,played,,Veteran's Park (GI) Back Field 6/8
+7994954,95086876,1st Division,league,7471,,2019-06-30,4:00 pm,10359002,West Seneca Panthers,75479662,Celtic Brigade,2,1,played,,West Seneca Soccer Complex A
+7994955,95086876,1st Division,league,7472,,2019-06-30,4:00 pm,95088186,Cavallucci Marini,10359117,Dutch United FC,2,1,played,,West Seneca Soccer Complex B
+7994947,95086876,1st Division,league,7464,,2019-06-30,6:00 pm,91256977,Lykan United,95088183,FC Draco,2,0,played,FT,Hamburg High School Turf Field
+7994948,95086876,1st Division,league,7465,,2019-06-30,6:00 pm,10359062,Tonawanda United,75479680,Honey Badgers,2,3,played,,Ives Pond 1
+7994949,95086876,1st Division,league,7466,,2019-06-30,6:00 pm,26891552,Buffalo Celtic,75479668,Grand Island FC,6,0,played,,Kenmore East Grass
+7994951,95086876,1st Division,league,7468,,2019-06-30,6:00 pm,10359092,Ukraine,75159915,NMB FC,3,4,played,,Rehm Road
+7994953,95086876,1st Division,league,7470,,2019-06-30,6:00 pm,67526452,West Seneca FC,75479647,Celtic 1888,2,2,played,,West Seneca Soccer Complex A
+7994910,95086876,1st Division,league,7427,,2019-07-03,6:30 pm,75479680,Honey Badgers,10359002,West Seneca Panthers,1,3,played,,West Seneca Soccer Complex A
+7994957,95086876,1st Division,league,7474,,2019-07-07,4:00 pm,91256977,Lykan United,67526452,West Seneca FC,3,0,played,,Hamburg High School Turf Field
+7994956,95086876,1st Division,league,7473,,2019-07-07,4:00 pm,75479647,Celtic 1888,10359111,Crimson SPAL FC,0,1,played,,Kenmore West Crosby Field
+7995168,95086876,1st Division,league,7477,,2019-07-07,4:00 pm,95088183,FC Draco,95088186,Cavallucci Marini,2,10,played,,Mulroy Pierce Field
+7995167,95086876,1st Division,league,7476,,2019-07-07,4:00 pm,10350976,SoHo FC,75159915,NMB FC,3,3,played,,Nichols School Strauss Truscott
+7995171,95086876,1st Division,league,7480,,2019-07-07,4:00 pm,75479680,Honey Badgers,91256980,Olean 1854 FC,1,3,played,,West Seneca Soccer Complex A
+7995166,95086876,1st Division,league,7475,,2019-07-07,6:00 pm,10359062,Tonawanda United,26891552,Buffalo Celtic,1,0,played,,Ives Pond 1
+7995169,95086876,1st Division,league,7478,,2019-07-07,6:00 pm,10359092,Ukraine,67527670,FC Quake,0,0,played,,Rehm Road
+7995170,95086876,1st Division,league,7479,,2019-07-07,6:00 pm,75479668,Grand Island FC,75479662,Celtic Brigade,3,2,played,,Veteran's Park (GI) Front Field 3
+7995172,95086876,1st Division,league,7481,,2019-07-07,6:00 pm,10359117,Dutch United FC,10359002,West Seneca Panthers,0,1,played,,Westwood Park Turf Field
+7995174,95086876,1st Division,league,7483,,2019-07-10,6:30 pm,26891552,Buffalo Celtic,75479647,Celtic 1888,3,2,played,,Kenmore East Grass
+7995176,95086876,1st Division,league,7485,,2019-07-14,4:00 pm,10350976,SoHo FC,91256980,Olean 1854 FC,5,5,played,,Nichols School Strauss Truscott
+7995178,95086876,1st Division,league,7487,,2019-07-14,4:00 pm,10359111,Crimson SPAL FC,95088186,Cavallucci Marini,2,3,played,,Veteran's Park (GI) Front Field 3
+7995179,95086876,1st Division,league,7488,,2019-07-14,4:00 pm,67526452,West Seneca FC,75479680,Honey Badgers,3,1,played,,West Seneca Soccer Complex A
+7995173,95086876,1st Division,league,7482,,2019-07-14,6:00 pm,75479662,Celtic Brigade,91256977,Lykan United,0,2,played,,Kenmore West Crosby Field
+7995177,95086876,1st Division,league,7486,,2019-07-14,6:00 pm,75159915,NMB FC,75479668,Grand Island FC,0,1,played,,Sweet Home High School Turf
+7995180,95086876,1st Division,league,7489,,2019-07-14,6:00 pm,10359002,West Seneca Panthers,95088183,FC Draco,4,1,played,,West Seneca Soccer Complex A
+7995181,95086876,1st Division,league,7490,,2019-07-14,6:00 pm,10359117,Dutch United FC,10359092,Ukraine,4,0,played,,Westwood Park Turf Field
+7995175,95086876,1st Division,league,7484,,2019-07-14,8:00 pm,67527670,FC Quake,10359062,Tonawanda United,2,2,played,,Medaille College Sports Complex
+7994887,95086876,1st Division,league,7404,,2019-07-17,6:30 pm,95088183,FC Draco,10359092,Ukraine,3,1,played,,Mulroy Pierce Field
+7994889,95086876,1st Division,league,7406,,2019-07-17,6:30 pm,75479668,Grand Island FC,10359062,Tonawanda United,3,3,played,,Veteran's Park (GI) Front Field 3
+7994950,95086876,1st Division,league,7467,,2019-07-19,7:30 pm,91256980,Olean 1854 FC,67527670,FC Quake,1,1,played,,St. Bonaventure Marra Fields Complex
+7995182,95086876,1st Division,league,7491,,2019-07-21,4:00 pm,91256977,Lykan United,10359111,Crimson SPAL FC,1,1,played,,Hamburg High School Turf Field
+7995184,95086876,1st Division,league,7493,,2019-07-21,4:00 pm,67527670,FC Quake,10350976,SoHo FC,2,2,played,,Medaille College Sports Complex
+7995185,95086876,1st Division,league,7494,,2019-07-21,4:00 pm,91256980,Olean 1854 FC,26891552,Buffalo Celtic,5,2,played,,Olean Middle School Field 1
+7995189,95086876,1st Division,league,7498,,2019-07-21,4:00 pm,75479668,Grand Island FC,10359117,Dutch United FC,4,2,played,,Veteran's Park (GI) Front Field 3
+7995183,95086876,1st Division,league,7492,,2019-07-21,6:00 pm,10359062,Tonawanda United,75479662,Celtic Brigade,6,2,played,,Ives Pond 1
+7995186,95086876,1st Division,league,7495,,2019-07-21,6:00 pm,95088183,FC Draco,67526452,West Seneca FC,1,1,played,,Mulroy Pierce Field
+7995187,95086876,1st Division,league,7496,,2019-07-21,6:00 pm,10359092,Ukraine,75479680,Honey Badgers,0,2,played,,Rehm Road
+7995190,95086876,1st Division,league,7499,,2019-07-21,6:00 pm,95088186,Cavallucci Marini,10359002,West Seneca Panthers,3,2,played,,West Seneca Soccer Complex A
+7995188,95086876,1st Division,league,7497,,2019-07-21,8:00 pm,75159915,NMB FC,75479647,Celtic 1888,1,1,played,,Sweet Home High School Turf
+7994931,95086876,1st Division,league,7448,,2019-07-24,6:30 pm,10359062,Tonawanda United,10359002,West Seneca Panthers,2,6,played,,West Seneca Soccer Complex A
+8075451,95086876,1st Division,league,9478,QF2,2019-07-28,4:00 pm,91256977,Lykan United,10359117,Dutch United FC,2,0,played,,Hamburg High School Turf Field
+8075452,95086876,1st Division,league,9479,QF1,2019-07-28,4:00 pm,91256980,Olean 1854 FC,67527670,FC Quake,4,0,played,,St. Bonaventure Marra Fields Complex
+8075454,95086876,1st Division,league,9481,QF3,2019-07-28,6:00 pm,95088186,Cavallucci Marini,10350976,SoHo FC,2,3,played,,Mulroy Pierce Field
+8075453,95086876,1st Division,league,9480,QF4,2019-07-28,6:00 pm,10359111,Crimson SPAL FC,10359002,West Seneca Panthers,2,1,played,,Veteran's Park (GI) Front Field 3
+8075463,95086877,2nd Division,league,9490,SF1,2019-08-04,6:00 pm,75479689,Delco Academy,95088490,USAB FC,1,0,played,,Fireman's Park (Depew) 1
+8075464,95086877,2nd Division,league,9491,SF2,2019-08-04,6:00 pm,75159990,Great White Buffalo,91257544,NY Elite,0,0,played,PK,Westwood Park Turf Field
+8075466,95086877,2nd Division,league,9493,PROMO,2019-08-11,2:00 pm,75159990,Great White Buffalo,95088490,USAB FC,2,1,played,,Nichols School Peek
+8075465,95086877,2nd Division,league,9492,,2019-08-11,3:55 pm,75479689,Delco Academy,91257544,NY Elite,0,1,played,,Nichols School Peek
+7995193,95086877,2nd Division,league,7603,,2019-05-05,4:00 pm,95088487,Buffalo Brighten Stars FC,87153546,Tesla FC,0,2,played,,Nichols School Peek
+7995195,95086877,2nd Division,league,7605,,2019-05-05,4:00 pm,95088490,USAB FC,10359038,Hamburg FC,4,2,played,,Nichols School Strauss Truscott
+7995198,95086877,2nd Division,league,7608,,2019-05-05,4:00 pm,75159996,FK Bosna,12579571,Devils,0,1,played,,West Seneca Soccer Complex B
+7995199,95086877,2nd Division,league,7609,,2019-05-05,4:00 pm,75159990,Great White Buffalo,67527667,JL Dutch,3,0,played,,Westwood Park Turf Field
+7995191,95086877,2nd Division,league,7601,,2019-05-05,6:00 pm,75479689,Delco Academy,95088493,FC Lackawanna,2,1,played,,Fireman's Park (Depew) 1
+7995192,95086877,2nd Division,league,7602,,2019-05-05,6:00 pm,75479665,Lasalle FC,75479653,Youngstown Marksmen,3,4,played,,Niagara Falls High School 1
+7995194,95086877,2nd Division,league,7604,,2019-05-05,6:00 pm,91257544,NY Elite,75479677,Kingsmen SC,5,0,played,,Nichols School Peek
+7995197,95086877,2nd Division,league,7607,,2019-05-05,6:00 pm,62886844,Sahara Gunners,75159993,Revolution SC,1,3,played,,West Seneca Soccer Complex B
+7995196,95086877,2nd Division,league,7606,,2019-05-05,6:30 pm,91257538,Medina Mustangs FC,10359077,WNY United Reds,0,2,played,,Newstead Veterans Park 1
+7995203,95086877,2nd Division,league,7613,,2019-05-12,2:00 pm,91257544,NY Elite,91257538,Medina Mustangs FC,3,1,played,,Nichols School Peek
+7995204,95086877,2nd Division,league,7614,,2019-05-12,2:00 pm,95088490,USAB FC,75479665,Lasalle FC,5,1,played,,Nichols School Strauss Truscott
+7995200,95086877,2nd Division,league,7610,,2019-05-12,4:00 pm,10359077,WNY United Reds,10359038,Hamburg FC,3,0,played,,D'Youville College 1
+7995205,95086877,2nd Division,league,7615,,2019-05-12,4:00 pm,75479677,Kingsmen SC,12579571,Devils,5,0,played,,Medaille College Sports Complex
+7995202,95086877,2nd Division,league,7612,,2019-05-12,4:00 pm,95088487,Buffalo Brighten Stars FC,95088493,FC Lackawanna,3,1,played,,Nichols School Peek
+7995207,95086877,2nd Division,league,7617,,2019-05-12,4:00 pm,67527667,JL Dutch,62886844,Sahara Gunners,5,1,played,,Westwood Park Turf Field
+7995206,95086877,2nd Division,league,7616,,2019-05-12,6:00 pm,75159993,Revolution SC,87153546,Tesla FC,3,1,played,,Mulroy Pierce Field
+7995201,95086877,2nd Division,league,7611,,2019-05-12,6:00 pm,75479653,Youngstown Marksmen,75479689,Delco Academy,0,1,played,,Niagara University 1
+7995208,95086877,2nd Division,league,7618,,2019-05-12,6:00 pm,75159990,Great White Buffalo,75159996,FK Bosna,3,0,played,,Westwood Park Turf Field
+7995211,95086877,2nd Division,league,7621,,2019-05-19,2:00 pm,12579571,Devils,95088490,USAB FC,2,2,played,,Sparky Adams Field Turf
+7995210,95086877,2nd Division,league,7620,,2019-05-19,4:00 pm,87153546,Tesla FC,75479677,Kingsmen SC,2,1,played,,Clarence Town Park Main St 1
+7995213,95086877,2nd Division,league,7623,,2019-05-19,4:00 pm,75479653,Youngstown Marksmen,67527667,JL Dutch,3,2,played,,Niagara University 1
+7995214,95086877,2nd Division,league,7624,,2019-05-19,4:00 pm,95088487,Buffalo Brighten Stars FC,75479689,Delco Academy,1,0,played,,Nichols School Peek
+7995212,95086877,2nd Division,league,7622,,2019-05-19,6:00 pm,75479665,Lasalle FC,75159993,Revolution SC,6,1,played,,Niagara Falls High School 1
+7995217,95086877,2nd Division,league,7627,,2019-05-19,6:00 pm,75159990,Great White Buffalo,10359038,Hamburg FC,5,0,played,,Westwood Park Turf Field
+7995215,95086877,2nd Division,league,7625,,2019-05-19,6:30 pm,91257538,Medina Mustangs FC,75159996,FK Bosna,1,3,played,,Newstead Veterans Park 1
+7995216,95086877,2nd Division,league,7626,,2019-05-26,6:00 pm,62886844,Sahara Gunners,95088493,FC Lackawanna,1,1,played,,Mulroy Pierce Field
+7995226,95086877,2nd Division,league,7636,,2019-06-02,4:00 pm,67527667,JL Dutch,75159993,Revolution SC,0,1,played,,Westwood Park Turf Field
+7995218,95086877,2nd Division,league,7628,,2019-06-02,6:00 pm,10359077,WNY United Reds,75479677,Kingsmen SC,0,1,played,,Fireman's Park (Depew) 1
+7995219,95086877,2nd Division,league,7629,,2019-06-02,6:00 pm,10359038,Hamburg FC,75479653,Youngstown Marksmen,4,4,played,,Hamburg High School Turf Field
+7995220,95086877,2nd Division,league,7630,,2019-06-02,6:00 pm,87153546,Tesla FC,75479689,Delco Academy,2,2,played,,Ives Pond 1
+7995221,95086877,2nd Division,league,7631,,2019-06-02,6:00 pm,12579571,Devils,75159990,Great White Buffalo,0,0,played,,Lincoln Park 1
+7995223,95086877,2nd Division,league,7633,,2019-06-02,6:00 pm,95088487,Buffalo Brighten Stars FC,62886844,Sahara Gunners,0,1,played,,Nichols School Peek
+7995224,95086877,2nd Division,league,7634,,2019-06-02,6:00 pm,91257544,NY Elite,75159996,FK Bosna,3,0,played,,Nichols School Strauss Truscott
+7995225,95086877,2nd Division,league,7635,,2019-06-02,6:30 pm,91257538,Medina Mustangs FC,95088490,USAB FC,2,5,played,,Newstead Veterans Park 1
+7995209,95086877,2nd Division,league,7619,,2019-06-07,6:30 pm,10359077,WNY United Reds,91257544,NY Elite,1,4,played,,Fireman's Park (Depew) 1
+7995228,95086877,2nd Division,league,7638,,2019-06-09,4:00 pm,95088493,FC Lackawanna,10359038,Hamburg FC,6,2,played,,Lehigh
+7995233,95086877,2nd Division,league,7643,,2019-06-09,4:00 pm,62886844,Sahara Gunners,10359077,WNY United Reds,2,1,played,,West Seneca Soccer Complex B
+7995227,95086877,2nd Division,league,7637,,2019-06-09,6:00 pm,75479689,Delco Academy,12579571,Devils,2,1,played,,Fireman's Park (Depew) 1
+7995232,95086877,2nd Division,league,7642,,2019-06-09,6:00 pm,75159993,Revolution SC,91257538,Medina Mustangs FC,3,4,played,,Maple East Elementary 1
+7995229,95086877,2nd Division,league,7639,,2019-06-09,6:00 pm,75479653,Youngstown Marksmen,75159990,Great White Buffalo,1,0,played,,Niagara University 1
+7995230,95086877,2nd Division,league,7640,,2019-06-09,6:00 pm,95088490,USAB FC,87153546,Tesla FC,1,1,played,,Nichols School Peek
+7995231,95086877,2nd Division,league,7641,,2019-06-09,6:00 pm,75479677,Kingsmen SC,95088487,Buffalo Brighten Stars FC,2,0,played,,Veteran's Park (GI) Back Field 6/8
+7995235,95086877,2nd Division,league,7645,,2019-06-09,6:00 pm,67527667,JL Dutch,91257544,NY Elite,0,0,played,,Walden Pond Park 1
+7995234,95086877,2nd Division,league,7644,,2019-06-09,6:00 pm,75159996,FK Bosna,75479665,Lasalle FC,0,2,played,,West Seneca Soccer Complex B
+7995237,95086877,2nd Division,league,7647,,2019-06-16,4:00 pm,10359038,Hamburg FC,75159996,FK Bosna,3,0,played,,Hamburg High School Turf Field
+7995241,95086877,2nd Division,league,7651,,2019-06-16,4:00 pm,95088487,Buffalo Brighten Stars FC,91257544,NY Elite,2,2,played,,Nichols School Peek
+7995240,95086877,2nd Division,league,7650,,2019-06-16,6:00 pm,75479665,Lasalle FC,67527667,JL Dutch,2,5,played,,Niagara Falls High School 1
+7995243,95086877,2nd Division,league,7653,,2019-06-16,6:00 pm,62886844,Sahara Gunners,75479653,Youngstown Marksmen,2,1,played,,West Seneca Soccer Complex B
+7995244,95086877,2nd Division,league,7654,,2019-06-16,6:00 pm,75159990,Great White Buffalo,95088490,USAB FC,0,2,played,,Westwood Park Turf Field
+7995236,95086877,2nd Division,league,7646,,2019-06-16,8:00 pm,75479689,Delco Academy,75159993,Revolution SC,1,0,played,,D'Youville College 1
+7995239,95086877,2nd Division,league,7649,,2019-06-16,8:45 pm,12579571,Devils,10359077,WNY United Reds,4,1,played,,Kenny Field 3
+7995246,95086877,2nd Division,league,7656,,2019-06-23,4:00 pm,10359038,Hamburg FC,75479677,Kingsmen SC,2,1,played,,Hamburg High School Turf Field
+7995249,95086877,2nd Division,league,7659,,2019-06-23,4:00 pm,95088493,FC Lackawanna,91257538,Medina Mustangs FC,10,4,played,,Lehigh
+7995251,95086877,2nd Division,league,7661,,2019-06-23,4:00 pm,95088490,USAB FC,75159996,FK Bosna,6,0,played,,Nichols School Peek
+7995253,95086877,2nd Division,league,7663,,2019-06-23,4:00 pm,67527667,JL Dutch,75479689,Delco Academy,3,3,played,,Walden Pond Park 1
+7995245,95086877,2nd Division,league,7655,,2019-06-23,6:00 pm,10359077,WNY United Reds,75159990,Great White Buffalo,1,4,played,,Fireman's Park (Depew) 1
+7995248,95086877,2nd Division,league,7658,,2019-06-23,6:00 pm,12579571,Devils,91257544,NY Elite,0,3,played,,Kenny Field 3
+7995252,95086877,2nd Division,league,7662,,2019-06-23,6:00 pm,75159993,Revolution SC,95088487,Buffalo Brighten Stars FC,4,3,played,,Maple East Elementary 1
+7995250,95086877,2nd Division,league,7660,,2019-06-23,6:00 pm,75479665,Lasalle FC,62886844,Sahara Gunners,4,3,played,,Niagara Falls High School 1
+7995242,95086877,2nd Division,league,7652,,2019-06-26,6:45 pm,75479677,Kingsmen SC,91257538,Medina Mustangs FC,4,1,played,,Veteran's Park (GI) Back Field 6/8
+7995258,95086877,2nd Division,league,7668,,2019-06-30,4:00 pm,95088487,Buffalo Brighten Stars FC,75479665,Lasalle FC,4,2,played,,Medaille College Sports Complex
+7995254,95086877,2nd Division,league,7664,,2019-06-30,6:00 pm,75479689,Delco Academy,10359077,WNY United Reds,2,1,played,,Fireman's Park (Depew) 1
+7995255,95086877,2nd Division,league,7665,,2019-06-30,6:00 pm,12579571,Devils,10359038,Hamburg FC,3,2,played,,Kenny Field 5
+7995256,95086877,2nd Division,league,7666,,2019-06-30,6:00 pm,95088493,FC Lackawanna,67527667,JL Dutch,2,3,played,,Lehigh
+7995259,95086877,2nd Division,league,7669,,2019-06-30,6:00 pm,91257544,NY Elite,95088490,USAB FC,1,3,played,,Nichols School Peek
+7995260,95086877,2nd Division,league,7670,,2019-06-30,6:00 pm,75479677,Kingsmen SC,75159996,FK Bosna,0,0,played,,Veteran's Park (GI) Back Field 6/8
+7995261,95086877,2nd Division,league,7671,,2019-06-30,6:00 pm,62886844,Sahara Gunners,87153546,Tesla FC,0,3,played,,West Seneca Soccer Complex B
+7995262,95086877,2nd Division,league,7672,,2019-06-30,6:00 pm,75159990,Great White Buffalo,91257538,Medina Mustangs FC,5,2,played,,Westwood Park Turf Field
+7995257,95086877,2nd Division,league,7667,,2019-06-30,8:00 pm,75479653,Youngstown Marksmen,75159993,Revolution SC,0,2,played,,Niagara University 1
+7995238,95086877,2nd Division,league,7648,,2019-07-05,6:30 pm,87153546,Tesla FC,95088493,FC Lackawanna,2,0,played,,Ives Pond 1
+7995268,95086877,2nd Division,league,7678,,2019-07-07,4:00 pm,75479677,Kingsmen SC,95088490,USAB FC,3,1,played,,Veteran's Park (GI) Back Field 6/8
+7995271,95086877,2nd Division,league,7681,,2019-07-07,4:00 pm,67527667,JL Dutch,95088487,Buffalo Brighten Stars FC,4,2,played,,Walden Pond Park 1
+7995263,95086877,2nd Division,league,7673,,2019-07-07,6:00 pm,75479689,Delco Academy,62886844,Sahara Gunners,4,3,played,,Fireman's Park (Depew) 1
+7995264,95086877,2nd Division,league,7674,,2019-07-07,6:00 pm,10359038,Hamburg FC,91257538,Medina Mustangs FC,6,1,played,,Hamburg High School Turf Field
+7995265,95086877,2nd Division,league,7675,,2019-07-07,6:00 pm,95088493,FC Lackawanna,75479653,Youngstown Marksmen,2,0,played,FT,Lehigh
+7995269,95086877,2nd Division,league,7679,,2019-07-07,6:00 pm,75159993,Revolution SC,12579571,Devils,2,0,played,,Maple East Elementary 1
+7995266,95086877,2nd Division,league,7676,,2019-07-07,6:00 pm,75479665,Lasalle FC,87153546,Tesla FC,5,2,played,,Niagara Falls High School 1
+7995267,95086877,2nd Division,league,7677,,2019-07-07,6:00 pm,91257544,NY Elite,75159990,Great White Buffalo,0,2,played,,Nichols School Peek
+7995270,95086877,2nd Division,league,7680,,2019-07-07,6:00 pm,75159996,FK Bosna,10359077,WNY United Reds,1,3,played,,West Seneca Soccer Complex A
+7995280,95086877,2nd Division,league,7690,,2019-07-14,4:00 pm,67527667,JL Dutch,95088490,USAB FC,4,1,played,,Walden Pond Park 1
+7995279,95086877,2nd Division,league,7689,,2019-07-14,4:00 pm,75159996,FK Bosna,87153546,Tesla FC,0,2,played,FT,West Seneca Soccer Complex B
+7995272,95086877,2nd Division,league,7682,,2019-07-14,6:00 pm,10359077,WNY United Reds,95088487,Buffalo Brighten Stars FC,2,2,played,,Fireman's Park (Depew) 1
+7995273,95086877,2nd Division,league,7683,,2019-07-14,6:00 pm,10359038,Hamburg FC,75479689,Delco Academy,0,1,played,,Hamburg High School Turf Field
+7995274,95086877,2nd Division,league,7684,,2019-07-14,6:00 pm,12579571,Devils,95088493,FC Lackawanna,2,0,played,,Kenny Field 5
+7995277,95086877,2nd Division,league,7687,,2019-07-14,6:00 pm,75159993,Revolution SC,91257544,NY Elite,2,4,played,,Maple East Elementary 1
+7995275,95086877,2nd Division,league,7685,,2019-07-14,6:00 pm,75479665,Lasalle FC,75479677,Kingsmen SC,1,2,played,,Niagara Falls High School 1
+7995278,95086877,2nd Division,league,7688,,2019-07-14,6:00 pm,62886844,Sahara Gunners,75159990,Great White Buffalo,0,3,played,,West Seneca Soccer Complex B
+7995276,95086877,2nd Division,league,7686,,2019-07-14,6:30 pm,91257538,Medina Mustangs FC,75479653,Youngstown Marksmen,0,3,played,,Newstead Veterans Park 1
+7995282,95086877,2nd Division,league,7692,,2019-07-21,4:00 pm,87153546,Tesla FC,67527667,JL Dutch,2,5,played,,Ives Pond 1
+7995286,95086877,2nd Division,league,7696,,2019-07-21,4:00 pm,91257544,NY Elite,10359038,Hamburg FC,7,0,played,,Nichols School Peek
+7995285,95086877,2nd Division,league,7695,,2019-07-21,4:00 pm,95088490,USAB FC,10359077,WNY United Reds,5,1,played,,Nichols School Strauss Truscott
+7995288,95086877,2nd Division,league,7698,,2019-07-21,4:00 pm,75159996,FK Bosna,62886844,Sahara Gunners,1,4,played,,West Seneca Soccer Complex A
+7995281,95086877,2nd Division,league,7691,,2019-07-21,6:00 pm,75479689,Delco Academy,75479665,Lasalle FC,3,2,played,,Fireman's Park (Depew) 1
+7995283,95086877,2nd Division,league,7693,,2019-07-21,6:00 pm,95088493,FC Lackawanna,75159993,Revolution SC,2,2,played,,Lehigh
+7995284,95086877,2nd Division,league,7694,,2019-07-21,6:00 pm,75479653,Youngstown Marksmen,95088487,Buffalo Brighten Stars FC,2,0,played,FT,Niagara University 1
+7995289,95086877,2nd Division,league,7699,,2019-07-21,6:00 pm,75159990,Great White Buffalo,75479677,Kingsmen SC,1,0,played,,Westwood Park Turf Field
+7995287,95086877,2nd Division,league,7697,,2019-07-21,6:30 pm,91257538,Medina Mustangs FC,12579571,Devils,1,4,played,,Newstead Veterans Park 1
+7995222,95086877,2nd Division,league,7632,,2019-07-22,6:30 pm,95088493,FC Lackawanna,75479665,Lasalle FC,2,0,played,FT,Lehigh
+7995247,95086877,2nd Division,league,7657,,2019-07-23,6:30 pm,87153546,Tesla FC,75479653,Youngstown Marksmen,2,2,played,,Ives Pond 2
+8075459,95086877,2nd Division,league,9486,QF1,2019-07-28,6:00 pm,75479689,Delco Academy,87153546,Tesla FC,1,0,played,,Fireman's Park (Depew) 1
+8075460,95086877,2nd Division,league,9487,QF2,2019-07-28,6:00 pm,75159990,Great White Buffalo,75159993,Revolution SC,3,0,played,,Lancaster Middle School 1
+8075462,95086877,2nd Division,league,9489,QF3,2019-07-28,6:00 pm,91257544,NY Elite,75479677,Kingsmen SC,4,0,played,,Nichols School Peek
+8075461,95086877,2nd Division,league,9488,QF4,2019-07-28,6:00 pm,67527667,JL Dutch,95088490,USAB FC,4,4,played,PK,Walden Pond Park 1
+8075467,95086879,3rd Division,league,9494,SF2,2019-08-04,6:00 pm,95088661,Westside Blitz,10359123,Cheektowaga White Eagles,0,3,played,,Mulroy Pierce Field
+8075468,95086879,3rd Division,league,9495,SF1,2019-08-04,6:00 pm,75479659,Bangarang FC,87153543,Moby Ducks FC,1,1,played,PK,West Seneca Soccer Complex A
+8075471,95086879,3rd Division,league,9498,,2019-08-11,2:10 pm,10359123,Cheektowaga White Eagles,87153543,Moby Ducks FC,2,1,played,,Nichols School Strauss Truscott
+7996084,95086879,3rd Division,league,9403,,2019-05-05,2:00 pm,75479683,North Buffalo FC,91257643,Iron Lungz FC,3,1,played,,Nichols School Peek
+7996086,95086879,3rd Division,league,9405,,2019-05-05,4:00 pm,31566782,Rust Belt United,75479695,Big Green SC,1,6,played,,West Seneca Soccer Complex E
+7996082,95086879,3rd Division,league,9401,,2019-05-05,4:15 pm,10359123,Cheektowaga White Eagles,87153543,Moby Ducks FC,1,1,played,,Mulroy Pierce Field
+7996083,95086879,3rd Division,league,9402,,2019-05-05,6:00 pm,59262126,Celtic Classic,35216066,Meerkats FC,1,4,played,,Kenmore East Grass
+7996085,95086879,3rd Division,league,9404,,2019-05-05,6:00 pm,75479659,Bangarang FC,95088661,Westside Blitz,0,1,played,,West Seneca Soccer Complex E
+7996090,95086879,3rd Division,league,9409,,2019-05-12,4:00 pm,87153543,Moby Ducks FC,31566782,Rust Belt United,0,0,played,,Mulroy Pierce Field
+7996091,95086879,3rd Division,league,9410,,2019-05-12,4:00 pm,75479659,Bangarang FC,35216066,Meerkats FC,11,2,played,,West Seneca Soccer Complex B
+7996088,95086879,3rd Division,league,9407,,2019-05-12,6:00 pm,59262126,Celtic Classic,75479683,North Buffalo FC,1,2,played,,Kenmore East Grass
+7996089,95086879,3rd Division,league,9408,,2019-05-12,6:00 pm,95088661,Westside Blitz,10359123,Cheektowaga White Eagles,2,3,played,,Nichols School Peek
+7996093,95086879,3rd Division,league,9412,,2019-05-19,6:00 pm,10359123,Cheektowaga White Eagles,59262126,Celtic Classic,4,1,played,,GOW School 1
+7996095,95086879,3rd Division,league,9414,,2019-05-19,6:00 pm,87153543,Moby Ducks FC,95088661,Westside Blitz,2,5,played,,Mulroy Pierce Field
+7996094,95086879,3rd Division,league,9413,,2019-05-19,6:00 pm,75479683,North Buffalo FC,75479659,Bangarang FC,0,1,played,,Nichols School Peek
+7996096,95086879,3rd Division,league,9415,,2019-05-26,4:00 pm,91257643,Iron Lungz FC,31566782,Rust Belt United,3,3,played,,Mulroy Pierce Field
+7996099,95086879,3rd Division,league,9418,,2019-06-02,4:00 pm,87153543,Moby Ducks FC,75479683,North Buffalo FC,0,1,played,,Mulroy Pierce Field
+7996098,95086879,3rd Division,league,9417,,2019-06-02,4:00 pm,95088661,Westside Blitz,75479695,Big Green SC,4,2,played,,Nichols School Peek
+7996101,95086879,3rd Division,league,9420,,2019-06-02,4:00 pm,31566782,Rust Belt United,10359123,Cheektowaga White Eagles,2,1,played,,West Seneca Soccer Complex B
+7996097,95086879,3rd Division,league,9416,,2019-06-02,6:00 pm,35216066,Meerkats FC,91257643,Iron Lungz FC,4,6,played,,Niagara University 1
+7996100,95086879,3rd Division,league,9419,,2019-06-02,6:00 pm,75479659,Bangarang FC,59262126,Celtic Classic,0,2,played,,West Seneca Soccer Complex B
+7996102,95086879,3rd Division,league,9421,,2019-06-09,4:00 pm,59262126,Celtic Classic,87153543,Moby Ducks FC,2,6,played,,Kenmore East Grass
+7996103,95086879,3rd Division,league,9422,,2019-06-09,4:00 pm,35216066,Meerkats FC,31566782,Rust Belt United,1,1,played,,Niagara University 1
+7996104,95086879,3rd Division,league,9423,,2019-06-09,4:00 pm,75479683,North Buffalo FC,75479695,Big Green SC,2,3,played,,Nichols School Peek
+7996105,95086879,3rd Division,league,9424,,2019-06-09,4:00 pm,75479659,Bangarang FC,10359123,Cheektowaga White Eagles,3,0,played,,West Seneca Soccer Complex E
+7996106,95086879,3rd Division,league,9425,,2019-06-09,6:00 pm,91257643,Iron Lungz FC,95088661,Westside Blitz,4,1,played,,West Seneca Soccer Complex E
+7996107,95086879,3rd Division,league,9426,,2019-06-16,4:00 pm,59262126,Celtic Classic,95088661,Westside Blitz,0,6,played,,Kenmore East Grass
+7996109,95086879,3rd Division,league,9428,,2019-06-16,4:00 pm,87153543,Moby Ducks FC,75479695,Big Green SC,1,5,played,,Mulroy Pierce Field
+7996110,95086879,3rd Division,league,9429,,2019-06-16,4:00 pm,91257643,Iron Lungz FC,10359123,Cheektowaga White Eagles,1,3,played,,West Seneca Soccer Complex B
+7996111,95086879,3rd Division,league,9430,,2019-06-16,6:00 pm,31566782,Rust Belt United,75479659,Bangarang FC,2,2,played,,Mulroy Pierce Field
+7996108,95086879,3rd Division,league,9427,,2019-06-16,6:00 pm,75479683,North Buffalo FC,35216066,Meerkats FC,1,6,played,,Nichols School Peek
+7996114,95086879,3rd Division,league,9433,,2019-06-23,4:00 pm,35216066,Meerkats FC,87153543,Moby Ducks FC,2,6,played,,Niagara University 1
+7996116,95086879,3rd Division,league,9435,,2019-06-23,4:00 pm,91257643,Iron Lungz FC,75479659,Bangarang FC,3,3,played,,West Seneca Soccer Complex B
+7996113,95086879,3rd Division,league,9432,,2019-06-23,6:00 pm,10359123,Cheektowaga White Eagles,75479683,North Buffalo FC,1,7,played,,GOW School 1
+7996112,95086879,3rd Division,league,9431,,2019-06-23,6:00 pm,75479695,Big Green SC,59262126,Celtic Classic,3,3,played,,Mulroy Pierce Field
+7996115,95086879,3rd Division,league,9434,,2019-06-23,6:00 pm,95088661,Westside Blitz,31566782,Rust Belt United,2,1,played,,Nichols School Peek
+7996087,95086879,3rd Division,league,9406,,2019-06-26,6:30 pm,75479695,Big Green SC,91257643,Iron Lungz FC,1,1,played,,Ives Pond 1
+7996117,95086879,3rd Division,league,9436,,2019-06-30,4:00 pm,75479695,Big Green SC,10359123,Cheektowaga White Eagles,1,4,played,,Ives Pond 2
+7996118,95086879,3rd Division,league,9437,,2019-06-30,4:00 pm,59262126,Celtic Classic,91257643,Iron Lungz FC,5,0,played,,Kenmore East Grass
+7996121,95086879,3rd Division,league,9440,,2019-06-30,4:00 pm,87153543,Moby Ducks FC,75479659,Bangarang FC,1,1,played,,Mulroy Pierce Field
+7996120,95086879,3rd Division,league,9439,,2019-06-30,4:00 pm,75479683,North Buffalo FC,31566782,Rust Belt United,2,2,played,,Nichols School Peek
+7996119,95086879,3rd Division,league,9438,,2019-06-30,6:00 pm,35216066,Meerkats FC,95088661,Westside Blitz,1,1,played,,Niagara University 1
+7996122,95086879,3rd Division,league,9441,,2019-07-07,4:00 pm,75479695,Big Green SC,75479659,Bangarang FC,0,1,played,,Ives Pond 1
+7996124,95086879,3rd Division,league,9443,,2019-07-07,4:00 pm,95088661,Westside Blitz,75479683,North Buffalo FC,1,2,played,,Nichols School Peek
+7996126,95086879,3rd Division,league,9445,,2019-07-07,4:00 pm,31566782,Rust Belt United,59262126,Celtic Classic,1,1,played,,West Seneca Soccer Complex B
+7996123,95086879,3rd Division,league,9442,,2019-07-07,6:00 pm,10359123,Cheektowaga White Eagles,35216066,Meerkats FC,1,6,played,,GOW School 1
+7996125,95086879,3rd Division,league,9444,,2019-07-07,6:00 pm,91257643,Iron Lungz FC,87153543,Moby Ducks FC,4,2,played,,West Seneca Soccer Complex B
+7996131,95086879,3rd Division,league,9450,,2019-07-14,4:00 pm,87153543,Moby Ducks FC,10359123,Cheektowaga White Eagles,5,1,played,,Mulroy Pierce Field
+7996130,95086879,3rd Division,league,9449,,2019-07-14,4:00 pm,75479683,North Buffalo FC,59262126,Celtic Classic,1,1,played,,Nichols School Peek
+7996127,95086879,3rd Division,league,9446,,2019-07-14,6:00 pm,75479695,Big Green SC,31566782,Rust Belt United,1,1,played,,Ives Pond 2
+7996128,95086879,3rd Division,league,9447,,2019-07-14,6:00 pm,35216066,Meerkats FC,75479659,Bangarang FC,2,6,played,,Niagara University 1
+7996129,95086879,3rd Division,league,9448,,2019-07-14,6:00 pm,95088661,Westside Blitz,91257643,Iron Lungz FC,3,0,played,,Nichols School Peek
+7996092,95086879,3rd Division,league,9411,,2019-07-18,6:30 pm,75479695,Big Green SC,35216066,Meerkats FC,3,1,played,,Kenny Field 5
+7996177,95086879,3rd Division,league,9455,,2019-07-21,4:00 pm,75479659,Bangarang FC,75479683,North Buffalo FC,0,0,played,,West Seneca Soccer Complex B
+7996132,95086879,3rd Division,league,9451,,2019-07-21,6:00 pm,10359123,Cheektowaga White Eagles,91257643,Iron Lungz FC,3,1,played,,GOW School 1
+7996133,95086879,3rd Division,league,9452,,2019-07-21,6:00 pm,59262126,Celtic Classic,75479695,Big Green SC,5,4,played,,Kenmore East Grass
+7996134,95086879,3rd Division,league,9453,,2019-07-21,6:00 pm,95088661,Westside Blitz,35216066,Meerkats FC,1,5,played,,Nichols School Peek
+7996135,95086879,3rd Division,league,9454,,2019-07-21,6:00 pm,31566782,Rust Belt United,87153543,Moby Ducks FC,1,2,played,,West Seneca Soccer Complex B
+8075469,95086879,3rd Division,league,9496,QF2,2019-07-28,6:00 pm,10359123,Cheektowaga White Eagles,75479695,Big Green SC,1,0,played,OT,GOW School 1
+8075470,95086879,3rd Division,league,9497,QF1,2019-07-28,6:00 pm,75479683,North Buffalo FC,87153543,Moby Ducks FC,0,2,played,,Nichols School Strauss Truscott
+8024600,95086880,Over 35,over35,3504,,2019-05-10,6:30 pm,95088564,Celtic Old Bhoys,10359105,C.S. Italia,11,1,played,,Kenmore East Grass
+8024599,95086880,Over 35,over35,3503,,2019-05-10,6:30 pm,46512672,Bluestars FC,46512675,West United FC,0,0,played,,Mulroy Pierce Field
+8024604,95086880,Over 35,over35,3508,,2019-05-17,6:30 pm,91327989,Aztecas FC,46512672,Bluestars FC,0,3,played,,D'Youville College 1
+8024601,95086880,Over 35,over35,3505,,2019-05-17,6:30 pm,46512675,West United FC,95088564,Celtic Old Bhoys,1,2,played,,Tri Town United Fields A
+8024602,95086880,Over 35,over35,3506,,2019-05-17,6:30 pm,46512663,Azzurri,95088567,Yemen United,5,0,played,,Tri Town United Fields B
+8024603,95086880,Over 35,over35,3507,,2019-05-17,7:15 pm,10359105,C.S. Italia,46512669,Oranje,0,3,played,,Sahlen's Sports Park 1
+8024606,95086880,Over 35,over35,3510,,2019-05-24,6:30 pm,95088564,Celtic Old Bhoys,46512669,Oranje,1,2,played,,Kenmore East Grass
+8024608,95086880,Over 35,over35,3512,,2019-05-24,6:30 pm,46512675,West United FC,95088567,Yemen United,1,3,played,,Tri Town United Fields A
+8024605,95086880,Over 35,over35,3509,,2019-05-24,6:30 pm,46512663,Azzurri,10359105,C.S. Italia,1,1,played,,Tri Town United Fields B
+8024612,95086880,Over 35,over35,3516,,2019-05-31,6:30 pm,10359105,C.S. Italia,91327989,Aztecas FC,4,2,played,,Maple East Elementary 1
+8024610,95086880,Over 35,over35,3514,,2019-05-31,6:30 pm,46512672,Bluestars FC,95088564,Celtic Old Bhoys,4,0,played,,Mulroy Pierce Field
+8024611,95086880,Over 35,over35,3515,,2019-05-31,6:30 pm,46512669,Oranje,46512663,Azzurri,0,2,played,,Tri Town United Fields A
+8024609,95086880,Over 35,over35,3513,,2019-05-31,6:30 pm,46512666,Aliens,95088567,Yemen United,4,1,played,,Walden Pond Park 1
+8024616,95086880,Over 35,over35,3520,,2019-06-07,6:30 pm,46512669,Oranje,46512672,Bluestars FC,1,4,played,,Tri Town United Fields A
+8024614,95086880,Over 35,over35,3518,,2019-06-07,6:30 pm,91327989,Aztecas FC,46512675,West United FC,2,4,played,,Tri Town United Fields B
+8024613,95086880,Over 35,over35,3517,,2019-06-07,6:30 pm,46512666,Aliens,46512663,Azzurri,4,5,played,,Walden Pond Park 1
+8024607,95086880,Over 35,over35,3511,,2019-06-11,6:30 pm,46512672,Bluestars FC,46512666,Aliens,3,1,played,,Mulroy Pierce Field
+8024617,95086880,Over 35,over35,3521,,2019-06-14,6:30 pm,95088564,Celtic Old Bhoys,91327989,Aztecas FC,2,2,played,,Kenmore East Grass
+8024620,95086880,Over 35,over35,3524,,2019-06-14,6:30 pm,95088567,Yemen United,46512672,Bluestars FC,1,5,played,,Mulroy Pierce Field
+8024619,95086880,Over 35,over35,3523,,2019-06-14,6:30 pm,46512675,West United FC,46512669,Oranje,3,0,played,,Tri Town United Fields A
+8024618,95086880,Over 35,over35,3522,,2019-06-14,6:30 pm,46512666,Aliens,10359105,C.S. Italia,7,1,played,,Walden Pond Park 1
+8024622,95086880,Over 35,over35,3526,,2019-06-21,6:30 pm,95088564,Celtic Old Bhoys,46512663,Azzurri,1,5,played,,Kenmore East Grass
+8024624,95086880,Over 35,over35,3528,,2019-06-21,6:30 pm,10359105,C.S. Italia,46512675,West United FC,0,0,played,,Maple East Elementary 1
+8024623,95086880,Over 35,over35,3527,,2019-06-21,6:30 pm,46512669,Oranje,95088567,Yemen United,1,1,played,,Mulroy Pierce Field
+8024621,95086880,Over 35,over35,3525,,2019-06-21,6:30 pm,91327989,Aztecas FC,46512666,Aliens,1,10,played,,Tri Town United Fields B
+8024626,95086880,Over 35,over35,3530,,2019-06-28,6:30 pm,95088567,Yemen United,91327989,Aztecas FC,7,2,played,,Lehigh
+8024625,95086880,Over 35,over35,3529,,2019-06-28,6:30 pm,10359105,C.S. Italia,46512672,Bluestars FC,1,3,played,,Maple East Elementary 1
+8024627,95086880,Over 35,over35,3531,,2019-06-28,6:30 pm,46512663,Azzurri,46512675,West United FC,3,2,played,,Tri Town United Fields A
+8024615,95086880,Over 35,over35,3519,,2019-07-02,6:30 pm,95088567,Yemen United,10359105,C.S. Italia,0,1,played,,Lehigh
+8024597,95086880,Over 35,over35,3501,,2019-07-03,6:30 pm,46512669,Oranje,46512666,Aliens,5,1,played,,Westwood Park Turf Field
+8024598,95086880,Over 35,over35,3502,,2019-07-09,7:30 pm,46512663,Azzurri,91327989,Aztecas FC,2,0,played,,Tri Town United Fields A
+8024629,95086880,Over 35,over35,3533,,2019-07-12,6:30 pm,95088567,Yemen United,95088564,Celtic Old Bhoys,0,8,played,,Lehigh
+8024632,95086880,Over 35,over35,3536,,2019-07-12,6:30 pm,46512672,Bluestars FC,46512663,Azzurri,7,1,played,,Mulroy Pierce Field
+8024630,95086880,Over 35,over35,3534,,2019-07-12,6:30 pm,46512675,West United FC,46512666,Aliens,3,5,played,,Tri Town United Fields A
+8024631,95086880,Over 35,over35,3535,,2019-07-12,6:30 pm,91327989,Aztecas FC,46512669,Oranje,2,4,played,,Tri Town United Fields B
+8024628,95086880,Over 35,over35,3532,,2019-07-16,6:30 pm,46512666,Aliens,95088564,Celtic Old Bhoys,7,1,played,,Walden Pond Park 1
+8068894,95086880,Over 35,over35,9457,QF1,2019-07-19,6:30 pm,46512672,Bluestars FC,95088567,Yemen United,7,2,played,,Lehigh
+8068895,95086880,Over 35,over35,9458,QF3,2019-07-19,6:30 pm,46512663,Azzurri,10359105,C.S. Italia,4,0,played,,Tri Town United Fields A
+8068896,95086880,Over 35,over35,9459,QF2,2019-07-19,6:30 pm,46512669,Oranje,95088564,Celtic Old Bhoys,2,1,played,OT,Tri Town United Fields B
+8068893,95086880,Over 35,over35,9456,QF4,2019-07-19,6:30 pm,46512666,Aliens,46512675,West United FC,5,0,played,,Walden Pond Park 1
+8069842,95086880,Over 35,over35,9460,,2019-07-26,6:30 pm,46512675,West United FC,91327989,Aztecas FC,5,0,played,,Tri Town United Fields B
+8069844,95086880,Over 35,over35,9462,SF1,2019-07-26,6:30 pm,46512672,Bluestars FC,46512669,Oranje,3,0,played,,Mulroy Pierce Field
+8069845,95086880,Over 35,over35,9463,SF2,2019-07-26,6:30 pm,46512663,Azzurri,46512666,Aliens,6,4,played,OT,Tri Town United Fields A
+8069848,95086880,Over 35,over35,9466,,2019-08-02,6:30 pm,10359105,C.S. Italia,91327989,Aztecas FC,3,5,played,,Maple East Elementary 1
+8069849,95086880,Over 35,over35,9467,3RD,2019-08-02,6:30 pm,46512666,Aliens,46512669,Oranje,6,2,played,,Walden Pond Park 1
+8069846,95086880,Over 35,over35,9464,,2019-08-02,6:30 pm,46512672,Bluestars FC,46512663,Azzurri,3,0,played,,Mulroy Pierce Field
+8037772,95598237,Tehel Cup Bracket,cup,4,,2019-05-09,6:30 pm,75479647,Celtic 1888,75479680,Honey Badgers,2,0,played,,D'Youville College 1
+8037777,95598237,Tehel Cup Bracket,cup,9,,2019-05-09,6:30 pm,10359017,Celtic United,75479662,Celtic Brigade,5,2,played,,Kenmore East Grass
+8037778,95598237,Tehel Cup Bracket,cup,10,,2019-05-09,6:30 pm,10359047,BSC International,10359086,Rangers,5,0,played,,Nichols School Peek
+8037770,95598237,Tehel Cup Bracket,cup,2,,2019-05-09,6:30 pm,10359002,West Seneca Panthers,91256980,Olean 1854 FC,2,1,played,,Tri Town United Fields A
+8037775,95598237,Tehel Cup Bracket,cup,7,,2019-05-09,8:30 pm,91256977,Lykan United,59261105,Celtic Hoops,2,0,played,,D'Youville College 1
+8037771,95598237,Tehel Cup Bracket,cup,3,,2019-05-16,6:30 pm,67526452,West Seneca FC,10350976,SoHo FC,5,2,played,,Mulroy Pierce Field
+8037769,95598237,Tehel Cup Bracket,cup,1,,2019-05-17,8:30 pm,10359062,Tonawanda United,10359023,Polonia,1,11,played,,D'Youville College 1
+8037773,95598237,Tehel Cup Bracket,cup,5,,2019-05-21,6:30 pm,95088186,Cavallucci Marini,10359050,Lackawanna FCY,2,3,played,,Mulroy Pierce Field
+8037779,95598237,Tehel Cup Bracket,cup,11,,2019-05-23,6:30 pm,26891552,Buffalo Celtic,10359023,Polonia,2,4,played,,Kenmore East Grass
+8037785,95598237,Tehel Cup Bracket,cup,17,,2019-05-23,6:30 pm,67527661,East Aurora FC,10359117,Dutch United,0,1,played,,Knox Fields 1
+8037781,95598237,Tehel Cup Bracket,cup,13,,2019-05-23,6:30 pm,10359008,Roos FC,10359002,West Seneca Panthers,2,0,played,,Mulroy Pierce Field
+8037776,95598237,Tehel Cup Bracket,cup,8,,2019-05-23,6:30 pm,75479674,Los Chupacabras,95088183,FC Draco,3,1,played,,Nichols School Peek
+8037783,95598237,Tehel Cup Bracket,cup,15,,2019-05-23,6:30 pm,75479641,Williamsville Willies,75479647,Celtic 1888,5,0,played,,Nichols School Strauss Truscott
+8037784,95598237,Tehel Cup Bracket,cup,16,,2019-05-23,8:30 pm,59261096,Beast City SC,75479650,Pendleton United FC,4,2,played,,Sweet Home High School Turf
+8037774,95598237,Tehel Cup Bracket,cup,6,,2019-05-29,6:30 pm,75159801,OP Alliance,10359005,Clarence,0,1,played,,Mulroy Pierce Field
+8037789,95598237,Tehel Cup Bracket,cup,21,,2019-06-06,6:30 pm,67527670,FC Quake,91256977,Lykan United,0,1,played,,Mulroy Pierce Field
+8037794,95598237,Tehel Cup Bracket,cup,26,,2019-06-06,8:00 pm,10359047,BSC International,10350991,BSC Raiders,2,4,played,,Sparky Adams Field Turf
+8037791,95598237,Tehel Cup Bracket,cup,23,,2019-06-06,8:30 pm,75159921,West Side FC,10359017,Celtic United,1,4,played,,D'Youville College 1
+8037793,95598237,Tehel Cup Bracket,cup,25,,2019-06-06,9:00 pm,59260537,Southtowns FPFC,15294627,Niagara FC,0,3,played,,Medaille College Sports Complex
+8037782,95598237,Tehel Cup Bracket,cup,14,,2019-06-11,6:30 pm,67526452,West Seneca FC,12579600,Wolves FC,2,1,played,,Tri Town United Fields F
+8037780,95598237,Tehel Cup Bracket,cup,12,,2019-06-12,6:30 pm,10359035,Queenston FC,10359074,Lykan FC,5,2,played,,Niagara Falls High School 1
+8037792,95598237,Tehel Cup Bracket,cup,24,,2019-06-13,6:30 pm,75159915,NMB FC,10359080,Mes Que FC,2,0,played,,Mulroy Pierce Field
+8037790,95598237,Tehel Cup Bracket,cup,22,,2019-06-13,7:30 pm,75479674,Los Chupacabras,10359111,Crimson SPAL FC,3,1,played,,Niagara University 1
+8037788,95598237,Tehel Cup Bracket,cup,20,,2019-06-17,6:30 pm,75479668,Grand Island FC,18647016,Buffalo United SS,1,7,played,,D'Youville College 1
+8037786,95598237,Tehel Cup Bracket,cup,18,,2019-06-20,6:30 pm,10359050,Lackawanna FCY,26895907,Amherst Sharpshooters,4,1,played,,Kenmore East Sparky Adams Field
+8037797,95598237,Tehel Cup Bracket,cup,29,,2019-06-20,8:30 pm,75479641,Williamsville Willies,59261096,Beast City SC,0,3,played,,Sweet Home High School Turf
+8037787,95598237,Tehel Cup Bracket,cup,19,,2019-06-21,6:30 pm,10359092,Ukraine,10359005,Clarence,1,8,played,,Clarence Soccer Center 11
+8037798,95598237,Tehel Cup Bracket,cup,30,,2019-06-27,6:30 pm,10359117,Dutch United,10359050,Lackawanna FCY,0,4,played,,Lehigh
+8037796,95598237,Tehel Cup Bracket,cup,28,,2019-06-27,6:30 pm,10359008,Roos FC,67526452,West Seneca FC,2,1,played,,Mulroy Pierce Field
+8037799,95598237,Tehel Cup Bracket,cup,31,,2019-06-27,6:30 pm,10359005,Clarence,18647016,Buffalo United SS,1,3,played,,Niagara Falls High School 1
+8037795,95598237,Tehel Cup Bracket,cup,27,,2019-06-27,6:30 pm,10359023,Polonia,10359035,Queenston FC,0,2,played,,Nichols School Strauss Truscott
+8037801,95598237,Tehel Cup Bracket,cup,33,,2019-06-27,6:30 pm,10359017,Celtic United,75159915,NMB FC,7,0,played,,Sparky Adams Field Turf
+8037802,95598237,Tehel Cup Bracket,cup,34,,2019-06-27,7:45 pm,15294627,Niagara FC,10350991,BSC Raiders,0,6,played,,Niagara University 1
+8037800,95598237,Tehel Cup Bracket,cup,32,,2019-06-27,8:30 pm,91256977,Lykan United,75479674,Los Chupacabras,1,3,played,,D'Youville College 1
+8037806,95598237,Tehel Cup Bracket,cup,38,QF4,2019-07-11,6:30 pm,10359017,Celtic United,10350991,BSC Raiders,2,1,played,,Kenmore West Crosby Field
+8037804,95598237,Tehel Cup Bracket,cup,36,QF2,2019-07-11,6:30 pm,59261096,Beast City SC,10359050,Lackawanna FCY,3,0,played,,Sweet Home High School Turf
+8037803,95598237,Tehel Cup Bracket,cup,35,QF1,2019-07-11,6:45 pm,10359035,Queenston FC,10359008,Roos FC,4,0,played,,Niagara Falls High School 1
+8037805,95598237,Tehel Cup Bracket,cup,37,QF3,2019-07-11,8:30 pm,18647016,Buffalo United SS,75479674,Los Chupacabras,3,1,played,,D'Youville College 1
+8037808,95598237,Tehel Cup Bracket,cup,40,SF2,2019-07-25,6:30 pm,18647016,Buffalo United SS,10359017,Celtic United,2,3,played,OT,Nichols School Strauss Truscott
+8037807,95598237,Tehel Cup Bracket,cup,39,SF1,2019-07-25,6:45 pm,10359035,Queenston FC,59261096,Beast City SC,1,0,played,,Niagara Falls High School 1
+8037809,95598237,Tehel Cup Bracket,cup,41,,2019-08-01,6:45 pm,10359035,Queenston FC,10359017,Celtic United,2,1,played,,Nichols School Strauss Truscott
+8037841,95615075,BDSL Wood Cup Bracket,cup,6,,2019-05-16,6:30 pm,91257643,Iron Lungz FC,31566782,Rust Belt United,0,2,played,FT,
+8037840,95615075,BDSL Wood Cup Bracket,cup,5,,2019-05-16,6:30 pm,62886844,Buffalo Gunners,91257538,Medina Mustangs FC,3,2,played,OT,D'Youville College 1
+8037842,95615075,BDSL Wood Cup Bracket,cup,7,,2019-05-16,6:30 pm,91257544,NY Elite,59262126,Celtic Classic,7,0,played,,Nichols School Peek
+8037837,95615075,BDSL Wood Cup Bracket,cup,2,,2019-05-16,8:30 pm,75479683,North Buffalo FC,87153543,Moby Ducks FC,1,0,played,,D'Youville College 1
+8037839,95615075,BDSL Wood Cup Bracket,cup,4,,2019-05-16,8:30 pm,35216066,Meerkats FC,75479659,Bangarang FC,2,0,played,,Niagara University 1
+8037843,95615075,BDSL Wood Cup Bracket,cup,8,,2019-05-23,6:30 pm,75479689,Delco Academy,10359123,Cheektowaga,6,1,played,,GOW School 1
+8037838,95615075,BDSL Wood Cup Bracket,cup,3,,2019-05-28,6:30 pm,75479677,Kingsmen SC,95088490,USAB FC,2,4,played,OT,Grand Island HS 1
+8037847,95615075,BDSL Wood Cup Bracket,cup,12,,2019-05-30,6:30 pm,75159993,Revolution SC,46512675,West United FC,4,2,played,,D'Youville College 1
+8037849,95615075,BDSL Wood Cup Bracket,cup,14,,2019-05-30,6:30 pm,10359077,WNY United Reds,95088493,FC Lackawanna,1,5,played,,Fireman's Park (Depew) 1
+8037851,95615075,BDSL Wood Cup Bracket,cup,16,,2019-05-30,6:30 pm,10359038,Hamburg FC,75479665,Lasalle FC,3,1,played,,Mulroy Pierce Field
+8037850,95615075,BDSL Wood Cup Bracket,cup,15,,2019-05-30,6:30 pm,95088487,Buffalo Brighten Stars,95088661,Westside Blitz,2,1,played,OT,Nichols School Peek
+8037846,95615075,BDSL Wood Cup Bracket,cup,11,,2019-05-30,6:30 pm,75159996,FK Bosna,75479695,Big Green SC,3,2,played,,Nichols School Strauss Truscott
+8037845,95615075,BDSL Wood Cup Bracket,cup,10,,2019-05-30,8:30 pm,12579571,Devils,75479653,Youngstown Marksmen,2,0,played,,D'Youville College 1
+8037855,95615075,BDSL Wood Cup Bracket,cup,20,,2019-06-20,6:30 pm,91257544,NY Elite,75479689,Delco Academy,2,0,played,,Kenmore West Crosby Field
+8037859,95615075,BDSL Wood Cup Bracket,cup,24,,2019-06-20,6:30 pm,95088487,Buffalo Brighten Stars,10359038,Hamburg FC,3,2,played,,Mulroy Pierce Field
+8037852,95615075,BDSL Wood Cup Bracket,cup,17,,2019-06-20,6:30 pm,67527667,Twin Village Dutch,75479683,North Buffalo FC,4,3,played,OT,Walden Pond Park 1
+8037853,95615075,BDSL Wood Cup Bracket,cup,18,,2019-06-20,8:30 pm,95088490,USAB FC,35216066,Meerkats FC,8,4,played,,Kenmore East Sparky Adams Field
+8037858,95615075,BDSL Wood Cup Bracket,cup,23,,2019-06-20,8:45 pm,75159990,Great White Buffalo,95088493,FC Lackawanna,1,3,played,,D'Youville College 1
+8037854,95615075,BDSL Wood Cup Bracket,cup,19,,2019-06-26,6:30 pm,62886844,Buffalo Gunners,31566782,Rust Belt United,5,3,played,,Mulroy Pierce Field
+8037857,95615075,BDSL Wood Cup Bracket,cup,22,,2019-06-27,6:30 pm,75159996,FK Bosna,75159993,Revolution SC,1,2,played,OT,Lehigh South Street
+8037856,95615075,BDSL Wood Cup Bracket,cup,21,,2019-07-03,6:30 pm,87153546,Tesla FC,12579571,Devils,0,5,played,,Lincoln Park 1
+8037863,95615075,BDSL Wood Cup Bracket,cup,28,QF4,2019-07-11,6:30 pm,95088493,FC Lackawanna,95088487,Buffalo Brighten Stars,4,2,played,,Lehigh
+8037861,95615075,BDSL Wood Cup Bracket,cup,26,QF2,2019-07-11,6:30 pm,62886844,Buffalo Gunners,91257544,NY Elite,1,5,played,,Mulroy Pierce Field
+8037860,95615075,BDSL Wood Cup Bracket,cup,25,QF1,2019-07-11,6:30 pm,67527667,Twin Village Dutch,95088490,USAB FC,0,2,played,,Walden Pond Park 1
+8037862,95615075,BDSL Wood Cup Bracket,cup,27,QF3,2019-07-11,8:30 pm,12579571,Devils,75159993,Revolution SC,2,0,played,,Sweet Home High School Turf
+8037865,95615075,BDSL Wood Cup Bracket,cup,29,SF1,2019-07-25,6:30 pm,95088490,USAB FC,91257544,NY Elite,1,1,played,PK,Nichols School Peek
+8037866,95615075,BDSL Wood Cup Bracket,cup,30,SF2,2019-07-25,8:45 pm,12579571,Devils,95088493,FC Lackawanna,4,0,played,,Kenny Field 3
+8037864,95615075,BDSL Wood Cup Bracket,cup,31,,2019-08-01,6:30 pm,95088490,USAB FC,12579571,Devils,0,2,played,,Nichols School Peek

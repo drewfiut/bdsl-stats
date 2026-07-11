@@ -40,9 +40,10 @@ data/
   seasons.json                 registry: season_id -> Demosphere ids + flags        (global)
   players.json                 registry: person_key -> identity                     (global)
   <season_id>/                 one folder per season, e.g. 2014-summer ... 2026-summer
-    competitions.json          the divisions / cups played that season
-    teams.json                 every team + its full standings record
+    competitions.json          the divisions / cups played that season (+ each one's champion)
+    teams.json                 every team + its full standings record (+ computed position)
     stats.csv                  per-player, per-competition stat rows (the fact table)
+    games.csv                  every game played, with score / round label (the game fact table)
 ```
 
 Seasons currently present: `2014-summer` … `2026-summer` (11 historical + the live season).
@@ -99,9 +100,13 @@ Array of the competitions that ran that season, in display order. Each entry:
 | `competition` | string | Name as shown on the site, e.g. `"Premier"`, `"Over 35 Premier"`, `"Tehel Cup"`. |
 | `comp_type` | string | One of `"league"`, `"over35"`, `"cup"` (see §5.2). |
 | `tg` | string | Demosphere "team-group" id for this competition; it is the `tg` used in `stats.csv`. |
+| `champion_club_id` | string | `club_id` of the competition's **champion** (the trophy winner), or `""` if undecided. See §5.6. Joins to `teams.json` `club_id` / `stats.csv` team club ids. |
+| `champion_name` | string | Champion team's name (denormalized), or `""`. |
+| `champion_via` | string | How the champion was decided: `"playoff"` (won the `CHMP` final), `"regular"` (no playoff that year → regular-season leader), or `""` (undecided — season in progress, or a bracket whose final wasn't a decided `CHMP` game). See §5.6. |
 
 A season has the six league divisions, one or two Over-35 divisions, and zero–three cups.
-Names vary by year — see §5.3.
+Names vary by year — see §5.3. **The champion is the trophy winner and can differ from the
+regular-season table-topper (`teams.json` `position == 1`)** — see §5.6.
 
 ### 4.2 `<season>/teams.json`
 
@@ -118,7 +123,7 @@ cup team identities appear only inside `stats.csv`). Full standings record:
 | `competition` | string | Competition name (denormalized for convenience). |
 | `comp_type` | string | `"league"` or `"over35"` (this file never contains cups). |
 | `name` | string | Team name, e.g. `"BSC Raiders"`. |
-| `rank` | int | Final/curr. table position within its competition. |
+| `position` | int | **Computed** regular-season table position within its competition (1 = top), from `pts`, then `gd`, then `gf`, then name. Replaces the old source `rank`, which is no longer stored (it ignored the playoffs and was mis-read as "champion"). **`position == 1` means "topped the table," not "won the title"** — the champion is in `competitions.json` (§4.1, §5.6). |
 | `gp` `w` `l` `d` | int | Games played, wins, losses, draws (overall). |
 | `pts` | int | League points (competition's own scoring, not the goals+assists metric). |
 | `gf` `ga` `gd` | int | Goals for, against, difference. |
@@ -156,6 +161,41 @@ snapshot's rows.
 
 **Points metric:** BDSL's leaderboard scores `points = 2 × g + 1 × a`. This is *not* stored;
 compute it. (It is unrelated to the team `pts` column in `teams.json`.)
+
+(Note: this file's `position` column is a **player position code** (D/M/F) — unrelated to the
+`position` standings field in `teams.json`.)
+
+### 4.4 `<season>/games.csv`
+
+Every game on the schedule/results pages, across all competitions. **One row per game**, keyed by
+the stable Demosphere `game_key`. Rewritten wholesale on each collect (a game's result is its
+result — no dated snapshots). Includes both played and not-yet-played games. Header order is fixed:
+
+| Column | Type on disk | Meaning |
+|---|---|---|
+| `game_key` | string | Stable Demosphere game id. Unique within (and across) seasons; the dedup/join key. |
+| `tg` | string | Competition team-group id → join to `competitions.json` / `teams.json` / `stats.csv`. |
+| `competition` | string | Competition name (denormalized). |
+| `comp_type` | string | `"league"` / `"over35"` / `"cup"`. |
+| `game_number` | string | Human-facing game number shown on the site (e.g. `7032`). |
+| `round_label` | string | **Playoff round tag**: `""` for regular-season games; `QF1`–`QF4` (quarterfinal), `SF1`/`SF2` (semifinal), `CHMP`/`CHAMP` (championship final). This is how the champion is identified (§5.6). |
+| `date` | `YYYY-MM-DD` \| "" | Kickoff date (`""` if the source didn't give a parseable date). |
+| `time` | string | Kickoff time as shown, e.g. `"8:30 pm"`; may be empty. |
+| `home_club_id` | string | Home team's Demosphere club id → joins to `teams.json` `club_id`. May be `""` for an unfilled bracket slot. |
+| `home_name` | string | Home team name. |
+| `away_club_id` | string | Away team's club id (same join). |
+| `away_name` | string | Away team name. |
+| `home_score` | int \| "" | Home goals; `""` if not yet played. |
+| `away_score` | int \| "" | Away goals; `""` if not yet played. |
+| `status` | string | `"played"` (a score was posted) or `"scheduled"`. |
+| `result_note` | string | Trailing marker on the score, e.g. `"FT"`, `"PK"` (penalties); usually `""`. |
+| `location` | string | Field / facility name; may be empty. |
+
+**Availability:** fixtures + final scores exist for **every season 2014→present** (older seasons
+are month-paginated; the collector fetches every month). Per-game detail beyond the score (goal
+scorers, cards, referees, lineups — visible in the site's per-game "Match Report") is **not**
+captured. Score-only means a final decided on penalties shows the level regulation score with
+`result_note="PK"` and does **not** record the shootout winner (see §5.6).
 
 ---
 
@@ -202,6 +242,20 @@ years is still one identity. Career totals = sum of `g`/`a`/`gp` grouped by `per
 every season's `stats.csv`. Single-season totals = the same group-by *within* one season
 (this merges a person's league + cup + Over-35 rows into one season line).
 
+### 5.6 Champion ≠ table-topper (important)
+Each division and cup is decided by an **end-of-season playoff bracket**, not by the league table.
+The champion is the winner of the game tagged `CHMP` (`games.csv` `round_label`), and is stored on
+each competition in `competitions.json` (`champion_club_id` / `champion_name` / `champion_via`).
+This is **not** the same as `teams.json` `position == 1`: a team can top the table and still lose in
+the playoffs. Example — Summer 2023 4th Division: Infinity FC finished `position 1`, but lost their
+semifinal; **Bangarang FC** won the `CHMP` game and is the champion.
+
+Counting titles or crowning a champion, **use `competitions.json` `champion_club_id`, never
+`position`.** `champion_via` tells you how it was decided; `""` means undecided — the live season
+in progress, an old cup whose final wasn't tagged `CHMP`, or a final settled on penalties (the
+score-only `games.csv` can't record a shootout winner — see §4.4). Treat `""` as "unknown," not
+"no champion."
+
 ---
 
 ## 6. Common derivations (recipes)
@@ -211,7 +265,12 @@ every season's `stats.csv`. Single-season totals = the same group-by *within* on
   by `person_key`, summing `g`/`a`/`gp`; `points = 2g + a`. (This is what the leaderboard
   renders — see `aggregate.build_player_seasons`.)
 - **Career totals / who played the most seasons:** group by `person_key` across all seasons.
-- **Team standings / tables:** read `<season>/teams.json` directly (already aggregated).
+- **Team standings / tables:** read `<season>/teams.json` directly (already aggregated), ordered
+  by `position`.
+- **A competition's champion / a club's titles:** read `champion_club_id` from
+  `competitions.json` (per season). Titles for a club = count of competitions across all seasons
+  whose `champion_club_id` == that `club_id`. **Do not** infer titles from `position == 1` (§5.6).
+- **All games / results for a competition:** read `<season>/games.csv`, filter by `tg`.
 - **Head-to-head of two names that might collide:** they won't merge — distinct people have
   distinct `person_key`s. Always key on `person_key`.
 
@@ -221,7 +280,7 @@ every season's `stats.csv`. Single-season totals = the same group-by *within* on
 
 - Add a field to a JSON dimension freely; old files simply lack it (readers should treat
   missing keys as empty). Document it here.
-- Add a column to `stats.csv` by appending to `STATS_COLUMNS` in `store.py`; existing rows pad
-  blank on the next rewrite. Document it here.
+- Add a column to `stats.csv` / `games.csv` by appending to `STATS_COLUMNS` / `GAMES_COLUMNS` in
+  `store.py`; existing rows pad blank on the next rewrite. Document it here.
 - Add a season by collecting it (`history.py` for past years, the live pipeline for the current
   one). It lands in its own folder; the global registries grow to span it automatically.

@@ -114,22 +114,34 @@ async function buildBoard() {
 
   const perSeason = await Promise.all(
     ids.map(async (sid) => {
-      const [rows, teams] = await Promise.all([
+      const [rows, teams, comps] = await Promise.all([
         fetchCsv(`${sid}/stats.csv`),
         fetchJson(`${sid}/teams.json`).catch(() => []), // some seasons may lack standings
+        fetchJson(`${sid}/competitions.json`).catch(() => []), // carries each comp's champion
       ]);
       const label = seasons[sid]?.label || sid;
-      return { sid, label, live: isLive(seasons[sid]), rows, teams };
+      return { sid, label, live: isLive(seasons[sid]), rows, teams, comps };
     })
   );
 
   const allPlayers = [];
   const allTeamStandings = []; // flat teams.json rows tagged with season context
+  // clubId -> [{ sid, label, competition, via }] : the authoritative source of titles, spanning
+  // league, Over-35 AND cups (cups have no teams.json, so their titles only live here). A champion
+  // is the CHMP playoff winner, which can differ from the regular-season table-topper (position 1).
+  const championsByClub = new Map();
   let dataAsOf = '';
   for (const s of perSeason) {
     allPlayers.push(...aggregateSeason(s.rows, s.sid, s.label, s.live));
     for (const t of s.teams) {
       allTeamStandings.push({ ...t, sid: s.sid, seasonLabel: s.label, live: s.live });
+    }
+    for (const c of s.comps) {
+      const champ = c.champion_club_id;
+      if (!champ) continue; // undecided (in progress / untagged final / PK) — not a title
+      let list = championsByClub.get(champ);
+      if (!list) { list = []; championsByClub.set(champ, list); }
+      list.push({ sid: s.sid, label: s.label, competition: c.competition, via: c.champion_via || '' });
     }
     if (s.live && s.rows.length) {
       // freshest fetched_at of the live season's latest snapshot
@@ -147,7 +159,7 @@ async function buildBoard() {
     .reverse()
     .map((sid) => seasons[sid]?.label || sid); // newest-first, for the filter dropdown
 
-  return { players: active, allPlayers, allTeamStandings, playersRegistry, seasonLabels, dataAsOf };
+  return { players: active, allPlayers, allTeamStandings, championsByClub, playersRegistry, seasonLabels, dataAsOf };
 }
 
 // Fetch + aggregate once, then share across route navigations (board <-> profile).
@@ -236,7 +248,8 @@ export function buildAllPlayers(allPlayers, playersRegistry) {
 // cups have no table). Roster/scoring comes from stats.csv via allPlayers' per-comp club tags.
 
 // Sum a club's standings rows into all-time totals. Name = the club's newest-season spelling,
-// since a handful of clubs were renamed over the years.
+// since a handful of clubs were renamed over the years. Titles come from the champions index
+// (championsByClub), not from these standings rows -- a table-topper isn't necessarily a champion.
 function aggregateClub(rows) {
   const t = { gp: 0, w: 0, l: 0, d: 0, gf: 0, ga: 0, pts: 0, titles: 0 };
   const sids = new Set();
@@ -244,7 +257,6 @@ function aggregateClub(rows) {
   for (const r of rows) {
     t.gp += num(r.gp); t.w += num(r.w); t.l += num(r.l); t.d += num(r.d);
     t.gf += num(r.gf); t.ga += num(r.ga); t.pts += num(r.pts);
-    if (num(r.rank) === 1) t.titles += 1;
     sids.add(r.sid);
     if (r.sid >= newestSid) { newestSid = r.sid; name = r.name; }
   }
@@ -253,7 +265,8 @@ function aggregateClub(rows) {
 }
 
 // One row per club: all-time standings totals, sorted alphabetically by name (like buildAllPlayers).
-export function buildAllClubs(allTeamStandings) {
+// Titles = number of competitions the club won (championsByClub), across league, Over-35 and cups.
+export function buildAllClubs(allTeamStandings, championsByClub) {
   const byClub = new Map();
   for (const r of allTeamStandings) {
     const id = r.club_id;
@@ -266,6 +279,7 @@ export function buildAllClubs(allTeamStandings) {
   const out = [];
   for (const [clubId, rows] of byClub) {
     const { name, totals, seasons } = aggregateClub(rows);
+    totals.titles = championsByClub?.get(clubId)?.length || 0;
     out.push({ clubId, name, seasons, ...totals });
   }
   out.sort((a, b) => a.name.localeCompare(b.name));
@@ -275,22 +289,28 @@ export function buildAllClubs(allTeamStandings) {
 // Full profile for one club: all-time totals, per-season competition history (from teams.json,
 // newest first), and the roster of every player who appeared for the club (from stats.csv, rolled
 // up per person over only that club's competitions). Returns null if the club_id isn't found.
-export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, clubId) {
+export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, clubId, championsByClub) {
   const standings = allTeamStandings.filter((r) => r.club_id === clubId);
   if (!standings.length) return null;
 
   const { name, totals } = aggregateClub(standings);
+
+  // Titles the club won (league + Over-35 + cups), and a lookup to flag each one in the tables.
+  const wins = championsByClub?.get(clubId) || [];
+  totals.titles = wins.length;
+  const titleKeys = new Set(wins.map((w) => `${w.sid}||${w.competition}`));
 
   // Group standings by season, newest sid first; each season lists its competitions.
   const bySeason = new Map();
   for (const r of standings) {
     let s = bySeason.get(r.sid);
     if (!s) { s = { sid: r.sid, label: r.seasonLabel, live: !!r.live, comps: [] }; bySeason.set(r.sid, s); }
-    s.comps.push({ c: r.competition, rank: num(r.rank), w: num(r.w), l: num(r.l),
-      d: num(r.d), gf: num(r.gf), ga: num(r.ga), pts: num(r.pts) });
+    s.comps.push({ c: r.competition, position: num(r.position), w: num(r.w), l: num(r.l),
+      d: num(r.d), gf: num(r.gf), ga: num(r.ga), pts: num(r.pts),
+      title: titleKeys.has(`${r.sid}||${r.competition}`) });
   }
   const seasons = [...bySeason.values()].sort((a, b) => b.sid.localeCompare(a.sid));
-  for (const s of seasons) s.comps.sort((a, b) => a.rank - b.rank || a.c.localeCompare(b.c));
+  for (const s of seasons) s.comps.sort((a, b) => a.position - b.position || a.c.localeCompare(b.c));
 
   // Roster: for each player-season, sum only the comps that were played for this club.
   // Cups have no standings table (teams.json is league + over35 only), so cup history is
@@ -322,7 +342,8 @@ export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, 
     .map((cs) => ({
       sid: cs.sid, label: cs.label, live: cs.live,
       entries: [...cs.byCup.values()]
-        .map((cup) => ({ c: cup.c, g: cup.g, a: cup.a, players: cup.pks.size, gp: cup.gp }))
+        .map((cup) => ({ c: cup.c, g: cup.g, a: cup.a, players: cup.pks.size, gp: cup.gp,
+          title: titleKeys.has(`${cs.sid}||${cup.c}`) }))
         .sort((a, b) => a.c.localeCompare(b.c)),
     }));
   const roster = [];

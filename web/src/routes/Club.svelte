@@ -18,7 +18,7 @@
     club = null;
     loadBoard()
       .then((b) => {
-        club = buildClubProfile(b.allTeamStandings, b.allPlayers, b.playersRegistry, id);
+        club = buildClubProfile(b.allTeamStandings, b.allPlayers, b.playersRegistry, id, b.championsByClub);
       })
       .catch((e) => (error = e.message || String(e)))
       .finally(() => (loading = false));
@@ -69,7 +69,7 @@
             <thead>
               <tr>
                 <th class="l">Competition</th>
-                <th>Rank</th>
+                <th>Pos</th>
                 <th>W</th>
                 <th>L</th>
                 <th>D</th>
@@ -80,9 +80,9 @@
             </thead>
             <tbody>
               {#each s.comps as c}
-                <tr>
-                  <td class="l">{c.c}</td>
-                  <td class="rank" class:m1={c.rank === 1} class:m2={c.rank === 2} class:m3={c.rank === 3}>{c.rank || '–'}</td>
+                <tr class:champ={c.title}>
+                  <td class="l">{c.c}{#if c.title}<span class="trophy" title="Champion">🏆</span>{/if}</td>
+                  <td class="rank" class:m1={c.position === 1} class:m2={c.position === 2} class:m3={c.position === 3}>{c.position || '–'}</td>
                   <td>{c.w}</td>
                   <td>{c.l}</td>
                   <td>{c.d}</td>
@@ -117,8 +117,8 @@
               </thead>
               <tbody>
                 {#each s.entries as c}
-                  <tr>
-                    <td class="l">{c.c}</td>
+                  <tr class:champ={c.title}>
+                    <td class="l">{c.c}{#if c.title}<span class="trophy" title="Champion">🏆</span>{/if}</td>
                     <td>{c.players}</td>
                     <td class="g">{#if c.g}{c.g}{:else}<span class="z">0</span>{/if}</td>
                     <td class="a">{#if c.a}{c.a}{:else}<span class="z">0</span>{/if}</td>

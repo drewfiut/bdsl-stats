@@ -1,0 +1,626 @@
+game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id,home_name,away_club_id,away_name,home_score,away_score,status,result_note,location
+6573891,87148545,Premier,league,7063,SF1,2017-08-06,6:00 pm,18647016,Buffalo United SS,10350991,BSC Raiders,3,4,played,OT,D'Youville College 1
+6573892,87148545,Premier,league,7064,SF2,2017-08-06,6:00 pm,26895907,Amherst Sharpshooters,10350976,SoHo FC,1,4,played,,Nichols School Strauss Truscott
+6573893,87148545,Premier,league,7065,CHMP,2017-08-13,5:30 pm,10350991,BSC Raiders,10350976,SoHo FC,4,3,played,,Nichols School Strauss Truscott
+6573829,87148545,Premier,league,7001,,2017-05-07,4:00 pm,10359017,Celtic United,10359035,Queenston FC,3,1,played,,Nichols School Peek
+6573830,87148545,Premier,league,7002,,2017-05-07,4:00 pm,26895907,Amherst Sharpshooters,10359005,Clarence,3,4,played,,Nichols School Strauss Truscott
+6573834,87148545,Premier,league,7006,,2017-05-07,6:00 pm,67526770,Buffalo Bantu,18647016,Buffalo United SS,0,2,played,,Nichols School Peek
+6573833,87148545,Premier,league,7005,,2017-05-07,6:00 pm,10350976,SoHo FC,10350991,BSC Raiders,2,4,played,,Nichols School Strauss Truscott
+6573835,87148545,Premier,league,7007,,2017-05-14,2:00 pm,10350976,SoHo FC,67527661,East Aurora FC,4,0,played,,Mulroy Pierce Field
+6573838,87148545,Premier,league,7010,,2017-05-14,4:00 pm,10350991,BSC Raiders,10359050,Lackawanna FCY,8,0,played,,Nichols School Strauss Truscott
+6573839,87148545,Premier,league,7011,,2017-05-14,4:00 pm,10359035,Queenston FC,67526770,Buffalo Bantu,4,1,played,,Veteran's Park (GI) Back Field 6/8
+6573836,87148545,Premier,league,7008,,2017-05-14,6:00 pm,18647016,Buffalo United SS,10359017,Celtic United,2,1,played,,D'Youville College 1
+6573840,87148545,Premier,league,7012,,2017-05-14,6:00 pm,26891564,FC Yemen,26895907,Amherst Sharpshooters,1,7,played,,Lackawanna High School 1
+6573831,87148545,Premier,league,7003,,2017-05-19,6:30 pm,67527661,East Aurora FC,10359050,Lackawanna FCY,2,1,played,,Knox Fields 1
+6573841,87148545,Premier,league,7013,,2017-05-21,4:00 pm,67526770,Buffalo Bantu,26891564,FC Yemen,1,1,played,,Nichols School Strauss Truscott
+6573842,87148545,Premier,league,7014,,2017-05-21,6:00 pm,10359005,Clarence,10350976,SoHo FC,4,1,played,,Clarence Town Hall Park 1
+6573843,87148545,Premier,league,7015,,2017-05-21,6:00 pm,67527661,East Aurora FC,10359008,Roos FC,7,4,played,,Knox Fields 1
+6573844,87148545,Premier,league,7016,,2017-05-21,6:00 pm,10359050,Lackawanna FCY,18647016,Buffalo United SS,0,4,played,,Lackawanna High School 1
+6573845,87148545,Premier,league,7017,,2017-05-21,6:00 pm,10350991,BSC Raiders,10359017,Celtic United,2,2,played,,Nichols School Strauss Truscott
+6573846,87148545,Premier,league,7018,,2017-05-21,6:00 pm,10359035,Queenston FC,26895907,Amherst Sharpshooters,1,2,played,,Veteran's Park (GI) Front Field 3
+6573894,87148545,Premier,league,7066,,2017-05-30,6:30 pm,10359005,Clarence,10359035,Queenston FC,1,1,played,,Clarence Soccer Center 1
+6573897,87148545,Premier,league,7069,,2017-05-30,6:30 pm,10359008,Roos FC,67526770,Buffalo Bantu,6,1,played,,Mulroy Pierce Field
+6573847,87148545,Premier,league,7019,,2017-06-04,4:00 pm,67526770,Buffalo Bantu,10359050,Lackawanna FCY,2,4,played,,D'Youville College 1
+6573848,87148545,Premier,league,7020,,2017-06-04,4:00 pm,26895907,Amherst Sharpshooters,10350976,SoHo FC,3,1,played,,Nichols School Strauss Truscott
+6573849,87148545,Premier,league,7021,,2017-06-04,6:00 pm,10359005,Clarence,10359017,Celtic United,1,1,played,,Clarence Town Hall Park 1
+6573850,87148545,Premier,league,7022,,2017-06-04,6:00 pm,18647016,Buffalo United SS,10359008,Roos FC,3,1,played,,D'Youville College 1
+6573851,87148545,Premier,league,7023,,2017-06-04,6:00 pm,67527661,East Aurora FC,26891564,FC Yemen,0,0,played,,Knox Fields 1
+6573852,87148545,Premier,league,7024,,2017-06-04,6:00 pm,10350991,BSC Raiders,10359035,Queenston FC,1,0,played,,Nichols School Strauss Truscott
+6573853,87148545,Premier,league,7025,,2017-06-11,2:00 pm,10359017,Celtic United,10359008,Roos FC,1,0,played,,Nichols School Strauss Truscott
+6573854,87148545,Premier,league,7026,,2017-06-11,4:00 pm,10350976,SoHo FC,26891564,FC Yemen,2,1,played,,Nichols School Strauss Truscott
+6573855,87148545,Premier,league,7027,,2017-06-11,6:00 pm,18647016,Buffalo United SS,26895907,Amherst Sharpshooters,1,3,played,,D'Youville College 1
+6573856,87148545,Premier,league,7028,,2017-06-11,6:00 pm,10359050,Lackawanna FCY,10359005,Clarence,2,2,played,,Lackawanna High School 1
+6573857,87148545,Premier,league,7029,,2017-06-11,6:00 pm,10350991,BSC Raiders,67526770,Buffalo Bantu,5,1,played,,Nichols School Strauss Truscott
+6573858,87148545,Premier,league,7030,,2017-06-11,6:00 pm,10359035,Queenston FC,67527661,East Aurora FC,3,4,played,,Veteran's Park (GI) Front Field 3
+6573859,87148545,Premier,league,7031,,2017-06-18,2:00 pm,10359017,Celtic United,10359050,Lackawanna FCY,4,2,played,,Nichols School Strauss Truscott
+6573861,87148545,Premier,league,7033,,2017-06-18,6:00 pm,67526770,Buffalo Bantu,10359005,Clarence,0,5,played,,D'Youville College 1
+6573862,87148545,Premier,league,7034,,2017-06-18,6:00 pm,26891564,FC Yemen,10359035,Queenston FC,1,3,played,,Lackawanna High School 1
+6573864,87148545,Premier,league,7036,,2017-06-18,6:00 pm,10350976,SoHo FC,18647016,Buffalo United SS,1,2,played,,Nichols School Strauss Truscott
+6573860,87148545,Premier,league,7032,,2017-06-21,8:30 pm,10350991,BSC Raiders,67527661,East Aurora FC,3,2,played,,D'Youville College 1
+6573865,87148545,Premier,league,7037,,2017-06-25,4:00 pm,67526770,Buffalo Bantu,67527661,East Aurora FC,1,2,played,,D'Youville College 1
+6573868,87148545,Premier,league,7040,,2017-06-25,6:00 pm,10359050,Lackawanna FCY,10359008,Roos FC,3,2,played,,Lackawanna High School 1
+6573869,87148545,Premier,league,7041,,2017-06-25,6:00 pm,26895907,Amherst Sharpshooters,10359017,Celtic United,5,1,played,,Nichols School Strauss Truscott
+6573870,87148545,Premier,league,7042,,2017-06-25,6:00 pm,10359035,Queenston FC,10350976,SoHo FC,3,2,played,,Veteran's Park (GI) Front Field 3
+6573832,87148545,Premier,league,7004,,2017-07-02,6:00 pm,26891564,FC Yemen,10359008,Roos FC,1,1,played,,Lackawanna High School 1
+6573896,87148545,Premier,league,7068,,2017-07-06,6:30 pm,10359050,Lackawanna FCY,26891564,FC Yemen,1,4,played,,Lackawanna High School 1
+6573874,87148545,Premier,league,7046,,2017-07-09,2:00 pm,10359008,Roos FC,10350976,SoHo FC,0,4,played,,Mulroy Pierce Field
+6573871,87148545,Premier,league,7043,,2017-07-09,4:00 pm,67526770,Buffalo Bantu,10359017,Celtic United,1,0,played,,Nichols School Strauss Truscott
+6573872,87148545,Premier,league,7044,,2017-07-09,6:00 pm,67527661,East Aurora FC,10359005,Clarence,2,0,played,,Knox Fields 1
+6573873,87148545,Premier,league,7045,,2017-07-09,6:00 pm,26891564,FC Yemen,10350991,BSC Raiders,2,2,played,,Lackawanna High School 1
+6573875,87148545,Premier,league,7047,,2017-07-09,6:00 pm,26895907,Amherst Sharpshooters,10359050,Lackawanna FCY,6,1,played,,Nichols School Strauss Truscott
+6573876,87148545,Premier,league,7048,,2017-07-09,6:00 pm,10359035,Queenston FC,18647016,Buffalo United SS,0,0,played,,Veteran's Park (GI) Front Field 3
+6573867,87148545,Premier,league,7039,,2017-07-12,8:30 pm,18647016,Buffalo United SS,26891564,FC Yemen,0,0,played,FT,D'Youville College 1
+6573863,87148545,Premier,league,7035,,2017-07-13,6:30 pm,10359008,Roos FC,26895907,Amherst Sharpshooters,0,3,played,,Mulroy Pierce Field
+6573898,87148545,Premier,league,7070,,2017-07-13,6:30 pm,10359017,Celtic United,10350976,SoHo FC,1,3,played,,Tri Town United Fields A
+6573895,87148545,Premier,league,7067,,2017-07-15,6:00 pm,67527661,East Aurora FC,18647016,Buffalo United SS,0,5,played,,Knox Fields 1
+6573877,87148545,Premier,league,7049,,2017-07-16,2:00 pm,26895907,Amherst Sharpshooters,67526770,Buffalo Bantu,1,0,played,,Nichols School Strauss Truscott
+6573882,87148545,Premier,league,7054,,2017-07-16,4:00 pm,10359008,Roos FC,10359035,Queenston FC,2,1,played,,Mulroy Pierce Field
+6573878,87148545,Premier,league,7050,,2017-07-16,4:00 pm,10359017,Celtic United,67527661,East Aurora FC,2,1,played,,Nichols School Peek
+6573879,87148545,Premier,league,7051,,2017-07-16,6:00 pm,10359005,Clarence,26891564,FC Yemen,2,1,played,,Clarence Town Hall Park 1
+6573880,87148545,Premier,league,7052,,2017-07-16,6:00 pm,18647016,Buffalo United SS,10350991,BSC Raiders,3,0,played,,D'Youville College 1
+6573881,87148545,Premier,league,7053,,2017-07-16,6:00 pm,10359050,Lackawanna FCY,10350976,SoHo FC,2,10,played,,Lackawanna High School 1
+6573837,87148545,Premier,league,7009,,2017-07-18,6:30 pm,10359008,Roos FC,10359005,Clarence,1,6,played,,Mulroy Pierce Field
+6573899,87148545,Premier,league,7071,,2017-07-18,8:30 pm,10350991,BSC Raiders,26895907,Amherst Sharpshooters,5,2,played,,D'Youville College 1
+6573887,87148545,Premier,league,7059,,2017-07-23,2:00 pm,10359008,Roos FC,10350991,BSC Raiders,0,3,played,,Mulroy Pierce Field
+6573883,87148545,Premier,league,7055,,2017-07-23,2:00 pm,10350976,SoHo FC,67526770,Buffalo Bantu,3,2,played,,Nichols School Strauss Truscott
+6573884,87148545,Premier,league,7056,,2017-07-23,6:00 pm,10359005,Clarence,18647016,Buffalo United SS,0,1,played,,Clarence Town Hall Park 1
+6573885,87148545,Premier,league,7057,,2017-07-23,6:00 pm,67527661,East Aurora FC,26895907,Amherst Sharpshooters,1,8,played,,Knox Fields 1
+6573886,87148545,Premier,league,7058,,2017-07-23,6:00 pm,26891564,FC Yemen,10359017,Celtic United,3,2,played,,Lackawanna High School 1
+6573888,87148545,Premier,league,7060,,2017-07-23,6:00 pm,10359035,Queenston FC,10359050,Lackawanna FCY,3,3,played,,Veteran's Park (GI) Front Field 3
+6573866,87148545,Premier,league,7038,,2017-07-25,7:00 pm,10359005,Clarence,10350991,BSC Raiders,2,0,played,FT,Clarence Town Hall Park 1
+6573890,87148545,Premier,league,7062,QF1,2017-07-30,6:00 pm,10359005,Clarence,10350976,SoHo FC,1,2,played,,Clarence Town Hall Park 1
+6573889,87148545,Premier,league,7061,QF2,2017-07-30,6:00 pm,10350991,BSC Raiders,67527661,East Aurora FC,3,1,played,,Nichols School Strauss Truscott
+6573962,87148549,Championship,league,7263,SF1,2017-08-06,4:00 pm,12579600,Wolves FC,75479641,Williamsville Willies,1,0,played,,D'Youville College 1
+6573963,87148549,Championship,league,7264,SF2,2017-08-06,4:00 pm,59260537,Southtowns FPFC,59261096,Beast City SC,1,0,played,,Mulroy Pierce Field
+6573964,87148549,Championship,league,7265,CHMP,2017-08-13,5:45 pm,59260537,Southtowns FPFC,12579600,Wolves FC,0,1,played,,Nichols School Peek
+6573901,87148549,Championship,league,7202,,2017-05-07,4:00 pm,59260537,Southtowns FPFC,15294627,Niagara FC,1,1,played,,Mulroy Pierce Field
+6573900,87148549,Championship,league,7201,,2017-05-07,8:30 pm,10359029,Panthers,75479641,Williamsville Willies,1,1,played,,Sweet Home High School Turf
+6573907,87148549,Championship,league,7208,,2017-05-14,4:00 pm,59260537,Southtowns FPFC,10359086,Rangers,2,0,played,,Mulroy Pierce Field
+6573908,87148549,Championship,league,7209,,2017-05-14,4:00 pm,59261105,Celtic Hoops,75159801,OP Alliance,0,1,played,,Nichols School Peek
+6573909,87148549,Championship,league,7210,,2017-05-14,6:00 pm,75479641,Williamsville Willies,10359047,Inter SC,0,0,played,,Nichols School Strauss Truscott
+6573911,87148549,Championship,league,7212,,2017-05-14,6:00 pm,12579600,Wolves FC,59261096,Beast City SC,2,1,played,,West Seneca Soccer Complex A
+6573910,87148549,Championship,league,7211,,2017-05-14,8:00 pm,15294627,Niagara FC,67527670,FC Quake,0,0,played,,Niagara University 1
+6573906,87148549,Championship,league,7207,,2017-05-14,8:30 pm,10359029,Panthers,10359074,Lykan FC,2,0,played,,Sweet Home High School Turf
+6573912,87148549,Championship,league,7213,,2017-05-21,2:00 pm,59261105,Celtic Hoops,10359047,Inter SC,3,2,played,,Nichols School Peek
+6573913,87148549,Championship,league,7214,,2017-05-21,2:00 pm,67527670,FC Quake,10359029,Panthers,1,3,played,,Parker's Pitch Field A
+6573915,87148549,Championship,league,7216,,2017-05-21,4:00 pm,59260537,Southtowns FPFC,75159801,OP Alliance,2,1,played,,Mulroy Pierce Field
+6573914,87148549,Championship,league,7215,,2017-05-21,4:00 pm,10359074,Lykan FC,15294627,Niagara FC,1,1,played,,Nichols School Peek
+6573916,87148549,Championship,league,7217,,2017-05-21,6:00 pm,12579600,Wolves FC,75479641,Williamsville Willies,1,1,played,,West Seneca Soccer Complex A
+6573917,87148549,Championship,league,7218,,2017-05-21,8:30 pm,59261096,Beast City SC,10359086,Rangers,3,0,played,,Sweet Home High School Turf
+6573918,87148549,Championship,league,7219,,2017-06-04,2:00 pm,75479641,Williamsville Willies,67527670,FC Quake,0,3,played,,Mulroy Pierce Field
+6573922,87148549,Championship,league,7223,,2017-06-04,4:00 pm,59260537,Southtowns FPFC,59261096,Beast City SC,2,0,played,,Mulroy Pierce Field
+6573919,87148549,Championship,league,7220,,2017-06-04,4:00 pm,10359047,Inter SC,12579600,Wolves FC,0,1,played,,Nichols School Peek
+6573920,87148549,Championship,league,7221,,2017-06-04,6:00 pm,75159801,OP Alliance,10359074,Lykan FC,1,1,played,,Orchard Park Soccer Complex 1
+6573923,87148549,Championship,league,7224,,2017-06-04,8:00 pm,15294627,Niagara FC,10359086,Rangers,0,2,played,,Niagara University 1
+6573921,87148549,Championship,league,7222,,2017-06-04,8:30 pm,10359029,Panthers,59261105,Celtic Hoops,1,0,played,,Sweet Home High School Turf
+6573903,87148549,Championship,league,7204,,2017-06-08,6:30 pm,67527670,FC Quake,10359047,Inter SC,2,2,played,,Parker's Pitch Field A
+6573926,87148549,Championship,league,7227,,2017-06-11,4:00 pm,59260537,Southtowns FPFC,10359047,Inter SC,6,2,played,,Mulroy Pierce Field
+6573924,87148549,Championship,league,7225,,2017-06-11,4:00 pm,10359086,Rangers,75479641,Williamsville Willies,1,0,played,,Tri Town United Fields A
+6573925,87148549,Championship,league,7226,,2017-06-11,6:00 pm,75159801,OP Alliance,15294627,Niagara FC,0,1,played,,Orchard Park Soccer Complex 1
+6573927,87148549,Championship,league,7228,,2017-06-11,6:00 pm,67527670,FC Quake,59261105,Celtic Hoops,1,5,played,,Parker's Pitch Field A
+6573928,87148549,Championship,league,7229,,2017-06-11,6:00 pm,12579600,Wolves FC,10359029,Panthers,1,2,played,,West Seneca Soccer Complex A
+6573929,87148549,Championship,league,7230,,2017-06-11,8:30 pm,59261096,Beast City SC,10359074,Lykan FC,0,0,played,,Sweet Home High School Turf
+6573931,87148549,Championship,league,7232,,2017-06-18,6:00 pm,75159801,OP Alliance,12579600,Wolves FC,0,1,played,,Orchard Park Soccer Complex 1
+6573933,87148549,Championship,league,7234,,2017-06-18,6:00 pm,10359086,Rangers,59261105,Celtic Hoops,3,0,played,,Tri Town United Fields A
+6573934,87148549,Championship,league,7235,,2017-06-18,8:00 pm,15294627,Niagara FC,10359029,Panthers,1,0,played,,Niagara University 1
+6573935,87148549,Championship,league,7236,,2017-06-18,8:30 pm,59261096,Beast City SC,75479641,Williamsville Willies,1,2,played,,Sweet Home High School Turf
+6573966,87148549,Championship,league,7267,,2017-06-20,6:30 pm,10359074,Lykan FC,59260537,Southtowns FPFC,1,0,played,,Mulroy Pierce Field
+6573902,87148549,Championship,league,7203,,2017-06-20,6:30 pm,75159801,OP Alliance,59261096,Beast City SC,2,3,played,,Orchard Park Soccer Complex 1
+6573936,87148549,Championship,league,7237,,2017-06-25,2:00 pm,10359047,Inter SC,59261096,Beast City SC,2,4,played,,Nichols School Peek
+6573938,87148549,Championship,league,7239,,2017-06-25,4:00 pm,59261105,Celtic Hoops,15294627,Niagara FC,2,0,played,,Nichols School Peek
+6573937,87148549,Championship,league,7238,,2017-06-25,4:00 pm,75479641,Williamsville Willies,59260537,Southtowns FPFC,3,1,played,,Nichols School Strauss Truscott
+6573940,87148549,Championship,league,7241,,2017-06-25,6:00 pm,10359074,Lykan FC,12579600,Wolves FC,0,5,played,,Nichols School Peek
+6573941,87148549,Championship,league,7242,,2017-06-25,6:00 pm,10359086,Rangers,67527670,FC Quake,5,0,played,,Tri Town United Fields A
+6573969,87148549,Championship,league,7270,,2017-06-27,6:30 pm,75159801,OP Alliance,10359086,Rangers,3,0,played,,Orchard Park Soccer Complex 1
+6573968,87148549,Championship,league,7269,,2017-06-27,6:30 pm,75479641,Williamsville Willies,59261105,Celtic Hoops,5,0,played,,West Seneca Soccer Complex A
+6573970,87148549,Championship,league,7271,,2017-06-29,6:30 pm,12579600,Wolves FC,67527670,FC Quake,3,0,played,,Mulroy Pierce Field
+6573905,87148549,Championship,league,7206,,2017-07-06,6:30 pm,12579600,Wolves FC,59261105,Celtic Hoops,0,0,played,,West Seneca Soccer Complex A
+6573942,87148549,Championship,league,7243,,2017-07-09,2:00 pm,10359074,Lykan FC,59261105,Celtic Hoops,3,0,played,,Nichols School Peek
+6573943,87148549,Championship,league,7244,,2017-07-09,4:00 pm,59260537,Southtowns FPFC,12579600,Wolves FC,1,1,played,,Mulroy Pierce Field
+6573944,87148549,Championship,league,7245,,2017-07-09,6:00 pm,67527670,FC Quake,75159801,OP Alliance,1,1,played,,Orchard Park Soccer Complex 1
+6573945,87148549,Championship,league,7246,,2017-07-09,6:00 pm,10359086,Rangers,10359047,Inter SC,0,1,played,,Tri Town United Fields A
+6573946,87148549,Championship,league,7247,,2017-07-09,8:00 pm,15294627,Niagara FC,75479641,Williamsville Willies,0,3,played,,Niagara University 1
+6573947,87148549,Championship,league,7248,,2017-07-09,8:30 pm,59261096,Beast City SC,10359029,Panthers,2,1,played,,Sweet Home High School Turf
+6573948,87148549,Championship,league,7249,,2017-07-16,4:00 pm,59261105,Celtic Hoops,59260537,Southtowns FPFC,0,6,played,,Nichols School Strauss Truscott
+6573951,87148549,Championship,league,7252,,2017-07-16,6:00 pm,10359074,Lykan FC,75479641,Williamsville Willies,0,1,played,,Nichols School Peek
+6573950,87148549,Championship,league,7251,,2017-07-16,6:00 pm,10359047,Inter SC,75159801,OP Alliance,5,2,played,,Nichols School Strauss Truscott
+6573949,87148549,Championship,league,7250,,2017-07-16,6:00 pm,10359029,Panthers,10359086,Rangers,0,1,played,,Sweet Home High School Turf
+6573952,87148549,Championship,league,7253,,2017-07-16,8:00 pm,15294627,Niagara FC,12579600,Wolves FC,1,1,played,,Niagara University 1
+6573953,87148549,Championship,league,7254,,2017-07-16,8:30 pm,59261096,Beast City SC,67527670,FC Quake,1,1,played,,Sweet Home High School Turf
+6573965,87148549,Championship,league,7266,,2017-07-17,8:30 pm,10359029,Panthers,10359047,Inter SC,2,2,played,,Sweet Home High School Turf
+6573904,87148549,Championship,league,7205,,2017-07-18,6:30 pm,10359086,Rangers,10359074,Lykan FC,1,2,played,,Tri Town United Fields A
+6573932,87148549,Championship,league,7233,,2017-07-20,6:30 pm,67527670,FC Quake,59260537,Southtowns FPFC,1,4,played,,Mulroy Pierce Field
+6573967,87148549,Championship,league,7268,,2017-07-21,8:30 pm,59261096,Beast City SC,15294627,Niagara FC,0,2,played,,Sweet Home High School Turf
+6573954,87148549,Championship,league,7255,,2017-07-23,2:00 pm,75479641,Williamsville Willies,75159801,OP Alliance,4,0,played,,Nichols School Peek
+6573955,87148549,Championship,league,7256,,2017-07-23,4:00 pm,10359047,Inter SC,15294627,Niagara FC,0,2,played,,D'Youville College 1
+6573958,87148549,Championship,league,7259,,2017-07-23,6:00 pm,10359074,Lykan FC,67527670,FC Quake,2,1,played,,Nichols School Peek
+6573959,87148549,Championship,league,7260,,2017-07-23,6:00 pm,59261105,Celtic Hoops,59261096,Beast City SC,1,2,played,,Nichols School Strauss Truscott
+6573957,87148549,Championship,league,7258,,2017-07-23,6:00 pm,10359029,Panthers,59260537,Southtowns FPFC,1,2,played,,Sweet Home High School Turf
+6573956,87148549,Championship,league,7257,,2017-07-23,6:00 pm,10359086,Rangers,12579600,Wolves FC,0,4,played,,Tri Town United Fields A
+6573930,87148549,Championship,league,7231,,2017-07-25,6:30 pm,10359047,Inter SC,10359074,Lykan FC,1,1,played,,Nichols School Peek
+6573939,87148549,Championship,league,7240,,2017-07-26,6:30 pm,75159801,OP Alliance,10359029,Panthers,1,3,played,,Orchard Park Soccer Complex 1
+6573960,87148549,Championship,league,7261,QF1,2017-07-30,6:00 pm,75479641,Williamsville Willies,15294627,Niagara FC,5,0,played,,Nichols School Peek
+6573961,87148549,Championship,league,7262,QF2,2017-07-30,8:30 pm,10359029,Panthers,59261096,Beast City SC,2,5,played,,Sweet Home High School Turf
+6574067,87148547,1st Division,league,7497,,2017-08-06,4:00 pm,10359080,Eclipse,26891552,Buffalo Celtic,1,2,played,,Nichols School Strauss Truscott
+6574065,87148547,1st Division,league,7495,,2017-08-06,6:00 pm,75159915,NMB FC,75479650,Pendleton United FC,0,1,played,,Nichols School Peek
+6574066,87148547,1st Division,league,7496,,2017-08-06,6:00 pm,10359023,Polonia,10359062,Tonawanda United,5,2,played,,Tri Town United Fields A
+6574068,87148547,1st Division,league,7498,CHMP,2017-08-13,3:45 pm,10359023,Polonia,75479650,Pendleton United FC,1,2,played,,Nichols School Peek
+6573972,87148547,1st Division,league,7402,,2017-05-07,2:00 pm,10359111,Crimson SPAL FC,26892099,Rampart FC,1,0,played,,Nichols School Peek
+6573971,87148547,1st Division,league,7401,,2017-05-07,2:00 pm,10359080,Eclipse,62886844,Sahara Gunners,1,1,played,,Nichols School Strauss Truscott
+6573973,87148547,1st Division,league,7403,,2017-05-07,4:00 pm,10359023,Polonia,75159915,NMB FC,3,1,played,,D'Youville College 1
+6573974,87148547,1st Division,league,7404,,2017-05-07,6:00 pm,75159921,West Side FC,75479650,Pendleton United FC,1,1,played,,D'Youville College 1
+6573985,87148547,1st Division,league,7415,,2017-05-14,4:00 pm,75159921,West Side FC,10359080,Eclipse,2,2,played,,D'Youville College 1
+6573982,87148547,1st Division,league,7412,,2017-05-14,4:00 pm,75159924,DSC Buffalo,10359038,Hamburg FC,0,3,played,,Parker's Pitch Field A
+6573983,87148547,1st Division,league,7413,,2017-05-14,4:00 pm,45428657,Tri Town United,75159915,NMB FC,0,2,played,,Tri Town United Fields A
+6573980,87148547,1st Division,league,7410,,2017-05-14,4:00 pm,62886844,Sahara Gunners,75479671,Great Lakes Africa,7,2,played,,West Seneca Soccer Complex A
+6573988,87148547,1st Division,league,7418,,2017-05-14,6:00 pm,26891552,Buffalo Celtic,75159999,Crimson Fire FC,1,1,played,,Kenmore East Grass
+6573981,87148547,1st Division,league,7411,,2017-05-14,6:00 pm,10359111,Crimson SPAL FC,59261111,Crusaders FC,2,1,played,,Nichols School Peek
+6573986,87148547,1st Division,league,7416,,2017-05-14,6:00 pm,10359023,Polonia,67527667,JL Dutch,4,2,played,,Tri Town United Fields A
+6573984,87148547,1st Division,league,7414,,2017-05-14,6:00 pm,26892099,Rampart FC,75479668,Grand Island FC,4,4,played,,Veteran's Park (GI) Back Field 6/8
+6573987,87148547,1st Division,league,7417,,2017-05-14,6:00 pm,75479650,Pendleton United FC,10359062,Tonawanda United,0,4,played,,Wendleville Fire Hall 1
+6574070,87148547,1st Division,league,7500,,2017-05-18,8:30 pm,75159924,DSC Buffalo,75479650,Pendleton United FC,0,6,played,,D'Youville College 1
+6573989,87148547,1st Division,league,7419,,2017-05-21,2:00 pm,75479671,Great Lakes Africa,75159921,West Side FC,1,2,played,,Nichols School Strauss Truscott
+6573992,87148547,1st Division,league,7422,,2017-05-21,4:00 pm,75159924,DSC Buffalo,26891552,Buffalo Celtic,3,2,played,,Parker's Pitch Field A
+6573990,87148547,1st Division,league,7420,,2017-05-21,4:00 pm,26892099,Rampart FC,59261111,Crusaders FC,3,0,played,,Veteran's Park (GI) Back Field 6/8
+6573991,87148547,1st Division,league,7421,,2017-05-21,4:00 pm,75159915,NMB FC,75159999,Crimson Fire FC,2,2,played,,West Seneca Soccer Complex B
+6573994,87148547,1st Division,league,7424,,2017-05-21,6:00 pm,10359062,Tonawanda United,10359080,Eclipse,3,1,played,,Ives Pond 1
+6573997,87148547,1st Division,league,7427,,2017-05-21,6:00 pm,10359038,Hamburg FC,10359111,Crimson SPAL FC,0,0,played,,Parker's Pitch Field A
+6573995,87148547,1st Division,league,7425,,2017-05-21,6:00 pm,75479650,Pendleton United FC,10359023,Polonia,6,4,played,,Wendleville Fire Hall 1
+6573996,87148547,1st Division,league,7426,,2017-05-21,6:00 pm,62886844,Sahara Gunners,75479668,Grand Island FC,2,3,played,,West Seneca Soccer Complex E
+6573993,87148547,1st Division,league,7423,,2017-05-21,6:00 pm,67527667,JL Dutch,45428657,Tri Town United,2,3,played,,Westwood Park Turf Field
+6573999,87148547,1st Division,league,7429,,2017-06-04,4:00 pm,10359038,Hamburg FC,26892099,Rampart FC,3,2,played,,Parker's Pitch Field A
+6573998,87148547,1st Division,league,7428,,2017-06-04,4:00 pm,75479668,Grand Island FC,75159921,West Side FC,3,0,played,,Veteran's Park (GI) Front Field 3
+6574004,87148547,1st Division,league,7434,,2017-06-04,6:00 pm,26891552,Buffalo Celtic,10359111,Crimson SPAL FC,0,3,played,,Kenmore East Grass
+6574001,87148547,1st Division,league,7431,,2017-06-04,6:00 pm,75479671,Great Lakes Africa,10359062,Tonawanda United,3,3,played,,Nichols School Peek
+6574005,87148547,1st Division,league,7435,,2017-06-04,6:00 pm,75159924,DSC Buffalo,75159915,NMB FC,0,1,played,,Parker's Pitch Field A
+6574002,87148547,1st Division,league,7432,,2017-06-04,6:00 pm,10359023,Polonia,10359080,Eclipse,3,1,played,,Tri Town United Fields A
+6574006,87148547,1st Division,league,7436,,2017-06-04,6:00 pm,75159999,Crimson Fire FC,45428657,Tri Town United,1,0,played,,Veteran's Park (GI) Front Field 3
+6574000,87148547,1st Division,league,7430,,2017-06-04,6:00 pm,62886844,Sahara Gunners,59261111,Crusaders FC,4,4,played,,West Seneca Soccer Complex A
+6574003,87148547,1st Division,league,7433,,2017-06-04,6:00 pm,67527667,JL Dutch,75479650,Pendleton United FC,2,3,played,,Westwood Park Turf Field
+6574007,87148547,1st Division,league,7437,,2017-06-11,4:00 pm,75159921,West Side FC,62886844,Sahara Gunners,2,1,played,,D'Youville College 1
+6574009,87148547,1st Division,league,7439,,2017-06-11,4:00 pm,10359080,Eclipse,67527667,JL Dutch,0,1,played,,Nichols School Peek
+6574008,87148547,1st Division,league,7438,,2017-06-11,4:00 pm,75479668,Grand Island FC,10359062,Tonawanda United,0,7,played,,Veteran's Park (GI) Front Field 3
+6574010,87148547,1st Division,league,7440,,2017-06-11,4:00 pm,59261111,Crusaders FC,10359038,Hamburg FC,2,0,played,,West Seneca Soccer Complex A
+6574015,87148547,1st Division,league,7445,,2017-06-11,4:00 pm,75159915,NMB FC,10359111,Crimson SPAL FC,5,0,played,,West Seneca Soccer Complex B
+6574013,87148547,1st Division,league,7443,,2017-06-11,6:00 pm,26891552,Buffalo Celtic,26892099,Rampart FC,2,2,played,,Kenmore East Grass
+6574012,87148547,1st Division,league,7442,,2017-06-11,6:00 pm,75479671,Great Lakes Africa,10359023,Polonia,2,2,played,,Nichols School Peek
+6574014,87148547,1st Division,league,7444,,2017-06-11,6:00 pm,45428657,Tri Town United,75159924,DSC Buffalo,0,1,played,,Tri Town United Fields A
+6574011,87148547,1st Division,league,7441,,2017-06-11,6:00 pm,75479650,Pendleton United FC,75159999,Crimson Fire FC,2,2,played,,Wendleville Fire Hall 1
+6573978,87148547,1st Division,league,7408,,2017-06-13,6:30 pm,45428657,Tri Town United,26891552,Buffalo Celtic,1,1,played,,Tri Town United Fields F
+6574073,87148547,1st Division,league,7503,,2017-06-15,8:00 pm,75159999,Crimson Fire FC,10359023,Polonia,1,0,played,,Niagara University 1
+6574016,87148547,1st Division,league,7446,,2017-06-18,2:00 pm,10359080,Eclipse,75479650,Pendleton United FC,2,1,played,,Nichols School Peek
+6574017,87148547,1st Division,league,7447,,2017-06-18,4:00 pm,75159921,West Side FC,10359038,Hamburg FC,6,1,played,,D'Youville College 1
+6574019,87148547,1st Division,league,7449,,2017-06-18,4:00 pm,75159999,Crimson Fire FC,75159924,DSC Buffalo,5,3,played,,Veteran's Park (GI) Front Field 3
+6574022,87148547,1st Division,league,7452,,2017-06-18,6:00 pm,26891552,Buffalo Celtic,59261111,Crusaders FC,4,0,played,,Kenmore East Grass
+6574023,87148547,1st Division,league,7453,,2017-06-18,6:00 pm,10359111,Crimson SPAL FC,45428657,Tri Town United,0,1,played,,Nichols School Peek
+6574024,87148547,1st Division,league,7454,,2017-06-18,6:00 pm,26892099,Rampart FC,75159915,NMB FC,1,4,played,,Veteran's Park (GI) Back Field 6/8
+6574020,87148547,1st Division,league,7450,,2017-06-18,6:00 pm,62886844,Sahara Gunners,10359062,Tonawanda United,1,5,played,,West Seneca Soccer Complex A
+6574021,87148547,1st Division,league,7451,,2017-06-18,6:00 pm,67527667,JL Dutch,75479671,Great Lakes Africa,3,4,played,,Westwood Park Turf Field
+6574071,87148547,1st Division,league,7501,,2017-06-20,6:30 pm,45428657,Tri Town United,75159921,West Side FC,3,5,played,,Tri Town United Fields A
+6574069,87148547,1st Division,league,7499,,2017-06-22,6:30 pm,10359038,Hamburg FC,10359062,Tonawanda United,2,2,played,,Mulroy Pierce Field
+6574074,87148547,1st Division,league,7504,,2017-06-23,6:30 pm,59261111,Crusaders FC,10359080,Eclipse,6,2,played,,Mulroy Pierce Field
+6574029,87148547,1st Division,league,7459,,2017-06-25,2:00 pm,10359038,Hamburg FC,26891552,Buffalo Celtic,1,3,played,,Mulroy Pierce Field
+6574025,87148547,1st Division,league,7455,,2017-06-25,2:00 pm,10359111,Crimson SPAL FC,75159999,Crimson Fire FC,1,1,played,,Nichols School Strauss Truscott
+6574026,87148547,1st Division,league,7456,,2017-06-25,4:00 pm,10359062,Tonawanda United,75159921,West Side FC,1,4,played,,Ives Pond 1
+6574030,87148547,1st Division,league,7460,,2017-06-25,4:00 pm,75159924,DSC Buffalo,10359080,Eclipse,1,2,played,,Mulroy Pierce Field
+6574028,87148547,1st Division,league,7458,,2017-06-25,4:00 pm,26892099,Rampart FC,45428657,Tri Town United,0,2,played,,Veteran's Park (GI) Back Field 6/8
+6574031,87148547,1st Division,league,7461,,2017-06-25,6:00 pm,75479650,Pendleton United FC,75479671,Great Lakes Africa,1,1,played,,Wendleville Fire Hall 1
+6574033,87148547,1st Division,league,7463,,2017-06-25,6:00 pm,75159915,NMB FC,59261111,Crusaders FC,4,1,played,,West Seneca Soccer Complex A
+6574027,87148547,1st Division,league,7457,,2017-06-25,6:00 pm,62886844,Sahara Gunners,10359023,Polonia,0,2,played,,West Seneca Soccer Complex B
+6574072,87148547,1st Division,league,7502,,2017-06-27,6:30 pm,75479668,Grand Island FC,26891552,Buffalo Celtic,6,2,played,,Grand Island HS 1
+6573977,87148547,1st Division,league,7407,,2017-06-29,6:30 pm,10359062,Tonawanda United,67527667,JL Dutch,1,1,played,,Ives Pond 1
+6573976,87148547,1st Division,league,7406,,2017-06-29,8:30 pm,59261111,Crusaders FC,75159924,DSC Buffalo,3,1,played,,D'Youville College 1
+6574077,87148547,1st Division,league,7507,,2017-07-02,6:00 pm,67527667,JL Dutch,10359111,Crimson SPAL FC,1,1,played,,Westwood Park Turf Field
+6574076,87148547,1st Division,league,7506,,2017-07-06,6:30 pm,62886844,Sahara Gunners,26892099,Rampart FC,2,1,played,,Veteran's Park (GI) Back Field 6/8
+6574034,87148547,1st Division,league,7464,,2017-07-09,2:00 pm,75479671,Great Lakes Africa,10359038,Hamburg FC,8,3,played,,Nichols School Strauss Truscott
+6574035,87148547,1st Division,league,7465,,2017-07-09,4:00 pm,45428657,Tri Town United,10359023,Polonia,0,2,played,,Tri Town United Fields A
+6574036,87148547,1st Division,league,7466,,2017-07-09,4:00 pm,75479668,Grand Island FC,75159999,Crimson Fire FC,2,5,played,,Veteran's Park (GI) Front Field 3
+6574037,87148547,1st Division,league,7467,,2017-07-09,4:00 pm,75159915,NMB FC,62886844,Sahara Gunners,5,0,played,,West Seneca Soccer Complex B
+6574038,87148547,1st Division,league,7468,,2017-07-09,6:00 pm,75159921,West Side FC,75159924,DSC Buffalo,6,3,played,,D'Youville College 1
+6574039,87148547,1st Division,league,7469,,2017-07-09,6:00 pm,10359062,Tonawanda United,26892099,Rampart FC,1,5,played,,Ives Pond 1
+6574040,87148547,1st Division,league,7470,,2017-07-09,6:00 pm,10359080,Eclipse,10359111,Crimson SPAL FC,1,3,played,,Nichols School Peek
+6574041,87148547,1st Division,league,7471,,2017-07-09,6:00 pm,75479650,Pendleton United FC,26891552,Buffalo Celtic,7,0,played,,Wendleville Fire Hall 1
+6574042,87148547,1st Division,league,7472,,2017-07-09,6:00 pm,59261111,Crusaders FC,67527667,JL Dutch,1,2,played,,West Seneca Soccer Complex A
+6574018,87148547,1st Division,league,7448,,2017-07-11,6:30 pm,10359023,Polonia,75479668,Grand Island FC,1,2,played,,Tri Town United Fields A
+6573979,87148547,1st Division,league,7409,,2017-07-13,6:30 pm,75159999,Crimson Fire FC,10359038,Hamburg FC,6,0,played,,Veteran's Park (GI) Front Field 3
+6574032,87148547,1st Division,league,7462,,2017-07-14,6:30 pm,67527667,JL Dutch,75479668,Grand Island FC,2,1,played,,Walden Pond Park 1
+6574044,87148547,1st Division,league,7474,,2017-07-16,4:00 pm,75479671,Great Lakes Africa,10359080,Eclipse,6,1,played,,D'Youville College 1
+6574045,87148547,1st Division,league,7475,,2017-07-16,4:00 pm,75479668,Grand Island FC,75479650,Pendleton United FC,4,3,played,,Veteran's Park (GI) Front Field 3
+6574046,87148547,1st Division,league,7476,,2017-07-16,4:00 pm,59261111,Crusaders FC,45428657,Tri Town United,4,1,played,,West Seneca Soccer Complex A
+6574047,87148547,1st Division,league,7477,,2017-07-16,4:00 pm,10359038,Hamburg FC,75159915,NMB FC,0,6,played,,West Seneca Soccer Complex E
+6574043,87148547,1st Division,league,7473,,2017-07-16,6:00 pm,26891552,Buffalo Celtic,10359062,Tonawanda United,0,5,played,,Kenmore East Grass
+6574048,87148547,1st Division,league,7478,,2017-07-16,6:00 pm,10359023,Polonia,75159921,West Side FC,3,4,played,,Tri Town United Fields A
+6574051,87148547,1st Division,league,7481,,2017-07-16,6:00 pm,75159999,Crimson Fire FC,26892099,Rampart FC,3,2,played,,Veteran's Park (GI) Front Field 3
+6574049,87148547,1st Division,league,7479,,2017-07-16,6:00 pm,67527667,JL Dutch,62886844,Sahara Gunners,3,3,played,,Westwood Park Turf Field
+6574050,87148547,1st Division,league,7480,,2017-07-16,8:00 pm,75159924,DSC Buffalo,10359111,Crimson SPAL FC,0,4,played,,D'Youville College 1
+6574075,87148547,1st Division,league,7505,,2017-07-18,6:30 pm,75159915,NMB FC,75479671,Great Lakes Africa,2,1,played,,West Seneca Soccer Complex E
+6573975,87148547,1st Division,league,7405,,2017-07-21,6:30 pm,75479668,Grand Island FC,75479671,Great Lakes Africa,1,7,played,,Veteran's Park (GI) Front Field 3
+6574059,87148547,1st Division,league,7489,,2017-07-23,2:00 pm,75159915,NMB FC,26891552,Buffalo Celtic,6,2,played,,Kenmore East Grass
+6574053,87148547,1st Division,league,7483,,2017-07-23,4:00 pm,10359062,Tonawanda United,10359023,Polonia,1,2,played,,Ives Pond 1
+6574052,87148547,1st Division,league,7482,,2017-07-23,4:00 pm,10359111,Crimson SPAL FC,75479671,Great Lakes Africa,2,0,played,,Nichols School Peek
+6574054,87148547,1st Division,league,7484,,2017-07-23,4:00 pm,10359080,Eclipse,75479668,Grand Island FC,3,0,played,,Nichols School Strauss Truscott
+6574055,87148547,1st Division,league,7485,,2017-07-23,4:00 pm,45428657,Tri Town United,10359038,Hamburg FC,2,5,played,,Tri Town United Fields A
+6574060,87148547,1st Division,league,7490,,2017-07-23,4:00 pm,75159999,Crimson Fire FC,59261111,Crusaders FC,3,4,played,,Veteran's Park (GI) Front Field 3
+6574058,87148547,1st Division,league,7488,,2017-07-23,4:00 pm,75479650,Pendleton United FC,62886844,Sahara Gunners,2,0,played,,Wendleville Fire Hall 1
+6574057,87148547,1st Division,league,7487,,2017-07-23,6:00 pm,75159921,West Side FC,67527667,JL Dutch,4,0,played,,D'Youville College 1
+6574056,87148547,1st Division,league,7486,,2017-07-23,6:00 pm,26892099,Rampart FC,75159924,DSC Buffalo,2,1,played,,Veteran's Park (GI) Back Field 6/8
+6574064,87148547,1st Division,league,7494,,2017-07-30,4:00 pm,75159915,NMB FC,59261111,Crusaders FC,3,2,played,,Nichols School Strauss Truscott
+6574061,87148547,1st Division,league,7491,,2017-07-30,4:00 pm,10359023,Polonia,10359111,Crimson SPAL FC,4,1,played,,Tri Town United Fields A
+6574063,87148547,1st Division,league,7493,,2017-07-30,6:00 pm,75159921,West Side FC,75479650,Pendleton United FC,0,2,played,,D'Youville College 1
+6574062,87148547,1st Division,league,7492,,2017-07-30,6:00 pm,75159999,Crimson Fire FC,10359062,Tonawanda United,2,3,played,,Veteran's Park (GI) Front Field 3
+6603286,87148548,2nd Division,league,7696,,2017-08-06,4:00 pm,75159918,Blizzard FC,10359092,Ukraine,4,1,played,OT,Nichols School Peek
+6603285,87148548,2nd Division,league,7695,,2017-08-06,6:00 pm,75479674,Los Chupacabras,75479680,Honey Badgers,2,0,played,,Niagara University 1
+6603287,87148548,2nd Division,league,7697,,2017-08-13,2:00 pm,10359092,Ukraine,75479680,Honey Badgers,1,1,played,PK,Nichols School Peek
+6603288,87148548,2nd Division,league,7698,CHMP,2017-08-13,3:30 pm,75479674,Los Chupacabras,75159918,Blizzard FC,2,4,played,,Nichols School Strauss Truscott
+6603199,87148548,2nd Division,league,7609,,2017-05-07,4:00 pm,10359117,Dutch United FC,75479677,Kingsmen SC,2,0,played,,Westwood Park Turf Field
+6603198,87148548,2nd Division,league,7608,,2017-05-07,6:00 pm,75479686,Queen City Pride,75479662,Celtic Brigade,1,1,played,,Niagara University 1
+6603197,87148548,2nd Division,league,7607,,2017-05-07,8:00 pm,10359077,WNY United Reds,35216066,Meerkats FC,0,0,played,,Niagara University 1
+6603200,87148548,2nd Division,league,7610,,2017-05-14,2:00 pm,75479677,Kingsmen SC,35216066,Meerkats FC,0,3,played,,Nichols School Peek
+6603202,87148548,2nd Division,league,7612,,2017-05-14,4:00 pm,10359123,Cheektowaga White Eagles,75479674,Los Chupacabras,0,6,played,,JFK High School 1
+6603201,87148548,2nd Division,league,7611,,2017-05-14,4:00 pm,75479647,Celtic 1888,75479653,Youngstown Marksmen,0,1,played,,Kenmore East Grass
+6603203,87148548,2nd Division,league,7613,,2017-05-14,4:00 pm,75159996,FK Bosna,15296943,Depew Village,3,2,played,,West Seneca Soccer Complex B
+6603207,87148548,2nd Division,league,7617,,2017-05-14,6:00 pm,75479686,Queen City Pride,10359077,WNY United Reds,0,2,played,FT,Niagara University 1
+6603205,87148548,2nd Division,league,7615,,2017-05-14,6:00 pm,75159918,Blizzard FC,75479680,Honey Badgers,0,0,played,,Parker's Pitch Field A
+6603206,87148548,2nd Division,league,7616,,2017-05-14,6:00 pm,10359092,Ukraine,75479656,FC Yemen II,2,0,played,,Rehm Road
+6603204,87148548,2nd Division,league,7614,,2017-05-14,6:00 pm,10359117,Dutch United FC,75479689,Delco Academy,1,0,played,,Walden Pond Park 1
+6603208,87148548,2nd Division,league,7618,,2017-05-14,6:00 pm,10359002,West Seneca Panthers,75479662,Celtic Brigade,3,6,played,,West Seneca Soccer Complex B
+6603211,87148548,2nd Division,league,7621,,2017-05-21,4:00 pm,75479662,Celtic Brigade,10359092,Ukraine,0,3,played,,Kenmore East Grass
+6603209,87148548,2nd Division,league,7619,,2017-05-21,4:00 pm,75479656,FC Yemen II,75159996,FK Bosna,2,1,played,,Lackawanna High School 1
+6603210,87148548,2nd Division,league,7620,,2017-05-21,4:00 pm,75479674,Los Chupacabras,75479647,Celtic 1888,0,0,played,,Niagara University 1
+6603212,87148548,2nd Division,league,7622,,2017-05-21,6:00 pm,15296943,Depew Village,75479680,Honey Badgers,1,5,played,,Fireman's Park (Depew) 1
+6603213,87148548,2nd Division,league,7623,,2017-05-21,6:00 pm,10359123,Cheektowaga White Eagles,75159918,Blizzard FC,1,5,played,,JFK High School 1
+6603215,87148548,2nd Division,league,7625,,2017-05-21,6:00 pm,35216066,Meerkats FC,10359117,Dutch United FC,0,4,played,,Niagara University 1
+6603216,87148548,2nd Division,league,7626,,2017-05-21,6:00 pm,75479677,Kingsmen SC,75479686,Queen City Pride,2,3,played,,Nichols School Peek
+6603214,87148548,2nd Division,league,7624,,2017-05-21,6:00 pm,75479689,Delco Academy,75479653,Youngstown Marksmen,1,1,played,,Walden Pond Park 1
+6603217,87148548,2nd Division,league,7627,,2017-05-21,6:00 pm,10359002,West Seneca Panthers,10359077,WNY United Reds,2,1,played,,West Seneca Soccer Complex B
+6603191,87148548,2nd Division,league,7601,,2017-05-25,6:30 pm,75479647,Celtic 1888,75479689,Delco Academy,1,1,played,,Kenmore East Grass
+6603218,87148548,2nd Division,league,7628,,2017-06-04,2:00 pm,75159918,Blizzard FC,75479647,Celtic 1888,2,2,played,,Parker's Pitch Field A
+6603220,87148548,2nd Division,league,7630,,2017-06-04,4:00 pm,15296943,Depew Village,10359123,Cheektowaga White Eagles,1,0,played,,Fireman's Park (Depew) 1
+6603219,87148548,2nd Division,league,7629,,2017-06-04,4:00 pm,75479680,Honey Badgers,75159996,FK Bosna,0,1,played,,West Seneca Soccer Complex A
+6603221,87148548,2nd Division,league,7631,,2017-06-04,4:00 pm,10359002,West Seneca Panthers,75479677,Kingsmen SC,2,2,played,,West Seneca Soccer Complex B
+6603224,87148548,2nd Division,league,7634,,2017-06-04,6:00 pm,10359077,WNY United Reds,10359092,Ukraine,1,3,played,,Fireman's Park (Depew) 1
+6603225,87148548,2nd Division,league,7635,,2017-06-04,6:00 pm,75479656,FC Yemen II,75479662,Celtic Brigade,5,2,played,,Lackawanna High School 1
+6603223,87148548,2nd Division,league,7633,,2017-06-04,6:00 pm,75479674,Los Chupacabras,75479689,Delco Academy,2,1,played,,Niagara University 1
+6603222,87148548,2nd Division,league,7632,,2017-06-04,6:00 pm,75479653,Youngstown Marksmen,35216066,Meerkats FC,4,0,played,,Veterans Park - Youngstown Pierce Field
+6603226,87148548,2nd Division,league,7636,,2017-06-04,6:00 pm,10359117,Dutch United FC,75479686,Queen City Pride,2,3,played,,Walden Pond Park 1
+6603227,87148548,2nd Division,league,7637,,2017-06-11,2:00 pm,75479677,Kingsmen SC,10359092,Ukraine,1,3,played,,Nichols School Peek
+6603231,87148548,2nd Division,league,7641,,2017-06-11,4:00 pm,10359077,WNY United Reds,75479656,FC Yemen II,1,3,played,,Fireman's Park (Depew) 1
+6603229,87148548,2nd Division,league,7639,,2017-06-11,4:00 pm,10359123,Cheektowaga White Eagles,75159996,FK Bosna,0,4,played,,JFK High School 1
+6603228,87148548,2nd Division,league,7638,,2017-06-11,4:00 pm,75479662,Celtic Brigade,75479680,Honey Badgers,4,0,played,,Kenmore East Grass
+6603230,87148548,2nd Division,league,7640,,2017-06-11,4:00 pm,75159918,Blizzard FC,75479689,Delco Academy,5,1,played,,Parker's Pitch Field A
+6603233,87148548,2nd Division,league,7643,,2017-06-11,6:00 pm,15296943,Depew Village,75479647,Celtic 1888,1,3,played,,Fireman's Park (Depew) 1
+6603234,87148548,2nd Division,league,7644,,2017-06-11,6:00 pm,35216066,Meerkats FC,75479686,Queen City Pride,1,3,played,,Niagara University 1
+6603232,87148548,2nd Division,league,7642,,2017-06-11,6:00 pm,75479653,Youngstown Marksmen,75479674,Los Chupacabras,0,0,played,,Veterans Park - Youngstown Pierce Field
+6603235,87148548,2nd Division,league,7645,,2017-06-11,6:00 pm,10359117,Dutch United FC,10359002,West Seneca Panthers,3,0,played,,Walden Pond Park 1
+6603237,87148548,2nd Division,league,7647,,2017-06-18,4:00 pm,75479647,Celtic 1888,75159996,FK Bosna,2,1,played,,Kenmore East Grass
+6603236,87148548,2nd Division,league,7646,,2017-06-18,4:00 pm,75479674,Los Chupacabras,75479686,Queen City Pride,6,1,played,,Niagara University 1
+6603244,87148548,2nd Division,league,7654,,2017-06-18,6:00 pm,10359077,WNY United Reds,75479662,Celtic Brigade,4,3,played,,Fireman's Park (Depew) 1
+6603243,87148548,2nd Division,league,7653,,2017-06-18,6:00 pm,35216066,Meerkats FC,10359002,West Seneca Panthers,3,2,played,,Niagara University 1
+6603242,87148548,2nd Division,league,7652,,2017-06-18,6:00 pm,10359092,Ukraine,10359117,Dutch United FC,3,5,played,,Rehm Road
+6603241,87148548,2nd Division,league,7651,,2017-06-18,6:00 pm,75479680,Honey Badgers,10359123,Cheektowaga White Eagles,7,0,played,,West Seneca Soccer Complex B
+6603238,87148548,2nd Division,league,7648,,2017-06-18,8:00 pm,75159918,Blizzard FC,75479653,Youngstown Marksmen,2,1,played,,D'Youville College 1
+6603252,87148548,2nd Division,league,7662,,2017-06-25,4:00 pm,75479662,Celtic Brigade,75479677,Kingsmen SC,3,3,played,,Kenmore East Grass
+6603246,87148548,2nd Division,league,7656,,2017-06-25,4:00 pm,75479686,Queen City Pride,10359002,West Seneca Panthers,2,1,played,,Niagara University 1
+6603247,87148548,2nd Division,league,7657,,2017-06-25,6:00 pm,10359077,WNY United Reds,10359123,Cheektowaga White Eagles,2,0,played,,Fireman's Park (Depew) 1
+6603249,87148548,2nd Division,league,7659,,2017-06-25,6:00 pm,75479647,Celtic 1888,75479680,Honey Badgers,0,1,played,,Kenmore East Grass
+6603251,87148548,2nd Division,league,7661,,2017-06-25,6:00 pm,35216066,Meerkats FC,10359092,Ukraine,0,7,played,,Niagara University 1
+6603248,87148548,2nd Division,league,7658,,2017-06-25,6:00 pm,75479653,Youngstown Marksmen,15296943,Depew Village,2,0,played,FT,Veterans Park - Youngstown Pierce Field
+6603250,87148548,2nd Division,league,7660,,2017-06-25,6:00 pm,75479689,Delco Academy,75159996,FK Bosna,1,3,played,,Walden Pond Park 1
+6603253,87148548,2nd Division,league,7663,,2017-06-25,8:00 pm,75479674,Los Chupacabras,75159918,Blizzard FC,4,0,played,,Niagara University 1
+6603297,87148548,2nd Division,league,7707,,2017-06-28,6:30 pm,10359002,West Seneca Panthers,10359123,Cheektowaga White Eagles,2,0,played,,West Seneca Soccer Complex H
+6603290,87148548,2nd Division,league,7700,,2017-06-30,6:30 pm,15296943,Depew Village,10359117,Dutch United FC,0,5,played,,Fireman's Park (Depew) 1
+6603194,87148548,2nd Division,league,7604,,2017-06-30,6:45 pm,75479653,Youngstown Marksmen,10359123,Cheektowaga White Eagles,8,0,played,,Veterans Park - Youngstown Pierce Field
+6603289,87148548,2nd Division,league,7699,,2017-07-02,6:00 pm,10359092,Ukraine,75479674,Los Chupacabras,1,2,played,,Rehm Road
+6603296,87148548,2nd Division,league,7706,,2017-07-02,6:00 pm,75159996,FK Bosna,10359077,WNY United Reds,0,1,played,,West Seneca Soccer Complex A
+6603192,87148548,2nd Division,league,7602,,2017-07-02,6:00 pm,10359002,West Seneca Panthers,75479656,FC Yemen II,1,4,played,,West Seneca Soccer Complex B
+6603239,87148548,2nd Division,league,7649,,2017-07-07,6:30 pm,75479656,FC Yemen II,75479677,Kingsmen SC,1,3,played,,Lackawanna High School 1
+6603291,87148548,2nd Division,league,7701,,2017-07-07,6:30 pm,75479653,Youngstown Marksmen,75479686,Queen City Pride,3,2,played,,Veterans Park - Youngstown Pierce Field
+6603256,87148548,2nd Division,league,7666,,2017-07-09,4:00 pm,75479662,Celtic Brigade,75479653,Youngstown Marksmen,4,0,played,,Kenmore East Grass
+6603254,87148548,2nd Division,league,7664,,2017-07-09,4:00 pm,75479656,FC Yemen II,75159918,Blizzard FC,0,4,played,,Lackawanna High School 1
+6603260,87148548,2nd Division,league,7670,,2017-07-09,4:00 pm,75479686,Queen City Pride,75479647,Celtic 1888,3,3,played,,Niagara University 1
+6603255,87148548,2nd Division,league,7665,,2017-07-09,4:00 pm,75479677,Kingsmen SC,75159996,FK Bosna,1,1,played,,Nichols School Peek
+6603257,87148548,2nd Division,league,7667,,2017-07-09,6:00 pm,15296943,Depew Village,10359077,WNY United Reds,1,2,played,,Fireman's Park (Depew) 1
+6603258,87148548,2nd Division,league,7668,,2017-07-09,6:00 pm,10359123,Cheektowaga White Eagles,10359092,Ukraine,1,3,played,,JFK High School 1
+6603259,87148548,2nd Division,league,7669,,2017-07-09,6:00 pm,35216066,Meerkats FC,75479674,Los Chupacabras,0,5,played,,Niagara University 1
+6603261,87148548,2nd Division,league,7671,,2017-07-09,6:00 pm,75479689,Delco Academy,10359002,West Seneca Panthers,6,0,played,,Walden Pond Park 1
+6603262,87148548,2nd Division,league,7672,,2017-07-09,6:00 pm,75479680,Honey Badgers,10359117,Dutch United FC,0,0,played,,West Seneca Soccer Complex B
+6603245,87148548,2nd Division,league,7655,,2017-07-11,6:30 pm,75479656,FC Yemen II,10359117,Dutch United FC,2,1,played,,Lackawanna High School 1
+6603293,87148548,2nd Division,league,7703,,2017-07-11,8:00 pm,75159918,Blizzard FC,75479677,Kingsmen SC,5,0,played,,Niagara University 1
+6603292,87148548,2nd Division,league,7702,,2017-07-15,4:00 pm,75479662,Celtic Brigade,75479647,Celtic 1888,6,3,played,,Kenmore East Grass
+6603266,87148548,2nd Division,league,7676,,2017-07-16,2:00 pm,75479677,Kingsmen SC,10359077,WNY United Reds,0,2,played,,Nichols School Peek
+6603263,87148548,2nd Division,league,7673,,2017-07-16,4:00 pm,10359123,Cheektowaga White Eagles,75479647,Celtic 1888,2,4,played,,JFK High School 1
+6603265,87148548,2nd Division,league,7675,,2017-07-16,4:00 pm,75479656,FC Yemen II,35216066,Meerkats FC,9,3,played,,Lackawanna High School 1
+6603264,87148548,2nd Division,league,7674,,2017-07-16,4:00 pm,75479680,Honey Badgers,75479689,Delco Academy,3,2,played,,West Seneca Soccer Complex B
+6603268,87148548,2nd Division,league,7678,,2017-07-16,6:00 pm,75479674,Los Chupacabras,15296943,Depew Village,6,0,played,,Niagara University 1
+6603270,87148548,2nd Division,league,7680,,2017-07-16,6:00 pm,10359092,Ukraine,75479686,Queen City Pride,0,1,played,,Rehm Road
+6603271,87148548,2nd Division,league,7681,,2017-07-16,6:00 pm,10359117,Dutch United FC,75479662,Celtic Brigade,3,1,played,,Walden Pond Park 1
+6603267,87148548,2nd Division,league,7677,,2017-07-16,6:00 pm,10359002,West Seneca Panthers,75159918,Blizzard FC,2,5,played,,West Seneca Soccer Complex B
+6603269,87148548,2nd Division,league,7679,,2017-07-16,6:00 pm,75159996,FK Bosna,75479653,Youngstown Marksmen,0,2,played,,West Seneca Soccer Complex E
+6603196,87148548,2nd Division,league,7606,,2017-07-17,8:30 pm,75479680,Honey Badgers,75479674,Los Chupacabras,2,1,played,,D'Youville College 1
+6603295,87148548,2nd Division,league,7705,,2017-07-18,8:00 pm,75479680,Honey Badgers,35216066,Meerkats FC,2,1,played,,Niagara University 1
+6603193,87148548,2nd Division,league,7603,,2017-07-19,7:00 pm,10359092,Ukraine,15296943,Depew Village,6,1,played,,Rehm Road
+6603294,87148548,2nd Division,league,7704,,2017-07-21,6:30 pm,75479689,Delco Academy,75479656,FC Yemen II,3,3,played,,Lackawanna High School 1
+6603195,87148548,2nd Division,league,7605,,2017-07-21,6:30 pm,75159996,FK Bosna,75159918,Blizzard FC,0,2,played,FT,West Seneca Soccer Complex H
+6603240,87148548,2nd Division,league,7650,,2017-07-22,11:00 am,75479689,Delco Academy,15296943,Depew Village,2,0,played,FT,Fireman's Park (Depew) 1
+6603274,87148548,2nd Division,league,7684,,2017-07-23,4:00 pm,10359077,WNY United Reds,10359117,Dutch United FC,2,3,played,,Fireman's Park (Depew) 1
+6603272,87148548,2nd Division,league,7682,,2017-07-23,4:00 pm,75479647,Celtic 1888,75479677,Kingsmen SC,1,0,played,,Kenmore East Grass
+6603273,87148548,2nd Division,league,7683,,2017-07-23,4:00 pm,75159996,FK Bosna,75479674,Los Chupacabras,1,6,played,FT,Mulroy Pierce Field
+6603275,87148548,2nd Division,league,7685,,2017-07-23,4:00 pm,35216066,Meerkats FC,75479662,Celtic Brigade,0,4,played,,Niagara University 1
+6603277,87148548,2nd Division,league,7687,,2017-07-23,6:00 pm,15296943,Depew Village,75159918,Blizzard FC,0,7,played,,Fireman's Park (Depew) 1
+6603280,87148548,2nd Division,league,7690,,2017-07-23,6:00 pm,75479686,Queen City Pride,75479656,FC Yemen II,1,2,played,,Niagara University 1
+6603279,87148548,2nd Division,league,7689,,2017-07-23,6:00 pm,10359092,Ukraine,10359002,West Seneca Panthers,7,1,played,,Rehm Road
+6603276,87148548,2nd Division,league,7686,,2017-07-23,6:00 pm,75479653,Youngstown Marksmen,75479680,Honey Badgers,5,0,played,,Veterans Park - Youngstown Pierce Field
+6603278,87148548,2nd Division,league,7688,,2017-07-23,6:00 pm,75479689,Delco Academy,10359123,Cheektowaga White Eagles,1,2,played,,Walden Pond Park 1
+6603282,87148548,2nd Division,league,7692,,2017-07-30,4:00 pm,75159918,Blizzard FC,75479656,FC Yemen II,2,0,played,FT,Mulroy Pierce Field
+6603281,87148548,2nd Division,league,7691,,2017-07-30,6:00 pm,10359092,Ukraine,75479653,Youngstown Marksmen,1,0,played,,Rehm Road
+6603283,87148548,2nd Division,league,7693,,2017-07-30,6:00 pm,10359117,Dutch United FC,75479680,Honey Badgers,1,1,played,PK,Walden Pond Park 1
+6603284,87148548,2nd Division,league,7694,,2017-07-30,8:30 pm,75479674,Los Chupacabras,10359077,WNY United Reds,1,0,played,,Niagara University 1
+6603371,87148550,3rd Division,league,9474,,2017-08-06,6:00 pm,12579571,Devils,75159990,Great White Buffalo,0,3,played,,Kenny Field 3
+6603370,87148550,3rd Division,league,9473,,2017-08-06,6:00 pm,75159993,Revolution SC,67526458,Aurora Arsenal II,1,0,played,,Wendleville Fire Hall 1
+6603372,87148550,3rd Division,league,9475,CHMP,2017-08-13,1:30 pm,75159993,Revolution SC,75159990,Great White Buffalo,0,2,played,,Nichols School Strauss Truscott
+6603378,87148550,3rd Division,league,9481,,2017-04-30,6:00 pm,31566782,Rust Belt United,75479659,Bangarang FC,0,6,played,,West Seneca Soccer Complex E
+6603304,87148550,3rd Division,league,9407,,2017-05-07,6:00 pm,75159990,Great White Buffalo,31566782,Rust Belt United,8,0,played,,Westwood Park Turf Field
+6603305,87148550,3rd Division,league,9408,,2017-05-14,4:00 pm,87153546,Tesla FC,59262126,Celtic Classic,2,0,played,,Ives Pond 1
+6603310,87148550,3rd Division,league,9413,,2017-05-14,4:00 pm,75479692,Erie County FC,10359108,Stone Jug,3,5,played,,West Seneca Soccer Complex E
+6603306,87148550,3rd Division,league,9409,,2017-05-14,6:00 pm,10359068,Great Lakes FC,75159993,Revolution SC,0,1,played,,Ives Pond 1
+6603307,87148550,3rd Division,league,9410,,2017-05-14,6:00 pm,67526458,Aurora Arsenal II,75479683,North Buffalo FC,3,0,played,,Knox Fields 1
+6603308,87148550,3rd Division,league,9411,,2017-05-14,6:00 pm,87153543,Moby Ducks FC,75479695,Big Green SC,13,2,played,,UB Main Rotary Field
+6603309,87148550,3rd Division,league,9412,,2017-05-14,6:00 pm,31566782,Rust Belt United,12579571,Devils,1,6,played,,West Seneca Soccer Complex E
+6603311,87148550,3rd Division,league,9414,,2017-05-14,6:00 pm,75159990,Great White Buffalo,75479659,Bangarang FC,2,1,played,,Westwood Park Turf Field
+6603313,87148550,3rd Division,league,9416,,2017-05-21,4:00 pm,75479695,Big Green SC,75479659,Bangarang FC,2,8,played,,Ives Pond 1
+6603314,87148550,3rd Division,league,9417,,2017-05-21,4:00 pm,10359068,Great Lakes FC,75159990,Great White Buffalo,0,4,played,,Ives Pond 2
+6603312,87148550,3rd Division,league,9415,,2017-05-21,4:00 pm,75479683,North Buffalo FC,10359108,Stone Jug,0,3,played,,West Seneca Soccer Complex A
+6603315,87148550,3rd Division,league,9418,,2017-05-21,4:00 pm,75479692,Erie County FC,67526458,Aurora Arsenal II,0,8,played,,West Seneca Soccer Complex E
+6603318,87148550,3rd Division,league,9421,,2017-05-21,6:00 pm,87153546,Tesla FC,31566782,Rust Belt United,4,0,played,,Ives Pond 2
+6603317,87148550,3rd Division,league,9420,,2017-05-21,6:00 pm,59262126,Celtic Classic,75159993,Revolution SC,0,2,played,,Kenmore East Grass
+6603316,87148550,3rd Division,league,9419,,2017-05-21,6:00 pm,12579571,Devils,87153543,Moby Ducks FC,4,0,played,,Kenny Field 5
+6603301,87148550,3rd Division,league,9404,,2017-05-23,6:30 pm,59262126,Celtic Classic,12579571,Devils,2,3,played,,Kenmore East Grass
+6603300,87148550,3rd Division,league,9403,,2017-05-28,6:00 pm,10359108,Stone Jug,87153546,Tesla FC,2,2,played,,Thomas Marks Elementary School 1
+6603299,87148550,3rd Division,league,9402,,2017-06-01,6:30 pm,75479659,Bangarang FC,75479683,North Buffalo FC,5,0,played,,West Seneca Soccer Complex A
+6603320,87148550,3rd Division,league,9423,,2017-06-04,4:00 pm,87153546,Tesla FC,75479683,North Buffalo FC,3,1,played,,Ives Pond 1
+6603319,87148550,3rd Division,league,9422,,2017-06-04,4:00 pm,59262126,Celtic Classic,31566782,Rust Belt United,1,5,played,,Kenmore East Grass
+6603322,87148550,3rd Division,league,9425,,2017-06-04,6:00 pm,75479695,Big Green SC,75159990,Great White Buffalo,0,4,played,,Ives Pond 1
+6603321,87148550,3rd Division,league,9424,,2017-06-04,6:00 pm,10359108,Stone Jug,87153543,Moby Ducks FC,1,1,played,,Thomas Marks Elementary School 1
+6603324,87148550,3rd Division,league,9427,,2017-06-04,6:00 pm,75159993,Revolution SC,67526458,Aurora Arsenal II,2,1,played,,Wendleville Fire Hall 1
+6603325,87148550,3rd Division,league,9428,,2017-06-04,6:00 pm,75479659,Bangarang FC,75479692,Erie County FC,6,1,played,,West Seneca Soccer Complex B
+6603323,87148550,3rd Division,league,9426,,2017-06-04,8:45 pm,12579571,Devils,10359068,Great Lakes FC,4,0,played,,Kenny Field 3
+6603328,87148550,3rd Division,league,9431,,2017-06-11,6:00 pm,75479695,Big Green SC,31566782,Rust Belt United,1,2,played,,Ives Pond 1
+6603329,87148550,3rd Division,league,9432,,2017-06-11,6:00 pm,67526458,Aurora Arsenal II,87153546,Tesla FC,5,0,played,,Knox Fields 1
+6603330,87148550,3rd Division,league,9433,,2017-06-11,6:00 pm,87153543,Moby Ducks FC,59262126,Celtic Classic,4,2,played,,Park School 1
+6603327,87148550,3rd Division,league,9430,,2017-06-11,6:00 pm,10359108,Stone Jug,10359068,Great Lakes FC,2,2,played,,Thomas Marks Elementary School 1
+6603326,87148550,3rd Division,league,9429,,2017-06-11,6:00 pm,75479683,North Buffalo FC,75479692,Erie County FC,7,2,played,,West Seneca Soccer Complex B
+6603331,87148550,3rd Division,league,9434,,2017-06-11,6:00 pm,75479659,Bangarang FC,75159993,Revolution SC,0,3,played,,West Seneca Soccer Complex E
+6603332,87148550,3rd Division,league,9435,,2017-06-11,6:00 pm,75159990,Great White Buffalo,12579571,Devils,1,3,played,,Westwood Park Turf Field
+6603302,87148550,3rd Division,league,9405,,2017-06-15,6:30 pm,10359068,Great Lakes FC,75479692,Erie County FC,6,0,played,,Ives Pond 2
+6603336,87148550,3rd Division,league,9439,,2017-06-18,6:00 pm,10359068,Great Lakes FC,75479683,North Buffalo FC,3,1,played,,Ives Pond 1
+6603337,87148550,3rd Division,league,9440,,2017-06-18,6:00 pm,67526458,Aurora Arsenal II,59262126,Celtic Classic,1,1,played,,Knox Fields 1
+6603339,87148550,3rd Division,league,9442,,2017-06-18,6:00 pm,75159993,Revolution SC,87153546,Tesla FC,3,0,played,,Wendleville Fire Hall 1
+6603338,87148550,3rd Division,league,9441,,2017-06-18,6:45 pm,87153543,Moby Ducks FC,75159990,Great White Buffalo,0,0,played,,Park School 1
+6603340,87148550,3rd Division,league,9443,,2017-06-25,4:00 pm,75479683,North Buffalo FC,87153543,Moby Ducks FC,1,11,played,,West Seneca Soccer Complex A
+6603341,87148550,3rd Division,league,9444,,2017-06-25,4:00 pm,31566782,Rust Belt United,10359068,Great Lakes FC,1,4,played,,West Seneca Soccer Complex B
+6603342,87148550,3rd Division,league,9445,,2017-06-25,6:00 pm,12579571,Devils,10359108,Stone Jug,4,0,played,,Irvington
+6603343,87148550,3rd Division,league,9446,,2017-06-25,6:00 pm,75479695,Big Green SC,59262126,Celtic Classic,4,2,played,,Ives Pond 1
+6603344,87148550,3rd Division,league,9447,,2017-06-25,6:00 pm,87153546,Tesla FC,75159990,Great White Buffalo,2,2,played,,Ives Pond 2
+6603345,87148550,3rd Division,league,9448,,2017-06-25,6:00 pm,67526458,Aurora Arsenal II,75479659,Bangarang FC,1,1,played,,Knox Fields 1
+6603346,87148550,3rd Division,league,9449,,2017-06-25,6:00 pm,75479692,Erie County FC,75159993,Revolution SC,0,8,played,,West Seneca Soccer Complex E
+6603373,87148550,3rd Division,league,9476,,2017-06-27,6:30 pm,75479683,North Buffalo FC,59262126,Celtic Classic,1,3,played,,Mulroy Pierce Field
+6603375,87148550,3rd Division,league,9478,,2017-06-29,6:30 pm,12579571,Devils,87153546,Tesla FC,1,1,played,,Kenny Field 5
+6603377,87148550,3rd Division,league,9480,,2017-07-02,6:00 pm,75159993,Revolution SC,10359108,Stone Jug,2,0,played,,Wendleville Fire Hall 1
+6603379,87148550,3rd Division,league,9482,,2017-07-02,6:00 pm,75479692,Erie County FC,75159990,Great White Buffalo,1,3,played,,West Seneca Soccer Complex E
+6603376,87148550,3rd Division,league,9479,,2017-07-02,6:30 pm,87153543,Moby Ducks FC,67526458,Aurora Arsenal II,0,2,played,,Park School 1
+6603374,87148550,3rd Division,league,9477,,2017-07-06,6:30 pm,75479695,Big Green SC,10359068,Great Lakes FC,1,4,played,,Ives Pond 1
+6603333,87148550,3rd Division,league,9436,,2017-07-06,6:30 pm,31566782,Rust Belt United,10359108,Stone Jug,5,1,played,,Mulroy Pierce Field
+6603303,87148550,3rd Division,league,9406,,2017-07-08,11:00 am,75159993,Revolution SC,87153543,Moby Ducks FC,2,4,played,,Wendleville Fire Hall 1
+6603348,87148550,3rd Division,league,9451,,2017-07-09,4:00 pm,10359068,Great Lakes FC,67526458,Aurora Arsenal II,1,1,played,,Ives Pond 1
+6603347,87148550,3rd Division,league,9450,,2017-07-09,4:00 pm,75479683,North Buffalo FC,12579571,Devils,0,8,played,,West Seneca Soccer Complex A
+6603351,87148550,3rd Division,league,9454,,2017-07-09,6:00 pm,87153546,Tesla FC,75479659,Bangarang FC,3,2,played,,Ives Pond 2
+6603349,87148550,3rd Division,league,9452,,2017-07-09,6:00 pm,10359108,Stone Jug,75479695,Big Green SC,3,2,played,,Thomas Marks Elementary School 1
+6603352,87148550,3rd Division,league,9455,,2017-07-09,6:00 pm,31566782,Rust Belt United,87153543,Moby Ducks FC,1,4,played,,West Seneca Soccer Complex E
+6603353,87148550,3rd Division,league,9456,,2017-07-09,6:00 pm,75159990,Great White Buffalo,75159993,Revolution SC,0,1,played,,Westwood Park Turf Field
+6603298,87148550,3rd Division,league,9401,,2017-07-13,6:30 pm,75479695,Big Green SC,67526458,Aurora Arsenal II,1,5,played,,Ives Pond 1
+6603355,87148550,3rd Division,league,9458,,2017-07-16,4:00 pm,59262126,Celtic Classic,75159990,Great White Buffalo,2,3,played,,Kenmore East Grass
+6603356,87148550,3rd Division,league,9459,,2017-07-16,6:00 pm,87153546,Tesla FC,75479695,Big Green SC,5,0,played,,Ives Pond 1
+6603357,87148550,3rd Division,league,9460,,2017-07-16,6:00 pm,12579571,Devils,75479692,Erie County FC,11,0,played,,Kenny Field 5
+6603358,87148550,3rd Division,league,9461,,2017-07-16,6:00 pm,67526458,Aurora Arsenal II,31566782,Rust Belt United,3,0,played,,Knox Fields 1
+6603354,87148550,3rd Division,league,9457,,2017-07-16,6:00 pm,87153543,Moby Ducks FC,10359068,Great Lakes FC,1,0,played,,Park School 1
+6603359,87148550,3rd Division,league,9462,,2017-07-16,6:00 pm,75159993,Revolution SC,75479683,North Buffalo FC,7,0,played,,Wendleville Fire Hall 1
+6603360,87148550,3rd Division,league,9463,,2017-07-16,6:00 pm,75479659,Bangarang FC,10359108,Stone Jug,5,3,played,,West Seneca Soccer Complex A
+6603334,87148550,3rd Division,league,9437,,2017-07-18,8:45 pm,75479659,Bangarang FC,12579571,Devils,0,3,played,,Kenny Field 5
+6603350,87148550,3rd Division,league,9453,,2017-07-19,6:30 pm,59262126,Celtic Classic,75479692,Erie County FC,4,1,played,,Kenmore East Grass
+6603335,87148550,3rd Division,league,9438,,2017-07-21,6:30 pm,75479692,Erie County FC,75479695,Big Green SC,2,3,played,,West Seneca Soccer Complex E
+6603362,87148550,3rd Division,league,9465,,2017-07-23,6:00 pm,10359068,Great Lakes FC,87153546,Tesla FC,1,3,played,,Ives Pond 1
+6603361,87148550,3rd Division,league,9464,,2017-07-23,6:00 pm,59262126,Celtic Classic,75479659,Bangarang FC,0,0,played,,Kenmore East Grass
+6603363,87148550,3rd Division,league,9466,,2017-07-23,6:00 pm,12579571,Devils,75479695,Big Green SC,6,0,played,,Kenny Field 5
+6603365,87148550,3rd Division,league,9468,,2017-07-23,6:00 pm,87153543,Moby Ducks FC,75479692,Erie County FC,6,1,played,,Park School 1
+6603364,87148550,3rd Division,league,9467,,2017-07-23,6:00 pm,10359108,Stone Jug,67526458,Aurora Arsenal II,0,2,played,FT,Thomas Marks Elementary School 1
+6603366,87148550,3rd Division,league,9469,,2017-07-23,6:00 pm,75159993,Revolution SC,31566782,Rust Belt United,2,0,played,,Wendleville Fire Hall 1
+6603367,87148550,3rd Division,league,9470,,2017-07-23,6:00 pm,75159990,Great White Buffalo,75479683,North Buffalo FC,5,1,played,,Westwood Park Turf Field
+6603369,87148550,3rd Division,league,9472,,2017-07-30,4:00 pm,75159990,Great White Buffalo,87153543,Moby Ducks FC,1,0,played,,Nichols School Peek
+6603368,87148550,3rd Division,league,9471,,2017-07-30,6:00 pm,67526458,Aurora Arsenal II,87153546,Tesla FC,3,2,played,,Knox Fields 1
+6630320,87148551,Over 35,over35,9484,,2017-05-19,6:30 pm,46512672,Bluestars FC,46512669,Oranje,2,2,played,,Parker's Pitch Field A
+6630319,87148551,Over 35,over35,9483,,2017-05-19,6:30 pm,46512666,Aliens,46512663,Azzurri,2,2,played,,Tri Town United Fields A
+6630321,87148551,Over 35,over35,9485,,2017-05-19,6:30 pm,10359105,C.S. Italia,46512675,West United FC,0,9,played,,Wendleville Fire Hall 1
+6630322,87148551,Over 35,over35,9486,,2017-05-26,6:30 pm,46512663,Azzurri,46512672,Bluestars FC,2,6,played,,Parker's Pitch Field A
+6630323,87148551,Over 35,over35,9487,,2017-05-26,6:30 pm,46512666,Aliens,10359105,C.S. Italia,3,1,played,,Tri Town United Fields A
+6630324,87148551,Over 35,over35,9488,,2017-05-26,6:30 pm,46512669,Oranje,46512675,West United FC,0,1,played,,Tri Town United Fields F
+6630325,87148551,Over 35,over35,9489,,2017-06-02,6:30 pm,46512672,Bluestars FC,46512666,Aliens,1,1,played,,Parker's Pitch Field A
+6630326,87148551,Over 35,over35,9490,,2017-06-02,6:30 pm,46512675,West United FC,46512663,Azzurri,0,1,played,,Tri Town United Fields F
+6630327,87148551,Over 35,over35,9491,,2017-06-02,6:30 pm,10359105,C.S. Italia,46512669,Oranje,0,2,played,,Wendleville Fire Hall 1
+6630329,87148551,Over 35,over35,9493,,2017-06-09,6:30 pm,46512663,Azzurri,46512669,Oranje,6,0,played,,Parker's Pitch Field A
+6630330,87148551,Over 35,over35,9494,,2017-06-09,6:30 pm,46512675,West United FC,46512666,Aliens,2,0,played,,Tri Town United Fields F
+6630328,87148551,Over 35,over35,9492,,2017-06-09,6:30 pm,10359105,C.S. Italia,46512672,Bluestars FC,0,6,played,,Wendleville Fire Hall 1
+6630331,87148551,Over 35,over35,9495,,2017-06-16,6:30 pm,46512669,Oranje,46512666,Aliens,0,4,played,,Tri Town United Fields A
+6630333,87148551,Over 35,over35,9497,,2017-06-16,6:30 pm,46512663,Azzurri,10359105,C.S. Italia,6,1,played,,Tri Town United Fields F
+6630332,87148551,Over 35,over35,9496,,2017-06-16,6:30 pm,46512672,Bluestars FC,46512675,West United FC,1,1,played,,West Seneca Soccer Complex A
+6630334,87148551,Over 35,over35,9498,,2017-06-23,6:30 pm,46512669,Oranje,46512672,Bluestars FC,0,7,played,,Tri Town United Fields A
+6630336,87148551,Over 35,over35,9500,,2017-06-23,6:30 pm,46512663,Azzurri,46512666,Aliens,0,0,played,,Tri Town United Fields B
+6630335,87148551,Over 35,over35,9499,,2017-06-23,6:30 pm,46512675,West United FC,10359105,C.S. Italia,4,1,played,,Tri Town United Fields F
+6630339,87148551,Over 35,over35,9503,,2017-07-07,6:30 pm,46512675,West United FC,46512669,Oranje,4,0,played,,Tri Town United Fields F
+6630338,87148551,Over 35,over35,9502,,2017-07-07,6:30 pm,10359105,C.S. Italia,46512666,Aliens,3,7,played,,Wendleville Fire Hall 1
+6630337,87148551,Over 35,over35,9501,,2017-07-07,6:30 pm,46512672,Bluestars FC,46512663,Azzurri,2,3,played,,West Seneca Soccer Complex B
+6630341,87148551,Over 35,over35,9505,,2017-07-14,6:30 pm,46512675,West United FC,46512672,Bluestars FC,3,2,played,,Tri Town United Fields F
+6630342,87148551,Over 35,over35,9506,,2017-07-14,6:30 pm,10359105,C.S. Italia,46512663,Azzurri,1,2,played,,Wendleville Fire Hall 1
+6630340,87148551,Over 35,over35,9504,,2017-07-14,6:30 pm,46512666,Aliens,46512669,Oranje,7,1,played,,West Seneca Soccer Complex B
+6630344,87148551,Over 35,over35,9508,,2017-07-21,6:30 pm,46512669,Oranje,46512663,Azzurri,1,3,played,,Tri Town United Fields A
+6630345,87148551,Over 35,over35,9509,,2017-07-21,6:30 pm,46512666,Aliens,46512675,West United FC,0,3,played,,Tri Town United Fields F
+6630343,87148551,Over 35,over35,9507,,2017-07-21,6:30 pm,46512672,Bluestars FC,10359105,C.S. Italia,5,3,played,,West Seneca Soccer Complex A
+6630347,87148551,Over 35,over35,9511,,2017-07-28,6:30 pm,46512663,Azzurri,46512675,West United FC,0,1,played,,Tri Town United Fields A
+6630348,87148551,Over 35,over35,9512,,2017-07-28,6:30 pm,46512669,Oranje,10359105,C.S. Italia,1,0,played,,Tri Town United Fields F
+6630346,87148551,Over 35,over35,9510,,2017-07-28,6:30 pm,46512666,Aliens,46512672,Bluestars FC,0,1,played,,Westwood Park Turf Field
+6766845,87148551,Over 35,over35,9514,,2017-08-04,6:30 pm,46512672,Bluestars FC,46512666,Aliens,4,4,played,PK,Walden Pond Park 1
+6766844,87148551,Over 35,over35,9513,CHMP,2017-08-04,6:30 pm,46512675,West United FC,46512663,Azzurri,2,2,played,PK,Tri Town United Fields A
+6603378,87148551,Over 35,over35,9481,,2017-04-30,6:00 pm,31566782,Rust Belt United,75479659,Bangarang FC,0,6,played,,West Seneca Soccer Complex E
+6603304,87148551,Over 35,over35,9407,,2017-05-07,6:00 pm,75159990,Great White Buffalo,31566782,Rust Belt United,8,0,played,,Westwood Park Turf Field
+6603305,87148551,Over 35,over35,9408,,2017-05-14,4:00 pm,87153546,Tesla FC,59262126,Celtic Classic,2,0,played,,Ives Pond 1
+6603310,87148551,Over 35,over35,9413,,2017-05-14,4:00 pm,75479692,Erie County FC,10359108,Stone Jug,3,5,played,,West Seneca Soccer Complex E
+6603306,87148551,Over 35,over35,9409,,2017-05-14,6:00 pm,10359068,Great Lakes FC,75159993,Revolution SC,0,1,played,,Ives Pond 1
+6603307,87148551,Over 35,over35,9410,,2017-05-14,6:00 pm,67526458,Aurora Arsenal II,75479683,North Buffalo FC,3,0,played,,Knox Fields 1
+6603308,87148551,Over 35,over35,9411,,2017-05-14,6:00 pm,87153543,Moby Ducks FC,75479695,Big Green SC,13,2,played,,UB Main Rotary Field
+6603309,87148551,Over 35,over35,9412,,2017-05-14,6:00 pm,31566782,Rust Belt United,12579571,Devils,1,6,played,,West Seneca Soccer Complex E
+6603311,87148551,Over 35,over35,9414,,2017-05-14,6:00 pm,75159990,Great White Buffalo,75479659,Bangarang FC,2,1,played,,Westwood Park Turf Field
+6603313,87148551,Over 35,over35,9416,,2017-05-21,4:00 pm,75479695,Big Green SC,75479659,Bangarang FC,2,8,played,,Ives Pond 1
+6603314,87148551,Over 35,over35,9417,,2017-05-21,4:00 pm,10359068,Great Lakes FC,75159990,Great White Buffalo,0,4,played,,Ives Pond 2
+6603312,87148551,Over 35,over35,9415,,2017-05-21,4:00 pm,75479683,North Buffalo FC,10359108,Stone Jug,0,3,played,,West Seneca Soccer Complex A
+6603315,87148551,Over 35,over35,9418,,2017-05-21,4:00 pm,75479692,Erie County FC,67526458,Aurora Arsenal II,0,8,played,,West Seneca Soccer Complex E
+6603318,87148551,Over 35,over35,9421,,2017-05-21,6:00 pm,87153546,Tesla FC,31566782,Rust Belt United,4,0,played,,Ives Pond 2
+6603317,87148551,Over 35,over35,9420,,2017-05-21,6:00 pm,59262126,Celtic Classic,75159993,Revolution SC,0,2,played,,Kenmore East Grass
+6603316,87148551,Over 35,over35,9419,,2017-05-21,6:00 pm,12579571,Devils,87153543,Moby Ducks FC,4,0,played,,Kenny Field 5
+6603301,87148551,Over 35,over35,9404,,2017-05-23,6:30 pm,59262126,Celtic Classic,12579571,Devils,2,3,played,,Kenmore East Grass
+6603300,87148551,Over 35,over35,9403,,2017-05-28,6:00 pm,10359108,Stone Jug,87153546,Tesla FC,2,2,played,,Thomas Marks Elementary School 1
+6603299,87148551,Over 35,over35,9402,,2017-06-01,6:30 pm,75479659,Bangarang FC,75479683,North Buffalo FC,5,0,played,,West Seneca Soccer Complex A
+6603320,87148551,Over 35,over35,9423,,2017-06-04,4:00 pm,87153546,Tesla FC,75479683,North Buffalo FC,3,1,played,,Ives Pond 1
+6603319,87148551,Over 35,over35,9422,,2017-06-04,4:00 pm,59262126,Celtic Classic,31566782,Rust Belt United,1,5,played,,Kenmore East Grass
+6603322,87148551,Over 35,over35,9425,,2017-06-04,6:00 pm,75479695,Big Green SC,75159990,Great White Buffalo,0,4,played,,Ives Pond 1
+6603321,87148551,Over 35,over35,9424,,2017-06-04,6:00 pm,10359108,Stone Jug,87153543,Moby Ducks FC,1,1,played,,Thomas Marks Elementary School 1
+6603324,87148551,Over 35,over35,9427,,2017-06-04,6:00 pm,75159993,Revolution SC,67526458,Aurora Arsenal II,2,1,played,,Wendleville Fire Hall 1
+6603325,87148551,Over 35,over35,9428,,2017-06-04,6:00 pm,75479659,Bangarang FC,75479692,Erie County FC,6,1,played,,West Seneca Soccer Complex B
+6603323,87148551,Over 35,over35,9426,,2017-06-04,8:45 pm,12579571,Devils,10359068,Great Lakes FC,4,0,played,,Kenny Field 3
+6603328,87148551,Over 35,over35,9431,,2017-06-11,6:00 pm,75479695,Big Green SC,31566782,Rust Belt United,1,2,played,,Ives Pond 1
+6603329,87148551,Over 35,over35,9432,,2017-06-11,6:00 pm,67526458,Aurora Arsenal II,87153546,Tesla FC,5,0,played,,Knox Fields 1
+6603330,87148551,Over 35,over35,9433,,2017-06-11,6:00 pm,87153543,Moby Ducks FC,59262126,Celtic Classic,4,2,played,,Park School 1
+6603327,87148551,Over 35,over35,9430,,2017-06-11,6:00 pm,10359108,Stone Jug,10359068,Great Lakes FC,2,2,played,,Thomas Marks Elementary School 1
+6603326,87148551,Over 35,over35,9429,,2017-06-11,6:00 pm,75479683,North Buffalo FC,75479692,Erie County FC,7,2,played,,West Seneca Soccer Complex B
+6603331,87148551,Over 35,over35,9434,,2017-06-11,6:00 pm,75479659,Bangarang FC,75159993,Revolution SC,0,3,played,,West Seneca Soccer Complex E
+6603332,87148551,Over 35,over35,9435,,2017-06-11,6:00 pm,75159990,Great White Buffalo,12579571,Devils,1,3,played,,Westwood Park Turf Field
+6603302,87148551,Over 35,over35,9405,,2017-06-15,6:30 pm,10359068,Great Lakes FC,75479692,Erie County FC,6,0,played,,Ives Pond 2
+6603336,87148551,Over 35,over35,9439,,2017-06-18,6:00 pm,10359068,Great Lakes FC,75479683,North Buffalo FC,3,1,played,,Ives Pond 1
+6603337,87148551,Over 35,over35,9440,,2017-06-18,6:00 pm,67526458,Aurora Arsenal II,59262126,Celtic Classic,1,1,played,,Knox Fields 1
+6603339,87148551,Over 35,over35,9442,,2017-06-18,6:00 pm,75159993,Revolution SC,87153546,Tesla FC,3,0,played,,Wendleville Fire Hall 1
+6603338,87148551,Over 35,over35,9441,,2017-06-18,6:45 pm,87153543,Moby Ducks FC,75159990,Great White Buffalo,0,0,played,,Park School 1
+6603340,87148551,Over 35,over35,9443,,2017-06-25,4:00 pm,75479683,North Buffalo FC,87153543,Moby Ducks FC,1,11,played,,West Seneca Soccer Complex A
+6603341,87148551,Over 35,over35,9444,,2017-06-25,4:00 pm,31566782,Rust Belt United,10359068,Great Lakes FC,1,4,played,,West Seneca Soccer Complex B
+6603342,87148551,Over 35,over35,9445,,2017-06-25,6:00 pm,12579571,Devils,10359108,Stone Jug,4,0,played,,Irvington
+6603343,87148551,Over 35,over35,9446,,2017-06-25,6:00 pm,75479695,Big Green SC,59262126,Celtic Classic,4,2,played,,Ives Pond 1
+6603344,87148551,Over 35,over35,9447,,2017-06-25,6:00 pm,87153546,Tesla FC,75159990,Great White Buffalo,2,2,played,,Ives Pond 2
+6603345,87148551,Over 35,over35,9448,,2017-06-25,6:00 pm,67526458,Aurora Arsenal II,75479659,Bangarang FC,1,1,played,,Knox Fields 1
+6603346,87148551,Over 35,over35,9449,,2017-06-25,6:00 pm,75479692,Erie County FC,75159993,Revolution SC,0,8,played,,West Seneca Soccer Complex E
+6603373,87148551,Over 35,over35,9476,,2017-06-27,6:30 pm,75479683,North Buffalo FC,59262126,Celtic Classic,1,3,played,,Mulroy Pierce Field
+6603375,87148551,Over 35,over35,9478,,2017-06-29,6:30 pm,12579571,Devils,87153546,Tesla FC,1,1,played,,Kenny Field 5
+6603377,87148551,Over 35,over35,9480,,2017-07-02,6:00 pm,75159993,Revolution SC,10359108,Stone Jug,2,0,played,,Wendleville Fire Hall 1
+6603379,87148551,Over 35,over35,9482,,2017-07-02,6:00 pm,75479692,Erie County FC,75159990,Great White Buffalo,1,3,played,,West Seneca Soccer Complex E
+6603376,87148551,Over 35,over35,9479,,2017-07-02,6:30 pm,87153543,Moby Ducks FC,67526458,Aurora Arsenal II,0,2,played,,Park School 1
+6603374,87148551,Over 35,over35,9477,,2017-07-06,6:30 pm,75479695,Big Green SC,10359068,Great Lakes FC,1,4,played,,Ives Pond 1
+6603333,87148551,Over 35,over35,9436,,2017-07-06,6:30 pm,31566782,Rust Belt United,10359108,Stone Jug,5,1,played,,Mulroy Pierce Field
+6603303,87148551,Over 35,over35,9406,,2017-07-08,11:00 am,75159993,Revolution SC,87153543,Moby Ducks FC,2,4,played,,Wendleville Fire Hall 1
+6603348,87148551,Over 35,over35,9451,,2017-07-09,4:00 pm,10359068,Great Lakes FC,67526458,Aurora Arsenal II,1,1,played,,Ives Pond 1
+6603347,87148551,Over 35,over35,9450,,2017-07-09,4:00 pm,75479683,North Buffalo FC,12579571,Devils,0,8,played,,West Seneca Soccer Complex A
+6603351,87148551,Over 35,over35,9454,,2017-07-09,6:00 pm,87153546,Tesla FC,75479659,Bangarang FC,3,2,played,,Ives Pond 2
+6603349,87148551,Over 35,over35,9452,,2017-07-09,6:00 pm,10359108,Stone Jug,75479695,Big Green SC,3,2,played,,Thomas Marks Elementary School 1
+6603352,87148551,Over 35,over35,9455,,2017-07-09,6:00 pm,31566782,Rust Belt United,87153543,Moby Ducks FC,1,4,played,,West Seneca Soccer Complex E
+6603353,87148551,Over 35,over35,9456,,2017-07-09,6:00 pm,75159990,Great White Buffalo,75159993,Revolution SC,0,1,played,,Westwood Park Turf Field
+6603298,87148551,Over 35,over35,9401,,2017-07-13,6:30 pm,75479695,Big Green SC,67526458,Aurora Arsenal II,1,5,played,,Ives Pond 1
+6603355,87148551,Over 35,over35,9458,,2017-07-16,4:00 pm,59262126,Celtic Classic,75159990,Great White Buffalo,2,3,played,,Kenmore East Grass
+6603356,87148551,Over 35,over35,9459,,2017-07-16,6:00 pm,87153546,Tesla FC,75479695,Big Green SC,5,0,played,,Ives Pond 1
+6603357,87148551,Over 35,over35,9460,,2017-07-16,6:00 pm,12579571,Devils,75479692,Erie County FC,11,0,played,,Kenny Field 5
+6603358,87148551,Over 35,over35,9461,,2017-07-16,6:00 pm,67526458,Aurora Arsenal II,31566782,Rust Belt United,3,0,played,,Knox Fields 1
+6603354,87148551,Over 35,over35,9457,,2017-07-16,6:00 pm,87153543,Moby Ducks FC,10359068,Great Lakes FC,1,0,played,,Park School 1
+6603359,87148551,Over 35,over35,9462,,2017-07-16,6:00 pm,75159993,Revolution SC,75479683,North Buffalo FC,7,0,played,,Wendleville Fire Hall 1
+6603360,87148551,Over 35,over35,9463,,2017-07-16,6:00 pm,75479659,Bangarang FC,10359108,Stone Jug,5,3,played,,West Seneca Soccer Complex A
+6603334,87148551,Over 35,over35,9437,,2017-07-18,8:45 pm,75479659,Bangarang FC,12579571,Devils,0,3,played,,Kenny Field 5
+6603350,87148551,Over 35,over35,9453,,2017-07-19,6:30 pm,59262126,Celtic Classic,75479692,Erie County FC,4,1,played,,Kenmore East Grass
+6603335,87148551,Over 35,over35,9438,,2017-07-21,6:30 pm,75479692,Erie County FC,75479695,Big Green SC,2,3,played,,West Seneca Soccer Complex E
+6603362,87148551,Over 35,over35,9465,,2017-07-23,6:00 pm,10359068,Great Lakes FC,87153546,Tesla FC,1,3,played,,Ives Pond 1
+6603361,87148551,Over 35,over35,9464,,2017-07-23,6:00 pm,59262126,Celtic Classic,75479659,Bangarang FC,0,0,played,,Kenmore East Grass
+6603363,87148551,Over 35,over35,9466,,2017-07-23,6:00 pm,12579571,Devils,75479695,Big Green SC,6,0,played,,Kenny Field 5
+6603365,87148551,Over 35,over35,9468,,2017-07-23,6:00 pm,87153543,Moby Ducks FC,75479692,Erie County FC,6,1,played,,Park School 1
+6603364,87148551,Over 35,over35,9467,,2017-07-23,6:00 pm,10359108,Stone Jug,67526458,Aurora Arsenal II,0,2,played,FT,Thomas Marks Elementary School 1
+6603366,87148551,Over 35,over35,9469,,2017-07-23,6:00 pm,75159993,Revolution SC,31566782,Rust Belt United,2,0,played,,Wendleville Fire Hall 1
+6603367,87148551,Over 35,over35,9470,,2017-07-23,6:00 pm,75159990,Great White Buffalo,75479683,North Buffalo FC,5,1,played,,Westwood Park Turf Field
+6603369,87148551,Over 35,over35,9472,,2017-07-30,4:00 pm,75159990,Great White Buffalo,87153543,Moby Ducks FC,1,0,played,,Nichols School Peek
+6603368,87148551,Over 35,over35,9471,,2017-07-30,6:00 pm,67526458,Aurora Arsenal II,87153546,Tesla FC,3,2,played,,Knox Fields 1
+6603371,87148551,Over 35,over35,9474,,2017-08-06,6:00 pm,12579571,Devils,75159990,Great White Buffalo,0,3,played,,Kenny Field 3
+6603370,87148551,Over 35,over35,9473,,2017-08-06,6:00 pm,75159993,Revolution SC,67526458,Aurora Arsenal II,1,0,played,,Wendleville Fire Hall 1
+6603372,87148551,Over 35,over35,9475,CHMP,2017-08-13,1:30 pm,75159993,Revolution SC,75159990,Great White Buffalo,0,2,played,,Nichols School Strauss Truscott
+6620179,87490281,Tehel Cup Bracket,cup,36,,2017-05-04,8:30 pm,18647016,Buffalo United SS,15294627,Niagara FC,5,0,played,,D'Youville College 1
+6620176,87490281,Tehel Cup Bracket,cup,33,,2017-05-10,6:30 pm,10359111,SPAL Buffalo FC,75159921,West Side FC,0,2,played,,Mulroy Pierce Field
+6620183,87490281,Tehel Cup Bracket,cup,40,,2017-05-11,6:30 pm,10359074,Lykan FC,75479650,Pendleton United FC,1,3,played,,Parker's Pitch Field A
+6620177,87490281,Tehel Cup Bracket,cup,34,,2017-05-11,6:30 pm,62886844,Buffalo Gunners,10359038,Hamburg Monarchs,0,3,played,,West Seneca Soccer Complex A
+6620178,87490281,Tehel Cup Bracket,cup,35,,2017-05-11,8:30 pm,26895907,Amherst Sharpshooters,12579600,Wolfpack,2,0,played,,D'Youville College 1
+6620180,87490281,Tehel Cup Bracket,cup,37,,2017-05-18,6:30 pm,59261105,Celtic Hoops,59261111,Crusaders FC,3,0,played,,Nichols School Peek
+6620175,87490281,Tehel Cup Bracket,cup,32,,2017-05-18,6:30 pm,45428657,Tri Town United FC,26891564,FC Yemen,1,3,played,,Sahlen's Sportspark 2
+6620184,87490281,Tehel Cup Bracket,cup,41,,2017-05-18,6:30 pm,75159999,Crimson Fire FC,75479668,Grand Island FC,1,3,played,,Veteran's Park (GI) 1
+6620181,87490281,Tehel Cup Bracket,cup,38,,2017-05-23,6:30 pm,75479671,Great Lakes Africa,67527661,East Aurora FC,4,3,played,OT,Mulroy Pierce Field
+6620148,87490281,Tehel Cup Bracket,cup,5,,2017-05-25,6:30 pm,67526770,Buffalo Bantu,10359038,Hamburg Monarchs,5,1,played,,Mulroy Pierce Field
+6620146,87490281,Tehel Cup Bracket,cup,3,,2017-05-25,6:30 pm,10359017,Celtic United,75159921,West Side FC,2,3,played,OT,Nichols School Peek
+6620145,87490281,Tehel Cup Bracket,cup,2,,2017-05-25,6:30 pm,10359023,Polonia,26891564,FC Yemen,3,5,played,,Sahlen's Sportspark 2
+6620150,87490281,Tehel Cup Bracket,cup,7,,2017-05-25,6:30 pm,10359047,BSC International,18647016,Buffalo United SS,1,4,played,,West Seneca Soccer Complex A
+6620182,87490281,Tehel Cup Bracket,cup,39,,2017-05-25,6:30 pm,67527667,RVS United,26892099,Rampart FC,2,1,played,,Westwood Park Turf Field
+6620149,87490281,Tehel Cup Bracket,cup,6,,2017-05-25,8:30 pm,75159924,DSC Buffalo,26895907,Amherst Sharpshooters,0,9,played,,D'Youville College 1
+6620147,87490281,Tehel Cup Bracket,cup,4,,2017-05-25,8:30 pm,59261096,Beast City SC,10359035,Queenston FC,0,3,played,,Sweet Home High School Turf
+6620151,87490281,Tehel Cup Bracket,cup,8,,2017-06-01,8:30 pm,67527670,FC Quake,10359008,Roos FC,0,1,played,,D'Youville College 1
+6620158,87490281,Tehel Cup Bracket,cup,15,,2017-06-08,6:30 pm,10359005,Clarence,75479668,Grand Island FC,4,0,played,,Clarence Soccer Center 1
+6620144,87490281,Tehel Cup Bracket,cup,1,,2017-06-08,6:30 pm,10359062,Tonawanda United,75159915,NMB FC,0,1,played,,Ives Pond 1
+6620155,87490281,Tehel Cup Bracket,cup,12,,2017-06-08,6:30 pm,59260537,Southtowns FPFC,10350991,BSC Raiders,0,4,played,,Mulroy Pierce Field
+6620157,87490281,Tehel Cup Bracket,cup,14,,2017-06-08,6:30 pm,75159801,OP Alliance,75479650,Pendleton United FC,0,2,played,,Orchard Park Soccer Complex 1
+6620156,87490281,Tehel Cup Bracket,cup,13,,2017-06-08,6:30 pm,26891552,Buffalo Celtic,10359080,Alden Eclipse,0,1,played,,West Seneca Soccer Complex A
+6620159,87490281,Tehel Cup Bracket,cup,16,,2017-06-08,8:30 pm,10350976,SoHo FC,10359086,Rangers,3,1,played,,D'Youville College 1
+6620153,87490281,Tehel Cup Bracket,cup,10,,2017-06-09,6:30 pm,10359050,Yemen Elite,75479671,Great Lakes Africa,2,1,played,,Lackawanna High School 1
+6620152,87490281,Tehel Cup Bracket,cup,9,,2017-06-15,6:30 pm,10359029,Panthers,59261105,Celtic Hoops,1,0,played,,Mulroy Pierce Field
+6620154,87490281,Tehel Cup Bracket,cup,11,,2017-06-15,8:30 pm,75479641,Williamsville Willies,67527667,RVS United,1,0,played,,D'Youville College 1
+6620163,87490281,Tehel Cup Bracket,cup,20,,2017-06-22,8:30 pm,18647016,Buffalo United SS,10359008,Roos FC,8,1,played,,D'Youville College 1
+6620167,87490281,Tehel Cup Bracket,cup,24,,2017-06-29,6:30 pm,10359005,Clarence,10350976,SoHo FC,1,4,played,,Clarence Town Hall Park 1
+6620160,87490281,Tehel Cup Bracket,cup,17,,2017-06-29,6:30 pm,75159915,NMB FC,26891564,FC Yemen,2,5,played,,Lackawanna High School 1
+6620166,87490281,Tehel Cup Bracket,cup,23,,2017-06-29,6:30 pm,10359080,Alden Eclipse,75479650,Pendleton United FC,0,2,played,,Wendleville Fire Hall 1
+6620161,87490281,Tehel Cup Bracket,cup,18,,2017-07-06,8:30 pm,75159921,West Side FC,10359035,Queenston FC,0,5,played,,D'Youville College 1
+6620162,87490281,Tehel Cup Bracket,cup,19,,2017-07-11,6:30 pm,67526770,Buffalo Bantu,26895907,Amherst Sharpshooters,2,2,played,PK,Mulroy Pierce Field
+6620164,87490281,Tehel Cup Bracket,cup,21,,2017-07-12,8:30 pm,10359029,Panthers,10359050,Yemen Elite,1,2,played,,Sweet Home High School Turf
+6620165,87490281,Tehel Cup Bracket,cup,22,,2017-07-13,8:30 pm,75479641,Williamsville Willies,10350991,BSC Raiders,2,1,played,,D'Youville College 1
+6620168,87490281,Tehel Cup Bracket,cup,25,QF1,2017-07-20,6:30 pm,26891564,FC Yemen,10359035,Queenston FC,3,1,played,,Lackawanna High School 1
+6620171,87490281,Tehel Cup Bracket,cup,28,QF4,2017-07-20,6:30 pm,75479650,Pendleton United FC,10350976,SoHo FC,3,2,played,,Wendleville Fire Hall 1
+6620170,87490281,Tehel Cup Bracket,cup,27,QF3,2017-07-20,8:30 pm,10359050,Yemen Elite,75479641,Williamsville Willies,2,1,played,,D'Youville College 1
+6620169,87490281,Tehel Cup Bracket,cup,26,QF2,2017-07-21,6:30 pm,67526770,Buffalo Bantu,18647016,Buffalo United SS,2,4,played,,D'Youville College 1
+6620173,87490281,Tehel Cup Bracket,cup,29,SF1,2017-07-27,6:30 pm,26891564,FC Yemen,18647016,Buffalo United SS,0,3,played,,Lackawanna High School 1
+6620174,87490281,Tehel Cup Bracket,cup,30,SF2,2017-07-27,8:30 pm,10359050,Yemen Elite,75479650,Pendleton United FC,3,1,played,,D'Youville College 1
+6620172,87490281,Tehel Cup Bracket,cup,31,,2017-08-10,8:30 pm,18647016,Buffalo United SS,10359050,Yemen Elite,1,1,played,PK,Sweet Home High School Turf
+6620474,87493250,BDSL Wood Cup Bracket,cup,2,,2017-05-18,6:30 pm,15296943,Depew Village,87153543,Moby Ducks FC,1,4,played,,Fireman's Park (Depew) 1
+6620478,87493250,BDSL Wood Cup Bracket,cup,6,,2017-05-18,6:30 pm,59262126,Celtic Classic,75479695,Big Green SC,5,1,played,,Irvington
+6620476,87493250,BDSL Wood Cup Bracket,cup,4,,2017-05-18,6:30 pm,75479662,Celtic Brigade,67526458,Aurora Arsenal II,2,3,played,OT,Knox Fields 1
+6620475,87493250,BDSL Wood Cup Bracket,cup,3,,2017-05-18,6:30 pm,75159990,Great White Buffalo,75479683,North Buffalo FC,9,1,played,,Mulroy Pierce Field
+6620504,87493250,BDSL Wood Cup Bracket,cup,32,,2017-05-18,6:30 pm,75479680,Honey Badgers,75479686,Queen City Pride,10,1,played,,Parker's Pitch Field A
+6620473,87493250,BDSL Wood Cup Bracket,cup,1,,2017-05-18,6:30 pm,46512675,West United,10359123,Cheektowaga,0,1,played,,Sahlen's Sportspark 1
+6620477,87493250,BDSL Wood Cup Bracket,cup,5,,2017-05-18,6:30 pm,75479677,Kingsmen SC,10359117,Dutch FC,2,4,played,OT,Walden Pond Park 1
+6620479,87493250,BDSL Wood Cup Bracket,cup,7,,2017-05-18,6:30 pm,75479659,FC Aftershock,75479674,Los Chupacabras,1,9,played,,West Seneca Soccer Complex A
+6620480,87493250,BDSL Wood Cup Bracket,cup,8,,2017-05-18,6:30 pm,10359002,West Seneca Strikers,75479692,Erie County FC,7,4,played,,West Seneca Soccer Complex B
+6620484,87493250,BDSL Wood Cup Bracket,cup,12,,2017-06-01,6:30 pm,10359077,WNY United Reds,12579571,Devils,0,1,played,,Fireman's Park (Depew) 1
+6620486,87493250,BDSL Wood Cup Bracket,cup,14,,2017-06-01,6:30 pm,31566782,Rust Belt United,10359068,Great Lakes FC,2,3,played,,Ives Pond 1
+6620483,87493250,BDSL Wood Cup Bracket,cup,11,,2017-06-01,6:30 pm,87153546,Tesla FC,75479680,Honey Badgers,1,0,played,,Ives Pond 2
+6620488,87493250,BDSL Wood Cup Bracket,cup,16,,2017-06-01,6:30 pm,75479656,FC Yemen II,75479647,Celtic 1888,3,1,played,,Lackawanna High School 1
+6620482,87493250,BDSL Wood Cup Bracket,cup,10,,2017-06-01,6:30 pm,75479653,Youngstown Marksmen,75159918,Blizzard FC,2,0,played,,Veterans Park - Youngstown Pierce Field
+6620487,87493250,BDSL Wood Cup Bracket,cup,15,,2017-06-01,6:30 pm,75479689,Delco Academy,75159993,Revolution SC,2,1,played,,Wendleville Fire Hall 1
+6620481,87493250,BDSL Wood Cup Bracket,cup,9,,2017-06-01,8:30 pm,35216066,Meerkats FC,10359108,Stone Jug,6,1,played,,Niagara University 1
+6620485,87493250,BDSL Wood Cup Bracket,cup,13,,2017-06-21,6:30 pm,10359092,Ukraine,75159996,FK Bosna,1,2,played,,Rehm Road
+6620494,87493250,BDSL Wood Cup Bracket,cup,22,,2017-06-22,6:30 pm,87153546,Tesla FC,12579571,Devils,3,1,played,,Ives Pond 1
+6620489,87493250,BDSL Wood Cup Bracket,cup,17,,2017-06-22,6:30 pm,10359123,Cheektowaga,87153543,Moby Ducks FC,1,0,played,,JFK High School 1
+6620496,87493250,BDSL Wood Cup Bracket,cup,24,,2017-06-22,6:30 pm,75479689,Delco Academy,75479656,FC Yemen II,2,2,played,PK,Lackawanna High School 1
+6620490,87493250,BDSL Wood Cup Bracket,cup,18,,2017-06-22,6:30 pm,75159990,Great White Buffalo,67526458,Aurora Arsenal II,2,0,played,,Westwood Park Turf Field
+6620493,87493250,BDSL Wood Cup Bracket,cup,21,,2017-06-22,8:30 pm,35216066,Meerkats FC,75479653,Youngstown Marksmen,1,3,played,,Niagara University 1
+6620495,87493250,BDSL Wood Cup Bracket,cup,23,,2017-06-29,6:30 pm,75159996,FK Bosna,10359068,Great Lakes FC,2,1,played,,Ives Pond 2
+6620492,87493250,BDSL Wood Cup Bracket,cup,20,,2017-06-29,8:45 pm,75479674,Los Chupacabras,10359002,West Seneca Strikers,7,1,played,,Niagara University 1
+6620491,87493250,BDSL Wood Cup Bracket,cup,19,,2017-07-02,4:00 pm,10359117,Dutch FC,59262126,Celtic Classic,2,0,played,FT,Walden Pond Park 1
+6620497,87493250,BDSL Wood Cup Bracket,cup,25,QF1,2017-07-13,6:30 pm,10359123,Cheektowaga,75159990,Great White Buffalo,2,4,played,,JFK High School 1
+6620500,87493250,BDSL Wood Cup Bracket,cup,28,QF4,2017-07-13,6:30 pm,75159996,FK Bosna,75479689,Delco Academy,2,0,played,FT,Lackawanna High School 1
+6620499,87493250,BDSL Wood Cup Bracket,cup,27,QF3,2017-07-13,6:30 pm,75479653,Youngstown Marksmen,87153546,Tesla FC,2,0,played,,Veterans Park - Youngstown Pierce Field
+6620498,87493250,BDSL Wood Cup Bracket,cup,26,QF2,2017-07-13,7:00 pm,10359117,Dutch FC,75479674,Los Chupacabras,1,3,played,,Walden Pond Park 1
+6620502,87493250,BDSL Wood Cup Bracket,cup,29,SF1,2017-07-27,6:30 pm,75159990,Great White Buffalo,75479674,Los Chupacabras,1,4,played,,Fireman's Park (Depew) 1
+6620503,87493250,BDSL Wood Cup Bracket,cup,30,SF2,2017-07-27,6:30 pm,75479653,Youngstown Marksmen,75159996,FK Bosna,2,0,played,,Veterans Park - Youngstown Pierce Field
+6620501,87493250,BDSL Wood Cup Bracket,cup,31,CHMP,2017-08-03,6:30 pm,75479674,Los Chupacabras,75479653,Youngstown Marksmen,2,1,played,OT,Sweet Home High School Turf

@@ -2,41 +2,65 @@
   {
     "competition": "Premier",
     "comp_type": "league",
-    "tg": "95086874"
+    "tg": "95086874",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "Championship",
     "comp_type": "league",
-    "tg": "95086878"
+    "tg": "95086878",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "1st Division",
     "comp_type": "league",
-    "tg": "95086876"
+    "tg": "95086876",
+    "champion_club_id": "91256980",
+    "champion_name": "Olean 1854 FC",
+    "champion_via": "playoff"
   },
   {
     "competition": "2nd Division",
     "comp_type": "league",
-    "tg": "95086877"
+    "tg": "95086877",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "3rd Division",
     "comp_type": "league",
-    "tg": "95086879"
+    "tg": "95086879",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "Over 35",
     "comp_type": "over35",
-    "tg": "95086880"
+    "tg": "95086880",
+    "champion_club_id": "46512672",
+    "champion_name": "Bluestars FC",
+    "champion_via": "playoff"
   },
   {
     "competition": "Tehel Cup Bracket",
     "comp_type": "cup",
-    "tg": "95598237"
+    "tg": "95598237",
+    "champion_club_id": "10359035",
+    "champion_name": "Queenston FC",
+    "champion_via": "playoff"
   },
   {
     "competition": "BDSL Wood Cup Bracket",
     "comp_type": "cup",
-    "tg": "95615075"
+    "tg": "95615075",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   }
 ]

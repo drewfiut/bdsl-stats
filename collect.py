@@ -7,12 +7,38 @@ one, building history over time.
 """
 import datetime as dt
 from dataclasses import asdict
-from typing import Optional
+from typing import Dict, List, Optional
 
 import config
 import discover
+import schedules
+import standings
 import store
 from parse_stats import fetch_stats
+
+
+def collect_games(groups, year: int, progress: bool = False) -> Dict[str, list]:
+    """Fetch every competition's full schedule/results, keyed by team-group id."""
+    out: Dict[str, list] = {}
+    for g in groups:
+        games = schedules.fetch_games(g.tg, year)
+        out[g.tg] = games
+        if progress:
+            print(f"  {g.competition:22} {len(games):4} games")
+    return out
+
+
+def _game_rows(groups, games_by_tg: Dict[str, list]) -> List[dict]:
+    """Flatten Game objects into store rows, tagging each with its competition."""
+    rows = []
+    for g in groups:
+        for game in games_by_tg.get(g.tg, []):
+            d = asdict(game)
+            d.update(tg=g.tg, competition=g.competition, comp_type=g.comp_type)
+            d["home_score"] = "" if d["home_score"] is None else d["home_score"]
+            d["away_score"] = "" if d["away_score"] is None else d["away_score"]
+            rows.append(d)
+    return rows
 
 
 def is_current(season_id: Optional[str] = None) -> bool:
@@ -44,11 +70,27 @@ def collect(season: Optional[dict] = None, progress: bool = False,
     fetched_at = dt.datetime.now().isoformat(timespec="seconds")
 
     store.upsert_season(season)
+    year = int(sid.split("-")[0])
 
     groups = discover.discover_all(season)
-    store.save_competitions(sid, [asdict(g) for g in groups])
-    store.save_teams(sid, discover.discover_teams(season["league_section"],
-                                                  season["standings_element"]))
+
+    # Games (full schedule/results), then the derived standings + true champion.
+    games_by_tg = collect_games(groups, year, progress=progress)
+    teams = discover.discover_teams(season["league_section"], season["standings_element"])
+    standings.assign_positions(teams)
+
+    comps = []
+    for g in groups:
+        comp = asdict(g)
+        club_id, name, via = standings.champion_for(
+            games_by_tg.get(g.tg, []), [t for t in teams if t["tg"] == g.tg],
+            season_final=final)
+        comp.update(champion_club_id=club_id, champion_name=name, champion_via=via)
+        comps.append(comp)
+
+    store.save_competitions(sid, comps)
+    store.save_teams(sid, teams)
+    store.save_games(sid, _game_rows(groups, games_by_tg))
 
     rows = []
     players = {}

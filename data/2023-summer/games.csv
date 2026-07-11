@@ -1,0 +1,533 @@
+game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id,home_name,away_club_id,away_name,home_score,away_score,status,result_note,location
+10479901,110306216,Premier,league,9495,SF2,2023-08-06,6:00 pm,10359035,Queenston FC,26895907,Amherst Sharpshooters,0,3,played,,Buffalo State Coyer Field
+10479900,110306216,Premier,league,9494,SF1,2023-08-06,8:00 pm,10350991,BSC Raiders,18647016,Buffalo United SS,1,1,played,PK,Buffalo State Coyer Field
+10479902,110306216,Premier,league,9496,CHMP,2023-08-13,8:00 pm,26895907,Amherst Sharpshooters,18647016,Buffalo United SS,1,2,played,,Sahlen's Sports Park Flash Fields 1
+10401960,110306216,Premier,league,7001,,2023-04-30,6:00 pm,10359017,Celtic United,26895907,Amherst Sharpshooters,0,3,played,,Kenmore West Crosby Field
+10401961,110306216,Premier,league,7002,,2023-04-30,6:00 pm,75479674,Los Chupacabras,10350991,BSC Raiders,1,3,played,,Niagara Falls High School Back
+10401962,110306216,Premier,league,7003,,2023-04-30,6:00 pm,10359035,Queenston FC,45429017,Borussia Bees,2,3,played,,Niagara Falls High School Front
+10401963,110306216,Premier,league,7004,,2023-04-30,6:00 pm,98468675,Kilimanjaro Bandits,10359008,Roos FC,0,1,played,,Sahlen's Sports Park Flash Fields 1
+10401964,110306216,Premier,league,7005,,2023-05-01,8:30 pm,12579600,Wolves FC,18647016,Buffalo United SS,2,4,played,,Mulroy Park Pierce Field
+10401965,110306216,Premier,league,7006,,2023-05-07,4:00 pm,26895907,Amherst Sharpshooters,98468675,Kilimanjaro Bandits,4,2,played,,Buffalo State Coyer Field
+10401966,110306216,Premier,league,7007,,2023-05-07,6:00 pm,10359008,Roos FC,106801557,AC Elite,2,3,played,,Medaille College Sports Complex 1
+10401967,110306216,Premier,league,7008,,2023-05-07,6:00 pm,75479674,Los Chupacabras,12579600,Wolves FC,2,1,played,,Niagara Falls High School Front
+10401968,110306216,Premier,league,7009,,2023-05-07,8:00 pm,18647016,Buffalo United SS,10359035,Queenston FC,2,5,played,,Buffalo State Coyer Field
+10401969,110306216,Premier,league,7010,,2023-05-08,8:00 pm,10350991,BSC Raiders,10359017,Celtic United,4,0,played,,Buffalo State Coyer Field
+10401970,110306216,Premier,league,7011,,2023-05-14,6:00 pm,12579600,Wolves FC,45429017,Borussia Bees,4,3,played,,Buffalo State Coyer Field
+10401971,110306216,Premier,league,7012,,2023-05-14,8:00 pm,26895907,Amherst Sharpshooters,75479674,Los Chupacabras,2,0,played,,Buffalo State Coyer Field
+10401973,110306216,Premier,league,7014,,2023-05-15,8:00 pm,10350991,BSC Raiders,18647016,Buffalo United SS,3,0,played,,Buffalo State Coyer Field
+10401974,110306216,Premier,league,7015,,2023-05-15,8:00 pm,10359008,Roos FC,10359017,Celtic United,1,5,played,,Medaille College Sports Complex 1
+10401975,110306216,Premier,league,7016,,2023-05-21,4:00 pm,12579600,Wolves FC,26895907,Amherst Sharpshooters,2,2,played,,Buffalo State Coyer Field
+10401976,110306216,Premier,league,7017,,2023-05-21,4:00 pm,106801557,AC Elite,45429017,Borussia Bees,2,1,played,,Fillmore High School Field
+10401977,110306216,Premier,league,7018,,2023-05-21,4:00 pm,10359017,Celtic United,75479674,Los Chupacabras,1,2,played,,Kenmore West Crosby Field
+10401978,110306216,Premier,league,7019,,2023-05-22,8:00 pm,18647016,Buffalo United SS,98468675,Kilimanjaro Bandits,3,0,played,,Buffalo State Coyer Field
+10401979,110306216,Premier,league,7020,,2023-05-22,8:00 pm,10359008,Roos FC,10359035,Queenston FC,0,2,played,,Medaille College Sports Complex 1
+10401980,110306216,Premier,league,7021,,2023-06-04,6:00 pm,106801557,AC Elite,10350991,BSC Raiders,1,3,played,,Fillmore High School Field
+10401981,110306216,Premier,league,7022,,2023-06-04,6:00 pm,10359035,Queenston FC,10359017,Celtic United,1,1,played,,Niagara Falls High School Front
+10401982,110306216,Premier,league,7023,,2023-06-04,6:00 pm,45429017,Borussia Bees,75479674,Los Chupacabras,2,2,played,,Niagara University Field
+10401983,110306216,Premier,league,7024,,2023-06-04,8:00 pm,26895907,Amherst Sharpshooters,10359008,Roos FC,5,1,played,,Buffalo State Coyer Field
+10401984,110306216,Premier,league,7025,,2023-06-05,8:00 pm,98468675,Kilimanjaro Bandits,12579600,Wolves FC,2,1,played,,Buffalo State Coyer Field
+10401986,110306216,Premier,league,7027,,2023-06-11,6:00 pm,10359017,Celtic United,18647016,Buffalo United SS,0,4,played,,Kenmore West Crosby Field
+10401985,110306216,Premier,league,7026,,2023-06-11,6:00 pm,12579600,Wolves FC,10359008,Roos FC,3,4,played,,Medaille College Sports Complex 1
+10401987,110306216,Premier,league,7028,,2023-06-11,6:00 pm,10359035,Queenston FC,106801557,AC Elite,1,1,played,,Niagara Falls High School Front
+10401988,110306216,Premier,league,7029,,2023-06-11,8:00 pm,45429017,Borussia Bees,98468675,Kilimanjaro Bandits,3,5,played,,Niagara University Field
+10401989,110306216,Premier,league,7030,,2023-06-12,8:00 pm,10350991,BSC Raiders,26895907,Amherst Sharpshooters,0,2,played,,Buffalo State Coyer Field
+10401990,110306216,Premier,league,7031,,2023-06-18,4:00 pm,26895907,Amherst Sharpshooters,106801557,AC Elite,3,1,played,,Buffalo State Coyer Field
+10401992,110306216,Premier,league,7033,,2023-06-18,6:00 pm,75479674,Los Chupacabras,10359035,Queenston FC,0,2,played,,Niagara Falls High School Front
+10401994,110306216,Premier,league,7035,,2023-06-18,8:00 pm,45429017,Borussia Bees,18647016,Buffalo United SS,2,2,played,,Niagara University Field
+10401993,110306216,Premier,league,7034,,2023-06-19,8:00 pm,98468675,Kilimanjaro Bandits,10350991,BSC Raiders,0,7,played,,Mulroy Park Pierce Field
+10401995,110306216,Premier,league,7036,,2023-06-25,6:00 pm,98468675,Kilimanjaro Bandits,10359035,Queenston FC,0,4,played,,Buffalo State Coyer Field
+10401996,110306216,Premier,league,7037,,2023-06-25,6:00 pm,106801557,AC Elite,12579600,Wolves FC,0,3,played,,Fillmore High School Field
+10401997,110306216,Premier,league,7038,,2023-06-25,6:00 pm,45429017,Borussia Bees,10359017,Celtic United,3,2,played,,Niagara University Field
+10401998,110306216,Premier,league,7039,,2023-06-25,8:00 pm,18647016,Buffalo United SS,75479674,Los Chupacabras,1,0,played,,Buffalo State Coyer Field
+10401999,110306216,Premier,league,7040,,2023-06-25,8:00 pm,10359008,Roos FC,10350991,BSC Raiders,0,2,played,,Medaille College Sports Complex 1
+10401991,110306216,Premier,league,7032,,2023-07-06,8:30 pm,10359017,Celtic United,12579600,Wolves FC,3,0,played,,Buffalo State Coyer Field
+10402000,110306216,Premier,league,7041,,2023-07-09,4:00 pm,75479674,Los Chupacabras,98468675,Kilimanjaro Bandits,2,2,played,,Niagara Falls High School Front
+10402001,110306216,Premier,league,7042,,2023-07-09,6:00 pm,106801557,AC Elite,18647016,Buffalo United SS,0,7,played,,Fillmore High School Field
+10402002,110306216,Premier,league,7043,,2023-07-09,6:00 pm,10359035,Queenston FC,26895907,Amherst Sharpshooters,2,1,played,,Niagara Falls High School Front
+10402003,110306216,Premier,league,7044,,2023-07-09,6:00 pm,45429017,Borussia Bees,10359008,Roos FC,2,2,played,,Niagara University Field
+10402004,110306216,Premier,league,7045,,2023-07-10,8:00 pm,12579600,Wolves FC,10350991,BSC Raiders,1,5,played,,Buffalo State Coyer Field
+10402005,110306216,Premier,league,7046,,2023-07-16,6:00 pm,26895907,Amherst Sharpshooters,45429017,Borussia Bees,5,1,played,,Buffalo State Coyer Field
+10402006,110306216,Premier,league,7047,,2023-07-16,6:00 pm,10359017,Celtic United,98468675,Kilimanjaro Bandits,4,1,played,,Kenmore West Crosby Field
+10402007,110306216,Premier,league,7048,,2023-07-16,6:00 pm,75479674,Los Chupacabras,106801557,AC Elite,2,3,played,,Niagara Falls High School Front
+10402008,110306216,Premier,league,7049,,2023-07-16,6:00 pm,18647016,Buffalo United SS,10359008,Roos FC,3,1,played,,Nichols School Strauss Truscott
+10402009,110306216,Premier,league,7050,,2023-07-17,8:00 pm,10350991,BSC Raiders,10359035,Queenston FC,1,6,played,,Buffalo State Coyer Field
+10401972,110306216,Premier,league,7013,,2023-07-20,7:00 pm,98468675,Kilimanjaro Bandits,106801557,AC Elite,0,5,played,FT,Fillmore High School Field
+10402010,110306216,Premier,league,7051,,2023-07-23,6:00 pm,18647016,Buffalo United SS,26895907,Amherst Sharpshooters,1,1,played,,Buffalo State Coyer Field
+10402011,110306216,Premier,league,7052,,2023-07-23,6:00 pm,106801557,AC Elite,10359017,Celtic United,0,7,played,,Fillmore High School Field
+10402012,110306216,Premier,league,7053,,2023-07-23,6:00 pm,10359008,Roos FC,75479674,Los Chupacabras,0,3,played,,Medaille College Sports Complex 1
+10402013,110306216,Premier,league,7054,,2023-07-23,6:00 pm,10359035,Queenston FC,12579600,Wolves FC,3,1,played,,Niagara Falls High School Front
+10402014,110306216,Premier,league,7055,,2023-07-23,8:00 pm,10350991,BSC Raiders,45429017,Borussia Bees,6,2,played,,Buffalo State Coyer Field
+10479899,110306216,Premier,league,9493,QF1,2023-07-30,6:00 pm,26895907,Amherst Sharpshooters,106801557,AC Elite,4,3,played,,Nichols School Strauss Truscott
+10479898,110306216,Premier,league,9492,QF2,2023-07-30,8:00 pm,18647016,Buffalo United SS,10359017,Celtic United,5,2,played,,Sahlen's Sports Park Flash Fields 1
+10401394,110306220,Championship,league,9490,SF1,2023-08-06,6:00 pm,75159915,NMB FC,75159921,West Side FC,2,0,played,,Nichols School Peek
+10401393,110306220,Championship,league,9489,SF1,2023-08-06,8:00 pm,100607465,Polonia Legacy,10359117,Buffalo Italia FC,0,0,played,PK,Sahlen's Sports Park Flash Fields 2
+10401395,110306220,Championship,league,9491,CHMP,2023-08-13,7:00 pm,75159915,NMB FC,10359117,Buffalo Italia FC,3,1,played,,Sahlen's Sports Park Flash Fields 2
+10401336,110306220,Championship,league,7201,,2023-04-30,2:00 pm,100607465,Polonia Legacy,91256980,Olean 1854 FC,1,2,played,,Sahlen's Sports Park Flash Fields 1
+10401337,110306220,Championship,league,7202,,2023-04-30,2:00 pm,10359117,Buffalo Italia FC,10359111,Crimson Fire FC,1,1,played,,Sahlen's Sports Park Flash Fields 2
+10401338,110306220,Championship,league,7203,,2023-04-30,5:00 pm,75479641,Williamsville Willies,75159915,NMB FC,0,1,played,,Nardin Academy Complex
+10401339,110306220,Championship,league,7204,,2023-04-30,6:00 pm,82992129,Mes Que FC,75159921,West Side FC,0,10,played,,Nichols School Strauss Truscott
+10401340,110306220,Championship,league,7205,,2023-04-30,8:00 pm,110307225,Buffalo Stallions FC,91256977,Lykan United,0,4,played,,Sahlen's Sports Park Flash Fields 1
+10401341,110306220,Championship,league,7206,,2023-05-07,4:00 pm,10359117,Buffalo Italia FC,75479641,Williamsville Willies,4,1,played,,Sahlen's Sports Park Flash Fields 1
+10401343,110306220,Championship,league,7208,,2023-05-07,6:00 pm,91256977,Lykan United,110307225,Buffalo Stallions FC,1,1,played,,Sahlen's Sports Park Flash Fields 1
+10401344,110306220,Championship,league,7209,,2023-05-07,6:00 pm,75159915,NMB FC,75159921,West Side FC,3,2,played,,Sweet Home High School
+10401345,110306220,Championship,league,7210,,2023-05-08,8:30 pm,100607465,Polonia Legacy,10359111,Crimson Fire FC,6,1,played,,Sahlen's Sports Park Flash Fields 1
+10401346,110306220,Championship,league,7211,,2023-05-14,4:00 pm,82992129,Mes Que FC,100607465,Polonia Legacy,1,5,played,,Nichols School Strauss Truscott
+10401347,110306220,Championship,league,7212,,2023-05-14,4:00 pm,91256980,Olean 1854 FC,110307225,Buffalo Stallions FC,1,0,played,,St. Bonaventure Marra Fields Complex
+10401348,110306220,Championship,league,7213,,2023-05-14,6:00 pm,75159915,NMB FC,10359117,Buffalo Italia FC,2,0,played,,Sweet Home High School
+10401349,110306220,Championship,league,7214,,2023-05-15,8:30 pm,91256977,Lykan United,75159921,West Side FC,1,4,played,,Sahlen's Sports Park Flash Fields 1
+10401350,110306220,Championship,league,7215,,2023-05-15,8:30 pm,10359111,Crimson Fire FC,75479641,Williamsville Willies,1,3,played,,Sahlen's Sports Park Flash Fields 2
+10401351,110306220,Championship,league,7216,,2023-05-21,4:00 pm,10359111,Crimson Fire FC,110307225,Buffalo Stallions FC,2,2,played,,Grand Island Veteran's Park Front Field 1
+10401352,110306220,Championship,league,7217,,2023-05-21,4:00 pm,91256980,Olean 1854 FC,75159915,NMB FC,0,3,played,,St. Bonaventure Marra Fields Complex
+10401353,110306220,Championship,league,7218,,2023-05-21,5:00 pm,75479641,Williamsville Willies,100607465,Polonia Legacy,0,6,played,,Nardin Academy Complex
+10401354,110306220,Championship,league,7219,,2023-05-21,6:00 pm,75159921,West Side FC,10359117,Buffalo Italia FC,1,1,played,,Buffalo State Coyer Field
+10401355,110306220,Championship,league,7220,,2023-05-21,6:00 pm,91256977,Lykan United,82992129,Mes Que FC,0,4,played,,Sahlen's Sports Park Flash Fields 1
+10401342,110306220,Championship,league,7207,,2023-05-31,6:30 pm,91256980,Olean 1854 FC,82992129,Mes Que FC,6,4,played,,St. Bonaventure Marra Fields Complex
+10401356,110306220,Championship,league,7221,,2023-06-04,4:00 pm,10359111,Crimson Fire FC,91256977,Lykan United,2,4,played,,Grand Island Veteran's Park Front Field 1
+10401357,110306220,Championship,league,7222,,2023-06-04,4:00 pm,10359117,Buffalo Italia FC,91256980,Olean 1854 FC,0,1,played,,Sahlen's Sports Park Flash Fields 1
+10401358,110306220,Championship,league,7223,,2023-06-04,6:00 pm,110307225,Buffalo Stallions FC,75479641,Williamsville Willies,0,3,played,,Sahlen's Sports Park Flash Fields 1
+10401359,110306220,Championship,league,7224,,2023-06-04,6:00 pm,100607465,Polonia Legacy,75159921,West Side FC,1,0,played,,Sahlen's Sports Park Flash Fields 2
+10401360,110306220,Championship,league,7225,,2023-06-04,6:00 pm,75159915,NMB FC,82992129,Mes Que FC,2,0,played,,Sweet Home High School
+10401361,110306220,Championship,league,7226,,2023-06-11,3:00 pm,75479641,Williamsville Willies,91256977,Lykan United,1,2,played,,Nardin Academy Complex
+10401362,110306220,Championship,league,7227,,2023-06-11,4:00 pm,10359111,Crimson Fire FC,75159915,NMB FC,1,3,played,,Grand Island Veteran's Park Front Field 1
+10401363,110306220,Championship,league,7228,,2023-06-11,4:00 pm,91256980,Olean 1854 FC,100607465,Polonia Legacy,0,1,played,,St. Bonaventure Marra Fields Complex
+10401364,110306220,Championship,league,7229,,2023-06-11,6:00 pm,82992129,Mes Que FC,10359117,Buffalo Italia FC,1,6,played,,Nichols School Strauss Truscott
+10401365,110306220,Championship,league,7230,,2023-06-11,8:00 pm,110307225,Buffalo Stallions FC,75159921,West Side FC,2,3,played,,Sahlen's Sports Park Flash Fields 2
+10401366,110306220,Championship,league,7231,,2023-06-18,4:00 pm,10359111,Crimson Fire FC,91256980,Olean 1854 FC,2,1,played,,Grand Island Veteran's Park Front Field 1
+10401367,110306220,Championship,league,7232,,2023-06-18,4:00 pm,91256977,Lykan United,75159915,NMB FC,2,1,played,,Nichols School Peek
+10401368,110306220,Championship,league,7233,,2023-06-18,4:00 pm,100607465,Polonia Legacy,82992129,Mes Que FC,7,0,played,,Sahlen's Sports Park Flash Fields 1
+10401369,110306220,Championship,league,7234,,2023-06-18,6:00 pm,75159921,West Side FC,75479641,Williamsville Willies,6,3,played,,Buffalo State Coyer Field
+10401370,110306220,Championship,league,7235,,2023-06-18,8:00 pm,110307225,Buffalo Stallions FC,10359117,Buffalo Italia FC,0,1,played,,Sahlen's Sports Park Flash Fields 1
+10401371,110306220,Championship,league,7236,,2023-06-25,4:00 pm,82992129,Mes Que FC,110307225,Buffalo Stallions FC,7,4,played,,Nichols School Strauss Truscott
+10401372,110306220,Championship,league,7237,,2023-06-25,4:00 pm,91256977,Lykan United,91256980,Olean 1854 FC,0,2,played,,Sahlen's Sports Park Flash Fields 2
+10401373,110306220,Championship,league,7238,,2023-06-25,5:00 pm,75479641,Williamsville Willies,10359111,Crimson Fire FC,2,3,played,,Nardin Academy Complex
+10401374,110306220,Championship,league,7239,,2023-06-25,8:00 pm,100607465,Polonia Legacy,75159915,NMB FC,2,2,played,,Sahlen's Sports Park Flash Fields 1
+10401375,110306220,Championship,league,7240,,2023-06-26,8:00 pm,75159921,West Side FC,10359117,Buffalo Italia FC,0,0,played,,Buffalo State Coyer Field
+10401376,110306220,Championship,league,7241,,2023-07-09,4:00 pm,10359117,Buffalo Italia FC,100607465,Polonia Legacy,0,0,played,,Sahlen's Sports Park Flash Fields 1
+10401377,110306220,Championship,league,7242,,2023-07-09,4:00 pm,91256980,Olean 1854 FC,75479641,Williamsville Willies,4,0,played,,St. Bonaventure Marra Fields Complex
+10401378,110306220,Championship,league,7243,,2023-07-09,6:00 pm,75159921,West Side FC,10359111,Crimson Fire FC,6,3,played,,Buffalo State Coyer Field
+10401379,110306220,Championship,league,7244,,2023-07-09,6:00 pm,91256977,Lykan United,82992129,Mes Que FC,4,4,played,,Sahlen's Sports Park Flash Fields 1
+10401380,110306220,Championship,league,7245,,2023-07-09,6:00 pm,75159915,NMB FC,110307225,Buffalo Stallions FC,2,0,played,,Sweet Home High School
+10401381,110306220,Championship,league,7246,,2023-07-16,3:00 pm,75479641,Williamsville Willies,91256980,Olean 1854 FC,0,2,played,,Nardin Academy Complex
+10401383,110306220,Championship,league,7248,,2023-07-16,6:00 pm,10359111,Crimson Fire FC,82992129,Mes Que FC,7,5,played,,Grand Island Veteran's Park Front Field 1
+10401382,110306220,Championship,league,7247,,2023-07-16,6:00 pm,110307225,Buffalo Stallions FC,100607465,Polonia Legacy,1,4,played,,Sahlen's Sports Park Flash Fields 1
+10401384,110306220,Championship,league,7249,,2023-07-16,8:00 pm,10359117,Buffalo Italia FC,91256977,Lykan United,4,1,played,,Sahlen's Sports Park Flash Fields 1
+10401385,110306220,Championship,league,7250,,2023-07-17,6:30 pm,75159921,West Side FC,75159915,NMB FC,4,0,played,,Sahlen's Sports Park Flash Fields 1
+10401386,110306220,Championship,league,7251,,2023-07-23,4:00 pm,75159921,West Side FC,91256980,Olean 1854 FC,5,0,played,FT,Buffalo State Coyer Field
+10401387,110306220,Championship,league,7252,,2023-07-23,6:00 pm,82992129,Mes Que FC,75479641,Williamsville Willies,3,4,played,,Nichols School Strauss Truscott
+10401388,110306220,Championship,league,7253,,2023-07-23,6:00 pm,100607465,Polonia Legacy,91256977,Lykan United,2,1,played,,Sahlen's Sports Park Flash Fields 1
+10401389,110306220,Championship,league,7254,,2023-07-23,6:00 pm,110307225,Buffalo Stallions FC,10359117,Buffalo Italia FC,1,7,played,,Sahlen's Sports Park Flash Fields 2
+10401390,110306220,Championship,league,7255,,2023-07-23,6:00 pm,75159915,NMB FC,10359111,Crimson Fire FC,2,1,played,,Sweet Home High School
+10401391,110306220,Championship,league,9487,QF1,2023-07-30,6:00 pm,75159921,West Side FC,91256977,Lykan United,3,1,played,,Nichols School Peek
+10401392,110306220,Championship,league,9488,QF2,2023-07-30,7:00 pm,91256980,Olean 1854 FC,10359117,Buffalo Italia FC,2,2,played,PK,St. Bonaventure Marra Fields Complex
+10401334,110306218,1st Division,league,9485,SF2,2023-08-06,5:00 pm,75159993,Revolution SC,26891552,Buffalo Celtic,4,0,played,,Nardin Academy Complex
+10401333,110306218,1st Division,league,9484,SF1,2023-08-06,6:00 pm,106801546,Rance FC,95088493,FC Lackawanna,0,3,played,,Sahlen's Sports Park Flash Fields 1
+10401335,110306218,1st Division,league,9486,CHMP,2023-08-13,5:30 pm,75159993,Revolution SC,95088493,FC Lackawanna,2,5,played,,Sahlen's Sports Park Flash Fields 1
+10401032,110306218,1st Division,league,7401,,2023-04-30,2:00 pm,10359005,Clarence Coyotes,26891552,Buffalo Celtic,1,2,played,,Nichols School Strauss Truscott
+10401033,110306218,1st Division,league,7402,,2023-04-30,3:00 pm,75159993,Revolution SC,106801546,Rance FC,2,0,played,,Nardin Academy Complex
+10401034,110306218,1st Division,league,7403,,2023-04-30,4:00 pm,106801543,Cheektowaga Stingrays FC,75479689,Delco Academy,1,2,played,,Sahlen's Sports Park Flash Fields 2
+10401035,110306218,1st Division,league,7404,,2023-04-30,8:00 pm,46021389,Outlaws,15294627,Niagara FC,2,2,played,,Sahlen's Sports Park Flash Fields 2
+10401036,110306218,1st Division,league,7405,,2023-05-01,6:30 pm,95088493,FC Lackawanna,67527670,FC Quake,2,0,played,,Mulroy Park Pierce Field
+10401037,110306218,1st Division,league,7406,,2023-05-07,2:00 pm,26891552,Buffalo Celtic,75479689,Delco Academy,2,2,played,,Nichols School Strauss Truscott
+10401038,110306218,1st Division,league,7407,,2023-05-07,3:00 pm,75159993,Revolution SC,46021389,Outlaws,0,0,played,,Nardin Academy Complex
+10401039,110306218,1st Division,league,7408,,2023-05-07,6:00 pm,75479680,Honey Badgers,10359005,Clarence Coyotes,2,2,played,,Buffalo State Coyer Field
+10401040,110306218,1st Division,league,7409,,2023-05-07,6:00 pm,15294627,Niagara FC,67527670,FC Quake,1,0,played,,Niagara University Field
+10401041,110306218,1st Division,league,7410,,2023-05-08,8:30 pm,106801543,Cheektowaga Stingrays FC,106801546,Rance FC,1,4,played,,Sahlen's Sports Park Flash Fields 2
+10401042,110306218,1st Division,league,7411,,2023-05-14,2:00 pm,10359005,Clarence Coyotes,106801543,Cheektowaga Stingrays FC,2,2,played,,Nichols School Strauss Truscott
+10401043,110306218,1st Division,league,7412,,2023-05-14,4:00 pm,67527670,FC Quake,75479680,Honey Badgers,3,3,played,,Kenmore West Crosby Field
+10401044,110306218,1st Division,league,7413,,2023-05-14,6:00 pm,95088493,FC Lackawanna,46021389,Outlaws,3,0,played,,Mulroy Park Pierce Field
+10401045,110306218,1st Division,league,7414,,2023-05-14,6:00 pm,15294627,Niagara FC,106801546,Rance FC,3,2,played,,Niagara University Field
+10401046,110306218,1st Division,league,7415,,2023-05-14,6:00 pm,75479689,Delco Academy,75159993,Revolution SC,0,2,played,,Nichols School Peek
+10401047,110306218,1st Division,league,7416,,2023-05-21,4:00 pm,67527670,FC Quake,75159993,Revolution SC,2,2,played,,Frontier High School
+10401048,110306218,1st Division,league,7417,,2023-05-21,6:00 pm,106801546,Rance FC,26891552,Buffalo Celtic,4,2,played,,Nichols School Peek
+10401049,110306218,1st Division,league,7418,,2023-05-21,6:00 pm,10359005,Clarence Coyotes,95088493,FC Lackawanna,0,3,played,,Nichols School Strauss Truscott
+10401050,110306218,1st Division,league,7419,,2023-05-21,6:00 pm,46021389,Outlaws,106801543,Cheektowaga Stingrays FC,1,3,played,,Sahlen's Sports Park Flash Fields 2
+10401051,110306218,1st Division,league,7420,,2023-05-21,8:00 pm,75479680,Honey Badgers,75479689,Delco Academy,1,1,played,,Buffalo State Coyer Field
+10401052,110306218,1st Division,league,7421,,2023-06-04,4:00 pm,67527670,FC Quake,106801543,Cheektowaga Stingrays FC,5,2,played,,Frontier High School
+10401053,110306218,1st Division,league,7422,,2023-06-04,6:00 pm,75479680,Honey Badgers,106801546,Rance FC,1,0,played,,Buffalo State Coyer Field
+10401054,110306218,1st Division,league,7423,,2023-06-04,8:00 pm,95088493,FC Lackawanna,75479689,Delco Academy,3,1,played,,Mulroy Park Pierce Field
+10401055,110306218,1st Division,league,7424,,2023-06-04,8:00 pm,15294627,Niagara FC,10359005,Clarence Coyotes,0,1,played,,Niagara University Field
+10401056,110306218,1st Division,league,7425,,2023-06-04,8:00 pm,46021389,Outlaws,26891552,Buffalo Celtic,1,2,played,,Sahlen's Sports Park Flash Fields 1
+10401057,110306218,1st Division,league,7426,,2023-06-11,4:00 pm,26891552,Buffalo Celtic,67527670,FC Quake,1,0,played,,Kenmore West Crosby Field
+10401058,110306218,1st Division,league,7427,,2023-06-11,4:00 pm,10359005,Clarence Coyotes,75159993,Revolution SC,1,3,played,,Nichols School Strauss Truscott
+10401059,110306218,1st Division,league,7428,,2023-06-11,4:00 pm,106801546,Rance FC,95088493,FC Lackawanna,6,2,played,,Sahlen's Sports Park Flash Fields 1
+10401060,110306218,1st Division,league,7429,,2023-06-11,6:00 pm,46021389,Outlaws,75479680,Honey Badgers,8,2,played,,Sahlen's Sports Park Flash Fields 1
+10401061,110306218,1st Division,league,7430,,2023-06-11,8:00 pm,75479689,Delco Academy,15294627,Niagara FC,1,4,played,,Sahlen's Sports Park Flash Fields 1
+10401062,110306218,1st Division,league,7431,,2023-06-18,2:00 pm,106801546,Rance FC,67527670,FC Quake,2,1,played,,Sahlen's Sports Park Flash Fields 1
+10401063,110306218,1st Division,league,7432,,2023-06-18,3:00 pm,75159993,Revolution SC,95088493,FC Lackawanna,0,1,played,,Nardin Academy Complex
+10401064,110306218,1st Division,league,7433,,2023-06-18,4:00 pm,10359005,Clarence Coyotes,46021389,Outlaws,1,6,played,,Nichols School Strauss Truscott
+10401065,110306218,1st Division,league,7434,,2023-06-18,6:00 pm,15294627,Niagara FC,26891552,Buffalo Celtic,0,3,played,,Niagara University Field
+10401066,110306218,1st Division,league,7435,,2023-06-19,8:00 pm,106801543,Cheektowaga Stingrays FC,75479680,Honey Badgers,0,6,played,,Buffalo State Coyer Field
+10401067,110306218,1st Division,league,7436,,2023-06-25,3:00 pm,75159993,Revolution SC,106801543,Cheektowaga Stingrays FC,6,0,played,,Nardin Academy Complex
+10401068,110306218,1st Division,league,7437,,2023-06-25,6:00 pm,26891552,Buffalo Celtic,75479680,Honey Badgers,1,1,played,,Kenmore West Crosby Field
+10401069,110306218,1st Division,league,7438,,2023-06-25,6:00 pm,106801546,Rance FC,46021389,Outlaws,3,2,played,,Sahlen's Sports Park Flash Fields 1
+10401070,110306218,1st Division,league,7439,,2023-06-25,8:00 pm,15294627,Niagara FC,95088493,FC Lackawanna,0,0,played,,Niagara University Field
+10401071,110306218,1st Division,league,7440,,2023-06-25,8:00 pm,75479689,Delco Academy,10359005,Clarence Coyotes,2,1,played,,Sahlen's Sports Park Flash Fields 2
+10401072,110306218,1st Division,league,7441,,2023-07-09,2:00 pm,106801543,Cheektowaga Stingrays FC,95088493,FC Lackawanna,2,2,played,,Sahlen's Sports Park Flash Fields 1
+10401073,110306218,1st Division,league,7442,,2023-07-09,4:00 pm,67527670,FC Quake,75479689,Delco Academy,3,3,played,,Frontier High School
+10401074,110306218,1st Division,league,7443,,2023-07-09,6:00 pm,26891552,Buffalo Celtic,75159993,Revolution SC,2,1,played,,Kenmore West Crosby Field
+10401075,110306218,1st Division,league,7444,,2023-07-09,8:00 pm,75479680,Honey Badgers,15294627,Niagara FC,4,3,played,,Buffalo State Coyer Field
+10401076,110306218,1st Division,league,7445,,2023-07-09,8:00 pm,106801546,Rance FC,10359005,Clarence Coyotes,2,0,played,,Sahlen's Sports Park Flash Fields 1
+10401077,110306218,1st Division,league,7446,,2023-07-16,2:00 pm,46021389,Outlaws,67527670,FC Quake,2,0,played,,Sahlen's Sports Park Flash Fields 1
+10401078,110306218,1st Division,league,7447,,2023-07-16,8:00 pm,75479680,Honey Badgers,75159993,Revolution SC,0,2,played,,Buffalo State Coyer Field
+10401079,110306218,1st Division,league,7448,,2023-07-16,8:00 pm,95088493,FC Lackawanna,26891552,Buffalo Celtic,1,0,played,,Mulroy Park Pierce Field
+10401080,110306218,1st Division,league,7449,,2023-07-16,8:00 pm,75479689,Delco Academy,106801546,Rance FC,0,3,played,,Sahlen's Sports Park Flash Fields 2
+10401081,110306218,1st Division,league,7450,,2023-07-17,8:30 pm,106801543,Cheektowaga Stingrays FC,15294627,Niagara FC,2,1,played,,Sahlen's Sports Park Flash Fields 2
+10401082,110306218,1st Division,league,7451,,2023-07-23,2:00 pm,75159993,Revolution SC,15294627,Niagara FC,3,1,played,,Nichols School Strauss Truscott
+10401083,110306218,1st Division,league,7452,,2023-07-23,4:00 pm,67527670,FC Quake,10359005,Clarence Coyotes,9,1,played,,Frontier High School
+10401084,110306218,1st Division,league,7453,,2023-07-23,4:00 pm,26891552,Buffalo Celtic,106801543,Cheektowaga Stingrays FC,4,1,played,,Kenmore West Crosby Field
+10401085,110306218,1st Division,league,7454,,2023-07-23,4:00 pm,75479689,Delco Academy,46021389,Outlaws,1,3,played,,Sahlen's Sports Park Flash Fields 2
+10401086,110306218,1st Division,league,7455,,2023-07-23,8:00 pm,95088493,FC Lackawanna,75479680,Honey Badgers,0,5,played,FT,Mulroy Park Pierce Field
+10401331,110306218,1st Division,league,9482,QF1,2023-07-30,6:00 pm,26891552,Buffalo Celtic,46021389,Outlaws,1,0,played,,Sahlen's Sports Park Flash Fields 1
+10401332,110306218,1st Division,league,9483,QF2,2023-07-30,8:00 pm,95088493,FC Lackawanna,75479680,Honey Badgers,3,1,played,,Mulroy Park Pierce Field
+10401030,110306219,2nd Division,league,9480,SF2,2023-08-06,4:00 pm,95088661,Westside Blitz,75159990,Great White Buffalo,2,1,played,,Nichols School Strauss Truscott
+10401029,110306219,2nd Division,league,9479,SF1,2023-08-06,4:00 pm,75479638,Southern Tier FC,110307361,Queen City Gunners,3,1,played,,SUNY Fredonia University Stadium
+10401031,110306219,2nd Division,league,9481,CHMP,2023-08-13,4:30 pm,75479638,Southern Tier FC,95088661,Westside Blitz,1,3,played,,Sahlen's Sports Park Flash Fields 2
+10400972,110306219,2nd Division,league,7601,,2023-04-30,4:00 pm,75479662,Celtic Brigade,75479647,Celtic 1888,3,1,played,,Kenmore West Crosby Field
+10400973,110306219,2nd Division,league,7602,,2023-04-30,4:00 pm,75479665,Lasalle FC,98469017,Buffalo Cosmos,2,1,played,,Niagara Falls High School Front
+10400974,110306219,2nd Division,league,7603,,2023-04-30,4:00 pm,95088661,Westside Blitz,12579571,Devils,3,3,played,,Nichols School Strauss Truscott
+10400975,110306219,2nd Division,league,7604,,2023-04-30,4:00 pm,110307361,Queen City Gunners,95088658,United Warriors,3,2,played,,Sahlen's Sports Park Flash Fields 1
+10400976,110306219,2nd Division,league,7605,,2023-04-30,6:00 pm,75159990,Great White Buffalo,100608342,Hamburg Monarchs SC,2,0,played,,Westwood Park Turf Field
+10400979,110306219,2nd Division,league,7608,,2023-05-07,2:00 pm,110307361,Queen City Gunners,75479638,Southern Tier FC,4,3,played,,Nichols School Peek
+10400977,110306219,2nd Division,league,7606,,2023-05-07,4:00 pm,75479647,Celtic 1888,95088661,Westside Blitz,0,4,played,,Kenmore West Crosby Field
+10400978,110306219,2nd Division,league,7607,,2023-05-07,4:00 pm,75479665,Lasalle FC,95088658,United Warriors,1,1,played,,Niagara Falls High School Front
+10400981,110306219,2nd Division,league,7610,,2023-05-07,6:00 pm,75159990,Great White Buffalo,75479662,Celtic Brigade,3,2,played,,Westwood Park Turf Field
+10400980,110306219,2nd Division,league,7609,,2023-05-07,8:00 pm,98469017,Buffalo Cosmos,12579571,Devils,2,1,played,,Sahlen's Sports Park Flash Fields 1
+10400984,110306219,2nd Division,league,7613,,2023-05-14,5:00 pm,95088658,United Warriors,75479638,Southern Tier FC,0,2,played,,Nardin Academy Complex
+10400985,110306219,2nd Division,league,7614,,2023-05-14,6:00 pm,95088661,Westside Blitz,75479665,Lasalle FC,4,2,played,,Nichols School Strauss Truscott
+10400986,110306219,2nd Division,league,7615,,2023-05-14,8:00 pm,98469017,Buffalo Cosmos,110307361,Queen City Gunners,1,1,played,,Sahlen's Sports Park Flash Fields 2
+10400983,110306219,2nd Division,league,7612,,2023-05-15,6:30 pm,75479647,Celtic 1888,100608342,Hamburg Monarchs SC,2,1,played,,Mulroy Park Pierce Field
+10400982,110306219,2nd Division,league,7611,,2023-05-15,8:30 pm,75479662,Celtic Brigade,12579571,Devils,3,3,played,,Mulroy Park Pierce Field
+10400989,110306219,2nd Division,league,7618,,2023-05-21,3:00 pm,95088658,United Warriors,95088661,Westside Blitz,2,4,played,,Nardin Academy Complex
+10400987,110306219,2nd Division,league,7616,,2023-05-21,6:00 pm,75479662,Celtic Brigade,75479638,Southern Tier FC,0,6,played,,Kenmore West Crosby Field
+10400988,110306219,2nd Division,league,7617,,2023-05-21,6:00 pm,12579571,Devils,75479647,Celtic 1888,4,0,played,,Kenney Field 5
+10400990,110306219,2nd Division,league,7619,,2023-05-21,6:00 pm,75479665,Lasalle FC,75159990,Great White Buffalo,0,1,played,,Niagara Falls High School Front
+10400991,110306219,2nd Division,league,7620,,2023-05-21,6:00 pm,100608342,Hamburg Monarchs SC,110307361,Queen City Gunners,1,1,played,,Nike Base 6
+10400994,110306219,2nd Division,league,7623,,2023-06-04,4:00 pm,95088661,Westside Blitz,98469017,Buffalo Cosmos,1,3,played,,Nichols School Strauss Truscott
+10400996,110306219,2nd Division,league,7625,,2023-06-04,4:00 pm,75479638,Southern Tier FC,100608342,Hamburg Monarchs SC,4,2,played,,SUNY Fredonia University Stadium
+10400995,110306219,2nd Division,league,7624,,2023-06-04,4:00 pm,110307361,Queen City Gunners,75159990,Great White Buffalo,0,0,played,,Sahlen's Sports Park Flash Fields 2
+10400993,110306219,2nd Division,league,7622,,2023-06-04,5:00 pm,95088658,United Warriors,75479662,Celtic Brigade,3,2,played,,Nardin Academy Complex
+10400992,110306219,2nd Division,league,7621,,2023-06-04,6:00 pm,75479647,Celtic 1888,75479665,Lasalle FC,1,1,played,,Kenmore West Crosby Field
+10401000,110306219,2nd Division,league,7629,,2023-06-11,4:00 pm,75479638,Southern Tier FC,75479647,Celtic 1888,5,0,played,,SUNY Fredonia University Stadium
+10400997,110306219,2nd Division,league,7626,,2023-06-11,6:00 pm,12579571,Devils,110307361,Queen City Gunners,3,2,played,,Kenney Field 5
+10400998,110306219,2nd Division,league,7627,,2023-06-11,6:00 pm,95088661,Westside Blitz,75479662,Celtic Brigade,4,2,played,,Nichols School Peek
+10400999,110306219,2nd Division,league,7628,,2023-06-11,6:00 pm,100608342,Hamburg Monarchs SC,98469017,Buffalo Cosmos,2,4,played,,Nike Base 6
+10401001,110306219,2nd Division,league,7630,,2023-06-11,6:00 pm,75159990,Great White Buffalo,95088658,United Warriors,2,0,played,,Westwood Park Turf Field
+10401005,110306219,2nd Division,league,7634,,2023-06-18,2:00 pm,98469017,Buffalo Cosmos,95088658,United Warriors,0,1,played,,Sahlen's Sports Park Flash Fields 2
+10401006,110306219,2nd Division,league,7635,,2023-06-18,4:00 pm,75479638,Southern Tier FC,95088661,Westside Blitz,2,0,played,,SUNY Fredonia University Stadium
+10401002,110306219,2nd Division,league,7631,,2023-06-18,6:00 pm,75479662,Celtic Brigade,110307361,Queen City Gunners,0,5,played,FT,Kenmore West Crosby Field
+10401003,110306219,2nd Division,league,7632,,2023-06-18,6:00 pm,12579571,Devils,75159990,Great White Buffalo,0,2,played,,Kenney Field 5
+10401004,110306219,2nd Division,league,7633,,2023-06-18,6:00 pm,100608342,Hamburg Monarchs SC,75479665,Lasalle FC,0,1,played,,Nike Base 6
+10401007,110306219,2nd Division,league,7636,,2023-06-25,4:00 pm,75479647,Celtic 1888,95088658,United Warriors,1,3,played,,Kenmore West Crosby Field
+10401010,110306219,2nd Division,league,7639,,2023-06-25,4:00 pm,75479638,Southern Tier FC,12579571,Devils,6,1,played,,SUNY Fredonia University Stadium
+10401008,110306219,2nd Division,league,7637,,2023-06-25,6:00 pm,75479665,Lasalle FC,110307361,Queen City Gunners,2,5,played,,Niagara Falls High School Front
+10401009,110306219,2nd Division,league,7638,,2023-06-25,6:00 pm,100608342,Hamburg Monarchs SC,95088661,Westside Blitz,0,4,played,,Nike Base 6
+10401011,110306219,2nd Division,league,7640,,2023-06-26,8:30 pm,98469017,Buffalo Cosmos,75159990,Great White Buffalo,0,0,played,,Sahlen's Sports Park Flash Fields 1
+10401015,110306219,2nd Division,league,7644,,2023-07-09,4:00 pm,75479638,Southern Tier FC,98469017,Buffalo Cosmos,2,3,played,,SUNY Fredonia University Stadium
+10401012,110306219,2nd Division,league,7641,,2023-07-09,6:00 pm,12579571,Devils,100608342,Hamburg Monarchs SC,3,0,played,,Kenney Field 5
+10401013,110306219,2nd Division,league,7642,,2023-07-09,6:00 pm,75479662,Celtic Brigade,75479665,Lasalle FC,5,3,played,,Mulroy Park Pierce Field
+10401014,110306219,2nd Division,league,7643,,2023-07-09,6:00 pm,110307361,Queen City Gunners,95088661,Westside Blitz,2,2,played,,Sahlen's Sports Park Flash Fields 2
+10401016,110306219,2nd Division,league,7645,,2023-07-09,6:00 pm,75159990,Great White Buffalo,75479647,Celtic 1888,4,0,played,,Westwood Park Turf Field
+10401017,110306219,2nd Division,league,7646,,2023-07-16,4:00 pm,75479647,Celtic 1888,98469017,Buffalo Cosmos,1,5,played,,Kenmore West Crosby Field
+10401019,110306219,2nd Division,league,7648,,2023-07-16,4:00 pm,75479665,Lasalle FC,75479638,Southern Tier FC,1,1,played,,Niagara Falls High School Front
+10401020,110306219,2nd Division,league,7649,,2023-07-16,4:00 pm,95088661,Westside Blitz,75159990,Great White Buffalo,5,1,played,,Nichols School Strauss Truscott
+10401018,110306219,2nd Division,league,7647,,2023-07-16,5:00 pm,95088658,United Warriors,12579571,Devils,0,3,played,,Nardin Academy Complex
+10401021,110306219,2nd Division,league,7650,,2023-07-16,6:00 pm,100608342,Hamburg Monarchs SC,75479662,Celtic Brigade,1,6,played,,Nike Base 6
+10401023,110306219,2nd Division,league,7652,,2023-07-23,2:00 pm,95088658,United Warriors,100608342,Hamburg Monarchs SC,3,0,played,,Nichols School Peek
+10401026,110306219,2nd Division,league,7655,,2023-07-23,6:00 pm,75159990,Great White Buffalo,75479638,Southern Tier FC,0,2,played,,Westwood Park Turf Field
+10401024,110306219,2nd Division,league,7653,,2023-07-23,8:00 pm,98469017,Buffalo Cosmos,75479662,Celtic Brigade,1,2,played,,Sahlen's Sports Park Flash Fields 1
+10401025,110306219,2nd Division,league,7654,,2023-07-23,8:00 pm,110307361,Queen City Gunners,75479647,Celtic 1888,5,0,played,,Sahlen's Sports Park Flash Fields 2
+10401022,110306219,2nd Division,league,7651,,2023-07-23,8:30 pm,12579571,Devils,75479665,Lasalle FC,4,0,played,,Kenney Field 5
+10401028,110306219,2nd Division,league,9478,QF2,2023-07-30,4:00 pm,110307361,Queen City Gunners,98469017,Buffalo Cosmos,3,0,played,,Nichols School Peek
+10401027,110306219,2nd Division,league,9477,QF1,2023-07-30,6:00 pm,75159990,Great White Buffalo,12579571,Devils,3,2,played,,Westwood Park Turf Field
+10400888,110306223,3rd Division,league,9470,SF2,2023-08-06,6:00 pm,110307766,LA United,91257538,Medina Mustangs FC,1,3,played,,Mulroy Park Pierce Field
+10400887,110306223,3rd Division,league,9469,SF1,2023-08-06,6:00 pm,10359092,Ukraine,67527667,JL Dutch,3,0,played,,Nichols School Strauss Truscott
+10400889,110306223,3rd Division,league,9471,CHMP,2023-08-13,3:00 pm,10359092,Ukraine,91257538,Medina Mustangs FC,1,2,played,,Sahlen's Sports Park Flash Fields 1
+10400791,110306223,3rd Division,league,2,,2023-04-30,4:00 pm,110307766,LA United,110307763,Buffalo Night,3,2,played,,Mulroy Park Pierce Field
+10400792,110306223,3rd Division,league,3,,2023-04-30,4:00 pm,95088487,Buffalo Brighten Stars FC,87153543,Moby Ducks FC,2,0,played,,Nichols School Peek
+10400793,110306223,3rd Division,league,4,,2023-04-30,6:00 pm,10359077,WNY United Reds,35216066,Meerkats FC,1,1,played,,Mulroy Park Pierce Field
+10400794,110306223,3rd Division,league,5,,2023-04-30,6:00 pm,100607781,Lake Shore FC,100608336,Munster FC,1,0,played,,Sahlen's Sports Park Flash Fields 2
+10400790,110306223,3rd Division,league,1,,2023-04-30,8:00 pm,10359092,Ukraine,67527667,JL Dutch,2,2,played,,Mulroy Park Pierce Field
+10400795,110306223,3rd Division,league,6,,2023-05-07,4:00 pm,110307763,Buffalo Night,91257538,Medina Mustangs FC,1,4,played,,Sahlen's Sports Park Flash Fields 2
+10400796,110306223,3rd Division,league,7,,2023-05-07,6:00 pm,110307766,LA United,67527667,JL Dutch,3,3,played,,Mulroy Park Pierce Field
+10400797,110306223,3rd Division,league,8,,2023-05-07,6:00 pm,10359092,Ukraine,100607781,Lake Shore FC,2,5,played,,Nichols School Peek
+10400798,110306223,3rd Division,league,9,,2023-05-07,6:00 pm,95088487,Buffalo Brighten Stars FC,100608336,Munster FC,4,2,played,,Nichols School Strauss Truscott
+10400799,110306223,3rd Division,league,10,,2023-05-07,8:00 pm,87153543,Moby Ducks FC,10359077,WNY United Reds,1,2,played,,Sahlen's Sports Park Flash Fields 2
+10400800,110306223,3rd Division,league,11,,2023-05-14,2:00 pm,95088487,Buffalo Brighten Stars FC,35216066,Meerkats FC,3,0,played,,Nichols School Peek
+10400801,110306223,3rd Division,league,12,,2023-05-14,4:00 pm,87153543,Moby Ducks FC,100607781,Lake Shore FC,1,2,played,,Sahlen's Sports Park Flash Fields 1
+10400802,110306223,3rd Division,league,13,,2023-05-14,4:00 pm,110307763,Buffalo Night,10359092,Ukraine,1,7,played,,Sahlen's Sports Park Flash Fields 2
+10400803,110306223,3rd Division,league,14,,2023-05-14,6:00 pm,67527667,JL Dutch,100608336,Munster FC,2,0,played,,Westwood Park Turf Field
+10400804,110306223,3rd Division,league,15,,2023-05-14,8:00 pm,110307766,LA United,91257538,Medina Mustangs FC,1,1,played,,Mulroy Park Pierce Field
+10400805,110306223,3rd Division,league,16,,2023-05-21,4:00 pm,10359092,Ukraine,95088487,Buffalo Brighten Stars FC,4,1,played,,Nichols School Strauss Truscott
+10400806,110306223,3rd Division,league,17,,2023-05-21,6:00 pm,35216066,Meerkats FC,87153543,Moby Ducks FC,2,5,played,,Sweet Home High School
+10400807,110306223,3rd Division,league,18,,2023-05-21,6:00 pm,67527667,JL Dutch,91257538,Medina Mustangs FC,3,2,played,,Westwood Park Turf Field
+10400808,110306223,3rd Division,league,19,,2023-05-21,8:00 pm,100607781,Lake Shore FC,110307766,LA United,0,2,played,,Sahlen's Sports Park Flash Fields 1
+10400809,110306223,3rd Division,league,20,,2023-05-22,8:30 pm,100608336,Munster FC,10359077,WNY United Reds,2,1,played,,Sahlen's Sports Park Flash Fields 1
+10400810,110306223,3rd Division,league,21,,2023-06-04,4:00 pm,10359077,WNY United Reds,110307763,Buffalo Night,2,0,played,,Mulroy Park Pierce Field
+10400811,110306223,3rd Division,league,22,,2023-06-04,6:00 pm,91257538,Medina Mustangs FC,35216066,Meerkats FC,1,0,played,,Medina Veteran's Memorial Park
+10400812,110306223,3rd Division,league,23,,2023-06-04,6:00 pm,110307766,LA United,87153543,Moby Ducks FC,2,1,played,,Mulroy Park Pierce Field
+10400813,110306223,3rd Division,league,24,,2023-06-04,6:00 pm,67527667,JL Dutch,95088487,Buffalo Brighten Stars FC,1,2,played,,Westwood Park Turf Field
+10400814,110306223,3rd Division,league,25,,2023-06-04,8:00 pm,100608336,Munster FC,10359092,Ukraine,0,4,played,,Sahlen's Sports Park Flash Fields 2
+10400815,110306223,3rd Division,league,26,,2023-06-11,4:00 pm,87153543,Moby Ducks FC,10359092,Ukraine,0,4,played,,Mulroy Park Pierce Field
+10400816,110306223,3rd Division,league,27,,2023-06-11,4:00 pm,100607781,Lake Shore FC,67527667,JL Dutch,3,4,played,,Sahlen's Sports Park Flash Fields 2
+10400817,110306223,3rd Division,league,28,,2023-06-11,6:00 pm,91257538,Medina Mustangs FC,10359077,WNY United Reds,3,0,played,,Medina Veteran's Memorial Park
+10400818,110306223,3rd Division,league,29,,2023-06-11,6:00 pm,110307763,Buffalo Night,95088487,Buffalo Brighten Stars FC,7,2,played,,Sahlen's Sports Park Flash Fields 2
+10400819,110306223,3rd Division,league,30,,2023-06-11,6:00 pm,35216066,Meerkats FC,110307766,LA United,0,3,played,,Sweet Home High School
+10400821,110306223,3rd Division,league,31,,2023-06-18,4:00 pm,100608336,Munster FC,110307766,LA United,1,3,played,,Sahlen's Sports Park Flash Fields 2
+10400822,110306223,3rd Division,league,32,,2023-06-18,6:00 pm,95088487,Buffalo Brighten Stars FC,100607781,Lake Shore FC,6,1,played,,Nichols School Strauss Truscott
+10400823,110306223,3rd Division,league,33,,2023-06-18,6:00 pm,87153543,Moby Ducks FC,91257538,Medina Mustangs FC,2,4,played,,Sahlen's Sports Park Flash Fields 1
+10400824,110306223,3rd Division,league,34,,2023-06-18,6:00 pm,35216066,Meerkats FC,110307763,Buffalo Night,3,4,played,,Sweet Home High School
+10400826,110306223,3rd Division,league,35,,2023-06-18,6:00 pm,67527667,JL Dutch,10359077,WNY United Reds,0,5,played,FT,Westwood Park Turf Field
+10400827,110306223,3rd Division,league,36,,2023-06-25,4:00 pm,10359092,Ukraine,110307766,LA United,3,2,played,,Nichols School Peek
+10400829,110306223,3rd Division,league,37,,2023-06-25,4:00 pm,87153543,Moby Ducks FC,110307763,Buffalo Night,1,3,played,,Sahlen's Sports Park Flash Fields 1
+10400830,110306223,3rd Division,league,38,,2023-06-25,6:00 pm,91257538,Medina Mustangs FC,100608336,Munster FC,6,0,played,,Medina Veteran's Memorial Park
+10400831,110306223,3rd Division,league,39,,2023-06-25,6:00 pm,10359077,WNY United Reds,100607781,Lake Shore FC,3,2,played,,Mulroy Park Pierce Field
+10400833,110306223,3rd Division,league,40,,2023-06-25,6:00 pm,35216066,Meerkats FC,67527667,JL Dutch,1,5,played,,Sweet Home High School
+10400834,110306223,3rd Division,league,41,,2023-07-09,4:00 pm,10359092,Ukraine,35216066,Meerkats FC,4,1,played,,Nichols School Strauss Truscott
+10400835,110306223,3rd Division,league,42,,2023-07-09,6:00 pm,91257538,Medina Mustangs FC,95088487,Buffalo Brighten Stars FC,4,0,played,,Medina Veteran's Memorial Park
+10400837,110306223,3rd Division,league,43,,2023-07-09,8:00 pm,110307766,LA United,10359077,WNY United Reds,3,1,played,,Mulroy Park Pierce Field
+10400838,110306223,3rd Division,league,44,,2023-07-09,8:00 pm,100607781,Lake Shore FC,110307763,Buffalo Night,3,0,played,,Sahlen's Sports Park Flash Fields 2
+10400840,110306223,3rd Division,league,45,,2023-07-10,7:00 pm,100608336,Munster FC,87153543,Moby Ducks FC,5,0,played,FT,Sahlen's Sports Park Flash Fields 1
+10400841,110306223,3rd Division,league,46,,2023-07-16,2:00 pm,110307763,Buffalo Night,100608336,Munster FC,4,1,played,,Sahlen's Sports Park Flash Fields 2
+10400843,110306223,3rd Division,league,47,,2023-07-16,6:00 pm,91257538,Medina Mustangs FC,10359092,Ukraine,1,4,played,,Medina Veteran's Memorial Park
+10400844,110306223,3rd Division,league,48,,2023-07-16,6:00 pm,35216066,Meerkats FC,100607781,Lake Shore FC,1,3,played,,Sweet Home High School
+10400845,110306223,3rd Division,league,49,,2023-07-16,6:00 pm,67527667,JL Dutch,87153543,Moby Ducks FC,5,2,played,,Westwood Park Turf Field
+10400847,110306223,3rd Division,league,50,,2023-07-17,8:30 pm,10359077,WNY United Reds,95088487,Buffalo Brighten Stars FC,2,5,played,,Mulroy Park Pierce Field
+10400849,110306223,3rd Division,league,52,,2023-07-23,4:00 pm,10359077,WNY United Reds,10359092,Ukraine,0,1,played,,Mulroy Park Pierce Field
+10400851,110306223,3rd Division,league,53,,2023-07-23,4:00 pm,100608336,Munster FC,35216066,Meerkats FC,1,2,played,,Nichols School Peek
+10400853,110306223,3rd Division,league,54,,2023-07-23,4:00 pm,95088487,Buffalo Brighten Stars FC,110307766,LA United,3,6,played,,Nichols School Strauss Truscott
+10400855,110306223,3rd Division,league,55,,2023-07-23,4:00 pm,110307763,Buffalo Night,67527667,JL Dutch,5,2,played,,Sahlen's Sports Park Flash Fields 1
+10400848,110306223,3rd Division,league,51,,2023-07-23,8:00 pm,100607781,Lake Shore FC,91257538,Medina Mustangs FC,1,4,played,,Medaille College Sports Complex 1
+10400885,110306223,3rd Division,league,9467,QF1,2023-07-30,6:00 pm,91257538,Medina Mustangs FC,110307763,Buffalo Night,5,3,played,,Medina Veteran's Memorial Park
+10400886,110306223,3rd Division,league,9468,QF2,2023-07-30,8:00 pm,95088487,Buffalo Brighten Stars FC,67527667,JL Dutch,1,3,played,,Sahlen's Sports Park Flash Fields 2
+10400893,110306221,4th Divison,league,9475,SF2,2023-08-06,6:00 pm,75479659,Bangarang FC,75479677,nWo FC,1,0,played,,Sahlen's Sports Park Flash Fields 2
+10400892,110306221,4th Divison,league,9474,SF1,2023-08-06,8:00 pm,98469009,Infinity FC,106802178,Queen City AFC,1,2,played,,Sahlen's Sports Park Flash Fields 1
+10400894,110306221,4th Divison,league,9476,CHMP,2023-08-13,2:00 pm,75479659,Bangarang FC,106802178,Queen City AFC,1,0,played,,Sahlen's Sports Park Flash Fields 2
+10400696,110306221,4th Divison,league,9401,,2023-04-30,2:00 pm,100608339,South Buffalo FC,31566782,Rust Belt United,3,1,played,,Mulroy Park Pierce Field
+10400697,110306221,4th Divison,league,9402,,2023-04-30,4:00 pm,10359062,Tonawanda United,59262126,Celtic Classic,1,1,played,,Niagara Falls High School Back
+10400698,110306221,4th Divison,league,9403,,2023-04-30,6:00 pm,75479677,nWo FC,110355063,Allen FC,3,0,played,,Grand Island High School
+10400699,110306221,4th Divison,league,9404,,2023-04-30,6:00 pm,75479695,Big Green SC,110307851,Fargo FC,2,3,played,,Nichols School Peek
+10400700,110306221,4th Divison,league,9405,,2023-05-01,8:30 pm,75479659,Bangarang FC,110307848,North Collins United,3,0,played,,Sahlen's Sports Park Flash Fields 1
+10400701,110306221,4th Divison,league,9406,,2023-05-01,8:30 pm,98469009,Infinity FC,106802178,Queen City AFC,2,0,played,,Sahlen's Sports Park Flash Fields 2
+10400702,110306221,4th Divison,league,9407,,2023-05-07,4:00 pm,75479695,Big Green SC,110307848,North Collins United,2,1,played,,Nichols School Peek
+10400703,110306221,4th Divison,league,9408,,2023-05-07,4:00 pm,31566782,Rust Belt United,10359062,Tonawanda United,1,2,played,,Nichols School Strauss Truscott
+10400704,110306221,4th Divison,league,9409,,2023-05-07,5:00 pm,110307851,Fargo FC,106802178,Queen City AFC,0,3,played,,Nardin Academy Complex
+10400705,110306221,4th Divison,league,9410,,2023-05-07,6:00 pm,59262126,Celtic Classic,75479677,nWo FC,1,1,played,,Kenmore West Crosby Field
+10400706,110306221,4th Divison,league,9411,,2023-05-07,6:00 pm,75479659,Bangarang FC,98469009,Infinity FC,0,0,played,,Sahlen's Sports Park Flash Fields 2
+10400707,110306221,4th Divison,league,9412,,2023-05-07,8:00 pm,100608339,South Buffalo FC,110355063,Allen FC,0,1,played,,Mulroy Park Pierce Field
+10400708,110306221,4th Divison,league,9413,,2023-05-14,3:00 pm,110307851,Fargo FC,31566782,Rust Belt United,1,4,played,,Nardin Academy Complex
+10400709,110306221,4th Divison,league,9414,,2023-05-14,4:00 pm,110307848,North Collins United,110355063,Allen FC,0,1,played,,Mulroy Park Pierce Field
+10400710,110306221,4th Divison,league,9415,,2023-05-14,4:00 pm,75479695,Big Green SC,59262126,Celtic Classic,6,3,played,,Nichols School Peek
+10400711,110306221,4th Divison,league,9416,,2023-05-14,6:00 pm,75479677,nWo FC,106802178,Queen City AFC,2,1,played,,Grand Island High School
+10400712,110306221,4th Divison,league,9417,,2023-05-14,6:00 pm,98469009,Infinity FC,100608339,South Buffalo FC,4,0,played,,Sahlen's Sports Park Flash Fields 1
+10400713,110306221,4th Divison,league,9418,,2023-05-14,6:00 pm,75479659,Bangarang FC,10359062,Tonawanda United,5,0,played,,Sahlen's Sports Park Flash Fields 2
+10400714,110306221,4th Divison,league,9419,,2023-05-21,2:00 pm,110355063,Allen FC,110307851,Fargo FC,0,1,played,,Nichols School Peek
+10400715,110306221,4th Divison,league,9420,,2023-05-21,4:00 pm,31566782,Rust Belt United,110307848,North Collins United,3,1,played,,Nichols School Peek
+10400716,110306221,4th Divison,league,9421,,2023-05-21,6:00 pm,75479677,nWo FC,98469009,Infinity FC,0,2,played,,Grand Island High School
+10400717,110306221,4th Divison,league,9422,,2023-05-21,6:00 pm,10359062,Tonawanda United,75479695,Big Green SC,4,0,played,,Ives Pond 1
+10400718,110306221,4th Divison,league,9423,,2023-05-21,8:00 pm,75479659,Bangarang FC,59262126,Celtic Classic,4,1,played,,Sahlen's Sports Park Flash Fields 2
+10400719,110306221,4th Divison,league,9424,,2023-05-22,8:30 pm,106802178,Queen City AFC,100608339,South Buffalo FC,4,1,played,,Sahlen's Sports Park Flash Fields 2
+10400721,110306221,4th Divison,league,9426,,2023-06-04,2:00 pm,110355063,Allen FC,75479659,Bangarang FC,1,6,played,,Nichols School Peek
+10400720,110306221,4th Divison,league,9425,,2023-06-04,3:00 pm,110307851,Fargo FC,100608339,South Buffalo FC,2,3,played,,Nardin Academy Complex
+10400722,110306221,4th Divison,league,9427,,2023-06-04,4:00 pm,10359062,Tonawanda United,106802178,Queen City AFC,0,1,played,,Ives Pond 1
+10400723,110306221,4th Divison,league,9428,,2023-06-04,4:00 pm,59262126,Celtic Classic,98469009,Infinity FC,1,8,played,,Kenmore West Crosby Field
+10400724,110306221,4th Divison,league,9429,,2023-06-04,4:00 pm,31566782,Rust Belt United,75479695,Big Green SC,4,1,played,,Nichols School Peek
+10400725,110306221,4th Divison,league,9430,,2023-06-04,6:00 pm,75479677,nWo FC,110307848,North Collins United,2,1,played,,Grand Island High School
+10400726,110306221,4th Divison,league,9431,,2023-06-11,2:00 pm,106802178,Queen City AFC,75479695,Big Green SC,4,1,played,,Sahlen's Sports Park Flash Fields 1
+10400727,110306221,4th Divison,league,9432,,2023-06-11,2:00 pm,110307848,North Collins United,98469009,Infinity FC,1,10,played,,Sahlen's Sports Park Flash Fields 2
+10400728,110306221,4th Divison,league,9433,,2023-06-11,4:00 pm,110355063,Allen FC,59262126,Celtic Classic,3,2,played,,Nichols School Peek
+10400729,110306221,4th Divison,league,9434,,2023-06-11,5:00 pm,110307851,Fargo FC,75479659,Bangarang FC,1,4,played,,Nardin Academy Complex
+10400730,110306221,4th Divison,league,9435,,2023-06-11,6:00 pm,75479677,nWo FC,31566782,Rust Belt United,1,1,played,,Grand Island High School
+10400731,110306221,4th Divison,league,9436,,2023-06-11,6:00 pm,100608339,South Buffalo FC,10359062,Tonawanda United,3,0,played,,Mulroy Park Pierce Field
+10400732,110306221,4th Divison,league,9437,,2023-06-18,2:00 pm,110355063,Allen FC,98469009,Infinity FC,0,6,played,,Nichols School Peek
+10400734,110306221,4th Divison,league,9439,,2023-06-18,6:00 pm,75479695,Big Green SC,75479677,nWo FC,1,8,played,,Nichols School Peek
+10400735,110306221,4th Divison,league,9440,,2023-06-18,6:00 pm,106802178,Queen City AFC,31566782,Rust Belt United,0,2,played,,Sahlen's Sports Park Flash Fields 2
+10400736,110306221,4th Divison,league,9441,,2023-06-18,8:00 pm,75479659,Bangarang FC,100608339,South Buffalo FC,2,0,played,,Sahlen's Sports Park Flash Fields 2
+10400737,110306221,4th Divison,league,9442,,2023-06-19,8:30 pm,110307848,North Collins United,59262126,Celtic Classic,0,4,played,,Sahlen's Sports Park Flash Fields 1
+10400738,110306221,4th Divison,league,9443,,2023-06-25,4:00 pm,10359062,Tonawanda United,110355063,Allen FC,3,2,played,,Ives Pond 1
+10400739,110306221,4th Divison,league,9444,,2023-06-25,6:00 pm,59262126,Celtic Classic,31566782,Rust Belt United,2,1,played,,Nichols School Peek
+10400740,110306221,4th Divison,league,9445,,2023-06-25,6:00 pm,75479695,Big Green SC,75479659,Bangarang FC,1,6,played,,Nichols School Strauss Truscott
+10400741,110306221,4th Divison,league,9446,,2023-06-25,6:00 pm,98469009,Infinity FC,110307851,Fargo FC,7,1,played,,Sahlen's Sports Park Flash Fields 2
+10400742,110306221,4th Divison,league,9447,,2023-06-25,8:00 pm,106802178,Queen City AFC,110307848,North Collins United,4,2,played,,Mulroy Park Pierce Field
+10400743,110306221,4th Divison,league,9448,,2023-06-26,8:30 pm,100608339,South Buffalo FC,75479677,nWo FC,0,1,played,,Mulroy Park Pierce Field
+10400744,110306221,4th Divison,league,9449,,2023-07-09,2:00 pm,98469009,Infinity FC,10359062,Tonawanda United,5,0,played,,Sahlen's Sports Park Flash Fields 2
+10400745,110306221,4th Divison,league,9450,,2023-07-09,4:00 pm,59262126,Celtic Classic,106802178,Queen City AFC,3,2,played,,Kenmore West Crosby Field
+10400746,110306221,4th Divison,league,9451,,2023-07-09,4:00 pm,110307848,North Collins United,100608339,South Buffalo FC,1,1,played,,Sahlen's Sports Park Flash Fields 2
+10400748,110306221,4th Divison,league,9453,,2023-07-09,6:00 pm,110355063,Allen FC,75479695,Big Green SC,7,2,played,,Nichols School Peek
+10400749,110306221,4th Divison,league,9454,,2023-07-09,6:00 pm,31566782,Rust Belt United,75479659,Bangarang FC,1,5,played,,Nichols School Strauss Truscott
+10400747,110306221,4th Divison,league,9452,,2023-07-09,8:00 pm,110307851,Fargo FC,75479677,nWo FC,0,6,played,,Grand Island High School
+10400750,110306221,4th Divison,league,9455,,2023-07-16,4:00 pm,10359062,Tonawanda United,75479677,nWo FC,2,3,played,,Ives Pond 1
+10400751,110306221,4th Divison,league,9456,,2023-07-16,4:00 pm,110307848,North Collins United,110307851,Fargo FC,1,1,played,,Sahlen's Sports Park Flash Fields 1
+10400752,110306221,4th Divison,league,9457,,2023-07-16,4:00 pm,98469009,Infinity FC,75479695,Big Green SC,10,0,played,,Sahlen's Sports Park Flash Fields 2
+10400753,110306221,4th Divison,league,9458,,2023-07-16,6:00 pm,100608339,South Buffalo FC,59262126,Celtic Classic,1,2,played,,Mulroy Park Pierce Field
+10400754,110306221,4th Divison,league,9459,,2023-07-16,6:00 pm,110355063,Allen FC,31566782,Rust Belt United,3,1,played,,Nichols School Peek
+10400755,110306221,4th Divison,league,9460,,2023-07-16,6:00 pm,106802178,Queen City AFC,75479659,Bangarang FC,2,2,played,,Sahlen's Sports Park Flash Fields 2
+10400756,110306221,4th Divison,league,9461,,2023-07-23,2:00 pm,110307848,North Collins United,10359062,Tonawanda United,1,3,played,,Sahlen's Sports Park Flash Fields 2
+10400757,110306221,4th Divison,league,9462,,2023-07-23,6:00 pm,75479677,nWo FC,75479659,Bangarang FC,1,3,played,,Grand Island High School
+10400758,110306221,4th Divison,league,9463,,2023-07-23,6:00 pm,59262126,Celtic Classic,110307851,Fargo FC,1,1,played,,Kenmore West Crosby Field
+10400759,110306221,4th Divison,league,9464,,2023-07-23,6:00 pm,100608339,South Buffalo FC,75479695,Big Green SC,2,1,played,,Mulroy Park Pierce Field
+10400760,110306221,4th Divison,league,9465,,2023-07-23,6:00 pm,31566782,Rust Belt United,98469009,Infinity FC,0,4,played,,Nichols School Peek
+10400761,110306221,4th Divison,league,9466,,2023-07-24,6:30 pm,106802178,Queen City AFC,110355063,Allen FC,0,2,played,,Sahlen's Sports Park Flash Fields 1
+10400733,110306221,4th Divison,league,9438,,2023-07-25,6:30 pm,10359062,Tonawanda United,110307851,Fargo FC,1,1,played,,Ives Pond 1
+10400891,110306221,4th Divison,league,9473,QF2,2023-07-30,11:30 am,110355063,Allen FC,106802178,Queen City AFC,0,0,played,PK,St. Joe's Collegiate Institute Field
+10400890,110306221,4th Divison,league,9472,QF1,2023-07-30,8:00 pm,75479677,nWo FC,59262126,Celtic Classic,3,2,played,OT,Grand Island High School
+10400670,110306222,Over 35,over35,3545,,2023-08-01,6:30 pm,46512663,Azzurri,106900652,GOATS FC,8,2,played,,Mulroy Park Pierce Field
+10400677,110306222,Over 35,over35,3552,,2023-08-02,8:30 pm,10350976,SoHo FC,106900649,OLDevils FC,2,1,played,,Mulroy Park Pierce Field
+10400691,110306222,Over 35,over35,3566,,2023-08-04,6:30 pm,106830132,Enigma FC,46512663,Azzurri,5,0,played,FT,Mulroy Park Pierce Field
+10400692,110306222,Over 35,over35,3567,,2023-08-04,6:30 pm,46512669,Oranje,46512675,West United FC,3,0,played,,Sahlen's Sports Park Flash Fields 1
+10400693,110306222,Over 35,over35,3568,,2023-08-04,6:30 pm,10359105,CS Italia,98469084,Thundercats FC,2,0,played,,Sahlen's Sports Park Flash Fields 2
+10400694,110306222,Over 35,over35,3569,,2023-08-04,8:30 pm,46512672,Blue Stars FC,10350976,SoHo FC,5,0,played,FT,Sahlen's Sports Park Flash Fields 1
+10400695,110306222,Over 35,over35,3570,,2023-08-04,8:30 pm,91327989,Tidal FC,106900652,GOATS FC,7,1,played,,Sahlen's Sports Park Flash Fields 2
+10400667,110306222,Over 35,over35,3542,,2023-08-07,7:30 pm,46512675,West United FC,106830132,Enigma FC,0,2,played,,Sahlen's Sports Park Flash Fields 1
+10496962,110306222,Over 35,over35,9497,QF1,2023-08-11,6:30 pm,46512672,Blue Stars FC,10350976,SoHo FC,1,1,played,PK,Sahlen's Sports Park Flash Fields 1
+10496963,110306222,Over 35,over35,9498,QF2,2023-08-11,7:30 pm,46512675,West United FC,91327989,Tidal FC,1,2,played,,Mulroy Park Pierce Field
+10496964,110306222,Over 35,over35,9499,SF1,2023-08-18,8:30 pm,46512669,Oranje,10350976,SoHo FC,3,2,played,OT,Sahlen's Sports Park Flash Fields 1
+10496965,110306222,Over 35,over35,9500,SF2,2023-08-18,8:30 pm,106830132,Enigma FC,91327989,Tidal FC,8,0,played,,Sahlen's Sports Park Flash Fields 2
+10496966,110306222,Over 35,over35,9501,CHMP,2023-08-25,7:00 pm,46512669,Oranje,106830132,Enigma FC,1,1,played,PK,Sahlen's Sports Park Flash Fields 1
+10400627,110306222,Over 35,over35,3502,,2023-05-05,6:30 pm,91327989,Tidal FC,46512675,West United FC,0,3,played,,Sahlen's Sports Park Flash Fields 1
+10400628,110306222,Over 35,over35,3503,,2023-05-05,6:30 pm,98469084,Thundercats FC,46512663,Azzurri,0,1,played,,Sahlen's Sports Park Flash Fields 2
+10400629,110306222,Over 35,over35,3504,,2023-05-05,8:30 pm,46512672,Blue Stars FC,46512669,Oranje,2,4,played,,Sahlen's Sports Park Flash Fields 1
+10400630,110306222,Over 35,over35,3505,,2023-05-05,8:30 pm,106830132,Enigma FC,10350976,SoHo FC,2,0,played,,Sahlen's Sports Park Flash Fields 2
+10400633,110306222,Over 35,over35,3508,,2023-05-12,6:30 pm,46512669,Oranje,106830132,Enigma FC,2,1,played,,Sahlen's Sports Park Flash Fields 2
+10400634,110306222,Over 35,over35,3509,,2023-05-12,8:30 pm,46512663,Azzurri,46512675,West United FC,0,4,played,,Sahlen's Sports Park Flash Fields 1
+10400635,110306222,Over 35,over35,3510,,2023-05-12,8:30 pm,98469084,Thundercats FC,91327989,Tidal FC,1,2,played,,Sahlen's Sports Park Flash Fields 2
+10400631,110306222,Over 35,over35,3506,,2023-05-12,8:45 pm,106900649,OLDevils FC,106900652,GOATS FC,4,1,played,,Mulroy Park Pierce Field
+10400636,110306222,Over 35,over35,3511,,2023-05-19,6:30 pm,10359105,CS Italia,106900652,GOATS FC,2,1,played,,Mulroy Park Pierce Field
+10400637,110306222,Over 35,over35,3512,,2023-05-19,6:30 pm,91327989,Tidal FC,46512663,Azzurri,2,2,played,,Sahlen's Sports Park Flash Fields 1
+10400638,110306222,Over 35,over35,3513,,2023-05-19,6:30 pm,98469084,Thundercats FC,46512675,West United FC,0,4,played,,Sahlen's Sports Park Flash Fields 2
+10400639,110306222,Over 35,over35,3514,,2023-05-19,8:30 pm,46512672,Blue Stars FC,106830132,Enigma FC,1,2,played,,Sahlen's Sports Park Flash Fields 1
+10400640,110306222,Over 35,over35,3515,,2023-05-19,8:30 pm,46512669,Oranje,10350976,SoHo FC,4,2,played,,Sahlen's Sports Park Flash Fields 2
+10400644,110306222,Over 35,over35,3519,,2023-05-25,8:30 pm,106900652,GOATS FC,46512675,West United FC,0,10,played,,Sahlen's Sports Park Flash Fields 2
+10400641,110306222,Over 35,over35,3516,,2023-05-26,6:30 pm,46512669,Oranje,46512672,Blue Stars FC,1,2,played,,Mulroy Park Pierce Field
+10400642,110306222,Over 35,over35,3517,,2023-05-26,6:30 pm,10350976,SoHo FC,106830132,Enigma FC,0,5,played,,Sahlen's Sports Park Flash Fields 1
+10400643,110306222,Over 35,over35,3518,,2023-05-26,6:30 pm,46512663,Azzurri,10359105,CS Italia,6,0,played,,Sahlen's Sports Park Flash Fields 2
+10400645,110306222,Over 35,over35,3520,,2023-05-26,8:30 pm,106900649,OLDevils FC,91327989,Tidal FC,1,7,played,,Sahlen's Sports Park Flash Fields 2
+10400646,110306222,Over 35,over35,3521,,2023-06-02,6:30 pm,46512663,Azzurri,98469084,Thundercats FC,8,3,played,,Mulroy Park Pierce Field
+10400647,110306222,Over 35,over35,3522,,2023-06-02,6:30 pm,46512672,Blue Stars FC,106900652,GOATS FC,9,0,played,,Sahlen's Sports Park Flash Fields 1
+10400648,110306222,Over 35,over35,3523,,2023-06-02,6:30 pm,106900649,OLDevils FC,46512675,West United FC,1,8,played,,Sahlen's Sports Park Flash Fields 2
+10400649,110306222,Over 35,over35,3524,,2023-06-02,8:30 pm,106830132,Enigma FC,46512669,Oranje,1,1,played,,Sahlen's Sports Park Flash Fields 1
+10400650,110306222,Over 35,over35,3525,,2023-06-02,8:30 pm,10359105,CS Italia,10350976,SoHo FC,1,11,played,,Sahlen's Sports Park Flash Fields 2
+10400652,110306222,Over 35,over35,3527,,2023-06-09,6:30 pm,106900652,GOATS FC,106830132,Enigma FC,0,8,played,,Mulroy Park Pierce Field
+10400651,110306222,Over 35,over35,3526,,2023-06-09,6:30 pm,46512675,West United FC,91327989,Tidal FC,6,2,played,,Sahlen's Sports Park Flash Fields 1
+10400653,110306222,Over 35,over35,3528,,2023-06-09,6:30 pm,106900649,OLDevils FC,46512672,Blue Stars FC,1,9,played,,Sahlen's Sports Park Flash Fields 2
+10400654,110306222,Over 35,over35,3529,,2023-06-09,8:30 pm,10359105,CS Italia,46512669,Oranje,0,6,played,,Sahlen's Sports Park Flash Fields 1
+10400655,110306222,Over 35,over35,3530,,2023-06-09,8:30 pm,10350976,SoHo FC,98469084,Thundercats FC,6,1,played,,Sahlen's Sports Park Flash Fields 2
+10400632,110306222,Over 35,over35,3507,,2023-06-14,8:30 pm,10350976,SoHo FC,46512672,Blue Stars FC,0,5,played,,Mulroy Park Pierce Field
+10400658,110306222,Over 35,over35,3533,,2023-06-16,6:30 pm,106900652,GOATS FC,10359105,CS Italia,1,0,played,,Mulroy Park Pierce Field
+10400657,110306222,Over 35,over35,3532,,2023-06-16,6:30 pm,98469084,Thundercats FC,46512669,Oranje,3,5,played,,Sahlen's Sports Park Flash Fields 1
+10400656,110306222,Over 35,over35,3531,,2023-06-16,6:30 pm,46512663,Azzurri,10350976,SoHo FC,1,1,played,,Sahlen's Sports Park Flash Fields 2
+10400659,110306222,Over 35,over35,3534,,2023-06-16,8:30 pm,106830132,Enigma FC,106900649,OLDevils FC,5,0,played,FT,Sahlen's Sports Park Flash Fields 1
+10400626,110306222,Over 35,over35,3501,,2023-06-21,7:30 pm,10359105,CS Italia,106900649,OLDevils FC,2,0,played,,Nardin Academy Complex
+10400661,110306222,Over 35,over35,3536,,2023-06-23,6:30 pm,91327989,Tidal FC,106830132,Enigma FC,3,2,played,,Mulroy Park Pierce Field
+10400662,110306222,Over 35,over35,3537,,2023-06-23,6:30 pm,46512669,Oranje,46512663,Azzurri,7,0,played,,Sahlen's Sports Park Flash Fields 1
+10400663,110306222,Over 35,over35,3538,,2023-06-23,6:30 pm,46512672,Blue Stars FC,46512675,West United FC,3,0,played,,Sahlen's Sports Park Flash Fields 2
+10400664,110306222,Over 35,over35,3539,,2023-06-23,8:30 pm,106900649,OLDevils FC,10359105,CS Italia,3,2,played,,Sahlen's Sports Park Flash Fields 1
+10400665,110306222,Over 35,over35,3540,,2023-06-23,8:30 pm,98469084,Thundercats FC,106900652,GOATS FC,2,0,played,,Sahlen's Sports Park Flash Fields 2
+10400672,110306222,Over 35,over35,3547,,2023-07-07,6:30 pm,106900652,GOATS FC,10350976,SoHo FC,2,5,played,,Mulroy Park Pierce Field
+10400671,110306222,Over 35,over35,3546,,2023-07-07,6:30 pm,106830132,Enigma FC,46512672,Blue Stars FC,3,1,played,,Sahlen's Sports Park Flash Fields 1
+10400673,110306222,Over 35,over35,3548,,2023-07-07,6:30 pm,91327989,Tidal FC,98469084,Thundercats FC,1,1,played,,Sahlen's Sports Park Flash Fields 2
+10400674,110306222,Over 35,over35,3549,,2023-07-07,8:30 pm,46512675,West United FC,10359105,CS Italia,1,0,played,,Sahlen's Sports Park Flash Fields 1
+10400675,110306222,Over 35,over35,3550,,2023-07-07,8:30 pm,106900649,OLDevils FC,46512663,Azzurri,0,5,played,,Sahlen's Sports Park Flash Fields 2
+10400668,110306222,Over 35,over35,3543,,2023-07-11,8:30 pm,10359105,CS Italia,91327989,Tidal FC,0,4,played,,Mulroy Park Pierce Field
+10400666,110306222,Over 35,over35,3541,,2023-07-11,8:45 pm,10350976,SoHo FC,46512669,Oranje,1,3,played,,Sahlen's Sports Park Flash Fields 1
+10400678,110306222,Over 35,over35,3553,,2023-07-14,6:30 pm,106900652,GOATS FC,46512669,Oranje,0,7,played,,Mulroy Park Pierce Field
+10400676,110306222,Over 35,over35,3551,,2023-07-14,6:30 pm,46512675,West United FC,98469084,Thundercats FC,1,1,played,,Sahlen's Sports Park Flash Fields 2
+10400679,110306222,Over 35,over35,3554,,2023-07-14,8:30 pm,46512663,Azzurri,91327989,Tidal FC,1,7,played,,Sahlen's Sports Park Flash Fields 1
+10400680,110306222,Over 35,over35,3555,,2023-07-14,8:30 pm,46512672,Blue Stars FC,10359105,CS Italia,4,0,played,,Sahlen's Sports Park Flash Fields 2
+10400681,110306222,Over 35,over35,3556,,2023-07-21,6:30 pm,46512672,Blue Stars FC,98469084,Thundercats FC,2,1,played,,Mulroy Park Pierce Field
+10400682,110306222,Over 35,over35,3557,,2023-07-21,6:30 pm,106830132,Enigma FC,10359105,CS Italia,5,0,played,FT,Sahlen's Sports Park Flash Fields 1
+10400683,110306222,Over 35,over35,3558,,2023-07-21,6:30 pm,10350976,SoHo FC,91327989,Tidal FC,2,6,played,,Sahlen's Sports Park Flash Fields 2
+10400684,110306222,Over 35,over35,3559,,2023-07-21,8:30 pm,46512675,West United FC,46512663,Azzurri,5,0,played,,Sahlen's Sports Park Flash Fields 1
+10400685,110306222,Over 35,over35,3560,,2023-07-21,8:30 pm,46512669,Oranje,106900649,OLDevils FC,9,0,played,,Sahlen's Sports Park Flash Fields 2
+10400660,110306222,Over 35,over35,3535,,2023-07-25,8:30 pm,91327989,Tidal FC,46512672,Blue Stars FC,2,5,played,,Mulroy Park Pierce Field
+10400669,110306222,Over 35,over35,3544,,2023-07-26,8:30 pm,98469084,Thundercats FC,106900649,OLDevils FC,6,0,played,,Mulroy Park Pierce Field
+10400688,110306222,Over 35,over35,3563,,2023-07-28,6:30 pm,106900652,GOATS FC,106900649,OLDevils FC,2,0,played,,Mulroy Park Pierce Field
+10400687,110306222,Over 35,over35,3562,,2023-07-28,6:30 pm,46512663,Azzurri,46512672,Blue Stars FC,1,8,played,,Sahlen's Sports Park Flash Fields 1
+10400686,110306222,Over 35,over35,3561,,2023-07-28,6:30 pm,91327989,Tidal FC,46512669,Oranje,0,3,played,,Sahlen's Sports Park Flash Fields 2
+10400689,110306222,Over 35,over35,3564,,2023-07-28,8:30 pm,98469084,Thundercats FC,106830132,Enigma FC,0,5,played,,Sahlen's Sports Park Flash Fields 1
+10400690,110306222,Over 35,over35,3565,,2023-07-28,8:30 pm,46512675,West United FC,10350976,SoHo FC,7,2,played,,Sahlen's Sports Park Flash Fields 2
+10413589,110731556,Matthews Cup,cup,1,,2023-05-04,6:30 pm,10359062,Tonawanda United,95088487,Buffalo Brighten Stars FC,0,9,played,,Buffalo State Coyer Field
+10413599,110731556,Matthews Cup,cup,11,,2023-05-04,6:30 pm,110307766,LA United,31566782,Rust Belt United,1,1,played,PK,Medaille College Sports Complex 1
+10413601,110731556,Matthews Cup,cup,13,,2023-05-04,6:30 pm,100607781,Lake Shore FC,75479677,nWo FC,4,3,played,,Sahlen's Sports Park Flash Fields 1
+10413603,110731556,Matthews Cup,cup,15,,2023-05-04,6:30 pm,100608336,Munster FC,98469009,Infinity FC,0,3,played,,Sahlen's Sports Park Flash Fields 2
+10413598,110731556,Matthews Cup,cup,10,,2023-05-04,8:30 pm,110307763,Buffalo Night,91257538,Medina Mustangs FC,2,2,played,PK,Buffalo State Coyer Field
+10413600,110731556,Matthews Cup,cup,12,,2023-05-04,8:30 pm,59262126,Celtic Classic,35216066,Meerkats FC,2,7,played,,Medaille College Sports Complex 1
+10413602,110731556,Matthews Cup,cup,14,,2023-05-04,8:30 pm,106802178,Queen City AFC,110307848,North Collins United,2,3,played,,Sahlen's Sports Park Flash Fields 1
+10413604,110731556,Matthews Cup,cup,16,,2023-05-04,8:30 pm,110307851,Fargo FC,87153543,Moby Ducks FC,3,2,played,,Sahlen's Sports Park Flash Fields 2
+10413607,110731556,Matthews Cup,cup,19,,2023-05-25,6:30 pm,100608339,South Buffalo FC,75479677,nWo FC,0,6,played,,Medaille College Sports Complex 1
+10413610,110731556,Matthews Cup,cup,22,,2023-05-25,6:30 pm,75479659,Bangarang FC,59262126,Celtic Classic,5,0,played,,Sahlen's Sports Park Flash Fields 2
+10413606,110731556,Matthews Cup,cup,18,,2023-05-25,8:30 pm,10359062,Tonawanda United,110307763,Buffalo Night,0,5,played,,Buffalo State Coyer Field
+10413590,110731556,Matthews Cup,cup,2,,2023-05-25,8:30 pm,87153543,Moby Ducks FC,10359077,WNY United Reds,0,9,played,,Medaille College Sports Complex 1
+10413609,110731556,Matthews Cup,cup,21,,2023-05-25,8:30 pm,75479695,Big Green SC,110307766,LA United,2,4,played,,Sahlen's Sports Park Flash Fields 1
+10413605,110731556,Matthews Cup,cup,17,,2023-06-01,8:30 pm,10359092,Ukraine,100608336,Munster FC,4,0,played,,Mulroy Park Pierce Field
+10413608,110731556,Matthews Cup,cup,20,,2023-06-01,8:45 pm,110355063,Allen FC,106802178,Queen City AFC,1,5,played,,Sahlen's Sports Park Flash Fields 1
+10413612,110731556,Matthews Cup,cup,24,,2023-06-15,6:30 pm,31566782,Rust Belt United,75479695,Big Green SC,3,2,played,,Buffalo State Coyer Field
+10413614,110731556,Matthews Cup,cup,26,,2023-06-15,6:30 pm,91257538,Medina Mustangs FC,95088487,Buffalo Brighten Stars FC,3,4,played,,Medaille College Sports Complex 1
+10413616,110731556,Matthews Cup,cup,28,,2023-06-15,7:00 pm,110307848,North Collins United,110355063,Allen FC,4,1,played,,Sahlen's Sports Park Flash Fields 1
+10413591,110731556,Matthews Cup,cup,3,,2023-06-15,7:00 pm,35216066,Meerkats FC,75479659,Bangarang FC,1,3,played,,Sahlen's Sports Park Flash Fields 2
+10413613,110731556,Matthews Cup,cup,25,,2023-06-15,8:30 pm,98469009,Infinity FC,10359092,Ukraine,1,0,played,,Buffalo State Coyer Field
+10413615,110731556,Matthews Cup,cup,27,,2023-06-15,8:30 pm,10359077,WNY United Reds,110307851,Fargo FC,2,1,played,,Medaille College Sports Complex 1
+10413618,110731556,Matthews Cup,cup,30,,2023-06-15,8:45 pm,100607781,Lake Shore FC,100608339,South Buffalo FC,3,0,played,FT,Sahlen's Sports Park Flash Fields 2
+10413593,110731556,Matthews Cup,cup,5,,2023-07-06,6:30 pm,95088487,Buffalo Brighten Stars FC,110307763,Buffalo Night,1,3,played,,Medaille College Sports Complex 1
+10413619,110731556,Matthews Cup,cup,31,,2023-07-06,6:30 pm,31566782,Rust Belt United,10359077,WNY United Reds,1,0,played,OT,Mulroy Park Pierce Field
+10413592,110731556,Matthews Cup,cup,4,,2023-07-06,6:30 pm,100607781,Lake Shore FC,75479659,Bangarang FC,1,2,played,OT,Sahlen's Sports Park Flash Fields 2
+10413594,110731556,Matthews Cup,cup,6,,2023-07-06,8:30 pm,98469009,Infinity FC,110307848,North Collins United,3,0,played,,Sahlen's Sports Park Flash Fields 2
+10413595,110731556,Matthews Cup,cup,7,SF1,2023-07-25,7:00 pm,31566782,Rust Belt United,110307763,Buffalo Night,0,4,played,,Sahlen's Sports Park Flash Fields 2
+10413596,110731556,Matthews Cup,cup,8,SF2,2023-07-30,6:00 pm,75479659,Bangarang FC,98469009,Infinity FC,0,2,played,,Sahlen's Sports Park Flash Fields 2
+10413597,110731556,Matthews Cup,cup,9,CHMP,2023-08-10,7:30 pm,110307763,Buffalo Night,98469009,Infinity FC,1,0,played,OT,Sahlen's Sports Park Flash Fields 2
+10415929,110732163,Tehel Cup,cup,11,,2023-05-18,6:30 pm,98468675,Kilimanjaro Bandits,110307225,Buffalo Stallions FC,0,1,played,,Buffalo State Coyer Field
+10415919,110732163,Tehel Cup,cup,1,,2023-05-18,6:30 pm,10359017,Celtic United,100607465,Polonia Legacy,1,1,played,PK,Medaille College Sports Complex 1
+10415933,110732163,Tehel Cup,cup,15,,2023-05-18,6:30 pm,91256980,Olean 1854 FC,10359117,Buffalo Italia FC,0,1,played,,Sahlen's Sports Park Flash Fields 2
+10415930,110732163,Tehel Cup,cup,12,,2023-05-18,8:30 pm,45429017,Borussia Bees,10350991,BSC Raiders,0,2,played,,Buffalo State Coyer Field
+10415928,110732163,Tehel Cup,cup,10,,2023-05-18,8:30 pm,18647016,Buffalo United SS,75159921,West Side FC,4,1,played,,Medaille College Sports Complex 1
+10415934,110732163,Tehel Cup,cup,16,,2023-05-18,8:30 pm,91256977,Lykan United,75479674,Los Chupacabras,0,3,played,,Sahlen's Sports Park Flash Fields 2
+10415931,110732163,Tehel Cup,cup,13,,2023-05-25,8:30 pm,12579600,Wolves FC,82992129,Mes Que FC,5,0,played,,Mulroy Park Pierce Field
+10415936,110732163,Tehel Cup,cup,18,,2023-06-15,6:30 pm,26895907,Amherst Sharpshooters,100607465,Polonia Legacy,3,0,played,FT,
+10415938,110732163,Tehel Cup,cup,20,,2023-06-15,8:30 pm,10359008,Roos FC,45429017,Borussia Bees,3,1,played,,Mulroy Park Pierce Field
+10415941,110732163,Tehel Cup,cup,23,,2023-06-15,8:45 pm,106801557,AC Elite,82992129,Mes Que FC,2,3,played,,Sahlen's Sports Park Flash Fields 1
+10415939,110732163,Tehel Cup,cup,21,,2023-06-20,6:30 pm,10359111,Crimson Fire FC,91256980,Olean 1854 FC,1,1,played,PK,Mulroy Park Pierce Field
+10415920,110732163,Tehel Cup,cup,2,,2023-06-22,6:30 pm,75159915,NMB FC,98468675,Kilimanjaro Bandits,1,2,played,,Mulroy Park Pierce Field
+10415940,110732163,Tehel Cup,cup,22,,2023-06-22,8:30 pm,75479641,Williamsville Willies,75159921,West Side FC,5,2,played,,Mulroy Park Pierce Field
+10415937,110732163,Tehel Cup,cup,19,,2023-06-22,8:45 pm,91256977,Lykan United,10359035,Queenston FC,1,5,played,,Sahlen's Sports Park Flash Fields 2
+10415945,110732163,Tehel Cup,cup,27,,2023-07-13,6:30 pm,75479641,Williamsville Willies,18647016,Buffalo United SS,0,3,played,FT,Buffalo State Coyer Field
+10415944,110732163,Tehel Cup,cup,26,,2023-07-13,6:30 pm,110307225,Buffalo Stallions FC,75159915,NMB FC,1,3,played,,Medaille College Sports Complex 1
+10415947,110732163,Tehel Cup,cup,29,,2023-07-13,7:00 pm,10359117,Buffalo Italia FC,10359111,Crimson Fire FC,2,3,played,,Sahlen's Sports Park Flash Fields 1
+10415948,110732163,Tehel Cup,cup,30,,2023-07-13,7:00 pm,12579600,Wolves FC,106801557,AC Elite,3,0,played,FT,Sahlen's Sports Park Flash Fields 2
+10415946,110732163,Tehel Cup,cup,28,,2023-07-13,8:30 pm,10359035,Queenston FC,75479674,Los Chupacabras,3,0,played,,Buffalo State Coyer Field
+10415943,110732163,Tehel Cup,cup,25,,2023-07-13,8:30 pm,10350991,BSC Raiders,10359008,Roos FC,2,0,played,,Medaille College Sports Complex 1
+10415921,110732163,Tehel Cup,cup,3,,2023-07-13,8:45 pm,10359017,Celtic United,26895907,Amherst Sharpshooters,1,1,played,PK,Sahlen's Sports Park Flash Fields 1
+10415925,110732163,Tehel Cup,cup,7,,2023-07-25,6:30 pm,10359017,Celtic United,18647016,Buffalo United SS,3,4,played,,Nichols School Strauss Truscott
+10415922,110732163,Tehel Cup,cup,4,,2023-07-27,8:00 pm,10350991,BSC Raiders,10359111,Crimson Fire FC,7,1,played,,Buffalo State Coyer Field
+10415926,110732163,Tehel Cup,cup,8,,2023-07-27,8:45 pm,26895907,Amherst Sharpshooters,12579600,Wolves FC,4,1,played,,Sahlen's Sports Park Flash Fields 1
+10415935,110732163,Tehel Cup,cup,17,,2023-07-27,8:45 pm,10359035,Queenston FC,75159915,NMB FC,3,1,played,,Sahlen's Sports Park Flash Fields 2
+10415923,110732163,Tehel Cup,cup,5,SF1,2023-08-03,6:30 pm,26895907,Amherst Sharpshooters,18647016,Buffalo United SS,1,3,played,,Sahlen's Sports Park Flash Fields 1
+10415924,110732163,Tehel Cup,cup,6,SF2,2023-08-03,8:30 pm,10359035,Queenston FC,10350991,BSC Raiders,2,0,played,,Buffalo State Coyer Field
+10415927,110732163,Tehel Cup,cup,9,CHMP,2023-08-10,8:30 pm,18647016,Buffalo United SS,10359035,Queenston FC,0,1,played,,Sahlen's Sports Park Flash Fields 1
+10413522,110732539,Wood Cup,cup,1,,2023-05-11,6:30 pm,95088493,FC Lackawanna,75479665,Lasalle FC,6,0,played,,Medaille College Sports Complex 1
+10413534,110732539,Wood Cup,cup,13,,2023-05-11,6:30 pm,10359005,Clarence Coyotes,98469017,Buffalo Cosmos,1,6,played,,Sahlen's Sports Park Flash Fields 1
+10413536,110732539,Wood Cup,cup,15,,2023-05-11,6:30 pm,12579571,Devils,10350976,SoHo FC,4,2,played,,Sahlen's Sports Park Flash Fields 2
+10413533,110732539,Wood Cup,cup,12,,2023-05-11,8:30 pm,75479689,Delco Academy,26891552,Buffalo Celtic,1,2,played,,Buffalo State Coyer Field
+10413531,110732539,Wood Cup,cup,10,,2023-05-11,8:30 pm,95088658,United Warriors,110307361,Queen City Gunners,1,2,played,,Medaille College Sports Complex 1
+10413535,110732539,Wood Cup,cup,14,,2023-05-11,8:30 pm,75159990,Great White Buffalo,75479680,Honey Badgers,1,2,played,,Sahlen's Sports Park Flash Fields 1
+10413532,110732539,Wood Cup,cup,11,,2023-05-18,6:30 pm,75479647,Celtic 1888,75479662,Celtic Brigade,2,5,played,,Mulroy Park Pierce Field
+10413537,110732539,Wood Cup,cup,16,,2023-05-18,8:30 pm,67527670,FC Quake,46021389,Outlaws,1,3,played,,Sahlen's Sports Park Flash Fields 1
+10413540,110732539,Wood Cup,cup,19,,2023-06-01,6:30 pm,95088658,United Warriors,12579571,Devils,1,1,played,PK,Buffalo State Coyer Field
+10413538,110732539,Wood Cup,cup,17,,2023-06-01,6:30 pm,75479647,Celtic 1888,95088661,Westside Blitz,0,3,played,FT,Medaille College Sports Complex 1
+10413541,110732539,Wood Cup,cup,20,,2023-06-01,7:00 pm,106801543,Cheektowaga Stingrays FC,67527670,FC Quake,1,2,played,,Sahlen's Sports Park Flash Fields 1
+10413525,110732539,Wood Cup,cup,4,,2023-06-01,7:00 pm,10359005,Clarence Coyotes,75159993,Revolution SC,0,2,played,,Sahlen's Sports Park Flash Fields 2
+10413523,110732539,Wood Cup,cup,2,,2023-06-01,8:30 pm,106801546,Rance FC,75479665,Lasalle FC,3,1,played,,Buffalo State Coyer Field
+10413539,110732539,Wood Cup,cup,18,,2023-06-01,8:30 pm,75479689,Delco Academy,15294627,Niagara FC,1,4,played,,Medaille College Sports Complex 1
+10413524,110732539,Wood Cup,cup,3,,2023-06-01,8:45 pm,46512672,Blue Stars FC,75159990,Great White Buffalo,0,1,played,,Sahlen's Sports Park Flash Fields 2
+10413578,110732539,Wood Cup,cup,21,,2023-06-22,6:30 pm,15294627,Niagara FC,26891552,Buffalo Celtic,1,6,played,,Buffalo State Coyer Field
+10413580,110732539,Wood Cup,cup,23,,2023-06-22,6:30 pm,98469017,Buffalo Cosmos,75159993,Revolution SC,3,3,played,PK,Medaille College Sports Complex 1
+10413582,110732539,Wood Cup,cup,25,,2023-06-22,7:00 pm,46021389,Outlaws,106801543,Cheektowaga Stingrays FC,5,0,played,,Sahlen's Sports Park Flash Fields 1
+10413584,110732539,Wood Cup,cup,27,,2023-06-22,7:00 pm,10350976,SoHo FC,110307361,Queen City Gunners,0,3,played,FT,Sahlen's Sports Park Flash Fields 2
+10413579,110732539,Wood Cup,cup,22,,2023-06-22,8:30 pm,95088493,FC Lackawanna,106801546,Rance FC,0,2,played,,Buffalo State Coyer Field
+10413581,110732539,Wood Cup,cup,24,,2023-06-22,8:30 pm,75479662,Celtic Brigade,95088661,Westside Blitz,1,2,played,,Medaille College Sports Complex 1
+10413583,110732539,Wood Cup,cup,26,,2023-06-22,8:45 pm,75479680,Honey Badgers,46512672,Blue Stars FC,1,1,played,PK,Sahlen's Sports Park Flash Fields 1
+10413586,110732539,Wood Cup,cup,29,,2023-07-06,6:30 pm,106801546,Rance FC,95088661,Westside Blitz,3,1,played,,Buffalo State Coyer Field
+10413588,110732539,Wood Cup,cup,31,,2023-07-06,6:30 pm,98469017,Buffalo Cosmos,75159993,Revolution SC,3,3,played,PK,Sahlen's Sports Park Flash Fields 1
+10413587,110732539,Wood Cup,cup,30,,2023-07-06,8:30 pm,26891552,Buffalo Celtic,75479680,Honey Badgers,4,1,played,,Medaille College Sports Complex 1
+10413527,110732539,Wood Cup,cup,6,,2023-07-06,8:30 pm,110307361,Queen City Gunners,46021389,Outlaws,0,2,played,,Sahlen's Sports Park Flash Fields 1
+10413528,110732539,Wood Cup,cup,7,SF1,2023-07-27,7:00 pm,26891552,Buffalo Celtic,106801546,Rance FC,1,2,played,,Sahlen's Sports Park Flash Fields 1
+10413529,110732539,Wood Cup,cup,8,SF2,2023-07-27,7:00 pm,75159993,Revolution SC,46021389,Outlaws,1,2,played,OT,Sahlen's Sports Park Flash Fields 2
+10413530,110732539,Wood Cup,cup,9,CHMP,2023-08-10,6:30 pm,106801546,Rance FC,46021389,Outlaws,1,2,played,,Sahlen's Sports Park Flash Fields 1

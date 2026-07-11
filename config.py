@@ -77,3 +77,18 @@ def team_html_url(section: str, tm: str, tg: str) -> str:
 
 def cup_schedule_url(cup_id: str) -> str:
     return f"{ELEMENTS_BASE}/{ORG}/schedules/{SEASON['schedules_year']}/{cup_id}.html"
+
+
+def schedule_element_url(tg: str) -> str:
+    """Schedule/results page for any competition (league division, Over-35, or cup).
+
+    Uses the cup-index element with the competition's team-group id in the section slot; the
+    server 302-redirects to that season's friendly `schedules/<...>/<tg>.html` page (the path
+    segment differs between league and cups -- the redirect handles it). Works for every
+    competition and every season. `fetch.get` follows the redirect. NB: like the stats element,
+    this uses the `M2:gp::` action with a bare id and no display verb.
+    """
+    return (
+        f"{ELEMENTS_BASE}/scripts/runisa.dll?"
+        f"M2:gp::{ORG}+Elements/Display+E+{CUP_INDEX_ELEMENT}++{tg}"
+    )

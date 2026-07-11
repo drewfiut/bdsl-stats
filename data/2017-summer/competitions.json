@@ -2,41 +2,65 @@
   {
     "competition": "Premier",
     "comp_type": "league",
-    "tg": "87148545"
+    "tg": "87148545",
+    "champion_club_id": "10350991",
+    "champion_name": "BSC Raiders",
+    "champion_via": "playoff"
   },
   {
     "competition": "Championship",
     "comp_type": "league",
-    "tg": "87148549"
+    "tg": "87148549",
+    "champion_club_id": "12579600",
+    "champion_name": "Wolves FC",
+    "champion_via": "playoff"
   },
   {
     "competition": "1st Division",
     "comp_type": "league",
-    "tg": "87148547"
+    "tg": "87148547",
+    "champion_club_id": "75479650",
+    "champion_name": "Pendleton United FC",
+    "champion_via": "playoff"
   },
   {
     "competition": "2nd Division",
     "comp_type": "league",
-    "tg": "87148548"
+    "tg": "87148548",
+    "champion_club_id": "75159918",
+    "champion_name": "Blizzard FC",
+    "champion_via": "playoff"
   },
   {
     "competition": "3rd Division",
     "comp_type": "league",
-    "tg": "87148550"
+    "tg": "87148550",
+    "champion_club_id": "75159990",
+    "champion_name": "Great White Buffalo",
+    "champion_via": "playoff"
   },
   {
     "competition": "Over 35",
     "comp_type": "over35",
-    "tg": "87148551"
+    "tg": "87148551",
+    "champion_club_id": "75159990",
+    "champion_name": "Great White Buffalo",
+    "champion_via": "playoff"
   },
   {
     "competition": "Tehel Cup Bracket",
     "comp_type": "cup",
-    "tg": "87490281"
+    "tg": "87490281",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "BDSL Wood Cup Bracket",
     "comp_type": "cup",
-    "tg": "87493250"
+    "tg": "87493250",
+    "champion_club_id": "75479674",
+    "champion_name": "Los Chupacabras",
+    "champion_via": "playoff"
   }
 ]

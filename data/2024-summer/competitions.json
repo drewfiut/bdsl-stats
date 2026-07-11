@@ -2,51 +2,81 @@
   {
     "competition": "Premier",
     "comp_type": "league",
-    "tg": "112617816"
+    "tg": "112617816",
+    "champion_club_id": "26895907",
+    "champion_name": "Amherst Sharpshooters",
+    "champion_via": "playoff"
   },
   {
     "competition": "Championship",
     "comp_type": "league",
-    "tg": "112617820"
+    "tg": "112617820",
+    "champion_club_id": "",
+    "champion_name": "",
+    "champion_via": ""
   },
   {
     "competition": "1st Division",
     "comp_type": "league",
-    "tg": "112617818"
+    "tg": "112617818",
+    "champion_club_id": "95088661",
+    "champion_name": "Westside Blitz",
+    "champion_via": "playoff"
   },
   {
     "competition": "2nd Division",
     "comp_type": "league",
-    "tg": "112617819"
+    "tg": "112617819",
+    "champion_club_id": "10359092",
+    "champion_name": "Ukraine",
+    "champion_via": "playoff"
   },
   {
     "competition": "3rd Division",
     "comp_type": "league",
-    "tg": "112617823"
+    "tg": "112617823",
+    "champion_club_id": "110307763",
+    "champion_name": "Buffalo Night",
+    "champion_via": "playoff"
   },
   {
     "competition": "4th Divison",
     "comp_type": "league",
-    "tg": "112617821"
+    "tg": "112617821",
+    "champion_club_id": "31566782",
+    "champion_name": "Rust Belt United",
+    "champion_via": "playoff"
   },
   {
     "competition": "Over 35",
     "comp_type": "over35",
-    "tg": "112617822"
+    "tg": "112617822",
+    "champion_club_id": "46512672",
+    "champion_name": "Blue Stars FC",
+    "champion_via": "playoff"
   },
   {
     "competition": "Matthews Cup",
     "comp_type": "cup",
-    "tg": "113089835"
+    "tg": "113089835",
+    "champion_club_id": "98469009",
+    "champion_name": "Infinity FC",
+    "champion_via": "playoff"
   },
   {
     "competition": "Tehel Cup",
     "comp_type": "cup",
-    "tg": "113089912"
+    "tg": "113089912",
+    "champion_club_id": "26895907",
+    "champion_name": "Amherst Sharpshooters",
+    "champion_via": "playoff"
   },
   {
     "competition": "Wood Cup",
     "comp_type": "cup",
-    "tg": "113089997"
+    "tg": "113089997",
+    "champion_club_id": "110307225",
+    "champion_name": "Buffalo Stallions FC",
+    "champion_via": "playoff"
   }
 ]

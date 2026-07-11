@@ -1,0 +1,543 @@
+game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id,home_name,away_club_id,away_name,home_score,away_score,status,result_note,location
+9068259,100605895,Premier,league,9456,QF1,2021-08-01,6:00 pm,10359035,Queenston FC,10359050,Lackawanna FCY,2,0,played,,Niagara Falls High School Front
+9068260,100605895,Premier,league,9457,QF2,2021-08-01,8:00 pm,10359017,Celtic United,10350991,BSC Raiders,1,1,played,PK,Sahlen's Sports Park Flash Field 1
+9068261,100605895,Premier,league,9458,SF1,2021-08-08,8:00 pm,18647016,Buffalo United SS,10350991,BSC Raiders,0,3,played,,D'Youville College Dobson Field
+9068262,100605895,Premier,league,9459,SF2,2021-08-08,8:00 pm,26895907,Amherst Sharpshooters,10359035,Queenston FC,1,2,played,,Sahlen's Sports Park Flash Field 1
+9068263,100605895,Premier,league,9460,CHMP,2021-08-15,7:30 pm,10359035,Queenston FC,10350991,BSC Raiders,1,3,played,,Sahlen's Sports Park Flash Field 2
+9007930,100605895,Premier,league,7001,,2021-05-02,6:00 pm,75159801,OP Alliance,18647016,Buffalo United SS,1,6,played,,Mulroy Park Pierce Field
+9007931,100605895,Premier,league,7002,,2021-05-02,6:00 pm,10359035,Queenston FC,59261096,Beast City SC,5,0,played,,Niagara Falls High School Front
+9007932,100605895,Premier,league,7003,,2021-05-02,6:00 pm,10359047,Inter SC,10359017,Celtic United,2,4,played,,Nichols School Peek
+9007933,100605895,Premier,league,7004,,2021-05-02,6:00 pm,26895907,Amherst Sharpshooters,75479641,Williamsville Willies,2,1,played,,Nichols School Strauss Truscott
+9007934,100605895,Premier,league,7005,,2021-05-02,6:00 pm,10359023,Polonia,10359005,Clarence,6,1,played,,Sahlen's Sports Park Flash Field 1
+9007935,100605895,Premier,league,7006,,2021-05-02,8:00 pm,10350991,BSC Raiders,10359050,Lackawanna FCY,2,4,played,,Kenmore East Sparky Adams Field
+9007937,100605895,Premier,league,7008,,2021-05-09,2:00 pm,10359017,Celtic United,26895907,Amherst Sharpshooters,2,4,played,,Nichols School Strauss Truscott
+9007936,100605895,Premier,league,7007,,2021-05-09,4:00 pm,75479641,Williamsville Willies,10359047,Inter SC,3,4,played,,Nichols School Peek
+9007938,100605895,Premier,league,7009,,2021-05-09,6:00 pm,10359035,Queenston FC,10350991,BSC Raiders,5,0,played,,Niagara Falls High School Front
+9007939,100605895,Premier,league,7010,,2021-05-09,8:00 pm,18647016,Buffalo United SS,10359023,Polonia,5,0,played,,D'Youville College Dobson Field
+9007940,100605895,Premier,league,7011,,2021-05-09,8:00 pm,59261096,Beast City SC,10359050,Lackawanna FCY,1,3,played,,Medaille College Sports Complex
+9007941,100605895,Premier,league,7012,,2021-05-09,8:00 pm,10359005,Clarence,75159801,OP Alliance,0,0,played,,Sahlen's Sports Park Flash Field 1
+9007942,100605895,Premier,league,7013,,2021-05-16,2:00 pm,75159801,OP Alliance,10359023,Polonia,0,3,played,,Mulroy Park Pierce Field
+9007943,100605895,Premier,league,7014,,2021-05-16,6:00 pm,10359047,Inter SC,26895907,Amherst Sharpshooters,1,2,played,,Nichols School Peek
+9007944,100605895,Premier,league,7015,,2021-05-16,6:00 pm,75479641,Williamsville Willies,10359035,Queenston FC,0,2,played,,Nichols School Strauss Truscott
+9007946,100605895,Premier,league,7017,,2021-05-17,8:00 pm,18647016,Buffalo United SS,10359017,Celtic United,1,0,played,,D'Youville College Dobson Field
+9007948,100605895,Premier,league,7019,,2021-05-23,4:00 pm,75159801,OP Alliance,26895907,Amherst Sharpshooters,3,4,played,,Mulroy Park Pierce Field
+9007949,100605895,Premier,league,7020,,2021-05-23,4:00 pm,75479641,Williamsville Willies,10359023,Polonia,3,0,played,,Nichols School Peek
+9007950,100605895,Premier,league,7021,,2021-05-23,4:00 pm,10359017,Celtic United,10359005,Clarence,7,2,played,,Nichols School Strauss Truscott
+9007951,100605895,Premier,league,7022,,2021-05-23,6:00 pm,10359035,Queenston FC,10359050,Lackawanna FCY,2,0,played,FT,Niagara Falls High School Front
+9007953,100605895,Premier,league,7024,,2021-05-24,8:00 pm,10350991,BSC Raiders,18647016,Buffalo United SS,1,2,played,,Kenmore East Sparky Adams Field
+9007952,100605895,Premier,league,7023,,2021-05-27,8:30 pm,59261096,Beast City SC,10359047,Inter SC,2,3,played,,Sahlen's Sports Park Flash Field 1
+9007954,100605895,Premier,league,7025,,2021-06-06,2:00 pm,10359017,Celtic United,75159801,OP Alliance,1,0,played,,Nichols School Strauss Truscott
+9007955,100605895,Premier,league,7026,,2021-06-06,6:00 pm,18647016,Buffalo United SS,10359047,Inter SC,1,0,played,,D'Youville College Dobson Field
+9007956,100605895,Premier,league,7027,,2021-06-06,6:00 pm,10359050,Lackawanna FCY,75479641,Williamsville Willies,2,1,played,,Nardin Academy Athletic Fields Complex 1
+9007957,100605895,Premier,league,7028,,2021-06-06,6:00 pm,10359005,Clarence,10359035,Queenston FC,0,2,played,,Sahlen's Sports Park Flash Field 1
+9007958,100605895,Premier,league,7029,,2021-06-07,8:00 pm,10350991,BSC Raiders,26895907,Amherst Sharpshooters,0,3,played,,Kenmore East Sparky Adams Field
+9007959,100605895,Premier,league,7030,,2021-06-07,8:30 pm,10359023,Polonia,59261096,Beast City SC,1,2,played,,Sahlen's Sports Park Flash Field 1
+9007960,100605895,Premier,league,7031,,2021-06-13,2:00 pm,26895907,Amherst Sharpshooters,10359050,Lackawanna FCY,2,0,played,FT,Nichols School Strauss Truscott
+9007964,100605895,Premier,league,7035,,2021-06-13,4:00 pm,59261096,Beast City SC,75479641,Williamsville Willies,1,3,played,,Mulroy Park Pierce Field
+9007962,100605895,Premier,league,7033,,2021-06-13,6:00 pm,10359017,Celtic United,10350991,BSC Raiders,2,3,played,,Nichols School Strauss Truscott
+9007963,100605895,Premier,league,7034,,2021-06-13,6:00 pm,10359023,Polonia,10359047,Inter SC,0,4,played,,Sahlen's Sports Park Flash Field 1
+9007965,100605895,Premier,league,7036,,2021-06-13,8:00 pm,10359005,Clarence,18647016,Buffalo United SS,3,1,played,,Sahlen's Sports Park Flash Field 1
+9007966,100605895,Premier,league,7037,,2021-06-20,6:00 pm,18647016,Buffalo United SS,59261096,Beast City SC,4,3,played,,D'Youville College Dobson Field
+9007968,100605895,Premier,league,7039,,2021-06-20,6:00 pm,75159801,OP Alliance,75479641,Williamsville Willies,1,0,played,,Mulroy Park Pierce Field
+9007969,100605895,Premier,league,7040,,2021-06-20,6:30 pm,26895907,Amherst Sharpshooters,10359035,Queenston FC,0,2,played,,Nichols School Strauss Truscott
+9007970,100605895,Premier,league,7041,,2021-06-20,8:00 pm,10359023,Polonia,10359017,Celtic United,1,3,played,,Sahlen's Sports Park Flash Field 1
+9007967,100605895,Premier,league,7038,,2021-06-21,8:00 pm,10359050,Lackawanna FCY,10359047,Inter SC,0,0,played,,Mulroy Park Pierce Field
+9007971,100605895,Premier,league,7042,,2021-06-21,8:30 pm,10359005,Clarence,10350991,BSC Raiders,1,6,played,,Sahlen's Sports Park Flash Field 1
+9007972,100605895,Premier,league,7043,,2021-06-27,4:00 pm,75159801,OP Alliance,59261096,Beast City SC,3,0,played,,Mulroy Park Pierce Field
+9007973,100605895,Premier,league,7044,,2021-06-27,4:00 pm,26895907,Amherst Sharpshooters,10359005,Clarence,6,1,played,,Nichols School Strauss Truscott
+9007975,100605895,Premier,league,7046,,2021-06-27,6:00 pm,10359035,Queenston FC,10359023,Polonia,0,2,played,,Niagara Falls High School Front
+9007974,100605895,Premier,league,7045,,2021-06-27,8:00 pm,10359017,Celtic United,75479641,Williamsville Willies,2,0,played,,Mulroy Park Pierce Field
+9007976,100605895,Premier,league,7047,,2021-06-28,8:00 pm,18647016,Buffalo United SS,10359050,Lackawanna FCY,3,0,played,,D'Youville College Dobson Field
+9007977,100605895,Premier,league,7048,,2021-06-28,8:00 pm,10350991,BSC Raiders,10359047,Inter SC,4,0,played,,Kenmore East Sparky Adams Field
+9007961,100605895,Premier,league,7032,,2021-07-01,6:30 pm,10359035,Queenston FC,75159801,OP Alliance,2,2,played,,Niagara Falls High School Front
+9007979,100605895,Premier,league,7050,,2021-07-11,4:00 pm,59261096,Beast City SC,10359005,Clarence,0,2,played,FT,Sahlen's Sports Park Flash Field 2
+9007980,100605895,Premier,league,7051,,2021-07-11,6:00 pm,10359035,Queenston FC,18647016,Buffalo United SS,1,1,played,,Niagara Falls High School Front
+9007981,100605895,Premier,league,7052,,2021-07-11,6:00 pm,10359047,Inter SC,75159801,OP Alliance,1,0,played,,Nichols School Peek
+9007982,100605895,Premier,league,7053,,2021-07-11,6:00 pm,75479641,Williamsville Willies,10350991,BSC Raiders,0,2,played,,Nichols School Strauss Truscott
+9007983,100605895,Premier,league,7054,,2021-07-11,8:00 pm,10359023,Polonia,26895907,Amherst Sharpshooters,2,2,played,,Sahlen's Sports Park Flash Field 1
+9007978,100605895,Premier,league,7049,,2021-07-12,6:30 pm,10359050,Lackawanna FCY,10359017,Celtic United,1,1,played,,Mulroy Park Pierce Field
+9007984,100605895,Premier,league,7055,,2021-07-18,2:00 pm,10359047,Inter SC,10359005,Clarence,1,1,played,,Nichols School Peek
+9007985,100605895,Premier,league,7056,,2021-07-18,4:00 pm,10359017,Celtic United,10359035,Queenston FC,3,2,played,,Kenmore West Crosby Field
+9007988,100605895,Premier,league,7059,,2021-07-18,6:00 pm,26895907,Amherst Sharpshooters,59261096,Beast City SC,2,0,played,FT,
+9007987,100605895,Premier,league,7058,,2021-07-18,6:00 pm,75479641,Williamsville Willies,18647016,Buffalo United SS,1,2,played,,Nichols School Peek
+9007986,100605895,Premier,league,7057,,2021-07-19,6:30 pm,10359050,Lackawanna FCY,75159801,OP Alliance,0,1,played,,Mulroy Park Pierce Field
+9007989,100605895,Premier,league,7060,,2021-07-19,8:00 pm,10350991,BSC Raiders,10359023,Polonia,2,0,played,,Kenmore East Sparky Adams Field
+9007947,100605895,Premier,league,7018,,2021-07-21,7:30 pm,10359005,Clarence,10359050,Lackawanna FCY,3,5,played,,Mulroy Park Pierce Field
+9007990,100605895,Premier,league,7061,,2021-07-25,4:00 pm,10359047,Inter SC,10359035,Queenston FC,0,2,played,,Nichols School Peek
+9007991,100605895,Premier,league,7062,,2021-07-25,6:00 pm,18647016,Buffalo United SS,26895907,Amherst Sharpshooters,3,2,played,,D'Youville College Dobson Field
+9007994,100605895,Premier,league,7065,,2021-07-25,6:00 pm,75159801,OP Alliance,10350991,BSC Raiders,1,2,played,,Mulroy Park Pierce Field
+9007995,100605895,Premier,league,7066,,2021-07-25,6:00 pm,75479641,Williamsville Willies,10359005,Clarence,3,2,played,,Nichols School Strauss Truscott
+9007993,100605895,Premier,league,7064,,2021-07-25,8:00 pm,59261096,Beast City SC,10359017,Celtic United,0,2,played,FT,Sahlen's Sports Park Flash Field 1
+9007992,100605895,Premier,league,7063,,2021-07-26,6:30 pm,10359050,Lackawanna FCY,10359023,Polonia,3,2,played,,Mulroy Park Pierce Field
+9007945,100605895,Premier,league,7016,,2021-07-26,8:00 pm,59261096,Beast City SC,10350991,BSC Raiders,0,2,played,FT,
+9068265,100605899,Championship,league,9462,QF2,2021-08-01,8:00 pm,75479674,Los Chupacabras,12579600,Wolves FC,2,3,played,,D'Youville College Dobson Field
+9068264,100605899,Championship,league,9461,QF1,2021-08-05,6:45 pm,45429017,Borussia Bees,10359074,Lykan FC,1,3,played,,Mulroy Park Pierce Field
+9068266,100605899,Championship,league,9463,SF1,2021-08-08,2:00 pm,91256980,Olean 1854 FC,10359074,Lykan FC,2,1,played,OT,St. Bonaventure Marra Fields Complex
+9068267,100605899,Championship,league,9464,SF2,2021-08-08,4:00 pm,91256977,Lykan United,12579600,Wolves FC,2,5,played,,Sahlen's Sports Park Flash Field 1
+9068268,100605899,Championship,league,9465,CHMP,2021-08-15,7:00 pm,91256980,Olean 1854 FC,12579600,Wolves FC,2,4,played,,Sahlen's Sports Park Flash Field 1
+9008003,100605899,Championship,league,7201,,2021-05-02,4:00 pm,15294627,Niagara FC,45429017,Borussia Bees,4,1,played,,Niagara Falls High School Front
+9008005,100605899,Championship,league,7203,,2021-05-02,6:00 pm,10359086,Rangers,75159921,West Side FC,0,4,played,,D'Youville College Dobson Field
+9008008,100605899,Championship,league,7206,,2021-05-03,8:30 pm,10359074,Lykan FC,91256977,Lykan United,1,2,played,,Sahlen's Sports Park Flash Field 1
+9008009,100605899,Championship,league,7207,,2021-05-09,4:00 pm,10359008,Roos FC,10359074,Lykan FC,0,2,played,,Medaille College Sports Complex
+9008010,100605899,Championship,league,7208,,2021-05-09,4:00 pm,12579600,Wolves FC,91256980,Olean 1854 FC,1,4,played,,Sahlen's Sports Park Flash Field 2
+9008011,100605899,Championship,league,7209,,2021-05-09,6:00 pm,75159921,West Side FC,15294627,Niagara FC,1,0,played,,D'Youville College Dobson Field
+9008013,100605899,Championship,league,7211,,2021-05-09,6:00 pm,45429017,Borussia Bees,75479674,Los Chupacabras,5,3,played,,Niagara Falls High School Back
+9008014,100605899,Championship,league,7212,,2021-05-10,8:00 pm,10359086,Rangers,95088186,Cavallucci Marini,0,5,played,,D'Youville College Dobson Field
+9008015,100605899,Championship,league,7213,,2021-05-16,4:00 pm,10359086,Rangers,75479674,Los Chupacabras,0,6,played,,D'Youville College Dobson Field
+9008017,100605899,Championship,league,7215,,2021-05-16,4:00 pm,15294627,Niagara FC,91256980,Olean 1854 FC,0,2,played,,Niagara Falls High School Back
+9008018,100605899,Championship,league,7216,,2021-05-16,4:00 pm,45429017,Borussia Bees,12579600,Wolves FC,3,1,played,,Niagara Falls High School Front
+9008016,100605899,Championship,league,7214,,2021-05-16,5:00 pm,10359008,Roos FC,95088186,Cavallucci Marini,2,2,played,,Sahlen's Sports Park Flash Field 1
+9008019,100605899,Championship,league,7217,,2021-05-16,6:00 pm,75159921,West Side FC,91256977,Lykan United,2,5,played,,D'Youville College Dobson Field
+9008021,100605899,Championship,league,7219,,2021-05-23,2:00 pm,95088186,Cavallucci Marini,10359074,Lykan FC,2,0,played,,Sahlen's Sports Park Flash Field 1
+9008022,100605899,Championship,league,7220,,2021-05-23,4:00 pm,15294627,Niagara FC,75479674,Los Chupacabras,0,1,played,,Niagara Falls High School Back
+9008023,100605899,Championship,league,7221,,2021-05-23,4:00 pm,12579600,Wolves FC,91256977,Lykan United,1,2,played,,Sahlen's Sports Park Flash Field 1
+9008024,100605899,Championship,league,7222,,2021-05-23,4:00 pm,91256980,Olean 1854 FC,10359086,Rangers,2,0,played,FT,St. Bonaventure Marra Fields Complex
+9008025,100605899,Championship,league,7223,,2021-05-23,6:00 pm,75159921,West Side FC,10359008,Roos FC,1,3,played,,D'Youville College Dobson Field
+9008004,100605899,Championship,league,7202,,2021-05-26,7:45 pm,91256980,Olean 1854 FC,10359008,Roos FC,5,0,played,,St. Bonaventure Marra Fields Complex
+9008030,100605899,Championship,league,7228,,2021-06-06,2:00 pm,91256977,Lykan United,45429017,Borussia Bees,1,1,played,,Sahlen's Sports Park Flash Field 1
+9008027,100605899,Championship,league,7225,,2021-06-06,4:00 pm,10359086,Rangers,12579600,Wolves FC,0,2,played,,D'Youville College Dobson Field
+9008029,100605899,Championship,league,7227,,2021-06-06,4:00 pm,95088186,Cavallucci Marini,75159921,West Side FC,2,2,played,,Sahlen's Sports Park Flash Field 1
+9008032,100605899,Championship,league,7230,,2021-06-06,6:00 pm,75479674,Los Chupacabras,10359074,Lykan FC,1,1,played,,Niagara University Field
+9008031,100605899,Championship,league,7229,,2021-06-06,8:00 pm,10359008,Roos FC,15294627,Niagara FC,2,1,played,,Nardin Academy Athletic Fields Complex 1
+9008033,100605899,Championship,league,7231,,2021-06-13,2:00 pm,10359074,Lykan FC,15294627,Niagara FC,3,1,played,,Sahlen's Sports Park Flash Field 1
+9008034,100605899,Championship,league,7232,,2021-06-13,4:00 pm,45429017,Borussia Bees,10359086,Rangers,3,1,played,,Niagara University Field
+9008035,100605899,Championship,league,7233,,2021-06-13,4:00 pm,91256980,Olean 1854 FC,75479674,Los Chupacabras,2,0,played,FT,St. Bonaventure Marra Fields Complex
+9008037,100605899,Championship,league,7235,,2021-06-13,6:00 pm,95088186,Cavallucci Marini,91256977,Lykan United,2,4,played,,Sahlen's Sports Park Flash Field 2
+9008038,100605899,Championship,league,7236,,2021-06-13,8:00 pm,12579600,Wolves FC,10359008,Roos FC,2,2,played,,Sahlen's Sports Park Flash Field 2
+9008042,100605899,Championship,league,7240,,2021-06-20,2:00 pm,10359074,Lykan FC,75159921,West Side FC,4,1,played,,Sahlen's Sports Park Flash Field 1
+9008039,100605899,Championship,league,7237,,2021-06-20,4:00 pm,10359086,Rangers,91256977,Lykan United,0,7,played,,D'Youville College Dobson Field
+9008040,100605899,Championship,league,7238,,2021-06-20,4:00 pm,75479674,Los Chupacabras,12579600,Wolves FC,2,1,played,,Niagara University Field
+9008041,100605899,Championship,league,7239,,2021-06-20,4:00 pm,95088186,Cavallucci Marini,91256980,Olean 1854 FC,0,4,played,,Sahlen's Sports Park Flash Field 1
+9008044,100605899,Championship,league,7242,,2021-06-20,8:00 pm,10359008,Roos FC,45429017,Borussia Bees,1,6,played,,Niagara University Field
+9008046,100605899,Championship,league,7244,,2021-06-27,2:00 pm,91256977,Lykan United,15294627,Niagara FC,1,1,played,,Sahlen's Sports Park Flash Field 1
+9008049,100605899,Championship,league,7247,,2021-06-27,2:00 pm,10359074,Lykan FC,12579600,Wolves FC,0,4,played,,Sahlen's Sports Park Flash Field 2
+9008045,100605899,Championship,league,7243,,2021-06-27,4:00 pm,75159921,West Side FC,91256980,Olean 1854 FC,0,1,played,,D'Youville College Dobson Field
+9008047,100605899,Championship,league,7245,,2021-06-27,4:00 pm,45429017,Borussia Bees,95088186,Cavallucci Marini,3,0,played,,Niagara University Field
+9008050,100605899,Championship,league,7248,,2021-06-27,6:00 pm,75479674,Los Chupacabras,10359008,Roos FC,1,0,played,,Niagara University Field
+9008053,100605899,Championship,league,7251,,2021-07-11,2:00 pm,91256977,Lykan United,75479674,Los Chupacabras,2,1,played,,Sahlen's Sports Park Flash Field 2
+9008051,100605899,Championship,league,7249,,2021-07-11,4:00 pm,10359074,Lykan FC,10359086,Rangers,1,0,played,,D'Youville College Dobson Field
+9008052,100605899,Championship,league,7250,,2021-07-11,4:00 pm,91256980,Olean 1854 FC,45429017,Borussia Bees,2,0,played,,St. Bonaventure Marra Fields Complex
+9008054,100605899,Championship,league,7252,,2021-07-11,6:00 pm,12579600,Wolves FC,75159921,West Side FC,5,0,played,,Sahlen's Sports Park Flash Field 1
+9008056,100605899,Championship,league,7254,,2021-07-11,8:00 pm,95088186,Cavallucci Marini,15294627,Niagara FC,3,2,played,,Sahlen's Sports Park Flash Field 2
+9008057,100605899,Championship,league,7255,,2021-07-18,3:00 pm,91256977,Lykan United,91256980,Olean 1854 FC,1,1,played,,Nardin Academy Athletic Fields Complex 1
+9008059,100605899,Championship,league,7257,,2021-07-18,4:00 pm,45429017,Borussia Bees,10359074,Lykan FC,3,2,played,,Niagara University Field
+9008061,100605899,Championship,league,7259,,2021-07-18,8:00 pm,75479674,Los Chupacabras,75159921,West Side FC,3,0,played,,Niagara University Field
+9008062,100605899,Championship,league,7260,,2021-07-18,8:00 pm,12579600,Wolves FC,15294627,Niagara FC,1,0,played,,Sahlen's Sports Park Flash Field 1
+9008058,100605899,Championship,league,7256,,2021-07-18,8:30 pm,10359008,Roos FC,10359086,Rangers,8,2,played,,D'Youville College Dobson Field
+9008063,100605899,Championship,league,7261,,2021-07-25,4:00 pm,15294627,Niagara FC,10359086,Rangers,5,1,played,,Niagara University Field
+9008065,100605899,Championship,league,7263,,2021-07-25,4:00 pm,91256980,Olean 1854 FC,10359074,Lykan FC,1,0,played,,St. Bonaventure Marra Fields Complex
+9008067,100605899,Championship,league,7265,,2021-07-25,6:00 pm,75479674,Los Chupacabras,95088186,Cavallucci Marini,3,2,played,,Niagara University Field
+9008068,100605899,Championship,league,7266,,2021-07-25,8:00 pm,75159921,West Side FC,45429017,Borussia Bees,3,9,played,,D'Youville College Dobson Field
+9008066,100605899,Championship,league,7264,,2021-07-25,8:00 pm,91256977,Lykan United,10359008,Roos FC,1,0,played,,Sahlen's Sports Park Flash Field 2
+9008007,100605899,Championship,league,7205,,2021-07-26,8:30 pm,95088186,Cavallucci Marini,12579600,Wolves FC,2,3,played,,Sahlen's Sports Park Flash Field 1
+9068270,100605897,1st Division,league,9467,QF2,2021-08-01,2:00 pm,10359117,Buffalo Italia FC,26891552,Buffalo Celtic,1,0,played,,Sahlen's Sports Park Flash Field 1
+9068271,100605897,1st Division,league,9468,QF3,2021-08-01,4:00 pm,10359111,Crimson SPAL FC,100607465,Polonia Legacy,1,2,played,,Grand Island Veteran's Park Back Field 6/8
+9068269,100605897,1st Division,league,9466,QF1,2021-08-01,4:00 pm,91257544,NY Elite,75479689,Delco Academy,1,0,played,,Sahlen's Sports Park Flash Field 2
+9068272,100605897,1st Division,league,9469,SF1,2021-08-08,4:00 pm,75159915,NMB FC,100607465,Polonia Legacy,1,0,played,,Nichols School Strauss Truscott
+9068273,100605897,1st Division,league,9470,SF2,2021-08-08,4:00 pm,91257544,NY Elite,10359117,Buffalo Italia FC,0,3,played,,Sahlen's Sports Park Flash Field 2
+9068274,100605897,1st Division,league,9471,CHMP,2021-08-15,3:00 pm,75159915,NMB FC,10359117,Buffalo Italia FC,1,2,played,,Sahlen's Sports Park Flash Field 2
+9008077,100605897,1st Division,league,7401,,2021-05-02,4:00 pm,26891552,Buffalo Celtic,10359062,Tonawanda United,2,0,played,,Kenmore West Crosby Field
+9008078,100605897,1st Division,league,7402,,2021-05-02,4:00 pm,95088490,USAB FC,75159915,NMB FC,1,5,played,,Nichols School Strauss Truscott
+9008079,100605897,1st Division,league,7403,,2021-05-02,4:00 pm,91257544,NY Elite,75479689,Delco Academy,1,1,played,,Sahlen's Sports Park Flash Field 1
+9008080,100605897,1st Division,league,7404,,2021-05-02,6:00 pm,75479647,Celtic 1888,75479662,Celtic Brigade,0,3,played,,Kenmore West Crosby Field
+9008081,100605897,1st Division,league,7405,,2021-05-02,6:00 pm,75479680,Honey Badgers,100607465,Polonia Legacy,2,8,played,,Sahlen's Sports Park Flash Field 2
+9008082,100605897,1st Division,league,7406,,2021-05-02,8:00 pm,62886844,Sahara Gunners FC,10359111,Crimson SPAL FC,0,2,played,FT,D'Youville College Dobson Field
+9008083,100605897,1st Division,league,7407,,2021-05-03,8:30 pm,10359117,Buffalo Italia FC,67527670,FC Quake,4,2,played,,Sahlen's Sports Park Flash Field 2
+9008084,100605897,1st Division,league,7408,,2021-05-09,2:00 pm,67527670,FC Quake,75479647,Celtic 1888,2,3,played,,Mulroy Park Pierce Field
+9008085,100605897,1st Division,league,7409,,2021-05-09,2:00 pm,75479689,Delco Academy,95088490,USAB FC,3,2,played,,Nichols School Peek
+9008086,100605897,1st Division,league,7410,,2021-05-09,4:00 pm,62886844,Sahara Gunners FC,10359117,Buffalo Italia FC,2,2,played,,D'Youville College Dobson Field
+9008087,100605897,1st Division,league,7411,,2021-05-09,4:00 pm,10359111,Crimson SPAL FC,75479680,Honey Badgers,4,2,played,,Niagara Falls High School Front
+9008088,100605897,1st Division,league,7412,,2021-05-09,6:00 pm,75479662,Celtic Brigade,26891552,Buffalo Celtic,2,4,played,,Kenmore West Crosby Field
+9008089,100605897,1st Division,league,7413,,2021-05-09,6:00 pm,91257544,NY Elite,10359062,Tonawanda United,3,0,played,,Sahlen's Sports Park Flash Field 1
+9008090,100605897,1st Division,league,7414,,2021-05-09,8:00 pm,100607465,Polonia Legacy,75159915,NMB FC,1,4,played,,Sahlen's Sports Park Flash Field 2
+9008091,100605897,1st Division,league,7415,,2021-05-16,4:00 pm,26891552,Buffalo Celtic,75479647,Celtic 1888,0,5,played,,Kenmore West Crosby Field
+9008092,100605897,1st Division,league,7416,,2021-05-16,4:00 pm,67527670,FC Quake,91257544,NY Elite,1,4,played,,Mulroy Park Pierce Field
+9008093,100605897,1st Division,league,7417,,2021-05-16,4:00 pm,75159915,NMB FC,75479689,Delco Academy,2,1,played,,Nichols School Peek
+9008095,100605897,1st Division,league,7419,,2021-05-16,6:00 pm,10359062,Tonawanda United,10359117,Buffalo Italia FC,0,2,played,,Ives Pond 1
+9008096,100605897,1st Division,league,7420,,2021-05-17,6:30 pm,100607465,Polonia Legacy,75479662,Celtic Brigade,1,1,played,,Mulroy Park Pierce Field
+9008097,100605897,1st Division,league,7421,,2021-05-17,8:30 pm,75479680,Honey Badgers,62886844,Sahara Gunners FC,0,5,played,,Sahlen's Sports Park Flash Field 1
+9008094,100605897,1st Division,league,7418,,2021-05-18,6:30 pm,10359111,Crimson SPAL FC,95088490,USAB FC,6,2,played,,D'Youville College Dobson Field
+9008098,100605897,1st Division,league,7422,,2021-05-23,2:00 pm,75479689,Delco Academy,75479662,Celtic Brigade,1,1,played,,Nichols School Peek
+9008099,100605897,1st Division,league,7423,,2021-05-23,2:00 pm,75159915,NMB FC,26891552,Buffalo Celtic,1,0,played,,Nichols School Strauss Truscott
+9008104,100605897,1st Division,league,7428,,2021-05-23,4:00 pm,10359117,Buffalo Italia FC,95088490,USAB FC,4,0,played,,D'Youville College Dobson Field
+9008100,100605897,1st Division,league,7424,,2021-05-23,4:00 pm,75479647,Celtic 1888,100607465,Polonia Legacy,0,2,played,,Kenmore West Crosby Field
+9008101,100605897,1st Division,league,7425,,2021-05-23,4:00 pm,91257544,NY Elite,75479680,Honey Badgers,2,1,played,,Sahlen's Sports Park Flash Field 2
+9008102,100605897,1st Division,league,7426,,2021-05-23,6:00 pm,10359062,Tonawanda United,62886844,Sahara Gunners FC,0,5,played,,Ives Pond 1
+9008103,100605897,1st Division,league,7427,,2021-05-23,6:00 pm,67527670,FC Quake,10359111,Crimson SPAL FC,0,4,played,,Mulroy Park Pierce Field
+9008105,100605897,1st Division,league,7429,,2021-06-06,4:00 pm,10359111,Crimson SPAL FC,10359062,Tonawanda United,7,1,played,,Grand Island Veteran's Park Front Field 3
+9008106,100605897,1st Division,league,7430,,2021-06-06,4:00 pm,75479662,Celtic Brigade,91257544,NY Elite,0,4,played,,Kenmore West Crosby Field
+9008110,100605897,1st Division,league,7434,,2021-06-06,4:00 pm,10359117,Buffalo Italia FC,75479680,Honey Badgers,3,3,played,,Nardin Academy Athletic Fields Complex 1
+9008107,100605897,1st Division,league,7431,,2021-06-06,4:00 pm,95088490,USAB FC,75479647,Celtic 1888,2,0,played,,Nichols School Strauss Truscott
+9008108,100605897,1st Division,league,7432,,2021-06-06,6:00 pm,26891552,Buffalo Celtic,75479689,Delco Academy,2,1,played,,Kenmore West Crosby Field
+9008109,100605897,1st Division,league,7433,,2021-06-06,6:00 pm,75159915,NMB FC,67527670,FC Quake,1,0,played,,Nichols School Peek
+9008111,100605897,1st Division,league,7435,,2021-06-06,8:00 pm,100607465,Polonia Legacy,62886844,Sahara Gunners FC,1,3,played,,Sahlen's Sports Park Flash Field 2
+9008112,100605897,1st Division,league,7436,,2021-06-13,4:00 pm,10359062,Tonawanda United,75159915,NMB FC,2,5,played,,Ives Pond 1
+9008113,100605897,1st Division,league,7437,,2021-06-13,4:00 pm,26891552,Buffalo Celtic,100607465,Polonia Legacy,1,3,played,,Kenmore West Crosby Field
+9008114,100605897,1st Division,league,7438,,2021-06-13,4:00 pm,75479689,Delco Academy,10359117,Buffalo Italia FC,3,5,played,,Nichols School Peek
+9008115,100605897,1st Division,league,7439,,2021-06-13,4:00 pm,91257544,NY Elite,10359111,Crimson SPAL FC,3,2,played,,Sahlen's Sports Park Flash Field 1
+9008116,100605897,1st Division,league,7440,,2021-06-13,6:00 pm,75479647,Celtic 1888,75479680,Honey Badgers,1,1,played,,Kenmore West Crosby Field
+9008117,100605897,1st Division,league,7441,,2021-06-13,6:00 pm,67527670,FC Quake,95088490,USAB FC,0,0,played,,Mulroy Park Pierce Field
+9008118,100605897,1st Division,league,7442,,2021-06-13,8:00 pm,62886844,Sahara Gunners FC,75479662,Celtic Brigade,3,0,played,,D'Youville College Dobson Field
+9008119,100605897,1st Division,league,7443,,2021-06-20,2:00 pm,75159915,NMB FC,91257544,NY Elite,0,1,played,,Nichols School Peek
+9008120,100605897,1st Division,league,7444,,2021-06-20,2:00 pm,95088490,USAB FC,26891552,Buffalo Celtic,0,3,played,,Nichols School Strauss Truscott
+9008121,100605897,1st Division,league,7445,,2021-06-20,4:00 pm,75479662,Celtic Brigade,10359111,Crimson SPAL FC,1,0,played,,Kenmore West Crosby Field
+9008122,100605897,1st Division,league,7446,,2021-06-20,4:00 pm,67527670,FC Quake,62886844,Sahara Gunners FC,3,1,played,,Mulroy Park Pierce Field
+9008123,100605897,1st Division,league,7447,,2021-06-20,6:00 pm,75479680,Honey Badgers,75479689,Delco Academy,1,1,played,,Sahlen's Sports Park Flash Field 1
+9008124,100605897,1st Division,league,7448,,2021-06-20,8:00 pm,10359117,Buffalo Italia FC,75479647,Celtic 1888,7,3,played,,D'Youville College Dobson Field
+9008125,100605897,1st Division,league,7449,,2021-06-20,8:00 pm,100607465,Polonia Legacy,10359062,Tonawanda United,3,0,played,,Sahlen's Sports Park Flash Field 2
+9008126,100605897,1st Division,league,7450,,2021-06-27,4:00 pm,75479662,Celtic Brigade,75159915,NMB FC,0,4,played,,Irvington
+9008127,100605897,1st Division,league,7451,,2021-06-27,4:00 pm,75479680,Honey Badgers,67527670,FC Quake,1,1,played,,Sahlen's Sports Park Flash Field 1
+9008128,100605897,1st Division,league,7452,,2021-06-27,6:00 pm,62886844,Sahara Gunners FC,75479647,Celtic 1888,5,0,played,,D'Youville College Dobson Field
+9008129,100605897,1st Division,league,7453,,2021-06-27,6:00 pm,10359062,Tonawanda United,75479689,Delco Academy,4,5,played,,Ives Pond 1
+9008130,100605897,1st Division,league,7454,,2021-06-27,6:00 pm,100607465,Polonia Legacy,10359111,Crimson SPAL FC,0,1,played,,Sahlen's Sports Park Flash Field 1
+9008131,100605897,1st Division,league,7455,,2021-06-27,8:00 pm,10359117,Buffalo Italia FC,26891552,Buffalo Celtic,3,2,played,,D'Youville College Dobson Field
+9008132,100605897,1st Division,league,7456,,2021-06-27,8:00 pm,91257544,NY Elite,95088490,USAB FC,2,1,played,,Sahlen's Sports Park Flash Field 1
+9008133,100605897,1st Division,league,7457,,2021-07-11,4:00 pm,10359062,Tonawanda United,75479662,Celtic Brigade,6,0,played,,Ives Pond 1
+9008134,100605897,1st Division,league,7458,,2021-07-11,4:00 pm,75479647,Celtic 1888,91257544,NY Elite,0,2,played,,Kenmore West Crosby Field
+9008135,100605897,1st Division,league,7459,,2021-07-11,4:00 pm,95088490,USAB FC,75479680,Honey Badgers,1,2,played,,Nichols School Strauss Truscott
+9008136,100605897,1st Division,league,7460,,2021-07-11,6:00 pm,62886844,Sahara Gunners FC,75159915,NMB FC,1,2,played,,D'Youville College Dobson Field
+9008138,100605897,1st Division,league,7462,,2021-07-11,6:00 pm,26891552,Buffalo Celtic,67527670,FC Quake,0,1,played,,Kenmore West Crosby Field
+9008137,100605897,1st Division,league,7461,,2021-07-12,6:30 pm,10359111,Crimson SPAL FC,10359117,Buffalo Italia FC,3,3,played,,Grand Island Veteran's Park Front Field 3
+9008139,100605897,1st Division,league,7463,,2021-07-12,8:00 pm,75479689,Delco Academy,100607465,Polonia Legacy,0,2,played,,D'Youville College Dobson Field
+9008140,100605897,1st Division,league,7464,,2021-07-18,2:00 pm,95088490,USAB FC,10359062,Tonawanda United,3,1,played,,Nichols School Strauss Truscott
+9008141,100605897,1st Division,league,7465,,2021-07-18,4:00 pm,75479689,Delco Academy,10359111,Crimson SPAL FC,1,3,played,,Nichols School Peek
+9008142,100605897,1st Division,league,7466,,2021-07-18,4:00 pm,75479680,Honey Badgers,26891552,Buffalo Celtic,0,2,played,,Sahlen's Sports Park Flash Field 1
+9008143,100605897,1st Division,league,7467,,2021-07-18,6:00 pm,75479662,Celtic Brigade,10359117,Buffalo Italia FC,2,4,played,,Kenmore West Crosby Field
+9008144,100605897,1st Division,league,7468,,2021-07-18,6:00 pm,67527670,FC Quake,100607465,Polonia Legacy,2,2,played,,Mulroy Park Pierce Field
+9008145,100605897,1st Division,league,7469,,2021-07-18,8:00 pm,91257544,NY Elite,62886844,Sahara Gunners FC,3,3,played,,Sahlen's Sports Park Flash Field 2
+9008146,100605897,1st Division,league,7470,,2021-07-19,8:30 pm,75159915,NMB FC,75479647,Celtic 1888,0,2,played,,Sahlen's Sports Park Flash Field 1
+9008147,100605897,1st Division,league,7471,,2021-07-25,4:00 pm,62886844,Sahara Gunners FC,26891552,Buffalo Celtic,1,2,played,,D'Youville College Dobson Field
+9008153,100605897,1st Division,league,7477,,2021-07-25,4:00 pm,10359117,Buffalo Italia FC,91257544,NY Elite,1,1,played,,Sahlen's Sports Park Flash Field 1
+9008148,100605897,1st Division,league,7472,,2021-07-25,6:00 pm,10359111,Crimson SPAL FC,75159915,NMB FC,3,5,played,,Grand Island Veteran's Park Front Field 3
+9008149,100605897,1st Division,league,7473,,2021-07-25,6:00 pm,10359062,Tonawanda United,67527670,FC Quake,0,2,played,,Ives Pond 1
+9008150,100605897,1st Division,league,7474,,2021-07-25,6:00 pm,75479647,Celtic 1888,75479689,Delco Academy,0,1,played,,Kenmore West Crosby Field
+9008151,100605897,1st Division,league,7475,,2021-07-25,6:00 pm,100607465,Polonia Legacy,95088490,USAB FC,3,1,played,,Sahlen's Sports Park Flash Field 1
+9008152,100605897,1st Division,league,7476,,2021-07-25,6:00 pm,75479680,Honey Badgers,75479662,Celtic Brigade,3,0,played,,Sahlen's Sports Park Flash Field 2
+9069572,100605898,2nd Division Pepper,league,9477,QF2,2021-08-01,4:00 pm,75479638,Southern Tier FC,95088493,FC Lackawanna,4,2,played,,Sahlen's Sports Park Flash Field 1
+9069576,100605898,2nd Division Pepper,league,9481,QF1,2021-08-01,4:30 pm,75159993,Revolution SC,95088661,Westside Blitz,4,1,played,,Nardin Academy Athletic Fields Complex 1
+9069577,100605898,2nd Division Pepper,league,9482,QF2,2021-08-01,6:00 pm,12579571,Devils,75479665,Lasalle FC,9,2,played,,Kenney Field 3
+9069571,100605898,2nd Division Pepper,league,9476,QF1,2021-08-04,8:00 pm,75159990,Great White Buffalo,10359038,Hamburg FC,2,1,played,OT,Mulroy Park Pierce Field
+9069579,100605898,2nd Division Pepper,league,9484,SF2,2021-08-08,6:00 pm,82992129,Mes Que FC,75159993,Revolution SC,2,1,played,,Nichols School Peek
+9069578,100605898,2nd Division Pepper,league,9483,SF1,2021-08-08,6:00 pm,98468675,Kilimanjaro Bandits,12579571,Devils,4,1,played,,Nichols School Strauss Truscott
+9069574,100605898,2nd Division Pepper,league,9479,SF2,2021-08-08,6:00 pm,46021389,Outlaws,75159990,Great White Buffalo,4,0,played,,West Seneca Soccer Complex A
+9069573,100605898,2nd Division Pepper,league,9478,SF1,2021-08-08,8:00 pm,75159996,FK Bosna,75479638,Southern Tier FC,3,1,played,OT,Mulroy Park Pierce Field
+9069575,100605898,2nd Division Pepper,league,9480,CHMP,2021-08-15,4:45 pm,75159996,FK Bosna,46021389,Outlaws,7,0,played,,Sahlen's Sports Park Flash Field 1
+9069580,100605898,2nd Division Pepper,league,9485,CHMP,2021-08-15,5:15 pm,98468675,Kilimanjaro Bandits,82992129,Mes Que FC,2,0,played,,Sahlen's Sports Park Flash Field 2
+9008154,100605898,2nd Division Pepper,league,7601,,2021-05-02,2:00 pm,46021389,Outlaws,100607781,Lake Shore FC,2,1,played,,Nichols School Strauss Truscott
+9008155,100605898,2nd Division Pepper,league,7602,,2021-05-02,2:00 pm,10359077,WNY United Reds,87153543,Moby Ducks FC,0,1,played,,Sahlen's Sports Park Flash Field 1
+9008157,100605898,2nd Division Pepper,league,7604,,2021-05-02,4:00 pm,10359123,Cheektowaga White Eagles,75159996,FK Bosna,1,6,played,,Mulroy Park Pierce Field
+9008158,100605898,2nd Division Pepper,league,7605,,2021-05-02,4:00 pm,75479653,Youngstown Marksmen,12579571,Devils,2,2,played,,Niagara Falls High School Back
+9008159,100605898,2nd Division Pepper,league,7606,,2021-05-02,4:00 pm,15296938,North Buffalo FC,82992129,Mes Que FC,0,1,played,,Nichols School Peek
+9008160,100605898,2nd Division Pepper,league,7607,,2021-05-02,6:00 pm,91257538,Medina Mustangs FC,75479677,Kingsmen SC,1,0,played,,Lyndonville High/Middle School 1
+9008161,100605898,2nd Division Pepper,league,7608,,2021-05-02,6:00 pm,75479665,Lasalle FC,75159993,Revolution SC,1,7,played,,Niagara Falls High School Back
+9008162,100605898,2nd Division Pepper,league,7609,,2021-05-02,6:00 pm,75159990,Great White Buffalo,10359038,Hamburg FC,0,1,played,,Westwood Park Turf Field
+9008156,100605898,2nd Division Pepper,league,7603,,2021-05-02,8:00 pm,75479638,Southern Tier FC,67527667,JL Dutch,4,0,played,,Sahlen's Sports Park Flash Field 1
+9008163,100605898,2nd Division Pepper,league,7610,,2021-05-02,8:00 pm,87153546,Tesla FC,95088487,Buffalo Brighten Stars FC,0,1,played,,Sahlen's Sports Park Flash Field 2
+9008164,100605898,2nd Division Pepper,league,7611,,2021-05-03,6:00 pm,95088661,Westside Blitz,98468675,Kilimanjaro Bandits,4,5,played,,D'Youville College Dobson Field
+9008165,100605898,2nd Division Pepper,league,7612,,2021-05-03,8:00 pm,10359092,Ukraine,95088493,FC Lackawanna,1,4,played,,D'Youville College Dobson Field
+9008166,100605898,2nd Division Pepper,league,7613,,2021-05-09,2:00 pm,75479638,Southern Tier FC,10359092,Ukraine,2,0,played,,Sahlen's Sports Park Flash Field 1
+9008169,100605898,2nd Division Pepper,league,7616,,2021-05-09,2:00 pm,100607781,Lake Shore FC,10359038,Hamburg FC,2,1,played,,Sahlen's Sports Park Flash Field 2
+9008167,100605898,2nd Division Pepper,league,7614,,2021-05-09,4:00 pm,75479653,Youngstown Marksmen,75479665,Lasalle FC,1,2,played,,Niagara Falls High School Back
+9008168,100605898,2nd Division Pepper,league,7615,,2021-05-09,4:00 pm,95088487,Buffalo Brighten Stars FC,95088661,Westside Blitz,2,2,played,,Nichols School Strauss Truscott
+9008170,100605898,2nd Division Pepper,league,7617,,2021-05-09,6:00 pm,75159993,Revolution SC,91257538,Medina Mustangs FC,2,0,played,,Medaille College Sports Complex
+9008171,100605898,2nd Division Pepper,league,7618,,2021-05-09,6:00 pm,10359123,Cheektowaga White Eagles,10359077,WNY United Reds,0,2,played,,Mulroy Park Pierce Field
+9008172,100605898,2nd Division Pepper,league,7619,,2021-05-09,6:00 pm,98468675,Kilimanjaro Bandits,82992129,Mes Que FC,5,1,played,,Nichols School Strauss Truscott
+9008173,100605898,2nd Division Pepper,league,7620,,2021-05-09,6:00 pm,67527667,JL Dutch,87153543,Moby Ducks FC,3,1,played,,Westwood Park Turf Field
+9008177,100605898,2nd Division Pepper,league,7624,,2021-05-10,6:30 pm,46021389,Outlaws,75159996,FK Bosna,1,1,played,,Sahlen's Sports Park Flash Field 1
+9008174,100605898,2nd Division Pepper,league,7621,,2021-05-10,8:00 pm,12579571,Devils,75479677,Kingsmen SC,1,0,played,,Medaille College Sports Complex
+9008175,100605898,2nd Division Pepper,league,7622,,2021-05-10,8:30 pm,75159990,Great White Buffalo,95088493,FC Lackawanna,1,1,played,,Sahlen's Sports Park Flash Field 1
+9008176,100605898,2nd Division Pepper,league,7623,,2021-05-10,8:30 pm,87153546,Tesla FC,15296938,North Buffalo FC,1,3,played,,Sahlen's Sports Park Flash Field 2
+9008178,100605898,2nd Division Pepper,league,7625,,2021-05-16,2:00 pm,15296938,North Buffalo FC,95088487,Buffalo Brighten Stars FC,2,2,played,,Nichols School Strauss Truscott
+9008179,100605898,2nd Division Pepper,league,7626,,2021-05-16,4:00 pm,82992129,Mes Que FC,95088661,Westside Blitz,4,0,played,,Nichols School Strauss Truscott
+9008180,100605898,2nd Division Pepper,league,7627,,2021-05-16,4:00 pm,75159996,FK Bosna,10359038,Hamburg FC,6,2,played,,West Seneca Soccer Complex A
+9008182,100605898,2nd Division Pepper,league,7629,,2021-05-16,6:00 pm,75479677,Kingsmen SC,75479653,Youngstown Marksmen,4,1,played,,Niagara Falls High School Back
+9008183,100605898,2nd Division Pepper,league,7630,,2021-05-16,6:00 pm,75479665,Lasalle FC,91257538,Medina Mustangs FC,3,1,played,,Niagara Falls High School Front
+9008184,100605898,2nd Division Pepper,league,7631,,2021-05-16,6:00 pm,46021389,Outlaws,10359123,Cheektowaga White Eagles,4,0,played,,West Seneca Soccer Complex A
+9008185,100605898,2nd Division Pepper,league,7632,,2021-05-16,6:00 pm,75479638,Southern Tier FC,95088493,FC Lackawanna,4,2,played,,West Seneca Soccer Complex B
+9008186,100605898,2nd Division Pepper,league,7633,,2021-05-16,6:00 pm,75159990,Great White Buffalo,10359092,Ukraine,4,0,played,,Westwood Park Turf Field
+9008181,100605898,2nd Division Pepper,league,7628,,2021-05-16,6:30 pm,75159993,Revolution SC,12579571,Devils,3,0,played,,Nardin Academy Athletic Fields Complex 1
+9008187,100605898,2nd Division Pepper,league,7634,,2021-05-16,7:00 pm,87153546,Tesla FC,98468675,Kilimanjaro Bandits,0,2,played,,Sahlen's Sports Park Flash Field 2
+9008189,100605898,2nd Division Pepper,league,7636,,2021-05-17,8:30 pm,100607781,Lake Shore FC,87153543,Moby Ducks FC,2,2,played,,Sahlen's Sports Park Flash Field 2
+9008190,100605898,2nd Division Pepper,league,7637,,2021-05-23,2:00 pm,10359123,Cheektowaga White Eagles,75479638,Southern Tier FC,1,2,played,,Mulroy Park Pierce Field
+9008191,100605898,2nd Division Pepper,league,7638,,2021-05-23,4:00 pm,75479677,Kingsmen SC,75479665,Lasalle FC,1,8,played,,Niagara Falls High School Front
+9008192,100605898,2nd Division Pepper,league,7639,,2021-05-23,4:00 pm,10359077,WNY United Reds,95088493,FC Lackawanna,1,2,played,,West Seneca Soccer Complex A
+9008194,100605898,2nd Division Pepper,league,7641,,2021-05-23,6:00 pm,91257538,Medina Mustangs FC,12579571,Devils,1,4,played,,Lyndonville High/Middle School 1
+9008193,100605898,2nd Division Pepper,league,7640,,2021-05-23,6:00 pm,75159993,Revolution SC,75479653,Youngstown Marksmen,3,1,played,,Niagara Falls High School Back
+9008195,100605898,2nd Division Pepper,league,7642,,2021-05-23,6:00 pm,15296938,North Buffalo FC,98468675,Kilimanjaro Bandits,0,6,played,,Nichols School Peek
+9008196,100605898,2nd Division Pepper,league,7643,,2021-05-23,6:00 pm,95088487,Buffalo Brighten Stars FC,82992129,Mes Que FC,0,4,played,,Nichols School Strauss Truscott
+9008197,100605898,2nd Division Pepper,league,7644,,2021-05-23,6:00 pm,87153546,Tesla FC,95088661,Westside Blitz,2,3,played,,Sahlen's Sports Park Flash Field 2
+9008198,100605898,2nd Division Pepper,league,7645,,2021-05-23,6:00 pm,87153543,Moby Ducks FC,75159990,Great White Buffalo,0,3,played,,West Seneca Soccer Complex A
+9008199,100605898,2nd Division Pepper,league,7646,,2021-05-23,6:00 pm,67527667,JL Dutch,46021389,Outlaws,1,2,played,,Westwood Park Turf Field
+9008200,100605898,2nd Division Pepper,league,7647,,2021-05-23,8:00 pm,100607781,Lake Shore FC,75159996,FK Bosna,2,3,played,,Sahlen's Sports Park Flash Field 2
+9008201,100605898,2nd Division Pepper,league,7648,,2021-05-24,8:00 pm,10359038,Hamburg FC,10359092,Ukraine,2,0,played,,D'Youville College Dobson Field
+9008188,100605898,2nd Division Pepper,league,7635,,2021-06-03,8:30 pm,67527667,JL Dutch,10359077,WNY United Reds,1,0,played,,D'Youville College Dobson Field
+9008202,100605898,2nd Division Pepper,league,7649,,2021-06-06,2:00 pm,82992129,Mes Que FC,87153546,Tesla FC,3,2,played,,Nichols School Peek
+9008203,100605898,2nd Division Pepper,league,7650,,2021-06-06,2:00 pm,10359038,Hamburg FC,87153543,Moby Ducks FC,3,2,played,,Sahlen's Sports Park Flash Field 2
+9008205,100605898,2nd Division Pepper,league,7652,,2021-06-06,4:00 pm,10359123,Cheektowaga White Eagles,67527667,JL Dutch,1,3,played,,Mulroy Park Pierce Field
+9008206,100605898,2nd Division Pepper,league,7653,,2021-06-06,4:00 pm,75479653,Youngstown Marksmen,91257538,Medina Mustangs FC,0,0,played,,Niagara University Field
+9008207,100605898,2nd Division Pepper,league,7654,,2021-06-06,4:00 pm,95088661,Westside Blitz,15296938,North Buffalo FC,2,1,played,,Nichols School Peek
+9008209,100605898,2nd Division Pepper,league,7656,,2021-06-06,6:00 pm,12579571,Devils,75479665,Lasalle FC,12,3,played,,Kenney Field 5
+9008208,100605898,2nd Division Pepper,league,7655,,2021-06-06,6:00 pm,75479677,Kingsmen SC,75159993,Revolution SC,1,7,played,,Niagara Falls High School Back
+9008210,100605898,2nd Division Pepper,league,7657,,2021-06-06,6:00 pm,98468675,Kilimanjaro Bandits,95088487,Buffalo Brighten Stars FC,8,0,played,,Nichols School Strauss Truscott
+9008211,100605898,2nd Division Pepper,league,7658,,2021-06-06,6:00 pm,10359092,Ukraine,100607781,Lake Shore FC,0,4,played,,Rehm Road
+9008212,100605898,2nd Division Pepper,league,7659,,2021-06-06,6:00 pm,10359077,WNY United Reds,46021389,Outlaws,0,2,played,,West Seneca Soccer Complex A
+9008213,100605898,2nd Division Pepper,league,7660,,2021-06-06,6:00 pm,75159990,Great White Buffalo,75479638,Southern Tier FC,1,1,played,,Westwood Park Turf Field
+9008214,100605898,2nd Division Pepper,league,7661,,2021-06-13,2:00 pm,15296938,North Buffalo FC,12579571,Devils,1,7,played,,Nichols School Peek
+9008218,100605898,2nd Division Pepper,league,7665,,2021-06-13,2:00 pm,10359038,Hamburg FC,67527667,JL Dutch,1,2,played,,Sahlen's Sports Park Flash Field 2
+9008215,100605898,2nd Division Pepper,league,7662,,2021-06-13,4:00 pm,75479665,Lasalle FC,98468675,Kilimanjaro Bandits,0,0,played,,Niagara Falls High School Front
+9008216,100605898,2nd Division Pepper,league,7663,,2021-06-13,4:00 pm,75159996,FK Bosna,10359077,WNY United Reds,7,0,played,,West Seneca Soccer Complex A
+9008220,100605898,2nd Division Pepper,league,7667,,2021-06-13,6:00 pm,75159993,Revolution SC,95088487,Buffalo Brighten Stars FC,5,5,played,,D'Youville College Dobson Field
+9008219,100605898,2nd Division Pepper,league,7666,,2021-06-13,6:00 pm,95088493,FC Lackawanna,46021389,Outlaws,0,4,played,,Lehigh The Cage
+9008221,100605898,2nd Division Pepper,league,7668,,2021-06-13,6:00 pm,91257538,Medina Mustangs FC,87153546,Tesla FC,1,0,played,,Lyndonville High/Middle School 1
+9008223,100605898,2nd Division Pepper,league,7670,,2021-06-13,6:00 pm,10359092,Ukraine,10359123,Cheektowaga White Eagles,2,1,played,,Rehm Road
+9008224,100605898,2nd Division Pepper,league,7671,,2021-06-13,6:00 pm,87153543,Moby Ducks FC,75479638,Southern Tier FC,4,3,played,,West Seneca Soccer Complex A
+9008225,100605898,2nd Division Pepper,league,7672,,2021-06-13,6:00 pm,75159990,Great White Buffalo,100607781,Lake Shore FC,4,2,played,,Westwood Park Turf Field
+9008226,100605898,2nd Division Pepper,league,7673,,2021-06-20,2:00 pm,10359038,Hamburg FC,46021389,Outlaws,2,2,played,,Sahlen's Sports Park Flash Field 2
+9008227,100605898,2nd Division Pepper,league,7674,,2021-06-20,4:00 pm,95088493,FC Lackawanna,100607781,Lake Shore FC,2,1,played,,Lehigh The Cage
+9008228,100605898,2nd Division Pepper,league,7675,,2021-06-20,4:00 pm,95088487,Buffalo Brighten Stars FC,75479653,Youngstown Marksmen,2,4,played,,Nichols School Peek
+9008229,100605898,2nd Division Pepper,league,7676,,2021-06-20,4:00 pm,98468675,Kilimanjaro Bandits,75479677,Kingsmen SC,9,1,played,,Nichols School Strauss Truscott
+9008230,100605898,2nd Division Pepper,league,7677,,2021-06-20,4:00 pm,87153543,Moby Ducks FC,10359092,Ukraine,3,2,played,,West Seneca Soccer Complex A
+9008231,100605898,2nd Division Pepper,league,7678,,2021-06-20,6:00 pm,12579571,Devils,82992129,Mes Que FC,1,1,played,,Kenney Field 5
+9008233,100605898,2nd Division Pepper,league,7680,,2021-06-20,6:00 pm,91257538,Medina Mustangs FC,15296938,North Buffalo FC,2,0,played,FT,Lyndonville High/Middle School 1
+9008232,100605898,2nd Division Pepper,league,7679,,2021-06-20,6:00 pm,75159993,Revolution SC,87153546,Tesla FC,3,1,played,,Niagara University Field
+9008234,100605898,2nd Division Pepper,league,7681,,2021-06-20,6:00 pm,95088661,Westside Blitz,75479665,Lasalle FC,3,3,played,,Nichols School Peek
+9008235,100605898,2nd Division Pepper,league,7682,,2021-06-20,6:00 pm,75159996,FK Bosna,67527667,JL Dutch,4,1,played,,West Seneca Soccer Complex A
+9008236,100605898,2nd Division Pepper,league,7683,,2021-06-20,6:00 pm,10359077,WNY United Reds,75479638,Southern Tier FC,1,2,played,,West Seneca Soccer Complex B
+9008237,100605898,2nd Division Pepper,league,7684,,2021-06-20,6:00 pm,75159990,Great White Buffalo,10359123,Cheektowaga White Eagles,5,0,played,,Westwood Park Turf Field
+9008286,100605898,2nd Division Pepper,league,7685,,2021-06-27,2:00 pm,95088661,Westside Blitz,75479677,Kingsmen SC,0,2,played,,Nichols School Peek
+9008287,100605898,2nd Division Pepper,league,7686,,2021-06-27,2:00 pm,82992129,Mes Que FC,91257538,Medina Mustangs FC,8,1,played,,Nichols School Strauss Truscott
+9008288,100605898,2nd Division Pepper,league,7687,,2021-06-27,4:00 pm,75479665,Lasalle FC,95088487,Buffalo Brighten Stars FC,1,3,played,,Niagara Falls High School Front
+9008289,100605898,2nd Division Pepper,league,7688,,2021-06-27,4:00 pm,100607781,Lake Shore FC,10359123,Cheektowaga White Eagles,6,1,played,,Sahlen's Sports Park Flash Field 2
+9008290,100605898,2nd Division Pepper,league,7689,,2021-06-27,4:00 pm,46021389,Outlaws,75479638,Southern Tier FC,1,0,played,,West Seneca Soccer Complex A
+9008291,100605898,2nd Division Pepper,league,7690,,2021-06-27,6:00 pm,12579571,Devils,98468675,Kilimanjaro Bandits,2,1,played,,Irvington
+9008292,100605898,2nd Division Pepper,league,7691,,2021-06-27,6:00 pm,95088493,FC Lackawanna,10359038,Hamburg FC,3,4,played,,Lehigh The Cage
+9008293,100605898,2nd Division Pepper,league,7692,,2021-06-27,6:00 pm,15296938,North Buffalo FC,75159993,Revolution SC,0,4,played,,Nichols School Strauss Truscott
+9008294,100605898,2nd Division Pepper,league,7693,,2021-06-27,6:00 pm,87153546,Tesla FC,75479653,Youngstown Marksmen,3,5,played,,Sahlen's Sports Park Flash Field 2
+9008295,100605898,2nd Division Pepper,league,7694,,2021-06-27,6:00 pm,10359077,WNY United Reds,75159990,Great White Buffalo,0,4,played,,West Seneca Soccer Complex A
+9008296,100605898,2nd Division Pepper,league,7695,,2021-06-27,6:00 pm,75159996,FK Bosna,87153543,Moby Ducks FC,5,0,played,,West Seneca Soccer Complex B
+9008297,100605898,2nd Division Pepper,league,7696,,2021-06-27,6:00 pm,67527667,JL Dutch,10359092,Ukraine,3,0,played,,Westwood Park Turf Field
+9008217,100605898,2nd Division Pepper,league,7664,,2021-07-08,6:30 pm,75479677,Kingsmen SC,82992129,Mes Que FC,2,3,played,,Niagara Falls High School Back
+9008298,100605898,2nd Division Pepper,league,7697,,2021-07-11,2:00 pm,98468675,Kilimanjaro Bandits,91257538,Medina Mustangs FC,4,1,played,,Nichols School Strauss Truscott
+9008300,100605898,2nd Division Pepper,league,7699,,2021-07-11,4:00 pm,10359123,Cheektowaga White Eagles,10359038,Hamburg FC,0,3,played,,Mulroy Park Pierce Field
+9008299,100605898,2nd Division Pepper,league,7698,,2021-07-11,4:00 pm,75479677,Kingsmen SC,95088487,Buffalo Brighten Stars FC,1,4,played,,Niagara Falls High School Back
+9008301,100605898,2nd Division Pepper,league,7700,,2021-07-11,4:00 pm,75479665,Lasalle FC,87153546,Tesla FC,3,1,played,,Niagara Falls High School Front
+9008302,100605898,2nd Division Pepper,league,7701,,2021-07-11,4:00 pm,87153543,Moby Ducks FC,95088493,FC Lackawanna,1,6,played,,West Seneca Soccer Complex A
+9008303,100605898,2nd Division Pepper,league,7702,,2021-07-11,4:00 pm,75479638,Southern Tier FC,75159996,FK Bosna,4,6,played,,West Seneca Soccer Complex B
+9008304,100605898,2nd Division Pepper,league,7703,,2021-07-11,6:00 pm,12579571,Devils,95088661,Westside Blitz,2,2,played,,Kenney Field 5
+9008305,100605898,2nd Division Pepper,league,7704,,2021-07-11,6:00 pm,75479653,Youngstown Marksmen,15296938,North Buffalo FC,0,1,played,,Niagara University Field
+9008306,100605898,2nd Division Pepper,league,7705,,2021-07-11,6:00 pm,10359092,Ukraine,10359077,WNY United Reds,2,2,played,,Rehm Road
+9008307,100605898,2nd Division Pepper,league,7706,,2021-07-11,6:00 pm,46021389,Outlaws,75159990,Great White Buffalo,0,0,played,,West Seneca Soccer Complex A
+9008308,100605898,2nd Division Pepper,league,7707,,2021-07-11,6:00 pm,67527667,JL Dutch,100607781,Lake Shore FC,0,0,played,,Westwood Park Turf Field
+9008309,100605898,2nd Division Pepper,league,7708,,2021-07-12,8:30 pm,82992129,Mes Que FC,75159993,Revolution SC,4,2,played,,Sahlen's Sports Park Flash Field 1
+9008222,100605898,2nd Division Pepper,league,7669,,2021-07-15,8:00 pm,75479653,Youngstown Marksmen,95088661,Westside Blitz,2,6,played,,Mulroy Park Pierce Field
+9008311,100605898,2nd Division Pepper,league,7710,,2021-07-18,4:00 pm,95088487,Buffalo Brighten Stars FC,12579571,Devils,1,4,played,,Nichols School Strauss Truscott
+9008312,100605898,2nd Division Pepper,league,7711,,2021-07-18,4:00 pm,75159996,FK Bosna,75159990,Great White Buffalo,0,3,played,,West Seneca Soccer Complex A
+9008313,100605898,2nd Division Pepper,league,7712,,2021-07-18,5:00 pm,10359038,Hamburg FC,75479638,Southern Tier FC,2,3,played,,Nardin Academy Athletic Fields Complex 1
+9008316,100605898,2nd Division Pepper,league,7715,,2021-07-18,6:00 pm,75479665,Lasalle FC,15296938,North Buffalo FC,3,0,played,,Niagara Falls High School Back
+9008321,100605898,2nd Division Pepper,league,7720,,2021-07-18,6:00 pm,75479653,Youngstown Marksmen,82992129,Mes Que FC,0,8,played,,Niagara University Field
+9008317,100605898,2nd Division Pepper,league,7716,,2021-07-18,6:00 pm,10359092,Ukraine,46021389,Outlaws,1,5,played,,Nichols School Strauss Truscott
+9008318,100605898,2nd Division Pepper,league,7717,,2021-07-18,6:00 pm,100607781,Lake Shore FC,10359077,WNY United Reds,3,0,played,,Sahlen's Sports Park Flash Field 1
+9008319,100605898,2nd Division Pepper,league,7718,,2021-07-18,6:00 pm,87153546,Tesla FC,75479677,Kingsmen SC,4,3,played,,Sahlen's Sports Park Flash Field 2
+9008320,100605898,2nd Division Pepper,league,7719,,2021-07-18,6:00 pm,87153543,Moby Ducks FC,10359123,Cheektowaga White Eagles,1,4,played,,West Seneca Soccer Complex A
+9008314,100605898,2nd Division Pepper,league,7713,,2021-07-18,6:30 pm,75159993,Revolution SC,98468675,Kilimanjaro Bandits,3,4,played,,D'Youville College Dobson Field
+9008310,100605898,2nd Division Pepper,league,7709,,2021-07-18,8:00 pm,95088493,FC Lackawanna,67527667,JL Dutch,3,2,played,,Mulroy Park Pierce Field
+9008315,100605898,2nd Division Pepper,league,7714,,2021-07-22,6:30 pm,91257538,Medina Mustangs FC,95088661,Westside Blitz,2,5,played,,Lyndonville High/Middle School 1
+9008322,100605898,2nd Division Pepper,league,7721,,2021-07-25,2:00 pm,82992129,Mes Que FC,75479665,Lasalle FC,1,1,played,,Nichols School Peek
+9008323,100605898,2nd Division Pepper,league,7722,,2021-07-25,2:00 pm,98468675,Kilimanjaro Bandits,75479653,Youngstown Marksmen,8,0,played,,Nichols School Strauss Truscott
+9008325,100605898,2nd Division Pepper,league,7724,,2021-07-25,2:00 pm,10359038,Hamburg FC,10359077,WNY United Reds,1,0,played,,Sahlen's Sports Park Flash Field 2
+9008326,100605898,2nd Division Pepper,league,7725,,2021-07-25,4:00 pm,10359123,Cheektowaga White Eagles,95088493,FC Lackawanna,0,5,played,,Mulroy Park Pierce Field
+9008324,100605898,2nd Division Pepper,league,7723,,2021-07-25,4:00 pm,75479677,Kingsmen SC,15296938,North Buffalo FC,4,2,played,,Niagara Falls High School Front
+9008327,100605898,2nd Division Pepper,league,7726,,2021-07-25,4:00 pm,95088487,Buffalo Brighten Stars FC,91257538,Medina Mustangs FC,0,2,played,FT,Nichols School Strauss Truscott
+9008329,100605898,2nd Division Pepper,league,7728,,2021-07-25,6:00 pm,95088661,Westside Blitz,75159993,Revolution SC,1,2,played,,Nichols School Peek
+9008330,100605898,2nd Division Pepper,league,7729,,2021-07-25,6:00 pm,10359092,Ukraine,75159996,FK Bosna,1,4,played,,Rehm Road
+9008331,100605898,2nd Division Pepper,league,7730,,2021-07-25,6:00 pm,46021389,Outlaws,87153543,Moby Ducks FC,6,1,played,,West Seneca Soccer Complex A
+9008332,100605898,2nd Division Pepper,league,7731,,2021-07-25,6:00 pm,75479638,Southern Tier FC,100607781,Lake Shore FC,1,1,played,,West Seneca Soccer Complex B
+9008333,100605898,2nd Division Pepper,league,7732,,2021-07-25,6:00 pm,67527667,JL Dutch,75159990,Great White Buffalo,0,0,played,,Westwood Park Turf Field
+9008328,100605898,2nd Division Pepper,league,7727,,2021-07-25,8:00 pm,12579571,Devils,87153546,Tesla FC,5,1,played,,Kenney Field 5
+9008204,100605898,2nd Division Pepper,league,7651,,2021-07-26,6:30 pm,95088493,FC Lackawanna,75159996,FK Bosna,0,2,played,FT,Lehigh The Cage
+9068276,100605900,3rd Division,league,9473,QF2,2021-08-01,6:00 pm,98469009,Infinity FC,35216066,Meerkats FC,2,1,played,,Sahlen's Sports Park Flash Field 2
+9068275,100605900,3rd Division,league,9472,QF1,2021-08-01,8:00 pm,98469017,Buffalo Cosmos,75479695,Big Green SC,3,2,played,,Sahlen's Sports Park Flash Field 2
+9068277,100605900,3rd Division,league,9474,SF1,2021-08-08,6:00 pm,100608342,Hamburg Monarchs SC,98469009,Infinity FC,1,0,played,,Nike Base 6
+9068278,100605900,3rd Division,league,9475,SF2,2021-08-08,6:00 pm,91257541,Junior Willies,98469017,Buffalo Cosmos,1,4,played,,Sahlen's Sports Park Flash Field 1
+9068280,100605900,3rd Division,league,9475,CHMP,2021-08-15,2:30 pm,100608342,Hamburg Monarchs SC,98469017,Buffalo Cosmos,1,2,played,,Sahlen's Sports Park Flash Field 1
+8995420,100605900,3rd Division,league,9401,,2021-05-02,2:00 pm,100608339,South Buffalo FC,59262126,Celtic Classic,6,3,played,,Mulroy Park Pierce Field
+8995421,100605900,3rd Division,league,9402,,2021-05-02,2:00 pm,35216066,Meerkats FC,31566782,Rust Belt United,4,1,played,,Nichols School Peek
+8995422,100605900,3rd Division,league,9403,,2021-05-02,4:00 pm,91257541,Junior Willies,98469017,Buffalo Cosmos,1,1,played,,Sahlen's Sports Park Flash Field 2
+8995423,100605900,3rd Division,league,9404,,2021-05-02,6:00 pm,100608342,Hamburg Monarchs SC,100608336,Lazio United FC,3,0,played,,Nike Base 6
+8995424,100605900,3rd Division,league,9405,,2021-05-03,6:30 pm,98469009,Infinity FC,75479659,Bangarang FC,1,0,played,,Sahlen's Sports Park Flash Field 1
+8995425,100605900,3rd Division,league,9406,,2021-05-09,4:00 pm,59262126,Celtic Classic,100608342,Hamburg Monarchs SC,0,4,played,,Kenmore West Crosby Field
+8995426,100605900,3rd Division,league,9407,,2021-05-09,4:00 pm,100608339,South Buffalo FC,31566782,Rust Belt United,3,0,played,,Mulroy Park Pierce Field
+8995427,100605900,3rd Division,league,9408,,2021-05-09,4:00 pm,75479659,Bangarang FC,91257541,Junior Willies,0,3,played,,Sahlen's Sports Park Flash Field 1
+8995428,100605900,3rd Division,league,9409,,2021-05-09,6:00 pm,35216066,Meerkats FC,75479695,Big Green SC,3,2,played,,Nichols School Peek
+8995429,100605900,3rd Division,league,9410,,2021-05-09,6:00 pm,98469017,Buffalo Cosmos,100608336,Lazio United FC,4,0,played,,Sahlen's Sports Park Flash Field 2
+8995430,100605900,3rd Division,league,9411,,2021-05-16,2:00 pm,31566782,Rust Belt United,100608336,Lazio United FC,1,2,played,,Nichols School Peek
+8995431,100605900,3rd Division,league,9412,,2021-05-16,6:00 pm,59262126,Celtic Classic,75479695,Big Green SC,1,6,played,,Kenmore West Crosby Field
+8995432,100605900,3rd Division,league,9413,,2021-05-16,6:00 pm,100608339,South Buffalo FC,98469017,Buffalo Cosmos,1,1,played,,Mulroy Park Pierce Field
+8995433,100605900,3rd Division,league,9414,,2021-05-16,6:00 pm,100608342,Hamburg Monarchs SC,35216066,Meerkats FC,4,0,played,,Nike Base 6
+8995434,100605900,3rd Division,league,9415,,2021-05-16,7:00 pm,91257541,Junior Willies,98469009,Infinity FC,5,2,played,,Sahlen's Sports Park Flash Field 1
+8995435,100605900,3rd Division,league,9416,,2021-05-23,6:00 pm,59262126,Celtic Classic,100608336,Lazio United FC,2,5,played,,Kenmore West Crosby Field
+8995436,100605900,3rd Division,league,9417,,2021-05-23,6:00 pm,75479659,Bangarang FC,100608339,South Buffalo FC,0,1,played,,Sahlen's Sports Park Flash Field 1
+8995437,100605900,3rd Division,league,9418,,2021-05-23,8:00 pm,98469009,Infinity FC,100608342,Hamburg Monarchs SC,1,1,played,,Sahlen's Sports Park Flash Field 1
+8995438,100605900,3rd Division,league,9419,,2021-05-24,6:30 pm,91257541,Junior Willies,75479695,Big Green SC,6,2,played,,Sahlen's Sports Park Flash Field 1
+8995439,100605900,3rd Division,league,9420,,2021-05-27,8:00 pm,98469017,Buffalo Cosmos,35216066,Meerkats FC,3,0,played,,D'Youville College Dobson Field
+8995440,100605900,3rd Division,league,9421,,2021-06-06,4:00 pm,98469017,Buffalo Cosmos,100608342,Hamburg Monarchs SC,2,2,played,,Sahlen's Sports Park Flash Field 2
+8995441,100605900,3rd Division,league,9422,,2021-06-06,4:00 pm,100608336,Lazio United FC,75479695,Big Green SC,1,4,played,,West Seneca Soccer Complex A
+8995442,100605900,3rd Division,league,9423,,2021-06-06,6:00 pm,100608339,South Buffalo FC,91257541,Junior Willies,0,4,played,,Mulroy Park Pierce Field
+8995443,100605900,3rd Division,league,9424,,2021-06-06,6:00 pm,98469009,Infinity FC,59262126,Celtic Classic,4,0,played,,Sahlen's Sports Park Flash Field 2
+8995444,100605900,3rd Division,league,9425,,2021-06-06,8:00 pm,75479659,Bangarang FC,31566782,Rust Belt United,3,1,played,,Sahlen's Sports Park Flash Field 1
+8995445,100605900,3rd Division,league,9426,,2021-06-13,4:00 pm,35216066,Meerkats FC,100608339,South Buffalo FC,1,3,played,,Nichols School Strauss Truscott
+8995446,100605900,3rd Division,league,9427,,2021-06-13,4:00 pm,98469017,Buffalo Cosmos,75479659,Bangarang FC,3,0,played,,Sahlen's Sports Park Flash Field 2
+8995447,100605900,3rd Division,league,9428,,2021-06-13,4:00 pm,75479695,Big Green SC,98469009,Infinity FC,2,2,played,,West Seneca Soccer Complex B
+8995448,100605900,3rd Division,league,9429,,2021-06-13,6:00 pm,31566782,Rust Belt United,59262126,Celtic Classic,1,2,played,,Nichols School Peek
+8995449,100605900,3rd Division,league,9430,,2021-06-13,6:00 pm,100608336,Lazio United FC,91257541,Junior Willies,1,5,played,,West Seneca Soccer Complex B
+8995450,100605900,3rd Division,league,9431,,2021-06-20,4:00 pm,31566782,Rust Belt United,98469009,Infinity FC,1,4,played,,Sahlen's Sports Park Flash Field 2
+8995451,100605900,3rd Division,league,9432,,2021-06-20,4:00 pm,100608336,Lazio United FC,75479659,Bangarang FC,1,2,played,,West Seneca Soccer Complex B
+8995452,100605900,3rd Division,league,9433,,2021-06-20,6:00 pm,59262126,Celtic Classic,98469017,Buffalo Cosmos,1,7,played,,Kenmore West Crosby Field
+8995453,100605900,3rd Division,league,9434,,2021-06-20,6:00 pm,100608342,Hamburg Monarchs SC,75479695,Big Green SC,3,0,played,,Nike Base 6
+8995454,100605900,3rd Division,league,9435,,2021-06-20,6:00 pm,91257541,Junior Willies,35216066,Meerkats FC,4,0,played,,Sahlen's Sports Park Flash Field 2
+8995455,100605900,3rd Division,league,9436,,2021-06-27,4:00 pm,31566782,Rust Belt United,91257541,Junior Willies,0,5,played,,Nichols School Peek
+8995456,100605900,3rd Division,league,9437,,2021-06-27,4:00 pm,75479695,Big Green SC,98469017,Buffalo Cosmos,0,3,played,,West Seneca Soccer Complex B
+8995457,100605900,3rd Division,league,9438,,2021-06-27,6:00 pm,100608339,South Buffalo FC,100608342,Hamburg Monarchs SC,1,4,played,,Mulroy Park Pierce Field
+8995458,100605900,3rd Division,league,9439,,2021-06-27,6:00 pm,35216066,Meerkats FC,75479659,Bangarang FC,3,3,played,,Nichols School Peek
+8995459,100605900,3rd Division,league,9440,,2021-06-27,8:00 pm,98469009,Infinity FC,100608336,Lazio United FC,1,0,played,,Sahlen's Sports Park Flash Field 2
+8995460,100605900,3rd Division,league,9441,,2021-07-11,2:00 pm,35216066,Meerkats FC,98469009,Infinity FC,3,1,played,,Nichols School Peek
+8995461,100605900,3rd Division,league,9442,,2021-07-11,4:00 pm,31566782,Rust Belt United,98469017,Buffalo Cosmos,3,6,played,,Nichols School Peek
+8995462,100605900,3rd Division,league,9443,,2021-07-11,6:00 pm,100608342,Hamburg Monarchs SC,91257541,Junior Willies,1,0,played,,Nike Base 6
+8995463,100605900,3rd Division,league,9444,,2021-07-11,6:00 pm,75479659,Bangarang FC,59262126,Celtic Classic,3,0,played,,Sahlen's Sports Park Flash Field 2
+8995464,100605900,3rd Division,league,9445,,2021-07-11,6:00 pm,75479695,Big Green SC,100608339,South Buffalo FC,2,1,played,,West Seneca Soccer Complex B
+8995483,100605900,3rd Division,league,9446,,2021-07-18,2:00 pm,75479659,Bangarang FC,100608342,Hamburg Monarchs SC,1,4,played,,Sahlen's Sports Park Flash Field 1
+8995484,100605900,3rd Division,league,9447,,2021-07-18,2:00 pm,98469009,Infinity FC,100608339,South Buffalo FC,3,0,played,,Sahlen's Sports Park Flash Field 2
+8995485,100605900,3rd Division,league,9448,,2021-07-18,4:00 pm,91257541,Junior Willies,59262126,Celtic Classic,2,0,played,FT,Sahlen's Sports Park Flash Field 2
+8995486,100605900,3rd Division,league,9449,,2021-07-18,4:00 pm,100608336,Lazio United FC,35216066,Meerkats FC,0,1,played,,West Seneca Soccer Complex B
+8995487,100605900,3rd Division,league,9450,,2021-07-18,6:00 pm,75479695,Big Green SC,31566782,Rust Belt United,5,2,played,,West Seneca Soccer Complex B
+8995488,100605900,3rd Division,league,9451,,2021-07-25,4:00 pm,59262126,Celtic Classic,35216066,Meerkats FC,1,7,played,,Kenmore West Crosby Field
+8995489,100605900,3rd Division,league,9452,,2021-07-25,4:00 pm,98469017,Buffalo Cosmos,98469009,Infinity FC,4,0,played,,Sahlen's Sports Park Flash Field 2
+8995490,100605900,3rd Division,league,9453,,2021-07-25,4:00 pm,75479695,Big Green SC,75479659,Bangarang FC,1,1,played,,West Seneca Soccer Complex A
+8995491,100605900,3rd Division,league,9454,,2021-07-25,4:00 pm,100608336,Lazio United FC,100608339,South Buffalo FC,4,0,played,,West Seneca Soccer Complex B
+8995492,100605900,3rd Division,league,9455,,2021-07-25,6:00 pm,100608342,Hamburg Monarchs SC,31566782,Rust Belt United,2,1,played,,Nike Base 6
+9145213,100605901,Over 35,over35,9490,CHMP,2021-09-03,8:30 pm,46512672,Blue Stars FC,46512669,Oranje,2,6,played,OT,Sahlen's Sports Park Flash Field 1
+9031793,100605901,Over 35,over35,3501,,2021-05-07,6:30 pm,10359105,C.S. Italia,46512666,Aliens,0,1,played,,Sahlen's Sports Park Flash Field 1
+9031794,100605901,Over 35,over35,3502,,2021-05-07,6:30 pm,98469084,Thundercats FC,46512669,Oranje,1,2,played,,Sahlen's Sports Park Flash Field 2
+9031795,100605901,Over 35,over35,3503,,2021-05-07,8:30 pm,95088564,Celtic Old Bhoys,10350976,SoHo FC,1,3,played,,Sahlen's Sports Park Flash Field 1
+9031796,100605901,Over 35,over35,3504,,2021-05-07,8:30 pm,46512672,Blue Stars FC,46512675,West United FC,2,0,played,,Sahlen's Sports Park Flash Field 2
+9031797,100605901,Over 35,over35,3505,,2021-05-14,6:30 pm,10350976,SoHo FC,46512675,West United FC,3,3,played,,Sahlen's Sports Park Flash Field 1
+9031798,100605901,Over 35,over35,3506,,2021-05-14,6:30 pm,46512672,Blue Stars FC,95088567,Yemen United,1,1,played,,Sahlen's Sports Park Flash Field 2
+9031799,100605901,Over 35,over35,3507,,2021-05-14,8:30 pm,46512663,Azzurri,98469084,Thundercats FC,3,0,played,,Sahlen's Sports Park Flash Field 1
+9031800,100605901,Over 35,over35,3508,,2021-05-14,8:30 pm,91327989,Aztecas FC,95088564,Celtic Old Bhoys,3,0,played,,Sahlen's Sports Park Flash Field 2
+9031801,100605901,Over 35,over35,3509,,2021-05-21,6:30 pm,46512666,Aliens,91327989,Aztecas FC,2,1,played,,Sahlen's Sports Park Flash Field 1
+9031802,100605901,Over 35,over35,3510,,2021-05-21,6:30 pm,46512675,West United FC,95088564,Celtic Old Bhoys,0,4,played,,Sahlen's Sports Park Flash Field 2
+9031803,100605901,Over 35,over35,3511,,2021-05-21,8:30 pm,10350976,SoHo FC,10359105,C.S. Italia,8,0,played,,Sahlen's Sports Park Flash Field 1
+9031804,100605901,Over 35,over35,3512,,2021-05-21,8:30 pm,46512669,Oranje,46512672,Blue Stars FC,0,2,played,,Sahlen's Sports Park Flash Field 2
+9031809,100605901,Over 35,over35,3517,,2021-06-04,6:30 pm,95088567,Yemen United,10350976,SoHo FC,2,2,played,,Mulroy Park Pierce Field
+9031805,100605901,Over 35,over35,3513,,2021-06-04,6:30 pm,95088564,Celtic Old Bhoys,98469084,Thundercats FC,0,6,played,,Sahlen's Sports Park Flash Field 1
+9031806,100605901,Over 35,over35,3514,,2021-06-04,6:30 pm,46512669,Oranje,10359105,C.S. Italia,7,0,played,,Sahlen's Sports Park Flash Field 2
+9031807,100605901,Over 35,over35,3515,,2021-06-04,8:30 pm,46512666,Aliens,46512663,Azzurri,2,5,played,,Sahlen's Sports Park Flash Field 1
+9031808,100605901,Over 35,over35,3516,,2021-06-04,8:30 pm,46512675,West United FC,91327989,Aztecas FC,6,3,played,,Sahlen's Sports Park Flash Field 2
+9031810,100605901,Over 35,over35,3518,,2021-06-11,6:30 pm,10359105,C.S. Italia,46512663,Azzurri,0,14,played,,Mulroy Park Pierce Field
+9031811,100605901,Over 35,over35,3519,,2021-06-11,7:00 pm,95088567,Yemen United,91327989,Aztecas FC,2,2,played,,West Seneca Soccer Complex B
+9031812,100605901,Over 35,over35,3520,,2021-06-18,6:30 pm,95088567,Yemen United,46512663,Azzurri,1,5,played,,Mulroy Park Pierce Field
+9031817,100605901,Over 35,over35,3525,,2021-06-25,6:30 pm,95088567,Yemen United,98469084,Thundercats FC,3,4,played,,Mulroy Park Pierce Field
+9031813,100605901,Over 35,over35,3521,,2021-06-25,6:30 pm,46512663,Azzurri,46512669,Oranje,2,3,played,,Sahlen's Sports Park Flash Field 1
+9031814,100605901,Over 35,over35,3522,,2021-06-25,6:30 pm,46512672,Blue Stars FC,91327989,Aztecas FC,6,2,played,,Sahlen's Sports Park Flash Field 2
+9031815,100605901,Over 35,over35,3523,,2021-06-25,8:30 pm,46512675,West United FC,46512666,Aliens,8,3,played,,Sahlen's Sports Park Flash Field 1
+9031816,100605901,Over 35,over35,3524,,2021-06-25,8:30 pm,95088564,Celtic Old Bhoys,10359105,C.S. Italia,5,0,played,,Sahlen's Sports Park Flash Field 2
+9031822,100605901,Over 35,over35,3530,,2021-07-09,6:30 pm,10359105,C.S. Italia,95088567,Yemen United,1,4,played,,Mulroy Park Pierce Field
+9031818,100605901,Over 35,over35,3526,,2021-07-09,6:30 pm,46512672,Blue Stars FC,46512666,Aliens,4,0,played,,Sahlen's Sports Park Flash Field 1
+9031819,100605901,Over 35,over35,3527,,2021-07-09,6:30 pm,46512663,Azzurri,95088564,Celtic Old Bhoys,5,1,played,,Sahlen's Sports Park Flash Field 2
+9031820,100605901,Over 35,over35,3528,,2021-07-09,8:30 pm,10350976,SoHo FC,98469084,Thundercats FC,6,2,played,,Sahlen's Sports Park Flash Field 1
+9031821,100605901,Over 35,over35,3529,,2021-07-09,8:30 pm,46512669,Oranje,46512675,West United FC,3,1,played,,Sahlen's Sports Park Flash Field 2
+9031823,100605901,Over 35,over35,3531,,2021-07-16,6:30 pm,46512675,West United FC,95088567,Yemen United,0,0,played,,Sahlen's Sports Park Flash Field 1
+9031824,100605901,Over 35,over35,3532,,2021-07-16,6:30 pm,10350976,SoHo FC,46512663,Azzurri,1,0,played,,Sahlen's Sports Park Flash Field 2
+9031826,100605901,Over 35,over35,3534,,2021-07-16,8:30 pm,91327989,Aztecas FC,46512669,Oranje,0,3,played,,Sahlen's Sports Park Flash Field 2
+9031827,100605901,Over 35,over35,3535,,2021-07-23,6:30 pm,95088564,Celtic Old Bhoys,95088567,Yemen United,2,3,played,,Sahlen's Sports Park Flash Field 1
+9031828,100605901,Over 35,over35,3536,,2021-07-23,6:30 pm,46512669,Oranje,10350976,SoHo FC,2,1,played,,Sahlen's Sports Park Flash Field 2
+9031829,100605901,Over 35,over35,3537,,2021-07-23,8:30 pm,46512663,Azzurri,46512672,Blue Stars FC,0,3,played,,Sahlen's Sports Park Flash Field 1
+9031830,100605901,Over 35,over35,3538,,2021-07-23,8:30 pm,98469084,Thundercats FC,46512666,Aliens,4,1,played,,Sahlen's Sports Park Flash Field 2
+9031835,100605901,Over 35,over35,3543,,2021-07-30,6:30 pm,95088567,Yemen United,46512666,Aliens,2,2,played,,Mulroy Park Pierce Field
+9031831,100605901,Over 35,over35,3539,,2021-07-30,6:30 pm,46512675,West United FC,10359105,C.S. Italia,4,0,played,,Sahlen's Sports Park Flash Field 1
+9031832,100605901,Over 35,over35,3540,,2021-07-30,6:30 pm,98469084,Thundercats FC,46512672,Blue Stars FC,2,2,played,,Sahlen's Sports Park Flash Field 2
+9031833,100605901,Over 35,over35,3541,,2021-07-30,8:30 pm,91327989,Aztecas FC,10350976,SoHo FC,1,3,played,,Sahlen's Sports Park Flash Field 1
+9031834,100605901,Over 35,over35,3542,,2021-07-30,8:30 pm,95088564,Celtic Old Bhoys,46512669,Oranje,2,2,played,,Sahlen's Sports Park Flash Field 2
+9031836,100605901,Over 35,over35,3544,,2021-08-06,6:30 pm,91327989,Aztecas FC,46512663,Azzurri,5,2,played,,Sahlen's Sports Park Flash Field 1
+9031837,100605901,Over 35,over35,3545,,2021-08-06,6:30 pm,46512672,Blue Stars FC,95088564,Celtic Old Bhoys,6,2,played,,Sahlen's Sports Park Flash Field 2
+9031838,100605901,Over 35,over35,3546,,2021-08-06,8:30 pm,46512666,Aliens,46512669,Oranje,0,2,played,FT,Sahlen's Sports Park Flash Field 1
+9031839,100605901,Over 35,over35,3547,,2021-08-06,8:30 pm,10359105,C.S. Italia,98469084,Thundercats FC,0,8,played,,Sahlen's Sports Park Flash Field 2
+9031825,100605901,Over 35,over35,3533,,2021-08-13,6:30 pm,10359105,C.S. Italia,46512672,Blue Stars FC,0,3,played,,Mulroy Park Pierce Field
+9031840,100605901,Over 35,over35,3548,,2021-08-13,6:30 pm,46512669,Oranje,95088567,Yemen United,4,3,played,,Sahlen's Sports Park Flash Field 1
+9031841,100605901,Over 35,over35,3549,,2021-08-13,6:30 pm,46512666,Aliens,10350976,SoHo FC,1,5,played,,Sahlen's Sports Park Flash Field 2
+9031842,100605901,Over 35,over35,3550,,2021-08-13,8:30 pm,46512663,Azzurri,46512675,West United FC,1,6,played,,Sahlen's Sports Park Flash Field 1
+9031843,100605901,Over 35,over35,3551,,2021-08-13,8:30 pm,98469084,Thundercats FC,91327989,Aztecas FC,0,2,played,,Sahlen's Sports Park Flash Field 2
+9031844,100605901,Over 35,over35,3552,,2021-08-20,6:30 pm,98469084,Thundercats FC,46512675,West United FC,2,2,played,,Sahlen's Sports Park Flash Field 1
+9031845,100605901,Over 35,over35,3553,,2021-08-20,6:30 pm,91327989,Aztecas FC,10359105,C.S. Italia,3,0,played,,Sahlen's Sports Park Flash Field 2
+9031846,100605901,Over 35,over35,3554,,2021-08-20,8:30 pm,46512666,Aliens,95088564,Celtic Old Bhoys,3,2,played,,Sahlen's Sports Park Flash Field 1
+9031847,100605901,Over 35,over35,3555,,2021-08-20,8:30 pm,10350976,SoHo FC,46512672,Blue Stars FC,0,2,played,,Sahlen's Sports Park Flash Field 2
+9145209,100605901,Over 35,over35,9486,5v6,2021-08-27,6:30 pm,46512663,Azzurri,98469084,Thundercats FC,0,2,played,FT,Sahlen's Sports Park Flash Field 1
+9145210,100605901,Over 35,over35,9487,7v8,2021-08-27,6:30 pm,91327989,Aztecas FC,95088567,Yemen United,4,0,played,,Sahlen's Sports Park Flash Field 2
+9145211,100605901,Over 35,over35,9488,SF1,2021-08-27,8:30 pm,46512672,Blue Stars FC,46512675,West United FC,6,2,played,,Sahlen's Sports Park Flash Field 1
+9145212,100605901,Over 35,over35,9489,SF2,2021-08-27,8:30 pm,46512669,Oranje,10350976,SoHo FC,4,2,played,OT,Sahlen's Sports Park Flash Field 2
+9047042,101718021,Tehel Cup Bracket,cup,36,,2021-05-06,6:30 pm,98468675,Kilimanjaro Bandits,75479674,Los Chupacabras,3,4,played,,Sahlen's Sports Park Flash Field 1
+9047037,101718021,Tehel Cup Bracket,cup,32,,2021-05-06,8:30 pm,18647016,Buffalo United SS,62886844,Sahara Gunners FC,2,1,played,OT,D'Youville College Dobson Field
+9047048,101718021,Tehel Cup Bracket,cup,39,,2021-05-06,8:30 pm,10359047,Inter SC,75159915,NMB FC,6,2,played,,Sahlen's Sports Park Flash Field 1
+9047039,101718021,Tehel Cup Bracket,cup,34,,2021-05-12,8:30 pm,10359023,Polonia,75479641,Williamsville Willies,0,3,played,,Sahlen's Sports Park Flash Field 1
+9047040,101718021,Tehel Cup Bracket,cup,35,,2021-05-19,8:30 pm,10359062,Tonawanda United,10359008,Roos FC,1,6,played,,Sahlen's Sports Park Flash Field 1
+9047044,101718021,Tehel Cup Bracket,cup,37,,2021-05-20,8:00 pm,10359074,Lykan FC,10350991,BSC Raiders,0,2,played,,Kenmore East Sparky Adams Field
+9047046,101718021,Tehel Cup Bracket,cup,38,,2021-05-20,8:30 pm,12579600,Wolves FC,26895907,Amherst Sharpshooters,1,4,played,OT,Sahlen's Sports Park Flash Field 1
+9047008,101718021,Tehel Cup Bracket,cup,3,,2021-06-03,6:30 pm,91257544,NY Elite,10359050,Lackawanna FCY,0,4,played,,D'Youville College Dobson Field
+9047009,101718021,Tehel Cup Bracket,cup,4,,2021-06-03,6:30 pm,75479662,Celtic Brigade,75479689,Delco Academy,2,1,played,,Kenmore West Crosby Field
+9047007,101718021,Tehel Cup Bracket,cup,2,,2021-06-03,6:30 pm,67527670,FC Quake,95088186,Cavallucci Marini,0,4,played,,Mulroy Park Pierce Field
+9047006,101718021,Tehel Cup Bracket,cup,1,,2021-06-03,6:30 pm,10359117,Buffalo Italia FC,18647016,Buffalo United SS,1,5,played,,Sahlen's Sports Park Flash Field 1
+9047013,101718021,Tehel Cup Bracket,cup,8,,2021-06-03,8:30 pm,10359008,Roos FC,75479647,Celtic 1888,6,1,played,,Sahlen's Sports Park Flash Field 1
+9047017,101718021,Tehel Cup Bracket,cup,12,,2021-06-10,,10350991,BSC Raiders,10359017,Celtic United,0,2,played,FT,
+9047014,101718021,Tehel Cup Bracket,cup,9,,2021-06-10,6:30 pm,91256977,Lykan United,75479674,Los Chupacabras,1,0,played,,D'Youville College Dobson Field
+9047020,101718021,Tehel Cup Bracket,cup,15,,2021-06-10,6:30 pm,26891552,Buffalo Celtic,10359086,Rangers,1,0,played,,Kenmore East Sparky Adams Field
+9047021,101718021,Tehel Cup Bracket,cup,16,,2021-06-10,6:30 pm,10359047,Inter SC,82992129,Mes Que FC,0,1,played,,Nichols School Peek
+9047019,101718021,Tehel Cup Bracket,cup,14,,2021-06-10,6:30 pm,95088490,USAB FC,10359035,Queenston FC,0,9,played,,Nichols School Strauss Truscott
+9047018,101718021,Tehel Cup Bracket,cup,13,,2021-06-10,6:30 pm,100607465,Polonia Legacy,26895907,Amherst Sharpshooters,1,3,played,,Walden Pond Park 1
+9047015,101718021,Tehel Cup Bracket,cup,10,,2021-06-10,8:30 pm,75159921,West Side FC,91256980,Olean 1854 FC,1,2,played,,D'Youville College Dobson Field
+9047010,101718021,Tehel Cup Bracket,cup,5,,2021-06-11,6:30 pm,15294627,Niagara FC,75479641,Williamsville Willies,0,4,played,,Niagara Falls High School Front
+9047011,101718021,Tehel Cup Bracket,cup,6,,2021-06-16,6:30 pm,45429017,Borussia Bees,10359111,Crimson SPAL FC,7,0,played,,Grand Island Veteran's Park Front Field 3
+9047016,101718021,Tehel Cup Bracket,cup,11,,2021-06-17,6:30 pm,10359005,Clarence,75479680,Honey Badgers,2,0,played,FT,
+9047012,101718021,Tehel Cup Bracket,cup,7,,2021-06-17,6:30 pm,59261096,Beast City SC,75159801,OP Alliance,1,2,played,,Nichols School Strauss Truscott
+9047023,101718021,Tehel Cup Bracket,cup,18,,2021-06-24,6:00 pm,10359050,Lackawanna FCY,75479662,Celtic Brigade,6,0,played,,Mulroy Park Pierce Field
+9047025,101718021,Tehel Cup Bracket,cup,20,,2021-06-24,6:30 pm,75159801,OP Alliance,10359008,Roos FC,1,0,played,,D'Youville College Dobson Field
+9047029,101718021,Tehel Cup Bracket,cup,24,,2021-06-24,6:30 pm,26891552,Buffalo Celtic,82992129,Mes Que FC,5,3,played,,Kenney Field 3
+9047027,101718021,Tehel Cup Bracket,cup,22,,2021-06-24,6:30 pm,10359005,Clarence,10359017,Celtic United,0,5,played,,Nichols School Strauss Truscott
+9047026,101718021,Tehel Cup Bracket,cup,21,,2021-06-24,8:00 pm,91256977,Lykan United,91256980,Olean 1854 FC,0,0,played,PK,Mulroy Park Pierce Field
+9047028,101718021,Tehel Cup Bracket,cup,23,,2021-06-24,8:30 pm,26895907,Amherst Sharpshooters,10359035,Queenston FC,0,0,played,PK,D'Youville College Dobson Field
+9047022,101718021,Tehel Cup Bracket,cup,17,,2021-06-29,8:30 pm,18647016,Buffalo United SS,95088186,Cavallucci Marini,3,1,played,,D'Youville College Dobson Field
+9047024,101718021,Tehel Cup Bracket,cup,19,,2021-07-01,8:00 pm,75479641,Williamsville Willies,45429017,Borussia Bees,0,3,played,,D'Youville College Dobson Field
+9047033,101718021,Tehel Cup Bracket,cup,28,QF4,2021-07-07,8:00 pm,26895907,Amherst Sharpshooters,26891552,Buffalo Celtic,8,1,played,,Mulroy Park Pierce Field
+9047031,101718021,Tehel Cup Bracket,cup,26,QF2,2021-07-08,6:30 pm,45429017,Borussia Bees,75159801,OP Alliance,1,1,played,PK,D'Youville College Dobson Field
+9047032,101718021,Tehel Cup Bracket,cup,27,QF3,2021-07-08,6:30 pm,91256977,Lykan United,10359017,Celtic United,1,2,played,OT,Sahlen's Sports Park Flash Field 1
+9047030,101718021,Tehel Cup Bracket,cup,25,QF1,2021-07-08,8:30 pm,18647016,Buffalo United SS,10359050,Lackawanna FCY,2,0,played,,D'Youville College Dobson Field
+9047035,101718021,Tehel Cup Bracket,cup,29,SF1,2021-07-22,8:30 pm,18647016,Buffalo United SS,45429017,Borussia Bees,3,0,played,,D'Youville College Dobson Field
+9047036,101718021,Tehel Cup Bracket,cup,30,SF2,2021-07-29,6:30 pm,10359017,Celtic United,26895907,Amherst Sharpshooters,0,1,played,,Kenmore West Crosby Field
+9047034,101718021,Tehel Cup Bracket,cup,31,CHMP,2021-08-05,8:30 pm,18647016,Buffalo United SS,26895907,Amherst Sharpshooters,1,2,played,,Sahlen's Sports Park Flash Field 1
+9046981,101849148,BDSL Wood Cup Bracket,cup,7,,2021-05-13,6:30 pm,91257538,Medina Mustangs FC,75479665,Lasalle FC,1,2,played,OT,Lyndonville High/Middle School 1
+9046989,101849148,BDSL Wood Cup Bracket,cup,14,,2021-05-13,6:30 pm,75479638,Southern Tier FC,75159993,Revolution SC,1,4,played,,Medaille College Sports Complex
+9046978,101849148,BDSL Wood Cup Bracket,cup,4,,2021-05-13,6:30 pm,100608342,Hamburg Monarchs SC,100607781,Lake Shore FC,1,2,played,,Nike Base 1
+9046976,101849148,BDSL Wood Cup Bracket,cup,2,,2021-05-13,6:30 pm,35216066,Meerkats FC,75479695,Big Green SC,7,2,played,,Sahlen's Sports Park Flash Field 1
+9046979,101849148,BDSL Wood Cup Bracket,cup,5,,2021-05-13,6:30 pm,75159990,Great White Buffalo,75479653,Youngstown Marksmen,2,0,played,,Sahlen's Sports Park Flash Field 2
+9046980,101849148,BDSL Wood Cup Bracket,cup,6,,2021-05-13,8:30 pm,10359123,Cheektowaga White Eagles,46021389,Outlaws,1,2,played,,Sahlen's Sports Park Flash Field 1
+9046975,101849148,BDSL Wood Cup Bracket,cup,1,,2021-05-13,8:30 pm,10359077,WNY United Reds,100608336,Lazio United FC,1,0,played,,Sahlen's Sports Park Flash Field 2
+9046982,101849148,BDSL Wood Cup Bracket,cup,8,,2021-05-19,6:30 pm,75479659,Bangarang FC,46512675,West United FC,0,2,played,OT,Sahlen's Sports Park Flash Field 1
+9046988,101849148,BDSL Wood Cup Bracket,cup,13,,2021-05-20,6:30 pm,100608339,South Buffalo FC,87153543,Moby Ducks FC,1,0,played,OT,D'Youville College Dobson Field
+9046983,101849148,BDSL Wood Cup Bracket,cup,16,,2021-05-20,6:30 pm,95088493,FC Lackawanna,31566782,Rust Belt United,6,1,played,,Mulroy Park Pierce Field
+9046986,101849148,BDSL Wood Cup Bracket,cup,11,,2021-05-20,6:30 pm,95088487,Buffalo Brighten Stars FC,95088661,Westside Blitz,2,6,played,,Nichols School Peek
+9046977,101849148,BDSL Wood Cup Bracket,cup,3,,2021-05-20,6:30 pm,15296938,North Buffalo FC,98469017,Buffalo Cosmos,2,1,played,,Nichols School Strauss Truscott
+9046987,101849148,BDSL Wood Cup Bracket,cup,12,,2021-05-20,6:30 pm,91257541,Junior Willies,87153546,Tesla FC,1,2,played,,Sahlen's Sports Park Flash Field 1
+9046995,101849148,BDSL Wood Cup Bracket,cup,21,,2021-06-17,6:30 pm,75479677,Kingsmen SC,12579571,Devils,1,7,played,,D'Youville College Dobson Field
+9046997,101849148,BDSL Wood Cup Bracket,cup,23,,2021-06-17,6:30 pm,100608339,South Buffalo FC,75159993,Revolution SC,1,4,played,,Mulroy Park Pierce Field
+9046994,101849148,BDSL Wood Cup Bracket,cup,20,,2021-06-17,6:30 pm,75479665,Lasalle FC,46512675,West United FC,1,2,played,,Niagara Falls High School Back
+9046993,101849148,BDSL Wood Cup Bracket,cup,19,,2021-06-17,6:30 pm,75159990,Great White Buffalo,46021389,Outlaws,3,1,played,,Nichols School Peek
+9046991,101849148,BDSL Wood Cup Bracket,cup,17,,2021-06-17,8:30 pm,10359077,WNY United Reds,35216066,Meerkats FC,0,2,played,,D'Youville College Dobson Field
+9046998,101849148,BDSL Wood Cup Bracket,cup,24,,2021-06-22,8:00 pm,75159996,FK Bosna,95088493,FC Lackawanna,3,1,played,,Mulroy Park Pierce Field
+9046996,101849148,BDSL Wood Cup Bracket,cup,22,,2021-06-24,6:30 pm,95088661,Westside Blitz,87153546,Tesla FC,4,3,played,,Nichols School Peek
+9046992,101849148,BDSL Wood Cup Bracket,cup,18,,2021-07-01,8:30 pm,15296938,North Buffalo FC,100607781,Lake Shore FC,2,0,played,,Sahlen's Sports Park Flash Field 1
+9047000,101849148,BDSL Wood Cup Bracket,cup,26,QF2,2021-07-01,6:30 pm,75159990,Great White Buffalo,46512675,West United FC,2,1,played,,Sahlen's Sports Park Flash Field 1
+9046999,101849148,BDSL Wood Cup Bracket,cup,25,QF1,2021-07-08,6:30 pm,35216066,Meerkats FC,15296938,North Buffalo FC,0,2,played,,Mulroy Park Pierce Field
+9047002,101849148,BDSL Wood Cup Bracket,cup,28,QF4,2021-07-08,8:00 pm,75159993,Revolution SC,75159996,FK Bosna,4,1,played,,Nardin Academy Athletic Fields Complex 1
+9047001,101849148,BDSL Wood Cup Bracket,cup,27,QF3,2021-07-08,8:30 pm,12579571,Devils,95088661,Westside Blitz,3,1,played,,Kenney Field 3
+9047005,101849148,BDSL Wood Cup Bracket,cup,30,SF2,2021-07-22,8:00 pm,12579571,Devils,75159993,Revolution SC,2,3,played,,Nardin Academy Athletic Fields Complex 1
+9047004,101849148,BDSL Wood Cup Bracket,cup,29,SF1,2021-07-29,8:00 pm,15296938,North Buffalo FC,75159990,Great White Buffalo,0,1,played,,Sahlen's Sports Park Flash Field 1
+9047003,101849148,BDSL Wood Cup Bracket,cup,31,CHMP,2021-08-05,6:30 pm,75159990,Great White Buffalo,75159993,Revolution SC,0,3,played,,Sahlen's Sports Park Flash Field 1

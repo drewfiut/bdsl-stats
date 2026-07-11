@@ -2,31 +2,49 @@
   {
     "competition": "Premier",
     "comp_type": "league",
-    "tg": "75159571"
+    "tg": "75159571",
+    "champion_club_id": "10350991",
+    "champion_name": "BSC Raiders",
+    "champion_via": "playoff"
   },
   {
     "competition": "Championship",
     "comp_type": "league",
-    "tg": "75159575"
+    "tg": "75159575",
+    "champion_club_id": "26891564",
+    "champion_name": "FC Yemen",
+    "champion_via": "playoff"
   },
   {
     "competition": "1st Division",
     "comp_type": "league",
-    "tg": "75159573"
+    "tg": "75159573",
+    "champion_club_id": "67527661",
+    "champion_name": "East Aurora FC",
+    "champion_via": "regular"
   },
   {
     "competition": "2nd Division",
     "comp_type": "league",
-    "tg": "75159574"
+    "tg": "75159574",
+    "champion_club_id": "67527670",
+    "champion_name": "FC Quake",
+    "champion_via": "regular"
   },
   {
     "competition": "3rd Division",
     "comp_type": "league",
-    "tg": "75159576"
+    "tg": "75159576",
+    "champion_club_id": "67526455",
+    "champion_name": "PLYSA Toros",
+    "champion_via": "playoff"
   },
   {
     "competition": "Over 35",
     "comp_type": "over35",
-    "tg": "75159577"
+    "tg": "75159577",
+    "champion_club_id": "46512666",
+    "champion_name": "Aliens",
+    "champion_via": "regular"
   }
 ]

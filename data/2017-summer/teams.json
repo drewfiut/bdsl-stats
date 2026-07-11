@@ -8,7 +8,6 @@
     "competition": "Premier",
     "comp_type": "league",
     "name": "SoHo FC",
-    "rank": 5,
     "gp": 11,
     "w": 6,
     "l": 5,
@@ -24,7 +23,8 @@
     "away_l": 3,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 5
   },
   {
     "team_id": "10350991-87148545",
@@ -35,7 +35,6 @@
     "competition": "Premier",
     "comp_type": "league",
     "name": "BSC Raiders",
-    "rank": 3,
     "gp": 11,
     "w": 7,
     "l": 2,
@@ -51,7 +50,8 @@
     "away_l": 2,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 3
   },
   {
     "team_id": "10359005-87148545",
@@ -62,7 +62,6 @@
     "competition": "Premier",
     "comp_type": "league",
     "name": "Clarence",
-    "rank": 4,
     "gp": 11,
     "w": 6,
     "l": 2,
@@ -78,7 +77,8 @@
     "away_l": 1,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 4
   },
   {
     "team_id": "10359008-87148545",
@@ -89,7 +89,6 @@
     "competition": "Premier",
     "comp_type": "league",
     "name": "Roos FC",
-    "rank": 11,
     "gp": 11,
     "w": 2,
     "l": 8,
@@ -105,7 +104,8 @@
     "away_l": 4,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 11
   },
   {
     "team_id": "10359017-87148545",
@@ -116,7 +116,6 @@
     "competition": "Premier",
     "comp_type": "league",
     "name": "Celtic United",
-    "rank": 7,
     "gp": 11,
     "w": 4,
     "l": 5,
@@ -132,7 +131,8 @@
     "away_l": 4,
     "away_d": 2,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 7
   },
   {
     "team_id": "10359035-87148545",
@@ -143,7 +143,6 @@
     "competition": "Premier",
     "comp_type": "league",
     "name": "Queenston FC",
-    "rank": 8,
     "gp": 11,
     "w": 3,
     "l": 5,
@@ -159,7 +158,8 @@
     "away_l": 3,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 8
   },
   {
     "team_id": "10359050-87148545",
@@ -170,7 +170,6 @@
     "competition": "Premier",
     "comp_type": "league",
     "name": "Lackawanna FCY",
-    "rank": 10,
     "gp": 11,
     "w": 2,
     "l": 7,
@@ -186,7 +185,8 @@
     "away_l": 4,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 10
   },
   {
     "team_id": "18647016-87148545",
@@ -197,7 +197,6 @@
     "competition": "Premier",
     "comp_type": "league",
     "name": "Buffalo United SS",
-    "rank": 2,
     "gp": 10,
     "w": 8,
     "l": 1,
@@ -213,7 +212,8 @@
     "away_l": 0,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 2
   },
   {
     "team_id": "26891564-87148545",
@@ -224,7 +224,6 @@
     "competition": "Premier",
     "comp_type": "league",
     "name": "FC Yemen",
-    "rank": 9,
     "gp": 10,
     "w": 2,
     "l": 4,
@@ -240,7 +239,8 @@
     "away_l": 2,
     "away_d": 2,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 9
   },
   {
     "team_id": "26895907-87148545",
@@ -251,7 +251,6 @@
     "competition": "Premier",
     "comp_type": "league",
     "name": "Amherst Sharpshooters",
-    "rank": 1,
     "gp": 11,
     "w": 9,
     "l": 2,
@@ -267,7 +266,8 @@
     "away_l": 1,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 1
   },
   {
     "team_id": "10359074-87148549",
@@ -278,7 +278,6 @@
     "competition": "Championship",
     "comp_type": "league",
     "name": "Lykan FC",
-    "rank": 7,
     "gp": 11,
     "w": 4,
     "l": 3,
@@ -294,7 +293,8 @@
     "away_l": 1,
     "away_d": 3,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 7
   },
   {
     "team_id": "10359086-87148549",
@@ -305,7 +305,6 @@
     "competition": "Championship",
     "comp_type": "league",
     "name": "Rangers",
-    "rank": 8,
     "gp": 11,
     "w": 5,
     "l": 6,
@@ -321,7 +320,8 @@
     "away_l": 3,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 8
   },
   {
     "team_id": "12579600-87148549",
@@ -332,7 +332,6 @@
     "competition": "Championship",
     "comp_type": "league",
     "name": "Wolves FC",
-    "rank": 2,
     "gp": 11,
     "w": 6,
     "l": 1,
@@ -348,7 +347,8 @@
     "away_l": 0,
     "away_d": 2,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 2
   },
   {
     "team_id": "15294627-87148549",
@@ -359,7 +359,6 @@
     "competition": "Championship",
     "comp_type": "league",
     "name": "Niagara FC",
-    "rank": 6,
     "gp": 11,
     "w": 4,
     "l": 3,
@@ -375,7 +374,8 @@
     "away_l": 1,
     "away_d": 2,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 6
   },
   {
     "team_id": "59260537-87148549",
@@ -386,7 +386,6 @@
     "competition": "Championship",
     "comp_type": "league",
     "name": "Southtowns FPFC",
-    "rank": 1,
     "gp": 11,
     "w": 7,
     "l": 2,
@@ -402,7 +401,8 @@
     "away_l": 2,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 1
   },
   {
     "team_id": "59261105-87148549",
@@ -413,7 +413,6 @@
     "competition": "Championship",
     "comp_type": "league",
     "name": "Celtic Hoops",
-    "rank": 10,
     "gp": 11,
     "w": 3,
     "l": 7,
@@ -429,7 +428,8 @@
     "away_l": 4,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 10
   },
   {
     "team_id": "75159801-87148549",
@@ -440,7 +440,6 @@
     "competition": "Championship",
     "comp_type": "league",
     "name": "OP Alliance",
-    "rank": 11,
     "gp": 11,
     "w": 2,
     "l": 7,
@@ -456,7 +455,8 @@
     "away_l": 3,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 11
   },
   {
     "team_id": "10359047-87148549",
@@ -467,7 +467,6 @@
     "competition": "Championship",
     "comp_type": "league",
     "name": "Inter SC",
-    "rank": 9,
     "gp": 11,
     "w": 2,
     "l": 5,
@@ -483,7 +482,8 @@
     "away_l": 2,
     "away_d": 3,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 9
   },
   {
     "team_id": "10359029-87148549",
@@ -494,7 +494,6 @@
     "competition": "Championship",
     "comp_type": "league",
     "name": "Panthers",
-    "rank": 4,
     "gp": 11,
     "w": 5,
     "l": 4,
@@ -510,7 +509,8 @@
     "away_l": 2,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 4
   },
   {
     "team_id": "59261096-87148549",
@@ -521,7 +521,6 @@
     "competition": "Championship",
     "comp_type": "league",
     "name": "Beast City SC",
-    "rank": 5,
     "gp": 11,
     "w": 5,
     "l": 4,
@@ -537,7 +536,8 @@
     "away_l": 2,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 5
   },
   {
     "team_id": "67527670-87148549",
@@ -548,7 +548,6 @@
     "competition": "Championship",
     "comp_type": "league",
     "name": "FC Quake",
-    "rank": 12,
     "gp": 11,
     "w": 1,
     "l": 6,
@@ -564,7 +563,8 @@
     "away_l": 3,
     "away_d": 2,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 12
   },
   {
     "team_id": "75479641-87148549",
@@ -575,7 +575,6 @@
     "competition": "Championship",
     "comp_type": "league",
     "name": "Williamsville Willies",
-    "rank": 3,
     "gp": 11,
     "w": 6,
     "l": 2,
@@ -591,7 +590,8 @@
     "away_l": 1,
     "away_d": 2,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 3
   },
   {
     "team_id": "67526770-87148545",
@@ -602,7 +602,6 @@
     "competition": "Premier",
     "comp_type": "league",
     "name": "Buffalo Bantu",
-    "rank": 12,
     "gp": 11,
     "w": 1,
     "l": 9,
@@ -618,7 +617,8 @@
     "away_l": 5,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 12
   },
   {
     "team_id": "67527661-87148545",
@@ -629,7 +629,6 @@
     "competition": "Premier",
     "comp_type": "league",
     "name": "East Aurora FC",
-    "rank": 6,
     "gp": 11,
     "w": 5,
     "l": 5,
@@ -645,7 +644,8 @@
     "away_l": 3,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 6
   },
   {
     "team_id": "10359038-87148547",
@@ -656,7 +656,6 @@
     "competition": "1st Division",
     "comp_type": "league",
     "name": "Hamburg FC",
-    "rank": 14,
     "gp": 11,
     "w": 3,
     "l": 6,
@@ -672,7 +671,8 @@
     "away_l": 4,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 14
   },
   {
     "team_id": "10359080-87148547",
@@ -683,7 +683,6 @@
     "competition": "1st Division",
     "comp_type": "league",
     "name": "Eclipse",
-    "rank": 12,
     "gp": 11,
     "w": 3,
     "l": 6,
@@ -699,7 +698,8 @@
     "away_l": 4,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 13
   },
   {
     "team_id": "10359111-87148547",
@@ -710,7 +710,6 @@
     "competition": "1st Division",
     "comp_type": "league",
     "name": "Crimson SPAL FC",
-    "rank": 4,
     "gp": 11,
     "w": 6,
     "l": 2,
@@ -726,7 +725,8 @@
     "away_l": 1,
     "away_d": 2,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 4
   },
   {
     "team_id": "62886844-87148547",
@@ -737,7 +737,6 @@
     "competition": "1st Division",
     "comp_type": "league",
     "name": "Sahara Gunners",
-    "rank": 17,
     "gp": 11,
     "w": 2,
     "l": 6,
@@ -753,7 +752,8 @@
     "away_l": 3,
     "away_d": 2,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 16
   },
   {
     "team_id": "67527667-87148547",
@@ -764,7 +764,6 @@
     "competition": "1st Division",
     "comp_type": "league",
     "name": "JL Dutch",
-    "rank": 11,
     "gp": 11,
     "w": 3,
     "l": 5,
@@ -780,7 +779,8 @@
     "away_l": 2,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 11
   },
   {
     "team_id": "75159915-87148547",
@@ -791,7 +791,6 @@
     "competition": "1st Division",
     "comp_type": "league",
     "name": "NMB FC",
-    "rank": 1,
     "gp": 11,
     "w": 9,
     "l": 1,
@@ -807,7 +806,8 @@
     "away_l": 1,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 1
   },
   {
     "team_id": "10359023-87148547",
@@ -818,7 +818,6 @@
     "competition": "1st Division",
     "comp_type": "league",
     "name": "Polonia",
-    "rank": 5,
     "gp": 11,
     "w": 6,
     "l": 4,
@@ -834,7 +833,8 @@
     "away_l": 2,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 5
   },
   {
     "team_id": "26891552-87148547",
@@ -845,7 +845,6 @@
     "competition": "1st Division",
     "comp_type": "league",
     "name": "Buffalo Celtic",
-    "rank": 16,
     "gp": 11,
     "w": 2,
     "l": 6,
@@ -861,7 +860,8 @@
     "away_l": 4,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 17
   },
   {
     "team_id": "10359062-87148547",
@@ -872,7 +872,6 @@
     "competition": "1st Division",
     "comp_type": "league",
     "name": "Tonawanda United",
-    "rank": 6,
     "gp": 11,
     "w": 5,
     "l": 3,
@@ -888,7 +887,8 @@
     "away_l": 0,
     "away_d": 2,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 6
   },
   {
     "team_id": "26892099-87148547",
@@ -899,7 +899,6 @@
     "competition": "1st Division",
     "comp_type": "league",
     "name": "Rampart FC",
-    "rank": 13,
     "gp": 11,
     "w": 3,
     "l": 6,
@@ -915,7 +914,8 @@
     "away_l": 4,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 12
   },
   {
     "team_id": "75159921-87148547",
@@ -926,7 +926,6 @@
     "competition": "1st Division",
     "comp_type": "league",
     "name": "West Side FC",
-    "rank": 2,
     "gp": 11,
     "w": 8,
     "l": 1,
@@ -942,7 +941,8 @@
     "away_l": 1,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 2
   },
   {
     "team_id": "75159924-87148547",
@@ -953,7 +953,6 @@
     "competition": "1st Division",
     "comp_type": "league",
     "name": "DSC Buffalo",
-    "rank": 18,
     "gp": 11,
     "w": 2,
     "l": 9,
@@ -969,7 +968,8 @@
     "away_l": 4,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 18
   },
   {
     "team_id": "75159999-87148547",
@@ -980,7 +980,6 @@
     "competition": "1st Division",
     "comp_type": "league",
     "name": "Crimson Fire FC",
-    "rank": 3,
     "gp": 11,
     "w": 6,
     "l": 1,
@@ -996,7 +995,8 @@
     "away_l": 0,
     "away_d": 4,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 3
   },
   {
     "team_id": "75479650-87148547",
@@ -1007,7 +1007,6 @@
     "competition": "1st Division",
     "comp_type": "league",
     "name": "Pendleton United FC",
-    "rank": 7,
     "gp": 11,
     "w": 5,
     "l": 3,
@@ -1023,7 +1022,8 @@
     "away_l": 2,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 7
   },
   {
     "team_id": "45428657-87148547",
@@ -1034,7 +1034,6 @@
     "competition": "1st Division",
     "comp_type": "league",
     "name": "Tri Town United",
-    "rank": 15,
     "gp": 11,
     "w": 3,
     "l": 7,
@@ -1050,7 +1049,8 @@
     "away_l": 2,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 15
   },
   {
     "team_id": "59261111-87148547",
@@ -1061,7 +1061,6 @@
     "competition": "1st Division",
     "comp_type": "league",
     "name": "Crusaders FC",
-    "rank": 8,
     "gp": 11,
     "w": 5,
     "l": 5,
@@ -1077,7 +1076,8 @@
     "away_l": 4,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 8
   },
   {
     "team_id": "75479668-87148547",
@@ -1088,7 +1088,6 @@
     "competition": "1st Division",
     "comp_type": "league",
     "name": "Grand Island FC",
-    "rank": 9,
     "gp": 11,
     "w": 5,
     "l": 5,
@@ -1104,7 +1103,8 @@
     "away_l": 2,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 9
   },
   {
     "team_id": "75479671-87148547",
@@ -1115,7 +1115,6 @@
     "competition": "1st Division",
     "comp_type": "league",
     "name": "Great Lakes Africa",
-    "rank": 10,
     "gp": 11,
     "w": 4,
     "l": 4,
@@ -1131,7 +1130,8 @@
     "away_l": 3,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 10
   },
   {
     "team_id": "10359077-87148548",
@@ -1142,7 +1142,6 @@
     "competition": "2nd Division",
     "comp_type": "league",
     "name": "WNY United Reds",
-    "rank": 8,
     "gp": 11,
     "w": 6,
     "l": 4,
@@ -1158,7 +1157,8 @@
     "away_l": 1,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 8
   },
   {
     "team_id": "10359092-87148548",
@@ -1169,7 +1169,6 @@
     "competition": "2nd Division",
     "comp_type": "league",
     "name": "Ukraine",
-    "rank": 4,
     "gp": 11,
     "w": 8,
     "l": 3,
@@ -1185,7 +1184,8 @@
     "away_l": 0,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 4
   },
   {
     "team_id": "10359123-87148548",
@@ -1196,7 +1196,6 @@
     "competition": "2nd Division",
     "comp_type": "league",
     "name": "Cheektowaga White Eagles",
-    "rank": 18,
     "gp": 11,
     "w": 1,
     "l": 10,
@@ -1212,7 +1211,8 @@
     "away_l": 5,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 18
   },
   {
     "team_id": "35216066-87148548",
@@ -1223,7 +1223,6 @@
     "competition": "2nd Division",
     "comp_type": "league",
     "name": "Meerkats FC",
-    "rank": 15,
     "gp": 11,
     "w": 2,
     "l": 8,
@@ -1239,7 +1238,8 @@
     "away_l": 3,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 15
   },
   {
     "team_id": "75159918-87148548",
@@ -1250,7 +1250,6 @@
     "competition": "2nd Division",
     "comp_type": "league",
     "name": "Blizzard FC",
-    "rank": 2,
     "gp": 11,
     "w": 8,
     "l": 1,
@@ -1266,7 +1265,8 @@
     "away_l": 1,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 2
   },
   {
     "team_id": "75479656-87148548",
@@ -1277,7 +1277,6 @@
     "competition": "2nd Division",
     "comp_type": "league",
     "name": "FC Yemen II",
-    "rank": 6,
     "gp": 11,
     "w": 7,
     "l": 3,
@@ -1293,7 +1292,8 @@
     "away_l": 1,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 6
   },
   {
     "team_id": "15296943-87148548",
@@ -1304,7 +1304,6 @@
     "competition": "2nd Division",
     "comp_type": "league",
     "name": "Depew Village",
-    "rank": 17,
     "gp": 11,
     "w": 1,
     "l": 10,
@@ -1320,7 +1319,8 @@
     "away_l": 5,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 17
   },
   {
     "team_id": "10359117-87148548",
@@ -1331,7 +1331,6 @@
     "competition": "2nd Division",
     "comp_type": "league",
     "name": "Dutch United FC",
-    "rank": 3,
     "gp": 11,
     "w": 8,
     "l": 2,
@@ -1347,7 +1346,8 @@
     "away_l": 1,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 3
   },
   {
     "team_id": "75159996-87148548",
@@ -1358,7 +1358,6 @@
     "competition": "2nd Division",
     "comp_type": "league",
     "name": "FK Bosna",
-    "rank": 12,
     "gp": 11,
     "w": 4,
     "l": 6,
@@ -1374,7 +1373,8 @@
     "away_l": 2,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 12
   },
   {
     "team_id": "75479653-87148548",
@@ -1385,7 +1385,6 @@
     "competition": "2nd Division",
     "comp_type": "league",
     "name": "Youngstown Marksmen",
-    "rank": 5,
     "gp": 11,
     "w": 7,
     "l": 2,
@@ -1401,7 +1400,8 @@
     "away_l": 2,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 5
   },
   {
     "team_id": "75479674-87148548",
@@ -1412,7 +1412,6 @@
     "competition": "2nd Division",
     "comp_type": "league",
     "name": "Los Chupacabras",
-    "rank": 1,
     "gp": 11,
     "w": 8,
     "l": 1,
@@ -1428,7 +1427,8 @@
     "away_l": 1,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 1
   },
   {
     "team_id": "75479677-87148548",
@@ -1439,7 +1439,6 @@
     "competition": "2nd Division",
     "comp_type": "league",
     "name": "Kingsmen SC",
-    "rank": 16,
     "gp": 11,
     "w": 1,
     "l": 7,
@@ -1455,7 +1454,8 @@
     "away_l": 3,
     "away_d": 2,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 16
   },
   {
     "team_id": "75479680-87148548",
@@ -1466,7 +1466,6 @@
     "competition": "2nd Division",
     "comp_type": "league",
     "name": "Honey Badgers",
-    "rank": 7,
     "gp": 11,
     "w": 6,
     "l": 3,
@@ -1482,7 +1481,8 @@
     "away_l": 2,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 7
   },
   {
     "team_id": "75479686-87148548",
@@ -1493,7 +1493,6 @@
     "competition": "2nd Division",
     "comp_type": "league",
     "name": "Queen City Pride",
-    "rank": 10,
     "gp": 11,
     "w": 5,
     "l": 4,
@@ -1509,7 +1508,8 @@
     "away_l": 2,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 10
   },
   {
     "team_id": "75479689-87148548",
@@ -1520,7 +1520,6 @@
     "competition": "2nd Division",
     "comp_type": "league",
     "name": "Delco Academy",
-    "rank": 13,
     "gp": 11,
     "w": 2,
     "l": 6,
@@ -1536,7 +1535,8 @@
     "away_l": 4,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 13
   },
   {
     "team_id": "10359002-87148548",
@@ -1547,7 +1547,6 @@
     "competition": "2nd Division",
     "comp_type": "league",
     "name": "West Seneca Panthers",
-    "rank": 14,
     "gp": 11,
     "w": 2,
     "l": 8,
@@ -1563,7 +1562,8 @@
     "away_l": 5,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 14
   },
   {
     "team_id": "10359068-87148550",
@@ -1574,7 +1574,6 @@
     "competition": "3rd Division",
     "comp_type": "league",
     "name": "Great Lakes FC",
-    "rank": 8,
     "gp": 11,
     "w": 4,
     "l": 5,
@@ -1590,7 +1589,8 @@
     "away_l": 2,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 8
   },
   {
     "team_id": "10359108-87148550",
@@ -1601,7 +1601,6 @@
     "competition": "3rd Division",
     "comp_type": "league",
     "name": "Stone Jug",
-    "rank": 9,
     "gp": 11,
     "w": 3,
     "l": 5,
@@ -1617,7 +1616,8 @@
     "away_l": 4,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 9
   },
   {
     "team_id": "12579571-87148550",
@@ -1628,7 +1628,6 @@
     "competition": "3rd Division",
     "comp_type": "league",
     "name": "Devils",
-    "rank": 1,
     "gp": 11,
     "w": 10,
     "l": 0,
@@ -1644,7 +1643,8 @@
     "away_l": 0,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 1
   },
   {
     "team_id": "31566782-87148550",
@@ -1655,7 +1655,6 @@
     "competition": "3rd Division",
     "comp_type": "league",
     "name": "Rust Belt United",
-    "rank": 10,
     "gp": 11,
     "w": 3,
     "l": 8,
@@ -1671,7 +1670,8 @@
     "away_l": 4,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 10
   },
   {
     "team_id": "59262126-87148550",
@@ -1682,7 +1682,6 @@
     "competition": "3rd Division",
     "comp_type": "league",
     "name": "Celtic Classic",
-    "rank": 11,
     "gp": 11,
     "w": 2,
     "l": 7,
@@ -1698,7 +1697,8 @@
     "away_l": 3,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 11
   },
   {
     "team_id": "67526458-87148550",
@@ -1709,7 +1709,6 @@
     "competition": "3rd Division",
     "comp_type": "league",
     "name": "Aurora Arsenal II",
-    "rank": 3,
     "gp": 11,
     "w": 7,
     "l": 1,
@@ -1725,7 +1724,8 @@
     "away_l": 1,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 3
   },
   {
     "team_id": "75159990-87148550",
@@ -1736,7 +1736,6 @@
     "competition": "3rd Division",
     "comp_type": "league",
     "name": "Great White Buffalo",
-    "rank": 4,
     "gp": 11,
     "w": 7,
     "l": 2,
@@ -1752,7 +1751,8 @@
     "away_l": 0,
     "away_d": 2,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 5
   },
   {
     "team_id": "75159993-87148550",
@@ -1763,7 +1763,6 @@
     "competition": "3rd Division",
     "comp_type": "league",
     "name": "Revolution SC",
-    "rank": 2,
     "gp": 11,
     "w": 10,
     "l": 1,
@@ -1779,7 +1778,8 @@
     "away_l": 0,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 2
   },
   {
     "team_id": "75479659-87148550",
@@ -1790,7 +1790,6 @@
     "competition": "3rd Division",
     "comp_type": "league",
     "name": "Bangarang FC",
-    "rank": 7,
     "gp": 11,
     "w": 5,
     "l": 4,
@@ -1806,7 +1805,8 @@
     "away_l": 2,
     "away_d": 2,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 7
   },
   {
     "team_id": "75479692-87148550",
@@ -1817,7 +1817,6 @@
     "competition": "3rd Division",
     "comp_type": "league",
     "name": "Erie County FC",
-    "rank": 14,
     "gp": 11,
     "w": 0,
     "l": 11,
@@ -1833,7 +1832,8 @@
     "away_l": 6,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 14
   },
   {
     "team_id": "75479695-87148550",
@@ -1844,7 +1844,6 @@
     "competition": "3rd Division",
     "comp_type": "league",
     "name": "Big Green SC",
-    "rank": 12,
     "gp": 11,
     "w": 2,
     "l": 9,
@@ -1860,7 +1859,8 @@
     "away_l": 4,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 12
   },
   {
     "team_id": "87153543-87148550",
@@ -1871,7 +1871,6 @@
     "competition": "3rd Division",
     "comp_type": "league",
     "name": "Moby Ducks FC",
-    "rank": 5,
     "gp": 11,
     "w": 7,
     "l": 2,
@@ -1887,7 +1886,8 @@
     "away_l": 1,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 4
   },
   {
     "team_id": "87153546-87148550",
@@ -1898,7 +1898,6 @@
     "competition": "3rd Division",
     "comp_type": "league",
     "name": "Tesla FC",
-    "rank": 6,
     "gp": 11,
     "w": 6,
     "l": 2,
@@ -1914,7 +1913,8 @@
     "away_l": 2,
     "away_d": 2,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 6
   },
   {
     "team_id": "10359105-87148551",
@@ -1925,7 +1925,6 @@
     "competition": "Over 35",
     "comp_type": "over35",
     "name": "C.S. Italia",
-    "rank": 6,
     "gp": 10,
     "w": 0,
     "l": 10,
@@ -1941,7 +1940,8 @@
     "away_l": 5,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 6
   },
   {
     "team_id": "46512663-87148551",
@@ -1952,7 +1952,6 @@
     "competition": "Over 35",
     "comp_type": "over35",
     "name": "Azzurri",
-    "rank": 1,
     "gp": 10,
     "w": 6,
     "l": 2,
@@ -1968,7 +1967,8 @@
     "away_l": 0,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 2
   },
   {
     "team_id": "46512666-87148551",
@@ -1979,7 +1979,6 @@
     "competition": "Over 35",
     "comp_type": "over35",
     "name": "Aliens",
-    "rank": 4,
     "gp": 10,
     "w": 4,
     "l": 3,
@@ -1995,7 +1994,8 @@
     "away_l": 1,
     "away_d": 2,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 4
   },
   {
     "team_id": "46512669-87148551",
@@ -2006,7 +2006,6 @@
     "competition": "Over 35",
     "comp_type": "over35",
     "name": "Oranje",
-    "rank": 5,
     "gp": 10,
     "w": 2,
     "l": 7,
@@ -2022,7 +2021,8 @@
     "away_l": 3,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 5
   },
   {
     "team_id": "46512672-87148551",
@@ -2033,7 +2033,6 @@
     "competition": "Over 35",
     "comp_type": "over35",
     "name": "Bluestars FC",
-    "rank": 3,
     "gp": 10,
     "w": 5,
     "l": 2,
@@ -2049,7 +2048,8 @@
     "away_l": 1,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 3
   },
   {
     "team_id": "46512675-87148551",
@@ -2060,7 +2060,6 @@
     "competition": "Over 35",
     "comp_type": "over35",
     "name": "West United FC",
-    "rank": 2,
     "gp": 10,
     "w": 8,
     "l": 1,
@@ -2076,7 +2075,8 @@
     "away_l": 0,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 1
   },
   {
     "team_id": "75479647-87148548",
@@ -2087,7 +2087,6 @@
     "competition": "2nd Division",
     "comp_type": "league",
     "name": "Celtic 1888",
-    "rank": 11,
     "gp": 11,
     "w": 4,
     "l": 3,
@@ -2103,7 +2102,8 @@
     "away_l": 1,
     "away_d": 3,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 11
   },
   {
     "team_id": "75479683-87148550",
@@ -2114,7 +2114,6 @@
     "competition": "3rd Division",
     "comp_type": "league",
     "name": "North Buffalo FCR",
-    "rank": 13,
     "gp": 11,
     "w": 1,
     "l": 10,
@@ -2130,7 +2129,8 @@
     "away_l": 6,
     "away_d": 0,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 13
   },
   {
     "team_id": "75479662-87148548",
@@ -2141,7 +2141,6 @@
     "competition": "2nd Division",
     "comp_type": "league",
     "name": "Celtic Brigade",
-    "rank": 9,
     "gp": 11,
     "w": 5,
     "l": 4,
@@ -2157,6 +2156,7 @@
     "away_l": 3,
     "away_d": 1,
     "yellows": "",
-    "reds": ""
+    "reds": "",
+    "position": 9
   }
 ]
