@@ -180,6 +180,7 @@
               <th class="sortable" class:act={sortKey === 'pts'} onclick={() => (sortKey = 'pts')}>Pts</th>
               <th class="sortable" class:act={sortKey === 'gp'} onclick={() => (sortKey = 'gp')}>GP</th>
               <th class="mobhide">Seasons</th>
+              <th class="mobhide l">Seasons Played</th>
             </tr>
           </thead>
           <tbody>
@@ -191,6 +192,7 @@
                 <td class="pts">{p.pts}</td>
                 <td>{p.gp}</td>
                 <td class="mobhide">{p.seasons}</td>
+                <td class="mobhide l">{p.seasonsPlayed}</td>
               </tr>
             {/each}
           </tbody>

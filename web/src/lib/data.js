@@ -13,6 +13,23 @@ export const POINTS_PER_ASSIST = 1;
 
 const COMP_TYPES = ['league', 'cup', 'over35'];
 
+// 2020 had no BDSL season (COVID), so it shouldn't break a streak: 2019 + 2021 reads as one range.
+const SKIPPED_YEARS = new Set([2020]);
+
+// Collapses a set of season ids (e.g. "2021-summer") into compact year ranges,
+// e.g. {2017,2018,2021,2022,2023,2024} -> "2017-2018, 2021-2024".
+function formatSeasonRanges(sids) {
+  const years = [...new Set([...sids].map((sid) => parseInt(sid, 10)))].sort((a, b) => a - b);
+  const ranges = [];
+  for (const y of years) {
+    const last = ranges[ranges.length - 1];
+    const gapYears = last ? [...Array(y - last[1] - 1)].map((_, i) => last[1] + 1 + i) : null;
+    if (last && gapYears.every((gy) => SKIPPED_YEARS.has(gy))) last[1] = y;
+    else ranges.push([y, y]);
+  }
+  return ranges.map(([a, b]) => (a === b ? `${a}` : `${a}-${b}`)).join(', ');
+}
+
 // Vite rewrites BASE_URL to '/bdsl-stats/' in prod and '/' in dev; data lives beside the app.
 const DATA_BASE = `${import.meta.env.BASE_URL}data/`;
 
@@ -368,7 +385,7 @@ export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, 
       name: displayName(reg, acc.csvName) || '(unknown)',
       g: acc.g, a: acc.a,
       pts: POINTS_PER_GOAL * acc.g + POINTS_PER_ASSIST * acc.a,
-      gp: acc.gp, seasons: acc.sids.size,
+      gp: acc.gp, seasons: acc.sids.size, seasonsPlayed: formatSeasonRanges(acc.sids),
     });
   }
 
