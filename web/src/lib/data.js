@@ -105,6 +105,15 @@ function aggregateSeason(rows, sid, seasonLabel, live) {
 // The live/in-progress season is the one not yet marked final in seasons.json.
 const isLive = (meta) => meta && meta.final !== true;
 
+// stats.csv is an append-only daily time series of *cumulative* season totals (store.py:22).
+// Only the latest snapshot is "the current table"; summing every snapshot double-counts the
+// live season. Mirror store.load_snapshot: keep only rows from the max snapshot_date.
+function latestSnapshotRows(rows) {
+  let latest = '';
+  for (const r of rows) if (r.snapshot_date > latest) latest = r.snapshot_date;
+  return latest ? rows.filter((r) => r.snapshot_date === latest) : rows;
+}
+
 async function buildBoard() {
   const [seasons, playersRegistry] = await Promise.all([
     fetchJson('seasons.json'),
@@ -120,7 +129,7 @@ async function buildBoard() {
         fetchJson(`${sid}/competitions.json`).catch(() => []), // carries each comp's champion
       ]);
       const label = seasons[sid]?.label || sid;
-      return { sid, label, live: isLive(seasons[sid]), rows, teams, comps };
+      return { sid, label, live: isLive(seasons[sid]), rows: latestSnapshotRows(rows), teams, comps };
     })
   );
 
