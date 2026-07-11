@@ -18,7 +18,7 @@
     club = null;
     loadBoard()
       .then((b) => {
-        club = buildClubProfile(b.allTeamStandings, b.allPlayers, b.playersRegistry, id, b.championsByClub);
+        club = buildClubProfile(b.allTeamStandings, b.allPlayers, b.playersRegistry, id, b.championsByClub, b.allGames);
       })
       .catch((e) => (error = e.message || String(e)))
       .finally(() => (loading = false));
@@ -123,6 +123,36 @@
                     <td>{c.gp || '–'}</td>
                   </tr>
                 {/each}
+              {/each}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    {/if}
+
+    {#if club.topOpponents.length}
+      <h2 class="section">Top 5 Most Common Opponents</h2>
+      <section class="season">
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="l">Opponent</th>
+                <th>Played</th>
+                <th>Record (W&ndash;L&ndash;D)</th>
+                <th>GF</th>
+                <th>GA</th>
+              </tr>
+            </thead>
+            <tbody>
+              {#each club.topOpponents as o}
+                <tr>
+                  <td class="l"><a class="pname" href={`#/club/${o.clubId}`}>{o.name}</a></td>
+                  <td>{o.played}</td>
+                  <td>{o.w}&ndash;{o.l}&ndash;{o.d}</td>
+                  <td>{o.gf}</td>
+                  <td>{o.ga}</td>
+                </tr>
               {/each}
             </tbody>
           </table>

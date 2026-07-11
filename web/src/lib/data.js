@@ -123,18 +123,20 @@ async function buildBoard() {
 
   const perSeason = await Promise.all(
     ids.map(async (sid) => {
-      const [rows, teams, comps] = await Promise.all([
+      const [rows, teams, comps, games] = await Promise.all([
         fetchCsv(`${sid}/stats.csv`),
         fetchJson(`${sid}/teams.json`).catch(() => []), // some seasons may lack standings
         fetchJson(`${sid}/competitions.json`).catch(() => []), // carries each comp's champion
+        fetchCsv(`${sid}/games.csv`).catch(() => []),
       ]);
       const label = seasons[sid]?.label || sid;
-      return { sid, label, live: isLive(seasons[sid]), rows: latestSnapshotRows(rows), teams, comps };
+      return { sid, label, live: isLive(seasons[sid]), rows: latestSnapshotRows(rows), teams, comps, games };
     })
   );
 
   const allPlayers = [];
   const allTeamStandings = []; // flat teams.json rows tagged with season context
+  const allGames = []; // flat games.csv rows (played only) tagged with season context
   // clubId -> [{ sid, label, competition, via }] : the authoritative source of titles, spanning
   // league, Over-35 AND cups (cups have no teams.json, so their titles only live here). A champion
   // is the CHMP playoff winner, which can differ from the regular-season table-topper (position 1).
@@ -144,6 +146,9 @@ async function buildBoard() {
     allPlayers.push(...aggregateSeason(s.rows, s.sid, s.label, s.live));
     for (const t of s.teams) {
       allTeamStandings.push({ ...t, sid: s.sid, seasonLabel: s.label, live: s.live });
+    }
+    for (const g of s.games) {
+      if (g.status === 'played') allGames.push({ ...g, sid: s.sid, seasonLabel: s.label });
     }
     for (const c of s.comps) {
       const champ = c.champion_club_id;
@@ -168,7 +173,7 @@ async function buildBoard() {
     .reverse()
     .map((sid) => seasons[sid]?.label || sid); // newest-first, for the filter dropdown
 
-  return { players: active, allPlayers, allTeamStandings, championsByClub, playersRegistry, seasonLabels, dataAsOf };
+  return { players: active, allPlayers, allTeamStandings, allGames, championsByClub, playersRegistry, seasonLabels, dataAsOf };
 }
 
 // Fetch + aggregate once, then share across route navigations (board <-> profile).
@@ -298,7 +303,7 @@ export function buildAllClubs(allTeamStandings, championsByClub) {
 // Full profile for one club: all-time totals, per-season competition history (from teams.json,
 // newest first), and the roster of every player who appeared for the club (from stats.csv, rolled
 // up per person over only that club's competitions). Returns null if the club_id isn't found.
-export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, clubId, championsByClub) {
+export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, clubId, championsByClub, allGames) {
   const standings = allTeamStandings.filter((r) => r.club_id === clubId);
   if (!standings.length) return null;
 
@@ -367,5 +372,25 @@ export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, 
     });
   }
 
-  return { clubId, name, totals, seasons, cups, roster };
+  // Top opponents: head-to-head record against every club this club has played (played games only,
+  // across all competitions/seasons). Opponent name = the newest-season spelling seen for that club.
+  const byOpp = new Map();
+  for (const g of allGames || []) {
+    const gs = num(g.home_score), as = num(g.away_score);
+    let oppId, oppName, gf, ga;
+    if (g.home_club_id === clubId) { oppId = g.away_club_id; oppName = g.away_name; gf = gs; ga = as; }
+    else if (g.away_club_id === clubId) { oppId = g.home_club_id; oppName = g.home_name; gf = as; ga = gs; }
+    else continue;
+    if (!oppId || oppId === clubId) continue;
+    let acc = byOpp.get(oppId);
+    if (!acc) { acc = { clubId: oppId, name: oppName, sid: g.sid, played: 0, w: 0, l: 0, d: 0, gf: 0, ga: 0 }; byOpp.set(oppId, acc); }
+    if (g.sid >= acc.sid) { acc.name = oppName; acc.sid = g.sid; }
+    acc.played += 1; acc.gf += gf; acc.ga += ga;
+    if (gf > ga) acc.w += 1; else if (gf < ga) acc.l += 1; else acc.d += 1;
+  }
+  const topOpponents = [...byOpp.values()]
+    .sort((a, b) => b.played - a.played || (b.gf - b.ga) - (a.gf - a.ga) || a.name.localeCompare(b.name))
+    .slice(0, 5);
+
+  return { clubId, name, totals, seasons, cups, roster, topOpponents };
 }
