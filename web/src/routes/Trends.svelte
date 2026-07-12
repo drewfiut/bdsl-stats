@@ -1,5 +1,9 @@
 <script>
-  import { loadBoard, buildScoringTrend, buildAgeCurve, buildAgeTrend, COMP_TYPE_OPTIONS } from '../lib/data.js';
+  import {
+    loadBoard, buildScoringTrend, buildAgeCurve, buildAgeTrend, COMP_TYPE_OPTIONS,
+    buildMatchOutcomeTrend, buildDivisionSpreadTrend, buildScoringConcentrationTrend,
+    buildRetentionTrend, BLOWOUT_MARGIN,
+  } from '../lib/data.js';
   import { hscroll } from '../lib/scrollShadow.js';
 
   let loading = $state(true);
@@ -23,6 +27,10 @@
 
   const ageCurve = $derived(board ? buildAgeCurve(board.allPlayers, board.playersRegistry, ageCurveType) : null);
   const avgAgeTrend = $derived(board ? buildAgeTrend(board, avgAgeType) : null);
+  const outcomeData = $derived(board ? buildMatchOutcomeTrend(board) : null);
+  const spreadData = $derived(board ? buildDivisionSpreadTrend(board) : null);
+  const concentrationData = $derived(board ? buildScoringConcentrationTrend(board) : null);
+  const retentionData = $derived(board ? buildRetentionTrend(board) : null);
 
   // In-page jump nav: one button per section, in document order.
   const jumpLinks = [
@@ -30,6 +38,10 @@
     { id: 'scoring-by-age', label: 'Scoring by Age' },
     { id: 'participation', label: 'Participation' },
     { id: 'average-age', label: 'Average Age' },
+    { id: 'match-outcomes', label: 'Match Outcomes' },
+    { id: 'division-balance', label: 'Division Balance' },
+    { id: 'scoring-concentration', label: 'Scoring Concentration' },
+    { id: 'player-retention', label: 'Player Retention' },
   ];
 
   // scrollIntoView aligns the target to the viewport top, but the sticky jump nav then overlaps
@@ -103,6 +115,55 @@
 
   const playersChart = $derived(buildIntChart('players', 100));
   const teamsChart = $derived(buildIntChart('teams', 10));
+
+  // Builds a 0-100 line chart for a per-season percentage field, skipping rows where the field is
+  // null (a season with no prior year to compare against, e.g. retention) so the line simply
+  // starts later instead of plotting a false zero -- generalizes the null-skipping idea already
+  // used for avgAgeChart to cover every 0-100 metric below in one place.
+  function buildPctChart(rows, field) {
+    if (!rows || rows.length === 0) return null;
+    const usable = rows.filter((d) => d[field] !== null);
+    if (usable.length === 0) return null;
+    const maxV = Math.max(...usable.map((d) => d[field]), 10);
+    const yMax = Math.min(100, Math.ceil(maxV / 10) * 10);
+    const n = rows.length; // keep full season spacing so a skipped season shows as a gap
+    const x = (i) => M.left + (n === 1 ? iw / 2 : (iw * i) / (n - 1));
+    const y = (v) => M.top + ih - (yMax > 0 ? (v / yMax) * ih : 0);
+    const points = rows
+      .map((d, i) => (d[field] === null ? null : { ...d, cx: x(i), cy: y(d[field]) }))
+      .filter(Boolean);
+    const ticks = [];
+    const step = yMax / 5;
+    for (let t = 0; t <= yMax + 1e-9; t += step) ticks.push({ v: Math.round(t), gy: y(t) });
+    return { points, ticks, yMax, poly: points.map((p) => `${p.cx},${p.cy}`).join(' ') };
+  }
+
+  // Builds a 0-based float line chart rounded to the next 0.25 -- same shape as the goals-per-game
+  // `chart` above, factored out since division spread needs the same treatment.
+  function buildSpreadChart(rows) {
+    if (!rows || rows.length === 0) return null;
+    const usable = rows.filter((d) => d.spread !== null);
+    if (usable.length === 0) return null;
+    const maxV = Math.max(...usable.map((d) => d.spread));
+    const step = 0.25;
+    const yMax = Math.ceil((maxV + step * 0.5) / step) * step;
+    const n = rows.length;
+    const x = (i) => M.left + (n === 1 ? iw / 2 : (iw * i) / (n - 1));
+    const y = (v) => M.top + ih - (yMax > 0 ? (v / yMax) * ih : 0);
+    const points = rows
+      .map((d, i) => (d.spread === null ? null : { ...d, cx: x(i), cy: y(d.spread) }))
+      .filter(Boolean);
+    const ticks = [];
+    for (let t = 0; t <= yMax + 1e-9; t += step) ticks.push({ v: t, gy: y(t) });
+    return { points, ticks, yMax, poly: points.map((p) => `${p.cx},${p.cy}`).join(' ') };
+  }
+
+  const drawChart = $derived(outcomeData ? buildPctChart(outcomeData, 'drawRate') : null);
+  const blowoutChart = $derived(outcomeData ? buildPctChart(outcomeData, 'blowoutRate') : null);
+  const spreadChart = $derived(spreadData ? buildSpreadChart(spreadData) : null);
+  const concentrationChart = $derived(concentrationData ? buildPctChart(concentrationData, 'share') : null);
+  const retentionChart = $derived(retentionData ? buildPctChart(retentionData, 'retentionRate') : null);
+  const pct1 = (v) => v.toFixed(1);
 
   // Average-age plot model: own float y-domain (whole-year ticks) since ages cluster in a narrow
   // adult-rec-league band rather than starting at 0; seasons with no usable birthdates (avgAge ===
@@ -399,6 +460,245 @@
                 <td class="l" class:live={d.live}>{d.label}</td>
                 <td>{d.avgAge !== null ? d.avgAge.toFixed(1) : '—'}</td>
                 <td>{d.ageSample}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <h2 class="section" id="match-outcomes">Match outcomes</h2>
+    <p class="recdesc">
+      Share of games ending level, and share decided by a margin of {BLOWOUT_MARGIN}+ goals, each
+      season across every competition &mdash; league, Over-35 and cups.
+    </p>
+    <section class="trend">
+      <div class="chartgrid">
+        {#if drawChart}
+          <div class="chartwrap">
+            <div class="chart-label">Draw rate</div>
+            <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMid meet" role="img"
+                 aria-label="Draw rate by season">
+              {#each drawChart.ticks as t}
+                <line class="grid" x1={M.left} x2={W - M.right} y1={t.gy} y2={t.gy} />
+                <text class="ylab" x={M.left - 8} y={t.gy} dominant-baseline="middle">{t.v}%</text>
+              {/each}
+              <polyline class="line" points={drawChart.poly} />
+              {#each drawChart.points as p}
+                <circle class="dot" class:live={p.live} cx={p.cx} cy={p.cy} r="4">
+                  <title>{p.label}: {pct1(p.drawRate)}% ({p.draws} of {p.games})</title>
+                </circle>
+                <text class="vlab" class:live={p.live} x={p.cx} y={p.cy - 10}>{pct1(p.drawRate)}%</text>
+                <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+              {/each}
+            </svg>
+          </div>
+        {/if}
+
+        {#if blowoutChart}
+          <div class="chartwrap">
+            <div class="chart-label">Blowout rate</div>
+            <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMid meet" role="img"
+                 aria-label="Blowout rate by season">
+              {#each blowoutChart.ticks as t}
+                <line class="grid" x1={M.left} x2={W - M.right} y1={t.gy} y2={t.gy} />
+                <text class="ylab" x={M.left - 8} y={t.gy} dominant-baseline="middle">{t.v}%</text>
+              {/each}
+              <polyline class="line" points={blowoutChart.poly} />
+              {#each blowoutChart.points as p}
+                <circle class="dot" class:live={p.live} cx={p.cx} cy={p.cy} r="4">
+                  <title>{p.label}: {pct1(p.blowoutRate)}% ({p.blowouts} of {p.games})</title>
+                </circle>
+                <text class="vlab" class:live={p.live} x={p.cx} y={p.cy - 10}>{pct1(p.blowoutRate)}%</text>
+                <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+              {/each}
+            </svg>
+          </div>
+        {/if}
+      </div>
+
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l">Season</th>
+              <th>Games</th>
+              <th>Draws</th>
+              <th>Draw %</th>
+              <th>Blowouts</th>
+              <th>Blowout %</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each [...(outcomeData || [])].reverse() as d}
+              <tr class:live={d.live}>
+                <td class="l" class:live={d.live}>{d.label}</td>
+                <td>{d.games}</td>
+                <td>{d.draws}</td>
+                <td>{pct1(d.drawRate)}%</td>
+                <td>{d.blowouts}</td>
+                <td>{pct1(d.blowoutRate)}%</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if !outcomeData || outcomeData.length === 0}
+          <div class="empty">No games recorded yet.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="division-balance">Division balance</h2>
+    <p class="recdesc">
+      Average gap in points-per-game between the best and worst team within a league division,
+      each season. A smaller gap means a more competitively balanced season. Over-35 and cups
+      aren&rsquo;t divisions and are excluded.
+    </p>
+    <section class="trend">
+      {#if spreadChart}
+        <div class="chartwrap">
+          <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMid meet" role="img"
+               aria-label="Points-per-game spread within divisions, by season">
+            {#each spreadChart.ticks as t}
+              <line class="grid" x1={M.left} x2={W - M.right} y1={t.gy} y2={t.gy} />
+              <text class="ylab" x={M.left - 8} y={t.gy} dominant-baseline="middle">{gpg2(t.v)}</text>
+            {/each}
+            <polyline class="line" points={spreadChart.poly} />
+            {#each spreadChart.points as p}
+              <circle class="dot" class:live={p.live} cx={p.cx} cy={p.cy} r="4">
+                <title>{p.label}: {gpg2(p.spread)} pts/game gap across {p.divisions} divisions</title>
+              </circle>
+              <text class="vlab" class:live={p.live} x={p.cx} y={p.cy - 10}>{gpg2(p.spread)}</text>
+              <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+            {/each}
+          </svg>
+        </div>
+      {:else}
+        <div class="empty">No standings recorded yet.</div>
+      {/if}
+
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l">Season</th>
+              <th>Divisions</th>
+              <th>Avg. Spread</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each [...(spreadData || [])].reverse() as d}
+              <tr class:live={d.live}>
+                <td class="l" class:live={d.live}>{d.label}</td>
+                <td>{d.divisions}</td>
+                <td>{d.spread !== null ? gpg2(d.spread) : '—'}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <h2 class="section" id="scoring-concentration">Scoring concentration</h2>
+    <p class="recdesc">
+      Share of a season&rsquo;s goals scored by its top 10 scorers, across every competition. A
+      higher share means scoring is concentrated among a few standout players rather than spread
+      across the league.
+    </p>
+    <section class="trend">
+      {#if concentrationChart}
+        <div class="chartwrap">
+          <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMid meet" role="img"
+               aria-label="Share of goals scored by the top 10 scorers, by season">
+            {#each concentrationChart.ticks as t}
+              <line class="grid" x1={M.left} x2={W - M.right} y1={t.gy} y2={t.gy} />
+              <text class="ylab" x={M.left - 8} y={t.gy} dominant-baseline="middle">{t.v}%</text>
+            {/each}
+            <polyline class="line" points={concentrationChart.poly} />
+            {#each concentrationChart.points as p}
+              <circle class="dot" class:live={p.live} cx={p.cx} cy={p.cy} r="4">
+                <title>{p.label}: {pct1(p.share)}% ({p.topGoals} of {p.goals} goals, {p.scorers} scorers)</title>
+              </circle>
+              <text class="vlab" class:live={p.live} x={p.cx} y={p.cy - 10}>{pct1(p.share)}%</text>
+              <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+            {/each}
+          </svg>
+        </div>
+      {:else}
+        <div class="empty">No scoring data recorded yet.</div>
+      {/if}
+
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l">Season</th>
+              <th>Scorers</th>
+              <th>Goals</th>
+              <th>Top 10 Goals</th>
+              <th>Share</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each [...(concentrationData || [])].reverse() as d}
+              <tr class:live={d.live}>
+                <td class="l" class:live={d.live}>{d.label}</td>
+                <td>{d.scorers}</td>
+                <td>{d.goals}</td>
+                <td>{d.topGoals}</td>
+                <td>{pct1(d.share)}%</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <h2 class="section" id="player-retention">Player retention</h2>
+    <p class="recdesc">
+      Share of a season&rsquo;s active players who also played the previous tracked season, across
+      every competition. The first tracked season has no prior year to compare against.
+    </p>
+    <section class="trend">
+      {#if retentionChart}
+        <div class="chartwrap">
+          <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMid meet" role="img"
+               aria-label="Returning-player rate, by season">
+            {#each retentionChart.ticks as t}
+              <line class="grid" x1={M.left} x2={W - M.right} y1={t.gy} y2={t.gy} />
+              <text class="ylab" x={M.left - 8} y={t.gy} dominant-baseline="middle">{t.v}%</text>
+            {/each}
+            <polyline class="line" points={retentionChart.poly} />
+            {#each retentionChart.points as p}
+              <circle class="dot" class:live={p.live} cx={p.cx} cy={p.cy} r="4">
+                <title>{p.label}: {pct1(p.retentionRate)}% ({p.returning} of {p.prevActive})</title>
+              </circle>
+              <text class="vlab" class:live={p.live} x={p.cx} y={p.cy - 10}>{pct1(p.retentionRate)}%</text>
+              <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+            {/each}
+          </svg>
+        </div>
+      {:else}
+        <div class="empty">Not enough season-over-season data yet.</div>
+      {/if}
+
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l">Season</th>
+              <th>Previous Active</th>
+              <th>Returning</th>
+              <th>Retention</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each [...(retentionData || [])].reverse() as d}
+              <tr class:live={d.live}>
+                <td class="l" class:live={d.live}>{d.label}</td>
+                <td>{d.prevActive}</td>
+                <td>{d.returning}</td>
+                <td>{d.retentionRate !== null ? `${pct1(d.retentionRate)}%` : '—'}</td>
               </tr>
             {/each}
           </tbody>

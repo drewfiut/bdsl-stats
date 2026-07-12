@@ -1047,6 +1047,169 @@ export function buildScoringTrend(board) {
     .sort((a, b) => a.sid.localeCompare(b.sid)); // oldest -> newest
 }
 
+// A margin of 4+ goals is ~22% of every played BDSL game league-wide -- a "one in five" cutoff
+// that reads as a real blowout without being so rare it's noisy season to season.
+export const BLOWOUT_MARGIN = 4;
+
+// Draw rate + blowout rate per season, counting every played competition (league, Over-35, cups),
+// same scope and game_key dedupe as buildScoringTrend above. A tied score is only a true draw if
+// it stood -- penalty-shootout games (result_note "PK") always report an equal home/away score
+// (the shootout itself isn't reflected in the score fields) but did produce a real winner, so
+// they're excluded. Extra-time games (result_note "OT") always resolve to an unequal score, so
+// they need no special-casing.
+export function buildMatchOutcomeTrend(board) {
+  const { allGames, allCompetitions } = board;
+
+  const meta = new Map();
+  for (const c of allCompetitions || []) {
+    if (!meta.has(c.sid)) meta.set(c.sid, { label: c.label, live: !!c.live });
+  }
+
+  const bySid = new Map(); // sid -> { games, draws, blowouts }
+  const seenGameKeys = new Set();
+  for (const g of allGames || []) {
+    const key = `${g.sid}||${g.game_key}`;
+    if (seenGameKeys.has(key)) continue;
+    seenGameKeys.add(key);
+    const hs = num(g.home_score), as = num(g.away_score);
+    const margin = Math.abs(hs - as);
+    let acc = bySid.get(g.sid);
+    if (!acc) { acc = { games: 0, draws: 0, blowouts: 0 }; bySid.set(g.sid, acc); }
+    acc.games += 1;
+    if (margin === 0 && g.result_note !== 'PK') acc.draws += 1;
+    if (margin >= BLOWOUT_MARGIN) acc.blowouts += 1;
+  }
+
+  return [...bySid.entries()]
+    .map(([sid, acc]) => {
+      const m = meta.get(sid);
+      return {
+        sid,
+        label: m?.label || sid,
+        live: !!m?.live,
+        games: acc.games,
+        draws: acc.draws,
+        drawRate: acc.games ? (100 * acc.draws) / acc.games : 0,
+        blowouts: acc.blowouts,
+        blowoutRate: acc.games ? (100 * acc.blowouts) / acc.games : 0,
+      };
+    })
+    .sort((a, b) => a.sid.localeCompare(b.sid)); // oldest -> newest
+}
+
+// Competitive-balance trend: how far apart the best and worst team are within a division table,
+// averaged across every league division that season. Only comp_type "league" rows count as real
+// divisions -- Over-35 (which canonicalizes to one non-divisional group) and cups (no standings
+// table at all) are excluded. Points-per-game (not raw points) is used so divisions/seasons with
+// uneven schedules are comparable; a division needs at least 2 teams with games played to have a
+// spread at all.
+export function buildDivisionSpreadTrend(board) {
+  const { allTeamStandings } = board;
+
+  const meta = new Map(); // sid -> { label, live }
+  const byDivision = new Map(); // sid -> Map(divisionKey -> [ppg, ...])
+  for (const r of allTeamStandings || []) {
+    if (r.comp_type !== 'league') continue;
+    const gp = num(r.gp);
+    if (gp <= 0) continue;
+    if (!meta.has(r.sid)) meta.set(r.sid, { label: r.seasonLabel, live: !!r.live });
+    const divKey = canonicalCompetition(r.competition, r.comp_type).key;
+    let divs = byDivision.get(r.sid);
+    if (!divs) { divs = new Map(); byDivision.set(r.sid, divs); }
+    let ppgs = divs.get(divKey);
+    if (!ppgs) { ppgs = []; divs.set(divKey, ppgs); }
+    ppgs.push(num(r.pts) / gp);
+  }
+
+  return [...meta.entries()]
+    .map(([sid, m]) => {
+      const divs = byDivision.get(sid);
+      const spreads = [...(divs?.values() || [])]
+        .filter((ppgs) => ppgs.length >= 2)
+        .map((ppgs) => Math.max(...ppgs) - Math.min(...ppgs));
+      const spread = spreads.length ? spreads.reduce((a, b) => a + b, 0) / spreads.length : null;
+      return { sid, label: m.label || sid, live: m.live, divisions: spreads.length, spread };
+    })
+    .sort((a, b) => a.sid.localeCompare(b.sid)); // oldest -> newest
+}
+
+// Scoring-concentration trend: share of a season's goals scored by its top-N scorers, across
+// every competition (same all-comps scope as goals-per-game). A high share means scoring is
+// concentrated among a handful of standout players rather than spread across the league.
+export function buildScoringConcentrationTrend(board, topN = 10) {
+  const { allPlayers, allCompetitions } = board;
+
+  const meta = new Map();
+  for (const c of allCompetitions || []) {
+    if (!meta.has(c.sid)) meta.set(c.sid, { label: c.label, live: !!c.live });
+  }
+
+  const goalsBySid = new Map(); // sid -> [goal tallies, one per scorer]
+  for (const p of allPlayers || []) {
+    if (p.g <= 0) continue;
+    let list = goalsBySid.get(p.sid);
+    if (!list) { list = []; goalsBySid.set(p.sid, list); }
+    list.push(p.g);
+  }
+
+  return [...meta.entries()]
+    .map(([sid, m]) => {
+      const goals = (goalsBySid.get(sid) || []).slice().sort((a, b) => b - a);
+      const totalGoals = goals.reduce((a, b) => a + b, 0);
+      const topGoals = goals.slice(0, topN).reduce((a, b) => a + b, 0);
+      return {
+        sid,
+        label: m?.label || sid,
+        live: !!m?.live,
+        scorers: goals.length,
+        goals: totalGoals,
+        topGoals,
+        share: totalGoals ? (100 * topGoals) / totalGoals : 0,
+      };
+    })
+    .sort((a, b) => a.sid.localeCompare(b.sid)); // oldest -> newest
+}
+
+// Returning-player trend: of the players active in a season (gp > 0 || pts > 0, across every
+// competition), what share also played the previous tracked season. The first season has no
+// prior year to compare against, so it reports retentionRate: null (skipped when charted, same
+// convention as buildAgeTrend's missing-birthdate seasons).
+export function buildRetentionTrend(board) {
+  const { allPlayers, allCompetitions } = board;
+
+  const meta = new Map();
+  for (const c of allCompetitions || []) {
+    if (!meta.has(c.sid)) meta.set(c.sid, { label: c.label, live: !!c.live });
+  }
+
+  const activeBySid = new Map(); // sid -> Set(pk)
+  for (const p of allPlayers || []) {
+    if (!(p.gp > 0 || p.pts > 0)) continue;
+    let s = activeBySid.get(p.sid);
+    if (!s) { s = new Set(); activeBySid.set(p.sid, s); }
+    s.add(p.pk);
+  }
+
+  const sids = [...meta.keys()].sort((a, b) => a.localeCompare(b)); // oldest -> newest
+  let prev = null;
+  const out = [];
+  for (const sid of sids) {
+    const m = meta.get(sid);
+    const active = activeBySid.get(sid) || new Set();
+    let retentionRate = null, returning = 0;
+    if (prev && prev.size > 0) {
+      for (const pk of active) if (prev.has(pk)) returning += 1;
+      retentionRate = (100 * returning) / prev.size;
+    }
+    out.push({
+      sid, label: m?.label || sid, live: !!m?.live,
+      prevActive: prev?.size || 0, returning, retentionRate,
+    });
+    prev = active;
+  }
+  return out;
+}
+
 // ---- season index / season detail ----
 // One page per season (standings, champions, top scorers/assisters) needs a lightweight index
 // of every season that appears anywhere in the board, plus a detail builder for a single sid.
