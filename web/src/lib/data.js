@@ -222,6 +222,24 @@ export function ageFromBirthdate(birthdate) {
   return age >= 0 && age < 130 ? age : null;
 }
 
+// Whole years between an "MM/DD/YYYY" birthdate and July 1 of a season's year (mid-summer
+// reference, since seasons run roughly spring-to-fall); null if unparseable/missing. Mirrors
+// ageFromBirthdate's parse but against a season date instead of today.
+export function ageAtSeason(birthdate, sid) {
+  if (!birthdate) return null;
+  const m = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.exec(birthdate.trim());
+  if (!m) return null;
+  const [, mm, dd, yyyy] = m.map(Number);
+  const yearMatch = /^(\d{4})/.exec(sid || '');
+  if (!yearMatch) return null;
+  const seasonYear = Number(yearMatch[1]);
+  let age = seasonYear - yyyy;
+  // Reference date is July 1 (month 7, day 1).
+  const hadBirthday = 7 > mm || (7 === mm && 1 >= dd);
+  if (!hadBirthday) age -= 1;
+  return age >= 0 && age < 130 ? age : null;
+}
+
 // Build one player's profile from the aggregated player-season objects (all comps they were
 // rostered for, incl. games-played-only rows). Returns null if the person_key isn't found.
 // Best display name: prefer the registry (authoritative) — nickname, else first + last —
@@ -737,6 +755,99 @@ export function buildChampions(allCompetitions, allTeamStandings) {
   leaderboard.sort((a, b) => b.total - a.total || b.league - a.league || a.name.localeCompare(b.name));
 
   return { grid, leaderboard };
+}
+
+// ---- player records ----
+// All-time individual leaderboards: career totals (re-sorts of buildAllPlayers), a per-season/
+// division Golden Boot (league + Over-35 only -- cups have no "division"), and age-based records
+// derived from players.json birthdates (missing/out-of-range ages excluded; see ageAtSeason).
+
+export function buildPlayerRecords(allPlayers, playersRegistry) {
+  // ---- career leaderboards ----
+  const list = buildAllPlayers(allPlayers, playersRegistry);
+  const topGoals = rankedBy(list, 'g', -1);
+  const topAssists = rankedBy(list, 'a', -1);
+  const topPoints = rankedBy(list, 'pts', -1);
+  const mostGP = rankedBy(list, 'gp', -1);
+  const mostSeasons = rankedBy(list, 'seasons', -1);
+  // Unsliced, with goals-per-game -- the component applies its own interactive min-GP filter.
+  const careerList = list.map((p) => ({ ...p, gpg: p.gp > 0 ? p.g / p.gp : 0 }));
+
+  // ---- golden boot ----
+  // Group every player-season's league/Over-35 comp rows by (sid, canonical division key),
+  // summing that player's goals within the division-season, then crown the top scorer(s).
+  const groups = new Map(); // `${sid}||${divKey}` -> { sid, seasonLabel, live, division, o35, order, byPk }
+  for (const p of allPlayers) {
+    for (const c of p.comps || []) {
+      if (c.type !== 'league' && c.type !== 'over35') continue;
+      if (!c.g) continue;
+      const canon = canonicalCompetition(c.c, c.type);
+      const key = `${p.sid}||${canon.key}`;
+      let g = groups.get(key);
+      if (!g) {
+        g = {
+          sid: p.sid, seasonLabel: p.season, live: !!p.live,
+          division: canon.label, o35: c.type === 'over35', order: canon.order,
+          byPk: new Map(),
+        };
+        groups.set(key, g);
+      }
+      let acc = g.byPk.get(p.pk);
+      if (!acc) { acc = { pk: p.pk, name: p.name, g: 0 }; g.byPk.set(p.pk, acc); }
+      acc.g += c.g;
+    }
+  }
+  const goldenBoots = [...groups.values()]
+    .map((g) => {
+      let maxG = 0;
+      for (const acc of g.byPk.values()) if (acc.g > maxG) maxG = acc.g;
+      const winners = [...g.byPk.values()]
+        .filter((acc) => acc.g === maxG)
+        .map((acc) => ({ pk: acc.pk, name: displayName(playersRegistry?.[acc.pk], acc.name) || '(unknown)', g: acc.g }))
+        .sort((a, b) => a.name.localeCompare(b.name));
+      return {
+        sid: g.sid, seasonLabel: g.seasonLabel, live: g.live,
+        division: g.division, o35: g.o35, order: g.order, winners, maxG,
+      };
+    })
+    .filter((g) => g.maxG > 0)
+    .sort((a, b) => b.sid.localeCompare(a.sid) || a.order - b.order)
+    .map(({ maxG, ...rest }) => rest);
+
+  // ---- age records ----
+  // One row per person, keeping only their extreme (youngest/oldest) season-age. A 14-60 sanity
+  // window suppresses clearly-bad birthdates; missing birthdates are excluded entirely.
+  const AGE_MIN = 14, AGE_MAX = 60;
+  const youngest = new Map();
+  const oldestScorer = new Map();
+  const oldestApp = new Map();
+  for (const p of allPlayers) {
+    const reg = playersRegistry?.[p.pk];
+    const age = ageAtSeason(reg?.birthdate, p.sid);
+    if (age === null || age < AGE_MIN || age > AGE_MAX) continue;
+    const name = displayName(reg, p.name) || '(unknown)';
+    const row = { pk: p.pk, name, age, seasonLabel: p.season, sid: p.sid, g: p.g };
+    if (p.g > 0) {
+      const curY = youngest.get(p.pk);
+      if (!curY || age < curY.age) youngest.set(p.pk, row);
+      const curO = oldestScorer.get(p.pk);
+      if (!curO || age > curO.age) oldestScorer.set(p.pk, row);
+    }
+    if (p.gp > 0) {
+      const curA = oldestApp.get(p.pk);
+      if (!curA || age > curA.age) oldestApp.set(p.pk, row);
+    }
+  }
+  const byAgeAsc = (a, b) => a.age - b.age || a.name.localeCompare(b.name);
+  const byAgeDesc = (a, b) => b.age - a.age || a.name.localeCompare(b.name);
+  const youngestScorers = [...youngest.values()].sort(byAgeAsc).slice(0, RANK_N);
+  const oldestScorers = [...oldestScorer.values()].sort(byAgeDesc).slice(0, RANK_N);
+  const oldestAppearances = [...oldestApp.values()].sort(byAgeDesc).slice(0, RANK_N);
+
+  return {
+    topGoals, topAssists, topPoints, mostGP, mostSeasons, careerList,
+    goldenBoots, youngestScorers, oldestScorers, oldestAppearances,
+  };
 }
 
 // ---- season index / season detail ----

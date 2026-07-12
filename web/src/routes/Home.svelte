@@ -46,6 +46,13 @@
         'Every player’s single-season totals — goals, assists, points — across league, ' +
         'cups and Over-35, ranked to surface the best individual seasons in BDSL history.',
     },
+    {
+      href: '#/player-records',
+      title: 'Player Records',
+      blurb:
+        'All-time individual leaderboards — career goals, assists, points and games played, ' +
+        'best goals-per-game, Golden Boot winners by season, and youngest/oldest age records.',
+    },
   ];
 </script>
 

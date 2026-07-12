@@ -14,6 +14,7 @@ export function parse(hash) {
     return { name: 'player', params: { personKey: decodeURIComponent(parts[1]) } };
   }
   if (parts[0] === 'team-records') return { name: 'teamRecords', params: {} };
+  if (parts[0] === 'player-records') return { name: 'playerRecords', params: {} };
   if (parts[0] === 'clubs') return { name: 'clubs', params: {} };
   if (parts[0] === 'club' && parts[1]) {
     return { name: 'club', params: { clubId: decodeURIComponent(parts[1]) } };

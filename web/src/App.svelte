@@ -8,6 +8,7 @@
   import Clubs from './routes/Clubs.svelte';
   import Club from './routes/Club.svelte';
   import TeamRecords from './routes/TeamRecords.svelte';
+  import PlayerRecords from './routes/PlayerRecords.svelte';
   import Champions from './routes/Champions.svelte';
   import Seasons from './routes/Seasons.svelte';
   import Season from './routes/Season.svelte';
@@ -31,6 +32,7 @@
   const INDIVIDUAL_PAGES = [
     { href: '#/players', label: 'Players', name: 'players' },
     { href: '#/best-single-seasons', label: 'Best Single Season (All Comps)', name: 'board' },
+    { href: '#/player-records', label: 'Player Records', name: 'playerRecords' },
   ];
   const teamActive = $derived(TEAM_PAGES.some((p) => p.name === route.name) || route.name === 'club');
   const individualActive = $derived(
@@ -68,6 +70,7 @@
     clubs: 'Clubs · BDSL Stats',
     club: 'Club · BDSL Stats',
     teamRecords: 'Team Records · BDSL Stats',
+    playerRecords: 'Player Records · BDSL Stats',
     champions: 'Champions · BDSL Stats',
     seasons: 'Seasons · BDSL Stats',
     season: 'Season · BDSL Stats',
@@ -133,6 +136,8 @@
   {/key}
 {:else if route.name === 'teamRecords'}
   <TeamRecords />
+{:else if route.name === 'playerRecords'}
+  <PlayerRecords />
 {:else if route.name === 'champions'}
   <Champions />
 {:else if route.name === 'seasons'}
