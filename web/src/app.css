@@ -27,11 +27,25 @@ header.site .wrap { max-width:1120px; margin:0 auto; padding:0 14px;
   display:flex; align-items:center; gap:22px; min-height:52px; flex-wrap:wrap; }
 header.site .brand { color:#fff; font-weight:800; font-size:17px; letter-spacing:.3px;
   text-decoration:none; }
+.navscroll { position:relative; min-width:0; }
 header.site nav { display:flex; gap:6px; }
 header.site nav a { color:rgba(255,255,255,.75); text-decoration:none; font-size:13.5px;
   font-weight:600; padding:6px 11px; border-radius:8px; }
 header.site nav a:hover { color:#fff; background:rgba(255,255,255,.08); }
 header.site nav a.on { color:#fff; background:rgba(255,255,255,.14); }
+
+/* ---- horizontal-scroll edge arrows (header nav + Records jump nav share this) ----
+   A parent (.navscroll / .jumpnav) is position:relative; the hscroll action toggles
+   scroll-left/scroll-right on it as its scrollable child's content overflows either way. */
+.scrollarrow { position:absolute; top:0; bottom:0; width:26px; display:flex; align-items:center;
+  font-size:19px; line-height:1; opacity:0; pointer-events:none; transition:opacity .15s; z-index:2; }
+.scrollarrow.left { left:0; justify-content:flex-start; }
+.scrollarrow.right { right:0; justify-content:flex-end; }
+.navscroll .scrollarrow { color:#fff; }
+.navscroll .scrollarrow.left { background:linear-gradient(to right, var(--navy) 45%, transparent); }
+.navscroll .scrollarrow.right { background:linear-gradient(to left, var(--navy) 45%, transparent); }
+.navscroll.scroll-left .scrollarrow.left,
+.navscroll.scroll-right .scrollarrow.right { opacity:1; }
 
 /* ---- home landing ---- */
 main.home { }
@@ -94,6 +108,22 @@ tbody tr.main.live td:first-child { box-shadow:inset 3px 0 0 var(--gold); }
 .livetag { display:inline-block; margin-left:6px; padding:1px 6px; border-radius:9px;
   background:var(--gold); color:#3a2600; font-size:10px; font-weight:750; letter-spacing:.4px;
   text-transform:uppercase; vertical-align:middle; }
+.o35tag { display:inline-block; margin-left:6px; padding:1px 6px; border-radius:9px;
+  background:var(--a); color:#fff; font-size:10px; font-weight:750; letter-spacing:.4px;
+  text-transform:uppercase; vertical-align:middle; }
+.recdesc { max-width:1120px; margin:0 auto 10px; padding:0 14px; color:var(--muted); font-size:12.5px; }
+
+/* ---- in-page jump nav (Records) ---- */
+.jumpnav { background:var(--card); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:20; }
+.jumpnav .wrap { max-width:1120px; margin:0 auto; padding:6px 14px; display:flex; gap:6px; flex-wrap:wrap; }
+.jumpnav button { border:1px solid var(--line); background:var(--row); color:var(--text); padding:3px 10px;
+  border-radius:999px; font-size:11.5px; font-weight:600; line-height:1.6; cursor:pointer; white-space:nowrap; }
+.jumpnav button:hover { background:var(--hover); border-color:var(--navy2); color:var(--navy2); }
+.jumpnav .scrollarrow { color:var(--text); }
+.jumpnav .scrollarrow.left { background:linear-gradient(to right, var(--card) 55%, transparent); }
+.jumpnav .scrollarrow.right { background:linear-gradient(to left, var(--card) 55%, transparent); }
+.jumpnav.scroll-left .scrollarrow.left,
+.jumpnav.scroll-right .scrollarrow.right { opacity:1; }
 .rank { color:var(--muted); font-weight:700; width:34px; }
 .rank.m1 { color:#c8961e; } .rank.m2 { color:#8b93a1; } .rank.m3 { color:#b06a35; }
 .trophy { margin-left:5px; font-size:12px; vertical-align:middle; }
@@ -134,7 +164,19 @@ footer { max-width:1120px; margin:0 auto; padding:0 14px 40px; color:var(--muted
   .pagehead .sub, .phead .sub { font-size:12px; }
   /* keep the one-line description; drop the longer explainer to save vertical space */
   .pagehead .sub.detail { display:none; }
-  header.site .wrap { gap:10px 16px; min-height:auto; padding:9px 14px; }
+  /* brand on its own line, nav collapsed to one horizontally-scrollable row underneath --
+     five links plus the brand no longer fit on one line at phone widths. Switching .wrap to
+     block (instead of a flex row/column) sidesteps flex-stretch sizing nav wider than its
+     container; nav is then just a plain block, so its own box can never exceed .wrap's width,
+     and overflow-x:auto scrolls its content internally instead of the whole page growing. */
+  header.site .wrap { display:block; min-height:auto; padding:9px 0 4px; }
+  header.site .brand { display:block; padding:0 14px 8px; }
+  /* symmetric top/bottom padding -- the scroll arrows span this box's full height, so lopsided
+     padding would visually center them below the link row instead of on it. */
+  header.site nav { display:flex; flex-wrap:nowrap; overflow-x:auto; gap:4px; padding:5px 14px;
+    -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+  header.site nav::-webkit-scrollbar { display:none; }
+  header.site nav a { flex:0 0 auto; white-space:nowrap; }
   .stats { gap:14px 22px; margin-top:12px; }
   .stat b { font-size:17px; }
 
@@ -153,6 +195,13 @@ footer { max-width:1120px; margin:0 auto; padding:0 14px 40px; color:var(--muted
   .rank { width:26px; }
   .submeta { display:block; }
   tr.detail .box { padding:8px 12px 12px 34px; }
+
+  /* jump nav: wrapping pills eat too much vertical space on narrow screens -- collapse to one
+     horizontally-scrollable row instead (a standard mobile chip-bar pattern), scrollbar hidden. */
+  .jumpnav .wrap { flex-wrap:nowrap; overflow-x:auto; padding:6px 10px;
+    -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+  .jumpnav .wrap::-webkit-scrollbar { display:none; }
+  .jumpnav button { flex:0 0 auto; }
 }
 
 @media (max-width:380px) {

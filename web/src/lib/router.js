@@ -13,6 +13,7 @@ export function parse(hash) {
   if (parts[0] === 'player' && parts[1]) {
     return { name: 'player', params: { personKey: decodeURIComponent(parts[1]) } };
   }
+  if (parts[0] === 'records') return { name: 'records', params: {} };
   if (parts[0] === 'clubs') return { name: 'clubs', params: {} };
   if (parts[0] === 'club' && parts[1]) {
     return { name: 'club', params: { clubId: decodeURIComponent(parts[1]) } };

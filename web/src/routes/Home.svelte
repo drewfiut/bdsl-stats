@@ -22,6 +22,13 @@
         'Every club in BDSL history with all-time records, season-by-season competition ' +
         'history and the full roster of players who suited up.',
     },
+    {
+      href: '#/records',
+      title: 'Records',
+      blurb:
+        'Team records across league and Over-35 league play — most/fewest goals, best and ' +
+        'worst goal differentials, perfect seasons, winning streaks and more.',
+    },
   ];
 </script>
 

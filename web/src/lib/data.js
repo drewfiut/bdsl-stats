@@ -411,3 +411,160 @@ export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, 
 
   return { clubId, name, totals, seasons, cups, roster, topOpponents };
 }
+
+// ---- team records ----
+// League + Over-35 only (teams.json never carries cup rows). Season-total records (most/fewest
+// GF/GA, goal differential, points, perfect/winless seasons) only consider COMPLETED seasons --
+// the in-progress season's partial totals aren't a fair comparison against a full schedule.
+// Game-level records (biggest win, highest scoring game, streaks) use every played game, since
+// each individual result is already final even while the season around it is still in progress.
+
+const RANK_N = 10;
+
+function rankedBy(list, key, dir) {
+  return list
+    .slice()
+    .sort((a, b) => dir * (a[key] - b[key]) || b.gp - a.gp || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
+}
+
+export function buildTeamRecords(allTeamStandings, allGames) {
+  const liveSids = new Set(allTeamStandings.filter((r) => r.live).map((r) => r.sid));
+
+  const seasons = allTeamStandings
+    .filter((r) => !r.live)
+    .map((r) => ({
+      clubId: r.club_id,
+      name: r.name,
+      sid: r.sid,
+      seasonLabel: r.seasonLabel,
+      competition: r.competition,
+      o35: r.comp_type === 'over35',
+      gp: num(r.gp), w: num(r.w), l: num(r.l), d: num(r.d),
+      gf: num(r.gf), ga: num(r.ga), gd: num(r.gf) - num(r.ga), pts: num(r.pts),
+    }))
+    .filter((r) => r.gp > 0);
+
+  const mostGF = rankedBy(seasons, 'gf', -1);
+  const fewestGF = rankedBy(seasons, 'gf', 1);
+  const mostGA = rankedBy(seasons, 'ga', -1);
+  const fewestGA = rankedBy(seasons, 'ga', 1);
+  const bestGD = rankedBy(seasons, 'gd', -1);
+  const worstGD = rankedBy(seasons, 'gd', 1);
+  const mostPts = rankedBy(seasons, 'pts', -1);
+
+  const perfect = seasons
+    .filter((s) => s.l === 0)
+    .sort((a, b) => b.pts - a.pts || b.gd - a.gd || a.name.localeCompare(b.name));
+  const winless = seasons
+    .filter((s) => s.w === 0)
+    .sort((a, b) => a.pts - b.pts || a.gd - b.gd || a.name.localeCompare(b.name));
+
+  // ---- game-level records ----
+  // Some seasons' games.csv lists the same match twice under two competition labels (e.g. a
+  // division renamed mid-scrape) sharing one game_key -- dedupe so streaks/margins aren't doubled.
+  const seenGameKeys = new Set();
+  const games = (allGames || []).filter((g) => {
+    if (g.comp_type !== 'league' && g.comp_type !== 'over35') return false;
+    const key = `${g.sid}||${g.game_key}`;
+    if (seenGameKeys.has(key)) return false;
+    seenGameKeys.add(key);
+    return true;
+  });
+  const gameRows = games.map((g) => {
+    const hs = num(g.home_score), as = num(g.away_score);
+    return {
+      sid: g.sid, seasonLabel: g.seasonLabel, competition: g.competition,
+      o35: g.comp_type === 'over35', live: liveSids.has(g.sid), date: g.date,
+      home: g.home_name, away: g.away_name, hs, as,
+      margin: Math.abs(hs - as), total: hs + as,
+    };
+  });
+  const biggestWins = gameRows
+    .filter((g) => g.margin > 0)
+    .sort((a, b) => b.margin - a.margin || b.total - a.total)
+    .slice(0, RANK_N);
+  const highestScoring = gameRows
+    .slice()
+    .sort((a, b) => b.total - a.total || b.margin - a.margin)
+    .slice(0, RANK_N);
+
+  // ---- career streaks (win / unbeaten), spanning every season ----
+  // Grouped by club+competition-type only -- NOT by season -- so a streak can run straight through
+  // a year boundary (or a promotion/relegation). League and O35 stay separate tracks since they're
+  // different competitions for the same club.
+  const byTeam = new Map();
+  for (const g of games) {
+    const hs = num(g.home_score), as = num(g.away_score);
+    const sides = [
+      { clubId: g.home_club_id, name: g.home_name, gf: hs, ga: as },
+      { clubId: g.away_club_id, name: g.away_name, gf: as, ga: hs },
+    ];
+    for (const side of sides) {
+      if (!side.clubId) continue;
+      const key = `${side.clubId}||${g.comp_type}`;
+      let acc = byTeam.get(key);
+      if (!acc) {
+        acc = { clubId: side.clubId, name: side.name, o35: g.comp_type === 'over35', lastSid: '', games: [] };
+        byTeam.set(key, acc);
+      }
+      if (g.sid >= acc.lastSid) { acc.name = side.name; acc.lastSid = g.sid; }
+      acc.games.push({
+        date: g.date, sid: g.sid, seasonLabel: g.seasonLabel, live: liveSids.has(g.sid),
+        result: side.gf > side.ga ? 'W' : side.gf < side.ga ? 'L' : 'D',
+      });
+    }
+  }
+  // Longest run of games (in date order) satisfying `ok`, keeping the games at the start/end of
+  // the best run so we can report which seasons the streak actually spans.
+  const longestRun = (sortedGames, ok) => {
+    let best = null, curLen = 0, curStart = null;
+    for (const g of sortedGames) {
+      if (ok(g)) {
+        if (curLen === 0) curStart = g;
+        curLen += 1;
+        if (!best || curLen > best.len) best = { len: curLen, start: curStart, end: g };
+      } else {
+        curLen = 0;
+      }
+    }
+    return best;
+  };
+  const winStreaks = [];
+  const unbeatenStreaks = [];
+  for (const acc of byTeam.values()) {
+    const sorted = acc.games.slice().sort((a, b) => a.date.localeCompare(b.date));
+    const mostRecent = sorted[sorted.length - 1];
+    const win = longestRun(sorted, (g) => g.result === 'W');
+    const unbeaten = longestRun(sorted, (g) => g.result !== 'L');
+    // "In progress" only means the streak is still active right now -- i.e. its last game IS the
+    // team's most recent game overall (nothing since has broken it), not merely that its last game
+    // happened to fall in a season that isn't finished yet (a later loss in that same season could
+    // have already ended the streak).
+    if (win) {
+      winStreaks.push({
+        clubId: acc.clubId, name: acc.name, o35: acc.o35, len: win.len,
+        startLabel: win.start.seasonLabel, endLabel: win.end.seasonLabel,
+        live: win.end === mostRecent && win.end.live,
+      });
+    }
+    if (unbeaten) {
+      unbeatenStreaks.push({
+        clubId: acc.clubId, name: acc.name, o35: acc.o35, len: unbeaten.len,
+        startLabel: unbeaten.start.seasonLabel, endLabel: unbeaten.end.seasonLabel,
+        live: unbeaten.end === mostRecent && unbeaten.end.live,
+      });
+    }
+  }
+  const longestWinStreak = winStreaks
+    .sort((a, b) => b.len - a.len || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
+  const longestUnbeatenStreak = unbeatenStreaks
+    .sort((a, b) => b.len - a.len || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
+
+  return {
+    mostGF, fewestGF, mostGA, fewestGA, bestGD, worstGD, mostPts,
+    perfect, winless, biggestWins, highestScoring, longestWinStreak, longestUnbeatenStreak,
+  };
+}

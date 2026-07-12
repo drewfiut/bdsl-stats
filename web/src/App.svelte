@@ -1,11 +1,13 @@
 <script>
   import { parse } from './lib/router.js';
+  import { hscroll } from './lib/scrollShadow.js';
   import Home from './routes/Home.svelte';
   import BestSingleSeasons from './routes/BestSingleSeasons.svelte';
   import Players from './routes/Players.svelte';
   import Player from './routes/Player.svelte';
   import Clubs from './routes/Clubs.svelte';
   import Club from './routes/Club.svelte';
+  import Records from './routes/Records.svelte';
 
   // Reactive current hash; kept in sync with the address bar.
   let hash = $state(typeof location !== 'undefined' ? location.hash : '');
@@ -24,6 +26,7 @@
     player: 'Player · BDSL Stats',
     clubs: 'Clubs · BDSL Stats',
     club: 'Club · BDSL Stats',
+    records: 'Records · BDSL Stats',
   };
   $effect(() => {
     document.title = TITLES[route.name] || 'BDSL Stats';
@@ -33,12 +36,17 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="#/">BDSL Stats</a>
-    <nav>
-      <a href="#/" class:on={route.name === 'home'}>Home</a>
-      <a href="#/best-single-seasons" class:on={route.name === 'board'}>Best Single Seasons</a>
-      <a href="#/players" class:on={route.name === 'players'}>Players</a>
-      <a href="#/clubs" class:on={route.name === 'clubs'}>Clubs</a>
-    </nav>
+    <div class="navscroll">
+      <nav use:hscroll>
+        <a href="#/" class:on={route.name === 'home'}>Home</a>
+        <a href="#/best-single-seasons" class:on={route.name === 'board'}>Best Single Seasons</a>
+        <a href="#/players" class:on={route.name === 'players'}>Players</a>
+        <a href="#/clubs" class:on={route.name === 'clubs'}>Clubs</a>
+        <a href="#/records" class:on={route.name === 'records'}>Records</a>
+      </nav>
+      <span class="scrollarrow left" aria-hidden="true">&#9666;</span>
+      <span class="scrollarrow right" aria-hidden="true">&#9656;</span>
+    </div>
   </div>
 </header>
 
@@ -56,6 +64,8 @@
   {#key route.params.clubId}
     <Club clubId={route.params.clubId} />
   {/key}
+{:else if route.name === 'records'}
+  <Records />
 {:else}
   <Home />
 {/if}
