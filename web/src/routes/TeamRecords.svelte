@@ -57,7 +57,7 @@
 
 <div class="pagehead">
   <div class="wrap">
-    <h1>Records</h1>
+    <h1>Team Records</h1>
     <div class="sub">Team records across BDSL league &amp; Over-35 league play &middot; cup results not included</div>
     <div class="sub detail" style="margin-top:3px">
       Season-total records (goals, differential, points, perfect/winless seasons) only count

@@ -1,4 +1,4 @@
-// Svelte action for horizontally-scrollable chip bars (header nav, Records jump nav). Toggles
+// Svelte action for horizontally-scrollable chip bars (header nav, Team Records jump nav). Toggles
 // `scroll-left` / `scroll-right` classes on the scrollable element's parent whenever there's more
 // content off-screen in that direction; paired CSS on the parent shows/hides an edge arrow.
 export function hscroll(node) {

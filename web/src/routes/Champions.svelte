@@ -34,7 +34,7 @@
   ];
 
   // scrollIntoView aligns the target to the viewport top, but the sticky jump nav then overlaps
-  // it -- measure the nav's actual height and offset the scroll by that (matches Records.svelte).
+  // it -- measure the nav's actual height and offset the scroll by that (matches TeamRecords.svelte).
   function jumpTo(id) {
     const el = document.getElementById(id);
     if (!el) return;

@@ -34,6 +34,22 @@ header.site nav a { color:rgba(255,255,255,.75); text-decoration:none; font-size
 header.site nav a:hover { color:#fff; background:rgba(255,255,255,.08); }
 header.site nav a.on { color:#fff; background:rgba(255,255,255,.14); }
 
+/* ---- header nav dropdowns (Team / Individual) ---- */
+.dropdown { position:relative; }
+header.site nav .dropdown button { display:flex; align-items:center; gap:3px; color:rgba(255,255,255,.75);
+  background:none; border:none; font:inherit; font-size:13.5px; font-weight:600; padding:6px 11px;
+  border-radius:8px; cursor:pointer; }
+header.site nav .dropdown button:hover { color:#fff; background:rgba(255,255,255,.08); }
+header.site nav .dropdown button.on { color:#fff; background:rgba(255,255,255,.14); }
+header.site nav .dropdown .caret { font-size:15px; }
+.dropdown-menu { position:fixed; z-index:50; min-width:200px; background:var(--card);
+  border:1px solid var(--line); border-radius:10px; box-shadow:0 10px 28px rgba(0,0,0,.22);
+  padding:6px; display:flex; flex-direction:column; gap:2px; }
+.dropdown-menu a { color:var(--text); text-decoration:none; font-size:13.5px; font-weight:600;
+  padding:9px 10px; border-radius:6px; }
+.dropdown-menu a:hover { background:var(--hover); }
+.dropdown-menu a.on { background:var(--hover); color:var(--navy2); }
+
 /* ---- horizontal-scroll edge arrows (header nav + Records jump nav share this) ----
    A parent (.navscroll / .jumpnav) is position:relative; the hscroll action toggles
    scroll-left/scroll-right on it as its scrollable child's content overflows either way. */
@@ -49,6 +65,9 @@ header.site nav a.on { color:#fff; background:rgba(255,255,255,.14); }
 
 /* ---- home landing ---- */
 main.home { }
+.home .section-head { margin:0 0 12px; font-size:14px; font-weight:800; text-transform:uppercase;
+  letter-spacing:.6px; color:var(--muted); }
+.home .cards + .section-head { margin-top:28px; }
 .home .cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; }
 .home .card { display:block; background:var(--card); border:1px solid var(--line);
   border-radius:12px; padding:18px; text-decoration:none; color:var(--text);

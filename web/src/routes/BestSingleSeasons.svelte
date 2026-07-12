@@ -83,7 +83,7 @@
 
 <div class="pagehead">
   <div class="wrap">
-    <h1>Best Single Seasons</h1>
+    <h1>Best Single Season (All Comps)</h1>
     <div class="sub">Every player&rsquo;s single-season totals across all competitions &middot; {seasonRange}</div>
     <div class="sub detail" style="margin-top:3px">
       Each row is one player in one season (league + cups + Over-35 combined). The in-progress

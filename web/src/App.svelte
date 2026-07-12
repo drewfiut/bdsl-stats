@@ -7,7 +7,7 @@
   import Player from './routes/Player.svelte';
   import Clubs from './routes/Clubs.svelte';
   import Club from './routes/Club.svelte';
-  import Records from './routes/Records.svelte';
+  import TeamRecords from './routes/TeamRecords.svelte';
   import Champions from './routes/Champions.svelte';
 
   // Reactive current hash; kept in sync with the address bar.
@@ -20,14 +20,52 @@
 
   const route = $derived(parse(hash));
 
+  // Header nav groups pages into two dropdowns: Team stats vs Individual stats.
+  const TEAM_PAGES = [
+    { href: '#/champions', label: 'Champions', name: 'champions' },
+    { href: '#/clubs', label: 'Clubs', name: 'clubs' },
+    { href: '#/team-records', label: 'Team Records', name: 'teamRecords' },
+  ];
+  const INDIVIDUAL_PAGES = [
+    { href: '#/players', label: 'Players', name: 'players' },
+    { href: '#/best-single-seasons', label: 'Best Single Season (All Comps)', name: 'board' },
+  ];
+  const teamActive = $derived(TEAM_PAGES.some((p) => p.name === route.name) || route.name === 'club');
+  const individualActive = $derived(
+    INDIVIDUAL_PAGES.some((p) => p.name === route.name) || route.name === 'player'
+  );
+
+  let openMenu = $state(null); // 'team' | 'individual' | null
+  let menuPos = $state({ top: 0, left: 0 });
+
+  function toggleMenu(name, event) {
+    if (openMenu === name) {
+      openMenu = null;
+      return;
+    }
+    const rect = event.currentTarget.getBoundingClientRect();
+    menuPos = { top: rect.bottom + 6, left: rect.left };
+    openMenu = name;
+  }
+
+  function closeMenu() {
+    openMenu = null;
+  }
+
+  $effect(() => {
+    // Close the open dropdown whenever the route changes.
+    void route;
+    openMenu = null;
+  });
+
   const TITLES = {
     home: 'BDSL Stats',
-    board: 'Best Single Seasons · BDSL Stats',
+    board: 'Best Single Season (All Comps) · BDSL Stats',
     players: 'Players · BDSL Stats',
     player: 'Player · BDSL Stats',
     clubs: 'Clubs · BDSL Stats',
     club: 'Club · BDSL Stats',
-    records: 'Records · BDSL Stats',
+    teamRecords: 'Team Records · BDSL Stats',
     champions: 'Champions · BDSL Stats',
   };
   $effect(() => {
@@ -35,23 +73,44 @@
   });
 </script>
 
+<svelte:window onclick={(e) => {
+  if (openMenu && !e.target.closest('.dropdown')) closeMenu();
+}} />
+
 <header class="site">
   <div class="wrap">
     <a class="brand" href="#/">BDSL Stats</a>
     <div class="navscroll">
       <nav use:hscroll>
         <a href="#/" class:on={route.name === 'home'}>Home</a>
-        <a href="#/best-single-seasons" class:on={route.name === 'board'}>Best Single Seasons</a>
-        <a href="#/champions" class:on={route.name === 'champions'}>Champions</a>
-        <a href="#/players" class:on={route.name === 'players'}>Players</a>
-        <a href="#/clubs" class:on={route.name === 'clubs'}>Clubs</a>
-        <a href="#/records" class:on={route.name === 'records'}>Records</a>
+        <div class="dropdown">
+          <button type="button" class:on={teamActive} onclick={(e) => toggleMenu('team', e)}>
+            Team <span class="caret">&#9662;</span>
+          </button>
+        </div>
+        <div class="dropdown">
+          <button type="button" class:on={individualActive} onclick={(e) => toggleMenu('individual', e)}>
+            Individual <span class="caret">&#9662;</span>
+          </button>
+        </div>
       </nav>
       <span class="scrollarrow left" aria-hidden="true">&#9666;</span>
       <span class="scrollarrow right" aria-hidden="true">&#9656;</span>
     </div>
   </div>
 </header>
+
+{#if openMenu}
+  <div
+    class="dropdown-menu"
+    style="top:{menuPos.top}px; left:{menuPos.left}px;"
+    role="menu"
+  >
+    {#each (openMenu === 'team' ? TEAM_PAGES : INDIVIDUAL_PAGES) as p}
+      <a href={p.href} class:on={route.name === p.name} role="menuitem">{p.label}</a>
+    {/each}
+  </div>
+{/if}
 
 {#if route.name === 'board'}
   <BestSingleSeasons />
@@ -67,8 +126,8 @@
   {#key route.params.clubId}
     <Club clubId={route.params.clubId} />
   {/key}
-{:else if route.name === 'records'}
-  <Records />
+{:else if route.name === 'teamRecords'}
+  <TeamRecords />
 {:else if route.name === 'champions'}
   <Champions />
 {:else}
