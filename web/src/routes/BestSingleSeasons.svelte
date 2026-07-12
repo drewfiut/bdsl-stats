@@ -9,7 +9,6 @@
   let error = $state('');
   let players = $state([]);
   let seasonLabels = $state([]);
-  let dataAsOf = $state('');
 
   // filter/sort state (render_html controls)
   let sortKey = $state('pts');
@@ -18,20 +17,11 @@
   let scorersOnly = $state(true);
   let open = $state(new Set()); // indices (into the displayed list) currently expanded
 
-  const fmtDate = (iso) => {
-    const d = new Date(iso);
-    if (isNaN(d)) return iso || '';
-    const date = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-    const time = d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
-    return `${date} at ${time}`;
-  };
-
   $effect(() => {
     loadBoard()
       .then((b) => {
         players = b.players;
         seasonLabels = b.seasonLabels;
-        dataAsOf = b.dataAsOf;
       })
       .catch((e) => (error = e.message || String(e)))
       .finally(() => (loading = false));
@@ -87,7 +77,7 @@
     <div class="sub">Every player&rsquo;s single-season totals across all competitions &middot; {seasonRange}</div>
     <div class="sub detail" style="margin-top:3px">
       Each row is one player in one season (league + cups + Over-35 combined). The in-progress
-      season is <b style="color:var(--gold)">highlighted</b> &mdash; current as of <b>{fmtDate(dataAsOf)}</b>.
+      season is <b style="color:var(--gold)">highlighted</b>.
       Click a player&rsquo;s name for their full profile.
     </div>
     <div class="stats">

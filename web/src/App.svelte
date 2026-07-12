@@ -1,6 +1,7 @@
 <script>
   import { parse } from './lib/router.js';
   import { hscroll } from './lib/scrollShadow.js';
+  import { loadBoard } from './lib/data.js';
   import Home from './routes/Home.svelte';
   import BestSingleSeasons from './routes/BestSingleSeasons.svelte';
   import Players from './routes/Players.svelte';
@@ -80,6 +81,19 @@
   $effect(() => {
     document.title = TITLES[route.name] || 'BDSL Stats';
   });
+
+  // Data-refreshed timestamp, shown in the header on every page.
+  let dataAsOf = $state('');
+  $effect(() => {
+    loadBoard().then((b) => (dataAsOf = b.dataAsOf)).catch(() => {});
+  });
+  const fmtDataAsOf = (iso) => {
+    const d = new Date(iso);
+    if (isNaN(d)) return '';
+    const date = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    const time = d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+    return `${date} at ${time}`;
+  };
 </script>
 
 <svelte:window onclick={(e) => {
@@ -88,7 +102,12 @@
 
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="#/">BDSL Stats</a>
+    <div class="brandrow">
+      <a class="brand" href="#/">BDSL Stats</a>
+      {#if dataAsOf}
+        <div class="refreshed">Data refreshed {fmtDataAsOf(dataAsOf)}</div>
+      {/if}
+    </div>
     <div class="navscroll">
       <nav use:hscroll>
         <a href="#/" class:on={route.name === 'home'}>Home</a>
