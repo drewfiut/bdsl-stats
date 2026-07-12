@@ -857,7 +857,7 @@ export function buildPlayerRecords(allPlayers, playersRegistry) {
 // game counts aren't doubled, mirroring buildTeamRecords. Emitted oldest->newest so a chart of
 // the series reads left-to-right in time.
 export function buildScoringTrend(board) {
-  const { allGames, allCompetitions } = board;
+  const { allGames, allCompetitions, allPlayers, allTeamStandings } = board;
 
   // sid -> { label, live } (allCompetitions carries both; fall back to each game's seasonLabel).
   const meta = new Map();
@@ -877,6 +877,22 @@ export function buildScoringTrend(board) {
     acc.goals += num(g.home_score) + num(g.away_score);
   }
 
+  // sid -> distinct active player count / distinct club count, for the participation columns.
+  const playersBySid = new Map();
+  for (const p of allPlayers || []) {
+    if (!(p.gp > 0 || p.pts > 0)) continue;
+    const s = playersBySid.get(p.sid) || new Set();
+    s.add(p.pk);
+    playersBySid.set(p.sid, s);
+  }
+  const teamsBySid = new Map();
+  for (const t of allTeamStandings || []) {
+    if (!t.club_id) continue;
+    const s = teamsBySid.get(t.sid) || new Set();
+    s.add(t.club_id);
+    teamsBySid.set(t.sid, s);
+  }
+
   return [...bySid.entries()]
     .map(([sid, acc]) => {
       const m = meta.get(sid);
@@ -887,6 +903,8 @@ export function buildScoringTrend(board) {
         games: acc.games,
         goals: acc.goals,
         gpg: acc.games ? acc.goals / acc.games : 0,
+        players: playersBySid.get(sid)?.size || 0,
+        teams: teamsBySid.get(sid)?.size || 0,
       };
     })
     .sort((a, b) => a.sid.localeCompare(b.sid)); // oldest -> newest
