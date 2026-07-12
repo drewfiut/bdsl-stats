@@ -120,7 +120,9 @@ team_name, jersey, position, g, a, gp`). It opens directly in Excel/Sheets/panda
 `games.csv` is the match fact table — one row per game (`game_key`, teams + club ids, `date`,
 score, `status`, and `round_label` = `QF`/`SF`/`CHMP` for playoff games). `competitions.json`
 records each competition's **champion** (`champion_club_id`), computed from the `CHMP` game — which
-can differ from the regular-season table-topper. See [`DATA.md`](DATA.md) §4.4 / §5.6.
+can differ from the regular-season table-topper. Champions the `CHMP` game leaves undetermined
+(penalty-shootout finals, untagged cup finals) are backfilled from bdsl.org's authoritative
+champion history table (`champion_via: "history-table"`). See [`DATA.md`](DATA.md) §4.4 / §5.6.
 
 `teams.json` carries each team's computed **`position`** (regular-season table order — the source
 `rank` is no longer trusted or stored), overall and **home/away** W/L/T, goals for/against/diff,

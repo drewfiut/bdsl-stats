@@ -102,7 +102,7 @@ Array of the competitions that ran that season, in display order. Each entry:
 | `tg` | string | Demosphere "team-group" id for this competition; it is the `tg` used in `stats.csv`. |
 | `champion_club_id` | string | `club_id` of the competition's **champion** (the trophy winner), or `""` if undecided. See §5.6. Joins to `teams.json` `club_id` / `stats.csv` team club ids. |
 | `champion_name` | string | Champion team's name (denormalized), or `""`. |
-| `champion_via` | string | How the champion was decided: `"playoff"` (won the `CHMP` final), `"regular"` (no playoff that year → regular-season leader), or `""` (undecided — season in progress, or a bracket whose final wasn't a decided `CHMP` game). See §5.6. |
+| `champion_via` | string | How the champion was decided: `"playoff"` (won the `CHMP` final), `"regular"` (no playoff that year → regular-season leader), `"history-table"` (backfilled from bdsl.org's authoritative league/cup "Champion/Finalist/Result" history table — used for penalty-decided finals, untagged cup/bracket finals, and old-scheme seasons the `CHMP`-game logic leaves undetermined), or `""` (undecided — season in progress, or a competition the history table doesn't list either). See §5.6. |
 
 A season has the six league divisions, one or two Over-35 divisions, and zero–three cups.
 Names vary by year — see §5.3. **The champion is the trophy winner and can differ from the
@@ -251,10 +251,15 @@ the playoffs. Example — Summer 2023 4th Division: Infinity FC finished `positi
 semifinal; **Bangarang FC** won the `CHMP` game and is the champion.
 
 Counting titles or crowning a champion, **use `competitions.json` `champion_club_id`, never
-`position`.** `champion_via` tells you how it was decided; `""` means undecided — the live season
-in progress, an old cup whose final wasn't tagged `CHMP`, or a final settled on penalties (the
-score-only `games.csv` can't record a shootout winner — see §4.4). Treat `""` as "unknown," not
-"no champion."
+`position`.** `champion_via` tells you how it was decided: `"playoff"` (won the `CHMP` game),
+`"regular"` (no playoff that year), or `"history-table"` (bdsl.org's authoritative "Champion/
+Finalist/Result" history table). That third source is what now resolves most of the cases the
+`CHMP`-game logic can't — a final settled on penalties (the score-only `games.csv` can't record a
+shootout winner — see §4.4), an old cup/bracket final that was never tagged `CHMP`, or an
+old-numeric-label season — as long as the table's named winner matches a team already on record
+for that competition; the fill is conservative and leaves the competition blank otherwise. `""`
+still means genuinely undecided — the live season in progress, or a competition the history table
+doesn't list either. Treat `""` as "unknown," not "no champion."
 
 ---
 

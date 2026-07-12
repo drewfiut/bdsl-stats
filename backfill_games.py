@@ -21,6 +21,7 @@ ids are already there), fetches each competition's full schedule, then:
 """
 import argparse
 
+import champions
 import collect
 import schedules
 import standings
@@ -62,7 +63,43 @@ def backfill_season(sid: str, force: bool = False) -> None:
             c["competition"], c["comp_type"], c["tg"]
     groups = [_G(c) for c in comps]
 
-    store.save_games(sid, collect._game_rows(groups, games_by_tg))
+    game_rows = collect._game_rows(groups, games_by_tg)
+    rows_by_tg = {}
+    for r in game_rows:
+        rows_by_tg.setdefault(r["tg"], []).append(r)
+
+    before = sum(1 for c in comps if c["champion_club_id"])
+    season_desc = store.load_seasons().get(sid, {})
+    section_cache = {}
+
+    def rows_for(section):
+        if section not in section_cache:
+            section_cache[section] = champions.fetch_champions(section)
+        return section_cache[section]
+
+    for c in comps:
+        if c.get("champion_via"):
+            continue
+        if c["comp_type"] in ("league", "over35"):
+            league_section = season_desc.get("league_section")
+            hist_rows = rows_for(league_section) if league_section else []
+        elif c["comp_type"] == "cup":
+            hist_rows = []
+            for section in season_desc.get("cup_sections", []):
+                hist_rows.extend(rows_for(section))
+        else:
+            continue
+        club_id, name, via = champions.resolve(
+            c, rows_by_tg.get(c["tg"], []),
+            [t for t in teams if t.get("tg") == c["tg"]], hist_rows)
+        if club_id:
+            c["champion_club_id"], c["champion_name"], c["champion_via"] = club_id, name, via
+
+    filled = sum(1 for c in comps if c["champion_club_id"]) - before
+    if filled:
+        print(f"    filled {filled} champion(s) from the history table")
+
+    store.save_games(sid, game_rows)
     store.save_teams(sid, teams)
     store.save_competitions(sid, comps)
 

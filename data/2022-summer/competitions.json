@@ -43,9 +43,9 @@
     "competition": "4th Divison",
     "comp_type": "league",
     "tg": "106800243",
-    "champion_club_id": "",
-    "champion_name": "",
-    "champion_via": ""
+    "champion_club_id": "35216066",
+    "champion_name": "Meerkats FC",
+    "champion_via": "history-table"
   },
   {
     "competition": "Over 35",
@@ -59,24 +59,24 @@
     "competition": "Wood Cup",
     "comp_type": "cup",
     "tg": "107210224",
-    "champion_club_id": "",
-    "champion_name": "",
-    "champion_via": ""
+    "champion_club_id": "98468675",
+    "champion_name": "Kilimanjaro Bandits",
+    "champion_via": "history-table"
   },
   {
     "competition": "Tehel Cup",
     "comp_type": "cup",
     "tg": "107211519",
-    "champion_club_id": "",
-    "champion_name": "",
-    "champion_via": ""
+    "champion_club_id": "26895907",
+    "champion_name": "Amherst Sharpshooters",
+    "champion_via": "history-table"
   },
   {
     "competition": "Matthews Cup",
     "comp_type": "cup",
     "tg": "107211629",
-    "champion_club_id": "",
-    "champion_name": "",
-    "champion_via": ""
+    "champion_club_id": "98469017",
+    "champion_name": "Buffalo Cosmos",
+    "champion_via": "history-table"
   }
 ]
