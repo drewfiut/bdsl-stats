@@ -27,14 +27,13 @@
     <div class="status">Couldn&rsquo;t load data: {error}</div>
   {:else}
     <section class="season">
-      <div class="tablewrap">
+      <div class="tablewrap full">
         <table>
           <thead>
             <tr>
               <th class="l">Season</th>
-              <th>Divisions</th>
-              <th>Champions</th>
-              <th class="mobhide">Players</th>
+              <th class="narrow">Divisions</th>
+              <th class="narrow">Champions</th>
               <th class="l">Top Scorer</th>
             </tr>
           </thead>
@@ -44,9 +43,8 @@
                 <td class="l" class:live={s.live}>
                   <a class="pname" href={`#/season/${s.sid}`}>{s.label}</a>
                 </td>
-                <td>{s.divisions}</td>
-                <td>{s.champions}</td>
-                <td class="mobhide">{s.players}</td>
+                <td class="narrow">{s.divisions}</td>
+                <td class="narrow">{s.champions}</td>
                 <td class="l">
                   {#if s.topScorer}
                     <a class="pname" href={`#/player/${s.topScorer.pk}`}>{s.topScorer.name}</a>
@@ -71,4 +69,6 @@
 <style>
   .gcount { color: var(--muted); }
   .tsdiv { color: var(--muted); font-size: 12px; margin-top: 2px; }
+  .tablewrap.full { max-height: none; overflow-y: visible; }
+  th.narrow, td.narrow { width: 1%; white-space: nowrap; }
 </style>
