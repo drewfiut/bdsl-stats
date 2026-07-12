@@ -9,6 +9,7 @@ import datetime as dt
 from dataclasses import asdict
 from typing import Dict, List, Optional
 
+import champions
 import config
 import discover
 import schedules
@@ -39,6 +40,38 @@ def _game_rows(groups, games_by_tg: Dict[str, list]) -> List[dict]:
             d["away_score"] = "" if d["away_score"] is None else d["away_score"]
             rows.append(d)
     return rows
+
+
+def _fill_history_champions(season: dict, comps: List[dict], rows_by_tg: Dict[str, list],
+                             teams: List[dict]) -> None:
+    """Fill still-blank `champion_via` competitions from bdsl.org's champion history table.
+
+    Fetches each needed section (the league section for league/over35 comps, each cup section
+    for cup comps) at most once, caching by section id.
+    """
+    section_cache: Dict[str, list] = {}
+
+    def rows_for(section: str) -> list:
+        if section not in section_cache:
+            section_cache[section] = champions.fetch_champions(section)
+        return section_cache[section]
+
+    for comp in comps:
+        if comp.get("champion_via"):
+            continue
+        if comp["comp_type"] in ("league", "over35"):
+            hist_rows = rows_for(season["league_section"])
+        elif comp["comp_type"] == "cup":
+            hist_rows = []
+            for section in season.get("cup_sections", []):
+                hist_rows.extend(rows_for(section))
+        else:
+            continue
+        club_id, name, via = champions.resolve(
+            comp, rows_by_tg.get(comp["tg"], []),
+            [t for t in teams if t["tg"] == comp["tg"]], hist_rows)
+        if club_id:
+            comp.update(champion_club_id=club_id, champion_name=name, champion_via=via)
 
 
 def is_current(season_id: Optional[str] = None) -> bool:
@@ -79,6 +112,11 @@ def collect(season: Optional[dict] = None, progress: bool = False,
     teams = discover.discover_teams(season["league_section"], season["standings_element"])
     standings.assign_positions(teams)
 
+    game_rows = _game_rows(groups, games_by_tg)
+    rows_by_tg: Dict[str, list] = {}
+    for r in game_rows:
+        rows_by_tg.setdefault(r["tg"], []).append(r)
+
     comps = []
     for g in groups:
         comp = asdict(g)
@@ -88,9 +126,11 @@ def collect(season: Optional[dict] = None, progress: bool = False,
         comp.update(champion_club_id=club_id, champion_name=name, champion_via=via)
         comps.append(comp)
 
+    _fill_history_champions(season, comps, rows_by_tg, teams)
+
     store.save_competitions(sid, comps)
     store.save_teams(sid, teams)
-    store.save_games(sid, _game_rows(groups, games_by_tg))
+    store.save_games(sid, game_rows)
 
     rows = []
     players = {}

@@ -35,24 +35,24 @@
     "competition": "3rd Division",
     "comp_type": "league",
     "tg": "67523680",
-    "champion_club_id": "",
-    "champion_name": "",
-    "champion_via": ""
+    "champion_club_id": "10359068",
+    "champion_name": "Great Lakes FC",
+    "champion_via": "history-table"
   },
   {
     "competition": "Over 35",
     "comp_type": "over35",
     "tg": "67523681",
-    "champion_club_id": "",
-    "champion_name": "",
-    "champion_via": ""
+    "champion_club_id": "10359068",
+    "champion_name": "Great Lakes FC",
+    "champion_via": "history-table"
   },
   {
     "competition": "BDSL Wood Cup Bracket",
     "comp_type": "cup",
     "tg": "68014878",
-    "champion_club_id": "",
-    "champion_name": "",
-    "champion_via": ""
+    "champion_club_id": "15294627",
+    "champion_name": "Niagara FC",
+    "champion_via": "history-table"
   }
 ]

@@ -104,7 +104,10 @@ def champion_for(games: List, teams: List[dict], season_final: bool = True) -> T
                      leader (position 1) is the champion.
       * ""        -- undecided: season in progress, or a bracket whose final can't be pinned down
                      (final untagged and un-reconstructable, or settled on penalties -- the
-                     score-only games don't record a shootout winner).
+                     score-only games don't record a shootout winner). Competitions left blank
+                     here may still be filled in downstream from bdsl.org's own authoritative
+                     champion history table (see champions.py), which tags them
+                     `via="history-table"` instead.
     """
     finals = [g for g in games
               if (g.round_label or "").upper() in _FINAL_LABELS and g.status == "played"]
