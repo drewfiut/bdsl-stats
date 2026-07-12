@@ -1,22 +1,35 @@
 <script>
-  import { loadBoard, buildScoringTrend } from '../lib/data.js';
+  import { loadBoard, buildScoringTrend, buildAgeCurve, buildAgeTrend, COMP_TYPE_OPTIONS } from '../lib/data.js';
   import { hscroll } from '../lib/scrollShadow.js';
 
   let loading = $state(true);
   let error = $state('');
   let data = $state(null);
+  let board = $state(null);
+
+  // Independent competition-type filters for the two age sections below.
+  let ageCurveType = $state('all');
+  let avgAgeType = $state('all');
 
   $effect(() => {
     loadBoard()
-      .then((b) => (data = buildScoringTrend(b)))
+      .then((b) => {
+        board = b;
+        data = buildScoringTrend(b);
+      })
       .catch((e) => (error = e.message || String(e)))
       .finally(() => (loading = false));
   });
 
+  const ageCurve = $derived(board ? buildAgeCurve(board.allPlayers, board.playersRegistry, ageCurveType) : null);
+  const avgAgeTrend = $derived(board ? buildAgeTrend(board, avgAgeType) : null);
+
   // In-page jump nav: one button per section, in document order.
   const jumpLinks = [
     { id: 'goals-per-game', label: 'Goals per Game' },
+    { id: 'scoring-by-age', label: 'Scoring by Age' },
     { id: 'participation', label: 'Participation' },
+    { id: 'average-age', label: 'Average Age' },
   ];
 
   // scrollIntoView aligns the target to the viewport top, but the sticky jump nav then overlaps
@@ -56,6 +69,22 @@
 
   const gpg2 = (v) => v.toFixed(2);
 
+  // Age-curve plot model: same shape as the goals-per-game chart above, but x is age (already
+  // sorted ascending by buildAgeCurve) instead of season, and points never carry a "live" flag --
+  // one age bucket blends rows from many seasons, so no single point can be "in progress".
+  const ageChart = $derived.by(() => {
+    if (!ageCurve || ageCurve.length === 0) return null;
+    const maxGpg = Math.max(...ageCurve.map((d) => d.gpg));
+    const yMax = Math.ceil((maxGpg + 0.5) * 2) / 2;
+    const n = ageCurve.length;
+    const x = (i) => M.left + (n === 1 ? iw / 2 : (iw * i) / (n - 1));
+    const y = (v) => M.top + ih - (yMax > 0 ? (v / yMax) * ih : 0);
+    const points = ageCurve.map((d, i) => ({ ...d, cx: x(i), cy: y(d.gpg) }));
+    const ticks = [];
+    for (let t = 0; t <= yMax + 1e-9; t += 0.5) ticks.push({ v: t, gy: y(t) });
+    return { points, ticks, yMax, poly: points.map((p) => `${p.cx},${p.cy}`).join(' ') };
+  });
+
   // Builds a single-series line chart (0..padded max, rounded to a clean step) for the given
   // per-season integer field. Mirrors the goals-per-game chart above but as an int y-axis.
   function buildIntChart(field, roundTo) {
@@ -74,6 +103,27 @@
 
   const playersChart = $derived(buildIntChart('players', 100));
   const teamsChart = $derived(buildIntChart('teams', 10));
+
+  // Average-age plot model: own float y-domain (whole-year ticks) since ages cluster in a narrow
+  // adult-rec-league band rather than starting at 0; seasons with no usable birthdates (avgAge ===
+  // null) are skipped so the line breaks across them instead of plotting a false zero.
+  const avgAgeChart = $derived.by(() => {
+    if (!avgAgeTrend || avgAgeTrend.length === 0) return null;
+    const withAge = avgAgeTrend.filter((d) => d.avgAge !== null);
+    if (withAge.length === 0) return null;
+    const vals = withAge.map((d) => d.avgAge);
+    const yMin = Math.floor(Math.min(...vals) - 1);
+    const yMax = Math.ceil(Math.max(...vals) + 1);
+    const n = avgAgeTrend.length; // keep full season spacing so skipped seasons show as a gap
+    const x = (i) => M.left + (n === 1 ? iw / 2 : (iw * i) / (n - 1));
+    const y = (v) => M.top + ih - ((v - yMin) / (yMax - yMin || 1)) * ih;
+    const points = avgAgeTrend
+      .map((d, i) => (d.avgAge === null ? null : { ...d, cx: x(i), cy: y(d.avgAge) }))
+      .filter(Boolean);
+    const ticks = [];
+    for (let t = yMin; t <= yMax + 1e-9; t += 1) ticks.push({ v: Math.round(t), gy: y(t) });
+    return { points, ticks, yMax, poly: points.map((p) => `${p.cx},${p.cy}`).join(' ') };
+  });
 </script>
 
 <div class="pagehead">
@@ -159,6 +209,72 @@
       </div>
     </section>
 
+    <h2 class="section" id="scoring-by-age">Scoring by age</h2>
+    <p class="recdesc">
+      Goals per game by player age, across every BDSL season. Ages with too few players are omitted.
+    </p>
+    <div class="leadctrl">
+      <label>
+        Competition
+        <select bind:value={ageCurveType}>
+          {#each COMP_TYPE_OPTIONS as opt}
+            <option value={opt.value}>{opt.label}</option>
+          {/each}
+        </select>
+      </label>
+    </div>
+    <section class="trend">
+      {#if ageChart}
+        <div class="chartwrap">
+          <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMid meet" role="img"
+               aria-label="Goals per game by age">
+            {#each ageChart.ticks as t}
+              <line class="grid" x1={M.left} x2={W - M.right} y1={t.gy} y2={t.gy} />
+              <text class="ylab" x={M.left - 8} y={t.gy} dominant-baseline="middle">{gpg2(t.v)}</text>
+            {/each}
+            <polyline class="line" points={ageChart.poly} />
+            {#each ageChart.points as p}
+              <circle class="dot" cx={p.cx} cy={p.cy} r="4">
+                <title>Age {p.age}: {gpg2(p.gpg)} goals/game ({p.g} in {p.gp}, {p.players} players)</title>
+              </circle>
+              <text class="vlab" x={p.cx} y={p.cy - 10}>{gpg2(p.gpg)}</text>
+              <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{p.age}</text>
+            {/each}
+          </svg>
+        </div>
+      {:else}
+        <div class="empty">Not enough birthdate data yet.</div>
+      {/if}
+
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l">Age</th>
+              <th>Players</th>
+              <th>Games</th>
+              <th>Goals</th>
+              <th>Goals / Game</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each ageCurve || [] as d}
+              <tr>
+                <td class="l">{d.age}</td>
+                <td>{d.players}</td>
+                <td>{d.gp}</td>
+                <td>{d.g}</td>
+                <td>{gpg2(d.gpg)}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if !ageCurve || ageCurve.length === 0}
+          <div class="empty">Not enough birthdate data yet.</div>
+        {/if}
+      </div>
+    </section>
+
     <h2 class="section" id="participation">Participation</h2>
     <p class="recdesc">
       Distinct players and clubs fielding a team each season, across every competition.
@@ -229,10 +345,102 @@
         </table>
       </div>
     </section>
+
+    <h2 class="section" id="average-age">Average age</h2>
+    <p class="recdesc">
+      Average age of active players each season (as of July&nbsp;1), computed from registered
+      birthdates. Seasons with no usable birthdate data are omitted from the chart.
+    </p>
+    <div class="leadctrl">
+      <label>
+        Competition
+        <select bind:value={avgAgeType}>
+          {#each COMP_TYPE_OPTIONS as opt}
+            <option value={opt.value}>{opt.label}</option>
+          {/each}
+        </select>
+      </label>
+    </div>
+    <section class="trend">
+      {#if avgAgeChart}
+        <div class="chartwrap">
+          <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="xMidYMid meet" role="img"
+               aria-label="Average player age by season">
+            {#each avgAgeChart.ticks as t}
+              <line class="grid" x1={M.left} x2={W - M.right} y1={t.gy} y2={t.gy} />
+              <text class="ylab" x={M.left - 8} y={t.gy} dominant-baseline="middle">{t.v}</text>
+            {/each}
+            <polyline class="line" points={avgAgeChart.poly} />
+            {#each avgAgeChart.points as p}
+              <circle class="dot" class:live={p.live} cx={p.cx} cy={p.cy} r="4">
+                <title>{p.label}: {p.avgAge.toFixed(1)} yrs avg ({p.ageSample} players)</title>
+              </circle>
+              <text class="vlab" class:live={p.live} x={p.cx} y={p.cy - 10}>{p.avgAge.toFixed(1)}</text>
+              <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+            {/each}
+          </svg>
+        </div>
+      {:else}
+        <div class="empty">No birthdate data recorded yet.</div>
+      {/if}
+
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l">Season</th>
+              <th>Avg. Age</th>
+              <th>Sample</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each [...(avgAgeTrend || [])].reverse() as d}
+              <tr class:live={d.live}>
+                <td class="l" class:live={d.live}>{d.label}</td>
+                <td>{d.avgAge !== null ? d.avgAge.toFixed(1) : '—'}</td>
+                <td>{d.ageSample}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+      </div>
+    </section>
   {/if}
 </main>
 
 <style>
+  /* Competition-type filter for the age curve / average-age sections (mirrors PlayerRecords.svelte's .leadctrl). */
+  .leadctrl {
+    max-width: 1120px;
+    margin: 0 auto 10px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .leadctrl label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+  }
+  .leadctrl select {
+    font: inherit;
+    font-size: 14px;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--text);
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
   .trend { max-width: 1120px; margin: 0 auto; padding: 0 14px; }
   .chartwrap { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
     padding: 8px 10px; margin-bottom: 16px; }

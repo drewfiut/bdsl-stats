@@ -448,6 +448,13 @@ export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, 
 
 const RANK_N = 10;
 
+// Sanity window for any birthdate-derived age (see ageAtSeason) -- suppresses clearly-bad
+// birthdates rather than dropping the player entirely.
+const AGE_MIN = 14, AGE_MAX = 60;
+// Age-curve buckets need enough distinct players to be a meaningful average, not a hardcoded
+// display range -- this lets the curve's x-axis self-clip to wherever the data actually supports it.
+const AGE_CURVE_MIN_PLAYERS = 5;
+
 function rankedBy(list, key, dir) {
   return list
     .slice()
@@ -757,6 +764,53 @@ export function buildChampions(allCompetitions, allTeamStandings) {
   return { grid, leaderboard };
 }
 
+// ---- champion age records ----
+// Youngest/oldest player to win a title (any decided competition -- league, Over-35 or cup),
+// based on actually appearing (gp > 0) for the champion club in that competition-season, not
+// merely being on the roster. One row per person, keeping their single most extreme qualifying
+// age across every title they've won.
+export function buildChampionAgeRecords(allCompetitions, allPlayers, playersRegistry) {
+  const playersBySid = new Map();
+  for (const p of allPlayers) {
+    let list = playersBySid.get(p.sid);
+    if (!list) { list = []; playersBySid.set(p.sid, list); }
+    list.push(p);
+  }
+
+  const youngest = new Map();
+  const oldest = new Map();
+  for (const c of allCompetitions || []) {
+    if (!c.clubId) continue; // undecided -- not a title
+    const seasonPlayers = playersBySid.get(c.sid);
+    if (!seasonPlayers) continue;
+    const canon = canonicalCompetition(c.competition, c.comp_type);
+    for (const p of seasonPlayers) {
+      const won = (p.comps || []).some(
+        (row) => row.club === c.clubId && row.c === c.competition && row.type === c.comp_type && row.gp > 0
+      );
+      if (!won) continue;
+      const reg = playersRegistry?.[p.pk];
+      const age = ageAtSeason(reg?.birthdate, p.sid);
+      if (age === null || age < AGE_MIN || age > AGE_MAX) continue;
+      const name = displayName(reg, p.name) || '(unknown)';
+      const row = {
+        pk: p.pk, name, age, seasonLabel: c.label, sid: c.sid,
+        clubId: c.clubId, clubName: c.clubName, competition: canon.label,
+      };
+      const curY = youngest.get(p.pk);
+      if (!curY || age < curY.age) youngest.set(p.pk, row);
+      const curO = oldest.get(p.pk);
+      if (!curO || age > curO.age) oldest.set(p.pk, row);
+    }
+  }
+  const byAgeAsc = (a, b) => a.age - b.age || a.name.localeCompare(b.name);
+  const byAgeDesc = (a, b) => b.age - a.age || a.name.localeCompare(b.name);
+  return {
+    youngestChampions: [...youngest.values()].sort(byAgeAsc).slice(0, RANK_N),
+    oldestChampions: [...oldest.values()].sort(byAgeDesc).slice(0, RANK_N),
+  };
+}
+
 // ---- player records ----
 // All-time individual leaderboards: career totals (re-sorts of buildAllPlayers), a per-season/
 // division Golden Boot (league + Over-35 only -- cups have no "division"), and age-based records
@@ -815,9 +869,8 @@ export function buildPlayerRecords(allPlayers, playersRegistry) {
     .map(({ maxG, ...rest }) => rest);
 
   // ---- age records ----
-  // One row per person, keeping only their extreme (youngest/oldest) season-age. A 14-60 sanity
-  // window suppresses clearly-bad birthdates; missing birthdates are excluded entirely.
-  const AGE_MIN = 14, AGE_MAX = 60;
+  // One row per person, keeping only their extreme (youngest/oldest) season-age. Missing
+  // birthdates are excluded entirely (see AGE_MIN/AGE_MAX above).
   const youngest = new Map();
   const oldestScorer = new Map();
   const oldestApp = new Map();
@@ -848,6 +901,90 @@ export function buildPlayerRecords(allPlayers, playersRegistry) {
     topGoals, topAssists, topPoints, mostGP, mostSeasons, careerList,
     goldenBoots, youngestScorers, oldestScorers, oldestAppearances,
   };
+}
+
+// A player-season's g/a/gp/pts, optionally narrowed to one comp_type ('league'/'cup'/'over35')
+// by re-summing their comps rows -- 'all' (the default) just returns the pre-aggregated totals.
+export const COMP_TYPE_OPTIONS = [
+  { value: 'all', label: 'All Competitions' },
+  { value: 'league', label: 'League' },
+  { value: 'over35', label: 'Over-35' },
+  { value: 'cup', label: 'Cup' },
+];
+
+function statsForType(p, compType) {
+  if (!compType || compType === 'all') return { g: p.g, a: p.a, gp: p.gp, pts: p.pts };
+  let g = 0, a = 0, gp = 0;
+  for (const c of p.comps || []) {
+    if (c.type !== compType) continue;
+    g += c.g; a += c.a; gp += c.gp;
+  }
+  return { g, a, gp, pts: POINTS_PER_GOAL * g + POINTS_PER_ASSIST * a };
+}
+
+// ---- age curve ----
+// Per-age scoring rate across every active player-season row: for each whole age, the combined
+// goals/games-played of every player-season attributed to that age via ageAtSeason. Ages with
+// too few distinct players are dropped so thin tails don't produce noisy spikes.
+export function buildAgeCurve(allPlayers, playersRegistry, compType = 'all') {
+  const byAge = new Map(); // age -> { g, gp, pks: Set }
+  for (const p of allPlayers) {
+    const s = statsForType(p, compType);
+    if (!(s.gp > 0 || s.pts > 0)) continue;
+    const reg = playersRegistry?.[p.pk];
+    const age = ageAtSeason(reg?.birthdate, p.sid);
+    if (age === null || age < AGE_MIN || age > AGE_MAX) continue;
+    let acc = byAge.get(age);
+    if (!acc) { acc = { g: 0, gp: 0, pks: new Set() }; byAge.set(age, acc); }
+    acc.g += s.g; acc.gp += s.gp; acc.pks.add(p.pk);
+  }
+
+  const out = [];
+  for (let age = AGE_MIN; age <= AGE_MAX; age += 1) {
+    const acc = byAge.get(age);
+    const players = acc?.pks.size || 0;
+    if (players < AGE_CURVE_MIN_PLAYERS) continue;
+    out.push({ age, g: acc.g, gp: acc.gp, gpg: acc.gp ? acc.g / acc.gp : 0, players });
+  }
+  return out;
+}
+
+// ---- age trend ----
+// Average age of active players each season (as of July 1), optionally narrowed to one
+// comp_type -- "active" then means active within that comp_type, not the player's whole season.
+// Seasons with no usable birthdates for the selected comp_type report avgAge: null.
+export function buildAgeTrend(board, compType = 'all') {
+  const { allCompetitions, allPlayers, playersRegistry } = board;
+
+  const meta = new Map();
+  for (const c of allCompetitions || []) {
+    if (!meta.has(c.sid)) meta.set(c.sid, { label: c.label, live: !!c.live });
+  }
+
+  const ageAccBySid = new Map(); // sid -> { sum, count }
+  for (const p of allPlayers || []) {
+    const s = statsForType(p, compType);
+    if (!(s.gp > 0 || s.pts > 0)) continue;
+    const reg = playersRegistry?.[p.pk];
+    const age = ageAtSeason(reg?.birthdate, p.sid);
+    if (age === null || age < AGE_MIN || age > AGE_MAX) continue;
+    let acc = ageAccBySid.get(p.sid);
+    if (!acc) { acc = { sum: 0, count: 0 }; ageAccBySid.set(p.sid, acc); }
+    acc.sum += age; acc.count += 1;
+  }
+
+  return [...meta.entries()]
+    .map(([sid, m]) => {
+      const acc = ageAccBySid.get(sid);
+      return {
+        sid,
+        label: m.label || sid,
+        live: !!m.live,
+        avgAge: acc && acc.count > 0 ? acc.sum / acc.count : null,
+        ageSample: acc?.count || 0,
+      };
+    })
+    .sort((a, b) => a.sid.localeCompare(b.sid)); // oldest -> newest
 }
 
 // ---- trends ----

@@ -1,14 +1,18 @@
 <script>
-  import { loadBoard, buildPlayerRecords } from '../lib/data.js';
+  import { loadBoard, buildPlayerRecords, buildChampionAgeRecords } from '../lib/data.js';
   import { hscroll } from '../lib/scrollShadow.js';
 
   let loading = $state(true);
   let error = $state('');
   let recs = $state(null);
+  let champRecs = $state(null);
 
   $effect(() => {
     loadBoard()
-      .then((b) => (recs = buildPlayerRecords(b.allPlayers, b.playersRegistry)))
+      .then((b) => {
+        recs = buildPlayerRecords(b.allPlayers, b.playersRegistry);
+        champRecs = buildChampionAgeRecords(b.allCompetitions, b.allPlayers, b.playersRegistry);
+      })
       .catch((e) => (error = e.message || String(e)))
       .finally(() => (loading = false));
   });
@@ -45,6 +49,8 @@
     { id: 'youngest-scorer', label: 'Youngest Scorer' },
     { id: 'oldest-scorer', label: 'Oldest Scorer' },
     { id: 'oldest-player-to-appear', label: 'Oldest Player to Appear' },
+    { id: 'youngest-champion', label: 'Youngest Champion' },
+    { id: 'oldest-champion', label: 'Oldest Champion' },
   ] : []);
 
   // scrollIntoView aligns the target to the viewport top, but the sticky jump nav then overlaps
@@ -309,6 +315,78 @@
           </tbody>
         </table>
         {#if recs.oldestAppearances.length === 0}
+          <div class="empty">No qualifying birthdates on record.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="youngest-champion">Youngest Champion</h2>
+    <p class="recdesc">Youngest age at which a player actually appeared for a title-winning club.</p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Player</th>
+              <th>Age</th>
+              <th class="l mobhide">Season</th>
+              <th class="l">Title</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each champRecs?.youngestChampions || [] as r, i}
+              {@const rk = i + 1}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l">
+                  <a class="pname" href={`#/player/${r.pk}`}>{r.name}</a>
+                  <div class="submeta"><span class="season">{r.seasonLabel}</span></div>
+                </td>
+                <td class="pts">{r.age}</td>
+                <td class="l mobhide">{r.seasonLabel}</td>
+                <td class="l">{r.competition} &middot; <a class="pname" href={`#/club/${r.clubId}`}>{r.clubName}</a></td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if !champRecs || champRecs.youngestChampions.length === 0}
+          <div class="empty">No qualifying birthdates on record.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="oldest-champion">Oldest Champion</h2>
+    <p class="recdesc">Oldest age at which a player actually appeared for a title-winning club.</p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Player</th>
+              <th>Age</th>
+              <th class="l mobhide">Season</th>
+              <th class="l">Title</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each champRecs?.oldestChampions || [] as r, i}
+              {@const rk = i + 1}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l">
+                  <a class="pname" href={`#/player/${r.pk}`}>{r.name}</a>
+                  <div class="submeta"><span class="season">{r.seasonLabel}</span></div>
+                </td>
+                <td class="pts">{r.age}</td>
+                <td class="l mobhide">{r.seasonLabel}</td>
+                <td class="l">{r.competition} &middot; <a class="pname" href={`#/club/${r.clubId}`}>{r.clubName}</a></td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if !champRecs || champRecs.oldestChampions.length === 0}
           <div class="empty">No qualifying birthdates on record.</div>
         {/if}
       </div>
