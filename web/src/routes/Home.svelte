@@ -1,6 +1,13 @@
 <script>
   // Landing page. Lists the stats pages available on the site, grouped to match the header nav;
   // add a card to the matching group here as new pages ship.
+  const seasonsPage = {
+    href: '#/seasons',
+    title: 'Seasons',
+    blurb:
+      'Every BDSL season in one hub — final standings for each division, every champion, and ' +
+      'that year’s top scorers and assisters.',
+  };
   const teamPages = [
     {
       href: '#/champions',
@@ -43,6 +50,14 @@
 </script>
 
 <main class="home">
+  <div class="cards">
+    <a class="card" href={seasonsPage.href}>
+      <h2>{seasonsPage.title}</h2>
+      <p>{seasonsPage.blurb}</p>
+      <span class="go">Open &rarr;</span>
+    </a>
+  </div>
+
   <h2 class="section-head">Team</h2>
   <div class="cards">
     {#each teamPages as p}

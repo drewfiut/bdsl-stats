@@ -738,3 +738,156 @@ export function buildChampions(allCompetitions, allTeamStandings) {
 
   return { grid, leaderboard };
 }
+
+// ---- season index / season detail ----
+// One page per season (standings, champions, top scorers/assisters) needs a lightweight index
+// of every season that appears anywhere in the board, plus a detail builder for a single sid.
+
+// Newest-first summary of every season in the board: division/champion/player counts and the
+// season's leading scorer. Drives the season list/picker.
+export function buildSeasonIndex(board) {
+  const { allTeamStandings, allCompetitions, allPlayers } = board;
+
+  const sids = new Set();
+  for (const r of allTeamStandings) sids.add(r.sid);
+  for (const c of allCompetitions) sids.add(c.sid);
+  for (const p of allPlayers) sids.add(p.sid);
+
+  const out = [];
+  for (const sid of sids) {
+    const meta = allCompetitions.find((c) => c.sid === sid)
+      || allTeamStandings.find((r) => r.sid === sid)
+      || allPlayers.find((p) => p.sid === sid);
+    const label = meta?.label || meta?.seasonLabel || meta?.season || sid;
+    const live = !!meta?.live;
+
+    // distinct league/over35 competitions this season (cups don't table, so use allCompetitions
+    // filtered to non-cup to count divisions, incl. any that never made it into teams.json).
+    const divisionKeys = new Set(
+      allCompetitions
+        .filter((c) => c.sid === sid && c.comp_type !== 'cup')
+        .map((c) => c.competition)
+    );
+    const divisions = divisionKeys.size;
+
+    const champions = allCompetitions.filter((c) => c.sid === sid && c.clubId).length;
+
+    const activePlayers = allPlayers.filter((p) => p.sid === sid && (p.gp > 0 || p.pts > 0));
+    const players = activePlayers.length;
+
+    // Top scorer = the single highest goal tally in ANY one competition that season (not a
+    // player's all-comps total), tagged with that competition's canonical division/label.
+    let topScorer = null;
+    for (const p of activePlayers) {
+      for (const c of p.comps || []) {
+        if (c.g <= 0) continue;
+        if (!topScorer || c.g > topScorer.g
+          || (c.g === topScorer.g && p.name.localeCompare(topScorer.name) < 0)) {
+          topScorer = { name: p.name, pk: p.pk, g: c.g, division: canonicalCompetition(c.c, c.type).label };
+        }
+      }
+    }
+
+    out.push({ sid, label, live, divisions, champions, players, topScorer });
+  }
+
+  out.sort((a, b) => b.sid.localeCompare(a.sid));
+  return out;
+}
+
+// Full detail for one season: standings by division, the champions grid row, and top
+// scorers/assisters. Returns null if the sid has no data anywhere in the board.
+export function buildSeason(board, sid) {
+  const { allTeamStandings, allCompetitions, allPlayers } = board;
+
+  const standingsRows = allTeamStandings.filter((r) => r.sid === sid);
+  const compRows = allCompetitions.filter((c) => c.sid === sid);
+  const playerRows = allPlayers.filter((p) => p.sid === sid);
+  if (!standingsRows.length && !compRows.length && !playerRows.length) return null;
+
+  const meta = compRows[0] || standingsRows[0] || playerRows[0];
+  const label = meta.label || meta.seasonLabel || meta.season || sid;
+  const live = !!meta.live;
+
+  // ---- standings: group by competition (never shared across divisions), ordered canonically ----
+  const byComp = new Map();
+  for (const r of standingsRows) {
+    let g = byComp.get(r.competition);
+    if (!g) {
+      const canon = canonicalCompetition(r.competition, r.comp_type);
+      g = { key: canon.key, label: canon.label, group: canon.group, order: canon.order, rows: [] };
+      byComp.set(r.competition, g);
+    }
+    g.rows.push(r);
+  }
+  const championIds = new Map(); // competition -> champion clubId
+  for (const c of compRows) if (c.clubId) championIds.set(c.competition, c.clubId);
+
+  const standings = [...byComp.values()]
+    .sort((a, b) => a.order - b.order || a.label.localeCompare(b.label))
+    .map((g) => ({
+      key: g.key, label: g.label, group: g.group,
+      rows: g.rows
+        .slice()
+        .sort((a, b) => num(a.position) - num(b.position))
+        .map((r) => ({
+          clubId: r.club_id, name: r.name, position: num(r.position),
+          gp: num(r.gp), w: num(r.w), l: num(r.l), d: num(r.d),
+          gf: num(r.gf), ga: num(r.ga), gd: num(r.gd) || num(r.gf) - num(r.ga), pts: num(r.pts),
+          champion: !!r.club_id && championIds.get(r.competition) === r.club_id,
+        })),
+    }));
+
+  // ---- champions (league, over35 AND cups) ----
+  const champions = compRows
+    .map((c) => {
+      const canon = canonicalCompetition(c.competition, c.comp_type);
+      return {
+        competition: c.competition, comp_type: c.comp_type, group: canon.group, order: canon.order,
+        label: canon.label, clubId: c.clubId, clubName: c.clubName, via: c.via,
+        undecided: !c.clubId,
+      };
+    })
+    .sort((a, b) => a.order - b.order || a.label.localeCompare(b.label));
+
+  // ---- leaderboard ----
+  // One client-sortable row per (player, division) pairing, with that player's goals/assists/games
+  // WITHIN a single league or Over-35 division. A player who appeared in both a league division and
+  // Over-35 (or, rarely, two league divisions) yields one row per division, so filtering by division
+  // lists them in each. Stats are per-division, not combined across comps. Cups aren't divisions
+  // (no standings table) and are excluded here.
+  const players = [];
+  for (const p of playerRows) {
+    const byDiv = new Map(); // divisionKey -> { key, label, order, g, a, gp, teams:Set }
+    for (const c of p.comps || []) {
+      if (c.type !== 'league' && c.type !== 'over35') continue;
+      const canon = canonicalCompetition(c.c, c.type);
+      let d = byDiv.get(canon.key);
+      if (!d) {
+        d = { key: canon.key, label: canon.label, order: canon.order, g: 0, a: 0, gp: 0, teams: new Set() };
+        byDiv.set(canon.key, d);
+      }
+      d.g += c.g; d.a += c.a; d.gp += c.gp;
+      if (c.t) d.teams.add(c.t);
+    }
+    for (const d of byDiv.values()) {
+      if (d.g <= 0 && d.a <= 0 && d.gp <= 0) continue;
+      players.push({
+        pk: p.pk, name: p.name, teams: [...d.teams],
+        division: d.label, divisionKey: d.key, divisionOrder: d.order,
+        g: d.g, a: d.a, pts: POINTS_PER_GOAL * d.g + POINTS_PER_ASSIST * d.a, gp: d.gp,
+      });
+    }
+  }
+
+  // Division filter options: distinct divisions actually present, in canonical order.
+  const divSeen = new Map();
+  for (const p of players) {
+    if (p.divisionKey && !divSeen.has(p.divisionKey)) {
+      divSeen.set(p.divisionKey, { key: p.divisionKey, label: p.division, order: p.divisionOrder });
+    }
+  }
+  const divisions = [...divSeen.values()].sort((a, b) => a.order - b.order || a.label.localeCompare(b.label));
+
+  return { sid, label, live, standings, champions, players, divisions };
+}

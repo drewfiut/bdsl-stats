@@ -19,5 +19,8 @@ export function parse(hash) {
     return { name: 'club', params: { clubId: decodeURIComponent(parts[1]) } };
   }
   if (parts[0] === 'champions') return { name: 'champions', params: {} };
+  if (parts[0] === 'seasons') return { name: 'seasons', params: {} };
+  if (parts[0] === 'season' && parts[1])
+    return { name: 'season', params: { sid: decodeURIComponent(parts[1]) } };
   return { name: 'home', params: {} };
 }

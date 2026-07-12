@@ -104,7 +104,7 @@
             {#each data.grid.rows as row}
               <tr class:live={row.live}>
                 <td class="l" class:live={row.live}>
-                  {row.label}
+                  <a class="pname" href={`#/season/${row.sid}`}>{row.label}</a>
                 </td>
                 {#each data.grid.columns as col}
                   {@const cell = row.cells[col.key]}
@@ -176,7 +176,7 @@
                         <div class="h">Season</div><div class="h">Competition</div>
                         {#each r.titles as t}
                           {@const titleLive = t.sid === data.grid.rows[0]?.sid && data.grid.rows[0]?.live}
-                          <div class:live={titleLive}>{t.label}</div>
+                          <div class:live={titleLive}><a class="pname" href={`#/season/${t.sid}`}>{t.label}</a></div>
                           <div class:live={titleLive}><span class="trophy">&#127942;</span>{t.competition}</div>
                         {/each}
                       </div>

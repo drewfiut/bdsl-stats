@@ -53,7 +53,7 @@
     {#each profile.seasons as s}
       <section class="season">
         <div class="seasonhead" class:live={s.live}>
-          <div class="slabel">{s.label}</div>
+          <div class="slabel"><a class="pname" href={`#/season/${s.sid}`}>{s.label}</a></div>
           <div class="sagg">
             <span><b>{s.agg.g}</b> G</span>
             <span><b>{s.agg.a}</b> A</span>

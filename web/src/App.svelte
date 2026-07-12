@@ -9,6 +9,8 @@
   import Club from './routes/Club.svelte';
   import TeamRecords from './routes/TeamRecords.svelte';
   import Champions from './routes/Champions.svelte';
+  import Seasons from './routes/Seasons.svelte';
+  import Season from './routes/Season.svelte';
 
   // Reactive current hash; kept in sync with the address bar.
   let hash = $state(typeof location !== 'undefined' ? location.hash : '');
@@ -67,6 +69,8 @@
     club: 'Club · BDSL Stats',
     teamRecords: 'Team Records · BDSL Stats',
     champions: 'Champions · BDSL Stats',
+    seasons: 'Seasons · BDSL Stats',
+    season: 'Season · BDSL Stats',
   };
   $effect(() => {
     document.title = TITLES[route.name] || 'BDSL Stats';
@@ -83,6 +87,7 @@
     <div class="navscroll">
       <nav use:hscroll>
         <a href="#/" class:on={route.name === 'home'}>Home</a>
+        <a href="#/seasons" class:on={route.name === 'seasons' || route.name === 'season'}>Seasons</a>
         <div class="dropdown">
           <button type="button" class:on={teamActive} onclick={(e) => toggleMenu('team', e)}>
             Team <span class="caret">&#9662;</span>
@@ -130,6 +135,12 @@
   <TeamRecords />
 {:else if route.name === 'champions'}
   <Champions />
+{:else if route.name === 'seasons'}
+  <Seasons />
+{:else if route.name === 'season'}
+  {#key route.params.sid}
+    <Season sid={route.params.sid} />
+  {/key}
 {:else}
   <Home />
 {/if}
