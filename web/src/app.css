@@ -152,6 +152,24 @@ tr.detail .box { padding:8px 14px 12px 44px; }
   border-bottom:1px solid var(--line); padding-bottom:3px; }
 .brk .r { text-align:right; } .brk .cn { color:var(--muted); }
 .note { padding:10px 14px; color:var(--muted); font-size:12.5px; border-top:1px solid var(--line); }
+
+/* ---- Champions page ---- */
+.tbd { color:var(--muted); font-size:12px; font-style:italic; }
+/* one link per champion (a season+column cell can hold multiple, e.g. a split O35 year) */
+.champcell { display:block; margin-bottom:2px; }
+.champcell:last-of-type { margin-bottom:0; }
+.champcell .trophy { margin-left:0; margin-right:5px; }
+.sublabel { color:var(--muted); font-size:11px; margin:-1px 0 4px; }
+/* keep Season pinned while the wide competition grid scrolls horizontally */
+table.rollcall { min-width:900px; }
+table.rollcall th:first-child, table.rollcall td:first-child {
+  position:sticky; left:0; z-index:11; background:var(--card); box-shadow:1px 0 0 var(--line);
+}
+table.rollcall tbody tr:nth-child(4n+1) td:first-child { background:var(--row); }
+table.rollcall thead th:first-child { z-index:12; }
+table.rollcall td, table.rollcall th { padding:10px 12px; }
+/* two-column season/competition list inside the leaderboard's expanded title history */
+.titlebrk { grid-template-columns:1fr 1fr; max-width:420px; }
 footer { max-width:1120px; margin:0 auto; padding:0 14px 40px; color:var(--muted); font-size:12px; }
 .hide { display:none !important; }
 .empty { padding:26px; text-align:center; color:var(--muted); }

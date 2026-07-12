@@ -9,6 +9,13 @@
         'cups and Over-35, ranked to surface the best individual seasons in BDSL history.',
     },
     {
+      href: '#/champions',
+      title: 'Champions',
+      blurb:
+        'Every league division, Over-35 and cup champion by season, plus a most-decorated-clubs ' +
+        'leaderboard with titles broken down by type and each club’s current title drought.',
+    },
+    {
       href: '#/players',
       title: 'Players',
       blurb:

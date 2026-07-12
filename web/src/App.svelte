@@ -8,6 +8,7 @@
   import Clubs from './routes/Clubs.svelte';
   import Club from './routes/Club.svelte';
   import Records from './routes/Records.svelte';
+  import Champions from './routes/Champions.svelte';
 
   // Reactive current hash; kept in sync with the address bar.
   let hash = $state(typeof location !== 'undefined' ? location.hash : '');
@@ -27,6 +28,7 @@
     clubs: 'Clubs · BDSL Stats',
     club: 'Club · BDSL Stats',
     records: 'Records · BDSL Stats',
+    champions: 'Champions · BDSL Stats',
   };
   $effect(() => {
     document.title = TITLES[route.name] || 'BDSL Stats';
@@ -40,6 +42,7 @@
       <nav use:hscroll>
         <a href="#/" class:on={route.name === 'home'}>Home</a>
         <a href="#/best-single-seasons" class:on={route.name === 'board'}>Best Single Seasons</a>
+        <a href="#/champions" class:on={route.name === 'champions'}>Champions</a>
         <a href="#/players" class:on={route.name === 'players'}>Players</a>
         <a href="#/clubs" class:on={route.name === 'clubs'}>Clubs</a>
         <a href="#/records" class:on={route.name === 'records'}>Records</a>
@@ -66,6 +69,8 @@
   {/key}
 {:else if route.name === 'records'}
   <Records />
+{:else if route.name === 'champions'}
+  <Champions />
 {:else}
   <Home />
 {/if}

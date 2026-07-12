@@ -158,6 +158,10 @@ async function buildBoard() {
   // league, Over-35 AND cups (cups have no teams.json, so their titles only live here). A champion
   // is the CHMP playoff winner, which can differ from the regular-season table-topper (position 1).
   const championsByClub = new Map();
+  // Flat, one entry per competition per season (decided AND undecided), tagged with season
+  // context. Unlike championsByClub (titles only), this feeds the Champions grid, which also
+  // needs to render blank/undecided cells for competitions that haven't crowned a winner yet.
+  const allCompetitions = [];
   let dataAsOf = '';
   for (const s of perSeason) {
     allPlayers.push(...aggregateSeason(s.rows, s.sid, s.label, s.live));
@@ -168,6 +172,11 @@ async function buildBoard() {
       if (g.status === 'played') allGames.push({ ...g, sid: s.sid, seasonLabel: s.label });
     }
     for (const c of s.comps) {
+      allCompetitions.push({
+        sid: s.sid, label: s.label, live: s.live,
+        competition: c.competition, comp_type: c.comp_type,
+        clubId: c.champion_club_id || '', clubName: c.champion_name || '', via: c.champion_via || '',
+      });
       const champ = c.champion_club_id;
       if (!champ) continue; // undecided (in progress / untagged final / PK) — not a title
       let list = championsByClub.get(champ);
@@ -190,7 +199,7 @@ async function buildBoard() {
     .reverse()
     .map((sid) => seasons[sid]?.label || sid); // newest-first, for the filter dropdown
 
-  return { players: active, allPlayers, allTeamStandings, allGames, championsByClub, playersRegistry, seasonLabels, dataAsOf };
+  return { players: active, allPlayers, allTeamStandings, allGames, championsByClub, allCompetitions, playersRegistry, seasonLabels, dataAsOf };
 }
 
 // Fetch + aggregate once, then share across route navigations (board <-> profile).
@@ -567,4 +576,165 @@ export function buildTeamRecords(allTeamStandings, allGames) {
     mostGF, fewestGF, mostGA, fewestGA, bestGD, worstGD, mostPts,
     perfect, winless, biggestWins, highestScoring, longestWinStreak, longestUnbeatenStreak,
   };
+}
+
+// ---- champions ----
+// Competition names drift across seasons (typos, sponsor suffixes, Over-35 sometimes split into
+// Premier/Championship, cups carrying "Bracket"/"BDSL" noise -- see DATA.md §5.3). The Champions
+// grid needs one stable column per "real" competition across all history, so every display name
+// is normalized here to a canonical {key, label, group, order} rather than matched verbatim.
+
+const LEAGUE_DIVISIONS = [
+  { key: 'premier', label: 'Premier', order: 1 },
+  { key: 'championship', label: 'Championship', order: 2 },
+  { key: '1st', label: '1st Division', order: 3 },
+  { key: '2nd', label: '2nd Division', order: 4 },
+  { key: '3rd', label: '3rd Division', order: 5 },
+  { key: '4th', label: '4th Division', order: 6 },
+];
+
+const CUP_DEFS = [
+  { key: 'tehel', label: 'Tehel Cup', order: 20, match: /tehel/i },
+  { key: 'wood', label: 'Wood Cup', order: 21, match: /wood/i },
+  { key: 'matthews', label: 'Matthews Cup', order: 22, match: /matthews/i },
+];
+
+// Returns { key, label, group, order } for any competition's display name + comp_type.
+// group: 'league' | 'over35' | 'cup'. order: sort index for grid columns (league, then
+// over35, then cups). Classification always keys off comp_type, never the raw name (§5.3).
+export function canonicalCompetition(name, comp_type) {
+  const n = (name || '').trim();
+
+  if (comp_type === 'over35') {
+    // All Over-35 flavors (single "Over 35" or the later Premier/Championship split) collapse
+    // into one grid column; the split-year sub-division shows up as a cell subLabel instead.
+    return { key: 'over35', label: 'Over-35', group: 'over35', order: 10 };
+  }
+
+  if (comp_type === 'cup') {
+    for (const def of CUP_DEFS) {
+      if (def.match.test(n)) return { key: def.key, label: def.label, group: 'cup', order: def.order };
+    }
+    // Unknown cup: fall back to a cleaned version of its own name so nothing is silently dropped.
+    const cleaned = n.replace(/\bBDSL\b/gi, '').replace(/\bBracket\b/gi, '').replace(/\bCup\b/gi, '').trim() || n;
+    const key = `cup-${cleaned.toLowerCase().replace(/\s+/g, '-')}`;
+    return { key, label: `${cleaned} Cup`.trim(), group: 'cup', order: 99 };
+  }
+
+  // league: fix known typos/sponsor suffixes ("4th Divison", "2nd Division Pepper") and match on
+  // the leading token so drift doesn't create phantom extra columns.
+  const cleaned = n.replace(/Divison/gi, 'Division');
+  for (const div of LEAGUE_DIVISIONS) {
+    const re = div.key === 'premier' || div.key === 'championship'
+      ? new RegExp(`^${div.key}\\b`, 'i')
+      : new RegExp(`^${div.key}\\s*Division`, 'i');
+    if (re.test(cleaned)) return { key: div.key, label: div.label, group: 'league', order: div.order };
+  }
+  // Unrecognized league name: fall back to a cleaned own-key column rather than dropping it.
+  const key = `league-${cleaned.toLowerCase().replace(/\s+/g, '-')}`;
+  return { key, label: cleaned || n, group: 'league', order: 98 };
+}
+
+// Builds the Champions page's grid (season x competition matrix) and leaderboard (all-time
+// title counts per club) from the flat allCompetitions list plus allTeamStandings (for each
+// club's current display name).
+export function buildChampions(allCompetitions, allTeamStandings) {
+  const comps = allCompetitions || [];
+
+  // ---- grid ----
+  // columns: every canonical competition actually seen in the data, sorted by order.
+  const columnsByKey = new Map();
+  for (const c of comps) {
+    const canon = canonicalCompetition(c.competition, c.comp_type);
+    if (!columnsByKey.has(canon.key)) {
+      columnsByKey.set(canon.key, { key: canon.key, label: canon.label, group: canon.group, order: canon.order });
+    }
+  }
+  const columns = [...columnsByKey.values()].sort((a, b) => a.order - b.order || a.label.localeCompare(b.label));
+
+  // rows: one per season, newest first. Group each season's competitions by canonical column key.
+  const bySid = new Map();
+  for (const c of comps) {
+    let s = bySid.get(c.sid);
+    if (!s) { s = { sid: c.sid, label: c.label, live: c.live, byKey: new Map() }; bySid.set(c.sid, s); }
+    const canon = canonicalCompetition(c.competition, c.comp_type);
+    let list = s.byKey.get(canon.key);
+    if (!list) { list = []; s.byKey.set(canon.key, list); }
+    list.push(c);
+  }
+  const rows = [...bySid.values()]
+    .sort((a, b) => b.sid.localeCompare(a.sid)) // newest first (sid sorts lexically like a year)
+    .map((s) => {
+      const cells = {};
+      for (const [key, list] of s.byKey) {
+        const decided = list.filter((c) => c.clubId);
+        if (!decided.length) {
+          cells[key] = { undecided: true };
+          continue;
+        }
+        // subLabel only distinguishes multiple champions within one season+column (e.g. an
+        // Over-35 split year producing both a Premier and a Championship winner).
+        const multi = list.length > 1;
+        cells[key] = {
+          champions: decided.map((c) => ({
+            clubId: c.clubId,
+            name: c.clubName,
+            subLabel: multi ? c.competition : '',
+          })),
+        };
+      }
+      return { sid: s.sid, label: s.label, live: s.live, cells };
+    });
+
+  const grid = { columns, rows };
+
+  // ---- leaderboard ----
+  // Newest-season club name: prefer allTeamStandings (authoritative team names), falling back to
+  // the newest champion_name from allCompetitions -- required for cup-only champions, since cup
+  // teams never appear in teams.json.
+  const newestStandingName = new Map(); // club_id -> { sid, name }
+  for (const t of allTeamStandings || []) {
+    if (!t.club_id) continue;
+    const cur = newestStandingName.get(t.club_id);
+    if (!cur || t.sid >= cur.sid) newestStandingName.set(t.club_id, { sid: t.sid, name: t.name });
+  }
+  const newestCompName = new Map(); // club_id -> { sid, name }
+  for (const c of comps) {
+    if (!c.clubId) continue;
+    const cur = newestCompName.get(c.clubId);
+    if (!cur || c.sid >= cur.sid) newestCompName.set(c.clubId, { sid: c.sid, name: c.clubName });
+  }
+
+  // Ordered list of completed (non-live) season ids, deduped, for computing droughts.
+  const completedSids = [...new Set(comps.filter((c) => !c.live).map((c) => c.sid))].sort();
+
+  const byClub = new Map();
+  for (const c of comps) {
+    if (!c.clubId) continue; // undecided -- not a title
+    let acc = byClub.get(c.clubId);
+    if (!acc) {
+      acc = { clubId: c.clubId, total: 0, league: 0, over35: 0, cup: 0, titles: [] };
+      byClub.set(c.clubId, acc);
+    }
+    acc.total += 1;
+    acc[c.comp_type] += 1;
+    acc.titles.push({ label: c.label, competition: c.competition, sid: c.sid, via: c.via });
+  }
+
+  const leaderboard = [];
+  for (const acc of byClub.values()) {
+    acc.titles.sort((a, b) => b.sid.localeCompare(a.sid)); // newest first
+    const lastSid = acc.titles[0].sid;
+    const lastLabel = acc.titles[0].label;
+    const name = newestStandingName.get(acc.clubId)?.name || newestCompName.get(acc.clubId)?.name || '(unknown)';
+    const drought = completedSids.filter((sid) => sid > lastSid).length;
+    leaderboard.push({
+      clubId: acc.clubId, name,
+      total: acc.total, league: acc.league, over35: acc.over35, cup: acc.cup,
+      lastLabel, lastSid, drought, titles: acc.titles,
+    });
+  }
+  leaderboard.sort((a, b) => b.total - a.total || b.league - a.league || a.name.localeCompare(b.name));
+
+  return { grid, leaderboard };
 }
