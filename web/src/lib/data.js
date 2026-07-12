@@ -850,6 +850,48 @@ export function buildPlayerRecords(allPlayers, playersRegistry) {
   };
 }
 
+// ---- trends ----
+// Cross-season league-wide metrics. First metric: average goals per game per season, counting
+// EVERY played competition (league, Over-35, cups). Some seasons list a match twice under two
+// competition labels sharing one game_key (a division renamed mid-scrape) -- dedupe so goals and
+// game counts aren't doubled, mirroring buildTeamRecords. Emitted oldest->newest so a chart of
+// the series reads left-to-right in time.
+export function buildScoringTrend(board) {
+  const { allGames, allCompetitions } = board;
+
+  // sid -> { label, live } (allCompetitions carries both; fall back to each game's seasonLabel).
+  const meta = new Map();
+  for (const c of allCompetitions || []) {
+    if (!meta.has(c.sid)) meta.set(c.sid, { label: c.label, live: !!c.live });
+  }
+
+  const bySid = new Map(); // sid -> { games, goals }
+  const seenGameKeys = new Set();
+  for (const g of allGames || []) {
+    const key = `${g.sid}||${g.game_key}`;
+    if (seenGameKeys.has(key)) continue;
+    seenGameKeys.add(key);
+    let acc = bySid.get(g.sid);
+    if (!acc) { acc = { games: 0, goals: 0 }; bySid.set(g.sid, acc); }
+    acc.games += 1;
+    acc.goals += num(g.home_score) + num(g.away_score);
+  }
+
+  return [...bySid.entries()]
+    .map(([sid, acc]) => {
+      const m = meta.get(sid);
+      return {
+        sid,
+        label: m?.label || sid,
+        live: !!m?.live,
+        games: acc.games,
+        goals: acc.goals,
+        gpg: acc.games ? acc.goals / acc.games : 0,
+      };
+    })
+    .sort((a, b) => a.sid.localeCompare(b.sid)); // oldest -> newest
+}
+
 // ---- season index / season detail ----
 // One page per season (standings, champions, top scorers/assisters) needs a lightweight index
 // of every season that appears anywhere in the board, plus a detail builder for a single sid.

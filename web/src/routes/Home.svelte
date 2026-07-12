@@ -8,6 +8,13 @@
       'Every BDSL season in one hub — final standings for each division, every champion, and ' +
       'that year’s top scorers and assisters.',
   };
+  const trendsPage = {
+    href: '#/trends',
+    title: 'Trends',
+    blurb:
+      'League-wide metrics tracked across every BDSL season — starting with goals per game, ' +
+      'with more trends to come.',
+  };
   const teamPages = [
     {
       href: '#/champions',
@@ -61,6 +68,11 @@
     <a class="card" href={seasonsPage.href}>
       <h2>{seasonsPage.title}</h2>
       <p>{seasonsPage.blurb}</p>
+      <span class="go">Open &rarr;</span>
+    </a>
+    <a class="card" href={trendsPage.href}>
+      <h2>{trendsPage.title}</h2>
+      <p>{trendsPage.blurb}</p>
       <span class="go">Open &rarr;</span>
     </a>
   </div>
