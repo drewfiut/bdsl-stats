@@ -67,6 +67,7 @@ main.profile { }
 .seasonhead { display:flex; align-items:baseline; justify-content:space-between; gap:12px;
   flex-wrap:wrap; padding:10px 2px 8px; border-bottom:2px solid var(--line); margin-bottom:8px; }
 .seasonhead .slabel { font-size:16px; font-weight:750; }
+.seasonhead.live { background:var(--live); border-radius:8px 8px 0 0; }
 .seasonhead.live .slabel { color:var(--gold); }
 .seasonhead .sagg { display:flex; gap:16px; color:var(--muted); font-size:13px; }
 .seasonhead .sagg b { color:var(--text); font-weight:750; }
@@ -101,13 +102,11 @@ tbody td.l { text-align:left; }
 tbody tr:nth-child(4n+1) { background:var(--row); }
 tbody tr.main { cursor:pointer; }
 tbody tr.main:hover { background:var(--hover); }
-/* current, in-progress season rows: gold tint + left accent */
-tbody tr.main.live, tbody tr.detail.live td { background:var(--live); }
+/* current, in-progress rows (any table, sitewide default): gold tint + left accent */
+tbody tr.live, tbody tr.detail.live td { background:var(--live); }
 tbody tr.main.live:hover { background:var(--liveHover); }
-tbody tr.main.live td:first-child { box-shadow:inset 3px 0 0 var(--gold); }
-.livetag { display:inline-block; margin-left:6px; padding:1px 6px; border-radius:9px;
-  background:var(--gold); color:#3a2600; font-size:10px; font-weight:750; letter-spacing:.4px;
-  text-transform:uppercase; vertical-align:middle; }
+tbody tr.live td:first-child { box-shadow:inset 3px 0 0 var(--gold); }
+tbody td.live { color:var(--gold); font-weight:750; }
 .o35tag { display:inline-block; margin-left:6px; padding:1px 6px; border-radius:9px;
   background:var(--a); color:#fff; font-size:10px; font-weight:750; letter-spacing:.4px;
   text-transform:uppercase; vertical-align:middle; }
@@ -138,7 +137,6 @@ tr.champ td.l { font-weight:700; }
   white-space:normal; line-height:1.3; }
 .submeta .season { font-size:12px; }
 .submeta .teams { margin-left:4px; }
-.submeta .livetag { margin-left:6px; }
 .pts { font-weight:750; color:var(--navy2); }
 .g { color:var(--g); font-weight:650; } .a { color:var(--a); font-weight:650; }
 .z { color:var(--muted); opacity:.5; }
@@ -166,10 +164,12 @@ table.rollcall thead tr:first-child > th:first-child, table.rollcall tbody td:fi
   position:sticky; left:0; z-index:11; background:var(--card); box-shadow:1px 0 0 var(--line);
 }
 table.rollcall tbody tr:nth-child(4n+1) td:first-child { background:var(--row); }
+table.rollcall tbody tr.live td:first-child { background:var(--live); }
 table.rollcall thead tr:first-child > th:first-child { z-index:12; }
 table.rollcall td, table.rollcall th { padding:10px 12px; }
 /* two-column season/competition list inside the leaderboard's expanded title history */
 .titlebrk { grid-template-columns:1fr 1fr; max-width:420px; }
+.titlebrk .live { color:var(--gold); font-weight:700; }
 footer { max-width:1120px; margin:0 auto; padding:0 14px 40px; color:var(--muted); font-size:12px; }
 .hide { display:none !important; }
 .empty { padding:26px; text-align:center; color:var(--muted); }

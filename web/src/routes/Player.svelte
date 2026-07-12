@@ -53,7 +53,7 @@
     {#each profile.seasons as s}
       <section class="season">
         <div class="seasonhead" class:live={s.live}>
-          <div class="slabel">{s.label}{#if s.live}<span class="livetag">In progress</span>{/if}</div>
+          <div class="slabel">{s.label}</div>
           <div class="sagg">
             <span><b>{s.agg.g}</b> G</span>
             <span><b>{s.agg.a}</b> A</span>
@@ -74,7 +74,7 @@
             </thead>
             <tbody>
               {#each s.comps as c}
-                <tr>
+                <tr class:live={s.live}>
                   <td class="l">{c.c}</td>
                   <td class="l">{c.t}</td>
                   <td>{c.g || '–'}</td>

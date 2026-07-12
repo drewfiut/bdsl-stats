@@ -78,8 +78,8 @@
           <tbody>
             {#each club.seasons as s}
               {#each s.comps as c}
-                <tr class:champ={c.title}>
-                  <td class="l">{s.label}{#if s.live}<span class="livetag">In progress</span>{/if}</td>
+                <tr class:champ={c.title} class:live={s.live}>
+                  <td class="l">{s.label}</td>
                   <td class="l">{c.c}{#if c.title}<span class="trophy" title="Champion">🏆</span>{/if}</td>
                   <td class="rank" class:m1={c.position === 1} class:m2={c.position === 2} class:m3={c.position === 3}>{c.position || '–'}</td>
                   <td>{c.w}</td>
@@ -114,8 +114,8 @@
             <tbody>
               {#each club.cups as s}
                 {#each s.entries as c}
-                  <tr class:champ={c.title}>
-                    <td class="l">{s.label}{#if s.live}<span class="livetag">In progress</span>{/if}</td>
+                  <tr class:champ={c.title} class:live={s.live}>
+                    <td class="l">{s.label}</td>
                     <td class="l">{c.c}{#if c.title}<span class="trophy" title="Champion">🏆</span>{/if}</td>
                     <td>{c.players}</td>
                     <td class="g">{#if c.g}{c.g}{:else}<span class="z">0</span>{/if}</td>

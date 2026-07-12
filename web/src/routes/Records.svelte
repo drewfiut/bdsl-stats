@@ -238,7 +238,6 @@
                 <td class="l">
                   <a class="pname" href={`#/club/${r.clubId}`}>{r.name}</a>
                   {#if r.o35}<span class="o35tag">O35</span>{/if}
-                  {#if r.live}<span class="livetag">In progress</span>{/if}
                   <div class="submeta"><span class="season">{range}</span></div>
                 </td>
                 <td class="l mobhide">{range}</td>
@@ -272,7 +271,6 @@
                 <td class="l">
                   <a class="pname" href={`#/club/${r.clubId}`}>{r.name}</a>
                   {#if r.o35}<span class="o35tag">O35</span>{/if}
-                  {#if r.live}<span class="livetag">In progress</span>{/if}
                   <div class="submeta"><span class="season">{range}</span></div>
                 </td>
                 <td class="l mobhide">{range}</td>
@@ -308,7 +306,6 @@
                 <td class="l">
                   <span class:pts={homeWon}>{g.home}</span> vs <span class:pts={!homeWon}>{g.away}</span>
                   {#if g.o35}<span class="o35tag">O35</span>{/if}
-                  {#if g.live}<span class="livetag">In progress</span>{/if}
                   <div class="submeta"><span class="season">{fmtDate(g.date)} &middot; {g.seasonLabel} &middot; {g.competition}</span></div>
                 </td>
                 <td class="l mobhide">{fmtDate(g.date)} &middot; {g.seasonLabel}</td>
@@ -348,7 +345,6 @@
                 <td class="l">
                   {g.home} vs {g.away}
                   {#if g.o35}<span class="o35tag">O35</span>{/if}
-                  {#if g.live}<span class="livetag">In progress</span>{/if}
                   <div class="submeta"><span class="season">{fmtDate(g.date)} &middot; {g.seasonLabel} &middot; {g.competition}</span></div>
                 </td>
                 <td class="l mobhide">{fmtDate(g.date)} &middot; {g.seasonLabel}</td>

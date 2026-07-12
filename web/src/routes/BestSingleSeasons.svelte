@@ -144,10 +144,10 @@
               <td class="l">
                 <a class="pname" href={`#/player/${p.pk}`} onclick={(e) => e.stopPropagation()}>{p.name}</a>
                 <div class="submeta">
-                  <span class="season">{p.season}</span>{#if p.live}<span class="livetag">In progress</span>{/if}{#if p.teams.length}<span class="teams">&middot; {p.teams.join(', ')}</span>{/if}
+                  <span class="season">{p.season}</span>{#if p.teams.length}<span class="teams">&middot; {p.teams.join(', ')}</span>{/if}
                 </div>
               </td>
-              <td class="l season mobhide">{p.season}{#if p.live}<span class="livetag">In progress</span>{/if}</td>
+              <td class="l season mobhide">{p.season}</td>
               <td class="l teams mobhide">{p.teams.join(', ')}</td>
               <td class="g">{#if p.g}{p.g}{:else}<span class="z">0</span>{/if}</td>
               <td class="a">{#if p.a}{p.a}{:else}<span class="z">0</span>{/if}</td>

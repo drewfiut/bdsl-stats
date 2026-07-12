@@ -103,8 +103,8 @@
           <tbody>
             {#each data.grid.rows as row}
               <tr class:live={row.live}>
-                <td class="l">
-                  {row.label}{#if row.live}<span class="livetag">In progress</span>{/if}
+                <td class="l" class:live={row.live}>
+                  {row.label}
                 </td>
                 {#each data.grid.columns as col}
                   {@const cell = row.cells[col.key]}
@@ -175,8 +175,9 @@
                       <div class="brk titlebrk">
                         <div class="h">Season</div><div class="h">Competition</div>
                         {#each r.titles as t}
-                          <div>{t.label}{#if t.sid === data.grid.rows[0]?.sid && data.grid.rows[0]?.live}<span class="livetag">In progress</span>{/if}</div>
-                          <div><span class="trophy">&#127942;</span>{t.competition}</div>
+                          {@const titleLive = t.sid === data.grid.rows[0]?.sid && data.grid.rows[0]?.live}
+                          <div class:live={titleLive}>{t.label}</div>
+                          <div class:live={titleLive}><span class="trophy">&#127942;</span>{t.competition}</div>
                         {/each}
                       </div>
                     </div>
