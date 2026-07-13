@@ -1,13 +1,13 @@
 :root {
   --navy:#013764; --navy2:#024b86; --gold:#f5a623; --bg:#f4f6f9; --card:#ffffff;
   --text:#16202c; --muted:#647082; --line:#e3e8ef; --row:#fafbfd; --hover:#eef3f9;
-  --g:#1f9d55; --a:#2f6fb0; --live:#fff5e0; --liveHover:#ffeecb;
+  --g:#1f9d55; --a:#2f6fb0; --bad:#c0392b; --live:#fff5e0; --liveHover:#ffeecb;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --navy:#0a4c85; --navy2:#0c63ad; --gold:#f5a623; --bg:#0e1420; --card:#161e2b;
     --text:#e7edf5; --muted:#93a1b5; --line:#26303f; --row:#141c28; --hover:#1d2836;
-    --g:#3ec17e; --a:#66a8e6; --live:#2a2415; --liveHover:#342c18;
+    --g:#3ec17e; --a:#66a8e6; --bad:#e0645a; --live:#2a2415; --liveHover:#342c18;
   }
 }
 * { box-sizing:border-box; }

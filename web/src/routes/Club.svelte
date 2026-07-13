@@ -1,5 +1,5 @@
 <script>
-  import { loadBoard, buildClubProfile } from '../lib/data.js';
+  import { loadBoard, buildClubProfile, LEAGUE_DIVISIONS } from '../lib/data.js';
 
   let { clubId } = $props();
 
@@ -9,6 +9,34 @@
 
   // Roster sort (mirrors the BestSingleSeasons tabs/sortable-header pattern).
   let sortKey = $state('pts');
+
+  // Division-history chart geometry, in viewBox units (mirrors Trends.svelte's chart pattern).
+  const DW = 720, DH = 220;
+  const DM = { top: 20, right: 20, bottom: 30, left: 92 };
+  const diw = DW - DM.left - DM.right;
+  const dih = DH - DM.top - DM.bottom;
+
+  // Season year for compact x-axis labels ("2024-summer" -> "2024").
+  const yearOf = (sid) => (/^(\d{4})/.exec(sid || '')?.[1]) || sid;
+
+  // Plots the club's league-division-only rows chronologically, y = division order (1 = Premier
+  // at the top) padded +/-0.5 around the club's own min/max so the line isn't flush against the
+  // chart edges. Y-axis ticks are drawn only for the LEAGUE_DIVISIONS the padded range covers.
+  const divChart = $derived.by(() => {
+    const rows = club?.divisionTimeline?.rows;
+    if (!rows || rows.length === 0) return null;
+    const orders = rows.map((r) => r.order);
+    const yMin = Math.min(...orders) - 0.5;
+    const yMax = Math.max(...orders) + 0.5;
+    const n = rows.length;
+    const x = (i) => DM.left + (n === 1 ? diw / 2 : (diw * i) / (n - 1));
+    const y = (v) => DM.top + ((v - yMin) / (yMax - yMin || 1)) * dih;
+    const points = rows.map((r, i) => ({ ...r, cx: x(i), cy: y(r.order) }));
+    const ticks = LEAGUE_DIVISIONS
+      .filter((d) => d.order >= yMin && d.order <= yMax)
+      .map((d) => ({ label: d.label, gy: y(d.order) }));
+    return { points, ticks, poly: points.map((p) => `${p.cx},${p.cy}`).join(' ') };
+  });
 
   $effect(() => {
     // re-run whenever the routed clubId changes
@@ -57,6 +85,41 @@
         </div>
       </div>
     </div>
+
+    <h2 class="section">Division History</h2>
+    <p class="recdesc">
+      League division for every season played, oldest to newest &mdash; a promotion moves the
+      line up, a relegation moves it down. Over-35 and cups have no table and aren&rsquo;t shown.
+    </p>
+    <section class="season">
+      {#if club.divisionTimeline.rows.length === 0}
+        <div class="empty">No league-division history recorded for this club.</div>
+      {:else}
+        <div class="stats divstats">
+          <div class="stat"><b>{club.divisionTimeline.promotions}</b><span>Promotions</span></div>
+          <div class="stat"><b>{club.divisionTimeline.relegations}</b><span>Relegations</span></div>
+          <div class="stat"><b>{club.divisionTimeline.longestStreak}</b><span>Longest Spell&nbsp;({club.divisionTimeline.longestStreakDivision})</span></div>
+          <div class="stat"><b>{club.divisionTimeline.divisionsPlayed}</b><span>Divisions Played</span></div>
+        </div>
+        <div class="chartwrap">
+          <svg viewBox={`0 0 ${DW} ${DH}`} preserveAspectRatio="xMidYMid meet" role="img"
+               aria-label="Division history by season">
+            {#each divChart.ticks as t}
+              <line class="grid" x1={DM.left} x2={DW - DM.right} y1={t.gy} y2={t.gy} />
+              <text class="ylab" x={DM.left - 8} y={t.gy} dominant-baseline="middle">{t.label}</text>
+            {/each}
+            <polyline class="line" points={divChart.poly} />
+            {#each divChart.points as p}
+              <circle class="dot" class:live={p.live} class:promoted={!p.live && p.move === 1}
+                class:relegated={!p.live && p.move === -1} cx={p.cx} cy={p.cy} r="4">
+                <title>{p.label}: {p.division}{p.position ? ` (finished ${p.position})` : ''}</title>
+              </circle>
+              <text class="xlab" x={p.cx} y={DH - DM.bottom + 18}>{yearOf(p.sid)}</text>
+            {/each}
+          </svg>
+        </div>
+      {/if}
+    </section>
 
     <h2 class="section">League History</h2>
     <section class="season">
@@ -204,3 +267,20 @@
     </section>
   {/if}
 </main>
+
+<style>
+  /* Division-history chart (ports Trends.svelte's chart CSS locally -- this route otherwise
+     has no scoped style block and relies entirely on app.css). */
+  .divstats { margin-top: 0; margin-bottom: 14px; }
+  .chartwrap { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 8px 10px; }
+  .chartwrap svg { display: block; width: 100%; height: auto; }
+  .grid { stroke: var(--line); stroke-width: 1; }
+  .ylab { fill: var(--muted); font-size: 11px; text-anchor: end; }
+  .xlab { fill: var(--muted); font-size: 11px; text-anchor: middle; }
+  .line { fill: none; stroke: var(--navy2); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+  .dot { fill: var(--navy2); stroke: var(--card); stroke-width: 1.5; }
+  .dot.promoted { fill: var(--g); }
+  .dot.relegated { fill: var(--bad); }
+  .dot.live { fill: var(--gold); }
+</style>

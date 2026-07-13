@@ -344,6 +344,39 @@ export function buildAllClubs(allTeamStandings, championsByClub) {
   return out;
 }
 
+// Chronological (oldest-first) league-division-only timeline for one club's standings rows.
+// Over-35 and cups have no table/division, so only comp_type "league" rows count. `order` comes
+// from canonicalCompetition (1 = Premier/top, rising = lower divisions), so a promotion is a
+// decrease in order and a relegation is an increase -- used to color/plot movement on the Club
+// page's division chart and to roll up promotion/relegation/streak summary stats.
+function buildDivisionTimeline(standings) {
+  const rows = standings
+    .filter((r) => r.comp_type === 'league')
+    .map((r) => {
+      const canon = canonicalCompetition(r.competition, r.comp_type);
+      return { sid: r.sid, label: r.seasonLabel, live: !!r.live, position: num(r.position),
+        order: canon.order, division: canon.label };
+    })
+    .sort((a, b) => a.sid.localeCompare(b.sid));
+
+  let promotions = 0, relegations = 0;
+  let streak = 0, curDivision = null, longestStreak = 0, longestStreakDivision = '';
+  for (let i = 0; i < rows.length; i++) {
+    const prev = rows[i - 1];
+    rows[i].move = prev ? Math.sign(prev.order - rows[i].order) : 0; // +1 promoted, -1 relegated
+    if (prev) {
+      if (rows[i].order < prev.order) promotions += 1;
+      else if (rows[i].order > prev.order) relegations += 1;
+    }
+    if (rows[i].division === curDivision) streak += 1;
+    else { curDivision = rows[i].division; streak = 1; }
+    if (streak > longestStreak) { longestStreak = streak; longestStreakDivision = curDivision; }
+  }
+  const divisionsPlayed = new Set(rows.map((r) => r.division)).size;
+
+  return { rows, promotions, relegations, longestStreak, longestStreakDivision, divisionsPlayed };
+}
+
 // Full profile for one club: all-time totals, per-season competition history (from teams.json,
 // newest first), and the roster of every player who appeared for the club (from stats.csv, rolled
 // up per person over only that club's competitions). Returns null if the club_id isn't found.
@@ -352,6 +385,7 @@ export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, 
   if (!standings.length) return null;
 
   const { name, totals } = aggregateClub(standings);
+  const divisionTimeline = buildDivisionTimeline(standings);
 
   // Titles the club won (league + Over-35 + cups), and a lookup to flag each one in the tables.
   const wins = championsByClub?.get(clubId) || [];
@@ -436,7 +470,7 @@ export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, 
     .sort((a, b) => b.played - a.played || (b.gf - b.ga) - (a.gf - a.ga) || a.name.localeCompare(b.name))
     .slice(0, 5);
 
-  return { clubId, name, totals, seasons, cups, roster, topOpponents };
+  return { clubId, name, totals, seasons, cups, roster, topOpponents, divisionTimeline };
 }
 
 // ---- team records ----
@@ -609,7 +643,7 @@ export function buildTeamRecords(allTeamStandings, allGames) {
 // grid needs one stable column per "real" competition across all history, so every display name
 // is normalized here to a canonical {key, label, group, order} rather than matched verbatim.
 
-const LEAGUE_DIVISIONS = [
+export const LEAGUE_DIVISIONS = [
   { key: 'premier', label: 'Premier', order: 1 },
   { key: 'championship', label: 'Championship', order: 2 },
   { key: '1st', label: '1st Division', order: 3 },
