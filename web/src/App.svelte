@@ -10,6 +10,7 @@
   import Club from './routes/Club.svelte';
   import Compare from './routes/Compare.svelte';
   import TeamRecords from './routes/TeamRecords.svelte';
+  import PowerRankings from './routes/PowerRankings.svelte';
   import PlayerRecords from './routes/PlayerRecords.svelte';
   import Champions from './routes/Champions.svelte';
   import Seasons from './routes/Seasons.svelte';
@@ -30,6 +31,7 @@
   const TEAM_PAGES = [
     { href: '#/champions', label: 'Champions', name: 'champions' },
     { href: '#/clubs', label: 'Clubs', name: 'clubs' },
+    { href: '#/power-rankings', label: 'Power Rankings', name: 'powerRankings' },
     { href: '#/team-records', label: 'Team Records', name: 'teamRecords' },
     { href: '#/compare', label: 'Head-to-Head', name: 'compare' },
   ];
@@ -75,6 +77,7 @@
     club: 'Club · BDSL Stats',
     compare: 'Head-to-Head · BDSL Stats',
     teamRecords: 'Team Records · BDSL Stats',
+    powerRankings: 'Power Rankings · BDSL Stats',
     playerRecords: 'Player Records · BDSL Stats',
     champions: 'Champions · BDSL Stats',
     seasons: 'Seasons · BDSL Stats',
@@ -165,6 +168,8 @@
   {/key}
 {:else if route.name === 'teamRecords'}
   <TeamRecords />
+{:else if route.name === 'powerRankings'}
+  <PowerRankings />
 {:else if route.name === 'playerRecords'}
   <PlayerRecords />
 {:else if route.name === 'champions'}

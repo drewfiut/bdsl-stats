@@ -31,6 +31,13 @@
         'history and the full roster of players who suited up.',
     },
     {
+      href: '#/power-rankings',
+      title: 'Power Rankings',
+      blurb:
+        'All-time Elo ratings from every league and cup result — current power rankings for the ' +
+        'live season, the strongest teams ever by peak rating, and rating-over-time charts.',
+    },
+    {
       href: '#/team-records',
       title: 'Team Records',
       blurb:

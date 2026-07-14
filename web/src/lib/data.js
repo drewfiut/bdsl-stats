@@ -794,6 +794,149 @@ export function buildTeamRecords(allTeamStandings, allGames) {
   };
 }
 
+// ---- Elo ratings / power rankings ----
+// A chronological Elo rating for every club, walking the complete, date-ordered game log since
+// 2014. Elo is a self-correcting strength estimate: beat a stronger club and you gain more than
+// beating a weaker one; the winner's gain is the loser's loss (zero-sum), so the league's average
+// stays anchored at ELO_INITIAL. Only competitive first-team games count -- league (incl. playoffs)
+// and cups. Over-35 is a separate, age-restricted squad sharing the club_id, so mixing it in would
+// muddy a club's strength; it's excluded. Rating is neutral-venue (no home advantage) since most
+// BDSL games are played at shared school fields rather than a real home ground.
+
+export const ELO_INITIAL = 1500;
+// K = how much a single result can move a rating. 32 is the classic chess value and a reasonable
+// fit for a ~14-20 game season: responsive enough to track real form, damped enough not to swing
+// wildly on one upset.
+const ELO_K = 32;
+// Between seasons, regress every rating this fraction of the way back to ELO_INITIAL. Amateur
+// rec-league rosters turn over heavily year to year, so last season's strength is only a partial
+// guide to this season's -- a soft reset keeps the model honest without throwing away all history.
+const ELO_SEASON_REGRESSION = 0.25;
+
+// Margin-of-victory multiplier (World Football Elo Ratings convention): a 3-0 win says more about
+// the gap in strength than a 1-0 win, so bigger margins scale the rating change up -- with
+// diminishing returns so a 7-0 rout isn't seven times a 1-0.
+function eloMovMultiplier(margin) {
+  if (margin <= 1) return 1;
+  if (margin === 2) return 1.5;
+  return (11 + margin) / 8;
+}
+
+// Expected score for A against B on the standard 400-point logistic scale (0.5 = evenly matched,
+// ->1 as A outrates B). A's actual score is 1 win / 0.5 draw / 0 loss.
+function eloExpected(ra, rb) {
+  return 1 / (1 + Math.pow(10, (rb - ra) / 400));
+}
+
+// Walk every rated game in chronological order, updating both clubs' ratings after each result and
+// recording the full rating timeline per club. Returns the current power rankings (clubs active in
+// the latest season, ranked by live rating), the all-time peak-rating leaderboard ("strongest team
+// ever"), and a per-club history for plotting a rating-over-time chart. `liveSids` (optional) flags
+// which season ids belong to an in-progress season, purely for display.
+export function buildElo(allGames, liveSids = new Set()) {
+  // Dedupe games that appear twice under two competition labels sharing one game_key (see
+  // buildTeamRecords), and drop Over-35. `date` + kickoff time + game_number give a stable
+  // chronological order even for several games on the same day.
+  const seen = new Set();
+  const games = (allGames || [])
+    .filter((g) => {
+      if (g.comp_type === 'over35') return false;
+      if (g.status && g.status !== 'played') return false;
+      const key = `${g.sid}||${g.game_key}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .sort((a, b) =>
+      `${a.sid}`.localeCompare(`${b.sid}`) ||
+      `${a.date}`.localeCompare(`${b.date}`) ||
+      parseTimeMinutes(a.time) - parseTimeMinutes(b.time) ||
+      num(a.game_number) - num(b.game_number)
+    );
+  if (!games.length) {
+    return { currentSid: '', currentLabel: '', currentLive: false, powerRankings: [], peaks: [], historyByClub: new Map(), ratedGames: 0 };
+  }
+
+  const currentSid = games[games.length - 1].sid;
+  const currentLabel = games.find((g) => g.sid === currentSid)?.seasonLabel || currentSid;
+
+  const ratings = new Map(); // clubId -> current rating
+  const clubs = new Map(); // clubId -> { name, nameSid, played, peak, peakSid, peakLabel, peakDate, peakPlayed }
+  const historyByClub = new Map(); // clubId -> [{ sid, seasonLabel, date, rating, oppId, oppName, gf, ga, result }]
+  let seasonStart = new Map(); // ratings snapshot at the start of currentSid (post-regression)
+  let prevSid = '';
+
+  const ratingOf = (id) => (ratings.has(id) ? ratings.get(id) : ELO_INITIAL);
+  const clubOf = (id, name, sid) => {
+    let c = clubs.get(id);
+    if (!c) { c = { name, nameSid: sid, played: 0, peak: ELO_INITIAL, peakSid: '', peakLabel: '', peakDate: '', peakPlayed: 0 }; clubs.set(id, c); }
+    if (sid >= c.nameSid) { c.name = name; c.nameSid = sid; } // newest-season spelling
+    return c;
+  };
+
+  for (const g of games) {
+    // Season boundary: regress everyone toward the mean before the new season's games.
+    if (g.sid !== prevSid) {
+      if (prevSid) {
+        for (const [id, r] of ratings) ratings.set(id, ELO_INITIAL + (r - ELO_INITIAL) * (1 - ELO_SEASON_REGRESSION));
+      }
+      if (g.sid === currentSid) seasonStart = new Map(ratings); // clubs new this season default to ELO_INITIAL
+      prevSid = g.sid;
+    }
+
+    const homeId = g.home_club_id, awayId = g.away_club_id;
+    if (!homeId || !awayId) continue;
+    const hs = num(g.home_score), as = num(g.away_score);
+
+    const rh = ratingOf(homeId), ra = ratingOf(awayId);
+    const sh = hs > as ? 1 : hs < as ? 0 : 0.5;
+    const mult = eloMovMultiplier(Math.abs(hs - as));
+    const delta = ELO_K * mult * (sh - eloExpected(rh, ra));
+    const newH = rh + delta, newA = ra - delta;
+    ratings.set(homeId, newH);
+    ratings.set(awayId, newA);
+
+    const ch = clubOf(homeId, g.home_name, g.sid);
+    const ca = clubOf(awayId, g.away_name, g.sid);
+    ch.played += 1; ca.played += 1;
+    if (newH > ch.peak) { ch.peak = newH; ch.peakSid = g.sid; ch.peakLabel = g.seasonLabel; ch.peakDate = g.date; ch.peakPlayed = ch.played; }
+    if (newA > ca.peak) { ca.peak = newA; ca.peakSid = g.sid; ca.peakLabel = g.seasonLabel; ca.peakDate = g.date; ca.peakPlayed = ca.played; }
+
+    const pushH = historyByClub.get(homeId) || historyByClub.set(homeId, []).get(homeId);
+    const pushA = historyByClub.get(awayId) || historyByClub.set(awayId, []).get(awayId);
+    pushH.push({ sid: g.sid, seasonLabel: g.seasonLabel, date: g.date, rating: newH, oppId: awayId, oppName: g.away_name, gf: hs, ga: as, result: sh === 1 ? 'W' : sh === 0 ? 'L' : 'D', live: liveSids.has(g.sid) });
+    pushA.push({ sid: g.sid, seasonLabel: g.seasonLabel, date: g.date, rating: newA, oppId: homeId, oppName: g.home_name, gf: as, ga: hs, result: sh === 0 ? 'W' : sh === 1 ? 'L' : 'D', live: liveSids.has(g.sid) });
+  }
+
+  // Current power rankings: clubs that appeared in the latest season, by live rating.
+  const currentClubIds = new Set(games.filter((g) => g.sid === currentSid).flatMap((g) => [g.home_club_id, g.away_club_id]).filter(Boolean));
+  const powerRankings = [...currentClubIds].map((id) => {
+    const c = clubs.get(id);
+    const hist = historyByClub.get(id) || [];
+    const form = hist.slice(-5).map((h) => h.result);
+    return {
+      clubId: id, name: c?.name || '(unknown)', rating: ratingOf(id), played: c?.played || 0,
+      peak: c?.peak || ELO_INITIAL, change: ratingOf(id) - (seasonStart.get(id) ?? ELO_INITIAL), form,
+    };
+  }).sort((a, b) => b.rating - a.rating || b.peak - a.peak || a.name.localeCompare(b.name));
+
+  // Strongest team ever: the single highest rating each club has ever reached, ranked.
+  const peaks = [...clubs.entries()]
+    .map(([id, c]) => ({ clubId: id, name: c.name, peak: c.peak, atSid: c.peakSid, atLabel: c.peakLabel, atDate: c.peakDate, playedAt: c.peakPlayed }))
+    .filter((p) => p.atSid) // reached above baseline at least once
+    .sort((a, b) => b.peak - a.peak || a.name.localeCompare(b.name));
+
+  return { currentSid, currentLabel, currentLive: liveSids.has(currentSid), powerRankings, peaks, historyByClub, ratedGames: games.length };
+}
+
+// One club's Elo rating timeline, chronological, for the rating-over-time chart on the Club page.
+// Elo is relative, so the whole league has to be recomputed to know one club's number -- this just
+// runs buildElo and pulls out the requested club's history. Returns [] if the club never played a
+// rated (non-Over-35) game.
+export function buildClubEloHistory(allGames, clubId, liveSids = new Set()) {
+  return buildElo(allGames, liveSids).historyByClub.get(clubId) || [];
+}
+
 // ---- champions ----
 // Competition names drift across seasons (typos, sponsor suffixes, Over-35 sometimes split into
 // Premier/Championship, cups carrying "Bracket"/"BDSL" noise -- see DATA.md §5.3). The Champions

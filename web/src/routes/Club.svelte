@@ -1,5 +1,5 @@
 <script>
-  import { loadBoard, buildClubProfile, LEAGUE_DIVISIONS } from '../lib/data.js';
+  import { loadBoard, buildClubProfile, buildClubEloHistory, LEAGUE_DIVISIONS, ELO_INITIAL } from '../lib/data.js';
   import { hscroll } from '../lib/scrollShadow.js';
 
   let { clubId } = $props();
@@ -7,6 +7,7 @@
   let loading = $state(true);
   let error = $state('');
   let club = $state(null);
+  let eloHistory = $state([]);
 
   // Roster sort (mirrors the BestSingleSeasons tabs/sortable-header pattern).
   let sortKey = $state('pts');
@@ -51,12 +52,39 @@
     loading = true;
     error = '';
     club = null;
+    eloHistory = [];
     loadBoard()
       .then((b) => {
         club = buildClubProfile(b.allTeamStandings, b.allPlayers, b.playersRegistry, id, b.championsByClub, b.allGames);
+        const liveSids = new Set(b.allTeamStandings.filter((r) => r.live).map((r) => r.sid));
+        eloHistory = buildClubEloHistory(b.allGames, id, liveSids);
       })
       .catch((e) => (error = e.message || String(e)))
       .finally(() => (loading = false));
+  });
+
+  // Elo rating-over-time chart: y = rating (padded to clean 50s around the club's range and the
+  // 1500 baseline), x = evenly-spaced games in date order. Mirrors the division chart's geometry.
+  const RW = 720, RH = 220;
+  const RM = { top: 20, right: 20, bottom: 30, left: 44 };
+  const riw = RW - RM.left - RM.right;
+  const rih = RH - RM.top - RM.bottom;
+  const eloChart = $derived.by(() => {
+    const h = eloHistory;
+    if (!h || h.length === 0) return null;
+    const ratings = h.map((p) => p.rating);
+    const yMin = Math.floor((Math.min(...ratings, ELO_INITIAL) - 20) / 50) * 50;
+    const yMax = Math.ceil((Math.max(...ratings, ELO_INITIAL) + 20) / 50) * 50;
+    const n = h.length;
+    const x = (i) => RM.left + (n === 1 ? riw / 2 : (riw * i) / (n - 1));
+    const y = (v) => RM.top + rih - ((v - yMin) / (yMax - yMin || 1)) * rih;
+    const points = h.map((p, i) => ({ ...p, cx: x(i), cy: y(p.rating) }));
+    const ticks = [];
+    for (let v = yMin; v <= yMax + 1e-9; v += 50) ticks.push({ v, gy: y(v) });
+    const baseline = ELO_INITIAL >= yMin && ELO_INITIAL <= yMax ? y(ELO_INITIAL) : null;
+    return { points, ticks, baseline, poly: points.map((p) => `${p.cx},${p.cy}`).join(' '),
+      current: Math.round(h[h.length - 1].rating),
+      peak: Math.round(Math.max(...ratings)) };
   });
 
   const roster = $derived.by(() => {
@@ -69,6 +97,7 @@
 
   // In-page jump nav: one button per section, in document order.
   const jumpLinks = $derived(club ? [
+    ...(eloChart ? [{ id: 'elo-rating', label: 'Elo Rating' }] : []),
     { id: 'division-history', label: 'Division History' },
     { id: 'league-history', label: 'League History' },
     ...(club.cups.length ? [{ id: 'cup-history', label: 'Cup History' }] : []),
@@ -128,6 +157,41 @@
       Club not found. <a href="#/clubs">Back to all clubs</a>.
     </div>
   {:else}
+    {#if eloChart}
+      <h2 class="section" id="elo-rating">Elo Rating</h2>
+      <p class="recdesc">
+        Strength rating over every league &amp; cup game the club has played, oldest to newest.
+        Every club starts at {ELO_INITIAL} (the dashed baseline); winning against stronger sides or
+        by bigger margins earns more. Over-35 games aren&rsquo;t rated.
+        <a class="pname" href="#/power-rankings">See all power rankings &rarr;</a>
+      </p>
+      <section class="season">
+        <div class="stats divstats">
+          <div class="stat"><b>{eloChart.current}</b><span>Current Rating</span></div>
+          <div class="stat"><b>{eloChart.peak}</b><span>Peak Rating</span></div>
+          <div class="stat"><b>{eloHistory.length}</b><span>Rated Games</span></div>
+        </div>
+        <div class="chartwrap">
+          <svg viewBox={`0 0 ${RW} ${RH}`} preserveAspectRatio="xMidYMid meet" role="img"
+               aria-label="Elo rating over time">
+            {#each eloChart.ticks as t}
+              <line class="grid" x1={RM.left} x2={RW - RM.right} y1={t.gy} y2={t.gy} />
+              <text class="ylab" x={RM.left - 8} y={t.gy} dominant-baseline="middle">{t.v}</text>
+            {/each}
+            {#if eloChart.baseline !== null}
+              <line class="baseline" x1={RM.left} x2={RW - RM.right} y1={eloChart.baseline} y2={eloChart.baseline} />
+            {/if}
+            <polyline class="line" points={eloChart.poly} />
+            {#each eloChart.points as p}
+              <circle class="dot" class:live={p.live} cx={p.cx} cy={p.cy} r="2.5">
+                <title>{fmtDate(p.date)} vs {p.oppName}: {p.gf}–{p.ga} ({p.result}) → {Math.round(p.rating)}</title>
+              </circle>
+            {/each}
+          </svg>
+        </div>
+      </section>
+    {/if}
+
     <h2 class="section" id="division-history">Division History</h2>
     <p class="recdesc">
       League division for every season played, oldest to newest &mdash; a promotion moves the
@@ -373,6 +437,7 @@
     padding: 8px 10px; }
   .chartwrap svg { display: block; width: 100%; height: auto; }
   .grid { stroke: var(--line); stroke-width: 1; }
+  .baseline { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 4 4; }
   .ylab { fill: var(--muted); font-size: 11px; text-anchor: end; }
   .xlab { fill: var(--muted); font-size: 11px; text-anchor: middle; }
   .line { fill: none; stroke: var(--navy2); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
