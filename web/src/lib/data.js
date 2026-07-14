@@ -629,6 +629,25 @@ export function buildTeamRecords(allTeamStandings, allGames) {
     .sort((a, b) => b.total - a.total || b.margin - a.margin)
     .slice(0, RANK_N);
 
+  // ---- clean sheets (shutouts) ----
+  // Season-total: per club-season, count of games where the opponent was held scoreless.
+  const csBySeasonKey = new Map(); // `${clubId}||${sid}` -> count
+  for (const g of games) {
+    const hs = num(g.home_score), as = num(g.away_score);
+    if (as === 0 && g.home_club_id) {
+      const key = `${g.home_club_id}||${g.sid}`;
+      csBySeasonKey.set(key, (csBySeasonKey.get(key) || 0) + 1);
+    }
+    if (hs === 0 && g.away_club_id) {
+      const key = `${g.away_club_id}||${g.sid}`;
+      csBySeasonKey.set(key, (csBySeasonKey.get(key) || 0) + 1);
+    }
+  }
+  const mostCleanSheets = seasons
+    .map((s) => ({ ...s, cs: csBySeasonKey.get(`${s.clubId}||${s.sid}`) || 0 }))
+    .sort((a, b) => b.cs - a.cs || b.pts - a.pts || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
+
   // ---- career streaks (win / unbeaten), spanning every season ----
   // Grouped by club+competition-type only -- NOT by season -- so a streak can run straight through
   // a year boundary (or a promotion/relegation). League and O35 stay separate tracks since they're
@@ -645,10 +664,11 @@ export function buildTeamRecords(allTeamStandings, allGames) {
       const key = `${side.clubId}||${g.comp_type}`;
       let acc = byTeam.get(key);
       if (!acc) {
-        acc = { clubId: side.clubId, name: side.name, o35: g.comp_type === 'over35', lastSid: '', games: [] };
+        acc = { clubId: side.clubId, name: side.name, o35: g.comp_type === 'over35', lastSid: '', games: [], cs: 0 };
         byTeam.set(key, acc);
       }
       if (g.sid >= acc.lastSid) { acc.name = side.name; acc.lastSid = g.sid; }
+      if (side.ga === 0) acc.cs++;
       acc.games.push({
         date: g.date, sid: g.sid, seasonLabel: g.seasonLabel, live: liveSids.has(g.sid),
         result: side.gf > side.ga ? 'W' : side.gf < side.ga ? 'L' : 'D',
@@ -687,10 +707,16 @@ export function buildTeamRecords(allTeamStandings, allGames) {
   const longestUnbeatenStreak = unbeatenStreaks
     .sort((a, b) => b.len - a.len || a.name.localeCompare(b.name))
     .slice(0, RANK_N);
+  const careerCleanSheets = [...byTeam.values()]
+    .map((acc) => ({ clubId: acc.clubId, name: acc.name, o35: acc.o35, cs: acc.cs, gp: acc.games.length }))
+    .filter((r) => r.cs > 0)
+    .sort((a, b) => b.cs - a.cs || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
 
   return {
     mostGF, fewestGF, mostGA, fewestGA, bestGD, worstGD, mostPts,
     perfect, winless, biggestWins, highestScoring, longestWinStreak, longestUnbeatenStreak,
+    mostCleanSheets, careerCleanSheets,
   };
 }
 

@@ -35,6 +35,8 @@
   // In-page jump nav: one button per section, in document order.
   const jumpLinks = $derived(recs ? [
     ...seasonBoards.map((s) => ({ id: slug(s.title), label: s.title })),
+    { id: 'most-clean-sheets-season', label: 'Most Clean Sheets (Season)' },
+    { id: 'most-clean-sheets-all-time', label: 'Most Clean Sheets (All-Time)' },
     { id: 'perfect-seasons', label: 'Perfect Seasons' },
     { id: 'winless-seasons', label: 'Winless Seasons' },
     { id: 'longest-winning-streak', label: 'Longest Winning Streak' },
@@ -131,6 +133,79 @@
         </div>
       </section>
     {/each}
+
+    <h2 class="section" id="most-clean-sheets-season">Most Clean Sheets (Season)</h2>
+    <p class="recdesc">Most games in a single completed season where the opponent was held scoreless.</p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Team</th>
+              <th class="l mobhide">Season</th>
+              <th class="mobhide">GP</th>
+              <th>CS</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each recs.mostCleanSheets as r, i}
+              {@const rk = i + 1}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l">
+                  <a class="pname" href={`#/club/${r.clubId}`}>{r.name}</a>
+                  {#if r.o35}<span class="o35tag">O35</span>{/if}
+                  <div class="submeta">
+                    <span class="season">{r.seasonLabel} &middot; {r.competition}</span>
+                  </div>
+                </td>
+                <td class="l mobhide">{r.seasonLabel} &middot; {r.competition}</td>
+                <td class="mobhide">{r.gp}</td>
+                <td class="pts">{r.cs}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if recs.mostCleanSheets.length === 0}
+          <div class="empty">No completed seasons yet.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="most-clean-sheets-all-time">Most Clean Sheets (All-Time)</h2>
+    <p class="recdesc">Most career games where the opponent was held scoreless, spanning any number of seasons.</p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Team</th>
+              <th class="mobhide">GP</th>
+              <th>CS</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each recs.careerCleanSheets as r, i}
+              {@const rk = i + 1}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l">
+                  <a class="pname" href={`#/club/${r.clubId}`}>{r.name}</a>
+                  {#if r.o35}<span class="o35tag">O35</span>{/if}
+                </td>
+                <td class="mobhide">{r.gp}</td>
+                <td class="pts">{r.cs}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if recs.careerCleanSheets.length === 0}
+          <div class="empty">No clean sheets recorded yet.</div>
+        {/if}
+      </div>
+    </section>
 
     <h2 class="section" id="perfect-seasons">Perfect Seasons</h2>
     <p class="recdesc">Every completed season a team finished with zero losses.</p>
