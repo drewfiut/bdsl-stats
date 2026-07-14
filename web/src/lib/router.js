@@ -19,6 +19,12 @@ export function parse(hash) {
   if (parts[0] === 'club' && parts[1]) {
     return { name: 'club', params: { clubId: decodeURIComponent(parts[1]) } };
   }
+  if (parts[0] === 'compare') {
+    return { name: 'compare', params: {
+      clubAId: parts[1] ? decodeURIComponent(parts[1]) : '',
+      clubBId: parts[2] ? decodeURIComponent(parts[2]) : '',
+    } };
+  }
   if (parts[0] === 'champions') return { name: 'champions', params: {} };
   if (parts[0] === 'trends') return { name: 'trends', params: {} };
   if (parts[0] === 'seasons') return { name: 'seasons', params: {} };

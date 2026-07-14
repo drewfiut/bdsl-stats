@@ -11,6 +11,12 @@
   // Roster sort (mirrors the BestSingleSeasons tabs/sortable-header pattern).
   let sortKey = $state('pts');
 
+  const fmtDate = (iso) => {
+    const d = new Date(`${iso}T00:00:00`);
+    if (isNaN(d)) return iso || '';
+    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  };
+
   // Division-history chart geometry, in viewBox units (mirrors Trends.svelte's chart pattern).
   const DW = 720, DH = 220;
   const DM = { top: 20, right: 20, bottom: 30, left: 92 };
@@ -66,7 +72,7 @@
     { id: 'division-history', label: 'Division History' },
     { id: 'league-history', label: 'League History' },
     ...(club.cups.length ? [{ id: 'cup-history', label: 'Cup History' }] : []),
-    ...(club.topOpponents.length ? [{ id: 'top-opponents', label: 'Top Opponents' }] : []),
+    ...(club.allOpponents.length ? [{ id: 'top-opponents', label: 'Opponents' }] : []),
     { id: 'players', label: 'Players' },
     { id: 'streaks', label: 'Streaks' },
   ] : []);
@@ -229,10 +235,10 @@
       </section>
     {/if}
 
-    {#if club.topOpponents.length}
-      <h2 class="section" id="top-opponents">Top 5 Most Common Opponents</h2>
+    {#if club.allOpponents.length}
+      <h2 class="section" id="top-opponents">All Opponents ({club.allOpponents.length})</h2>
       <section class="season">
-        <div class="tablewrap">
+        <div class="tablewrap opponents">
           <table>
             <thead>
               <tr>
@@ -241,16 +247,24 @@
                 <th>Record (W&ndash;L&ndash;D)</th>
                 <th>GF</th>
                 <th>GA</th>
+                <th class="l mobhide">Last Meeting</th>
+                <th class="mobhide"></th>
               </tr>
             </thead>
             <tbody>
-              {#each club.topOpponents as o}
+              {#each club.allOpponents as o}
                 <tr>
                   <td class="l"><a class="pname" href={`#/club/${o.clubId}`}>{o.name}</a></td>
                   <td>{o.played}</td>
                   <td>{o.w}&ndash;{o.l}&ndash;{o.d}</td>
                   <td>{o.gf}</td>
                   <td>{o.ga}</td>
+                  <td class="l mobhide">
+                    {#if o.lastMeeting}
+                      {fmtDate(o.lastMeeting.date)} &middot; {o.lastMeeting.gf}&ndash;{o.lastMeeting.ga} ({o.lastMeeting.result})
+                    {/if}
+                  </td>
+                  <td class="mobhide"><a class="pname" href={`#/compare/${club.clubId}/${o.clubId}`}>Compare</a></td>
                 </tr>
               {/each}
             </tbody>
@@ -348,6 +362,10 @@
 </main>
 
 <style>
+  /* Opponents table can run to 50+ rows -- cap it well under the default 75vh so it doesn't
+     dominate the page, while staying scrollable for the full list. */
+  .tablewrap.opponents { max-height: 360px; }
+
   /* Division-history chart (ports Trends.svelte's chart CSS locally -- this route otherwise
      has no scoped style block and relies entirely on app.css). */
   .divstats { margin-top: 0; margin-bottom: 14px; }

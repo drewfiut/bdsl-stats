@@ -400,6 +400,44 @@ function aggregateClubGames(allGames, clubId) {
   return t;
 }
 
+// Head-to-head: every played game between two specific clubs, across every season and
+// competition. Record/GF/GA are reported from clubA's perspective. Games are sorted newest-first
+// so "recent meetings" is a simple slice. Returns null if the two clubs have never met.
+export function buildHeadToHead(allGames, clubAId, clubBId) {
+  if (!clubAId || !clubBId || clubAId === clubBId) return null;
+  const t = { w: 0, l: 0, d: 0, gf: 0, ga: 0 };
+  let nameA = '', nameB = '', sidA = '', sidB = '';
+  const games = [];
+  for (const g of allGames || []) {
+    let gfA, gaA, homeIsA;
+    if (g.home_club_id === clubAId && g.away_club_id === clubBId) { gfA = num(g.home_score); gaA = num(g.away_score); homeIsA = true; }
+    else if (g.away_club_id === clubAId && g.home_club_id === clubBId) { gfA = num(g.away_score); gaA = num(g.home_score); homeIsA = false; }
+    else continue;
+    if (g.sid >= sidA) { nameA = homeIsA ? g.home_name : g.away_name; sidA = g.sid; }
+    if (g.sid >= sidB) { nameB = homeIsA ? g.away_name : g.home_name; sidB = g.sid; }
+    t.gf += gfA; t.ga += gaA;
+    if (gfA > gaA) t.w += 1; else if (gfA < gaA) t.l += 1; else t.d += 1;
+    games.push({
+      date: g.date, sid: g.sid, seasonLabel: g.seasonLabel, competition: g.competition,
+      o35: g.comp_type === 'over35', home: g.home_name, away: g.away_name,
+      hs: num(g.home_score), as: num(g.away_score), margin: Math.abs(gfA - gaA),
+      winner: gfA > gaA ? 'A' : gfA < gaA ? 'B' : 'D',
+    });
+  }
+  if (games.length === 0) return null;
+  games.sort((x, y) => `${y.date}`.localeCompare(`${x.date}`) || y.sid.localeCompare(x.sid));
+  t.gd = t.gf - t.ga;
+
+  const biggestWinA = games.filter((g) => g.winner === 'A').sort((a, b) => b.margin - a.margin)[0] || null;
+  const biggestWinB = games.filter((g) => g.winner === 'B').sort((a, b) => b.margin - a.margin)[0] || null;
+
+  return {
+    clubA: { clubId: clubAId, name: nameA || '(unknown)' },
+    clubB: { clubId: clubBId, name: nameB || '(unknown)' },
+    played: games.length, ...t, games, biggestWinA, biggestWinB,
+  };
+}
+
 // Longest run of games (in date order) satisfying `ok`, keeping the games at the start/end of
 // the best run so we can report which seasons the streak actually spans.
 function longestRun(sortedGames, ok) {
@@ -527,8 +565,10 @@ export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, 
     });
   }
 
-  // Top opponents: head-to-head record against every club this club has played (played games only,
-  // across all competitions/seasons). Opponent name = the newest-season spelling seen for that club.
+  // All-time opponents: head-to-head record against every club this club has played (played games
+  // only, across all competitions/seasons). Opponent name = the newest-season spelling seen for
+  // that club. Last meeting tracks the most recent game by date (falling back to sid) so it's
+  // correct even within a season with games entered out of date order.
   const byOpp = new Map();
   for (const g of allGames || []) {
     const gs = num(g.home_score), as = num(g.away_score);
@@ -538,16 +578,25 @@ export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, 
     else continue;
     if (!oppId || oppId === clubId) continue;
     let acc = byOpp.get(oppId);
-    if (!acc) { acc = { clubId: oppId, name: oppName, sid: g.sid, played: 0, w: 0, l: 0, d: 0, gf: 0, ga: 0 }; byOpp.set(oppId, acc); }
+    if (!acc) {
+      acc = { clubId: oppId, name: oppName, sid: g.sid, played: 0, w: 0, l: 0, d: 0, gf: 0, ga: 0,
+        lastMeeting: null };
+      byOpp.set(oppId, acc);
+    }
     if (g.sid >= acc.sid) { acc.name = oppName; acc.sid = g.sid; }
     acc.played += 1; acc.gf += gf; acc.ga += ga;
     if (gf > ga) acc.w += 1; else if (gf < ga) acc.l += 1; else acc.d += 1;
+    const lm = acc.lastMeeting;
+    if (!lm || `${g.date}` >= `${lm.date}` || (g.date === lm.date && g.sid >= lm.sid)) {
+      acc.lastMeeting = { date: g.date, sid: g.sid, seasonLabel: g.seasonLabel, gf, ga,
+        result: gf > ga ? 'W' : gf < ga ? 'L' : 'D' };
+    }
   }
-  const topOpponents = [...byOpp.values()]
-    .sort((a, b) => b.played - a.played || (b.gf - b.ga) - (a.gf - a.ga) || a.name.localeCompare(b.name))
-    .slice(0, 5);
+  const allOpponents = [...byOpp.values()]
+    .sort((a, b) => b.played - a.played || (b.gf - b.ga) - (a.gf - a.ga) || a.name.localeCompare(b.name));
+  const topOpponents = allOpponents.slice(0, 5);
 
-  return { clubId, name, totals, seasons, cups, roster, topOpponents, divisionTimeline, streaks };
+  return { clubId, name, totals, seasons, cups, roster, topOpponents, allOpponents, divisionTimeline, streaks };
 }
 
 // ---- team records ----
