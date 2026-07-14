@@ -37,6 +37,13 @@
         'Team records across league and Over-35 league play — most/fewest goals, best and ' +
         'worst goal differentials, perfect seasons, winning streaks and more.',
     },
+    {
+      href: '#/compare',
+      title: 'Head-to-Head',
+      blurb:
+        'Pick any two clubs and see their all-time record — meetings, wins/losses/draws, ' +
+        'biggest wins and the full history of every game they’ve played against each other.',
+    },
   ];
   const individualPages = [
     {
