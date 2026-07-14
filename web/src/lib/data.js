@@ -790,6 +790,29 @@ export function canonicalCompetition(name, comp_type) {
   return { key, label: cleaned || n, group: 'league', order: 98 };
 }
 
+// Newest-season display name for every club_id: prefer allTeamStandings (authoritative team
+// names), falling back to allCompetitions' champion_name -- required for cup-only clubs, since
+// cup teams never appear in teams.json.
+function resolveClubNames(allTeamStandings, allCompetitions) {
+  const newestStandingName = new Map(); // club_id -> { sid, name }
+  for (const t of allTeamStandings || []) {
+    if (!t.club_id) continue;
+    const cur = newestStandingName.get(t.club_id);
+    if (!cur || t.sid >= cur.sid) newestStandingName.set(t.club_id, { sid: t.sid, name: t.name });
+  }
+  const newestCompName = new Map(); // club_id -> { sid, name }
+  for (const c of allCompetitions || []) {
+    if (!c.clubId) continue;
+    const cur = newestCompName.get(c.clubId);
+    if (!cur || c.sid >= cur.sid) newestCompName.set(c.clubId, { sid: c.sid, name: c.clubName });
+  }
+  const names = new Map();
+  for (const id of new Set([...newestStandingName.keys(), ...newestCompName.keys()])) {
+    names.set(id, newestStandingName.get(id)?.name || newestCompName.get(id)?.name || '(unknown)');
+  }
+  return names;
+}
+
 // Builds the Champions page's grid (season x competition matrix) and leaderboard (all-time
 // title counts per club) from the flat allCompetitions list plus allTeamStandings (for each
 // club's current display name).
@@ -844,21 +867,7 @@ export function buildChampions(allCompetitions, allTeamStandings) {
   const grid = { columns, rows };
 
   // ---- leaderboard ----
-  // Newest-season club name: prefer allTeamStandings (authoritative team names), falling back to
-  // the newest champion_name from allCompetitions -- required for cup-only champions, since cup
-  // teams never appear in teams.json.
-  const newestStandingName = new Map(); // club_id -> { sid, name }
-  for (const t of allTeamStandings || []) {
-    if (!t.club_id) continue;
-    const cur = newestStandingName.get(t.club_id);
-    if (!cur || t.sid >= cur.sid) newestStandingName.set(t.club_id, { sid: t.sid, name: t.name });
-  }
-  const newestCompName = new Map(); // club_id -> { sid, name }
-  for (const c of comps) {
-    if (!c.clubId) continue;
-    const cur = newestCompName.get(c.clubId);
-    if (!cur || c.sid >= cur.sid) newestCompName.set(c.clubId, { sid: c.sid, name: c.clubName });
-  }
+  const clubNames = resolveClubNames(allTeamStandings, comps);
 
   // Ordered list of completed (non-live) season ids, deduped, for computing droughts.
   const completedSids = [...new Set(comps.filter((c) => !c.live).map((c) => c.sid))].sort();
@@ -881,7 +890,7 @@ export function buildChampions(allCompetitions, allTeamStandings) {
     acc.titles.sort((a, b) => b.sid.localeCompare(a.sid)); // newest first
     const lastSid = acc.titles[0].sid;
     const lastLabel = acc.titles[0].label;
-    const name = newestStandingName.get(acc.clubId)?.name || newestCompName.get(acc.clubId)?.name || '(unknown)';
+    const name = clubNames.get(acc.clubId) || '(unknown)';
     const drought = completedSids.filter((sid) => sid > lastSid).length;
     leaderboard.push({
       clubId: acc.clubId, name,
@@ -1031,6 +1040,120 @@ export function buildPlayerRecords(allPlayers, playersRegistry) {
     topGoals, topAssists, topPoints, mostGP, mostSeasons, careerList,
     goldenBoots, youngestScorers, oldestScorers, oldestAppearances,
   };
+}
+
+// ---- career shape ----
+// Records about the shape of a career rather than raw totals: one-club loyalty vs. wandering
+// journeymen (by distinct clubs actually appeared for), how long a career spanned and whether it
+// had a real comeback gap (measured in season slots that actually happened, so a missing COVID
+// year never counts against anyone), cup-specific scoring, and "triple crown" seasons where a
+// player scored in league, cup AND Over-35 play in the same year.
+export function buildCareerShapeRecords(allPlayers, playersRegistry, allTeamStandings, allCompetitions) {
+  const clubNames = resolveClubNames(allTeamStandings, allCompetitions);
+
+  // Every season id that actually happened, in order, so gaps/spans are measured in real season
+  // slots rather than calendar years (mirrors formatSeasonRanges' 2020-COVID handling).
+  const allSids = [...new Set(allPlayers.map((p) => p.sid))].sort();
+  const sidIndex = new Map(allSids.map((sid, i) => [sid, i]));
+  const labelBySid = new Map();
+  for (const p of allPlayers) labelBySid.set(p.sid, p.season);
+
+  const byPk = new Map();
+  for (const p of allPlayers) {
+    if (p.gp <= 0) continue; // only actual appearances, not roster-only rows
+    let acc = byPk.get(p.pk);
+    if (!acc) {
+      acc = { pk: p.pk, csvName: p.name, clubs: new Map(), sids: new Set(), gp: 0, cupG: 0, cupGp: 0 };
+      byPk.set(p.pk, acc);
+    }
+    acc.sids.add(p.sid);
+    acc.gp += p.gp;
+    for (const c of p.comps || []) {
+      if (c.type === 'cup') { acc.cupG += c.g; acc.cupGp += c.gp; }
+      if (!c.club || !(c.gp > 0)) continue;
+      acc.clubs.set(c.club, (acc.clubs.get(c.club) || 0) + c.gp);
+    }
+  }
+
+  const rows = [];
+  for (const acc of byPk.values()) {
+    const reg = playersRegistry?.[acc.pk];
+    const name = displayName(reg, acc.csvName) || '(unknown)';
+    const sortedSids = [...acc.sids].sort();
+    const debutSid = sortedSids[0];
+    const finalSid = sortedSids[sortedSids.length - 1];
+    let maxGap = 0, gapBeforeLabel = null, gapAfterLabel = null;
+    for (let i = 1; i < sortedSids.length; i++) {
+      const gap = sidIndex.get(sortedSids[i]) - sidIndex.get(sortedSids[i - 1]) - 1;
+      if (gap > maxGap) {
+        maxGap = gap;
+        gapBeforeLabel = labelBySid.get(sortedSids[i - 1]);
+        gapAfterLabel = labelBySid.get(sortedSids[i]);
+      }
+    }
+    rows.push({
+      pk: acc.pk, name, gp: acc.gp,
+      seasons: sortedSids.length,
+      clubCount: acc.clubs.size,
+      clubNames: [...acc.clubs.keys()].map((id) => clubNames.get(id) || '(unknown)').sort(),
+      debutLabel: labelBySid.get(debutSid),
+      finalLabel: labelBySid.get(finalSid),
+      span: sidIndex.get(finalSid) - sidIndex.get(debutSid) + 1,
+      maxGap, gapBeforeLabel, gapAfterLabel,
+      cupG: acc.cupG, cupGp: acc.cupGp,
+    });
+  }
+
+  const oneClubPlayers = rows
+    .filter((r) => r.clubCount === 1)
+    .slice()
+    .sort((a, b) => b.gp - a.gp || b.seasons - a.seasons || a.name.localeCompare(b.name))
+    .slice(0, RANK_N)
+    .map((r) => ({ ...r, clubName: r.clubNames[0] }));
+
+  const journeymen = rows
+    .filter((r) => r.clubCount > 1)
+    .slice()
+    .sort((a, b) => b.clubCount - a.clubCount || b.gp - a.gp || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
+
+  const longestSpans = rows
+    .slice()
+    .sort((a, b) => b.span - a.span || b.seasons - a.seasons || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
+
+  const longestGaps = rows
+    .filter((r) => r.maxGap > 0)
+    .slice()
+    .sort((a, b) => b.maxGap - a.maxGap || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
+
+  const topCupGoals = rows
+    .filter((r) => r.cupG > 0)
+    .slice()
+    .sort((a, b) => b.cupG - a.cupG || b.cupGp - a.cupGp || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
+
+  // Triple crown: scored (g > 0) in league, cup AND Over-35 in the same player-season.
+  const tripleCrowns = [];
+  for (const p of allPlayers) {
+    if (p.gp <= 0) continue;
+    let lg = 0, cup = 0, o35 = 0;
+    for (const c of p.comps || []) {
+      if (c.g <= 0) continue;
+      if (c.type === 'league') lg += c.g;
+      else if (c.type === 'cup') cup += c.g;
+      else if (c.type === 'over35') o35 += c.g;
+    }
+    if (lg > 0 && cup > 0 && o35 > 0) {
+      const reg = playersRegistry?.[p.pk];
+      const name = displayName(reg, p.name) || '(unknown)';
+      tripleCrowns.push({ pk: p.pk, name, sid: p.sid, seasonLabel: p.season, lg, cup, o35, total: lg + cup + o35 });
+    }
+  }
+  tripleCrowns.sort((a, b) => b.sid.localeCompare(a.sid) || b.total - a.total || a.name.localeCompare(b.name));
+
+  return { oneClubPlayers, journeymen, longestSpans, longestGaps, topCupGoals, tripleCrowns };
 }
 
 // A player-season's g/a/gp/pts, optionally narrowed to one comp_type ('league'/'cup'/'over35')
