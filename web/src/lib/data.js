@@ -377,6 +377,24 @@ function buildDivisionTimeline(standings) {
   return { rows, promotions, relegations, longestStreak, longestStreakDivision, divisionsPlayed };
 }
 
+// Every played game (league, playoffs, cup and Over-35 alike) involving this club, win/loss/draw
+// and goals for/against. Unlike aggregateClub's standings-derived totals -- which mirror the
+// regular-season table only, since teams.json rows exclude playoff rounds (round_label set) and
+// cups (no table at all) -- this walks the game log itself, so it's the true all-time record.
+function aggregateClubGames(allGames, clubId) {
+  const t = { gp: 0, w: 0, l: 0, d: 0, gf: 0, ga: 0 };
+  for (const g of allGames || []) {
+    let gf, ga;
+    if (g.home_club_id === clubId) { gf = num(g.home_score); ga = num(g.away_score); }
+    else if (g.away_club_id === clubId) { gf = num(g.away_score); ga = num(g.home_score); }
+    else continue;
+    t.gp += 1; t.gf += gf; t.ga += ga;
+    if (gf > ga) t.w += 1; else if (gf < ga) t.l += 1; else t.d += 1;
+  }
+  t.gd = t.gf - t.ga;
+  return t;
+}
+
 // Full profile for one club: all-time totals, per-season competition history (from teams.json,
 // newest first), and the roster of every player who appeared for the club (from stats.csv, rolled
 // up per person over only that club's competitions). Returns null if the club_id isn't found.
@@ -384,7 +402,10 @@ export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, 
   const standings = allTeamStandings.filter((r) => r.club_id === clubId);
   if (!standings.length) return null;
 
-  const { name, totals } = aggregateClub(standings);
+  const { name } = aggregateClub(standings);
+  // Header totals cover every game the club has ever played -- league, playoffs and cups --
+  // rather than just the regular-season standings.
+  const totals = aggregateClubGames(allGames, clubId);
   const divisionTimeline = buildDivisionTimeline(standings);
 
   // Titles the club won (league + Over-35 + cups), and a lookup to flag each one in the tables.
