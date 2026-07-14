@@ -885,6 +885,78 @@ function resolveClubNames(allTeamStandings, allCompetitions) {
   return names;
 }
 
+// Longest streaks of consecutive-season titles in the same canonical competition ("dynasties" --
+// successive title defenses). A competition's own season sequence (not the calendar) sets what
+// "consecutive" means, since not every competition ran every season (cups added later, divisions
+// renamed, etc). Only completed seasons count; an undecided (live, not-yet-crowned) season breaks
+// an in-progress streak rather than extending it. Ties/streaks of 1 aren't dynasties -- length 2+.
+function computeDynasties(comps) {
+  const byKey = new Map(); // canonical key -> { label, group, bySid: Map<sid, {sid,label,live,clubId,name}> }
+  for (const c of comps) {
+    if (c.live) continue; // only completed seasons form a dynasty
+    const canon = canonicalCompetition(c.competition, c.comp_type);
+    let entry = byKey.get(canon.key);
+    if (!entry) { entry = { label: canon.label, group: canon.group, bySid: new Map() }; byKey.set(canon.key, entry); }
+    const cur = entry.bySid.get(c.sid);
+    if (!cur || (!cur.clubId && c.clubId)) {
+      entry.bySid.set(c.sid, { sid: c.sid, label: c.label, clubId: c.clubId || null, name: c.clubName || null });
+    }
+  }
+
+  const dynasties = [];
+  for (const [key, { label, group, bySid }] of byKey) {
+    const seasons = [...bySid.values()].sort((a, b) => a.sid.localeCompare(b.sid));
+    let curClub = null, curName = '', curLen = 0, curStart = null, prev = null;
+    const flush = (end) => {
+      if (curClub && curLen >= 2) {
+        dynasties.push({
+          clubId: curClub, name: curName, key, label, group, len: curLen,
+          startLabel: curStart.label, endLabel: end.label,
+        });
+      }
+    };
+    for (const s of seasons) {
+      if (s.clubId && s.clubId === curClub) {
+        curLen += 1;
+      } else {
+        flush(prev);
+        curClub = s.clubId; curName = s.name; curLen = s.clubId ? 1 : 0; curStart = s;
+      }
+      prev = s;
+    }
+    flush(prev);
+  }
+  dynasties.sort((a, b) => b.len - a.len || a.label.localeCompare(b.label) || a.name.localeCompare(b.name));
+  return dynasties.slice(0, RANK_N);
+}
+
+// Seasons where one club won 2+ distinct competitions (any mix of league division, Over-35 or
+// cup) -- doubles, trebles and beyond. Cross-competition-group by design: a club sweeping both
+// league divisions it entered counts just as much as a league+cup double.
+function computeMultiTitleSeasons(comps, clubNames) {
+  const bySeasonClub = new Map(); // `${sid}||${clubId}` -> acc
+  for (const c of comps) {
+    if (!c.clubId) continue;
+    const canon = canonicalCompetition(c.competition, c.comp_type);
+    const mkey = `${c.sid}||${c.clubId}`;
+    let acc = bySeasonClub.get(mkey);
+    if (!acc) acc = { sid: c.sid, label: c.label, live: c.live, clubId: c.clubId, comps: new Set() };
+    acc.comps.add(canon.label);
+    bySeasonClub.set(mkey, acc);
+  }
+  const rows = [];
+  for (const acc of bySeasonClub.values()) {
+    if (acc.comps.size < 2) continue;
+    rows.push({
+      clubId: acc.clubId, name: clubNames.get(acc.clubId) || '(unknown)',
+      sid: acc.sid, label: acc.label, live: acc.live,
+      count: acc.comps.size, competitions: [...acc.comps].sort(),
+    });
+  }
+  rows.sort((a, b) => b.count - a.count || b.sid.localeCompare(a.sid) || a.name.localeCompare(b.name));
+  return rows;
+}
+
 // Builds the Champions page's grid (season x competition matrix) and leaderboard (all-time
 // title counts per club) from the flat allCompetitions list plus allTeamStandings (for each
 // club's current display name).
@@ -972,7 +1044,38 @@ export function buildChampions(allCompetitions, allTeamStandings) {
   }
   leaderboard.sort((a, b) => b.total - a.total || b.league - a.league || a.name.localeCompare(b.name));
 
-  return { grid, leaderboard };
+  // ---- longest active droughts ----
+  // Same per-club "seasons since last title" figure already shown on the leaderboard, ranked as
+  // a first-class record. A drought of 0 means reigning champion, so those are excluded.
+  const activeDroughts = leaderboard
+    .filter((r) => r.drought > 0)
+    .map((r) => ({ clubId: r.clubId, name: r.name, len: r.drought, lastLabel: r.lastLabel, lastSid: r.lastSid }))
+    .sort((a, b) => b.len - a.len || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
+
+  // ---- longest all-time droughts (ended) ----
+  // Biggest gap between two consecutive titles (any competition) for the same club, i.e. a
+  // drought that was eventually broken -- as opposed to activeDroughts, which are still ongoing.
+  const allTimeDroughts = [];
+  for (const acc of byClub.values()) {
+    const sids = [...new Set(acc.titles.map((t) => t.sid))].sort();
+    const labelBySid = new Map(acc.titles.map((t) => [t.sid, t.label]));
+    for (let i = 1; i < sids.length; i++) {
+      const len = completedSids.filter((sid) => sid > sids[i - 1] && sid < sids[i]).length;
+      if (len > 0) {
+        allTimeDroughts.push({
+          clubId: acc.clubId, name: clubNames.get(acc.clubId) || '(unknown)', len,
+          beforeLabel: labelBySid.get(sids[i - 1]), afterLabel: labelBySid.get(sids[i]),
+        });
+      }
+    }
+  }
+  allTimeDroughts.sort((a, b) => b.len - a.len || a.name.localeCompare(b.name));
+
+  const dynasties = computeDynasties(comps);
+  const multiTitleSeasons = computeMultiTitleSeasons(comps, clubNames);
+
+  return { grid, leaderboard, dynasties, activeDroughts, allTimeDroughts: allTimeDroughts.slice(0, RANK_N), multiTitleSeasons };
 }
 
 // ---- champion age records ----

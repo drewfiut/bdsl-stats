@@ -31,6 +31,10 @@
   const jumpLinks = [
     { id: 'roll-of-honor', label: 'Roll of Honor' },
     { id: 'most-decorated-clubs', label: 'Most Decorated Clubs' },
+    { id: 'dynasties', label: 'Dynasties' },
+    { id: 'doubles-and-trebles', label: 'Doubles & Trebles' },
+    { id: 'longest-active-droughts', label: 'Longest Active Droughts' },
+    { id: 'longest-all-time-droughts', label: 'Longest All-Time Droughts' },
   ];
 
   // scrollIntoView aligns the target to the viewport top, but the sticky jump nav then overlaps
@@ -189,6 +193,142 @@
         </table>
         {#if data.leaderboard.length === 0}
           <div class="empty">No champions recorded yet.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="dynasties">Dynasties</h2>
+    <p class="recdesc">Longest streaks of consecutive-season titles in the same competition &mdash; successive title defenses.</p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Club</th>
+              <th class="l mobhide">Competition</th>
+              <th class="l mobhide">Seasons</th>
+              <th>Streak</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each data.dynasties as r, i}
+              {@const rk = i + 1}
+              {@const range = r.startLabel === r.endLabel ? r.startLabel : `${r.startLabel} – ${r.endLabel}`}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l">
+                  <a class="pname" href={`#/club/${r.clubId}`}>{r.name}</a>
+                  <div class="submeta"><span class="season">{r.label} &middot; {range}</span></div>
+                </td>
+                <td class="l mobhide">{r.label}</td>
+                <td class="l mobhide">{range}</td>
+                <td class="pts">{r.len} titles</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if data.dynasties.length === 0}
+          <div class="empty">No back-to-back title runs yet.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="doubles-and-trebles">Doubles &amp; Trebles</h2>
+    <p class="recdesc">Seasons where a club won two or more competitions &mdash; any mix of league division, Over-35 or cup.</p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l">Club</th>
+              <th class="l mobhide">Season</th>
+              <th class="l">Competitions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each data.multiTitleSeasons as r}
+              <tr class:live={r.live}>
+                <td class="l">
+                  <a class="pname" href={`#/club/${r.clubId}`}>{r.name}</a>
+                  <div class="submeta"><span class="season">{r.label} &middot; {r.competitions.join(', ')}</span></div>
+                </td>
+                <td class="l mobhide">{r.label}</td>
+                <td class="l mobhide">{r.competitions.join(', ')}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if data.multiTitleSeasons.length === 0}
+          <div class="empty">No multi-title seasons yet.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="longest-active-droughts">Longest Active Droughts</h2>
+    <p class="recdesc">Clubs with a title in the trophy case, longest since their last one &mdash; still running.</p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Club</th>
+              <th class="l mobhide">Last Title</th>
+              <th>Drought</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each data.activeDroughts as r, i}
+              {@const rk = i + 1}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l">
+                  <a class="pname" href={`#/club/${r.clubId}`}>{r.name}</a>
+                  <div class="submeta"><span class="season">Last title {r.lastLabel}</span></div>
+                </td>
+                <td class="l mobhide">{r.lastLabel}</td>
+                <td class="pts">{droughtText(r.len)}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if data.activeDroughts.length === 0}
+          <div class="empty">No active droughts yet.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="longest-all-time-droughts">Longest All-Time Droughts</h2>
+    <p class="recdesc">Biggest gap between two consecutive titles for the same club &mdash; droughts that were eventually broken.</p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Club</th>
+              <th class="l mobhide">Between</th>
+              <th>Drought</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each data.allTimeDroughts as r, i}
+              {@const rk = i + 1}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l">
+                  <a class="pname" href={`#/club/${r.clubId}`}>{r.name}</a>
+                  <div class="submeta"><span class="season">{r.beforeLabel} &rarr; {r.afterLabel}</span></div>
+                </td>
+                <td class="l mobhide">{r.beforeLabel} &rarr; {r.afterLabel}</td>
+                <td class="pts">{r.len} season{r.len === 1 ? '' : 's'}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if data.allTimeDroughts.length === 0}
+          <div class="empty">No ended droughts yet.</div>
         {/if}
       </div>
     </section>

@@ -1,14 +1,18 @@
 <script>
-  import { loadBoard, buildTeamRecords } from '../lib/data.js';
+  import { loadBoard, buildTeamRecords, buildChampions } from '../lib/data.js';
   import { hscroll } from '../lib/scrollShadow.js';
 
   let loading = $state(true);
   let error = $state('');
   let recs = $state(null);
+  let champs = $state(null);
 
   $effect(() => {
     loadBoard()
-      .then((b) => (recs = buildTeamRecords(b.allTeamStandings, b.allGames)))
+      .then((b) => {
+        recs = buildTeamRecords(b.allTeamStandings, b.allGames);
+        champs = buildChampions(b.allCompetitions, b.allTeamStandings);
+      })
       .catch((e) => (error = e.message || String(e)))
       .finally(() => (loading = false));
   });
@@ -41,6 +45,7 @@
     { id: 'winless-seasons', label: 'Winless Seasons' },
     { id: 'longest-winning-streak', label: 'Longest Winning Streak' },
     { id: 'longest-unbeaten-streak', label: 'Longest Unbeaten Streak' },
+    { id: 'longest-championship-streak', label: 'Longest Championship Streak' },
     { id: 'biggest-win', label: 'Biggest Win' },
     { id: 'highest-scoring-game', label: 'Highest Scoring Game' },
     { id: 'luckiest-seasons', label: 'Luckiest Seasons' },
@@ -358,6 +363,43 @@
             {/each}
           </tbody>
         </table>
+      </div>
+    </section>
+
+    <h2 class="section" id="longest-championship-streak">Longest Championship Streak</h2>
+    <p class="recdesc">Most consecutive-season titles in the same competition &mdash; successive title defenses.</p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Team</th>
+              <th class="l mobhide">Competition</th>
+              <th class="l mobhide">Seasons</th>
+              <th>Streak</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each champs?.dynasties || [] as r, i}
+              {@const rk = i + 1}
+              {@const range = r.startLabel === r.endLabel ? r.startLabel : `${r.startLabel} – ${r.endLabel}`}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l">
+                  <a class="pname" href={`#/club/${r.clubId}`}>{r.name}</a>
+                  <div class="submeta"><span class="season">{r.label} &middot; {range}</span></div>
+                </td>
+                <td class="l mobhide">{r.label}</td>
+                <td class="l mobhide">{range}</td>
+                <td class="pts">{r.len} titles</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if !champs?.dynasties?.length}
+          <div class="empty">No back-to-back title runs yet.</div>
+        {/if}
       </div>
     </section>
 
