@@ -395,6 +395,55 @@ function aggregateClubGames(allGames, clubId) {
   return t;
 }
 
+// Longest run of games (in date order) satisfying `ok`, keeping the games at the start/end of
+// the best run so we can report which seasons the streak actually spans.
+function longestRun(sortedGames, ok) {
+  let best = null, curLen = 0, curStart = null;
+  for (const g of sortedGames) {
+    if (ok(g)) {
+      if (curLen === 0) curStart = g;
+      curLen += 1;
+      if (!best || curLen > best.len) best = { len: curLen, start: curStart, end: g };
+    } else {
+      curLen = 0;
+    }
+  }
+  return best;
+}
+
+// Longest win / unbeaten / winless / scoring streaks for a single club, across every game it's
+// ever played -- league, playoffs, cups and Over-35 alike -- matching the "true all-time record"
+// convention used by aggregateClubGames above (rather than the league+O35-only scope the
+// league-wide Team Records page uses for its cross-club leaderboard).
+function computeClubStreaks(allGames, clubId, liveSids) {
+  const games = [];
+  for (const g of allGames || []) {
+    let gf, ga;
+    if (g.home_club_id === clubId) { gf = num(g.home_score); ga = num(g.away_score); }
+    else if (g.away_club_id === clubId) { gf = num(g.away_score); ga = num(g.home_score); }
+    else continue;
+    games.push({
+      date: g.date, seasonLabel: g.seasonLabel, live: liveSids.has(g.sid),
+      result: gf > ga ? 'W' : gf < ga ? 'L' : 'D', scored: gf > 0,
+    });
+  }
+  if (!games.length) return null;
+  const sorted = games.sort((a, b) => a.date.localeCompare(b.date));
+  const mostRecent = sorted[sorted.length - 1];
+  // "In progress" only means the streak is still active right now -- its last game IS the club's
+  // most recent game overall -- not merely that it falls within a season that isn't finished yet.
+  const toRecord = (run) => run && {
+    len: run.len, startLabel: run.start.seasonLabel, endLabel: run.end.seasonLabel,
+    live: run.end === mostRecent && run.end.live,
+  };
+  return {
+    win: toRecord(longestRun(sorted, (g) => g.result === 'W')),
+    unbeaten: toRecord(longestRun(sorted, (g) => g.result !== 'L')),
+    winless: toRecord(longestRun(sorted, (g) => g.result !== 'W')),
+    scoring: toRecord(longestRun(sorted, (g) => g.scored)),
+  };
+}
+
 // Full profile for one club: all-time totals, per-season competition history (from teams.json,
 // newest first), and the roster of every player who appeared for the club (from stats.csv, rolled
 // up per person over only that club's competitions). Returns null if the club_id isn't found.
@@ -407,6 +456,8 @@ export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, 
   // rather than just the regular-season standings.
   const totals = aggregateClubGames(allGames, clubId);
   const divisionTimeline = buildDivisionTimeline(standings);
+  const liveSids = new Set(allTeamStandings.filter((r) => r.live).map((r) => r.sid));
+  const streaks = computeClubStreaks(allGames, clubId, liveSids);
 
   // Titles the club won (league + Over-35 + cups), and a lookup to flag each one in the tables.
   const wins = championsByClub?.get(clubId) || [];
@@ -491,7 +542,7 @@ export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, 
     .sort((a, b) => b.played - a.played || (b.gf - b.ga) - (a.gf - a.ga) || a.name.localeCompare(b.name))
     .slice(0, 5);
 
-  return { clubId, name, totals, seasons, cups, roster, topOpponents, divisionTimeline };
+  return { clubId, name, totals, seasons, cups, roster, topOpponents, divisionTimeline, streaks };
 }
 
 // ---- team records ----
@@ -604,21 +655,6 @@ export function buildTeamRecords(allTeamStandings, allGames) {
       });
     }
   }
-  // Longest run of games (in date order) satisfying `ok`, keeping the games at the start/end of
-  // the best run so we can report which seasons the streak actually spans.
-  const longestRun = (sortedGames, ok) => {
-    let best = null, curLen = 0, curStart = null;
-    for (const g of sortedGames) {
-      if (ok(g)) {
-        if (curLen === 0) curStart = g;
-        curLen += 1;
-        if (!best || curLen > best.len) best = { len: curLen, start: curStart, end: g };
-      } else {
-        curLen = 0;
-      }
-    }
-    return best;
-  };
   const winStreaks = [];
   const unbeatenStreaks = [];
   for (const acc of byTeam.values()) {
