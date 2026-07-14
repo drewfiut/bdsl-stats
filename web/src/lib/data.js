@@ -154,6 +154,7 @@ async function buildBoard() {
   const allPlayers = [];
   const allTeamStandings = []; // flat teams.json rows tagged with season context
   const allGames = []; // flat games.csv rows (played only) tagged with season context
+  const allFixtures = []; // flat games.csv rows (every status, incl. scheduled) tagged with season context
   // clubId -> [{ sid, label, competition, via }] : the authoritative source of titles, spanning
   // league, Over-35 AND cups (cups have no teams.json, so their titles only live here). A champion
   // is the CHMP playoff winner, which can differ from the regular-season table-topper (position 1).
@@ -170,6 +171,7 @@ async function buildBoard() {
     }
     for (const g of s.games) {
       if (g.status === 'played') allGames.push({ ...g, sid: s.sid, seasonLabel: s.label });
+      allFixtures.push({ ...g, sid: s.sid, seasonLabel: s.label });
     }
     for (const c of s.comps) {
       allCompetitions.push({
@@ -199,7 +201,7 @@ async function buildBoard() {
     .reverse()
     .map((sid) => seasons[sid]?.label || sid); // newest-first, for the filter dropdown
 
-  return { players: active, allPlayers, allTeamStandings, allGames, championsByClub, allCompetitions, playersRegistry, seasonLabels, dataAsOf };
+  return { players: active, allPlayers, allTeamStandings, allGames, allFixtures, championsByClub, allCompetitions, playersRegistry, seasonLabels, dataAsOf };
 }
 
 // Fetch + aggregate once, then share across route navigations (board <-> profile).
@@ -740,6 +742,17 @@ const CUP_DEFS = [
   { key: 'wood', label: 'Wood Cup', order: 21, match: /wood/i },
   { key: 'matthews', label: 'Matthews Cup', order: 22, match: /matthews/i },
 ];
+
+// "8:30 pm" -> 1290 (minutes since midnight), for sorting same-day games by kickoff time.
+// Returns -1 (sorts first) if the time is missing/unparseable.
+function parseTimeMinutes(t) {
+  const m = /^(\d{1,2}):(\d{2})\s*(am|pm)$/i.exec((t || '').trim());
+  if (!m) return -1;
+  let [, hh, mm, ap] = m;
+  hh = parseInt(hh, 10) % 12;
+  if (ap.toLowerCase() === 'pm') hh += 12;
+  return hh * 60 + parseInt(mm, 10);
+}
 
 // Returns { key, label, group, order } for any competition's display name + comp_type.
 // group: 'league' | 'over35' | 'cup'. order: sort index for grid columns (league, then
@@ -1386,12 +1399,13 @@ export function buildSeasonIndex(board) {
 // Full detail for one season: standings by division, the champions grid row, and top
 // scorers/assisters. Returns null if the sid has no data anywhere in the board.
 export function buildSeason(board, sid) {
-  const { allTeamStandings, allCompetitions, allPlayers } = board;
+  const { allTeamStandings, allCompetitions, allPlayers, allFixtures } = board;
 
   const standingsRows = allTeamStandings.filter((r) => r.sid === sid);
   const compRows = allCompetitions.filter((c) => c.sid === sid);
   const playerRows = allPlayers.filter((p) => p.sid === sid);
-  if (!standingsRows.length && !compRows.length && !playerRows.length) return null;
+  const fixtureRows = (allFixtures || []).filter((g) => g.sid === sid);
+  if (!standingsRows.length && !compRows.length && !playerRows.length && !fixtureRows.length) return null;
 
   const meta = compRows[0] || standingsRows[0] || playerRows[0];
   const label = meta.label || meta.seasonLabel || meta.season || sid;
@@ -1477,5 +1491,56 @@ export function buildSeason(board, sid) {
   }
   const divisions = [...divSeen.values()].sort((a, b) => a.order - b.order || a.label.localeCompare(b.label));
 
-  return { sid, label, live, standings, champions, players, divisions };
+  // ---- results & fixtures: grouped by competition, like standings ----
+  const RECENT_PER_COMP = 10;
+  const UPCOMING_PER_COMP = 10;
+  const shapeGame = (g) => ({
+    gameKey: g.game_key, date: g.date, time: g.time,
+    home: g.home_name, homeClubId: g.home_club_id,
+    away: g.away_name, awayClubId: g.away_club_id,
+    hs: num(g.home_score), as: num(g.away_score),
+    location: g.location,
+  });
+
+  const byCompResults = new Map();
+  const byCompFixtures = new Map();
+  for (const g of fixtureRows) {
+    const canon = canonicalCompetition(g.competition, g.comp_type);
+    const target = g.status === 'played' ? byCompResults : g.status === 'scheduled' ? byCompFixtures : null;
+    if (!target) continue;
+    let entry = target.get(canon.key);
+    if (!entry) {
+      entry = { key: canon.key, label: canon.label, group: canon.group, order: canon.order, games: [] };
+      target.set(canon.key, entry);
+    }
+    entry.games.push(shapeGame(g));
+  }
+
+  // A handful of games (mostly cup rounds) have no date/time yet -- keep those undated games
+  // at the bottom of their list rather than letting an empty string sort first/last by accident.
+  const results = [...byCompResults.values()]
+    .map((c) => ({
+      ...c,
+      games: c.games
+        .sort((a, b) => {
+          if (!a.date || !b.date) return (!a.date ? 1 : 0) - (!b.date ? 1 : 0);
+          return b.date.localeCompare(a.date) || parseTimeMinutes(b.time) - parseTimeMinutes(a.time);
+        })
+        .slice(0, RECENT_PER_COMP),
+    }))
+    .sort((a, b) => a.order - b.order || a.label.localeCompare(b.label));
+
+  const fixtures = [...byCompFixtures.values()]
+    .map((c) => ({
+      ...c,
+      games: c.games
+        .sort((a, b) => {
+          if (!a.date || !b.date) return (!a.date ? 1 : 0) - (!b.date ? 1 : 0);
+          return a.date.localeCompare(b.date) || parseTimeMinutes(a.time) - parseTimeMinutes(b.time);
+        })
+        .slice(0, UPCOMING_PER_COMP),
+    }))
+    .sort((a, b) => a.order - b.order || a.label.localeCompare(b.label));
+
+  return { sid, label, live, standings, champions, players, divisions, results, fixtures };
 }

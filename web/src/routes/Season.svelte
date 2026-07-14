@@ -20,11 +20,19 @@
       .finally(() => (loading = false));
   });
 
-  const jumpLinks = [
+  const jumpLinks = $derived([
     { id: 'champions', label: 'Champions' },
     { id: 'standings', label: 'Standings' },
+    ...(data?.fixtures?.length ? [{ id: 'fixtures', label: 'Upcoming Matches' }] : []),
+    ...(data?.results?.length ? [{ id: 'results', label: 'Recent Results' }] : []),
     { id: 'leaders', label: 'Top Performers' },
-  ];
+  ]);
+
+  const fmtDate = (iso) => {
+    const d = new Date(`${iso}T00:00:00`);
+    if (isNaN(d)) return iso || '';
+    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  };
 
   // scrollIntoView aligns the target to the viewport top, but the sticky jump nav then overlaps
   // it -- measure the nav's actual height and offset the scroll by that (matches Champions.svelte).
@@ -43,6 +51,27 @@
   const LEADER_LIMIT = 50;
   let sortKey = $state('pts'); // 'g' | 'a' | 'pts'
   let divFilter = $state(''); // '' = all divisions
+
+  // Standings/fixtures/results: one table each, switched between competitions via a button row
+  // (instead of stacking every division's table one after another). Falls back to the first
+  // competition whenever the current pick doesn't exist in this season's data (incl. right after
+  // sid changes).
+  let standingsDivKey = $state('');
+  let fixturesDivKey = $state('');
+  let resultsDivKey = $state('');
+
+  const selectedStandings = $derived.by(() => {
+    if (!data?.standings?.length) return null;
+    return data.standings.find((c) => c.key === standingsDivKey) || data.standings[0];
+  });
+  const selectedFixtures = $derived.by(() => {
+    if (!data?.fixtures?.length) return null;
+    return data.fixtures.find((c) => c.key === fixturesDivKey) || data.fixtures[0];
+  });
+  const selectedResults = $derived.by(() => {
+    if (!data?.results?.length) return null;
+    return data.results.find((c) => c.key === resultsDivKey) || data.results[0];
+  });
 
   const leaders = $derived.by(() => {
     if (!data) return [];
@@ -117,8 +146,12 @@
     </section>
 
     <h2 class="section" id="standings">Standings</h2>
-    {#each data.standings as div}
-      <h3 class="divhead">{div.label}</h3>
+    {#if data.standings.length > 0}
+      <div class="divbtns">
+        {#each data.standings as div}
+          <button class:on={selectedStandings?.key === div.key} onclick={() => (standingsDivKey = div.key)}>{div.label}</button>
+        {/each}
+      </div>
       <section class="season">
         <div class="tablewrap">
           <table>
@@ -137,7 +170,7 @@
               </tr>
             </thead>
             <tbody>
-              {#each div.rows as r}
+              {#each selectedStandings?.rows || [] as r}
                 <tr class:live={r.champion}>
                   <td class="rank" class:m1={r.position === 1} class:m2={r.position === 2} class:m3={r.position === 3}>{r.position || '–'}</td>
                   <td class="l">
@@ -159,9 +192,100 @@
           </table>
         </div>
       </section>
-    {/each}
-    {#if data.standings.length === 0}
+    {:else}
       <p class="recdesc">No standings recorded this season.</p>
+    {/if}
+
+    {#if data.fixtures.length > 0}
+      <h2 class="section" id="fixtures">Upcoming Matches</h2>
+      <div class="divbtns">
+        {#each data.fixtures as comp}
+          <button class:on={selectedFixtures?.key === comp.key} onclick={() => (fixturesDivKey = comp.key)}>{comp.label}</button>
+        {/each}
+      </div>
+      <section class="season">
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="l">Date</th>
+                <th class="l">Time</th>
+                <th class="l">Home</th>
+                <th class="l">Away</th>
+                <th class="l mobhide">Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              {#each selectedFixtures?.games || [] as g}
+                <tr>
+                  <td class="l">{g.date ? fmtDate(g.date) : 'TBD'}</td>
+                  <td class="l">{g.time || '–'}</td>
+                  <td class="l">
+                    {#if g.homeClubId}
+                      <a class="pname" href={`#/club/${g.homeClubId}`}>{g.home}</a>
+                    {:else}
+                      {g.home || 'TBD'}
+                    {/if}
+                  </td>
+                  <td class="l">
+                    {#if g.awayClubId}
+                      <a class="pname" href={`#/club/${g.awayClubId}`}>{g.away}</a>
+                    {:else}
+                      {g.away || 'TBD'}
+                    {/if}
+                  </td>
+                  <td class="l mobhide">{g.location || '–'}</td>
+                </tr>
+              {/each}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    {/if}
+
+    {#if data.results.length > 0}
+      <h2 class="section" id="results">Recent Results</h2>
+      <div class="divbtns">
+        {#each data.results as comp}
+          <button class:on={selectedResults?.key === comp.key} onclick={() => (resultsDivKey = comp.key)}>{comp.label}</button>
+        {/each}
+      </div>
+      <section class="season">
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="l">Date</th>
+                <th class="l">Home</th>
+                <th>Score</th>
+                <th class="l">Away</th>
+              </tr>
+            </thead>
+            <tbody>
+              {#each selectedResults?.games || [] as g}
+                <tr>
+                  <td class="l">{g.date ? fmtDate(g.date) : 'TBD'}</td>
+                  <td class="l">
+                    {#if g.homeClubId}
+                      <a class="pname" href={`#/club/${g.homeClubId}`}>{g.home}</a>
+                    {:else}
+                      {g.home || 'TBD'}
+                    {/if}
+                  </td>
+                  <td class="pts">{g.hs}&ndash;{g.as}</td>
+                  <td class="l">
+                    {#if g.awayClubId}
+                      <a class="pname" href={`#/club/${g.awayClubId}`}>{g.away}</a>
+                    {:else}
+                      {g.away || 'TBD'}
+                    {/if}
+                  </td>
+                </tr>
+              {/each}
+            </tbody>
+          </table>
+        </div>
+      </section>
     {/if}
 
     <h2 class="section" id="leaders">Top Performers</h2>
@@ -216,17 +340,29 @@
 </main>
 
 <style>
-  /* Division headers inside the Standings section: strong, clearly separated from the
-     preceding table, and tightly paired with their own table below. */
-  .divhead {
+  /* Standings/fixtures/results competition switcher: a row of pill buttons, one per division,
+     above a single shared table (instead of stacking every division's table in a row). */
+  .divbtns {
     max-width: 1120px;
-    margin: 30px auto 10px;
+    margin: 0 auto 10px;
     padding: 0 14px;
-    font-size: 18px;
-    font-weight: 750;
-    color: var(--text);
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
   }
-  .divhead:first-of-type { margin-top: 14px; }
+  .divbtns button {
+    border: 1px solid var(--line);
+    background: var(--row);
+    color: var(--text);
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 650;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .divbtns button:hover { background: var(--hover); border-color: var(--navy2); color: var(--navy2); }
+  .divbtns button.on { background: var(--navy); border-color: var(--navy); color: #fff; }
 
   /* Top-performers controls: division dropdown + sort hint. */
   .leadctrl {
