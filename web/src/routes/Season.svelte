@@ -1,5 +1,5 @@
 <script>
-  import { loadBoard, buildSeason } from '../lib/data.js';
+  import { loadBoard, buildSeason, buildGoldenBootRace } from '../lib/data.js';
   import { hscroll } from '../lib/scrollShadow.js';
 
   let { sid } = $props();
@@ -7,6 +7,7 @@
   let loading = $state(true);
   let error = $state('');
   let data = $state(null);
+  let board = $state(null);
 
   $effect(() => {
     // re-run whenever the routed sid changes
@@ -15,16 +16,32 @@
     error = '';
     data = null;
     loadBoard()
-      .then((b) => (data = buildSeason(b, id)))
+      .then((b) => {
+        board = b;
+        data = buildSeason(b, id);
+      })
       .catch((e) => (error = e.message || String(e)))
       .finally(() => (loading = false));
   });
 
-  const jumpLinks = [
+  // Only meaningful for the live season -- historical seasons carry just one stats.csv snapshot,
+  // so there's no day-by-day history to trace a race through.
+  const race = $derived(board && data?.live ? buildGoldenBootRace(board, sid) : null);
+
+  const jumpLinks = $derived([
     { id: 'champions', label: 'Champions' },
     { id: 'standings', label: 'Standings' },
+    ...(race ? [{ id: 'golden-boot-race', label: 'Golden Boot Race' }] : []),
+    ...(data?.fixtures?.length ? [{ id: 'fixtures', label: 'Upcoming Matches' }] : []),
+    ...(data?.results?.length ? [{ id: 'results', label: 'Recent Results' }] : []),
     { id: 'leaders', label: 'Top Performers' },
-  ];
+  ]);
+
+  const fmtDate = (iso) => {
+    const d = new Date(`${iso}T00:00:00`);
+    if (isNaN(d)) return iso || '';
+    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  };
 
   // scrollIntoView aligns the target to the viewport top, but the sticky jump nav then overlaps
   // it -- measure the nav's actual height and offset the scroll by that (matches Champions.svelte).
@@ -44,6 +61,27 @@
   let sortKey = $state('pts'); // 'g' | 'a' | 'pts'
   let divFilter = $state(''); // '' = all divisions
 
+  // Standings/fixtures/results: one table each, switched between competitions via a button row
+  // (instead of stacking every division's table one after another). Falls back to the first
+  // competition whenever the current pick doesn't exist in this season's data (incl. right after
+  // sid changes).
+  let standingsDivKey = $state('');
+  let fixturesDivKey = $state('');
+  let resultsDivKey = $state('');
+
+  const selectedStandings = $derived.by(() => {
+    if (!data?.standings?.length) return null;
+    return data.standings.find((c) => c.key === standingsDivKey) || data.standings[0];
+  });
+  const selectedFixtures = $derived.by(() => {
+    if (!data?.fixtures?.length) return null;
+    return data.fixtures.find((c) => c.key === fixturesDivKey) || data.fixtures[0];
+  });
+  const selectedResults = $derived.by(() => {
+    if (!data?.results?.length) return null;
+    return data.results.find((c) => c.key === resultsDivKey) || data.results[0];
+  });
+
   const leaders = $derived.by(() => {
     if (!data) return [];
     const rows = divFilter ? data.players.filter((p) => p.divisionKey === divFilter) : data.players;
@@ -51,6 +89,50 @@
       .slice()
       .sort((a, b) => b[sortKey] - a[sortKey] || b.pts - a.pts || b.g - a.g || a.name.localeCompare(b.name))
       .slice(0, LEADER_LIMIT);
+  });
+
+  // Golden Boot race chart: one line per top scorer, x = snapshot day, y = cumulative goals.
+  // Cycles through the site's existing themed accent colors rather than introducing new ones.
+  const RACE_COLORS = ['var(--navy2)', 'var(--gold)', 'var(--g)', 'var(--a)', 'var(--bad)'];
+  const RW = 720, RH = 320;
+  const RM = { top: 24, right: 20, bottom: 34, left: 34 };
+  const riw = RW - RM.left - RM.right;
+  const rih = RH - RM.top - RM.bottom;
+
+  const fmtShortDate = (iso) => {
+    const d = new Date(`${iso}T00:00:00`);
+    if (isNaN(d)) return iso || '';
+    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  };
+
+  const raceChart = $derived.by(() => {
+    if (!race || !race.series.length) return null;
+    const n = race.dates.length;
+    const yMax = Math.max(race.maxG + 1, 1);
+    const x = (i) => RM.left + (n === 1 ? riw / 2 : (riw * i) / (n - 1));
+    const y = (v) => RM.top + rih - (yMax > 0 ? (v / yMax) * rih : 0);
+    const ticks = [];
+    const step = Math.max(1, Math.ceil(yMax / 5));
+    for (let t = 0; t <= yMax + 1e-9; t += step) ticks.push({ v: Math.round(t), gy: y(t) });
+
+    const lines = race.series.map((s, i) => ({
+      pk: s.pk,
+      name: s.name,
+      g: s.g,
+      color: RACE_COLORS[i % RACE_COLORS.length],
+      poly: s.points.map((p, j) => `${x(j)},${y(p.g)}`).join(' '),
+      last: { cx: x(n - 1), cy: y(s.points[n - 1].g) },
+    }));
+
+    // Thin the x-axis labels so dense day-by-day data doesn't overlap: always show the first and
+    // last day, plus evenly-spaced days in between (about one label per 60px of chart width).
+    const maxLabels = Math.max(2, Math.floor(riw / 60));
+    const labelEvery = Math.max(1, Math.ceil((n - 1) / (maxLabels - 1)));
+    const xLabels = race.dates
+      .map((d, i) => ({ d, i }))
+      .filter(({ i }) => i === 0 || i === n - 1 || i % labelEvery === 0);
+
+    return { lines, ticks, xLabels, x, yMax };
   });
 </script>
 
@@ -117,8 +199,12 @@
     </section>
 
     <h2 class="section" id="standings">Standings</h2>
-    {#each data.standings as div}
-      <h3 class="divhead">{div.label}</h3>
+    {#if data.standings.length > 0}
+      <div class="divbtns">
+        {#each data.standings as div}
+          <button class:on={selectedStandings?.key === div.key} onclick={() => (standingsDivKey = div.key)}>{div.label}</button>
+        {/each}
+      </div>
       <section class="season">
         <div class="tablewrap">
           <table>
@@ -137,7 +223,7 @@
               </tr>
             </thead>
             <tbody>
-              {#each div.rows as r}
+              {#each selectedStandings?.rows || [] as r}
                 <tr class:live={r.champion}>
                   <td class="rank" class:m1={r.position === 1} class:m2={r.position === 2} class:m3={r.position === 3}>{r.position || '–'}</td>
                   <td class="l">
@@ -159,9 +245,141 @@
           </table>
         </div>
       </section>
-    {/each}
-    {#if data.standings.length === 0}
+    {:else}
       <p class="recdesc">No standings recorded this season.</p>
+    {/if}
+
+    {#if race}
+      <h2 class="section" id="golden-boot-race">Golden Boot Race</h2>
+      <p class="recdesc">
+        Cumulative goals for the season&rsquo;s top {race.series.length} scorers, day by day
+        &mdash; across every competition they&rsquo;ve played.
+      </p>
+      <section class="season">
+        <div class="chartwrap">
+          <svg viewBox={`0 0 ${RW} ${RH}`} preserveAspectRatio="xMidYMid meet" role="img"
+               aria-label="Golden Boot race: cumulative goals by day">
+            {#if raceChart}
+              {#each raceChart.ticks as t}
+                <line class="grid" x1={RM.left} x2={RW - RM.right} y1={t.gy} y2={t.gy} />
+                <text class="ylab" x={RM.left - 8} y={t.gy} dominant-baseline="middle">{t.v}</text>
+              {/each}
+              {#each raceChart.xLabels as xl}
+                <text class="xlab" x={raceChart.x(xl.i)} y={RH - RM.bottom + 20}>{fmtShortDate(xl.d)}</text>
+              {/each}
+              {#each raceChart.lines as l}
+                <polyline class="raceline" points={l.poly} style={`stroke: ${l.color}`} />
+                <circle class="racedot" cx={l.last.cx} cy={l.last.cy} r="4" style={`fill: ${l.color}`}>
+                  <title>{l.name}: {l.g} goals</title>
+                </circle>
+              {/each}
+            {/if}
+          </svg>
+        </div>
+        {#if raceChart}
+          <ul class="racelegend">
+            {#each raceChart.lines as l}
+              <li>
+                <span class="swatch" style={`background: ${l.color}`}></span>
+                <a class="pname" href={`#/player/${l.pk}`}>{l.name}</a>
+                <b>{l.g}</b>
+              </li>
+            {/each}
+          </ul>
+        {/if}
+      </section>
+    {/if}
+
+    {#if data.fixtures.length > 0}
+      <h2 class="section" id="fixtures">Upcoming Matches</h2>
+      <div class="divbtns">
+        {#each data.fixtures as comp}
+          <button class:on={selectedFixtures?.key === comp.key} onclick={() => (fixturesDivKey = comp.key)}>{comp.label}</button>
+        {/each}
+      </div>
+      <section class="season">
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="l">Date</th>
+                <th class="l">Time</th>
+                <th class="l">Home</th>
+                <th class="l">Away</th>
+                <th class="l mobhide">Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              {#each selectedFixtures?.games || [] as g}
+                <tr>
+                  <td class="l">{g.date ? fmtDate(g.date) : 'TBD'}</td>
+                  <td class="l">{g.time || '–'}</td>
+                  <td class="l">
+                    {#if g.homeClubId}
+                      <a class="pname" href={`#/club/${g.homeClubId}`}>{g.home}</a>
+                    {:else}
+                      {g.home || 'TBD'}
+                    {/if}
+                  </td>
+                  <td class="l">
+                    {#if g.awayClubId}
+                      <a class="pname" href={`#/club/${g.awayClubId}`}>{g.away}</a>
+                    {:else}
+                      {g.away || 'TBD'}
+                    {/if}
+                  </td>
+                  <td class="l mobhide">{g.location || '–'}</td>
+                </tr>
+              {/each}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    {/if}
+
+    {#if data.results.length > 0}
+      <h2 class="section" id="results">Recent Results</h2>
+      <div class="divbtns">
+        {#each data.results as comp}
+          <button class:on={selectedResults?.key === comp.key} onclick={() => (resultsDivKey = comp.key)}>{comp.label}</button>
+        {/each}
+      </div>
+      <section class="season">
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="l">Date</th>
+                <th class="l">Home</th>
+                <th>Score</th>
+                <th class="l">Away</th>
+              </tr>
+            </thead>
+            <tbody>
+              {#each selectedResults?.games || [] as g}
+                <tr>
+                  <td class="l">{g.date ? fmtDate(g.date) : 'TBD'}</td>
+                  <td class="l">
+                    {#if g.homeClubId}
+                      <a class="pname" href={`#/club/${g.homeClubId}`}>{g.home}</a>
+                    {:else}
+                      {g.home || 'TBD'}
+                    {/if}
+                  </td>
+                  <td class="pts">{g.hs}&ndash;{g.as}</td>
+                  <td class="l">
+                    {#if g.awayClubId}
+                      <a class="pname" href={`#/club/${g.awayClubId}`}>{g.away}</a>
+                    {:else}
+                      {g.away || 'TBD'}
+                    {/if}
+                  </td>
+                </tr>
+              {/each}
+            </tbody>
+          </table>
+        </div>
+      </section>
     {/if}
 
     <h2 class="section" id="leaders">Top Performers</h2>
@@ -216,17 +434,29 @@
 </main>
 
 <style>
-  /* Division headers inside the Standings section: strong, clearly separated from the
-     preceding table, and tightly paired with their own table below. */
-  .divhead {
+  /* Standings/fixtures/results competition switcher: a row of pill buttons, one per division,
+     above a single shared table (instead of stacking every division's table in a row). */
+  .divbtns {
     max-width: 1120px;
-    margin: 30px auto 10px;
+    margin: 0 auto 10px;
     padding: 0 14px;
-    font-size: 18px;
-    font-weight: 750;
-    color: var(--text);
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
   }
-  .divhead:first-of-type { margin-top: 14px; }
+  .divbtns button {
+    border: 1px solid var(--line);
+    background: var(--row);
+    color: var(--text);
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 650;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .divbtns button:hover { background: var(--hover); border-color: var(--navy2); color: var(--navy2); }
+  .divbtns button.on { background: var(--navy); border-color: var(--navy); color: #fff; }
 
   /* Top-performers controls: division dropdown + sort hint. */
   .leadctrl {
@@ -268,4 +498,20 @@
   th.sorted { color: var(--navy2); }
   td.sorted { font-weight: 800; color: var(--text); }
   .arr { font-size: 9px; margin-left: 2px; vertical-align: middle; }
+
+  /* Golden Boot race chart (mirrors Trends.svelte's chart CSS -- no shared component, ported
+     locally like Club.svelte's division-history chart does). */
+  .chartwrap { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 8px 10px; margin-bottom: 12px; }
+  .chartwrap svg { display: block; width: 100%; height: auto; }
+  .grid { stroke: var(--line); stroke-width: 1; }
+  .ylab { fill: var(--muted); font-size: 11px; text-anchor: end; }
+  .xlab { fill: var(--muted); font-size: 11px; text-anchor: middle; }
+  .raceline { fill: none; stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+  .racedot { stroke: var(--card); stroke-width: 1.5; }
+
+  .racelegend { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 18px; }
+  .racelegend li { display: flex; align-items: center; gap: 6px; font-size: 13px; }
+  .racelegend .swatch { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+  .racelegend b { color: var(--text); }
 </style>

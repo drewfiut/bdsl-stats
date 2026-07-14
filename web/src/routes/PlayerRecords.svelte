@@ -1,17 +1,19 @@
 <script>
-  import { loadBoard, buildPlayerRecords, buildChampionAgeRecords } from '../lib/data.js';
+  import { loadBoard, buildPlayerRecords, buildChampionAgeRecords, buildCareerShapeRecords } from '../lib/data.js';
   import { hscroll } from '../lib/scrollShadow.js';
 
   let loading = $state(true);
   let error = $state('');
   let recs = $state(null);
   let champRecs = $state(null);
+  let shapeRecs = $state(null);
 
   $effect(() => {
     loadBoard()
       .then((b) => {
         recs = buildPlayerRecords(b.allPlayers, b.playersRegistry);
         champRecs = buildChampionAgeRecords(b.allCompetitions, b.allPlayers, b.playersRegistry);
+        shapeRecs = buildCareerShapeRecords(b.allPlayers, b.playersRegistry, b.allTeamStandings, b.allCompetitions);
       })
       .catch((e) => (error = e.message || String(e)))
       .finally(() => (loading = false));
@@ -51,6 +53,12 @@
     { id: 'oldest-player-to-appear', label: 'Oldest Player to Appear' },
     { id: 'youngest-champion', label: 'Youngest Champion' },
     { id: 'oldest-champion', label: 'Oldest Champion' },
+    { id: 'one-club-players', label: 'One-Club Players' },
+    { id: 'journeymen', label: 'Journeymen' },
+    { id: 'longest-career-span', label: 'Longest Career Span' },
+    { id: 'longest-gap-between-appearances', label: 'Longest Gap Between Appearances' },
+    { id: 'most-cup-goals', label: 'Most Cup Goals' },
+    { id: 'triple-crown-seasons', label: 'Triple Crown Seasons' },
   ] : []);
 
   // scrollIntoView aligns the target to the viewport top, but the sticky jump nav then overlaps
@@ -388,6 +396,207 @@
         </table>
         {#if !champRecs || champRecs.oldestChampions.length === 0}
           <div class="empty">No qualifying birthdates on record.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="one-club-players">One-Club Players</h2>
+    <p class="recdesc">Most games played by a player who has only ever appeared for a single BDSL club.</p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Player</th>
+              <th class="l">Club</th>
+              <th>GP</th>
+              <th class="mobhide">Seasons</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each shapeRecs?.oneClubPlayers || [] as r, i}
+              {@const rk = i + 1}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l"><a class="pname" href={`#/player/${r.pk}`}>{r.name}</a></td>
+                <td class="l">{r.clubName}</td>
+                <td class="pts">{r.gp}</td>
+                <td class="mobhide">{r.seasons}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if !shapeRecs || shapeRecs.oneClubPlayers.length === 0}
+          <div class="empty">No qualifying players on record.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="journeymen">Journeymen</h2>
+    <p class="recdesc">Most distinct BDSL clubs a single player has appeared for.</p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Player</th>
+              <th>Clubs</th>
+              <th class="l mobhide">Clubs Played For</th>
+              <th class="mobhide">GP</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each shapeRecs?.journeymen || [] as r, i}
+              {@const rk = i + 1}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l"><a class="pname" href={`#/player/${r.pk}`}>{r.name}</a></td>
+                <td class="pts">{r.clubCount}</td>
+                <td class="l mobhide">{r.clubNames.join(', ')}</td>
+                <td class="mobhide">{r.gp}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if !shapeRecs || shapeRecs.journeymen.length === 0}
+          <div class="empty">No qualifying players on record.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="longest-career-span">Longest Career Span</h2>
+    <p class="recdesc">Most BDSL seasons elapsed between a player&rsquo;s debut and their most recent appearance.</p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Player</th>
+              <th>Seasons</th>
+              <th class="l mobhide">Debut</th>
+              <th class="l mobhide">Last Seen</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each shapeRecs?.longestSpans || [] as r, i}
+              {@const rk = i + 1}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l">
+                  <a class="pname" href={`#/player/${r.pk}`}>{r.name}</a>
+                  <div class="submeta"><span class="season">{r.debutLabel} &ndash; {r.finalLabel}</span></div>
+                </td>
+                <td class="pts">{r.span}</td>
+                <td class="l mobhide">{r.debutLabel}</td>
+                <td class="l mobhide">{r.finalLabel}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if !shapeRecs || shapeRecs.longestSpans.length === 0}
+          <div class="empty">No qualifying players on record.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="longest-gap-between-appearances">Longest Gap Between Appearances</h2>
+    <p class="recdesc">Most BDSL seasons skipped between two appearances by the same player &mdash; the biggest comebacks.</p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Player</th>
+              <th>Seasons Skipped</th>
+              <th class="l mobhide">Before</th>
+              <th class="l mobhide">After</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each shapeRecs?.longestGaps || [] as r, i}
+              {@const rk = i + 1}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l">
+                  <a class="pname" href={`#/player/${r.pk}`}>{r.name}</a>
+                  <div class="submeta"><span class="season">{r.gapBeforeLabel} &rarr; {r.gapAfterLabel}</span></div>
+                </td>
+                <td class="pts">{r.maxGap}</td>
+                <td class="l mobhide">{r.gapBeforeLabel}</td>
+                <td class="l mobhide">{r.gapAfterLabel}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if !shapeRecs || shapeRecs.longestGaps.length === 0}
+          <div class="empty">No qualifying players on record.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="most-cup-goals">Most Cup Goals</h2>
+    <p class="recdesc">Most goals scored across every BDSL cup competition in a career.</p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Player</th>
+              <th>Cup G</th>
+              <th class="mobhide">Cup GP</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each shapeRecs?.topCupGoals || [] as r, i}
+              {@const rk = i + 1}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l"><a class="pname" href={`#/player/${r.pk}`}>{r.name}</a></td>
+                <td class="pts">{r.cupG}</td>
+                <td class="mobhide">{r.cupGp}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if !shapeRecs || shapeRecs.topCupGoals.length === 0}
+          <div class="empty">No cup goals recorded yet.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="triple-crown-seasons">Triple Crown Seasons</h2>
+    <p class="recdesc">Every season a player scored in league, cup <em>and</em> Over-35 play.</p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l">Season</th>
+              <th class="l">Player</th>
+              <th>League G</th>
+              <th>Cup G</th>
+              <th>Over-35 G</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each shapeRecs?.tripleCrowns || [] as r}
+              <tr>
+                <td class="l">{r.seasonLabel}</td>
+                <td class="l"><a class="pname" href={`#/player/${r.pk}`}>{r.name}</a></td>
+                <td class="pts">{r.lg}</td>
+                <td class="pts">{r.cup}</td>
+                <td class="pts">{r.o35}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if !shapeRecs || shapeRecs.tripleCrowns.length === 0}
+          <div class="empty">No triple crown seasons recorded yet.</div>
         {/if}
       </div>
     </section>

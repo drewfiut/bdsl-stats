@@ -147,13 +147,17 @@ async function buildBoard() {
         fetchCsv(`${sid}/games.csv`).catch(() => []),
       ]);
       const label = seasons[sid]?.label || sid;
-      return { sid, label, live: isLive(seasons[sid]), rows: latestSnapshotRows(rows), teams, comps, games };
+      return { sid, label, live: isLive(seasons[sid]), rawRows: rows, rows: latestSnapshotRows(rows), teams, comps, games };
     })
   );
+
+  const seasonRawRows = new Map(); // sid -> every stats.csv row, all snapshot_dates (for the golden-boot race)
+  for (const s of perSeason) seasonRawRows.set(s.sid, s.rawRows);
 
   const allPlayers = [];
   const allTeamStandings = []; // flat teams.json rows tagged with season context
   const allGames = []; // flat games.csv rows (played only) tagged with season context
+  const allFixtures = []; // flat games.csv rows (every status, incl. scheduled) tagged with season context
   // clubId -> [{ sid, label, competition, via }] : the authoritative source of titles, spanning
   // league, Over-35 AND cups (cups have no teams.json, so their titles only live here). A champion
   // is the CHMP playoff winner, which can differ from the regular-season table-topper (position 1).
@@ -170,6 +174,7 @@ async function buildBoard() {
     }
     for (const g of s.games) {
       if (g.status === 'played') allGames.push({ ...g, sid: s.sid, seasonLabel: s.label });
+      allFixtures.push({ ...g, sid: s.sid, seasonLabel: s.label });
     }
     for (const c of s.comps) {
       allCompetitions.push({
@@ -199,7 +204,7 @@ async function buildBoard() {
     .reverse()
     .map((sid) => seasons[sid]?.label || sid); // newest-first, for the filter dropdown
 
-  return { players: active, allPlayers, allTeamStandings, allGames, championsByClub, allCompetitions, playersRegistry, seasonLabels, dataAsOf };
+  return { players: active, allPlayers, allTeamStandings, allGames, allFixtures, championsByClub, allCompetitions, playersRegistry, seasonLabels, dataAsOf, seasonRawRows };
 }
 
 // Fetch + aggregate once, then share across route navigations (board <-> profile).
@@ -377,6 +382,73 @@ function buildDivisionTimeline(standings) {
   return { rows, promotions, relegations, longestStreak, longestStreakDivision, divisionsPlayed };
 }
 
+// Every played game (league, playoffs, cup and Over-35 alike) involving this club, win/loss/draw
+// and goals for/against. Unlike aggregateClub's standings-derived totals -- which mirror the
+// regular-season table only, since teams.json rows exclude playoff rounds (round_label set) and
+// cups (no table at all) -- this walks the game log itself, so it's the true all-time record.
+function aggregateClubGames(allGames, clubId) {
+  const t = { gp: 0, w: 0, l: 0, d: 0, gf: 0, ga: 0 };
+  for (const g of allGames || []) {
+    let gf, ga;
+    if (g.home_club_id === clubId) { gf = num(g.home_score); ga = num(g.away_score); }
+    else if (g.away_club_id === clubId) { gf = num(g.away_score); ga = num(g.home_score); }
+    else continue;
+    t.gp += 1; t.gf += gf; t.ga += ga;
+    if (gf > ga) t.w += 1; else if (gf < ga) t.l += 1; else t.d += 1;
+  }
+  t.gd = t.gf - t.ga;
+  return t;
+}
+
+// Longest run of games (in date order) satisfying `ok`, keeping the games at the start/end of
+// the best run so we can report which seasons the streak actually spans.
+function longestRun(sortedGames, ok) {
+  let best = null, curLen = 0, curStart = null;
+  for (const g of sortedGames) {
+    if (ok(g)) {
+      if (curLen === 0) curStart = g;
+      curLen += 1;
+      if (!best || curLen > best.len) best = { len: curLen, start: curStart, end: g };
+    } else {
+      curLen = 0;
+    }
+  }
+  return best;
+}
+
+// Longest win / unbeaten / winless / scoring streaks for a single club, across every game it's
+// ever played -- league, playoffs, cups and Over-35 alike -- matching the "true all-time record"
+// convention used by aggregateClubGames above (rather than the league+O35-only scope the
+// league-wide Team Records page uses for its cross-club leaderboard).
+function computeClubStreaks(allGames, clubId, liveSids) {
+  const games = [];
+  for (const g of allGames || []) {
+    let gf, ga;
+    if (g.home_club_id === clubId) { gf = num(g.home_score); ga = num(g.away_score); }
+    else if (g.away_club_id === clubId) { gf = num(g.away_score); ga = num(g.home_score); }
+    else continue;
+    games.push({
+      date: g.date, seasonLabel: g.seasonLabel, live: liveSids.has(g.sid),
+      result: gf > ga ? 'W' : gf < ga ? 'L' : 'D', scored: gf > 0,
+    });
+  }
+  if (!games.length) return null;
+  const sorted = games.sort((a, b) => a.date.localeCompare(b.date));
+  const mostRecent = sorted[sorted.length - 1];
+  // "In progress" only means the streak is still active right now -- its last game IS the club's
+  // most recent game overall -- not merely that it falls within a season that isn't finished yet.
+  const toRecord = (run) => run && {
+    len: run.len, startLabel: run.start.seasonLabel, endLabel: run.end.seasonLabel,
+    live: run.end === mostRecent && run.end.live,
+  };
+  return {
+    win: toRecord(longestRun(sorted, (g) => g.result === 'W')),
+    unbeaten: toRecord(longestRun(sorted, (g) => g.result !== 'L')),
+    winless: toRecord(longestRun(sorted, (g) => g.result !== 'W')),
+    scoring: toRecord(longestRun(sorted, (g) => g.scored)),
+  };
+}
+
 // Full profile for one club: all-time totals, per-season competition history (from teams.json,
 // newest first), and the roster of every player who appeared for the club (from stats.csv, rolled
 // up per person over only that club's competitions). Returns null if the club_id isn't found.
@@ -384,8 +456,13 @@ export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, 
   const standings = allTeamStandings.filter((r) => r.club_id === clubId);
   if (!standings.length) return null;
 
-  const { name, totals } = aggregateClub(standings);
+  const { name } = aggregateClub(standings);
+  // Header totals cover every game the club has ever played -- league, playoffs and cups --
+  // rather than just the regular-season standings.
+  const totals = aggregateClubGames(allGames, clubId);
   const divisionTimeline = buildDivisionTimeline(standings);
+  const liveSids = new Set(allTeamStandings.filter((r) => r.live).map((r) => r.sid));
+  const streaks = computeClubStreaks(allGames, clubId, liveSids);
 
   // Titles the club won (league + Over-35 + cups), and a lookup to flag each one in the tables.
   const wins = championsByClub?.get(clubId) || [];
@@ -470,7 +547,7 @@ export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, 
     .sort((a, b) => b.played - a.played || (b.gf - b.ga) - (a.gf - a.ga) || a.name.localeCompare(b.name))
     .slice(0, 5);
 
-  return { clubId, name, totals, seasons, cups, roster, topOpponents, divisionTimeline };
+  return { clubId, name, totals, seasons, cups, roster, topOpponents, divisionTimeline, streaks };
 }
 
 // ---- team records ----
@@ -557,6 +634,25 @@ export function buildTeamRecords(allTeamStandings, allGames) {
     .sort((a, b) => b.total - a.total || b.margin - a.margin)
     .slice(0, RANK_N);
 
+  // ---- clean sheets (shutouts) ----
+  // Season-total: per club-season, count of games where the opponent was held scoreless.
+  const csBySeasonKey = new Map(); // `${clubId}||${sid}` -> count
+  for (const g of games) {
+    const hs = num(g.home_score), as = num(g.away_score);
+    if (as === 0 && g.home_club_id) {
+      const key = `${g.home_club_id}||${g.sid}`;
+      csBySeasonKey.set(key, (csBySeasonKey.get(key) || 0) + 1);
+    }
+    if (hs === 0 && g.away_club_id) {
+      const key = `${g.away_club_id}||${g.sid}`;
+      csBySeasonKey.set(key, (csBySeasonKey.get(key) || 0) + 1);
+    }
+  }
+  const mostCleanSheets = seasons
+    .map((s) => ({ ...s, cs: csBySeasonKey.get(`${s.clubId}||${s.sid}`) || 0 }))
+    .sort((a, b) => b.cs - a.cs || b.pts - a.pts || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
+
   // ---- career streaks (win / unbeaten), spanning every season ----
   // Grouped by club+competition-type only -- NOT by season -- so a streak can run straight through
   // a year boundary (or a promotion/relegation). League and O35 stay separate tracks since they're
@@ -573,31 +669,17 @@ export function buildTeamRecords(allTeamStandings, allGames) {
       const key = `${side.clubId}||${g.comp_type}`;
       let acc = byTeam.get(key);
       if (!acc) {
-        acc = { clubId: side.clubId, name: side.name, o35: g.comp_type === 'over35', lastSid: '', games: [] };
+        acc = { clubId: side.clubId, name: side.name, o35: g.comp_type === 'over35', lastSid: '', games: [], cs: 0 };
         byTeam.set(key, acc);
       }
       if (g.sid >= acc.lastSid) { acc.name = side.name; acc.lastSid = g.sid; }
+      if (side.ga === 0) acc.cs++;
       acc.games.push({
         date: g.date, sid: g.sid, seasonLabel: g.seasonLabel, live: liveSids.has(g.sid),
         result: side.gf > side.ga ? 'W' : side.gf < side.ga ? 'L' : 'D',
       });
     }
   }
-  // Longest run of games (in date order) satisfying `ok`, keeping the games at the start/end of
-  // the best run so we can report which seasons the streak actually spans.
-  const longestRun = (sortedGames, ok) => {
-    let best = null, curLen = 0, curStart = null;
-    for (const g of sortedGames) {
-      if (ok(g)) {
-        if (curLen === 0) curStart = g;
-        curLen += 1;
-        if (!best || curLen > best.len) best = { len: curLen, start: curStart, end: g };
-      } else {
-        curLen = 0;
-      }
-    }
-    return best;
-  };
   const winStreaks = [];
   const unbeatenStreaks = [];
   for (const acc of byTeam.values()) {
@@ -630,10 +712,16 @@ export function buildTeamRecords(allTeamStandings, allGames) {
   const longestUnbeatenStreak = unbeatenStreaks
     .sort((a, b) => b.len - a.len || a.name.localeCompare(b.name))
     .slice(0, RANK_N);
+  const careerCleanSheets = [...byTeam.values()]
+    .map((acc) => ({ clubId: acc.clubId, name: acc.name, o35: acc.o35, cs: acc.cs, gp: acc.games.length }))
+    .filter((r) => r.cs > 0)
+    .sort((a, b) => b.cs - a.cs || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
 
   return {
     mostGF, fewestGF, mostGA, fewestGA, bestGD, worstGD, mostPts,
     perfect, winless, biggestWins, highestScoring, longestWinStreak, longestUnbeatenStreak,
+    mostCleanSheets, careerCleanSheets,
   };
 }
 
@@ -657,6 +745,17 @@ const CUP_DEFS = [
   { key: 'wood', label: 'Wood Cup', order: 21, match: /wood/i },
   { key: 'matthews', label: 'Matthews Cup', order: 22, match: /matthews/i },
 ];
+
+// "8:30 pm" -> 1290 (minutes since midnight), for sorting same-day games by kickoff time.
+// Returns -1 (sorts first) if the time is missing/unparseable.
+function parseTimeMinutes(t) {
+  const m = /^(\d{1,2}):(\d{2})\s*(am|pm)$/i.exec((t || '').trim());
+  if (!m) return -1;
+  let [, hh, mm, ap] = m;
+  hh = parseInt(hh, 10) % 12;
+  if (ap.toLowerCase() === 'pm') hh += 12;
+  return hh * 60 + parseInt(mm, 10);
+}
 
 // Returns { key, label, group, order } for any competition's display name + comp_type.
 // group: 'league' | 'over35' | 'cup'. order: sort index for grid columns (league, then
@@ -692,6 +791,29 @@ export function canonicalCompetition(name, comp_type) {
   // Unrecognized league name: fall back to a cleaned own-key column rather than dropping it.
   const key = `league-${cleaned.toLowerCase().replace(/\s+/g, '-')}`;
   return { key, label: cleaned || n, group: 'league', order: 98 };
+}
+
+// Newest-season display name for every club_id: prefer allTeamStandings (authoritative team
+// names), falling back to allCompetitions' champion_name -- required for cup-only clubs, since
+// cup teams never appear in teams.json.
+function resolveClubNames(allTeamStandings, allCompetitions) {
+  const newestStandingName = new Map(); // club_id -> { sid, name }
+  for (const t of allTeamStandings || []) {
+    if (!t.club_id) continue;
+    const cur = newestStandingName.get(t.club_id);
+    if (!cur || t.sid >= cur.sid) newestStandingName.set(t.club_id, { sid: t.sid, name: t.name });
+  }
+  const newestCompName = new Map(); // club_id -> { sid, name }
+  for (const c of allCompetitions || []) {
+    if (!c.clubId) continue;
+    const cur = newestCompName.get(c.clubId);
+    if (!cur || c.sid >= cur.sid) newestCompName.set(c.clubId, { sid: c.sid, name: c.clubName });
+  }
+  const names = new Map();
+  for (const id of new Set([...newestStandingName.keys(), ...newestCompName.keys()])) {
+    names.set(id, newestStandingName.get(id)?.name || newestCompName.get(id)?.name || '(unknown)');
+  }
+  return names;
 }
 
 // Builds the Champions page's grid (season x competition matrix) and leaderboard (all-time
@@ -748,21 +870,7 @@ export function buildChampions(allCompetitions, allTeamStandings) {
   const grid = { columns, rows };
 
   // ---- leaderboard ----
-  // Newest-season club name: prefer allTeamStandings (authoritative team names), falling back to
-  // the newest champion_name from allCompetitions -- required for cup-only champions, since cup
-  // teams never appear in teams.json.
-  const newestStandingName = new Map(); // club_id -> { sid, name }
-  for (const t of allTeamStandings || []) {
-    if (!t.club_id) continue;
-    const cur = newestStandingName.get(t.club_id);
-    if (!cur || t.sid >= cur.sid) newestStandingName.set(t.club_id, { sid: t.sid, name: t.name });
-  }
-  const newestCompName = new Map(); // club_id -> { sid, name }
-  for (const c of comps) {
-    if (!c.clubId) continue;
-    const cur = newestCompName.get(c.clubId);
-    if (!cur || c.sid >= cur.sid) newestCompName.set(c.clubId, { sid: c.sid, name: c.clubName });
-  }
+  const clubNames = resolveClubNames(allTeamStandings, comps);
 
   // Ordered list of completed (non-live) season ids, deduped, for computing droughts.
   const completedSids = [...new Set(comps.filter((c) => !c.live).map((c) => c.sid))].sort();
@@ -785,7 +893,7 @@ export function buildChampions(allCompetitions, allTeamStandings) {
     acc.titles.sort((a, b) => b.sid.localeCompare(a.sid)); // newest first
     const lastSid = acc.titles[0].sid;
     const lastLabel = acc.titles[0].label;
-    const name = newestStandingName.get(acc.clubId)?.name || newestCompName.get(acc.clubId)?.name || '(unknown)';
+    const name = clubNames.get(acc.clubId) || '(unknown)';
     const drought = completedSids.filter((sid) => sid > lastSid).length;
     leaderboard.push({
       clubId: acc.clubId, name,
@@ -935,6 +1043,120 @@ export function buildPlayerRecords(allPlayers, playersRegistry) {
     topGoals, topAssists, topPoints, mostGP, mostSeasons, careerList,
     goldenBoots, youngestScorers, oldestScorers, oldestAppearances,
   };
+}
+
+// ---- career shape ----
+// Records about the shape of a career rather than raw totals: one-club loyalty vs. wandering
+// journeymen (by distinct clubs actually appeared for), how long a career spanned and whether it
+// had a real comeback gap (measured in season slots that actually happened, so a missing COVID
+// year never counts against anyone), cup-specific scoring, and "triple crown" seasons where a
+// player scored in league, cup AND Over-35 play in the same year.
+export function buildCareerShapeRecords(allPlayers, playersRegistry, allTeamStandings, allCompetitions) {
+  const clubNames = resolveClubNames(allTeamStandings, allCompetitions);
+
+  // Every season id that actually happened, in order, so gaps/spans are measured in real season
+  // slots rather than calendar years (mirrors formatSeasonRanges' 2020-COVID handling).
+  const allSids = [...new Set(allPlayers.map((p) => p.sid))].sort();
+  const sidIndex = new Map(allSids.map((sid, i) => [sid, i]));
+  const labelBySid = new Map();
+  for (const p of allPlayers) labelBySid.set(p.sid, p.season);
+
+  const byPk = new Map();
+  for (const p of allPlayers) {
+    if (p.gp <= 0) continue; // only actual appearances, not roster-only rows
+    let acc = byPk.get(p.pk);
+    if (!acc) {
+      acc = { pk: p.pk, csvName: p.name, clubs: new Map(), sids: new Set(), gp: 0, cupG: 0, cupGp: 0 };
+      byPk.set(p.pk, acc);
+    }
+    acc.sids.add(p.sid);
+    acc.gp += p.gp;
+    for (const c of p.comps || []) {
+      if (c.type === 'cup') { acc.cupG += c.g; acc.cupGp += c.gp; }
+      if (!c.club || !(c.gp > 0)) continue;
+      acc.clubs.set(c.club, (acc.clubs.get(c.club) || 0) + c.gp);
+    }
+  }
+
+  const rows = [];
+  for (const acc of byPk.values()) {
+    const reg = playersRegistry?.[acc.pk];
+    const name = displayName(reg, acc.csvName) || '(unknown)';
+    const sortedSids = [...acc.sids].sort();
+    const debutSid = sortedSids[0];
+    const finalSid = sortedSids[sortedSids.length - 1];
+    let maxGap = 0, gapBeforeLabel = null, gapAfterLabel = null;
+    for (let i = 1; i < sortedSids.length; i++) {
+      const gap = sidIndex.get(sortedSids[i]) - sidIndex.get(sortedSids[i - 1]) - 1;
+      if (gap > maxGap) {
+        maxGap = gap;
+        gapBeforeLabel = labelBySid.get(sortedSids[i - 1]);
+        gapAfterLabel = labelBySid.get(sortedSids[i]);
+      }
+    }
+    rows.push({
+      pk: acc.pk, name, gp: acc.gp,
+      seasons: sortedSids.length,
+      clubCount: acc.clubs.size,
+      clubNames: [...acc.clubs.keys()].map((id) => clubNames.get(id) || '(unknown)').sort(),
+      debutLabel: labelBySid.get(debutSid),
+      finalLabel: labelBySid.get(finalSid),
+      span: sidIndex.get(finalSid) - sidIndex.get(debutSid) + 1,
+      maxGap, gapBeforeLabel, gapAfterLabel,
+      cupG: acc.cupG, cupGp: acc.cupGp,
+    });
+  }
+
+  const oneClubPlayers = rows
+    .filter((r) => r.clubCount === 1)
+    .slice()
+    .sort((a, b) => b.gp - a.gp || b.seasons - a.seasons || a.name.localeCompare(b.name))
+    .slice(0, RANK_N)
+    .map((r) => ({ ...r, clubName: r.clubNames[0] }));
+
+  const journeymen = rows
+    .filter((r) => r.clubCount > 1)
+    .slice()
+    .sort((a, b) => b.clubCount - a.clubCount || b.gp - a.gp || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
+
+  const longestSpans = rows
+    .slice()
+    .sort((a, b) => b.span - a.span || b.seasons - a.seasons || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
+
+  const longestGaps = rows
+    .filter((r) => r.maxGap > 0)
+    .slice()
+    .sort((a, b) => b.maxGap - a.maxGap || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
+
+  const topCupGoals = rows
+    .filter((r) => r.cupG > 0)
+    .slice()
+    .sort((a, b) => b.cupG - a.cupG || b.cupGp - a.cupGp || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
+
+  // Triple crown: scored (g > 0) in league, cup AND Over-35 in the same player-season.
+  const tripleCrowns = [];
+  for (const p of allPlayers) {
+    if (p.gp <= 0) continue;
+    let lg = 0, cup = 0, o35 = 0;
+    for (const c of p.comps || []) {
+      if (c.g <= 0) continue;
+      if (c.type === 'league') lg += c.g;
+      else if (c.type === 'cup') cup += c.g;
+      else if (c.type === 'over35') o35 += c.g;
+    }
+    if (lg > 0 && cup > 0 && o35 > 0) {
+      const reg = playersRegistry?.[p.pk];
+      const name = displayName(reg, p.name) || '(unknown)';
+      tripleCrowns.push({ pk: p.pk, name, sid: p.sid, seasonLabel: p.season, lg, cup, o35, total: lg + cup + o35 });
+    }
+  }
+  tripleCrowns.sort((a, b) => b.sid.localeCompare(a.sid) || b.total - a.total || a.name.localeCompare(b.name));
+
+  return { oneClubPlayers, journeymen, longestSpans, longestGaps, topCupGoals, tripleCrowns };
 }
 
 // A player-season's g/a/gp/pts, optionally narrowed to one comp_type ('league'/'cup'/'over35')
@@ -1303,12 +1525,13 @@ export function buildSeasonIndex(board) {
 // Full detail for one season: standings by division, the champions grid row, and top
 // scorers/assisters. Returns null if the sid has no data anywhere in the board.
 export function buildSeason(board, sid) {
-  const { allTeamStandings, allCompetitions, allPlayers } = board;
+  const { allTeamStandings, allCompetitions, allPlayers, allFixtures } = board;
 
   const standingsRows = allTeamStandings.filter((r) => r.sid === sid);
   const compRows = allCompetitions.filter((c) => c.sid === sid);
   const playerRows = allPlayers.filter((p) => p.sid === sid);
-  if (!standingsRows.length && !compRows.length && !playerRows.length) return null;
+  const fixtureRows = (allFixtures || []).filter((g) => g.sid === sid);
+  if (!standingsRows.length && !compRows.length && !playerRows.length && !fixtureRows.length) return null;
 
   const meta = compRows[0] || standingsRows[0] || playerRows[0];
   const label = meta.label || meta.seasonLabel || meta.season || sid;
@@ -1394,5 +1617,107 @@ export function buildSeason(board, sid) {
   }
   const divisions = [...divSeen.values()].sort((a, b) => a.order - b.order || a.label.localeCompare(b.label));
 
-  return { sid, label, live, standings, champions, players, divisions };
+  // ---- results & fixtures: grouped by competition, like standings ----
+  const RECENT_PER_COMP = 10;
+  const UPCOMING_PER_COMP = 10;
+  const shapeGame = (g) => ({
+    gameKey: g.game_key, date: g.date, time: g.time,
+    home: g.home_name, homeClubId: g.home_club_id,
+    away: g.away_name, awayClubId: g.away_club_id,
+    hs: num(g.home_score), as: num(g.away_score),
+    location: g.location,
+  });
+
+  const byCompResults = new Map();
+  const byCompFixtures = new Map();
+  for (const g of fixtureRows) {
+    const canon = canonicalCompetition(g.competition, g.comp_type);
+    const target = g.status === 'played' ? byCompResults : g.status === 'scheduled' ? byCompFixtures : null;
+    if (!target) continue;
+    let entry = target.get(canon.key);
+    if (!entry) {
+      entry = { key: canon.key, label: canon.label, group: canon.group, order: canon.order, games: [] };
+      target.set(canon.key, entry);
+    }
+    entry.games.push(shapeGame(g));
+  }
+
+  // A handful of games (mostly cup rounds) have no date/time yet -- keep those undated games
+  // at the bottom of their list rather than letting an empty string sort first/last by accident.
+  const results = [...byCompResults.values()]
+    .map((c) => ({
+      ...c,
+      games: c.games
+        .sort((a, b) => {
+          if (!a.date || !b.date) return (!a.date ? 1 : 0) - (!b.date ? 1 : 0);
+          return b.date.localeCompare(a.date) || parseTimeMinutes(b.time) - parseTimeMinutes(a.time);
+        })
+        .slice(0, RECENT_PER_COMP),
+    }))
+    .sort((a, b) => a.order - b.order || a.label.localeCompare(b.label));
+
+  const fixtures = [...byCompFixtures.values()]
+    .map((c) => ({
+      ...c,
+      games: c.games
+        .sort((a, b) => {
+          if (!a.date || !b.date) return (!a.date ? 1 : 0) - (!b.date ? 1 : 0);
+          return a.date.localeCompare(b.date) || parseTimeMinutes(a.time) - parseTimeMinutes(b.time);
+        })
+        .slice(0, UPCOMING_PER_COMP),
+    }))
+    .sort((a, b) => a.order - b.order || a.label.localeCompare(b.label));
+
+  return { sid, label, live, standings, champions, players, divisions, results, fixtures };
+}
+
+// ---- golden-boot race (live season only) ----
+// stats.csv accumulates one full-roster snapshot per day (store.py: "append-only ... nothing is
+// overwritten"), each row's g/a/gp already a season-to-date cumulative total. buildBoard() only
+// keeps the latest day for the main aggregation (summing every day would double-count), but the
+// full history survives in board.seasonRawRows -- this walks all of it to trace the top scorers'
+// goal totals day by day, i.e. the golden-boot race as it's actually unfolded.
+const GOLDEN_RACE_TOP_N = 5;
+
+export function buildGoldenBootRace(board, sid, topN = GOLDEN_RACE_TOP_N) {
+  const rows = board?.seasonRawRows?.get(sid);
+  if (!rows || !rows.length) return null;
+
+  const dates = [...new Set(rows.map((r) => r.snapshot_date))].filter(Boolean).sort();
+  if (dates.length < 2) return null; // need at least two days to show a race
+
+  // person_key -> { name, byDate: Map(date -> that day's total goals, all competitions) }
+  const byPk = new Map();
+  for (const r of rows) {
+    const pk = r.person_key;
+    if (!pk) continue;
+    let acc = byPk.get(pk);
+    if (!acc) { acc = { pk, name: r.name, byDate: new Map() }; byPk.set(pk, acc); }
+    if (r.name) acc.name = r.name;
+    acc.byDate.set(r.snapshot_date, (acc.byDate.get(r.snapshot_date) || 0) + num(r.g));
+  }
+
+  // Rank by the most recent day's total; carry each player's last-known total forward across any
+  // day they're missing a row for (e.g. joined the league partway through), never backward.
+  const latestDate = dates[dates.length - 1];
+  const ranked = [...byPk.values()]
+    .map((p) => ({ ...p, finalG: p.byDate.get(latestDate) || 0 }))
+    .filter((p) => p.finalG > 0)
+    .sort((a, b) => b.finalG - a.finalG || a.name.localeCompare(b.name))
+    .slice(0, topN);
+
+  const playersRegistry = board.playersRegistry;
+  const series = ranked.map((p) => {
+    const reg = playersRegistry?.[p.pk];
+    const name = displayName(reg, p.name) || '(unknown)';
+    let running = 0;
+    const points = dates.map((d) => {
+      if (p.byDate.has(d)) running = p.byDate.get(d);
+      return { date: d, g: running };
+    });
+    return { pk: p.pk, name, g: p.finalG, points };
+  });
+
+  const maxG = Math.max(...series.map((s) => s.g), 0);
+  return { dates, series, maxG };
 }

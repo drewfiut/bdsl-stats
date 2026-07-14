@@ -1,5 +1,6 @@
 <script>
   import { loadBoard, buildClubProfile, LEAGUE_DIVISIONS } from '../lib/data.js';
+  import { hscroll } from '../lib/scrollShadow.js';
 
   let { clubId } = $props();
 
@@ -59,7 +60,57 @@
       .sort((x, y) => (y[sortKey] - x[sortKey]) || (y.g - x.g) || (y.a - x.a) ||
         x.name.localeCompare(y.name));
   });
+
+  // In-page jump nav: one button per section, in document order.
+  const jumpLinks = $derived(club ? [
+    { id: 'division-history', label: 'Division History' },
+    { id: 'league-history', label: 'League History' },
+    ...(club.cups.length ? [{ id: 'cup-history', label: 'Cup History' }] : []),
+    ...(club.topOpponents.length ? [{ id: 'top-opponents', label: 'Top Opponents' }] : []),
+    { id: 'players', label: 'Players' },
+    { id: 'streaks', label: 'Streaks' },
+  ] : []);
+
+  // scrollIntoView aligns the target to the viewport top, but the sticky jump nav then overlaps
+  // it -- measure the nav's actual (row-count-dependent) height and offset the scroll by that.
+  function jumpTo(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const nav = document.querySelector('.jumpnav');
+    const navH = nav ? nav.getBoundingClientRect().height : 0;
+    const top = el.getBoundingClientRect().top + window.scrollY - navH - 10;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
 </script>
+
+{#if !loading && !error && club}
+  <div class="pagehead">
+    <div class="wrap">
+      <h1>{club.name}</h1>
+      <div class="sub">All-time record across every BDSL season</div>
+      <div class="stats">
+        <div class="stat"><b>{club.seasons?.length ?? 0}</b><span>Seasons</span></div>
+        <div class="stat"><b>{club.totals.w}&ndash;{club.totals.l}&ndash;{club.totals.d}</b><span>W&ndash;L&ndash;D</span></div>
+        <div class="stat"><b>{club.totals.gf}</b><span>Goals for</span></div>
+        <div class="stat"><b>{club.totals.ga}</b><span>Goals against</span></div>
+        <div class="stat"><b>{club.totals.gd > 0 ? '+' : ''}{club.totals.gd}</b><span>Goal diff</span></div>
+        <div class="stat"><b>{club.totals.titles}</b><span>Titles</span></div>
+      </div>
+    </div>
+  </div>
+
+  {#if jumpLinks.length}
+    <nav class="jumpnav">
+      <div class="wrap" use:hscroll>
+        {#each jumpLinks as j}
+          <button onclick={() => jumpTo(j.id)}>{j.label}</button>
+        {/each}
+      </div>
+      <span class="scrollarrow left" aria-hidden="true">&#9666;</span>
+      <span class="scrollarrow right" aria-hidden="true">&#9656;</span>
+    </nav>
+  {/if}
+{/if}
 
 <main class="profile">
   {#if loading}
@@ -71,22 +122,7 @@
       Club not found. <a href="#/clubs">Back to all clubs</a>.
     </div>
   {:else}
-    <div class="phead">
-      <div class="wrap">
-        <h1>{club.name}</h1>
-        <div class="sub">All-time record across every BDSL season</div>
-        <div class="stats">
-          <div class="stat"><b>{club.seasons?.length ?? 0}</b><span>Seasons</span></div>
-          <div class="stat"><b>{club.totals.w}&ndash;{club.totals.l}&ndash;{club.totals.d}</b><span>W&ndash;L&ndash;D</span></div>
-          <div class="stat"><b>{club.totals.gf}</b><span>Goals for</span></div>
-          <div class="stat"><b>{club.totals.ga}</b><span>Goals against</span></div>
-          <div class="stat"><b>{club.totals.gd > 0 ? '+' : ''}{club.totals.gd}</b><span>Goal diff</span></div>
-          <div class="stat"><b>{club.totals.titles}</b><span>Titles</span></div>
-        </div>
-      </div>
-    </div>
-
-    <h2 class="section">Division History</h2>
+    <h2 class="section" id="division-history">Division History</h2>
     <p class="recdesc">
       League division for every season played, oldest to newest &mdash; a promotion moves the
       line up, a relegation moves it down. Over-35 and cups have no table and aren&rsquo;t shown.
@@ -121,7 +157,7 @@
       {/if}
     </section>
 
-    <h2 class="section">League History</h2>
+    <h2 class="section" id="league-history">League History</h2>
     <section class="season">
       <div class="tablewrap">
         <table>
@@ -160,7 +196,7 @@
     </section>
 
     {#if club.cups.length}
-      <h2 class="section">Cup History</h2>
+      <h2 class="section" id="cup-history">Cup History</h2>
       <section class="season">
         <div class="tablewrap">
           <table>
@@ -194,7 +230,7 @@
     {/if}
 
     {#if club.topOpponents.length}
-      <h2 class="section">Top 5 Most Common Opponents</h2>
+      <h2 class="section" id="top-opponents">Top 5 Most Common Opponents</h2>
       <section class="season">
         <div class="tablewrap">
           <table>
@@ -223,7 +259,7 @@
       </section>
     {/if}
 
-    <h2 class="section">Players ({club.roster.length})</h2>
+    <h2 class="section" id="players">Players ({club.roster.length})</h2>
     <section class="season">
       <div class="controls">
         <div class="tabs">
@@ -264,6 +300,49 @@
           <div class="empty">No individual player stats recorded for this club.</div>
         {/if}
       </div>
+    </section>
+
+    <h2 class="section" id="streaks">Streaks</h2>
+    <p class="recdesc">
+      Longest runs across every game the club has ever played &mdash; league, playoffs and cups
+      alike. &ldquo;Active&rdquo; means the streak is still running as of the club&rsquo;s most
+      recent game.
+    </p>
+    <section class="season">
+      {#if !club.streaks}
+        <div class="empty">No game log recorded for this club.</div>
+      {:else}
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="l">Streak</th>
+                <th class="l mobhide">Seasons</th>
+                <th>Games</th>
+              </tr>
+            </thead>
+            <tbody>
+              {#each [
+                ['Longest Win Streak', club.streaks.win],
+                ['Longest Unbeaten Streak', club.streaks.unbeaten],
+                ['Longest Winless Streak', club.streaks.winless],
+                ['Longest Scoring Streak', club.streaks.scoring],
+              ] as [label, r]}
+                {@const range = r ? (r.startLabel === r.endLabel ? r.startLabel : `${r.startLabel} – ${r.endLabel}`) : ''}
+                <tr class:live={r?.live}>
+                  <td class="l">
+                    {label}
+                    {#if r?.live}<span class="o35tag">ACTIVE</span>{/if}
+                    <div class="submeta"><span class="season">{range}</span></div>
+                  </td>
+                  <td class="l mobhide">{range}</td>
+                  <td class="pts">{r?.len ?? 0}</td>
+                </tr>
+              {/each}
+            </tbody>
+          </table>
+        </div>
+      {/if}
     </section>
   {/if}
 </main>
