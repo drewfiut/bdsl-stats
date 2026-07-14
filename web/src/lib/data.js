@@ -815,11 +815,14 @@ const ELO_SEASON_REGRESSION = 0.25;
 
 // Margin-of-victory multiplier (World Football Elo Ratings convention): a 3-0 win says more about
 // the gap in strength than a 1-0 win, so bigger margins scale the rating change up -- with
-// diminishing returns so a 7-0 rout isn't seven times a 1-0.
+// diminishing returns so a 7-0 rout isn't seven times a 1-0. Capped at ELO_MOV_CAP: in an amateur
+// rec league, a lopsided scoreline against a weak lower-division opponent is often more about
+// mismatch than raw quality, so beyond a ~5-goal margin extra goals stop adding rating weight.
+const ELO_MOV_CAP = 2.0;
 function eloMovMultiplier(margin) {
   if (margin <= 1) return 1;
   if (margin === 2) return 1.5;
-  return (11 + margin) / 8;
+  return Math.min(ELO_MOV_CAP, (11 + margin) / 8);
 }
 
 // Division weight on ELO_K: results in a higher division carry more rating impact than the same
