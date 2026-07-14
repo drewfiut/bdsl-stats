@@ -56,6 +56,20 @@ const num = (v) => {
   return Number.isFinite(n) ? n : 0;
 };
 
+// Pythagorean expectation (goals-for/against -> expected points), the standard "luck" metric
+// borrowed from Bill James baseball analysis and widely adapted for soccer with exponent ~1.3
+// (see Football Reference / clubelo write-ups). Expected win% * 3 points-per-win * games played
+// approximates the points a team's goal record "deserves", ignoring draws' effect on the pool of
+// available points -- a standard simplification for this kind of luck analysis.
+const PYTHAGOREAN_EXPONENT = 1.3;
+function pythagoreanExpectedPoints(gf, ga, gp) {
+  if (gp <= 0) return 0;
+  const gfE = Math.pow(gf, PYTHAGOREAN_EXPONENT);
+  const gaE = Math.pow(ga, PYTHAGOREAN_EXPONENT);
+  const winPct = gfE + gaE > 0 ? gfE / (gfE + gaE) : 0.5;
+  return winPct * 3 * gp;
+}
+
 // Aggregate one season's tidy stats rows into player-season objects (aggregate.build_from_store
 // + Player.add_row/finalize), then shape each like render_html._player_json.
 function aggregateSeason(rows, sid, seasonLabel, live) {
@@ -400,6 +414,44 @@ function aggregateClubGames(allGames, clubId) {
   return t;
 }
 
+// Head-to-head: every played game between two specific clubs, across every season and
+// competition. Record/GF/GA are reported from clubA's perspective. Games are sorted newest-first
+// so "recent meetings" is a simple slice. Returns null if the two clubs have never met.
+export function buildHeadToHead(allGames, clubAId, clubBId) {
+  if (!clubAId || !clubBId || clubAId === clubBId) return null;
+  const t = { w: 0, l: 0, d: 0, gf: 0, ga: 0 };
+  let nameA = '', nameB = '', sidA = '', sidB = '';
+  const games = [];
+  for (const g of allGames || []) {
+    let gfA, gaA, homeIsA;
+    if (g.home_club_id === clubAId && g.away_club_id === clubBId) { gfA = num(g.home_score); gaA = num(g.away_score); homeIsA = true; }
+    else if (g.away_club_id === clubAId && g.home_club_id === clubBId) { gfA = num(g.away_score); gaA = num(g.home_score); homeIsA = false; }
+    else continue;
+    if (g.sid >= sidA) { nameA = homeIsA ? g.home_name : g.away_name; sidA = g.sid; }
+    if (g.sid >= sidB) { nameB = homeIsA ? g.away_name : g.home_name; sidB = g.sid; }
+    t.gf += gfA; t.ga += gaA;
+    if (gfA > gaA) t.w += 1; else if (gfA < gaA) t.l += 1; else t.d += 1;
+    games.push({
+      date: g.date, sid: g.sid, seasonLabel: g.seasonLabel, competition: g.competition,
+      o35: g.comp_type === 'over35', home: g.home_name, away: g.away_name,
+      hs: num(g.home_score), as: num(g.away_score), margin: Math.abs(gfA - gaA),
+      winner: gfA > gaA ? 'A' : gfA < gaA ? 'B' : 'D',
+    });
+  }
+  if (games.length === 0) return null;
+  games.sort((x, y) => `${y.date}`.localeCompare(`${x.date}`) || y.sid.localeCompare(x.sid));
+  t.gd = t.gf - t.ga;
+
+  const biggestWinA = games.filter((g) => g.winner === 'A').sort((a, b) => b.margin - a.margin)[0] || null;
+  const biggestWinB = games.filter((g) => g.winner === 'B').sort((a, b) => b.margin - a.margin)[0] || null;
+
+  return {
+    clubA: { clubId: clubAId, name: nameA || '(unknown)' },
+    clubB: { clubId: clubBId, name: nameB || '(unknown)' },
+    played: games.length, ...t, games, biggestWinA, biggestWinB,
+  };
+}
+
 // Longest run of games (in date order) satisfying `ok`, keeping the games at the start/end of
 // the best run so we can report which seasons the streak actually spans.
 function longestRun(sortedGames, ok) {
@@ -527,8 +579,10 @@ export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, 
     });
   }
 
-  // Top opponents: head-to-head record against every club this club has played (played games only,
-  // across all competitions/seasons). Opponent name = the newest-season spelling seen for that club.
+  // All-time opponents: head-to-head record against every club this club has played (played games
+  // only, across all competitions/seasons). Opponent name = the newest-season spelling seen for
+  // that club. Last meeting tracks the most recent game by date (falling back to sid) so it's
+  // correct even within a season with games entered out of date order.
   const byOpp = new Map();
   for (const g of allGames || []) {
     const gs = num(g.home_score), as = num(g.away_score);
@@ -538,16 +592,25 @@ export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, 
     else continue;
     if (!oppId || oppId === clubId) continue;
     let acc = byOpp.get(oppId);
-    if (!acc) { acc = { clubId: oppId, name: oppName, sid: g.sid, played: 0, w: 0, l: 0, d: 0, gf: 0, ga: 0 }; byOpp.set(oppId, acc); }
+    if (!acc) {
+      acc = { clubId: oppId, name: oppName, sid: g.sid, played: 0, w: 0, l: 0, d: 0, gf: 0, ga: 0,
+        lastMeeting: null };
+      byOpp.set(oppId, acc);
+    }
     if (g.sid >= acc.sid) { acc.name = oppName; acc.sid = g.sid; }
     acc.played += 1; acc.gf += gf; acc.ga += ga;
     if (gf > ga) acc.w += 1; else if (gf < ga) acc.l += 1; else acc.d += 1;
+    const lm = acc.lastMeeting;
+    if (!lm || `${g.date}` >= `${lm.date}` || (g.date === lm.date && g.sid >= lm.sid)) {
+      acc.lastMeeting = { date: g.date, sid: g.sid, seasonLabel: g.seasonLabel, gf, ga,
+        result: gf > ga ? 'W' : gf < ga ? 'L' : 'D' };
+    }
   }
-  const topOpponents = [...byOpp.values()]
-    .sort((a, b) => b.played - a.played || (b.gf - b.ga) - (a.gf - a.ga) || a.name.localeCompare(b.name))
-    .slice(0, 5);
+  const allOpponents = [...byOpp.values()]
+    .sort((a, b) => b.played - a.played || (b.gf - b.ga) - (a.gf - a.ga) || a.name.localeCompare(b.name));
+  const topOpponents = allOpponents.slice(0, 5);
 
-  return { clubId, name, totals, seasons, cups, roster, topOpponents, divisionTimeline, streaks };
+  return { clubId, name, totals, seasons, cups, roster, topOpponents, allOpponents, divisionTimeline, streaks };
 }
 
 // ---- team records ----
@@ -588,7 +651,11 @@ export function buildTeamRecords(allTeamStandings, allGames) {
       gp: num(r.gp), w: num(r.w), l: num(r.l), d: num(r.d),
       gf: num(r.gf), ga: num(r.ga), gd: num(r.gf) - num(r.ga), pts: num(r.pts),
     }))
-    .filter((r) => r.gp > 0);
+    .filter((r) => r.gp > 0)
+    .map((r) => {
+      const xpts = pythagoreanExpectedPoints(r.gf, r.ga, r.gp);
+      return { ...r, xpts, luck: r.pts - xpts };
+    });
 
   const mostGF = rankedBy(seasons, 'gf', -1);
   const fewestGF = rankedBy(seasons, 'gf', 1);
@@ -597,6 +664,8 @@ export function buildTeamRecords(allTeamStandings, allGames) {
   const bestGD = rankedBy(seasons, 'gd', -1);
   const worstGD = rankedBy(seasons, 'gd', 1);
   const mostPts = rankedBy(seasons, 'pts', -1);
+  const luckiest = rankedBy(seasons, 'luck', -1);
+  const unluckiest = rankedBy(seasons, 'luck', 1);
 
   const perfect = seasons
     .filter((s) => s.l === 0)
@@ -721,8 +790,151 @@ export function buildTeamRecords(allTeamStandings, allGames) {
   return {
     mostGF, fewestGF, mostGA, fewestGA, bestGD, worstGD, mostPts,
     perfect, winless, biggestWins, highestScoring, longestWinStreak, longestUnbeatenStreak,
-    mostCleanSheets, careerCleanSheets,
+    mostCleanSheets, careerCleanSheets, luckiest, unluckiest,
   };
+}
+
+// ---- Elo ratings / power rankings ----
+// A chronological Elo rating for every club, walking the complete, date-ordered game log since
+// 2014. Elo is a self-correcting strength estimate: beat a stronger club and you gain more than
+// beating a weaker one; the winner's gain is the loser's loss (zero-sum), so the league's average
+// stays anchored at ELO_INITIAL. Only competitive first-team games count -- league (incl. playoffs)
+// and cups. Over-35 is a separate, age-restricted squad sharing the club_id, so mixing it in would
+// muddy a club's strength; it's excluded. Rating is neutral-venue (no home advantage) since most
+// BDSL games are played at shared school fields rather than a real home ground.
+
+export const ELO_INITIAL = 1500;
+// K = how much a single result can move a rating. 32 is the classic chess value and a reasonable
+// fit for a ~14-20 game season: responsive enough to track real form, damped enough not to swing
+// wildly on one upset.
+const ELO_K = 32;
+// Between seasons, regress every rating this fraction of the way back to ELO_INITIAL. Amateur
+// rec-league rosters turn over heavily year to year, so last season's strength is only a partial
+// guide to this season's -- a soft reset keeps the model honest without throwing away all history.
+const ELO_SEASON_REGRESSION = 0.25;
+
+// Margin-of-victory multiplier (World Football Elo Ratings convention): a 3-0 win says more about
+// the gap in strength than a 1-0 win, so bigger margins scale the rating change up -- with
+// diminishing returns so a 7-0 rout isn't seven times a 1-0.
+function eloMovMultiplier(margin) {
+  if (margin <= 1) return 1;
+  if (margin === 2) return 1.5;
+  return (11 + margin) / 8;
+}
+
+// Expected score for A against B on the standard 400-point logistic scale (0.5 = evenly matched,
+// ->1 as A outrates B). A's actual score is 1 win / 0.5 draw / 0 loss.
+function eloExpected(ra, rb) {
+  return 1 / (1 + Math.pow(10, (rb - ra) / 400));
+}
+
+// Walk every rated game in chronological order, updating both clubs' ratings after each result and
+// recording the full rating timeline per club. Returns the current power rankings (clubs active in
+// the latest season, ranked by live rating), the all-time peak-rating leaderboard ("strongest team
+// ever"), and a per-club history for plotting a rating-over-time chart. `liveSids` (optional) flags
+// which season ids belong to an in-progress season, purely for display.
+export function buildElo(allGames, liveSids = new Set()) {
+  // Dedupe games that appear twice under two competition labels sharing one game_key (see
+  // buildTeamRecords), and drop Over-35. `date` + kickoff time + game_number give a stable
+  // chronological order even for several games on the same day.
+  const seen = new Set();
+  const games = (allGames || [])
+    .filter((g) => {
+      if (g.comp_type === 'over35') return false;
+      if (g.status && g.status !== 'played') return false;
+      const key = `${g.sid}||${g.game_key}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .sort((a, b) =>
+      `${a.sid}`.localeCompare(`${b.sid}`) ||
+      `${a.date}`.localeCompare(`${b.date}`) ||
+      parseTimeMinutes(a.time) - parseTimeMinutes(b.time) ||
+      num(a.game_number) - num(b.game_number)
+    );
+  if (!games.length) {
+    return { currentSid: '', currentLabel: '', currentLive: false, powerRankings: [], peaks: [], historyByClub: new Map(), ratedGames: 0 };
+  }
+
+  const currentSid = games[games.length - 1].sid;
+  const currentLabel = games.find((g) => g.sid === currentSid)?.seasonLabel || currentSid;
+
+  const ratings = new Map(); // clubId -> current rating
+  const clubs = new Map(); // clubId -> { name, nameSid, played, peak, peakSid, peakLabel, peakDate, peakPlayed }
+  const historyByClub = new Map(); // clubId -> [{ sid, seasonLabel, date, rating, oppId, oppName, gf, ga, result }]
+  let seasonStart = new Map(); // ratings snapshot at the start of currentSid (post-regression)
+  let prevSid = '';
+
+  const ratingOf = (id) => (ratings.has(id) ? ratings.get(id) : ELO_INITIAL);
+  const clubOf = (id, name, sid) => {
+    let c = clubs.get(id);
+    if (!c) { c = { name, nameSid: sid, played: 0, peak: ELO_INITIAL, peakSid: '', peakLabel: '', peakDate: '', peakPlayed: 0 }; clubs.set(id, c); }
+    if (sid >= c.nameSid) { c.name = name; c.nameSid = sid; } // newest-season spelling
+    return c;
+  };
+
+  for (const g of games) {
+    // Season boundary: regress everyone toward the mean before the new season's games.
+    if (g.sid !== prevSid) {
+      if (prevSid) {
+        for (const [id, r] of ratings) ratings.set(id, ELO_INITIAL + (r - ELO_INITIAL) * (1 - ELO_SEASON_REGRESSION));
+      }
+      if (g.sid === currentSid) seasonStart = new Map(ratings); // clubs new this season default to ELO_INITIAL
+      prevSid = g.sid;
+    }
+
+    const homeId = g.home_club_id, awayId = g.away_club_id;
+    if (!homeId || !awayId) continue;
+    const hs = num(g.home_score), as = num(g.away_score);
+
+    const rh = ratingOf(homeId), ra = ratingOf(awayId);
+    const sh = hs > as ? 1 : hs < as ? 0 : 0.5;
+    const mult = eloMovMultiplier(Math.abs(hs - as));
+    const delta = ELO_K * mult * (sh - eloExpected(rh, ra));
+    const newH = rh + delta, newA = ra - delta;
+    ratings.set(homeId, newH);
+    ratings.set(awayId, newA);
+
+    const ch = clubOf(homeId, g.home_name, g.sid);
+    const ca = clubOf(awayId, g.away_name, g.sid);
+    ch.played += 1; ca.played += 1;
+    if (newH > ch.peak) { ch.peak = newH; ch.peakSid = g.sid; ch.peakLabel = g.seasonLabel; ch.peakDate = g.date; ch.peakPlayed = ch.played; }
+    if (newA > ca.peak) { ca.peak = newA; ca.peakSid = g.sid; ca.peakLabel = g.seasonLabel; ca.peakDate = g.date; ca.peakPlayed = ca.played; }
+
+    const pushH = historyByClub.get(homeId) || historyByClub.set(homeId, []).get(homeId);
+    const pushA = historyByClub.get(awayId) || historyByClub.set(awayId, []).get(awayId);
+    pushH.push({ sid: g.sid, seasonLabel: g.seasonLabel, date: g.date, rating: newH, oppId: awayId, oppName: g.away_name, gf: hs, ga: as, result: sh === 1 ? 'W' : sh === 0 ? 'L' : 'D', live: liveSids.has(g.sid) });
+    pushA.push({ sid: g.sid, seasonLabel: g.seasonLabel, date: g.date, rating: newA, oppId: homeId, oppName: g.home_name, gf: as, ga: hs, result: sh === 0 ? 'W' : sh === 1 ? 'L' : 'D', live: liveSids.has(g.sid) });
+  }
+
+  // Current power rankings: clubs that appeared in the latest season, by live rating.
+  const currentClubIds = new Set(games.filter((g) => g.sid === currentSid).flatMap((g) => [g.home_club_id, g.away_club_id]).filter(Boolean));
+  const powerRankings = [...currentClubIds].map((id) => {
+    const c = clubs.get(id);
+    const hist = historyByClub.get(id) || [];
+    const form = hist.slice(-5).map((h) => h.result);
+    return {
+      clubId: id, name: c?.name || '(unknown)', rating: ratingOf(id), played: c?.played || 0,
+      peak: c?.peak || ELO_INITIAL, change: ratingOf(id) - (seasonStart.get(id) ?? ELO_INITIAL), form,
+    };
+  }).sort((a, b) => b.rating - a.rating || b.peak - a.peak || a.name.localeCompare(b.name));
+
+  // Strongest team ever: the single highest rating each club has ever reached, ranked.
+  const peaks = [...clubs.entries()]
+    .map(([id, c]) => ({ clubId: id, name: c.name, peak: c.peak, atSid: c.peakSid, atLabel: c.peakLabel, atDate: c.peakDate, playedAt: c.peakPlayed }))
+    .filter((p) => p.atSid) // reached above baseline at least once
+    .sort((a, b) => b.peak - a.peak || a.name.localeCompare(b.name));
+
+  return { currentSid, currentLabel, currentLive: liveSids.has(currentSid), powerRankings, peaks, historyByClub, ratedGames: games.length };
+}
+
+// One club's Elo rating timeline, chronological, for the rating-over-time chart on the Club page.
+// Elo is relative, so the whole league has to be recomputed to know one club's number -- this just
+// runs buildElo and pulls out the requested club's history. Returns [] if the club never played a
+// rated (non-Over-35) game.
+export function buildClubEloHistory(allGames, clubId, liveSids = new Set()) {
+  return buildElo(allGames, liveSids).historyByClub.get(clubId) || [];
 }
 
 // ---- champions ----
@@ -816,6 +1028,78 @@ function resolveClubNames(allTeamStandings, allCompetitions) {
   return names;
 }
 
+// Longest streaks of consecutive-season titles in the same canonical competition ("dynasties" --
+// successive title defenses). A competition's own season sequence (not the calendar) sets what
+// "consecutive" means, since not every competition ran every season (cups added later, divisions
+// renamed, etc). Only completed seasons count; an undecided (live, not-yet-crowned) season breaks
+// an in-progress streak rather than extending it. Ties/streaks of 1 aren't dynasties -- length 2+.
+function computeDynasties(comps) {
+  const byKey = new Map(); // canonical key -> { label, group, bySid: Map<sid, {sid,label,live,clubId,name}> }
+  for (const c of comps) {
+    if (c.live) continue; // only completed seasons form a dynasty
+    const canon = canonicalCompetition(c.competition, c.comp_type);
+    let entry = byKey.get(canon.key);
+    if (!entry) { entry = { label: canon.label, group: canon.group, bySid: new Map() }; byKey.set(canon.key, entry); }
+    const cur = entry.bySid.get(c.sid);
+    if (!cur || (!cur.clubId && c.clubId)) {
+      entry.bySid.set(c.sid, { sid: c.sid, label: c.label, clubId: c.clubId || null, name: c.clubName || null });
+    }
+  }
+
+  const dynasties = [];
+  for (const [key, { label, group, bySid }] of byKey) {
+    const seasons = [...bySid.values()].sort((a, b) => a.sid.localeCompare(b.sid));
+    let curClub = null, curName = '', curLen = 0, curStart = null, prev = null;
+    const flush = (end) => {
+      if (curClub && curLen >= 2) {
+        dynasties.push({
+          clubId: curClub, name: curName, key, label, group, len: curLen,
+          startLabel: curStart.label, endLabel: end.label,
+        });
+      }
+    };
+    for (const s of seasons) {
+      if (s.clubId && s.clubId === curClub) {
+        curLen += 1;
+      } else {
+        flush(prev);
+        curClub = s.clubId; curName = s.name; curLen = s.clubId ? 1 : 0; curStart = s;
+      }
+      prev = s;
+    }
+    flush(prev);
+  }
+  dynasties.sort((a, b) => b.len - a.len || a.label.localeCompare(b.label) || a.name.localeCompare(b.name));
+  return dynasties.slice(0, RANK_N);
+}
+
+// Seasons where one club won 2+ distinct competitions (any mix of league division, Over-35 or
+// cup) -- doubles, trebles and beyond. Cross-competition-group by design: a club sweeping both
+// league divisions it entered counts just as much as a league+cup double.
+function computeMultiTitleSeasons(comps, clubNames) {
+  const bySeasonClub = new Map(); // `${sid}||${clubId}` -> acc
+  for (const c of comps) {
+    if (!c.clubId) continue;
+    const canon = canonicalCompetition(c.competition, c.comp_type);
+    const mkey = `${c.sid}||${c.clubId}`;
+    let acc = bySeasonClub.get(mkey);
+    if (!acc) acc = { sid: c.sid, label: c.label, live: c.live, clubId: c.clubId, comps: new Set() };
+    acc.comps.add(canon.label);
+    bySeasonClub.set(mkey, acc);
+  }
+  const rows = [];
+  for (const acc of bySeasonClub.values()) {
+    if (acc.comps.size < 2) continue;
+    rows.push({
+      clubId: acc.clubId, name: clubNames.get(acc.clubId) || '(unknown)',
+      sid: acc.sid, label: acc.label, live: acc.live,
+      count: acc.comps.size, competitions: [...acc.comps].sort(),
+    });
+  }
+  rows.sort((a, b) => b.count - a.count || b.sid.localeCompare(a.sid) || a.name.localeCompare(b.name));
+  return rows;
+}
+
 // Builds the Champions page's grid (season x competition matrix) and leaderboard (all-time
 // title counts per club) from the flat allCompetitions list plus allTeamStandings (for each
 // club's current display name).
@@ -903,7 +1187,38 @@ export function buildChampions(allCompetitions, allTeamStandings) {
   }
   leaderboard.sort((a, b) => b.total - a.total || b.league - a.league || a.name.localeCompare(b.name));
 
-  return { grid, leaderboard };
+  // ---- longest active droughts ----
+  // Same per-club "seasons since last title" figure already shown on the leaderboard, ranked as
+  // a first-class record. A drought of 0 means reigning champion, so those are excluded.
+  const activeDroughts = leaderboard
+    .filter((r) => r.drought > 0)
+    .map((r) => ({ clubId: r.clubId, name: r.name, len: r.drought, lastLabel: r.lastLabel, lastSid: r.lastSid }))
+    .sort((a, b) => b.len - a.len || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
+
+  // ---- longest all-time droughts (ended) ----
+  // Biggest gap between two consecutive titles (any competition) for the same club, i.e. a
+  // drought that was eventually broken -- as opposed to activeDroughts, which are still ongoing.
+  const allTimeDroughts = [];
+  for (const acc of byClub.values()) {
+    const sids = [...new Set(acc.titles.map((t) => t.sid))].sort();
+    const labelBySid = new Map(acc.titles.map((t) => [t.sid, t.label]));
+    for (let i = 1; i < sids.length; i++) {
+      const len = completedSids.filter((sid) => sid > sids[i - 1] && sid < sids[i]).length;
+      if (len > 0) {
+        allTimeDroughts.push({
+          clubId: acc.clubId, name: clubNames.get(acc.clubId) || '(unknown)', len,
+          beforeLabel: labelBySid.get(sids[i - 1]), afterLabel: labelBySid.get(sids[i]),
+        });
+      }
+    }
+  }
+  allTimeDroughts.sort((a, b) => b.len - a.len || a.name.localeCompare(b.name));
+
+  const dynasties = computeDynasties(comps);
+  const multiTitleSeasons = computeMultiTitleSeasons(comps, clubNames);
+
+  return { grid, leaderboard, dynasties, activeDroughts, allTimeDroughts: allTimeDroughts.slice(0, RANK_N), multiTitleSeasons };
 }
 
 // ---- champion age records ----
@@ -1558,13 +1873,26 @@ export function buildSeason(board, sid) {
       rows: g.rows
         .slice()
         .sort((a, b) => num(a.position) - num(b.position))
-        .map((r) => ({
-          clubId: r.club_id, name: r.name, position: num(r.position),
-          gp: num(r.gp), w: num(r.w), l: num(r.l), d: num(r.d),
-          gf: num(r.gf), ga: num(r.ga), gd: num(r.gd) || num(r.gf) - num(r.ga), pts: num(r.pts),
-          champion: !!r.club_id && championIds.get(r.competition) === r.club_id,
-        })),
+        .map((r) => {
+          const gp = num(r.gp), gf = num(r.gf), ga = num(r.ga), pts = num(r.pts);
+          const xpts = pythagoreanExpectedPoints(gf, ga, gp);
+          return {
+            clubId: r.club_id, name: r.name, position: num(r.position),
+            gp, w: num(r.w), l: num(r.l), d: num(r.d),
+            gf, ga, gd: num(r.gd) || gf - ga, pts,
+            xpts, luck: pts - xpts,
+            champion: !!r.club_id && championIds.get(r.competition) === r.club_id,
+          };
+        }),
     }));
+  // Expected position: re-rank each division's rows by xpts (desc) using the same tiebreakers
+  // as actual standings (GD, then GF) so the comparison to actual position is apples-to-apples.
+  for (const g of standings) {
+    const byXpts = g.rows
+      .slice()
+      .sort((a, b) => b.xpts - a.xpts || b.gd - a.gd || b.gf - a.gf);
+    byXpts.forEach((r, i) => { r.xposition = i + 1; });
+  }
 
   // ---- champions (league, over35 AND cups) ----
   const champions = compRows
