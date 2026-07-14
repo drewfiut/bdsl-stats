@@ -43,7 +43,11 @@
     { id: 'longest-unbeaten-streak', label: 'Longest Unbeaten Streak' },
     { id: 'biggest-win', label: 'Biggest Win' },
     { id: 'highest-scoring-game', label: 'Highest Scoring Game' },
+    { id: 'luckiest-seasons', label: 'Luckiest Seasons' },
+    { id: 'unluckiest-seasons', label: 'Unluckiest Seasons' },
   ] : []);
+
+  const fmt1 = (n) => (Math.round(n * 10) / 10).toFixed(1);
 
   // scrollIntoView aligns the target to the viewport top, but the sticky jump nav then overlaps
   // it -- measure the nav's actual (row-count-dependent) height and offset the scroll by that.
@@ -430,6 +434,106 @@
             {/each}
           </tbody>
         </table>
+      </div>
+    </section>
+
+    <h2 class="section" id="luckiest-seasons">Luckiest Seasons</h2>
+    <p class="recdesc">
+      Biggest gap between actual points and <a class="pname" href="https://en.wikipedia.org/wiki/Pythagorean_expectation" target="_blank" rel="noopener">Pythagorean expected points</a>
+      (based on goals for/against) &mdash; teams whose results outran their underlying goal record.
+    </p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Team</th>
+              <th class="l mobhide">Season</th>
+              <th class="mobhide">GP</th>
+              <th class="mobhide">GF</th>
+              <th class="mobhide">GA</th>
+              <th>Pts</th>
+              <th>xPts</th>
+              <th>Luck</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each recs.luckiest as r, i}
+              {@const rk = i + 1}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l">
+                  <a class="pname" href={`#/club/${r.clubId}`}>{r.name}</a>
+                  {#if r.o35}<span class="o35tag">O35</span>{/if}
+                  <div class="submeta">
+                    <span class="season">{r.seasonLabel} &middot; {r.competition}</span>
+                  </div>
+                </td>
+                <td class="l mobhide">{r.seasonLabel} &middot; {r.competition}</td>
+                <td class="mobhide">{r.gp}</td>
+                <td class="mobhide">{r.gf}</td>
+                <td class="mobhide">{r.ga}</td>
+                <td>{r.pts}</td>
+                <td>{fmt1(r.xpts)}</td>
+                <td class="pts">+{fmt1(r.luck)}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if recs.luckiest.length === 0}
+          <div class="empty">No completed seasons yet.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="unluckiest-seasons">Unluckiest Seasons</h2>
+    <p class="recdesc">
+      Biggest shortfall between actual points and Pythagorean expected points &mdash; teams whose
+      results underperformed their underlying goal record.
+    </p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Team</th>
+              <th class="l mobhide">Season</th>
+              <th class="mobhide">GP</th>
+              <th class="mobhide">GF</th>
+              <th class="mobhide">GA</th>
+              <th>Pts</th>
+              <th>xPts</th>
+              <th>Luck</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each recs.unluckiest as r, i}
+              {@const rk = i + 1}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l">
+                  <a class="pname" href={`#/club/${r.clubId}`}>{r.name}</a>
+                  {#if r.o35}<span class="o35tag">O35</span>{/if}
+                  <div class="submeta">
+                    <span class="season">{r.seasonLabel} &middot; {r.competition}</span>
+                  </div>
+                </td>
+                <td class="l mobhide">{r.seasonLabel} &middot; {r.competition}</td>
+                <td class="mobhide">{r.gp}</td>
+                <td class="mobhide">{r.gf}</td>
+                <td class="mobhide">{r.ga}</td>
+                <td>{r.pts}</td>
+                <td>{fmt1(r.xpts)}</td>
+                <td class="pts">{fmt1(r.luck)}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if recs.unluckiest.length === 0}
+          <div class="empty">No completed seasons yet.</div>
+        {/if}
       </div>
     </section>
   {/if}

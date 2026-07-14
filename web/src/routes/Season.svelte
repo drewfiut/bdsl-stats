@@ -220,6 +220,7 @@
                 <th>GA</th>
                 <th>GD</th>
                 <th>Pts</th>
+                <th class="mobhide" title="Pythagorean expected position, based on goals for/against">xPos</th>
               </tr>
             </thead>
             <tbody>
@@ -239,6 +240,7 @@
                   <td>{r.ga}</td>
                   <td>{r.gd > 0 ? '+' : ''}{r.gd}</td>
                   <td class="pts">{r.pts}</td>
+                  <td class="mobhide" class:luckup={r.xposition > r.position} class:luckdown={r.xposition < r.position}>{r.xposition}</td>
                 </tr>
               {/each}
             </tbody>
@@ -434,6 +436,11 @@
 </main>
 
 <style>
+  /* xPos vs actual position: green if the club overperformed its Pythagorean expectation
+     (finished higher than expected), red if it underperformed (finished lower). */
+  .luckup { color: #1a8a4a; font-weight: 650; }
+  .luckdown { color: #c0392b; font-weight: 650; }
+
   /* Standings/fixtures/results competition switcher: a row of pill buttons, one per division,
      above a single shared table (instead of stacking every division's table in a row). */
   .divbtns {

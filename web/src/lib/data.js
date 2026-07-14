@@ -56,6 +56,20 @@ const num = (v) => {
   return Number.isFinite(n) ? n : 0;
 };
 
+// Pythagorean expectation (goals-for/against -> expected points), the standard "luck" metric
+// borrowed from Bill James baseball analysis and widely adapted for soccer with exponent ~1.3
+// (see Football Reference / clubelo write-ups). Expected win% * 3 points-per-win * games played
+// approximates the points a team's goal record "deserves", ignoring draws' effect on the pool of
+// available points -- a standard simplification for this kind of luck analysis.
+const PYTHAGOREAN_EXPONENT = 1.3;
+function pythagoreanExpectedPoints(gf, ga, gp) {
+  if (gp <= 0) return 0;
+  const gfE = Math.pow(gf, PYTHAGOREAN_EXPONENT);
+  const gaE = Math.pow(ga, PYTHAGOREAN_EXPONENT);
+  const winPct = gfE + gaE > 0 ? gfE / (gfE + gaE) : 0.5;
+  return winPct * 3 * gp;
+}
+
 // Aggregate one season's tidy stats rows into player-season objects (aggregate.build_from_store
 // + Player.add_row/finalize), then shape each like render_html._player_json.
 function aggregateSeason(rows, sid, seasonLabel, live) {
@@ -637,7 +651,11 @@ export function buildTeamRecords(allTeamStandings, allGames) {
       gp: num(r.gp), w: num(r.w), l: num(r.l), d: num(r.d),
       gf: num(r.gf), ga: num(r.ga), gd: num(r.gf) - num(r.ga), pts: num(r.pts),
     }))
-    .filter((r) => r.gp > 0);
+    .filter((r) => r.gp > 0)
+    .map((r) => {
+      const xpts = pythagoreanExpectedPoints(r.gf, r.ga, r.gp);
+      return { ...r, xpts, luck: r.pts - xpts };
+    });
 
   const mostGF = rankedBy(seasons, 'gf', -1);
   const fewestGF = rankedBy(seasons, 'gf', 1);
@@ -646,6 +664,8 @@ export function buildTeamRecords(allTeamStandings, allGames) {
   const bestGD = rankedBy(seasons, 'gd', -1);
   const worstGD = rankedBy(seasons, 'gd', 1);
   const mostPts = rankedBy(seasons, 'pts', -1);
+  const luckiest = rankedBy(seasons, 'luck', -1);
+  const unluckiest = rankedBy(seasons, 'luck', 1);
 
   const perfect = seasons
     .filter((s) => s.l === 0)
@@ -770,7 +790,7 @@ export function buildTeamRecords(allTeamStandings, allGames) {
   return {
     mostGF, fewestGF, mostGA, fewestGA, bestGD, worstGD, mostPts,
     perfect, winless, biggestWins, highestScoring, longestWinStreak, longestUnbeatenStreak,
-    mostCleanSheets, careerCleanSheets,
+    mostCleanSheets, careerCleanSheets, luckiest, unluckiest,
   };
 }
 
@@ -1607,13 +1627,26 @@ export function buildSeason(board, sid) {
       rows: g.rows
         .slice()
         .sort((a, b) => num(a.position) - num(b.position))
-        .map((r) => ({
-          clubId: r.club_id, name: r.name, position: num(r.position),
-          gp: num(r.gp), w: num(r.w), l: num(r.l), d: num(r.d),
-          gf: num(r.gf), ga: num(r.ga), gd: num(r.gd) || num(r.gf) - num(r.ga), pts: num(r.pts),
-          champion: !!r.club_id && championIds.get(r.competition) === r.club_id,
-        })),
+        .map((r) => {
+          const gp = num(r.gp), gf = num(r.gf), ga = num(r.ga), pts = num(r.pts);
+          const xpts = pythagoreanExpectedPoints(gf, ga, gp);
+          return {
+            clubId: r.club_id, name: r.name, position: num(r.position),
+            gp, w: num(r.w), l: num(r.l), d: num(r.d),
+            gf, ga, gd: num(r.gd) || gf - ga, pts,
+            xpts, luck: pts - xpts,
+            champion: !!r.club_id && championIds.get(r.competition) === r.club_id,
+          };
+        }),
     }));
+  // Expected position: re-rank each division's rows by xpts (desc) using the same tiebreakers
+  // as actual standings (GD, then GF) so the comparison to actual position is apples-to-apples.
+  for (const g of standings) {
+    const byXpts = g.rows
+      .slice()
+      .sort((a, b) => b.xpts - a.xpts || b.gd - a.gd || b.gf - a.gf);
+    byXpts.forEach((r, i) => { r.xposition = i + 1; });
+  }
 
   // ---- champions (league, over35 AND cups) ----
   const champions = compRows
