@@ -822,6 +822,16 @@ function eloMovMultiplier(margin) {
   return (11 + margin) / 8;
 }
 
+// Division weight on ELO_K: results in a higher division carry more rating impact than the same
+// result in a lower one, since the level of competition is higher. LEAGUE_DIVISIONS.order runs
+// 1 (Premier) through 6 (4th Division); each step down trims the K-factor by 10%, floored at 0.6x
+// so even the bottom division still moves ratings meaningfully. Cups (order 20+) and unrecognized
+// competitions weight like the middle of the pack (2nd Division) rather than falling off a cliff.
+function eloDivisionWeight(order) {
+  const o = order == null || order > LEAGUE_DIVISIONS.length ? 4 : order;
+  return Math.max(0.6, 1 - (o - 1) * 0.1);
+}
+
 // Expected score for A against B on the standard 400-point logistic scale (0.5 = evenly matched,
 // ->1 as A outrates B). A's actual score is 1 win / 0.5 draw / 0 loss.
 function eloExpected(ra, rb) {
@@ -891,7 +901,8 @@ export function buildElo(allGames, liveSids = new Set()) {
     const rh = ratingOf(homeId), ra = ratingOf(awayId);
     const sh = hs > as ? 1 : hs < as ? 0 : 0.5;
     const mult = eloMovMultiplier(Math.abs(hs - as));
-    const delta = ELO_K * mult * (sh - eloExpected(rh, ra));
+    const divWeight = eloDivisionWeight(canonicalCompetition(g.competition, g.comp_type).order);
+    const delta = ELO_K * divWeight * mult * (sh - eloExpected(rh, ra));
     const newH = rh + delta, newA = ra - delta;
     ratings.set(homeId, newH);
     ratings.set(awayId, newA);
