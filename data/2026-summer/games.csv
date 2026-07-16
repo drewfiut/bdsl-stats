@@ -57,7 +57,7 @@ game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id
 11566118,116112414,Premier,league,7045,,2026-06-29,8:00 pm,18647016,Buffalo United SS,75159915,NMB FC,2,1,played,,D'Youville College Dobson Field
 11566117,116112414,Premier,league,7044,,2026-06-29,8:30 pm,10350991,BSC Raiders,45429017,Borussia Bees,1,3,played,,Buffalo State Coyer Field
 11566132,116112414,Premier,league,7059,,2026-08-02,,,,,,,,scheduled,,
-11566131,116112414,Premier,league,7058,SF1,2026-08-02,,45429017,Borussia Bees,,,,,scheduled,,
+11566131,116112414,Premier,league,7058,SF1,2026-08-02,8:00 pm,45429017,Borussia Bees,,,,,scheduled,,Buffalo State Coyer Field
 11566133,116112414,Premier,league,7060,CHAMP,2026-08-09,6:00 pm,,,,,,,scheduled,,Nichols School Strauss Truscott
 11566167,116112418,Championship,league,7234,,2026-07-02,6:30 pm,75159993,Revolution SC,82992129,Mes Que FC,3,4,played,,Tapestry Charter School Field
 11566175,116112418,Championship,league,7242,,2026-07-08,7:45 pm,10359092,Ukraine,91257538,Medina Mustangs FC,3,0,played,,D'Youville College Dobson Field
@@ -127,10 +127,10 @@ game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id
 11566243,116112416,1st Division,league,7450,,2026-07-13,8:00 pm,75479680,Honey Badgers,116113094,Stallions FC,4,2,played,,Sahlen's Sports Park Flash Fields 2
 11566234,116112416,1st Division,league,7441,,2026-07-16,8:30 pm,10359005,Clarence Coyotes,110307763,Buffalo Night,,,scheduled,,Sahlen's Sports Park Flash Fields 1
 11566198,116112416,1st Division,league,7405,,2026-07-19,10:00 am,75479638,Southern Tier FC,46021389,Outlaws,,,scheduled,,SUNY Fredonia University Stadium
+11566225,116112416,1st Division,league,7432,,2026-07-20,8:00 pm,75479680,Honey Badgers,110307763,Buffalo Night,,,scheduled,,Sahlen's Sports Park Flash Fields 1
+11566206,116112416,1st Division,league,7413,,2026-07-20,8:00 pm,114564610,Mandem FC,75479662,Celtic Brigade,,,scheduled,,Sahlen's Sports Park Flash Fields 2
 11566244,116112416,1st Division,league,7451,,2026-07-26,,,,,,,,scheduled,,
 11566245,116112416,1st Division,league,7452,,2026-07-26,,,,,,,,scheduled,,
-11566206,116112416,1st Division,league,7413,,,,114564610,Mandem FC,75479662,Celtic Brigade,,,scheduled,,
-11566225,116112416,1st Division,league,7432,,,,75479680,Honey Badgers,110307763,Buffalo Night,,,scheduled,,
 11566194,116112416,1st Division,league,7401,,2026-04-26,2:00 pm,10359005,Clarence Coyotes,114564698,Kunz Premier,4,3,played,,Nichols School Strauss Truscott
 11566195,116112416,1st Division,league,7402,,2026-04-26,6:00 pm,75479680,Honey Badgers,75479662,Celtic Brigade,5,1,played,,Sahlen's Sports Park Flash Fields 1
 11566197,116112416,1st Division,league,7404,,2026-04-26,6:00 pm,110307763,Buffalo Night,114564614,Chargers FC,7,0,played,,Sahlen's Sports Park Flash Fields 2
