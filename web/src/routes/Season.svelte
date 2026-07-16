@@ -368,7 +368,9 @@
                       {g.home || 'TBD'}
                     {/if}
                   </td>
-                  <td class="pts">{g.hs}&ndash;{g.as}</td>
+                  <td class="pts">
+                    <a class="pname" href={`#/game/${sid}/${g.gameKey}`}>{g.hs}&ndash;{g.as}</a>
+                  </td>
                   <td class="l">
                     {#if g.awayClubId}
                       <a class="pname" href={`#/club/${g.awayClubId}`}>{g.away}</a>

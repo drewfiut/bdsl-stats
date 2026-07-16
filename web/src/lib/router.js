@@ -31,5 +31,7 @@ export function parse(hash) {
   if (parts[0] === 'seasons') return { name: 'seasons', params: {} };
   if (parts[0] === 'season' && parts[1])
     return { name: 'season', params: { sid: decodeURIComponent(parts[1]) } };
+  if (parts[0] === 'game' && parts[1] && parts[2])
+    return { name: 'game', params: { sid: decodeURIComponent(parts[1]), gameKey: decodeURIComponent(parts[2]) } };
   return { name: 'home', params: {} };
 }

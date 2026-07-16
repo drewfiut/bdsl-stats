@@ -16,6 +16,7 @@
   import Seasons from './routes/Seasons.svelte';
   import Season from './routes/Season.svelte';
   import Trends from './routes/Trends.svelte';
+  import MatchReport from './routes/MatchReport.svelte';
 
   // Reactive current hash; kept in sync with the address bar.
   let hash = $state(typeof location !== 'undefined' ? location.hash : '');
@@ -83,6 +84,7 @@
     seasons: 'Seasons · BDSL Stats',
     season: 'Season · BDSL Stats',
     trends: 'Trends · BDSL Stats',
+    game: 'Match Report · BDSL Stats',
   };
   $effect(() => {
     document.title = TITLES[route.name] || 'BDSL Stats';
@@ -181,6 +183,10 @@
 {:else if route.name === 'season'}
   {#key route.params.sid}
     <Season sid={route.params.sid} />
+  {/key}
+{:else if route.name === 'game'}
+  {#key `${route.params.sid}|${route.params.gameKey}`}
+    <MatchReport sid={route.params.sid} gameKey={route.params.gameKey} />
   {/key}
 {:else}
   <Home />

@@ -45,6 +45,14 @@ def main():
     scorers = sum(1 for r in rows if r["g"] or r["a"])
     print(f"\nSaved snapshot {date} ({len(rows)} player-competition rows, "
           f"{scorers} on the scoresheet) to {store.DATA_DIR}.")
+
+    game_stats = store.load_game_stats(config.SEASON_ID)
+    game_reports = store.load_game_reports(config.SEASON_ID)
+    # ISO datetimes sort lexicographically, so this catches every report (re)captured at or
+    # after collect() started this run -- fetched_at is stamped before capture begins.
+    captured_this_run = sum(1 for r in game_reports if r["captured_at"] >= fetched_at)
+    print(f"Match Reports: {captured_this_run} captured this run, "
+          f"{len(game_stats)} scorer-rows attributed total.")
     print("\nNext: commit the data so GitHub Pages can serve it:")
     print("    git add data/ && git commit -m \"Refresh BDSL data\" && git push")
 

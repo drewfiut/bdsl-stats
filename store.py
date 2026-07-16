@@ -13,6 +13,9 @@ is easy to inspect or analyse. Layout under ./data:
         competitions.json          the divisions / cups in the season
         teams.json                 teams + standings records (room for more team data later)
         stats.csv                  tidy, append-only fact table (one block of rows per day)
+        games.csv                  every game on the schedule (score, round, etc.)
+        game_stats.csv             per-player scoring lines from each game's Match Report
+        game_reports.csv           capture ledger for Match Reports (which games are done)
 
 Design notes / how this stays open to the future:
   * `person_key` and the season id are global, so historical seasons are just more folders
@@ -47,6 +50,20 @@ GAMES_COLUMNS = [
     "home_score", "away_score", "status", "result_note", "location",
 ]
 
+# One row per player-per-game scoring line, resolved from a game's Match Report via a roster
+# join (see attribution.py). Rewritten wholesale each collect, same as GAMES_COLUMNS -- a
+# captured game's report is its report, no dated snapshots. See DATA.md §4.5.
+GAME_STATS_COLUMNS = [
+    "game_key", "tg", "competition", "comp_type", "date", "round_label",
+    "side", "club_id", "person_key", "name", "jersey", "g", "a", "y", "r", "matched",
+]
+
+# One row per game whose Match Report has been captured -- the incremental ledger collect.py
+# reads to decide which games still need (re)fetching. See DATA.md §4.6.
+GAME_REPORTS_COLUMNS = [
+    "game_key", "tg", "report_url", "captured_at", "status", "referees",
+]
+
 
 # ---- paths ---------------------------------------------------------------------------
 
@@ -59,6 +76,8 @@ def competitions_path(sid: str): return _season_dir(sid) / "competitions.json"
 def teams_path(sid: str):        return _season_dir(sid) / "teams.json"
 def stats_path(sid: str):        return _season_dir(sid) / "stats.csv"
 def games_path(sid: str):        return _season_dir(sid) / "games.csv"
+def game_stats_path(sid: str):   return _season_dir(sid) / "game_stats.csv"
+def game_reports_path(sid: str): return _season_dir(sid) / "game_reports.csv"
 
 
 # ---- generic json helpers ------------------------------------------------------------
@@ -130,6 +149,50 @@ def save_games(sid: str, games: List[dict]) -> None:
 
 def load_games(sid: str) -> List[dict]:
     path = games_path(sid)
+    if not path.exists():
+        return []
+    with path.open(newline="", encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+
+# ---- game stats (per-game scoring lines, per season) ----------------------------------
+
+def save_game_stats(sid: str, rows: List[dict]) -> None:
+    """Write the season's game_stats.csv, one row per player-per-game line. Rewrites the file."""
+    path = game_stats_path(sid)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=GAME_STATS_COLUMNS)
+        w.writeheader()
+        for r in rows:
+            rec = {c: "" for c in GAME_STATS_COLUMNS}
+            rec.update({k: v for k, v in r.items() if k in GAME_STATS_COLUMNS})
+            w.writerow(rec)
+
+def load_game_stats(sid: str) -> List[dict]:
+    path = game_stats_path(sid)
+    if not path.exists():
+        return []
+    with path.open(newline="", encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+
+# ---- game reports (capture ledger, per season) -----------------------------------------
+
+def save_game_reports(sid: str, rows: List[dict]) -> None:
+    """Write the season's game_reports.csv, one row per captured game. Rewrites the file."""
+    path = game_reports_path(sid)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=GAME_REPORTS_COLUMNS)
+        w.writeheader()
+        for r in rows:
+            rec = {c: "" for c in GAME_REPORTS_COLUMNS}
+            rec.update({k: v for k, v in r.items() if k in GAME_REPORTS_COLUMNS})
+            w.writerow(rec)
+
+def load_game_reports(sid: str) -> List[dict]:
+    path = game_reports_path(sid)
     if not path.exists():
         return []
     with path.open(newline="", encoding="utf-8") as f:

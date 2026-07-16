@@ -1,11 +1,12 @@
 <script>
-  import { loadBoard, buildProfile } from '../lib/data.js';
+  import { loadBoard, buildProfile, buildPlayerMatchStats } from '../lib/data.js';
 
   let { personKey } = $props();
 
   let loading = $state(true);
   let error = $state('');
   let profile = $state(null);
+  let matchStats = $state(null);
 
   $effect(() => {
     // re-run whenever the routed personKey changes
@@ -13,15 +14,23 @@
     loading = true;
     error = '';
     profile = null;
+    matchStats = null;
     loadBoard()
       .then((b) => {
         profile = buildProfile(b.allPlayers, b.playersRegistry, key);
+        matchStats = buildPlayerMatchStats(b.allGameStats, key);
       })
       .catch((e) => (error = e.message || String(e)))
       .finally(() => (loading = false));
   });
 
   const ageLabel = (age) => (age == null ? 'Age unknown' : `Age ${age}`);
+
+  const fmtDate = (iso) => {
+    const d = new Date(`${iso}T00:00:00`);
+    if (isNaN(d)) return iso || '';
+    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  };
 </script>
 
 <main class="profile">
@@ -87,5 +96,52 @@
         </div>
       </section>
     {/each}
+
+    {#if matchStats && matchStats.rows.length}
+      <h2 class="section">Scoring &amp; discipline</h2>
+      <p class="recdesc">
+        Per-game scorers are recorded from manager-entered match reports and may be incomplete
+        for some games/seasons &mdash; treat these as recorded events, not a complete log.
+      </p>
+      <section class="season">
+        <div class="stats">
+          <div class="stat"><b>{matchStats.summary.hatTricks}</b><span>Hat-tricks</span></div>
+          <div class="stat"><b>{matchStats.summary.multiGoalGames}</b><span>Multi-goal games</span></div>
+          <div class="stat"><b>{matchStats.summary.bestGoalGame}</b><span>Best single game</span></div>
+          <div class="stat"><b>{matchStats.summary.totalYellow}</b><span>Yellow cards</span></div>
+          <div class="stat"><b>{matchStats.summary.totalRed}</b><span>Red cards</span></div>
+        </div>
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="l">Date</th>
+                <th class="l">Competition</th>
+                <th class="l">Side</th>
+                <th>G</th>
+                <th>A</th>
+                <th>Y</th>
+                <th>R</th>
+              </tr>
+            </thead>
+            <tbody>
+              {#each matchStats.rows as m}
+                <tr>
+                  <td class="l">
+                    <a class="pname" href={`#/game/${m.sid}/${m.game_key}`}>{fmtDate(m.date)}</a>
+                  </td>
+                  <td class="l">{m.competition}{#if m.round_label} &middot; {m.round_label}{/if}</td>
+                  <td class="l">{m.side === 'home' ? 'Home' : 'Away'}</td>
+                  <td>{m.g || '–'}</td>
+                  <td>{m.a || '–'}</td>
+                  <td>{m.y || '–'}</td>
+                  <td>{m.r || '–'}</td>
+                </tr>
+              {/each}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    {/if}
   {/if}
 </main>

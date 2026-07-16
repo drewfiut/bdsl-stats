@@ -10,13 +10,20 @@ from collections import defaultdict
 from dataclasses import asdict
 from typing import Dict, List, Optional
 
+import attribution
 import champions
 import config
 import discover
+import matchreports
 import schedules
 import standings
 import store
 from parse_stats import fetch_stats
+
+# Games captured before this many days ago are treated as final and never re-fetched; games
+# within the window are always re-captured even if already in the ledger, since Match Reports
+# are sometimes entered a few days after the game is played ("late-stat-entry window").
+REPORT_RECAPTURE_DAYS = 21
 
 
 def collect_games(groups, year: int, progress: bool = False) -> Dict[str, list]:
@@ -110,6 +117,76 @@ def _fill_history_champions(season: dict, comps: List[dict], rows_by_tg: Dict[st
             comp.update(champion_club_id=club_id, champion_name=name, champion_via=via)
 
 
+def _capture_reports(sid: str, game_rows: List[dict], rows: List[dict], players: Dict[str, dict],
+                      progress: bool = False) -> None:
+    """Fetch new/late Match Reports, attribute their scoring lines, and write game_stats/game_reports.
+
+    Incremental: a played game with a report_path is (re)captured if it isn't already in
+    game_reports.csv's ledger, or if it's within the last REPORT_RECAPTURE_DAYS days (Match
+    Reports are sometimes filled in a few days after the game -- the "late-stat-entry window" --
+    so recent games are always re-fetched even if already captured). Games not (re)captured this
+    run keep their previously stored game_stats/game_reports rows, so both files stay complete.
+    A single game's fetch/parse failure is recorded as an "error" ledger row and does not stop
+    the rest of the run.
+    """
+    roster_index = attribution.build_roster_index(rows, players)
+
+    existing_reports_by_key = {r["game_key"]: r for r in store.load_game_reports(sid)}
+    existing_stats_by_key: Dict[str, list] = defaultdict(list)
+    for r in store.load_game_stats(sid):
+        existing_stats_by_key[r["game_key"]].append(r)
+
+    cutoff = (dt.date.today() - dt.timedelta(days=REPORT_RECAPTURE_DAYS)).isoformat()
+
+    to_capture = []
+    for g in game_rows:
+        if g.get("status") != "played" or not g.get("report_path"):
+            continue
+        key = g["game_key"]
+        recent = bool(g.get("date")) and g["date"] >= cutoff
+        if key in existing_reports_by_key and not recent:
+            continue
+        to_capture.append(g)
+
+    new_reports = []
+    new_stats = []
+    captured = 0
+    for g in to_capture:
+        key = g["game_key"]
+        url = config.ELEMENTS_BASE + g["report_path"]
+        try:
+            report = matchreports.fetch_report(url)
+            game = {
+                "game_key": key, "tg": g["tg"], "competition": g["competition"],
+                "comp_type": g["comp_type"], "date": g["date"], "round_label": g["round_label"],
+                "home_club_id": g["home_club_id"], "away_club_id": g["away_club_id"],
+            }
+            new_stats.extend(attribution.attribute_report(report, game, roster_index))
+            referees = "; ".join(f"{name} ({role})" for name, role in report.referees)
+            new_reports.append({
+                "game_key": key, "tg": g["tg"], "report_url": url,
+                "captured_at": dt.datetime.now().isoformat(timespec="seconds"),
+                "status": "captured", "referees": referees,
+            })
+            captured += 1
+        except Exception:
+            new_reports.append({
+                "game_key": key, "tg": g["tg"], "report_url": url,
+                "captured_at": dt.datetime.now().isoformat(timespec="seconds"),
+                "status": "error", "referees": "",
+            })
+
+    captured_keys = {r["game_key"] for r in new_reports}
+    carried_reports = [r for k, r in existing_reports_by_key.items() if k not in captured_keys]
+    carried_stats = [row for k, rs in existing_stats_by_key.items() if k not in captured_keys for row in rs]
+
+    store.save_game_reports(sid, new_reports + carried_reports)
+    store.save_game_stats(sid, new_stats + carried_stats)
+
+    if progress:
+        print(f"  reports: {captured} captured, {len(new_stats) + len(carried_stats)} scorer-rows")
+
+
 def is_current(season_id: Optional[str] = None) -> bool:
     """True if today's snapshot (per the 3am boundary) already exists in the store."""
     sid = season_id or config.SEASON_ID
@@ -200,6 +277,9 @@ def collect(season: Optional[dict] = None, progress: bool = False,
 
     store.write_snapshot(sid, snapshot_date, fetched_at, rows)
     store.upsert_players(players)
+
+    _capture_reports(sid, game_rows, rows, players, progress=progress)
+
     return snapshot_date
 
 

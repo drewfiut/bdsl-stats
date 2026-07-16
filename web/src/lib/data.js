@@ -154,14 +154,16 @@ async function buildBoard() {
 
   const perSeason = await Promise.all(
     ids.map(async (sid) => {
-      const [rows, teams, comps, games] = await Promise.all([
+      const [rows, teams, comps, games, gameStats, gameReports] = await Promise.all([
         fetchCsv(`${sid}/stats.csv`),
         fetchJson(`${sid}/teams.json`).catch(() => []), // some seasons may lack standings
         fetchJson(`${sid}/competitions.json`).catch(() => []), // carries each comp's champion
         fetchCsv(`${sid}/games.csv`).catch(() => []),
+        fetchCsv(`${sid}/game_stats.csv`).catch(() => []), // per-game backfill; some seasons still missing
+        fetchCsv(`${sid}/game_reports.csv`).catch(() => []), // per-game backfill; some seasons still missing
       ]);
       const label = seasons[sid]?.label || sid;
-      return { sid, label, live: isLive(seasons[sid]), rawRows: rows, rows: latestSnapshotRows(rows), teams, comps, games };
+      return { sid, label, live: isLive(seasons[sid]), rawRows: rows, rows: latestSnapshotRows(rows), teams, comps, games, gameStats, gameReports };
     })
   );
 
@@ -172,6 +174,8 @@ async function buildBoard() {
   const allTeamStandings = []; // flat teams.json rows tagged with season context
   const allGames = []; // flat games.csv rows (played only) tagged with season context
   const allFixtures = []; // flat games.csv rows (every status, incl. scheduled) tagged with season context
+  const allGameStats = []; // flat game_stats.csv rows (one per player per game) tagged with season context
+  const gameReportsByKey = new Map(); // `${sid}||${game_key}` -> game_reports.csv row (referees + capture status)
   // clubId -> [{ sid, label, competition, via }] : the authoritative source of titles, spanning
   // league, Over-35 AND cups (cups have no teams.json, so their titles only live here). A champion
   // is the CHMP playoff winner, which can differ from the regular-season table-topper (position 1).
@@ -189,6 +193,12 @@ async function buildBoard() {
     for (const g of s.games) {
       if (g.status === 'played') allGames.push({ ...g, sid: s.sid, seasonLabel: s.label });
       allFixtures.push({ ...g, sid: s.sid, seasonLabel: s.label });
+    }
+    for (const gs of s.gameStats) {
+      allGameStats.push({ ...gs, sid: s.sid, seasonLabel: s.label });
+    }
+    for (const gr of s.gameReports) {
+      if (gr.game_key) gameReportsByKey.set(`${s.sid}||${gr.game_key}`, gr);
     }
     for (const c of s.comps) {
       allCompetitions.push({
@@ -218,7 +228,7 @@ async function buildBoard() {
     .reverse()
     .map((sid) => seasons[sid]?.label || sid); // newest-first, for the filter dropdown
 
-  return { players: active, allPlayers, allTeamStandings, allGames, allFixtures, championsByClub, allCompetitions, playersRegistry, seasonLabels, dataAsOf, seasonRawRows };
+  return { players: active, allPlayers, allTeamStandings, allGames, allFixtures, allGameStats, gameReportsByKey, championsByClub, allCompetitions, playersRegistry, seasonLabels, dataAsOf, seasonRawRows };
 }
 
 // Fetch + aggregate once, then share across route navigations (board <-> profile).
@@ -2062,4 +2072,158 @@ export function buildGoldenBootRace(board, sid, topN = GOLDEN_RACE_TOP_N) {
 
   const maxG = Math.max(...series.map((s) => s.g), 0);
   return { dates, series, maxG };
+}
+
+// ---- per-game scoring/discipline (game_stats.csv + game_reports.csv backfill) ----
+// Row-level match data is a separate, still-being-backfilled fact table layered on top of the
+// season-total stats.csv aggregation above -- some seasons (and even some games within a covered
+// season) have no rows yet, so every builder here must degrade to empty output rather than throw.
+// Manager-entered recorded scorers can undercount a game's actual final score, so nothing here
+// should be framed as an authoritative/complete scoring record -- see callers for the caveat copy.
+
+// One player's per-game scoring/discipline log, newest game first, plus a small summary. Only
+// rows with a resolved person_key count (blank person_key = unmatched to a roster, per
+// game_stats.csv's schema) -- this mirrors allPlayers' own person_key-keyed aggregation.
+export function buildPlayerMatchStats(allGameStats, personKey) {
+  // Dedupe by (sid, game_key): a game that leaked into two competitions' schedules would otherwise
+  // list this player's line twice under one game_key (see buildScoringRecords' note).
+  const seen = new Set();
+  const rows = (allGameStats || [])
+    .filter((row) => {
+      if (row.person_key !== personKey) return false;
+      const key = `${row.sid}||${row.game_key}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .map((row) => ({
+      sid: row.sid, seasonLabel: row.seasonLabel, game_key: row.game_key, date: row.date,
+      competition: row.competition, comp_type: row.comp_type, round_label: row.round_label || '',
+      side: row.side, g: num(row.g), a: num(row.a), y: num(row.y), r: num(row.r),
+    }))
+    .sort((a, b) => `${b.date}`.localeCompare(`${a.date}`) || b.sid.localeCompare(a.sid) || b.game_key.localeCompare(a.game_key));
+
+  const summary = { hatTricks: 0, multiGoalGames: 0, bestGoalGame: 0, totalYellow: 0, totalRed: 0, gamesWithEvents: rows.length };
+  for (const row of rows) {
+    if (row.g >= 3) summary.hatTricks += 1;
+    if (row.g >= 2) summary.multiGoalGames += 1;
+    if (row.g > summary.bestGoalGame) summary.bestGoalGame = row.g;
+    summary.totalYellow += row.y;
+    summary.totalRed += row.r;
+  }
+
+  return { rows, summary };
+}
+
+// League-wide scoring/discipline leaderboards (top ~10 each), built straight from game_stats.csv
+// rather than the season-total aggregation -- these are things per-game granularity uniquely
+// enables (a hat-trick, a single-game haul) that a season total alone can't answer. No
+// game-winning-goal metric: the data has no goal-timing, so there's no way to tell which goal
+// actually won a match.
+export function buildScoringRecords(allGameStats, playersRegistry) {
+  const byPk = new Map(); // person_key -> { pk, csvName, hatTricks, multiGoalGames, yellow, red }
+  const singleGames = [];
+  // A game that leaked into two competitions' schedules yields the same person's line under two
+  // game_stats rows sharing one game_key (as buildTeamRecords/buildElo also guard against); dedupe
+  // by (sid, game_key, person_key) so a single game can't double-count a hat-trick or a card.
+  const seen = new Set();
+  for (const row of allGameStats || []) {
+    if (!row.person_key) continue; // exclude unmatched scorers from aggregates (see module note)
+    const dedupeKey = `${row.sid}||${row.game_key}||${row.person_key}`;
+    if (seen.has(dedupeKey)) continue;
+    seen.add(dedupeKey);
+    const g = num(row.g), y = num(row.y), rd = num(row.r);
+    let acc = byPk.get(row.person_key);
+    if (!acc) {
+      acc = { pk: row.person_key, csvName: row.name, hatTricks: 0, multiGoalGames: 0, yellow: 0, red: 0 };
+      byPk.set(row.person_key, acc);
+    }
+    if (row.name) acc.csvName = row.name;
+    if (g >= 3) acc.hatTricks += 1;
+    if (g >= 2) acc.multiGoalGames += 1;
+    acc.yellow += y;
+    acc.red += rd;
+    if (g > 0) {
+      singleGames.push({
+        pk: row.person_key, name: row.name, g, date: row.date, competition: row.competition,
+        seasonLabel: row.seasonLabel, game_key: row.game_key, sid: row.sid,
+      });
+    }
+  }
+
+  const nameFor = (pk, fallback) => displayName(playersRegistry?.[pk], fallback) || '(unknown)';
+  const list = [...byPk.values()].map((acc) => ({
+    pk: acc.pk, name: nameFor(acc.pk, acc.csvName),
+    hatTricks: acc.hatTricks, multiGoalGames: acc.multiGoalGames, yellow: acc.yellow, red: acc.red,
+  }));
+
+  const mostHatTricks = list
+    .filter((p) => p.hatTricks > 0)
+    .sort((a, b) => b.hatTricks - a.hatTricks || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
+  const mostMultiGoalGames = list
+    .filter((p) => p.multiGoalGames > 0)
+    .sort((a, b) => b.multiGoalGames - a.multiGoalGames || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
+  const mostYellowCards = list
+    .filter((p) => p.yellow > 0)
+    .sort((a, b) => b.yellow - a.yellow || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
+  const mostRedCards = list
+    .filter((p) => p.red > 0)
+    .sort((a, b) => b.red - a.red || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
+
+  const bestSingleGame = singleGames
+    .map((r) => ({ ...r, name: nameFor(r.pk, r.name) }))
+    .sort((a, b) => b.g - a.g || `${b.date}`.localeCompare(`${a.date}`) || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
+
+  return { mostHatTricks, mostMultiGoalGames, bestSingleGame, mostYellowCards, mostRedCards };
+}
+
+// "Name (ROLE); Name (ROLE)" -> [{name, role}], tolerating a missing/blank string or an entry
+// with no parenthesized role.
+function parseReferees(referees) {
+  return (referees || '')
+    .split(';')
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .map((entry) => {
+      const m = /^(.*)\(([^)]*)\)\s*$/.exec(entry);
+      return m ? { name: m[1].trim(), role: m[2].trim() } : { name: entry, role: '' };
+    });
+}
+
+// Assembles one game's match report: score/teams/date from the played-games array (allGames,
+// authoritative for the final score), lineups from game_stats.csv (split by side, matched AND
+// unmatched rows both kept -- see module note), referees/capture status from game_reports.csv.
+// Returns null only when the game_key is unknown to every one of those three sources.
+export function buildMatchReport(allGameStats, gameReportsByKey, allGames, sid, gameKey) {
+  const game = (allGames || []).find((g) => g.sid === sid && g.game_key === gameKey);
+  const report = gameReportsByKey?.get(`${sid}||${gameKey}`);
+  const lines = (allGameStats || []).filter((row) => row.sid === sid && row.game_key === gameKey);
+  if (!game && !lines.length && !report) return null;
+
+  const shapeLine = (row) => ({
+    name: row.name, jersey: row.jersey, pk: row.person_key || '',
+    g: num(row.g), a: num(row.a), y: num(row.y), r: num(row.r),
+  });
+  const home = lines.filter((row) => row.side === 'home').map(shapeLine);
+  const away = lines.filter((row) => row.side === 'away').map(shapeLine);
+
+  return {
+    sid,
+    seasonLabel: game?.seasonLabel || lines[0]?.seasonLabel || '',
+    competition: game?.competition || lines[0]?.competition || '',
+    roundLabel: game?.round_label || lines[0]?.round_label || '',
+    date: game?.date || lines[0]?.date || '',
+    homeName: game?.home_name || '',
+    awayName: game?.away_name || '',
+    homeScore: game ? num(game.home_score) : null,
+    awayScore: game ? num(game.away_score) : null,
+    referees: parseReferees(report?.referees),
+    home, away,
+    status: report?.status || '',
+  };
 }

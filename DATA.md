@@ -44,6 +44,8 @@ data/
     teams.json                 every team + its full standings record (+ computed position)
     stats.csv                  per-player, per-competition stat rows (the fact table)
     games.csv                  every game played, with score / round label (the game fact table)
+    game_stats.csv             per-player scoring lines from each game's Match Report
+    game_reports.csv           capture ledger for Match Reports (which games are done)
 ```
 
 Seasons currently present: `2014-summer` … `2026-summer` (11 historical + the live season).
@@ -194,8 +196,53 @@ result — no dated snapshots). Includes both played and not-yet-played games. H
 **Availability:** fixtures + final scores exist for **every season 2014→present** (older seasons
 are month-paginated; the collector fetches every month). Per-game detail beyond the score (goal
 scorers, cards, referees, lineups — visible in the site's per-game "Match Report") is **not**
-captured. Score-only means a final decided on penalties shows the level regulation score with
-`result_note="PK"` and does **not** record the shootout winner (see §5.6).
+captured in this file — see §4.5/§4.6. Score-only means a final decided on penalties shows the
+level regulation score with `result_note="PK"` and does **not** record the shootout winner (see
+§5.6).
+
+### 4.5 `<season>/game_stats.csv`
+
+Per-player scoring lines pulled from each played game's Demosphere "Match Report" page (see
+`matchreports.py`). **One row per player per game** they appear on the report's PLAYED/STATS
+table (only players with a recorded event — goal, assist, or card — appear on that table, so
+this file is much sparser than `stats.csv`). Rewritten wholesale each collect, same as
+`games.csv` — no dated snapshots. Header order is fixed:
+
+| Column | Type on disk | Meaning |
+|---|---|---|
+| `game_key` | string | → join to `games.csv` / `stats.csv`. |
+| `tg` | string | Competition team-group id (denormalized). |
+| `competition` | string | Competition name (denormalized). |
+| `comp_type` | string | `"league"` / `"over35"` / `"cup"` (denormalized). |
+| `date` | `YYYY-MM-DD` \| "" | Kickoff date (denormalized from `games.csv`). |
+| `round_label` | string | Playoff round tag (denormalized from `games.csv`; see §4.4). |
+| `side` | string | `"home"` or `"away"`. |
+| `club_id` | string | The player's club id for this game → joins to `teams.json` `club_id`. |
+| `person_key` | string \| "" | Resolved global person id → join to `players.json` / `stats.csv`. **Blank if the roster join couldn't resolve the row** — see §5.7; the row is kept either way, never dropped. |
+| `name` | string | Name **verbatim from the Match Report**, `"Last, First"` — not the display convention used elsewhere in the store. |
+| `jersey` | string | Shirt number as printed on the report; may be empty. |
+| `g` | int | Goals in this game. |
+| `a` | int | Assists in this game. |
+| `y` | int | Yellow cards in this game (counted by card icon, not a digit — see `matchreports.py`). |
+| `r` | int | Red cards in this game. |
+| `matched` | string | How `person_key` was resolved: `"jersey"`, `"name"`, or `""` (unresolved). See §5.7. |
+
+**Points per game** = `2*g + 1*a` (same convention as `stats.csv`, see §4.3).
+
+### 4.6 `<season>/game_reports.csv`
+
+The capture ledger: one row per game whose Match Report has been fetched, used by `collect.py`
+to decide which games still need (re)fetching (see §5.7) and by `backfill_reports.py` to record
+its own run. Not a fact table for analysis — `game_stats.csv` is. Header order is fixed:
+
+| Column | Type on disk | Meaning |
+|---|---|---|
+| `game_key` | string | → join to `games.csv` / `game_stats.csv`. |
+| `tg` | string | Competition team-group id (denormalized). |
+| `report_url` | string | Full URL fetched, `config.ELEMENTS_BASE + report_path`. |
+| `captured_at` | ISO datetime | Wall-clock time of this capture attempt. |
+| `status` | string | `"captured"` (parsed successfully — any scoring lines are in `game_stats.csv`; a clean 0–0-type report with no recorded events is still "captured" with no rows), `"missing"` (no Match Report exists under any candidate section — `backfill_reports.py` probes the season's league/cup section ids), or `"error"` (fetch/parse failed). All three put the game_key *in the ledger*, so — like a `"captured"` row — it's only retried within the recent-game recapture window (see §5.7), not on every run. |
+| `referees` | string | `"Name (ROLE); Name (ROLE)"` for however many officials the report lists; `""` if none or on error. |
 
 ---
 
@@ -261,6 +308,53 @@ for that competition; the fill is conservative and leaves the competition blank 
 still means genuinely undecided — the live season in progress, or a competition the history table
 doesn't list either. Treat `""` as "unknown," not "no champion."
 
+### 5.7 Match Report attribution: roster join, `matched`, and capture cadence (important)
+`game_stats.csv` doesn't come with `person_key` for free. A Match Report page (see
+`matchreports.py`) identifies a player only by **name (verbatim `"Last, First"`) and jersey
+number** — never a person key. `attribution.py` resolves each report line to a `person_key` with
+a roster join against that game's `(tg, club_id)` slice of `stats.csv`: try an **exact, unambiguous
+name match** first (normalized — case/punctuation/word-order insensitive — checked against both the
+stats row's display name and, when available, `players.json`'s `first`+`last`); if the name doesn't
+resolve, fall back to an **exact, unambiguous jersey match**. **Name is tried before jersey on
+purpose:** a name is unique to one person on a roster, whereas jersey numbers collide — a messy
+report occasionally lists two different players under the same number, and jersey-first would then
+mis-attribute both lines to the single roster owner of that number. If a name or jersey maps to
+more than one person on the roster (or to nobody), the line is left unresolved.
+
+**Home/away isn't taken from the report's table order.** A Match Report's two team tables are *not*
+reliably ordered home-then-away — some reports list the teams opposite to the schedule's home/away
+designation. So `attribution.py` doesn't trust table position: it scores both orientations by how
+well each team table's lines fit the home vs away roster (weighting name agreement above jersey,
+since jerseys collide) and keeps the better fit. The `side`/`club_id` on every row therefore
+reflect the schedule's true home/away, not the report's layout. (The `matchreports.py` parser
+similarly tolerates both the recent 4-table layout and the older 2-table one — see that module.)
+
+**A row is never dropped for failing to resolve.** `game_stats.csv` keeps every scoring line the
+report showed; an unresolved row simply has `person_key=""` and `matched=""`. Check `matched`
+before trusting a row is joined to the right person — `"jersey"` and `"name"` are both confident
+single matches, `""` means the g/a/y/r on that row aren't attributed to anyone yet. Don't
+recompute a player's totals from `game_stats.csv` and expect them to equal `stats.csv`'s
+`g`/`a` for the same competition: `stats.csv` comes straight from bdsl.org's own per-player
+totals (always complete); `game_stats.csv` is a **best-effort reconstruction** of the per-game
+breakdown behind those totals, gated on both a Match Report existing for the game and the
+roster join resolving it.
+
+**Capture cadence.** Match Reports are fetched incrementally, not re-fetched wholesale every
+run: `collect.py` (re)captures a played game's report only if its `game_key` isn't yet in
+`game_reports.csv`'s ledger, or if the game's `date` falls within the last 21 days (bdsl.org
+sometimes enters a report's stats a few days after the game — this "late-stat-entry window"
+keeps recent games fresh without re-fetching the whole season's history every run). Games
+outside that window that are already in the ledger — including ones that previously errored
+(`status="error"`) — are left alone until backfilled with `--force`. `backfill_reports.py`
+instead captures **every** played game with a report in one pass, for seeding a season that
+predates this feature.
+
+**Availability** mirrors `stats.csv`'s (§5.4) plus one more constraint: a Match Report has to
+exist for the platform to have rendered it at all, so `game_stats.csv` coverage tracks
+`stats.csv`'s g/a availability (league from 2014, cups from ~2016) but can be sparser within
+that range wherever a report page is missing, malformed, or a jersey/name collides ambiguously
+on the roster.
+
 ---
 
 ## 6. Common derivations (recipes)
@@ -278,6 +372,12 @@ doesn't list either. Treat `""` as "unknown," not "no champion."
 - **All games / results for a competition:** read `<season>/games.csv`, filter by `tg`.
 - **Head-to-head of two names that might collide:** they won't merge — distinct people have
   distinct `person_key`s. Always key on `person_key`.
+- **Who scored in a specific game:** read `<season>/game_stats.csv`, filter by `game_key`,
+  keep rows with `g > 0`; join `person_key` to `players.json` for identity (rows with
+  `matched == ""` have no `person_key` — see §5.7).
+- **A player's per-game log within a season:** read `<season>/game_stats.csv`, filter by
+  `person_key` (only rows that resolved). Not a substitute for `stats.csv`'s per-competition
+  totals, which are always complete — see §5.7.
 
 ---
 
@@ -285,7 +385,8 @@ doesn't list either. Treat `""` as "unknown," not "no champion."
 
 - Add a field to a JSON dimension freely; old files simply lack it (readers should treat
   missing keys as empty). Document it here.
-- Add a column to `stats.csv` / `games.csv` by appending to `STATS_COLUMNS` / `GAMES_COLUMNS` in
+- Add a column to `stats.csv` / `games.csv` / `game_stats.csv` / `game_reports.csv` by appending
+  to `STATS_COLUMNS` / `GAMES_COLUMNS` / `GAME_STATS_COLUMNS` / `GAME_REPORTS_COLUMNS` in
   `store.py`; existing rows pad blank on the next rewrite. Document it here.
 - Add a season by collecting it (`history.py` for past years, the live pipeline for the current
   one). It lands in its own folder; the global registries grow to span it automatically.

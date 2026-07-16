@@ -44,6 +44,7 @@ class Game:
     status: str             # "played" | "scheduled"
     result_note: str        # trailing token on the score, e.g. "FT", "PK"
     location: str
+    report_path: str = ""   # href of the row's Match Report anchor, e.g. "/72601/MatchReports/<section>/<game_key>.html"; "" if none
 
 
 def _clean(s: str) -> str:
@@ -58,6 +59,15 @@ def _team(cell) -> tuple:
     span = cell.select_one("span.tm-name")
     name = _clean(span.get_text(" ") if span else cell.get_text(" "))
     return club_id, name
+
+
+def _report_path(tr) -> str:
+    """href of the row's Match Report anchor, e.g. "/72601/MatchReports/<section>/<game_key>.html"."""
+    for a in tr.find_all("a"):
+        href = _clean(a.get("href") or "")
+        if "MatchReports" in href:
+            return href
+    return ""
 
 
 def _parse_date(text: str) -> str:
@@ -122,6 +132,7 @@ def _parse_into(html: str, games: dict) -> None:
             status=status,
             result_note=note,
             location=_clean(fac.get_text(" ") if fac else ""),
+            report_path=_report_path(tr),
         )
 
 

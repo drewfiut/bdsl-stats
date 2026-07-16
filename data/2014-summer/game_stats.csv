@@ -1,0 +1,434 @@
+game_key,tg,competition,comp_type,date,round_label,side,club_id,person_key,name,jersey,g,a,y,r,matched
+4505692,67523675,Premier,league,2014-08-03,S1,home,26895907,35226782,"Taylor, Graham",5,0,0,1,0,name
+4505692,67523675,Premier,league,2014-08-03,S1,away,18647016,63568726,"Cruz, Roberto",7,0,0,1,0,name
+4505692,67523675,Premier,league,2014-08-03,S1,away,18647016,68854110,"Geegba, Junior",2,0,0,1,0,name
+4505692,67523675,Premier,league,2014-08-03,S1,away,18647016,59934563,"Guardado, Yony",16,1,0,0,0,name
+4505693,67523675,Premier,league,2014-08-03,S2,home,10350991,69583506,"Horanny, Cameel",26,0,0,1,0,name
+4505693,67523675,Premier,league,2014-08-03,S2,home,10350991,10853737,"Walter, Joe",10,0,0,1,0,name
+4505693,67523675,Premier,league,2014-08-03,S2,away,10350982,10819984,"Russell, Eric",5,0,0,1,0,name
+4505760,67523675,Premier,league,2014-08-10,CHMP,home,18647016,63827271,"Kahsay, Ezana",4,0,0,1,0,name
+4505760,67523675,Premier,league,2014-08-10,CHMP,home,18647016,35832771,"Malcolm, Michael",8,0,0,1,0,name
+4505760,67523675,Premier,league,2014-08-10,CHMP,away,10350991,60480087,"Fleck, Rick",15,1,0,0,0,name
+4505760,67523675,Premier,league,2014-08-10,CHMP,away,10350991,46450011,"Oduro, Kwame",8,0,0,1,0,name
+4505760,67523675,Premier,league,2014-08-10,CHMP,away,10350991,59793525,"Pikuzinski, Rudy",9,0,0,1,0,name
+4505760,67523675,Premier,league,2014-08-10,CHMP,away,10350991,10853737,"Walter, Joe",10,0,0,1,0,name
+4505736,67523675,Premier,league,2014-05-04,,home,10358999,10813839,"English, Steve",8,0,0,1,0,name
+4505738,67523675,Premier,league,2014-05-04,,home,10350982,10819992,"Griffiths, Christopher",14,4,0,0,0,name
+4505738,67523675,Premier,league,2014-05-04,,away,15295049,91327260,"Cesar, Gabe",20,0,0,1,0,name
+4505739,67523675,Premier,league,2014-05-04,,away,26895907,35226719,"Mozg, Ben",24,1,1,0,0,name
+4505739,67523675,Premier,league,2014-05-04,,away,26895907,10853741,"Schiappa, Mike",9,1,0,0,0,name
+4505737,67523675,Premier,league,2014-05-04,,home,10350976,10817035,"Butcher, Steve",10,1,0,0,0,name
+4505737,67523675,Premier,league,2014-05-04,,home,10350976,15875435,"Tiedt, Andrew",9,1,0,0,0,name
+4505737,67523675,Premier,league,2014-05-04,,home,10350976,68474549,"Tom, Austin",25,1,0,0,0,name
+4505741,67523675,Premier,league,2014-05-04,,home,18647016,18671056,"Rumbo, Miguel",17,1,0,1,0,name
+4505741,67523675,Premier,league,2014-05-04,,away,10359050,46400208,"Escobar, Mateo",10,0,0,1,0,name
+4505741,67523675,Premier,league,2014-05-04,,away,10359050,68188980,"Nowack, Curt",26,0,1,0,0,name
+4505741,67523675,Premier,league,2014-05-04,,away,10359050,68188951,"Pollak, Alex",3,1,0,0,0,name
+4505741,67523675,Premier,league,2014-05-04,,away,10359050,68188919,"Raftu, Mike",6,1,1,0,0,name
+4505741,67523675,Premier,league,2014-05-04,,away,10359050,59640340,"Sai, Guilford",5,0,0,1,0,name
+4505701,67523675,Premier,league,2014-05-11,,home,26895907,26986822,"Grampp, RJ",16,1,0,0,0,name
+4505701,67523675,Premier,league,2014-05-11,,home,26895907,26986841,"Lawler, Brendan",10,0,1,0,0,name
+4505701,67523675,Premier,league,2014-05-11,,home,26895907,68480221,"Samuels, Asani",19,2,2,0,0,name
+4505701,67523675,Premier,league,2014-05-11,,home,26895907,10853741,"Schiappa, Mike",9,1,1,0,0,name
+4505701,67523675,Premier,league,2014-05-11,,away,10350976,10817036,"Butcher, Frank",13,0,1,0,0,name
+4505701,67523675,Premier,league,2014-05-11,,away,10350976,10817035,"Butcher, Steve",10,2,0,0,0,name
+4505701,67523675,Premier,league,2014-05-11,,away,10350976,,"Staniszewski, Bryan",GK,0,1,0,0,
+4505701,67523675,Premier,league,2014-05-11,,away,10350976,15875435,"Tiedt, Andrew",9,1,0,0,0,name
+4505703,67523675,Premier,league,2014-05-11,,home,10350982,10819992,"Griffiths, Christopher",14,1,0,0,0,name
+4505703,67523675,Premier,league,2014-05-11,,home,10350982,10819982,"Griffiths, Nathan",17,0,0,1,0,name
+4505702,67523675,Premier,league,2014-05-11,,home,18647016,63568940,"Ayandele, Adedamola",6,0,0,0,1,name
+4505702,67523675,Premier,league,2014-05-11,,home,18647016,63568726,"Cruz, Roberto",7,0,0,1,0,name
+4505702,67523675,Premier,league,2014-05-11,,home,18647016,68786042,"Pugliese, Jake",00,0,0,1,0,name
+4505702,67523675,Premier,league,2014-05-11,,away,10359017,26927451,"Kurtz, Nick",G,0,0,1,0,name
+4505704,67523675,Premier,league,2014-05-11,,home,10359050,46400208,"Escobar, Mateo",10,1,0,0,0,name
+4505704,67523675,Premier,league,2014-05-11,,home,10359050,68188980,"Nowack, Curt",26,0,1,0,0,name
+4505704,67523675,Premier,league,2014-05-11,,away,10358999,35523886,"Taulbee, Andre",12,0,0,1,0,name
+4505704,67523675,Premier,league,2014-05-11,,away,10358999,10813855,"Westerholt, Kyle",9,0,0,0,1,name
+4505700,67523675,Premier,league,2014-05-11,,home,15295049,13299400,"McKenna, James",13,0,0,1,0,name
+4505700,67523675,Premier,league,2014-05-11,,home,15295049,46183686,"Tellgren, Mark",15,0,0,1,0,name
+4505700,67523675,Premier,league,2014-05-11,,away,10350979,15868580,"Wainwright, Justin",,0,0,1,0,name
+4505711,67523675,Premier,league,2014-05-18,,home,10350976,10817036,"Butcher, Frank",13,0,0,1,0,name
+4505711,67523675,Premier,league,2014-05-18,,home,10350976,10817035,"Butcher, Steve",10,2,0,0,0,name
+4505711,67523675,Premier,league,2014-05-18,,home,10350976,10817045,"Larracuente, Andrew",21,0,0,1,0,name
+4505711,67523675,Premier,league,2014-05-18,,home,10350976,68474549,"Tom, Austin",25,1,0,0,0,name
+4505711,67523675,Premier,league,2014-05-18,,away,10359050,59640229,"Adil, Ahmed",8,0,0,1,0,name
+4505711,67523675,Premier,league,2014-05-18,,away,10359050,68188980,"Nowack, Curt",26,0,0,0,1,name
+4505709,67523675,Premier,league,2014-05-18,,home,26895907,26986828,"Hofschneider, Justin",21,1,0,0,0,name
+4505709,67523675,Premier,league,2014-05-18,,home,26895907,35226696,"Jackson, Oliver",8,0,1,0,0,name
+4505709,67523675,Premier,league,2014-05-18,,home,26895907,26986841,"Lawler, Brendan",10,2,0,0,0,name
+4505709,67523675,Premier,league,2014-05-18,,home,26895907,68480221,"Samuels, Asani",19,1,1,0,0,name
+4505709,67523675,Premier,league,2014-05-18,,home,26895907,10853741,"Schiappa, Mike",9,0,1,0,0,name
+4505709,67523675,Premier,league,2014-05-18,,away,10358999,35523886,"Taulbee, Andre",12,0,0,1,0,name
+4505708,67523675,Premier,league,2014-05-18,,home,10359074,69035355,"Quattrone, Nick",12,0,0,1,0,name
+4505708,67523675,Premier,league,2014-05-18,,away,10359005,46446691,"Boughton, Gary",10,1,0,0,0,name
+4505708,67523675,Premier,league,2014-05-18,,away,10359005,46446626,"Maier, Derek",2,2,0,0,0,name
+4505708,67523675,Premier,league,2014-05-18,,away,10359005,46446641,"Zelko, Pat",8,1,0,1,0,name
+4505706,67523675,Premier,league,2014-05-18,,home,10350991,68541685,"Walter, Ryan",13,0,0,1,0,name
+4505706,67523675,Premier,league,2014-05-18,,away,10350979,35699268,"Oliver, Colin",8,0,0,1,0,name
+4505710,67523675,Premier,league,2014-05-18,,home,18647016,59934563,"Guardado, Yony",16,0,0,1,0,name
+4505710,67523675,Premier,league,2014-05-18,,home,18647016,60621662,"Mensah, Addae",12,0,0,1,0,name
+4505710,67523675,Premier,league,2014-05-18,,away,10350982,16454093,"Brodfuehrer, Eric",13,2,0,0,0,name
+4505710,67523675,Premier,league,2014-05-18,,away,10350982,15849042,"Loncar, Brandon",7,0,0,1,0,name
+4505712,67523675,Premier,league,2014-06-01,,home,10350979,35870684,"Derkacz, Casey",,2,0,0,0,name
+4505712,67523675,Premier,league,2014-06-01,,home,10350979,35699268,"Oliver, Colin",8,0,0,1,0,name
+4505712,67523675,Premier,league,2014-06-01,,away,26895907,59304149,"Campana, Scott",11,0,1,0,0,name
+4505712,67523675,Premier,league,2014-06-01,,away,26895907,26986841,"Lawler, Brendan",10,1,2,0,0,name
+4505712,67523675,Premier,league,2014-06-01,,away,26895907,26986567,"Lawler, Trevor",17,1,0,0,0,name
+4505712,67523675,Premier,league,2014-06-01,,away,26895907,68480221,"Samuels, Asani",19,0,2,0,0,name
+4505712,67523675,Premier,league,2014-06-01,,away,26895907,10853741,"Schiappa, Mike",9,1,0,0,0,name
+4505712,67523675,Premier,league,2014-06-01,,away,26895907,37219212,"Schwartz, Zack",3,2,0,0,0,name
+4505714,67523675,Premier,league,2014-06-01,,away,10350976,10817035,"Butcher, Steve",10,1,0,0,0,name
+4505714,67523675,Premier,league,2014-06-01,,away,10350976,31714740,"Mermigas, Anthony",1,1,0,0,0,name
+4505714,67523675,Premier,league,2014-06-01,,away,10350976,10816949,"Sengbusch, Garrett",11,1,0,0,0,name
+4505715,67523675,Premier,league,2014-06-01,,home,10358999,10813846,"Lepore, Andrew",7,1,0,0,0,jersey
+4505715,67523675,Premier,league,2014-06-01,,away,10359005,46446691,"Boughton, Gary",10,1,0,0,0,name
+4505715,67523675,Premier,league,2014-06-01,,away,10359005,15896111,"Martinez, David",17,0,0,1,0,name
+4505717,67523675,Premier,league,2014-06-01,,home,10350982,10819992,"Griffiths, Christopher",14,1,0,0,0,name
+4505717,67523675,Premier,league,2014-06-01,,away,10359050,46400208,"Escobar, Mateo",10,0,1,0,0,name
+4505717,67523675,Premier,league,2014-06-01,,away,10359050,68188966,"Owusu, Matthew",22,1,0,0,0,name
+4505717,67523675,Premier,league,2014-06-01,,away,10359050,59640340,"Sai, Guilford",5,0,0,1,0,name
+4505713,67523675,Premier,league,2014-06-01,,home,10359017,15863186,"Huebsch, Timothy",2,0,0,1,0,name
+4505716,67523675,Premier,league,2014-06-01,,home,18647016,35524907,"Gollegly, Aaron",21,0,0,1,0,name
+4505716,67523675,Premier,league,2014-06-01,,away,10359074,68482283,"Rodriguez, Nick",11,0,0,1,0,name
+4505720,67523675,Premier,league,2014-06-08,,home,10350976,10966258,"Hall, Josh",6,1,0,0,0,name
+4505720,67523675,Premier,league,2014-06-08,,home,10350976,59648391,"Herod, Kyle",12,1,0,0,0,name
+4505720,67523675,Premier,league,2014-06-08,,home,10350976,31714740,"Mermigas, Anthony",1,0,0,1,0,name
+4505720,67523675,Premier,league,2014-06-08,,away,10359005,46446691,"Boughton, Gary",10,1,1,0,0,name
+4505720,67523675,Premier,league,2014-06-08,,away,10359005,35760224,"Hein, Hunter",99,0,1,0,0,name
+4505720,67523675,Premier,league,2014-06-08,,away,10359005,15895862,"Hughes, J.J.",20,1,0,0,0,name
+4505720,67523675,Premier,league,2014-06-08,,away,10359005,46446626,"Maier, Derek",2,2,0,0,0,name
+4505720,67523675,Premier,league,2014-06-08,,away,10359005,15896111,"Martinez, David",17,0,0,1,0,name
+4505718,67523675,Premier,league,2014-06-08,,home,15295049,46422957,"Panik, Jeff",6,0,0,1,0,name
+4505718,67523675,Premier,league,2014-06-08,,away,26895907,26986828,"Hofschneider, Justin",21,1,0,0,0,name
+4505718,67523675,Premier,league,2014-06-08,,away,26895907,26986841,"Lawler, Brendan",10,0,1,0,0,name
+4505718,67523675,Premier,league,2014-06-08,,away,26895907,26986567,"Lawler, Trevor",17,1,0,0,0,name
+4505718,67523675,Premier,league,2014-06-08,,away,26895907,35226719,"Mozg, Ben",24,0,1,0,0,name
+4505718,67523675,Premier,league,2014-06-08,,away,26895907,68480221,"Samuels, Asani",19,1,0,0,0,name
+4505722,67523675,Premier,league,2014-06-08,,away,10350982,35686069,"Andrecolich, Jordon",87,0,0,1,0,name
+4505723,67523675,Premier,league,2014-06-08,,away,10359050,46979173,"Abdulaziz, Zein Omar",17,2,1,0,0,name
+4505723,67523675,Premier,league,2014-06-08,,away,10359050,46470984,"Mohamed, Majed",99,1,2,0,0,name
+4505723,67523675,Premier,league,2014-06-08,,away,10359050,68188919,"Raftu, Mike",6,1,0,0,0,name
+4505723,67523675,Premier,league,2014-06-08,,away,10359050,59639629,"Ugorji, James",4,1,0,0,0,name
+4505721,67523675,Premier,league,2014-06-08,,home,18647016,59934563,"Guardado, Yony",16,1,0,0,0,name
+4505721,67523675,Premier,league,2014-06-08,,home,18647016,35524908,"Martin, Ian",14,1,0,0,0,name
+4505721,67523675,Premier,league,2014-06-08,,home,18647016,60621662,"Mensah, Addae",12,0,0,1,0,name
+4505721,67523675,Premier,league,2014-06-08,,home,18647016,18671056,"Rumbo, Miguel",17,1,0,0,0,name
+4505721,67523675,Premier,league,2014-06-08,,home,18647016,39860981,"SaySay, Anthony",13,1,0,0,0,name
+4505721,67523675,Premier,league,2014-06-08,,away,10358999,46151823,"Certo, Ben",19,0,0,0,1,name
+4505721,67523675,Premier,league,2014-06-08,,away,10358999,10813836,"Marlette, Peter",11,0,0,1,0,name
+4505727,67523675,Premier,league,2014-06-15,,home,10358999,10813839,"English, Steve",8,1,0,0,0,name
+4505726,67523675,Premier,league,2014-06-15,,home,26895907,26986579,"Harris, Graham",7,0,1,0,0,name
+4505726,67523675,Premier,league,2014-06-15,,home,26895907,26986841,"Lawler, Brendan",10,0,1,0,0,name
+4505726,67523675,Premier,league,2014-06-15,,home,26895907,68480221,"Samuels, Asani",19,2,0,0,0,name
+4505724,67523675,Premier,league,2014-06-15,,home,10350976,10817035,"Butcher, Steve",10,2,0,0,0,name
+4505729,67523675,Premier,league,2014-06-15,,home,10359005,15895613,"Buscaglia, Nick",24,1,0,0,0,name
+4505729,67523675,Premier,league,2014-06-15,,away,10359050,46979173,"Abdulaziz, Zein Omar",17,1,0,0,0,name
+4505729,67523675,Premier,league,2014-06-15,,away,10359050,15873660,"Boussag, Otmane",9,0,0,1,0,name
+4505729,67523675,Premier,league,2014-06-15,,away,10359050,46400208,"Escobar, Mateo",10,0,0,1,0,name
+4505729,67523675,Premier,league,2014-06-15,,away,10359050,68188966,"Owusu, Matthew",22,0,1,0,0,name
+4505728,67523675,Premier,league,2014-06-15,,away,10350982,16454093,"Brodfuehrer, Eric",13,3,0,0,0,name
+4505728,67523675,Premier,league,2014-06-15,,away,10350982,15844734,"Fusillo, Thomas",3,2,0,0,0,name
+4505728,67523675,Premier,league,2014-06-15,,away,10350982,10819992,"Griffiths, Christopher",14,1,0,0,0,name
+4505725,67523675,Premier,league,2014-06-15,,home,10350991,46450012,"Johnson, Mbwana",19,0,0,1,0,name
+4505725,67523675,Premier,league,2014-06-15,,home,10350991,28352077,"Pihlblad, David",6,0,0,1,0,name
+4505725,67523675,Premier,league,2014-06-15,,away,18647016,68854110,"Geegba, Junior",2,1,0,0,0,name
+4505725,67523675,Premier,league,2014-06-15,,away,18647016,59934563,"Guardado, Yony",16,1,0,1,0,name
+4505725,67523675,Premier,league,2014-06-15,,away,18647016,26994830,"Jodi, Benti",15,0,0,1,0,name
+4505725,67523675,Premier,league,2014-06-15,,away,18647016,63827271,"Kahsay, Ezana",4,0,0,1,0,name
+4505725,67523675,Premier,league,2014-06-15,,away,18647016,18647602,"Mckenzie, Kevin",10,1,0,0,0,name
+4505725,67523675,Premier,league,2014-06-15,,away,18647016,60621662,"Mensah, Addae",12,1,0,0,0,name
+4505725,67523675,Premier,league,2014-06-15,,away,18647016,18671056,"Rumbo, Miguel",17,0,1,0,0,name
+4505733,67523675,Premier,league,2014-06-22,,away,10350976,10817035,"Butcher, Steve",10,2,0,0,0,name
+4505734,67523675,Premier,league,2014-06-22,,home,10359050,15873660,"Boussag, Otmane",9,1,0,0,0,name
+4505734,67523675,Premier,league,2014-06-22,,home,10359050,15873705,"Kadric, Semir",1,0,0,1,0,name
+4505734,67523675,Premier,league,2014-06-22,,home,10359050,59640340,"Sai, Guilford",5,0,0,1,0,name
+4505735,67523675,Premier,league,2014-06-22,,away,10350982,10819982,"Griffiths, Nathan",17,1,0,0,0,name
+4505735,67523675,Premier,league,2014-06-22,,away,10350982,10819984,"Russell, Eric",5,1,0,0,0,name
+4505732,67523675,Premier,league,2014-06-22,,home,26895907,26986567,"Lawler, Trevor",17,1,0,0,0,name
+4505732,67523675,Premier,league,2014-06-22,,home,26895907,35226719,"Mozg, Ben",24,0,1,0,0,name
+4505732,67523675,Premier,league,2014-06-22,,away,18647016,59934563,"Guardado, Yony",16,1,0,0,0,name
+4505732,67523675,Premier,league,2014-06-22,,away,18647016,63827271,"Kahsay, Ezana",4,0,0,1,0,name
+4505696,67523675,Premier,league,2014-06-29,,home,10358999,10813855,"Westerholt, Kyle",9,1,0,0,0,name
+4505696,67523675,Premier,league,2014-06-29,,away,10350976,10816949,"Sengbusch, Garrett",11,0,0,1,0,name
+4505699,67523675,Premier,league,2014-06-29,,home,26895907,26986822,"Grampp, RJ",16,0,2,0,0,name
+4505699,67523675,Premier,league,2014-06-29,,home,26895907,26986579,"Harris, Graham",7,1,1,0,0,name
+4505699,67523675,Premier,league,2014-06-29,,home,26895907,26986828,"Hofschneider, Justin",21,1,0,0,0,name
+4505699,67523675,Premier,league,2014-06-29,,home,26895907,68285165,"LaFlore, AC",26,1,0,0,0,name
+4505699,67523675,Premier,league,2014-06-29,,home,26895907,26986841,"Lawler, Brendan",10,0,2,0,0,name
+4505699,67523675,Premier,league,2014-06-29,,home,26895907,26986567,"Lawler, Trevor",17,0,1,0,0,name
+4505699,67523675,Premier,league,2014-06-29,,home,26895907,35226719,"Mozg, Ben",24,2,0,0,0,name
+4505699,67523675,Premier,league,2014-06-29,,home,26895907,68480221,"Samuels, Asani",19,1,0,0,0,name
+4505699,67523675,Premier,league,2014-06-29,,home,26895907,59304121,"Taylor, Myles",42,1,0,0,0,name
+4505697,67523675,Premier,league,2014-06-29,,home,10350982,13299564,"Holcomb, Clinton",2,1,0,0,0,name
+4505697,67523675,Premier,league,2014-06-29,,home,10350982,15862245,"Steinmetz, Eric",10,1,0,1,0,name
+4505698,67523675,Premier,league,2014-06-29,,home,10359005,69257736,"Falk, Jason",15,1,0,0,0,name
+4505698,67523675,Premier,league,2014-06-29,,home,10359005,15895862,"Hughes, J.J.",20,1,0,0,0,name
+4505698,67523675,Premier,league,2014-06-29,,home,10359005,26910765,"Incho, Andrew",18,0,1,0,0,name
+4505698,67523675,Premier,league,2014-06-29,,away,15295049,91327260,"Cesar, Gabe",20,0,0,1,0,name
+4505694,67523675,Premier,league,2014-06-29,,home,10359050,15873505,"Abdulmalik, Ramsey",16,0,0,0,1,name
+4505694,67523675,Premier,league,2014-06-29,,home,10359050,15873660,"Boussag, Otmane",9,1,0,1,0,name
+4505694,67523675,Premier,league,2014-06-29,,home,10359050,68188966,"Owusu, Matthew",22,0,0,1,0,name
+4505694,67523675,Premier,league,2014-06-29,,home,10359050,68188919,"Raftu, Mike",6,0,0,1,0,name
+4505694,67523675,Premier,league,2014-06-29,,away,10350991,15874661,"Begy, Colin",3,0,0,1,0,name
+4505694,67523675,Premier,league,2014-06-29,,away,10350991,10853737,"Walter, Joe",10,0,0,1,0,name
+4505694,67523675,Premier,league,2014-06-29,,away,10350991,68541685,"Walter, Ryan",13,0,0,1,0,name
+4505742,67523675,Premier,league,2014-07-13,,home,10350982,10819982,"Griffiths, Nathan",17,0,0,1,0,name
+4505742,67523675,Premier,league,2014-07-13,,home,10350982,15849042,"Loncar, Brandon",7,1,0,0,0,name
+4505742,67523675,Premier,league,2014-07-13,,away,26895907,26986822,"Grampp, RJ",16,0,1,0,0,name
+4505742,67523675,Premier,league,2014-07-13,,away,26895907,35226696,"Jackson, Oliver",8,0,1,0,0,name
+4505742,67523675,Premier,league,2014-07-13,,away,26895907,26986841,"Lawler, Brendan",10,2,0,0,0,name
+4505744,67523675,Premier,league,2014-07-13,,home,10350976,10817034,"Cwiklinski, Cory",2,0,0,1,0,name
+4505744,67523675,Premier,league,2014-07-13,,home,10350976,31714740,"Mermigas, Anthony",1,0,0,1,0,name
+4505744,67523675,Premier,league,2014-07-13,,away,18647016,63568726,"Cruz, Roberto",7,0,0,1,0,name
+4505744,67523675,Premier,league,2014-07-13,,away,18647016,35832771,"Malcolm, Michael",8,0,0,1,1,name
+4505745,67523675,Premier,league,2014-07-13,,home,10359050,46400208,"Escobar, Mateo",10,0,1,0,0,name
+4505745,67523675,Premier,league,2014-07-13,,home,10359050,59639629,"Ugorji, James",4,1,0,0,0,name
+4505743,67523675,Premier,league,2014-07-13,,home,10350991,60480087,"Fleck, Rick",15,0,0,1,0,name
+4505743,67523675,Premier,league,2014-07-13,,home,10350991,46450012,"Johnson, Mbwana",19,0,0,1,0,name
+4505743,67523675,Premier,league,2014-07-13,,away,10359005,46446691,"Boughton, Gary",10,1,0,0,0,name
+4505743,67523675,Premier,league,2014-07-13,,away,10359005,26910716,"Cournan, Chris",4,0,0,1,0,name
+4505743,67523675,Premier,league,2014-07-13,,away,10359005,35760224,"Hein, Hunter",99,2,0,0,0,name
+4505746,67523675,Premier,league,2014-07-13,,home,10350979,60452229,"McCoy, Matt",,0,0,1,0,name
+4505746,67523675,Premier,league,2014-07-13,,away,10358999,10813839,"English, Steve",8,1,0,0,0,name
+4505746,67523675,Premier,league,2014-07-13,,away,10358999,10813855,"Westerholt, Kyle",9,1,0,0,0,name
+4505749,67523675,Premier,league,2014-07-20,,home,15295049,46183638,"Tellgren, Erik",7,1,0,0,0,name
+4505749,67523675,Premier,league,2014-07-20,,away,18647016,63827271,"Kahsay, Ezana",4,1,0,0,0,name
+4505749,67523675,Premier,league,2014-07-20,,away,18647016,18671056,"Rumbo, Miguel",17,1,0,0,0,name
+4505749,67523675,Premier,league,2014-07-20,,away,18647016,26994822,"Suazo, Gilberto",11,1,0,0,0,name
+4505748,67523675,Premier,league,2014-07-20,,away,26895907,26986579,"Harris, Graham",7,1,0,0,0,name
+4505748,67523675,Premier,league,2014-07-20,,away,26895907,35226696,"Jackson, Oliver",8,1,0,0,0,name
+4505748,67523675,Premier,league,2014-07-20,,away,26895907,26986841,"Lawler, Brendan",10,0,2,0,0,name
+4505748,67523675,Premier,league,2014-07-20,,away,26895907,68480221,"Samuels, Asani",19,1,1,1,0,name
+4505752,67523675,Premier,league,2014-07-20,,home,10358999,10813842,"Gurney, Bo",6,1,0,0,0,name
+4505752,67523675,Premier,league,2014-07-20,,home,10358999,10813846,"Lepore, Andrew",7,1,0,0,0,jersey
+4505752,67523675,Premier,league,2014-07-20,,home,10358999,10813855,"Westerholt, Kyle",9,2,0,0,0,name
+4505750,67523675,Premier,league,2014-07-20,,home,10350982,46384285,"Braun, Keith",4,0,0,1,0,name
+4505750,67523675,Premier,league,2014-07-20,,home,10350982,10819982,"Griffiths, Nathan",17,1,0,0,0,name
+4505750,67523675,Premier,league,2014-07-20,,home,10350982,15849092,"Mozg, Nick",19,0,0,1,0,name
+4505750,67523675,Premier,league,2014-07-20,,away,10350976,31714740,"Mermigas, Anthony",1,0,0,1,1,name
+4505750,67523675,Premier,league,2014-07-20,,away,10350976,10817043,"Sullivan, Chris",7,0,0,1,0,name
+4505750,67523675,Premier,league,2014-07-20,,away,10350976,68474549,"Tom, Austin",25,0,0,1,0,name
+4505758,67523675,Premier,league,2014-07-27,,away,10358999,76405757,"Dry, Jay",5,0,0,1,0,name
+4505755,67523675,Premier,league,2014-07-27,,home,10350976,70204639,"Fredrickson, Ben",,0,0,1,0,name
+4505755,67523675,Premier,league,2014-07-27,,away,10350991,15864526,"Panaro, Dan",1,0,0,1,0,name
+4505757,67523675,Premier,league,2014-07-27,,home,10359005,35760224,"Hein, Hunter",99,0,0,1,0,name
+4505757,67523675,Premier,league,2014-07-27,,away,18647016,35524907,"Gollegly, Aaron",21,0,0,1,0,name
+4505757,67523675,Premier,league,2014-07-27,,away,18647016,59934563,"Guardado, Yony",16,0,1,0,0,name
+4505757,67523675,Premier,league,2014-07-27,,away,18647016,63827271,"Kahsay, Ezana",4,0,0,1,0,name
+4505757,67523675,Premier,league,2014-07-27,,away,18647016,63745194,"Kudyshev, Zhaxylyk",5,0,0,1,0,name
+4505757,67523675,Premier,league,2014-07-27,,away,18647016,18671056,"Rumbo, Miguel",17,0,0,1,0,name
+4505757,67523675,Premier,league,2014-07-27,,away,18647016,39860981,"SaySay, Anthony",13,0,0,1,0,name
+4505757,67523675,Premier,league,2014-07-27,,away,18647016,17095448,"Wilson, Richard",20,1,0,0,0,name
+4505754,67523675,Premier,league,2014-07-27,,home,10359050,46979173,"Abdulaziz, Zein Omar",17,1,0,0,0,name
+4505754,67523675,Premier,league,2014-07-27,,home,10359050,15873660,"Boussag, Otmane",9,0,0,1,0,name
+4505754,67523675,Premier,league,2014-07-27,,home,10359050,68188980,"Nowack, Curt",26,1,0,0,0,name
+4505754,67523675,Premier,league,2014-07-27,,home,10359050,68188966,"Owusu, Matthew",22,0,1,0,0,name
+4505754,67523675,Premier,league,2014-07-27,,away,26895907,26986822,"Grampp, RJ",16,1,0,0,0,name
+4505754,67523675,Premier,league,2014-07-27,,away,26895907,26986579,"Harris, Graham",7,0,1,0,0,name
+4505754,67523675,Premier,league,2014-07-27,,away,26895907,26986828,"Hofschneider, Justin",21,2,0,0,0,name
+4505754,67523675,Premier,league,2014-07-27,,away,26895907,69189503,"Mounnarat, Steve",4,1,0,0,0,name
+4505754,67523675,Premier,league,2014-07-27,,away,26895907,35226719,"Mozg, Ben",24,0,1,0,0,name
+4505754,67523675,Premier,league,2014-07-27,,away,26895907,68480221,"Samuels, Asani",19,1,2,0,0,name
+4505754,67523675,Premier,league,2014-07-27,,away,26895907,37219212,"Schwartz, Zack",3,0,1,0,0,name
+4506307,67523679,Championship,league,2014-08-03,S2,home,10359008,69520517,"Greco, Sam",17,0,0,1,0,name
+4506307,67523679,Championship,league,2014-08-03,S2,home,10359008,15848759,"Nati, Andy",13,1,0,1,0,name
+4506307,67523679,Championship,league,2014-08-03,S2,home,10359008,68014755,"Reid, Alex",24,0,2,0,0,name
+4506307,67523679,Championship,league,2014-08-03,S2,home,10359008,68326409,"Sammarco, Nick",15,1,0,0,0,name
+4506307,67523679,Championship,league,2014-08-03,S2,away,59260537,31485667,"Mangano, Ryan",3,0,1,0,0,name
+4506307,67523679,Championship,league,2014-08-03,S2,away,59260537,15868598,"Pinzone, Phil",26,1,0,1,0,name
+4506306,67523679,Championship,league,2014-08-03,S1,home,26404479,68746818,"Booze, John",8,1,0,1,0,name
+4506306,67523679,Championship,league,2014-08-03,S1,home,26404479,68268729,"Smith, John",11,1,0,0,0,name
+4506306,67523679,Championship,league,2014-08-03,S1,away,10359035,60951300,"Barnes, Eric",4,0,2,0,0,name
+4506306,67523679,Championship,league,2014-08-03,S1,away,10359035,67993839,"Rodrigues, Miguel",18,2,0,0,0,name
+4506306,67523679,Championship,league,2014-08-03,S1,away,10359035,11700272,"Sims, Justin",3,1,1,0,0,name
+4506306,67523679,Championship,league,2014-08-03,S1,away,10359035,67993602,"Suitor, Ross",15,0,1,0,0,name
+4506306,67523679,Championship,league,2014-08-03,S1,away,10359035,35402982,"Todino, George",23,1,0,0,0,name
+4506374,67523679,Championship,league,2014-08-10,CHMP,home,10359035,46196782,"Braun, Max",13,1,0,0,0,name
+4506374,67523679,Championship,league,2014-08-10,CHMP,home,10359035,67993839,"Rodrigues, Miguel",18,0,1,0,0,name
+4506374,67523679,Championship,league,2014-08-10,CHMP,home,10359035,11700272,"Sims, Justin",3,1,0,0,0,name
+4506374,67523679,Championship,league,2014-08-10,CHMP,home,10359035,67993602,"Suitor, Ross",15,0,1,0,0,name
+4506050,67523677,1st Division,league,2014-08-03,S1,away,59261105,59628303,"Beiter, Pat",31,0,0,1,0,name
+4506050,67523677,1st Division,league,2014-08-03,S1,away,59261105,46203559,"Theuerkauf, Michael",13,0,0,1,0,name
+4506051,67523677,1st Division,league,2014-08-03,S2,home,26891564,15873599,"Abdulmalik, Sami",3,0,0,1,0,name
+4506051,67523677,1st Division,league,2014-08-03,S2,home,26891564,39042188,"Al-bakri, Muktar",6,0,0,1,0,name
+4506051,67523677,1st Division,league,2014-08-03,S2,home,26891564,46430835,"Mohamed, Mohamed",14,0,0,1,0,name
+4506051,67523677,1st Division,league,2014-08-03,S2,away,62886844,63843267,"Abosnena, Abobakir",,0,0,1,0,name
+4506051,67523677,1st Division,league,2014-08-03,S2,away,62886844,26973549,"Alawdi, Najib",13,0,0,1,0,name
+4506051,67523677,1st Division,league,2014-08-03,S2,away,62886844,63476639,"Jawad, Ali",5,0,0,1,0,name
+4506051,67523677,1st Division,league,2014-08-03,S2,away,62886844,10794086,"Kadric, Admir",4,0,0,1,0,name
+4506051,67523677,1st Division,league,2014-08-03,S2,away,62886844,26973734,"Mihab, Hicham",8,0,0,1,0,name
+4506118,67523677,1st Division,league,2014-08-10,CHMP,home,59261105,59628307,"Johnson, Adam",21,0,0,1,0,name
+4506118,67523677,1st Division,league,2014-08-10,CHMP,home,59261105,68251725,"Weber, Micah",9,0,0,1,0,name
+4506118,67523677,1st Division,league,2014-08-10,CHMP,away,26891564,15873599,"Abdulmalik, Sami",3,0,0,1,0,name
+4506118,67523677,1st Division,league,2014-08-10,CHMP,away,26891564,46430573,"Ali, Abdulghani",0,0,0,1,0,name
+4506118,67523677,1st Division,league,2014-08-10,CHMP,away,26891564,15873544,"Omar, Yasin",5,0,0,1,0,name
+4506120,67523678,2nd Division,league,2014-08-03,S2,home,35216066,59672143,"Beach, Tyler",8,0,0,1,0,name
+4506120,67523678,2nd Division,league,2014-08-03,S2,away,67527661,68684921,"Norcia, Chris",,0,0,1,0,name
+4506120,67523678,2nd Division,league,2014-08-03,S2,away,67527661,68684313,"Vucic, Joseph",,0,0,1,0,name
+4506119,67523678,2nd Division,league,2014-08-03,S1,home,67527667,60085983,"Renaud, Jesse",4,1,0,0,0,name
+4506119,67523678,2nd Division,league,2014-08-03,S1,away,15294627,15895887,"King, Wes",27,1,0,1,0,name
+4506119,67523678,2nd Division,league,2014-08-03,S1,away,15294627,46196784,"Minicucci, Richard",19,0,1,0,0,name
+4506187,67523678,2nd Division,league,2014-08-10,CHMP,home,67527667,68459834,"Haines, Ryan",6,0,0,1,0,name
+4506248,67523680,3rd Division,league,2014-08-03,1,home,26892099,13299282,"Costelloe, Tom",14,1,0,0,0,name
+4506248,67523680,3rd Division,league,2014-08-03,1,home,26892099,11228578,"Gallo, Mike",10,0,0,1,0,name
+4506248,67523680,3rd Division,league,2014-08-03,1,home,26892099,13299398,"Kersten, Brian",18,1,0,0,0,name
+4506248,67523680,3rd Division,league,2014-08-03,1,home,26892099,11228579,"Weinert, Doug",9,0,0,1,0,name
+4506248,67523680,3rd Division,league,2014-08-03,1,away,62886826,46494857,"D'Amico, David",,0,0,1,0,name
+4506248,67523680,3rd Division,league,2014-08-03,1,away,62886826,15896100,"Marotto, Al",,0,0,1,0,name
+4506248,67523680,3rd Division,league,2014-08-03,1,away,62886826,64638356,"Mortek, Kyle",,1,0,0,0,name
+4506250,67523680,3rd Division,league,2014-08-10,,home,26892099,12627828,"Rudney, Mike",25,1,0,0,0,name
+4506250,67523680,3rd Division,league,2014-08-10,,away,10359068,10981645,"Knezevic, Danko",77,1,0,0,0,name
+4506250,67523680,3rd Division,league,2014-08-10,,away,10359068,10981638,"Shaflucas, Jon",12,1,0,0,0,name
+4506384,67523681,Over 35,over35,2014-05-30,,home,46512675,60130035,"Marsham, Rob",21,0,0,1,0,name
+4506388,67523681,Over 35,over35,2014-06-06,,home,46512666,31714740,"Mermigas, Anthony",,0,0,1,0,name
+4506388,67523681,Over 35,over35,2014-06-06,,away,46512672,47854417,"Booz, John",8,0,0,1,0,name
+4506388,67523681,Over 35,over35,2014-06-06,,away,46512672,47854595,"Demarsh, Nick",18,0,0,1,0,name
+4506391,67523681,Over 35,over35,2014-06-13,,away,46512669,68597632,"Byrnes, Nate",,0,0,1,0,name
+4506390,67523681,Over 35,over35,2014-06-13,,away,46512666,15851901,"Troncone, Marcello",,0,0,0,1,name
+4506398,67523681,Over 35,over35,2014-06-27,,away,46512672,47854739,"Littere, Mike",13,0,0,1,0,name
+4506398,67523681,Over 35,over35,2014-06-27,,away,46512672,13299325,"Tredo, Dave",21,0,0,1,0,name
+4506402,67523681,Over 35,over35,2014-07-18,,home,46512672,47854417,"Booz, John",8,0,0,1,0,name
+4506402,67523681,Over 35,over35,2014-07-18,,away,46512669,68274705,"Gregoire, Alan",,0,0,1,0,name
+4506402,67523681,Over 35,over35,2014-07-18,,away,46512669,47468108,"Shephard, Richard",55,0,0,1,0,name
+4506403,67523681,Over 35,over35,2014-07-18,,away,46512666,15851901,"Troncone, Marcello",,0,0,0,1,name
+4506251,67523681,Over 35,over35,2014-05-04,,home,62886826,,"Marotto, Al",,0,0,1,0,
+4506251,67523681,Over 35,over35,2014-05-04,,away,67526455,,"Colosimo, Drew",8,1,0,0,0,
+4506251,67523681,Over 35,over35,2014-05-04,,away,67526455,,"Diez, Patrick",13,1,2,0,0,
+4506251,67523681,Over 35,over35,2014-05-04,,away,67526455,,"Jones, Kyle",30,1,2,0,0,
+4506251,67523681,Over 35,over35,2014-05-04,,away,67526455,,"Pimienta-Penalver, Adonis",24,2,1,0,0,
+4506251,67523681,Over 35,over35,2014-05-04,,away,67526455,,"Smith, Lucas",23,0,0,1,0,
+4506253,67523681,Over 35,over35,2014-05-04,,home,26892099,,"Billings, Brent",11,1,0,0,0,
+4506253,67523681,Over 35,over35,2014-05-04,,home,26892099,,"DiBernardo, Nick",22,0,1,0,0,
+4506253,67523681,Over 35,over35,2014-05-04,,home,26892099,,"Gunnersen, Reid",2,1,0,0,0,
+4506253,67523681,Over 35,over35,2014-05-04,,home,26892099,,"Huebsch, Steve",17,1,0,0,0,
+4506253,67523681,Over 35,over35,2014-05-04,,home,26892099,,"Mendola, Nick",4,0,1,0,0,
+4506253,67523681,Over 35,over35,2014-05-04,,home,26892099,,"Tsujimoto, Ben",8,1,0,0,0,
+4506254,67523681,Over 35,over35,2014-05-04,,home,10359068,,"Kunkel, Jeff",80,0,0,1,0,
+4506252,67523681,Over 35,over35,2014-05-04,,home,10359105,,"Page, Andy",20,0,0,1,0,
+4506252,67523681,Over 35,over35,2014-05-04,,away,12579571,,"Folts, Mike",26,0,0,1,0,
+4506259,67523681,Over 35,over35,2014-05-11,,home,67526455,,"Diez, Patrick",13,0,2,0,0,
+4506259,67523681,Over 35,over35,2014-05-11,,home,67526455,,"Doores, Timothy",7,0,1,0,0,
+4506259,67523681,Over 35,over35,2014-05-11,,home,67526455,,"Frey, Alex",14,1,0,0,0,
+4506259,67523681,Over 35,over35,2014-05-11,,home,67526455,,"Jones, Kyle",30,3,0,0,0,
+4506259,67523681,Over 35,over35,2014-05-11,,home,67526455,,"Park, Andrew",0,1,2,0,0,
+4506260,67523681,Over 35,over35,2014-05-11,,home,31566782,,"Hattler, Paul",33,0,0,1,0,
+4506258,67523681,Over 35,over35,2014-05-11,,away,26892099,,"DiBernardo, Anthony",7,0,0,1,0,
+4506265,67523681,Over 35,over35,2014-05-18,,home,12579571,,"Wieand, Rich",27,0,0,1,0,
+4506265,67523681,Over 35,over35,2014-05-18,,away,31566782,,"Toure, Ben",40,0,0,1,0,
+4506264,67523681,Over 35,over35,2014-05-18,,home,10359108,,"Cammarata, Mark",3,0,0,1,0,
+4506264,67523681,Over 35,over35,2014-05-18,,home,10359108,,"Harbison, James",16,0,0,1,0,
+4506264,67523681,Over 35,over35,2014-05-18,,away,26892099,,"Costelloe, Tom",14,1,0,1,0,
+4506264,67523681,Over 35,over35,2014-05-18,,away,26892099,,"Gunnersen, Reid",2,0,1,0,0,
+4506264,67523681,Over 35,over35,2014-05-18,,away,26892099,,"Kersten, Brian",18,1,0,0,0,
+4506264,67523681,Over 35,over35,2014-05-18,,away,26892099,,"Kurpiewski, Steve",03,1,0,0,0,
+4506262,67523681,Over 35,over35,2014-05-18,,home,67526455,,"Colosimo, Drew",8,1,0,0,0,
+4506262,67523681,Over 35,over35,2014-05-18,,home,67526455,,"Diez, Patrick",13,3,0,0,0,
+4506262,67523681,Over 35,over35,2014-05-18,,home,67526455,,"Park, Andrew",0,0,2,0,0,
+4506262,67523681,Over 35,over35,2014-05-18,,home,67526455,,"Pimienta-Penalver, Adonis",24,1,0,0,0,
+4506266,67523681,Over 35,over35,2014-06-01,,home,31566782,,"Kiblin, James",13,0,0,1,0,
+4506266,67523681,Over 35,over35,2014-06-01,,away,67526455,,"Jones, Kyle",30,2,1,0,0,
+4506266,67523681,Over 35,over35,2014-06-01,,away,67526455,,"Pimienta-Penalver, Adonis",24,1,0,1,0,
+4506266,67523681,Over 35,over35,2014-06-01,,away,67526455,,"Smith, Lucas",23,0,1,0,0,
+4506267,67523681,Over 35,over35,2014-06-01,,home,62886826,,"Page, Andy",20,0,1,1,0,
+4506267,67523681,Over 35,over35,2014-06-01,,home,62886826,,"Sleiman, Chad",9,1,0,0,0,
+4506269,67523681,Over 35,over35,2014-06-01,,home,10359108,,"Harbison, James",16,0,0,1,0,
+4506269,67523681,Over 35,over35,2014-06-01,,away,10359068,,"Schaefer, Andrew",50,0,0,1,0,
+4506270,67523681,Over 35,over35,2014-06-01,,home,26892099,,"Costelloe, Tom",14,1,0,0,0,
+4506270,67523681,Over 35,over35,2014-06-01,,home,26892099,,"Kurpiewski, Steve",03,1,0,0,0,
+4506270,67523681,Over 35,over35,2014-06-01,,away,10359114,,"Zbrzezny, Kevin",21,0,0,1,0,
+4506274,67523681,Over 35,over35,2014-06-08,,away,26892099,,"Costelloe, Tom",14,1,0,0,0,
+4506274,67523681,Over 35,over35,2014-06-08,,away,26892099,,"Gallo, Mike",10,0,1,0,0,
+4506274,67523681,Over 35,over35,2014-06-08,,away,26892099,,"Huebsch, Steve",17,1,0,0,0,
+4506274,67523681,Over 35,over35,2014-06-08,,away,26892099,,"Kersten, Brian",18,1,0,0,0,
+4506274,67523681,Over 35,over35,2014-06-08,,away,26892099,,"McLean, Ryan",5,0,1,0,0,
+4506275,67523681,Over 35,over35,2014-06-08,,home,10359114,,"Vik, Steve",14,0,0,1,0,
+4506272,67523681,Over 35,over35,2014-06-08,,home,67526455,,"Cavallari, Dan",21,2,0,0,0,
+4506272,67523681,Over 35,over35,2014-06-08,,home,67526455,,"Diez, Patrick",13,1,1,0,0,
+4506272,67523681,Over 35,over35,2014-06-08,,home,67526455,,"Frey, Alex",14,0,1,0,0,
+4506272,67523681,Over 35,over35,2014-06-08,,home,67526455,,"Frey, Chris",71,0,1,0,0,
+4506272,67523681,Over 35,over35,2014-06-08,,home,67526455,,"Jones, Kyle",30,1,2,0,0,
+4506272,67523681,Over 35,over35,2014-06-08,,home,67526455,,"Waters, George",9,1,0,0,0,
+4506272,67523681,Over 35,over35,2014-06-08,,away,10359105,,"Page, Andy",20,1,0,0,0,
+4506279,67523681,Over 35,over35,2014-06-15,,home,10359114,,"Zbrzezny, Kevin",21,0,0,1,0,
+4506277,67523681,Over 35,over35,2014-06-15,,home,10359108,,"Pacia, Steve",10,0,0,1,0,
+4506277,67523681,Over 35,over35,2014-06-15,,away,67526455,,"Jones, Kyle",30,0,1,0,0,
+4506277,67523681,Over 35,over35,2014-06-15,,away,67526455,,"Park, Andrew",0,1,0,0,0,
+4506276,67523681,Over 35,over35,2014-06-15,,home,26892099,,"Gallo, Mike",10,1,2,0,0,
+4506276,67523681,Over 35,over35,2014-06-15,,home,26892099,,"Kurpiewski, Steve",03,0,0,1,0,
+4506276,67523681,Over 35,over35,2014-06-15,,home,26892099,,"Rudney, Mike",25,2,0,0,0,
+4506276,67523681,Over 35,over35,2014-06-15,,away,62886826,,"D'Amico, David",,0,0,1,0,
+4506276,67523681,Over 35,over35,2014-06-15,,away,62886826,,"Marotto, Al",,0,0,1,0,
+4506278,67523681,Over 35,over35,2014-06-15,,home,10359105,,"Balsdon, Alan",11,0,1,0,0,
+4506278,67523681,Over 35,over35,2014-06-15,,home,10359105,,"Koeppel, Brett",27,1,0,0,0,
+4506278,67523681,Over 35,over35,2014-06-15,,home,10359105,,"Page, Andy",20,1,0,0,0,
+4506278,67523681,Over 35,over35,2014-06-15,,home,10359105,,"Page Sr., Bill",2,1,0,0,0,
+4506278,67523681,Over 35,over35,2014-06-15,,home,10359105,,"Sleiman, Chad",9,1,0,0,0,
+4506278,67523681,Over 35,over35,2014-06-15,,home,10359105,,"Stanek, Warren",3,0,1,0,0,
+4506281,67523681,Over 35,over35,2014-06-22,,home,67526455,,"Colosimo, Drew",8,1,0,0,0,
+4506281,67523681,Over 35,over35,2014-06-22,,home,67526455,,"Dannhauser, Tyler",15,0,1,0,0,
+4506281,67523681,Over 35,over35,2014-06-22,,home,67526455,,"Diez, Patrick",13,1,0,0,0,
+4506281,67523681,Over 35,over35,2014-06-22,,home,67526455,,"Jones, Kyle",30,1,0,0,0,
+4506281,67523681,Over 35,over35,2014-06-22,,home,67526455,,"Pimienta-Penalver, Adonis",24,0,1,0,0,
+4506281,67523681,Over 35,over35,2014-06-22,,home,67526455,,"Smith, Lucas",23,2,0,0,0,
+4506285,67523681,Over 35,over35,2014-06-22,,home,12579571,,"Folts, Mike",26,0,0,1,0,
+4506285,67523681,Over 35,over35,2014-06-22,,away,10359108,,"Harbison, James",16,0,0,1,0,
+4506283,67523681,Over 35,over35,2014-06-22,,away,31566782,,"Perryman, Matthew",21,0,0,1,0,
+4506282,67523681,Over 35,over35,2014-06-22,,home,10359105,,"Sleiman, Chad",9,1,0,0,0,
+4506282,67523681,Over 35,over35,2014-06-22,,away,26892099,,"Gallo, Mike",10,1,2,0,0,
+4506282,67523681,Over 35,over35,2014-06-22,,away,26892099,,"Huebsch, Steve",17,1,0,0,0,
+4506282,67523681,Over 35,over35,2014-06-22,,away,26892099,,"Kersten, Brian",18,1,0,0,0,
+4506287,67523681,Over 35,over35,2014-06-29,,home,26892099,,"Costelloe, Tom",14,1,0,0,0,
+4506287,67523681,Over 35,over35,2014-06-29,,home,26892099,,"DiBernardo, Nick",22,1,0,0,0,
+4506287,67523681,Over 35,over35,2014-06-29,,home,26892099,,"Gallo, Mike",10,1,0,0,0,
+4506287,67523681,Over 35,over35,2014-06-29,,home,26892099,,"Kersten, Brian",18,1,0,0,0,
+4506287,67523681,Over 35,over35,2014-06-29,,home,26892099,,"Sugg, David",16,0,1,0,0,
+4506287,67523681,Over 35,over35,2014-06-29,,home,26892099,,"Tsujimoto, Ben",8,0,1,0,0,
+4506287,67523681,Over 35,over35,2014-06-29,,home,26892099,,"Weinert, Doug",9,1,0,0,0,
+4506287,67523681,Over 35,over35,2014-06-29,,away,67526455,,"Jones, Kyle",30,1,0,0,0,
+4506286,67523681,Over 35,over35,2014-06-29,,home,12579571,,"Gustafik, Alex",22,0,0,1,0,
+4506289,67523681,Over 35,over35,2014-06-29,,away,10359105,,"Koeppel, Brett",27,0,1,0,0,
+4506289,67523681,Over 35,over35,2014-06-29,,away,10359105,,"Pulaski, Ryan",,1,0,0,0,
+4506289,67523681,Over 35,over35,2014-06-29,,away,10359105,,"Sleiman, Chad",9,1,0,0,0,
+4506292,67523681,Over 35,over35,2014-07-13,,home,67526455,,"Colosimo, Drew",8,2,0,0,0,
+4506292,67523681,Over 35,over35,2014-07-13,,home,67526455,,"Diez, Patrick",13,0,1,0,0,
+4506292,67523681,Over 35,over35,2014-07-13,,home,67526455,,"Jones, Kyle",30,2,0,0,0,
+4506292,67523681,Over 35,over35,2014-07-13,,away,12579571,,"Cook, Donald",12,0,0,1,0,
+4506295,67523681,Over 35,over35,2014-07-13,,home,62886826,,"D'Amico, Andy",,0,0,1,0,
+4506295,67523681,Over 35,over35,2014-07-13,,away,10359108,,"Cammarata, Mark",3,0,0,1,0,
+4506293,67523681,Over 35,over35,2014-07-13,,home,10359068,,"Savidge, Mike",79,0,0,1,0,
+4506293,67523681,Over 35,over35,2014-07-13,,away,26892099,,"Black, Robert",21,0,1,0,0,
+4506293,67523681,Over 35,over35,2014-07-13,,away,26892099,,"DiBernardo, Nick",22,1,0,0,0,
+4506293,67523681,Over 35,over35,2014-07-13,,away,26892099,,"Foster, Alex",12,1,0,0,0,
+4506293,67523681,Over 35,over35,2014-07-13,,away,26892099,,"Weinert, Doug",9,0,1,0,0,
+4506294,67523681,Over 35,over35,2014-07-13,,home,10359105,,"Essenburg, Ryan",6,0,0,1,0,
+4506294,67523681,Over 35,over35,2014-07-13,,home,10359105,,"Pulaski, Ryan",,1,0,0,0,
+4506294,67523681,Over 35,over35,2014-07-13,,home,10359105,,"Rehner, Garrett",22,2,0,0,0,
+4506294,67523681,Over 35,over35,2014-07-13,,home,10359105,,"Sleiman, Chad",9,1,0,0,0,
+4506294,67523681,Over 35,over35,2014-07-13,,home,10359105,,"Stanek, Warren",3,1,0,0,0,
+4506294,67523681,Over 35,over35,2014-07-13,,away,31566782,,"Hattler, Paul",33,0,0,1,0,
+4506300,67523681,Over 35,over35,2014-07-20,,home,31566782,,"James, Michael",20,0,0,1,0,
+4506300,67523681,Over 35,over35,2014-07-20,,away,26892099,,"DiBernardo, Anthony",7,0,0,1,0,
+4506300,67523681,Over 35,over35,2014-07-20,,away,26892099,,"Foster, Alex",12,1,0,0,0,
+4506300,67523681,Over 35,over35,2014-07-20,,away,26892099,,"Gallo, Mike",10,0,1,0,0,
+4506300,67523681,Over 35,over35,2014-07-20,,away,26892099,,"Gunnersen, Reid",2,0,2,0,0,
+4506300,67523681,Over 35,over35,2014-07-20,,away,26892099,,"Kurpiewski, Steve",03,0,1,0,0,
+4506300,67523681,Over 35,over35,2014-07-20,,away,26892099,,"Rudney, Mike",25,3,0,0,0,
+4506298,67523681,Over 35,over35,2014-07-20,,away,10359105,,"Sleiman, Chad",9,1,0,0,0,
+4506296,67523681,Over 35,over35,2014-07-20,,home,67526455,,"Diez, Patrick",13,0,1,0,0,
+4506296,67523681,Over 35,over35,2014-07-20,,home,67526455,,"Frey, Alex",14,0,0,1,0,
+4506296,67523681,Over 35,over35,2014-07-20,,home,67526455,,"Jones, Kyle",30,1,0,0,0,
+4506296,67523681,Over 35,over35,2014-07-20,,home,67526455,,"Maska, James",20,0,0,1,0,
+4506296,67523681,Over 35,over35,2014-07-20,,away,62886826,,"Kausner, Chris",,0,0,1,0,
+4506296,67523681,Over 35,over35,2014-07-20,,away,62886826,,"Marotto, Rich",,0,0,1,0,
+4506296,67523681,Over 35,over35,2014-07-20,,away,62886826,,"Waters, Zak",,0,0,1,0,
+4506303,67523681,Over 35,over35,2014-07-27,,home,10359068,,"Glick, Myron",23,0,0,1,0,
+4506303,67523681,Over 35,over35,2014-07-27,,home,10359068,,"Zinaja, Sinisa",10,0,0,1,0,
+4506305,67523681,Over 35,over35,2014-07-27,,home,10359108,,"Paldino, James",11,0,0,1,0,
+4506304,67523681,Over 35,over35,2014-07-27,,home,26892099,,"Billings, Brent",11,2,0,0,0,
+4506304,67523681,Over 35,over35,2014-07-27,,home,26892099,,"Black, Robert",21,0,2,0,0,
+4506304,67523681,Over 35,over35,2014-07-27,,home,26892099,,"Costelloe, Tom",14,0,1,0,0,
+4506304,67523681,Over 35,over35,2014-07-27,,home,26892099,,"DiBernardo, Nick",22,2,0,0,0,
+4506304,67523681,Over 35,over35,2014-07-27,,home,26892099,,"Foster, Alex",12,1,0,0,0,
+4506304,67523681,Over 35,over35,2014-07-27,,home,26892099,,"Gallo, Mike",10,1,1,0,0,
+4506304,67523681,Over 35,over35,2014-07-27,,home,26892099,,"Kersten, Brian",18,1,0,0,0,
+4506304,67523681,Over 35,over35,2014-07-27,,home,26892099,,"McLean, Ryan",5,0,1,0,0,

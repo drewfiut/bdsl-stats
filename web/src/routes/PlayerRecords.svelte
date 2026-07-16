@@ -1,5 +1,5 @@
 <script>
-  import { loadBoard, buildPlayerRecords, buildChampionAgeRecords, buildCareerShapeRecords } from '../lib/data.js';
+  import { loadBoard, buildPlayerRecords, buildChampionAgeRecords, buildCareerShapeRecords, buildScoringRecords } from '../lib/data.js';
   import { hscroll } from '../lib/scrollShadow.js';
 
   let loading = $state(true);
@@ -7,6 +7,7 @@
   let recs = $state(null);
   let champRecs = $state(null);
   let shapeRecs = $state(null);
+  let scoringRecs = $state(null);
 
   $effect(() => {
     loadBoard()
@@ -14,6 +15,7 @@
         recs = buildPlayerRecords(b.allPlayers, b.playersRegistry);
         champRecs = buildChampionAgeRecords(b.allCompetitions, b.allPlayers, b.playersRegistry);
         shapeRecs = buildCareerShapeRecords(b.allPlayers, b.playersRegistry, b.allTeamStandings, b.allCompetitions);
+        scoringRecs = buildScoringRecords(b.allGameStats, b.playersRegistry);
       })
       .catch((e) => (error = e.message || String(e)))
       .finally(() => (loading = false));
@@ -59,6 +61,11 @@
     { id: 'longest-gap-between-appearances', label: 'Longest Gap Between Appearances' },
     { id: 'most-cup-goals', label: 'Most Cup Goals' },
     { id: 'triple-crown-seasons', label: 'Triple Crown Seasons' },
+    { id: 'most-hat-tricks', label: 'Most Hat-Tricks' },
+    { id: 'most-multi-goal-games', label: 'Most Multi-Goal Games' },
+    { id: 'best-single-game-hauls', label: 'Best Single-Game Hauls' },
+    { id: 'most-yellow-cards', label: 'Most Yellow Cards' },
+    { id: 'most-red-cards', label: 'Most Red Cards' },
   ] : []);
 
   // scrollIntoView aligns the target to the viewport top, but the sticky jump nav then overlaps
@@ -597,6 +604,167 @@
         </table>
         {#if !shapeRecs || shapeRecs.tripleCrowns.length === 0}
           <div class="empty">No triple crown seasons recorded yet.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="most-hat-tricks">Most Hat-Tricks</h2>
+    <p class="recdesc">
+      Most games with 3+ recorded goals. Scorer data is manager-entered from match reports,
+      available from roughly 2014 onward and still being backfilled for some seasons.
+    </p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Player</th>
+              <th>Hat-tricks</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each scoringRecs?.mostHatTricks || [] as r, i}
+              {@const rk = i + 1}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l"><a class="pname" href={`#/player/${r.pk}`}>{r.name}</a></td>
+                <td class="pts">{r.hatTricks}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if !scoringRecs || scoringRecs.mostHatTricks.length === 0}
+          <div class="empty">No hat-tricks recorded yet.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="most-multi-goal-games">Most Multi-Goal Games</h2>
+    <p class="recdesc">
+      Most games with 2+ recorded goals. Manager-entered scorer data; a game&rsquo;s recorded
+      scorers can total fewer than the final score.
+    </p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Player</th>
+              <th>Multi-goal games</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each scoringRecs?.mostMultiGoalGames || [] as r, i}
+              {@const rk = i + 1}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l"><a class="pname" href={`#/player/${r.pk}`}>{r.name}</a></td>
+                <td class="pts">{r.multiGoalGames}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if !scoringRecs || scoringRecs.mostMultiGoalGames.length === 0}
+          <div class="empty">No multi-goal games recorded yet.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="best-single-game-hauls">Best Single-Game Hauls</h2>
+    <p class="recdesc">
+      Most goals recorded by one player in a single game. Manager-entered scorer data, available
+      from roughly 2014 onward (assists tracked more consistently in later seasons).
+    </p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Player</th>
+              <th>G</th>
+              <th class="l mobhide">Competition</th>
+              <th class="l mobhide">Season</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each scoringRecs?.bestSingleGame || [] as r, i}
+              {@const rk = i + 1}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l">
+                  <a class="pname" href={`#/player/${r.pk}`}>{r.name}</a>
+                  <div class="submeta"><span class="season">{r.seasonLabel}</span></div>
+                </td>
+                <td class="pts"><a class="pname" href={`#/game/${r.sid}/${r.game_key}`}>{r.g}</a></td>
+                <td class="l mobhide">{r.competition}</td>
+                <td class="l mobhide">{r.seasonLabel}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if !scoringRecs || scoringRecs.bestSingleGame.length === 0}
+          <div class="empty">No games recorded yet.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="most-yellow-cards">Most Yellow Cards</h2>
+    <p class="recdesc">Most yellow cards recorded across a career. Manager-entered match report data.</p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Player</th>
+              <th>Yellow cards</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each scoringRecs?.mostYellowCards || [] as r, i}
+              {@const rk = i + 1}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l"><a class="pname" href={`#/player/${r.pk}`}>{r.name}</a></td>
+                <td class="pts">{r.yellow}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if !scoringRecs || scoringRecs.mostYellowCards.length === 0}
+          <div class="empty">No yellow cards recorded yet.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="most-red-cards">Most Red Cards</h2>
+    <p class="recdesc">Most red cards recorded across a career. Manager-entered match report data.</p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Player</th>
+              <th>Red cards</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each scoringRecs?.mostRedCards || [] as r, i}
+              {@const rk = i + 1}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l"><a class="pname" href={`#/player/${r.pk}`}>{r.name}</a></td>
+                <td class="pts">{r.red}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if !scoringRecs || scoringRecs.mostRedCards.length === 0}
+          <div class="empty">No red cards recorded yet.</div>
         {/if}
       </div>
     </section>
