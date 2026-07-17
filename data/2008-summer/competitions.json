@@ -1,0 +1,34 @@
+[
+  {
+    "competition": "Premier",
+    "comp_type": "league",
+    "tg": "10350019",
+    "champion_club_id": "10350982",
+    "champion_name": "Lazio",
+    "champion_via": "regular"
+  },
+  {
+    "competition": "Championship",
+    "comp_type": "league",
+    "tg": "10350944",
+    "champion_club_id": "10359020",
+    "champion_name": "Aurora",
+    "champion_via": "playoff"
+  },
+  {
+    "competition": "1st Division",
+    "comp_type": "league",
+    "tg": "10350963",
+    "champion_club_id": "10359074",
+    "champion_name": "Lykan FC",
+    "champion_via": "playoff"
+  },
+  {
+    "competition": "2nd Division",
+    "comp_type": "league",
+    "tg": "10350968",
+    "champion_club_id": "10359120",
+    "champion_name": "NS Alliance",
+    "champion_via": "regular"
+  }
+]

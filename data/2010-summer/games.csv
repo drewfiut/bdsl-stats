@@ -1,0 +1,228 @@
+game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id,home_name,away_club_id,away_name,home_score,away_score,status,result_note,location
+1768469,26404415,Premier,league,7042,,2010-07-07,6:30 pm,10350982,Lazio,10350991,BSC Raiders,4,0,played,,Clarence Town Hall Park 1
+1768471,26404415,Premier,league,7044,,2010-07-07,6:30 pm,15294617,Empire 90,10358999,Lakeside FC,5,2,played,,Dimatteo
+1768468,26404415,Premier,league,7041,,2010-07-07,6:30 pm,10359002,West Seneca Strikers,10350976,SoHo FC,0,6,played,,East and West 1
+1768470,26404415,Premier,league,7043,,2010-07-07,6:30 pm,26404479,Rush FC,10350979,Azzurri,1,3,played,,Walden Pond Park 1
+1768472,26404415,Premier,league,7045,,2010-07-11,4:00 pm,10350976,SoHo FC,26404479,Rush FC,7,1,played,,Nichols School Strauss Truscott
+1768474,26404415,Premier,league,7047,,2010-07-11,6:00 pm,10350991,BSC Raiders,10359002,West Seneca Strikers,2,1,played,,Nichols School Peek
+1768473,26404415,Premier,league,7046,,2010-07-11,6:00 pm,10358999,Lakeside FC,10350982,Lazio,1,2,played,,Nichols School Strauss Truscott
+1768475,26404415,Premier,league,7048,,2010-07-11,6:00 pm,10350979,Azzurri,15294617,Empire 90,3,2,played,,Walden Pond Park 1
+1768479,26404415,Premier,league,7052,,2010-07-18,6:00 pm,10350982,Lazio,15294617,Empire 90,2,3,played,,Clarence Town Hall Park 1
+1768477,26404415,Premier,league,7050,,2010-07-18,6:00 pm,10350976,SoHo FC,10358999,Lakeside FC,1,4,played,,Nichols School Peek
+1768476,26404415,Premier,league,7049,,2010-07-18,6:00 pm,10350991,BSC Raiders,26404479,Rush FC,3,1,played,,Nichols School Strauss Truscott
+1768478,26404415,Premier,league,7051,,2010-07-18,6:00 pm,10350979,Azzurri,10359002,West Seneca Strikers,3,2,played,,Walden Pond Park 1
+1768481,26404415,Premier,league,7054,,2010-07-25,4:00 pm,10350982,Lazio,26404479,Rush FC,3,3,played,,Clarence Town Hall Park 1
+1768482,26404415,Premier,league,7055,,2010-07-25,6:00 pm,15294617,Empire 90,10359002,West Seneca Strikers,3,2,played,,Dimatteo
+1768480,26404415,Premier,league,7053,,2010-07-25,6:00 pm,10350991,BSC Raiders,10358999,Lakeside FC,0,2,played,,Nichols School Strauss Truscott
+1768483,26404415,Premier,league,7056,,2010-07-25,6:00 pm,10350979,Azzurri,10350976,SoHo FC,2,7,played,,Walden Pond Park 1
+1768447,26404415,Premier,league,7020,,2010-06-02,6:30 pm,10359002,West Seneca Strikers,15294617,Empire 90,1,2,played,,East and West 1
+1768446,26404415,Premier,league,7019,,2010-06-02,6:30 pm,26404479,Rush FC,10350982,Lazio,0,4,played,,Walden Pond Park 1
+1768444,26404415,Premier,league,7017,,2010-06-02,6:30 pm,10358999,Lakeside FC,10350991,BSC Raiders,1,2,played,,West Seneca Soccer Complex A
+1768445,26404415,Premier,league,7018,,2010-06-02,6:30 pm,10350976,SoHo FC,10350979,Azzurri,7,1,played,,West Seneca Soccer Complex B
+1768450,26404415,Premier,league,7023,,2010-06-06,4:00 pm,10350976,SoHo FC,10350982,Lazio,1,0,played,,Nichols School Strauss Truscott
+1768449,26404415,Premier,league,7022,,2010-06-06,6:00 pm,10358999,Lakeside FC,10350979,Azzurri,1,1,played,,Nichols School Peek
+1768448,26404415,Premier,league,7021,,2010-06-06,6:00 pm,10350991,BSC Raiders,15294617,Empire 90,2,1,played,,Nichols School Strauss Truscott
+1768451,26404415,Premier,league,7024,,2010-06-06,6:00 pm,26404479,Rush FC,10359002,West Seneca Strikers,2,3,played,,Walden Pond Park 1
+1768452,26404415,Premier,league,7025,,2010-06-13,4:00 pm,10350976,SoHo FC,10359002,West Seneca Strikers,3,1,played,,Nichols School Strauss Truscott
+1768455,26404415,Premier,league,7028,,2010-06-13,6:00 pm,10358999,Lakeside FC,15294617,Empire 90,5,1,played,,Nichols School Peek
+1768453,26404415,Premier,league,7026,,2010-06-13,6:00 pm,10350991,BSC Raiders,10350982,Lazio,2,2,played,,Nichols School Strauss Truscott
+1768454,26404415,Premier,league,7027,,2010-06-13,6:00 pm,10350979,Azzurri,26404479,Rush FC,3,1,played,,Walden Pond Park 1
+1768457,26404415,Premier,league,7030,,2010-06-20,6:00 pm,10350982,Lazio,10358999,Lakeside FC,4,1,played,,Clarence Town Hall Park 1
+1768459,26404415,Premier,league,7032,,2010-06-20,6:00 pm,15294617,Empire 90,10350979,Azzurri,4,1,played,,Dimatteo
+1768458,26404415,Premier,league,7031,,2010-06-20,6:00 pm,10359002,West Seneca Strikers,10350991,BSC Raiders,2,2,played,,East and West 1
+1768456,26404415,Premier,league,7029,,2010-06-20,6:00 pm,26404479,Rush FC,10350976,SoHo FC,1,2,played,,Walden Pond Park 1
+1768461,26404415,Premier,league,7034,,2010-06-23,6:30 pm,10350991,BSC Raiders,10350976,SoHo FC,1,0,played,,Nichols School Peek
+1768460,26404415,Premier,league,7033,,2010-06-23,6:30 pm,10358999,Lakeside FC,10359002,West Seneca Strikers,1,1,played,,Nichols School Strauss Truscott
+1768462,26404415,Premier,league,7035,,2010-06-23,6:30 pm,10350979,Azzurri,10350982,Lazio,4,0,played,,Walden Pond Park 1
+1768463,26404415,Premier,league,7036,,2010-06-23,6:30 pm,15294617,Empire 90,26404479,Rush FC,0,1,played,,West Seneca Soccer Complex A
+1768465,26404415,Premier,league,7038,,2010-06-27,4:00 pm,10350976,SoHo FC,15294617,Empire 90,3,0,played,,Nichols School Strauss Truscott
+1768464,26404415,Premier,league,7037,,2010-06-27,6:00 pm,10359002,West Seneca Strikers,10350982,Lazio,0,3,played,,East and West 1
+1768467,26404415,Premier,league,7040,,2010-06-27,6:00 pm,10350991,BSC Raiders,10350979,Azzurri,3,0,played,,Nichols School Peek
+1768466,26404415,Premier,league,7039,,2010-06-27,6:00 pm,10358999,Lakeside FC,26404479,Rush FC,0,0,played,,Nichols School Strauss Truscott
+4639724,26404427,Championship,league,7751,SF1,2010-08-01,6:00 pm,10359005,Clarence,10359029,Panthers,4,1,played,FT,Clarence Town Hall Park 1
+4639725,26404427,Championship,league,7752,SF2,2010-08-01,6:00 pm,10359074,Lykan FC,15294612,Tonawanda City,2,1,played,FT,Sahlen's Sportspark 1
+4639726,26404427,Championship,league,7753,CHMP,2010-08-08,6:00 pm,10359005,Clarence,10359074,Lykan FC,0,2,played,,Nichols School Strauss Truscott
+1768740,26404427,Championship,league,7227,,2010-06-06,4:00 pm,18647016,Buffalo United SS,10359020,Aurora,1,2,played,,ECC North
+1768739,26404427,Championship,league,7226,,2010-06-06,6:00 pm,10359017,Celtic United,10359029,Panthers,1,1,played,,Clarence Soccer Center 1
+1768738,26404427,Championship,league,7225,,2010-06-06,6:00 pm,10359005,Clarence,26891406,FC Royals,1,1,played,,Clarence Town Hall Park 1
+1768741,26404427,Championship,league,7228,,2010-06-06,6:00 pm,10359050,Yemen Elite,10359023,Polonia,2,2,played,,Lehigh
+1768743,26404427,Championship,league,7230,,2010-06-06,6:00 pm,10359008,Roos FC,15294612,Tonawanda City,1,1,played,,Orchard Park Soccer Complex 1
+1768742,26404427,Championship,league,7229,,2010-06-06,6:00 pm,10359074,Lykan FC,15295049,Chelsea,2,2,played,,Sahlen's Sportspark 1
+1768747,26404427,Championship,league,7234,,2010-06-13,4:00 pm,18647016,Buffalo United SS,10359023,Polonia,4,3,played,,ECC North
+1768744,26404427,Championship,league,7231,,2010-06-13,6:00 pm,10359005,Clarence,10359050,Yemen Elite,5,0,played,,Clarence Town Hall Park 1
+1768748,26404427,Championship,league,7235,,2010-06-13,6:00 pm,10359029,Panthers,10359008,Roos FC,2,2,played,,Ellicott Creek Park 1
+1768745,26404427,Championship,league,7232,,2010-06-13,6:00 pm,15295049,Chelsea,10359017,Celtic United,0,2,played,,Ives Pond 1
+1768746,26404427,Championship,league,7233,,2010-06-13,6:00 pm,10359074,Lykan FC,10359020,Aurora,1,0,played,,Sahlen's Sportspark 1
+1768749,26404427,Championship,league,7236,,2010-06-13,6:00 pm,26891406,FC Royals,15294612,Tonawanda City,2,4,played,,Sahlen's Sportspark 1
+1768752,26404427,Championship,league,7239,,2010-06-20,6:00 pm,10359017,Celtic United,10359005,Clarence,1,2,played,,Clarence Soccer Center 1
+1768753,26404427,Championship,league,7240,,2010-06-20,6:00 pm,10359020,Aurora,10359029,Panthers,1,0,played,,Hamlin Park 1
+1768755,26404427,Championship,league,7242,,2010-06-20,6:00 pm,15295049,Chelsea,18647016,Buffalo United SS,1,1,played,,Ives Pond 1
+1768754,26404427,Championship,league,7241,,2010-06-20,6:00 pm,10359050,Yemen Elite,26891406,FC Royals,0,3,played,,Lehigh
+1768750,26404427,Championship,league,7237,,2010-06-20,6:00 pm,10359074,Lykan FC,15294612,Tonawanda City,3,0,played,,Sahlen's Sportspark 1
+1768751,26404427,Championship,league,7238,,2010-06-20,6:00 pm,10359023,Polonia,10359008,Roos FC,1,2,played,,Sahlen's Sportspark 1
+1768757,26404427,Championship,league,7244,,2010-06-27,6:00 pm,10359017,Celtic United,10359008,Roos FC,1,1,played,,Clarence Soccer Center 1
+1768756,26404427,Championship,league,7243,,2010-06-27,6:00 pm,10359005,Clarence,10359029,Panthers,6,1,played,,Clarence Town Hall Park 1
+1768760,26404427,Championship,league,7247,,2010-06-27,6:00 pm,10359020,Aurora,10359050,Yemen Elite,2,0,played,,Hamlin Park 1
+1768759,26404427,Championship,league,7246,,2010-06-27,6:00 pm,15294612,Tonawanda City,18647016,Buffalo United SS,2,4,played,,Ives Pond 1
+1768758,26404427,Championship,league,7245,,2010-06-27,6:00 pm,10359074,Lykan FC,26891406,FC Royals,4,1,played,,Sahlen's Sportspark 1
+1768761,26404427,Championship,league,7248,,2010-06-27,6:00 pm,10359023,Polonia,15295049,Chelsea,1,5,played,,Sahlen's Sportspark 1
+1768765,26404427,Championship,league,7252,,2010-07-11,4:00 pm,18647016,Buffalo United SS,10359074,Lykan FC,5,0,played,,ECC North
+1768763,26404427,Championship,league,7250,,2010-07-11,6:00 pm,10359017,Celtic United,10359020,Aurora,1,2,played,,Clarence Soccer Center 1
+1768762,26404427,Championship,league,7249,,2010-07-11,6:00 pm,10359005,Clarence,10359023,Polonia,4,0,played,,Clarence Town Hall Park 1
+1768764,26404427,Championship,league,7251,,2010-07-11,6:00 pm,10359050,Yemen Elite,15294612,Tonawanda City,0,4,played,,Lehigh
+1768767,26404427,Championship,league,7254,,2010-07-11,6:00 pm,10359008,Roos FC,15295049,Chelsea,1,2,played,,Orchard Park Soccer Complex 1
+1768766,26404427,Championship,league,7253,,2010-07-11,6:00 pm,26891406,FC Royals,10359029,Panthers,0,6,played,,Sahlen's Sportspark 1
+1768768,26404427,Championship,league,7255,,2010-07-18,4:00 pm,18647016,Buffalo United SS,10359005,Clarence,2,4,played,,ECC North
+1768773,26404427,Championship,league,7260,,2010-07-18,4:00 pm,15295049,Chelsea,26891406,FC Royals,2,2,played,,Ives Pond 1
+1768769,26404427,Championship,league,7256,,2010-07-18,6:00 pm,10359017,Celtic United,10359074,Lykan FC,0,7,played,,Clarence Soccer Center 1
+1768772,26404427,Championship,league,7259,,2010-07-18,6:00 pm,10359029,Panthers,10359050,Yemen Elite,2,0,played,,Ellicott Creek Park 1
+1768771,26404427,Championship,league,7258,,2010-07-18,6:00 pm,15294612,Tonawanda City,10359023,Polonia,7,0,played,,Ives Pond 1
+1768770,26404427,Championship,league,7257,,2010-07-18,6:00 pm,10359008,Roos FC,10359020,Aurora,2,1,played,,Orchard Park Soccer Complex 1
+1768775,26404427,Championship,league,7262,,2010-07-25,6:00 pm,10359017,Celtic United,26891406,FC Royals,1,0,played,,Clarence Soccer Center 1
+1768774,26404427,Championship,league,7261,,2010-07-25,6:00 pm,15295049,Chelsea,10359005,Clarence,1,1,played,,Clarence Town Hall Park 1
+1768779,26404427,Championship,league,7266,,2010-07-25,6:00 pm,15294612,Tonawanda City,10359029,Panthers,3,2,played,,Ives Pond 1
+1768777,26404427,Championship,league,7264,,2010-07-25,6:00 pm,10359008,Roos FC,18647016,Buffalo United SS,1,2,played,,Orchard Park Soccer Complex 1
+1768776,26404427,Championship,league,7263,,2010-07-25,6:00 pm,10359023,Polonia,10359020,Aurora,4,3,played,,Sahlen's Sportspark 1
+1768778,26404427,Championship,league,7265,,2010-07-25,6:00 pm,10359074,Lykan FC,10359050,Yemen Elite,2,0,played,,Sahlen's Sportspark 1
+1768834,26404423,1st Division,league,7454,,2010-07-11,4:00 pm,10359011,District 5,15294622,Hawks,5,2,played,,Orchard Park Soccer Complex 1
+1768830,26404423,1st Division,league,7450,,2010-07-11,6:00 pm,26895907,Amherst Sharpshooters,10359120,NS Alliance,0,2,played,,College Parkway 1
+1768829,26404423,1st Division,league,7449,,2010-07-11,6:00 pm,10359047,BSC International,26891552,Buffalo Celtic,5,3,played,,Delaware Park 1
+1768831,26404423,1st Division,league,7451,,2010-07-11,6:00 pm,10359062,Tonawanda United,67526455,PLYSA Toros,2,0,played,,Ives Pond 1
+1768832,26404423,1st Division,league,7452,,2010-07-11,6:00 pm,10359080,Alden Eclipse,10359086,Rangers,2,1,played,,Rehm Road
+1768836,26404423,1st Division,league,7456,,2010-07-18,6:00 pm,15294622,Hawks,10359062,Tonawanda United,2,2,played,,Hilbert College
+1768838,26404423,1st Division,league,7458,,2010-07-18,6:00 pm,10359120,NS Alliance,67526455,PLYSA Toros,3,1,played,,Orchard Park Soccer Complex 1
+1768837,26404423,1st Division,league,7457,,2010-07-18,6:00 pm,10359086,Rangers,26891552,Buffalo Celtic,2,1,played,,Rehm Road
+1768835,26404423,1st Division,league,7455,,2010-07-18,6:00 pm,10359080,Alden Eclipse,10359011,District 5,2,4,played,,Robert Smith Park (Alden)
+1768839,26404423,1st Division,league,7459,,2010-07-18,6:00 pm,10359014,Grand Island,10359047,BSC International,0,4,played,,Veteran's Park (GI) 1
+1768841,26404423,1st Division,league,7461,,2010-07-25,4:00 pm,26891552,Buffalo Celtic,67526455,PLYSA Toros,5,1,played,,Clarence Soccer Center 2
+1768846,26404423,1st Division,league,7466,,2010-07-25,4:00 pm,10359011,District 5,10359047,BSC International,1,1,played,,Orchard Park Soccer Complex 1
+1768845,26404423,1st Division,league,7465,,2010-07-25,6:00 pm,15294622,Hawks,10359086,Rangers,0,6,played,,Hilbert College
+1768842,26404423,1st Division,league,7462,,2010-07-25,6:00 pm,10359120,NS Alliance,10359080,Alden Eclipse,3,1,played,,Orchard Park Soccer Complex 1
+1768843,26404423,1st Division,league,7463,,2010-07-25,6:00 pm,10359014,Grand Island,26895907,Amherst Sharpshooters,6,3,played,,Veteran's Park (GI) 1
+1768786,26404423,1st Division,league,7406,,2010-05-02,4:00 pm,10359011,District 5,10359086,Rangers,2,3,played,,Orchard Park Soccer Complex 1
+1768781,26404423,1st Division,league,7401,,2010-05-02,6:00 pm,26895907,Amherst Sharpshooters,10359080,Alden Eclipse,1,1,played,,College Parkway 1
+1768782,26404423,1st Division,league,7402,,2010-05-02,6:00 pm,10359047,BSC International,10359062,Tonawanda United,2,0,played,,Delaware Park 1
+1768785,26404423,1st Division,league,7405,,2010-05-02,6:00 pm,15294622,Hawks,26891552,Buffalo Celtic,1,5,played,,Hilbert College
+1768783,26404423,1st Division,league,7403,,2010-05-02,6:00 pm,67526455,PLYSA Toros,10359014,Grand Island,0,6,played,,Wendleville Fire Hall 1
+1768792,26404423,1st Division,league,7412,,2010-05-09,4:00 pm,10359011,District 5,67526455,PLYSA Toros,3,3,played,,Orchard Park Soccer Complex 1
+1768787,26404423,1st Division,league,7407,,2010-05-09,6:00 pm,10359062,Tonawanda United,26895907,Amherst Sharpshooters,0,1,played,,Ives Pond 1
+1768790,26404423,1st Division,league,7410,,2010-05-09,6:00 pm,10359120,NS Alliance,10359014,Grand Island,4,4,played,,Orchard Park Soccer Complex 1
+1768791,26404423,1st Division,league,7411,,2010-05-09,6:00 pm,10359086,Rangers,10359047,BSC International,3,1,played,,Rehm Road
+1768788,26404423,1st Division,league,7408,,2010-05-09,6:00 pm,10359080,Alden Eclipse,15294622,Hawks,2,2,played,,Robert Smith Park (Alden)
+1768798,26404423,1st Division,league,7418,,2010-05-16,4:00 pm,10359120,NS Alliance,10359011,District 5,2,3,played,,Orchard Park Soccer Complex 1
+1768796,26404423,1st Division,league,7416,,2010-05-16,6:00 pm,26895907,Amherst Sharpshooters,10359086,Rangers,0,2,played,,College Parkway 1
+1768797,26404423,1st Division,league,7417,,2010-05-16,6:00 pm,10359047,BSC International,67526455,PLYSA Toros,1,1,played,,Delaware Park 1
+1768795,26404423,1st Division,league,7415,,2010-05-16,6:00 pm,10359062,Tonawanda United,10359080,Alden Eclipse,1,3,played,,Ives Pond 1
+1768793,26404423,1st Division,league,7413,,2010-05-16,6:00 pm,10359014,Grand Island,26891552,Buffalo Celtic,2,3,played,,Veteran's Park (GI) 1
+1768799,26404423,1st Division,league,7419,,2010-05-23,6:00 pm,26891552,Buffalo Celtic,26895907,Amherst Sharpshooters,1,1,played,,Clarence Soccer Center 2
+1768804,26404423,1st Division,league,7424,,2010-05-23,6:00 pm,15294622,Hawks,10359047,BSC International,0,6,played,,Hilbert College
+1768800,26404423,1st Division,league,7420,,2010-05-23,6:00 pm,10359120,NS Alliance,10359062,Tonawanda United,3,1,played,,Orchard Park Soccer Complex 1
+1768802,26404423,1st Division,league,7422,,2010-05-23,6:00 pm,10359014,Grand Island,10359080,Alden Eclipse,3,6,played,,Veteran's Park (GI) 1
+1768801,26404423,1st Division,league,7421,,2010-05-23,6:00 pm,67526455,PLYSA Toros,10359086,Rangers,2,1,played,,Wendleville Fire Hall 1
+4640268,26404425,2nd Division,league,7755,SF2,2010-08-01,6:00 pm,10359068,Great Lakes FC,10359026,Elbow Soup FC,2,1,played,,Ives Pond 1
+4640267,26404425,2nd Division,league,7754,SF1,2010-08-01,6:00 pm,10359038,Hamburg Monarchs,10359077,WNY United Reds,1,2,played,FT,Nike Base 1
+4640269,26404425,2nd Division,league,7756,CHMP,2010-08-08,6:00 pm,10359068,Great Lakes FC,10359077,WNY United Reds,2,3,played,PK,Ives Pond 1
+1769515,26404425,2nd Division,league,7630,,2010-06-06,4:00 pm,10359092,Ukraine,10359032,Lakeshore,5,0,played,,Rehm Road
+1769512,26404425,2nd Division,league,7627,,2010-06-06,6:00 pm,12579600,Wolfpack,15294627,Niagara FC,4,1,played,,East and West 2
+1769513,26404425,2nd Division,league,7628,,2010-06-06,6:00 pm,12579571,Devils,26892007,Old First Ward,1,0,played,,Edison Elementary 1
+1769510,26404425,2nd Division,league,7625,,2010-06-06,6:00 pm,10359038,Hamburg Monarchs,10359026,Elbow Soup FC,4,2,played,,Nike Base 1
+1769514,26404425,2nd Division,league,7629,,2010-06-06,6:00 pm,10359077,WNY United Reds,10359068,Great Lakes FC,0,2,played,,UB Main Rotary Field
+1769511,26404425,2nd Division,league,7626,,2010-06-06,6:00 pm,15296244,Wolf Mill,10359123,Cheektowaga,1,2,played,,Willow Ridge Elementary 1
+1769516,26404425,2nd Division,league,7631,,2010-06-13,6:00 pm,10359026,Elbow Soup FC,10359068,Great Lakes FC,1,3,played,,Fireman's Park (Depew) 1
+1769521,26404425,2nd Division,league,7636,,2010-06-13,6:00 pm,10359038,Hamburg Monarchs,12579571,Devils,3,1,played,,Nike Base 1
+1769519,26404425,2nd Division,league,7634,,2010-06-13,6:00 pm,15294627,Niagara FC,10359092,Ukraine,4,0,played,,Reservoir Park
+1769518,26404425,2nd Division,league,7633,,2010-06-13,6:00 pm,10359032,Lakeshore,26892007,Old First Ward,1,2,played,,Wendt Beach 1
+1769520,26404425,2nd Division,league,7635,,2010-06-13,6:00 pm,15296244,Wolf Mill,10359077,WNY United Reds,1,2,played,,Willow Ridge Elementary 1
+1769517,26404425,2nd Division,league,7632,,2010-06-13,6:00 pm,10359123,Cheektowaga,12579600,Wolfpack,2,2,played,,Woodrow Wilson Elementary
+1769522,26404425,2nd Division,league,7637,,2010-06-20,6:00 pm,12579600,Wolfpack,10359026,Elbow Soup FC,1,1,played,,East and West 2
+1769523,26404425,2nd Division,league,7638,,2010-06-20,6:00 pm,12579571,Devils,10359123,Cheektowaga,1,1,played,,Edison Elementary 1
+1769527,26404425,2nd Division,league,7642,,2010-06-20,6:00 pm,26892007,Old First Ward,10359068,Great Lakes FC,0,2,played,,Ellicott Creek Park 1
+1769524,26404425,2nd Division,league,7639,,2010-06-20,6:00 pm,10359077,WNY United Reds,10359038,Hamburg Monarchs,4,2,played,,UB Main Rotary Field
+1769526,26404425,2nd Division,league,7641,,2010-06-20,6:00 pm,10359032,Lakeshore,15294627,Niagara FC,1,1,played,,Wendt Beach 1
+1769525,26404425,2nd Division,league,7640,,2010-06-20,6:00 pm,15296244,Wolf Mill,10359092,Ukraine,4,4,played,,Willow Ridge Elementary 1
+1769532,26404425,2nd Division,league,7647,,2010-06-27,4:00 pm,10359092,Ukraine,12579571,Devils,6,2,played,,Rehm Road
+1769533,26404425,2nd Division,league,7648,,2010-06-27,6:00 pm,26892007,Old First Ward,10359038,Hamburg Monarchs,0,2,played,,Ellicott Creek Park 1
+1769528,26404425,2nd Division,league,7643,,2010-06-27,6:00 pm,10359026,Elbow Soup FC,10359077,WNY United Reds,2,1,played,,Fireman's Park (Depew) 1
+1769529,26404425,2nd Division,league,7644,,2010-06-27,6:00 pm,10359068,Great Lakes FC,10359123,Cheektowaga,2,2,played,,Ives Pond 1
+1769530,26404425,2nd Division,league,7645,,2010-06-27,6:00 pm,15294627,Niagara FC,15296244,Wolf Mill,2,0,played,,Reservoir Park
+1769531,26404425,2nd Division,league,7646,,2010-06-27,6:00 pm,10359032,Lakeshore,12579600,Wolfpack,0,2,played,,Wendt Beach 1
+1769561,26438897,3rd Division,league,7702,,2010-05-02,6:00 pm,10359102,WNY United,10359117,Dutch FC,4,1,played,,Ellicott Creek Park 1
+1769560,26438897,3rd Division,league,7701,,2010-05-02,6:00 pm,26892099,Rampart FC,10359111,SPAL Buffalo FC,3,7,played,,Kenan Center 1
+1769564,26438897,3rd Division,league,7705,,2010-05-02,6:00 pm,10359114,Southtowns,26892105,Buffalo Soldiers,2,0,played,,Orchard Park Soccer Complex 3
+1769562,26438897,3rd Division,league,7703,,2010-05-02,6:00 pm,15296948,MAC Eagles SC,15296943,Depew Village,1,0,played,,Sciole Elementary
+1769563,26438897,3rd Division,league,7704,,2010-05-02,6:00 pm,10359108,Stone Jug,10359105,C.S. Italia,1,1,played,,Thomas Marks Elementary School 1
+1769567,26438897,3rd Division,league,7708,,2010-05-09,4:00 pm,10359117,Dutch FC,10359108,Stone Jug,0,1,played,,Hamlin Park 1
+1769569,26438897,3rd Division,league,7710,,2010-05-09,6:00 pm,10359102,WNY United,10359114,Southtowns,5,3,played,,Ellicott Creek Park 1
+1769566,26438897,3rd Division,league,7707,,2010-05-09,6:00 pm,26892099,Rampart FC,15296943,Depew Village,1,6,played,,Kenan Center 1
+1769568,26438897,3rd Division,league,7709,,2010-05-09,6:00 pm,26892105,Buffalo Soldiers,15296948,MAC Eagles SC,0,12,played,,No Home Field 1
+1769565,26438897,3rd Division,league,7706,,2010-05-09,6:00 pm,10359105,C.S. Italia,10359111,SPAL Buffalo FC,1,3,played,,Wendleville Fire Hall 1
+1769574,26438897,3rd Division,league,7715,,2010-05-16,4:00 pm,26892105,Buffalo Soldiers,10359108,Stone Jug,0,2,played,,No Home Field 1
+1769571,26438897,3rd Division,league,7712,,2010-05-16,6:00 pm,15296943,Depew Village,10359102,WNY United,4,2,played,,Fireman's Park (Depew) 1
+1769573,26438897,3rd Division,league,7714,,2010-05-16,6:00 pm,10359111,SPAL Buffalo FC,15296948,MAC Eagles SC,2,3,played,,Front Park 1
+1769572,26438897,3rd Division,league,7713,,2010-05-16,6:00 pm,26892099,Rampart FC,10359114,Southtowns,0,4,played,,Kenan Center 1
+1769570,26438897,3rd Division,league,7711,,2010-05-16,6:00 pm,10359105,C.S. Italia,10359117,Dutch FC,3,1,played,,Wendleville Fire Hall 1
+1769579,26438897,3rd Division,league,7720,,2010-05-23,4:00 pm,10359117,Dutch FC,10359114,Southtowns,1,6,played,,Hamlin Park 1
+1769578,26438897,3rd Division,league,7719,,2010-05-23,6:00 pm,10359111,SPAL Buffalo FC,10359102,WNY United,0,2,played,,Front Park 1
+1769577,26438897,3rd Division,league,7718,,2010-05-23,6:00 pm,26892105,Buffalo Soldiers,26892099,Rampart FC,1,2,played,,No Home Field 1
+1769576,26438897,3rd Division,league,7717,,2010-05-23,6:00 pm,15296948,MAC Eagles SC,10359105,C.S. Italia,1,1,played,,Sciole Elementary
+1769575,26438897,3rd Division,league,7716,,2010-05-23,6:00 pm,10359108,Stone Jug,15296943,Depew Village,0,1,played,,Thomas Marks Elementary School 1
+1769581,26438897,3rd Division,league,7722,,2010-06-06,6:00 pm,10359102,WNY United,10359105,C.S. Italia,1,0,played,,Ellicott Creek Park 1
+1769580,26438897,3rd Division,league,7721,,2010-06-06,6:00 pm,15296943,Depew Village,10359111,SPAL Buffalo FC,2,1,played,,Fireman's Park (Depew) 1
+1769582,26438897,3rd Division,league,7723,,2010-06-06,6:00 pm,10359117,Dutch FC,26892105,Buffalo Soldiers,2,4,played,,Hamlin Park 1
+1769584,26438897,3rd Division,league,7725,,2010-06-06,6:00 pm,15296948,MAC Eagles SC,10359114,Southtowns,2,1,played,,Sciole Elementary
+1769583,26438897,3rd Division,league,7724,,2010-06-06,6:00 pm,10359108,Stone Jug,26892099,Rampart FC,4,0,played,,Thomas Marks Elementary School 1
+1769587,26438897,3rd Division,league,7728,,2010-06-13,6:00 pm,10359117,Dutch FC,10359111,SPAL Buffalo FC,1,5,played,,Hamlin Park 1
+1769586,26438897,3rd Division,league,7727,,2010-06-13,6:00 pm,26892105,Buffalo Soldiers,15296943,Depew Village,0,2,played,,No Home Field 1
+1769588,26438897,3rd Division,league,7729,,2010-06-13,6:00 pm,10359114,Southtowns,10359108,Stone Jug,1,2,played,,Orchard Park Soccer Complex 3
+1769589,26438897,3rd Division,league,7730,,2010-06-13,6:00 pm,15296948,MAC Eagles SC,10359102,WNY United,2,2,played,,Sciole Elementary
+1769585,26438897,3rd Division,league,7726,,2010-06-13,6:00 pm,10359105,C.S. Italia,26892099,Rampart FC,5,0,played,,Wendleville Fire Hall 1
+1769590,26438897,3rd Division,league,7731,,2010-06-20,6:00 pm,15296943,Depew Village,10359117,Dutch FC,5,1,played,,Fireman's Park (Depew) 1
+1769592,26438897,3rd Division,league,7733,,2010-06-20,6:00 pm,10359111,SPAL Buffalo FC,26892105,Buffalo Soldiers,3,4,played,,Front Park 1
+1769594,26438897,3rd Division,league,7735,,2010-06-20,6:00 pm,26892099,Rampart FC,15296948,MAC Eagles SC,1,6,played,,Kenan Center 1
+1769591,26438897,3rd Division,league,7732,,2010-06-20,6:00 pm,10359114,Southtowns,10359105,C.S. Italia,0,3,played,,Orchard Park Soccer Complex 3
+1769593,26438897,3rd Division,league,7734,,2010-06-20,6:00 pm,10359108,Stone Jug,10359102,WNY United,2,4,played,,Thomas Marks Elementary School 1
+1769595,26438897,3rd Division,league,7736,,2010-06-27,4:00 pm,15296943,Depew Village,10359105,C.S. Italia,0,1,played,,Fireman's Park (Depew) 1
+1769598,26438897,3rd Division,league,7739,,2010-06-27,6:00 pm,10359102,WNY United,26892105,Buffalo Soldiers,2,2,played,,Ellicott Creek Park 1
+1769596,26438897,3rd Division,league,7737,,2010-06-27,6:00 pm,26892099,Rampart FC,10359117,Dutch FC,3,0,played,,Kenan Center 1
+1769599,26438897,3rd Division,league,7740,,2010-06-27,6:00 pm,10359114,Southtowns,10359111,SPAL Buffalo FC,3,4,played,,Orchard Park Soccer Complex 3
+1769597,26438897,3rd Division,league,7738,,2010-06-27,6:00 pm,10359108,Stone Jug,15296948,MAC Eagles SC,1,2,played,,Thomas Marks Elementary School 1
+1769604,26438897,3rd Division,league,7745,,2010-07-11,6:00 pm,10359102,WNY United,26892099,Rampart FC,6,1,played,,Ellicott Creek Park 1
+1769603,26438897,3rd Division,league,7744,,2010-07-11,6:00 pm,10359111,SPAL Buffalo FC,10359108,Stone Jug,1,2,played,,Front Park 1
+1769601,26438897,3rd Division,league,7742,,2010-07-11,6:00 pm,10359114,Southtowns,15296943,Depew Village,0,7,played,,Orchard Park Soccer Complex 3
+1769602,26438897,3rd Division,league,7743,,2010-07-11,6:00 pm,15296948,MAC Eagles SC,10359117,Dutch FC,4,1,played,,Sciole Elementary
+1769600,26438897,3rd Division,league,7741,,2010-07-11,6:00 pm,10359105,C.S. Italia,26892105,Buffalo Soldiers,5,2,played,,Wendleville Fire Hall 1
+1769605,26438897,3rd Division,league,7746,,2010-07-18,6:00 pm,15296943,Depew Village,15296948,MAC Eagles SC,1,1,played,,Fireman's Park (Depew) 1
+1769609,26438897,3rd Division,league,7750,,2010-07-18,6:00 pm,10359111,SPAL Buffalo FC,26892099,Rampart FC,7,1,played,,Front Park 1
+1769608,26438897,3rd Division,league,7749,,2010-07-18,6:00 pm,10359117,Dutch FC,10359102,WNY United,1,1,played,,Hamlin Park 1
+1769607,26438897,3rd Division,league,7748,,2010-07-18,6:00 pm,26892105,Buffalo Soldiers,10359114,Southtowns,4,1,played,,No Home Field 1
+1769606,26438897,3rd Division,league,7747,,2010-07-18,6:00 pm,10359105,C.S. Italia,10359108,Stone Jug,1,1,played,,Wendleville Fire Hall 1
+5179443,75383025,Tehel Cup Teams,cup,1,,2010-05-13,6:30 pm,26404479,Rush FC,15294622,Hawks,6,0,played,,
+5179453,75383025,Tehel Cup Teams,cup,2,,2010-05-13,6:30 pm,26891552,Buffalo Celtic,10359005,Clarence,1,7,played,,
+5179455,75383025,Tehel Cup Teams,cup,3,,2010-05-13,6:30 pm,10350976,SoHo FC,,Seed 14,10,4,played,,
+5179456,75383025,Tehel Cup Teams,cup,4,,2010-05-13,6:30 pm,26891558,BAD PLYSA Toros,10359020,Aurora,1,3,played,,
+5179457,75383025,Tehel Cup Teams,cup,5,,2010-05-13,6:30 pm,15294612,Tonawanda City,10359011,District 5,2,0,played,,
+5179458,75383025,Tehel Cup Teams,cup,6,,2010-05-13,6:30 pm,10359002,West Seneca Strikers,,Seed 8,2,0,played,,
+5179459,75383025,Tehel Cup Teams,cup,7,,2010-05-13,6:30 pm,10350991,BSC Raiders,10358999,Lakeside FC,3,2,played,,
+5179454,75383025,Tehel Cup Teams,cup,8,,2010-05-13,6:30 pm,10359050,Yemen Elite,26895907,Amherst Sharpshooters,2,3,played,,Lehigh
+5179461,75383025,Tehel Cup Teams,cup,10,,2010-05-20,6:30 pm,10359023,Polonia,,Seed 6,2,0,played,,
+5179444,75383025,Tehel Cup Teams,cup,11,,2010-05-20,6:30 pm,15294617,Empire 90,10359008,Roos FC,4,2,played,,
+5179484,75383025,Tehel Cup Teams,cup,12,,2010-05-20,6:30 pm,10359017,Celtic United,10359047,BSC International,5,0,played,,
+5179486,75383025,Tehel Cup Teams,cup,13,,2010-05-20,6:30 pm,10350982,Lazio,,Winner of 6,2,0,played,,
+5179487,75383025,Tehel Cup Teams,cup,14,,2010-05-20,6:30 pm,10359086,Rangers,,Winner of 8,2,0,played,,
+5179460,75383025,Tehel Cup Teams,cup,9,,2010-05-20,6:30 pm,,Seed 3,,Winner of 3,2,0,played,,
+5179485,75383025,Tehel Cup Teams,cup,15,,2010-05-20,6:30 pm,10350979,Azzurri,10359029,Panthers,2,4,played,,Hillview Elementary School 1
+5179488,75383025,Tehel Cup Teams,cup,16,,2010-06-09,6:30 pm,10350991,BSC Raiders,10359023,Polonia,8,0,played,,
+5179489,75383025,Tehel Cup Teams,cup,17,,2010-06-09,6:30 pm,10359005,Clarence,10359020,Aurora,3,0,played,,
+5179490,75383025,Tehel Cup Teams,cup,18,,2010-06-09,6:30 pm,10350976,SoHo FC,15294612,Tonawanda City,2,1,played,,
+5179491,75383025,Tehel Cup Teams,cup,19,,2010-06-09,6:30 pm,15295049,Chelsea,26404479,Rush FC,2,0,played,,
+5179492,75383025,Tehel Cup Teams,cup,20,,2010-06-16,6:30 pm,10359086,Rangers,26895907,Amherst Sharpshooters,2,0,played,FT,
+5179493,75383025,Tehel Cup Teams,cup,21,,2010-06-16,6:30 pm,15294617,Empire 90,10359002,West Seneca Strikers,4,7,played,,
+5179445,75383025,Tehel Cup Teams,cup,22,,2010-06-16,6:30 pm,10359029,Panthers,10359017,Celtic United,3,0,played,,
+5179494,75383025,Tehel Cup Teams,cup,23,,2010-06-16,6:30 pm,10350982,Lazio,,Loser of,2,0,played,,
+5179446,75383025,Tehel Cup Teams,cup,24,QF1,2010-07-14,6:30 pm,10350976,SoHo FC,10350982,Lazio,0,1,played,PK,
+5179447,75383025,Tehel Cup Teams,cup,25,QF2,2010-07-14,6:30 pm,15295049,Chelsea,10359002,West Seneca Strikers,3,0,played,,
+5179448,75383025,Tehel Cup Teams,cup,26,QF3,2010-07-14,6:30 pm,10359005,Clarence,10359086,Rangers,3,0,played,,
+5179449,75383025,Tehel Cup Teams,cup,27,QF4,2010-07-14,6:30 pm,10350991,BSC Raiders,10359029,Panthers,5,0,played,,Lew Port 1
+5179450,75383025,Tehel Cup Teams,cup,28,SF1,2010-07-28,6:30 pm,10350991,BSC Raiders,15295049,Chelsea,3,1,played,,Lew Port 1
+5179451,75383025,Tehel Cup Teams,cup,29,SF2,2010-08-04,6:30 pm,10359005,Clarence,10350982,Lazio,4,1,played,,Clarence Soccer Center 1
+5179452,75383025,Tehel Cup Teams,cup,30,CHMP,2010-08-11,6:30 pm,10359005,Clarence,10350991,BSC Raiders,1,0,played,,

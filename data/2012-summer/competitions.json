@@ -1,0 +1,58 @@
+[
+  {
+    "competition": "Premier",
+    "comp_type": "league",
+    "tg": "45262423",
+    "champion_club_id": "10350976",
+    "champion_name": "SoHo FC",
+    "champion_via": "playoff"
+  },
+  {
+    "competition": "Championship",
+    "comp_type": "league",
+    "tg": "45262427",
+    "champion_club_id": "10359029",
+    "champion_name": "Panthers",
+    "champion_via": "regular"
+  },
+  {
+    "competition": "1st Division",
+    "comp_type": "league",
+    "tg": "45262425",
+    "champion_club_id": "26404479",
+    "champion_name": "Rush FC",
+    "champion_via": "regular"
+  },
+  {
+    "competition": "2nd Division",
+    "comp_type": "league",
+    "tg": "45262426",
+    "champion_club_id": "15296943",
+    "champion_name": "Depew Village",
+    "champion_via": "playoff"
+  },
+  {
+    "competition": "3rd Division",
+    "comp_type": "league",
+    "tg": "45262428",
+    "champion_club_id": "10359105",
+    "champion_name": "C.S. Italia",
+    "champion_via": "playoff"
+  },
+  {
+    "competition": "Over 35",
+    "comp_type": "over35",
+    "tg": "45262436",
+    "champion_club_id": "46512660",
+    "champion_name": "Valicella",
+    "champion_via": "regular"
+  },
+  {
+    "competition": "BDSL Tehel Cup Bracket",
+    "comp_type": "cup",
+    "tg": "75479635",
+    "champion_club_id": "10350991",
+    "champion_name": "BSC Raiders",
+    "champion_via": "playoff"
+  }
+]

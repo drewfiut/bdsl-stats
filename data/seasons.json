@@ -138,5 +138,69 @@
     "cup_index_element": "46241",
     "schedules_year": "2024",
     "final": true
+  },
+  "2008-summer": {
+    "label": "Summer 2008",
+    "standings_element": "47107",
+    "league_section": "10350018",
+    "cup_sections": [],
+    "cup_index_element": "46241",
+    "schedules_year": "2008",
+    "final": true
+  },
+  "2009-summer": {
+    "label": "Summer 2009",
+    "standings_element": "47107",
+    "league_section": "15292075",
+    "cup_sections": [
+      "75386416"
+    ],
+    "cup_index_element": "46241",
+    "schedules_year": "2009",
+    "final": true
+  },
+  "2010-summer": {
+    "label": "Summer 2010",
+    "standings_element": "47107",
+    "league_section": "26404324",
+    "cup_sections": [
+      "75382992"
+    ],
+    "cup_index_element": "46241",
+    "schedules_year": "2010",
+    "final": true
+  },
+  "2011-summer": {
+    "label": "Summer 2011",
+    "standings_element": "47107",
+    "league_section": "34957244",
+    "cup_sections": [
+      "75381580"
+    ],
+    "cup_index_element": "46241",
+    "schedules_year": "2011",
+    "final": true
+  },
+  "2012-summer": {
+    "label": "Summer 2012",
+    "standings_element": "47107",
+    "league_section": "45262337",
+    "cup_sections": [
+      "75479602"
+    ],
+    "cup_index_element": "46241",
+    "schedules_year": "2012",
+    "final": true
+  },
+  "2013-summer": {
+    "label": "Summer 2013",
+    "standings_element": "47107",
+    "league_section": "59259433",
+    "cup_sections": [
+      "59797793"
+    ],
+    "cup_index_element": "46241",
+    "schedules_year": "2013",
+    "final": true
   }
 }

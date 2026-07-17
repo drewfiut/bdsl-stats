@@ -1,0 +1,294 @@
+game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id,home_name,away_club_id,away_name,home_score,away_score,status,result_note,location
+3081556,45262423,Premier,league,7059,SF2,2012-08-05,4:00 pm,10350976,SoHo FC,10359005,Clarence,4,1,played,FT,Nichols School Peek
+3081555,45262423,Premier,league,7058,SF1,2012-08-05,6:00 pm,10350991,BSC Raiders,10350979,Azzurri,2,3,played,PK,Nichols School Peek
+3081557,45262423,Premier,league,7060,CHMP,2012-08-12,6:00 pm,10350976,SoHo FC,10350979,Azzurri,2,1,played,OT,Nichols School Nichols Grass Field
+3081498,45262423,Premier,league,7001,,2012-05-06,2:00 pm,10350976,SoHo FC,10350979,Azzurri,1,0,played,,Nichols School Strauss Truscott
+3081501,45262423,Premier,league,7004,,2012-05-06,4:00 pm,15295049,Chelsea,10359005,Clarence,0,3,played,,Nichols School Peek
+3081502,45262423,Premier,league,7005,,2012-05-06,6:00 pm,10359020,Aurora,10359074,Lykan FC,1,3,played,,Hamlin Park 1
+3081500,45262423,Premier,league,7003,,2012-05-06,6:00 pm,10350991,BSC Raiders,10358999,Lakeside FC,3,0,played,,Nichols School Peek
+3081499,45262423,Premier,league,7002,,2012-05-06,6:00 pm,10350982,Lazio,18647016,Buffalo United SS,1,1,played,,Nichols School Strauss Truscott
+3081504,45262423,Premier,league,7007,,2012-05-13,2:00 pm,10358999,Lakeside FC,10359020,Aurora,2,1,played,,Nichols School Strauss Truscott
+3081507,45262423,Premier,league,7010,,2012-05-13,2:00 pm,10350976,SoHo FC,10350982,Lazio,0,0,played,,Nichols School Strauss Truscott
+3081506,45262423,Premier,league,7009,,2012-05-13,4:00 pm,10350979,Azzurri,15295049,Chelsea,3,1,played,,Nichols School Peek
+3081503,45262423,Premier,league,7006,,2012-05-13,4:00 pm,10359074,Lykan FC,18647016,Buffalo United SS,1,3,played,,Nichols School Strauss Truscott
+3081505,45262423,Premier,league,7008,,2012-05-13,6:00 pm,10350991,BSC Raiders,10359005,Clarence,1,0,played,,Nichols School Peek
+3081509,45262423,Premier,league,7012,,2012-05-20,4:00 pm,10358999,Lakeside FC,10359074,Lykan FC,1,1,played,,Nichols School Strauss Truscott
+3081510,45262423,Premier,league,7013,,2012-05-20,6:00 pm,10359005,Clarence,10350976,SoHo FC,0,2,played,,Clarence Town Hall Park 1
+3081512,45262423,Premier,league,7015,,2012-05-20,6:00 pm,18647016,Buffalo United SS,10359020,Aurora,1,0,played,,ECC North
+3081508,45262423,Premier,league,7011,,2012-05-20,6:00 pm,10350979,Azzurri,10350982,Lazio,3,1,played,,Nichols School Strauss Truscott
+3081511,45262423,Premier,league,7014,,2012-05-20,6:00 pm,10350991,BSC Raiders,15295049,Chelsea,6,2,played,,Nichols School Strauss Truscott
+3081515,45262423,Premier,league,7018,,2012-06-03,4:00 pm,10350976,SoHo FC,10350991,BSC Raiders,0,2,played,,Nichols School Strauss Truscott
+3081516,45262423,Premier,league,7019,,2012-06-03,4:00 pm,10359074,Lykan FC,10350979,Azzurri,1,1,played,,Nichols School Strauss Truscott
+3081517,45262423,Premier,league,7020,,2012-06-03,6:00 pm,18647016,Buffalo United SS,10359005,Clarence,0,8,played,,ECC North
+3081513,45262423,Premier,league,7016,,2012-06-03,6:00 pm,10359020,Aurora,15295049,Chelsea,0,1,played,,Hamlin Park 1
+3081514,45262423,Premier,league,7017,,2012-06-03,6:00 pm,10350982,Lazio,10358999,Lakeside FC,3,1,played,,Nichols School Strauss Truscott
+3081518,45262423,Premier,league,7021,,2012-06-10,2:00 pm,10358999,Lakeside FC,10359005,Clarence,1,3,played,,Nichols School Strauss Truscott
+3081521,45262423,Premier,league,7024,,2012-06-10,2:00 pm,10359074,Lykan FC,10350976,SoHo FC,5,3,played,,Nichols School Strauss Truscott
+3081519,45262423,Premier,league,7022,,2012-06-10,6:00 pm,10350982,Lazio,10359020,Aurora,8,1,played,,Nichols School Strauss Truscott
+3081522,45262423,Premier,league,7025,,2012-06-10,6:00 pm,15295049,Chelsea,18647016,Buffalo United SS,3,2,played,,Nichols School Strauss Truscott
+3081520,45262423,Premier,league,7023,,2012-06-10,6:00 pm,10350979,Azzurri,10350991,BSC Raiders,2,4,played,,Walden Pond Park 1
+3081527,45262423,Premier,league,7030,,2012-06-17,4:00 pm,18647016,Buffalo United SS,10350979,Azzurri,2,2,played,,ECC North
+3081524,45262423,Premier,league,7027,,2012-06-17,6:00 pm,10359005,Clarence,10359074,Lykan FC,1,0,played,,Clarence Town Hall Park 1
+3081525,45262423,Premier,league,7028,,2012-06-17,6:00 pm,10359020,Aurora,10350976,SoHo FC,0,2,played,,Hamlin Park 1
+3081523,45262423,Premier,league,7026,,2012-06-17,6:00 pm,10350991,BSC Raiders,10350982,Lazio,0,2,played,,Nichols School Strauss Truscott
+3081526,45262423,Premier,league,7029,,2012-06-17,6:00 pm,15295049,Chelsea,10358999,Lakeside FC,1,1,played,,Nichols School Strauss Truscott
+3081528,45262423,Premier,league,7031,,2012-06-24,2:00 pm,10350976,SoHo FC,15295049,Chelsea,3,1,played,,Nichols School Strauss Truscott
+3081532,45262423,Premier,league,7035,,2012-06-24,2:00 pm,10358999,Lakeside FC,18647016,Buffalo United SS,4,3,played,,Nichols School Strauss Truscott
+3081530,45262423,Premier,league,7033,,2012-06-24,4:00 pm,10350982,Lazio,10359074,Lykan FC,0,0,played,,Nichols School Strauss Truscott
+3081529,45262423,Premier,league,7032,,2012-06-24,6:00 pm,10350979,Azzurri,10359005,Clarence,1,6,played,,Nichols School Strauss Truscott
+3081531,45262423,Premier,league,7034,,2012-06-24,6:00 pm,10350991,BSC Raiders,10359020,Aurora,3,1,played,,Nichols School Strauss Truscott
+3081373,45262427,Championship,league,7269,,2012-08-05,6:00 pm,10359029,Panthers,10359008,Roos FC,5,2,played,,
+3081374,45262427,Championship,league,7270,,2012-08-05,6:00 pm,10359017,Celtic United,10359002,West Seneca Strikers,2,1,played,,Ellicott Creek Park 1
+3081375,45262427,Championship,league,7271,,2012-08-12,6:00 pm,10359029,Panthers,10359017,Celtic United,0,3,played,,Nichols School Peek
+3081324,45262427,Championship,league,7220,,2012-06-03,6:00 pm,15294612,Tonawanda City,35214669,Nickel City Wanderers,1,3,played,,Ives Pond 1
+3081325,45262427,Championship,league,7221,,2012-06-03,6:00 pm,10359050,Yemen Elite,10359017,Celtic United,2,2,played,,Lehigh
+3081326,45262427,Championship,league,7222,,2012-06-03,6:00 pm,10359080,Alden Eclipse,10359029,Panthers,0,4,played,,Nichols School Strauss Truscott
+3081323,45262427,Championship,league,7219,,2012-06-03,6:00 pm,10359008,Roos FC,10359002,West Seneca Strikers,1,2,played,,Orchard Park Soccer Complex 1
+3081327,45262427,Championship,league,7223,,2012-06-03,6:00 pm,10359120,NS Alliance,10359086,Rangers,3,3,played,,Orchard Park Soccer Complex 1
+3081328,45262427,Championship,league,7224,,2012-06-03,6:00 pm,10359023,Polonia,26895907,Amherst Sharpshooters,0,2,played,,Sahlen's Sportspark 1
+3081333,45262427,Championship,league,7229,,2012-06-10,4:00 pm,10359080,Alden Eclipse,10359002,West Seneca Strikers,1,1,played,,Nichols School Strauss Truscott
+3081331,45262427,Championship,league,7227,,2012-06-10,6:00 pm,26895907,Amherst Sharpshooters,35214669,Nickel City Wanderers,3,1,played,,ECC North
+3081332,45262427,Championship,league,7228,,2012-06-10,6:00 pm,10359017,Celtic United,15294612,Tonawanda City,8,0,played,,Ellicott Creek Park 1
+3081334,45262427,Championship,league,7230,,2012-06-10,6:00 pm,10359050,Yemen Elite,10359008,Roos FC,0,0,played,,Lehigh
+3081329,45262427,Championship,league,7225,,2012-06-10,6:00 pm,10359086,Rangers,10359029,Panthers,4,4,played,,Rehm Road
+3081330,45262427,Championship,league,7226,,2012-06-10,6:00 pm,10359023,Polonia,10359120,NS Alliance,1,2,played,,Sahlen's Sportspark 1
+3081340,45262427,Championship,league,7236,,2012-06-17,6:00 pm,26895907,Amherst Sharpshooters,15294612,Tonawanda City,2,1,played,,ECC North
+3081335,45262427,Championship,league,7231,,2012-06-17,6:00 pm,10359017,Celtic United,10359023,Polonia,6,3,played,,Ellicott Creek Park 1
+3081339,45262427,Championship,league,7235,,2012-06-17,6:00 pm,10359120,NS Alliance,10359080,Alden Eclipse,7,1,played,,Orchard Park Soccer Complex 1
+3081338,45262427,Championship,league,7234,,2012-06-17,6:00 pm,10359086,Rangers,35214669,Nickel City Wanderers,4,3,played,,Rehm Road
+3081336,45262427,Championship,league,7232,,2012-06-17,6:00 pm,10359029,Panthers,10359008,Roos FC,2,0,played,,UB North - Kunz Field
+3081337,45262427,Championship,league,7233,,2012-06-17,6:00 pm,10359002,West Seneca Strikers,10359050,Yemen Elite,1,4,played,,West Seneca Soccer Complex A
+3081341,45262427,Championship,league,7237,,2012-06-24,4:00 pm,35214669,Nickel City Wanderers,10359050,Yemen Elite,1,3,played,,ECC North
+3081343,45262427,Championship,league,7239,,2012-06-24,4:00 pm,10359080,Alden Eclipse,10359017,Celtic United,3,2,played,,Nichols School Strauss Truscott
+3081345,45262427,Championship,league,7241,,2012-06-24,6:00 pm,26895907,Amherst Sharpshooters,10359029,Panthers,2,2,played,,ECC North
+3081346,45262427,Championship,league,7242,,2012-06-24,6:00 pm,10359120,NS Alliance,15294612,Tonawanda City,3,3,played,,Orchard Park Soccer Complex 1
+3081342,45262427,Championship,league,7238,,2012-06-24,6:00 pm,10359086,Rangers,10359008,Roos FC,1,3,played,,Rehm Road
+3081344,45262427,Championship,league,7240,,2012-06-24,6:00 pm,10359002,West Seneca Strikers,10359023,Polonia,1,2,played,,West Seneca Soccer Complex A
+3081445,45262425,1st Division,league,7470,,2012-08-05,6:00 pm,10359035,Queenston FC,26891552,Buffalo Celtic,4,3,played,PK,Fort Niagara 1
+3081444,45262425,1st Division,league,7469,,2012-08-05,6:00 pm,26404479,Rush FC,12579600,Wolfpack,0,2,played,,Walden Pond Park 1
+3081446,45262425,1st Division,league,7471,,2012-08-12,6:00 pm,10359035,Queenston FC,12579600,Wolfpack,0,1,played,OT,Nichols School Strauss Truscott
+3081377,45262425,1st Division,league,7402,,2012-05-06,4:00 pm,10359011,District 5,10359038,Hamburg Monarchs,0,4,played,,Orchard Park Soccer Complex 2
+3081378,45262425,1st Division,league,7403,,2012-05-06,6:00 pm,10359102,WNY United,10359047,BSC International,1,1,played,,Clarence Town Hall Park 1
+3081381,45262425,1st Division,league,7406,,2012-05-06,6:00 pm,26891552,Buffalo Celtic,45428654,Lonestar,4,2,played,,Ellicott Creek Park 1
+3081379,45262425,1st Division,league,7404,,2012-05-06,6:00 pm,10359062,Tonawanda United,12579600,Wolfpack,1,2,played,,Ives Pond 2
+3081376,45262425,1st Division,league,7401,,2012-05-06,6:00 pm,26891564,FC Yemen,10359035,Queenston FC,0,4,played,,Lehigh
+3081380,45262425,1st Division,league,7405,,2012-05-06,6:00 pm,10359077,WNY United Reds,26404479,Rush FC,0,8,played,,UB Main Rotary Field
+3081384,45262425,1st Division,league,7409,,2012-05-13,4:00 pm,45428654,Lonestar,10359047,BSC International,3,1,played,,Front Park 1
+3081387,45262425,1st Division,league,7412,,2012-05-13,6:00 pm,26891564,FC Yemen,10359102,WNY United,2,4,played,,Lehigh
+3081385,45262425,1st Division,league,7410,,2012-05-13,6:00 pm,10359038,Hamburg Monarchs,10359062,Tonawanda United,3,0,played,,Nike Base 1
+3081383,45262425,1st Division,league,7408,,2012-05-13,6:00 pm,10359077,WNY United Reds,10359011,District 5,1,2,played,,UB Main Rotary Field
+3081382,45262425,1st Division,league,7407,,2012-05-13,6:00 pm,26404479,Rush FC,12579600,Wolfpack,1,0,played,,Walden Pond Park 1
+3081386,45262425,1st Division,league,7411,,2012-05-13,6:30 pm,10359035,Queenston FC,26891552,Buffalo Celtic,1,0,played,,Fort Niagara 1
+3081391,45262425,1st Division,league,7416,,2012-05-20,4:00 pm,26891552,Buffalo Celtic,26404479,Rush FC,1,1,played,,Ellicott Creek Park 1
+3081393,45262425,1st Division,league,7418,,2012-05-20,4:00 pm,26891564,FC Yemen,10359047,BSC International,2,0,played,,Lehigh
+3081392,45262425,1st Division,league,7417,,2012-05-20,6:00 pm,45428654,Lonestar,10359102,WNY United,6,0,played,,Front Park 1
+3081388,45262425,1st Division,league,7413,,2012-05-20,6:00 pm,10359062,Tonawanda United,10359077,WNY United Reds,3,1,played,,Ives Pond 1
+3081390,45262425,1st Division,league,7415,,2012-05-20,6:00 pm,10359038,Hamburg Monarchs,12579600,Wolfpack,2,3,played,,Nike Base 1
+3081389,45262425,1st Division,league,7414,,2012-05-20,6:30 pm,10359035,Queenston FC,10359011,District 5,1,0,played,,Fort Niagara 1
+3081394,45262425,1st Division,league,7419,,2012-06-03,4:00 pm,10359011,District 5,45428654,Lonestar,2,0,played,,Orchard Park Soccer Complex 2
+3081398,45262425,1st Division,league,7423,,2012-06-03,6:00 pm,10359102,WNY United,26404479,Rush FC,1,7,played,,Clarence Town Hall Park 1
+3081396,45262425,1st Division,league,7421,,2012-06-03,6:00 pm,10359062,Tonawanda United,10359035,Queenston FC,1,5,played,,Ives Pond 2
+3081399,45262425,1st Division,league,7424,,2012-06-03,6:00 pm,10359038,Hamburg Monarchs,26891552,Buffalo Celtic,1,3,played,,Nike Base 1
+3081397,45262425,1st Division,league,7422,,2012-06-03,6:00 pm,10359077,WNY United Reds,10359047,BSC International,0,6,played,,UB Main Rotary Field
+3081395,45262425,1st Division,league,7420,,2012-06-03,6:00 pm,12579600,Wolfpack,26891564,FC Yemen,3,3,played,,West Seneca Soccer Complex A
+3081402,45262425,1st Division,league,7427,,2012-06-10,4:00 pm,26891552,Buffalo Celtic,26891564,FC Yemen,2,5,played,,Ellicott Creek Park 1
+3081400,45262425,1st Division,league,7425,,2012-06-10,4:00 pm,10359047,BSC International,26404479,Rush FC,1,1,played,,Nichols School Peek
+3081405,45262425,1st Division,league,7430,,2012-06-10,6:00 pm,10359062,Tonawanda United,10359011,District 5,3,3,played,,Ives Pond 2
+3081401,45262425,1st Division,league,7426,,2012-06-10,6:00 pm,10359038,Hamburg Monarchs,10359102,WNY United,6,1,played,,Nike Base 1
+3081404,45262425,1st Division,league,7429,,2012-06-10,6:00 pm,10359077,WNY United Reds,45428654,Lonestar,2,8,played,,UB Main Rotary Field
+3081403,45262425,1st Division,league,7428,,2012-06-10,6:30 pm,10359035,Queenston FC,12579600,Wolfpack,1,3,played,,Fort Niagara 1
+3081410,45262425,1st Division,league,7435,,2012-06-17,4:00 pm,10359102,WNY United,10359077,WNY United Reds,3,4,played,,Clarence Town Hall Park 1
+3081407,45262425,1st Division,league,7432,,2012-06-17,4:00 pm,10359047,BSC International,10359011,District 5,5,2,played,,Nichols School Peek
+3081408,45262425,1st Division,league,7433,,2012-06-17,6:00 pm,45428654,Lonestar,10359062,Tonawanda United,5,0,played,,Front Park 1
+3081409,45262425,1st Division,league,7434,,2012-06-17,6:00 pm,26404479,Rush FC,26891564,FC Yemen,7,2,played,,Walden Pond Park 1
+3081411,45262425,1st Division,league,7436,,2012-06-17,6:00 pm,12579600,Wolfpack,26891552,Buffalo Celtic,2,3,played,,West Seneca Soccer Complex B
+3081406,45262425,1st Division,league,7431,,2012-06-17,6:30 pm,10359035,Queenston FC,10359038,Hamburg Monarchs,5,4,played,,Fort Niagara 1
+3081416,45262425,1st Division,league,7441,,2012-06-24,6:00 pm,26891552,Buffalo Celtic,10359047,BSC International,2,0,played,,Ellicott Creek Park 1
+3081415,45262425,1st Division,league,7440,,2012-06-24,6:00 pm,45428654,Lonestar,10359038,Hamburg Monarchs,2,2,played,,Front Park 1
+3081412,45262425,1st Division,league,7437,,2012-06-24,6:00 pm,26891564,FC Yemen,10359062,Tonawanda United,4,0,played,,Lehigh
+3081414,45262425,1st Division,league,7439,,2012-06-24,6:00 pm,10359077,WNY United Reds,10359035,Queenston FC,0,2,played,,UB Main Rotary Field
+3081413,45262425,1st Division,league,7438,,2012-06-24,6:00 pm,26404479,Rush FC,10359011,District 5,3,2,played,,Walden Pond Park 1
+3081417,45262425,1st Division,league,7442,,2012-06-24,6:00 pm,12579600,Wolfpack,10359102,WNY United,7,1,played,,West Seneca Soccer Complex B
+3081419,45262425,1st Division,league,7444,,2012-07-01,4:00 pm,10359102,WNY United,10359035,Queenston FC,0,5,played,,Clarence Town Hall Park 1
+3081418,45262425,1st Division,league,7443,,2012-07-01,4:00 pm,10359011,District 5,26891552,Buffalo Celtic,0,2,played,,Orchard Park Soccer Complex 1
+3081422,45262425,1st Division,league,7447,,2012-07-01,6:00 pm,45428654,Lonestar,26404479,Rush FC,4,1,played,,Front Park 1
+3081420,45262425,1st Division,league,7445,,2012-07-01,6:00 pm,10359047,BSC International,10359062,Tonawanda United,1,0,played,,Nichols School Peek
+3081423,45262425,1st Division,league,7448,,2012-07-01,6:00 pm,10359038,Hamburg Monarchs,26891564,FC Yemen,0,3,played,,Nike Base 1
+3081421,45262425,1st Division,league,7446,,2012-07-01,6:00 pm,12579600,Wolfpack,10359077,WNY United Reds,2,0,played,,West Seneca Soccer Complex B
+3081429,45262425,1st Division,league,7454,,2012-07-08,4:00 pm,10359062,Tonawanda United,26891552,Buffalo Celtic,1,1,played,,Ives Pond 1
+3081425,45262425,1st Division,league,7450,,2012-07-08,4:00 pm,26891564,FC Yemen,10359077,WNY United Reds,7,0,played,,Lehigh
+3081427,45262425,1st Division,league,7452,,2012-07-08,4:00 pm,10359047,BSC International,10359038,Hamburg Monarchs,3,4,played,,Nichols School Peek
+3081428,45262425,1st Division,league,7453,,2012-07-08,6:00 pm,10359011,District 5,10359102,WNY United,1,0,played,,Orchard Park Soccer Complex 2
+3081426,45262425,1st Division,league,7451,,2012-07-08,6:00 pm,26404479,Rush FC,10359035,Queenston FC,7,0,played,,Walden Pond Park 1
+3081424,45262425,1st Division,league,7449,,2012-07-08,6:00 pm,12579600,Wolfpack,45428654,Lonestar,1,5,played,,West Seneca Soccer Complex A
+3081433,45262425,1st Division,league,7458,,2012-07-15,2:00 pm,10359047,BSC International,12579600,Wolfpack,0,4,played,,Nichols School Peek
+3081434,45262425,1st Division,league,7459,,2012-07-15,4:00 pm,10359011,District 5,26891564,FC Yemen,3,2,played,,Orchard Park Soccer Complex 2
+3081435,45262425,1st Division,league,7460,,2012-07-15,6:00 pm,10359102,WNY United,26891552,Buffalo Celtic,0,4,played,,Clarence Town Hall Park 1
+3081432,45262425,1st Division,league,7457,,2012-07-15,6:00 pm,10359077,WNY United Reds,10359038,Hamburg Monarchs,2,2,played,,UB Main Rotary Field
+3081430,45262425,1st Division,league,7455,,2012-07-15,6:00 pm,26404479,Rush FC,10359062,Tonawanda United,5,2,played,,Walden Pond Park 1
+3081431,45262425,1st Division,league,7456,,2012-07-15,6:30 pm,10359035,Queenston FC,45428654,Lonestar,0,1,played,,Fort Niagara 1
+3081438,45262425,1st Division,league,7463,,2012-07-22,4:00 pm,26891564,FC Yemen,45428654,Lonestar,1,1,played,,Lehigh
+3081436,45262425,1st Division,league,7461,,2012-07-22,6:00 pm,26891552,Buffalo Celtic,10359077,WNY United Reds,3,1,played,,Ellicott Creek Park 1
+3081440,45262425,1st Division,league,7465,,2012-07-22,6:00 pm,10359062,Tonawanda United,10359102,WNY United,2,2,played,,Ives Pond 1
+3081437,45262425,1st Division,league,7462,,2012-07-22,6:00 pm,10359047,BSC International,10359035,Queenston FC,0,3,played,,Nichols School Peek
+3081439,45262425,1st Division,league,7464,,2012-07-22,6:00 pm,10359038,Hamburg Monarchs,26404479,Rush FC,0,4,played,,Nike Base 1
+3081441,45262425,1st Division,league,7466,,2012-07-22,6:00 pm,10359011,District 5,12579600,Wolfpack,0,6,played,,Orchard Park Soccer Complex 1
+3081442,45262425,1st Division,league,7467,,2012-07-29,6:00 pm,26891552,Buffalo Celtic,26891564,FC Yemen,4,2,played,,Ellicott Creek Park 1
+3081443,45262425,1st Division,league,7468,,2012-07-29,6:00 pm,12579600,Wolfpack,45428654,Lonestar,1,0,played,,West Seneca Soccer Complex B
+3075795,45262426,2nd Division,league,7658,,2012-08-05,6:00 pm,15296943,Depew Village,,,2,0,played,FT,Fireman's Park (Depew) 1
+3075796,45262426,2nd Division,league,7659,SF1,2012-08-05,6:00 pm,10359123,Cheektowaga,10359026,Elbow Soup FC,2,0,played,FT,Woodrow Wilson Elementary
+3075797,45262426,2nd Division,league,7660,CHMP,2012-08-12,6:00 pm,15296943,Depew Village,10359123,Cheektowaga,2,0,played,,
+3075739,45262426,2nd Division,league,7602,,2012-05-06,4:00 pm,10359114,Southtowns,10359092,Ukraine,2,2,played,,Orchard Park Soccer Complex 1
+3075742,45262426,2nd Division,league,7605,,2012-05-06,6:00 pm,15296244,Wolf Mill,15296943,Depew Village,5,1,played,,Edison Elementary 1
+3075738,45262426,2nd Division,league,7601,,2012-05-06,6:00 pm,10359026,Elbow Soup FC,10359068,Great Lakes FC,3,1,played,,Fireman's Park (Depew) 1
+3075741,45262426,2nd Division,league,7604,,2012-05-06,6:00 pm,15294627,Niagara FC,15296948,MAC Eagles SC,2,3,played,,Niagara Falls High School 1
+3075740,45262426,2nd Division,league,7603,,2012-05-06,6:00 pm,10359123,Cheektowaga,12579571,Devils,4,0,played,,Woodrow Wilson Elementary
+3075743,45262426,2nd Division,league,7606,,2012-05-13,4:00 pm,15296943,Depew Village,10359092,Ukraine,1,2,played,,Fireman's Park (Depew) 1
+3075744,45262426,2nd Division,league,7607,,2012-05-13,6:00 pm,12579571,Devils,15296244,Wolf Mill,0,0,played,,Edison Elementary 1
+3075747,45262426,2nd Division,league,7610,,2012-05-13,6:00 pm,10359026,Elbow Soup FC,10359114,Southtowns,5,3,played,,Fireman's Park (Depew) 1
+3075746,45262426,2nd Division,league,7609,,2012-05-13,6:00 pm,10359068,Great Lakes FC,15296948,MAC Eagles SC,0,1,played,,Ives Pond 2
+3075745,45262426,2nd Division,league,7608,,2012-05-13,6:00 pm,10359123,Cheektowaga,15294627,Niagara FC,4,1,played,,Woodrow Wilson Elementary
+3075750,45262426,2nd Division,league,7613,,2012-05-20,4:00 pm,15294627,Niagara FC,10359026,Elbow Soup FC,1,5,played,,Niagara Falls High School 1
+3075749,45262426,2nd Division,league,7612,,2012-05-20,6:00 pm,12579571,Devils,15296943,Depew Village,0,3,played,,Edison Elementary 1
+3075748,45262426,2nd Division,league,7611,,2012-05-20,6:00 pm,10359068,Great Lakes FC,10359114,Southtowns,2,2,played,,Ives Pond 2
+3075752,45262426,2nd Division,league,7615,,2012-05-20,6:00 pm,10359092,Ukraine,15296244,Wolf Mill,1,4,played,,Rehm Road
+3075751,45262426,2nd Division,league,7614,,2012-05-20,6:00 pm,15296948,MAC Eagles SC,10359123,Cheektowaga,2,3,played,,West Seneca Soccer Complex B
+3075756,45262426,2nd Division,league,7619,,2012-06-03,4:00 pm,15296943,Depew Village,10359068,Great Lakes FC,4,0,played,,Fireman's Park (Depew) 1
+3075754,45262426,2nd Division,league,7617,,2012-06-03,4:00 pm,10359114,Southtowns,12579571,Devils,1,4,played,,Orchard Park Soccer Complex 1
+3075753,45262426,2nd Division,league,7616,,2012-06-03,6:00 pm,15296244,Wolf Mill,15296948,MAC Eagles SC,0,2,played,,Edison Elementary 1
+3075755,45262426,2nd Division,league,7618,,2012-06-03,6:00 pm,10359026,Elbow Soup FC,10359123,Cheektowaga,8,0,played,,Fireman's Park (Depew) 1
+3075757,45262426,2nd Division,league,7620,,2012-06-03,6:00 pm,10359092,Ukraine,15294627,Niagara FC,6,4,played,,Rehm Road
+3075758,45262426,2nd Division,league,7621,,2012-06-10,6:00 pm,12579571,Devils,15294627,Niagara FC,0,2,played,,Edison Elementary 1
+3075761,45262426,2nd Division,league,7624,,2012-06-10,6:00 pm,15296943,Depew Village,10359026,Elbow Soup FC,2,2,played,,Fireman's Park (Depew) 1
+3075760,45262426,2nd Division,league,7623,,2012-06-10,6:00 pm,10359068,Great Lakes FC,10359123,Cheektowaga,1,1,played,,Ives Pond 1
+3075759,45262426,2nd Division,league,7622,,2012-06-10,6:00 pm,10359114,Southtowns,15296244,Wolf Mill,1,3,played,,Orchard Park Soccer Complex 1
+3075762,45262426,2nd Division,league,7625,,2012-06-10,6:00 pm,15296948,MAC Eagles SC,10359092,Ukraine,0,0,played,,West Seneca Soccer Complex B
+3075767,45262426,2nd Division,league,7630,,2012-06-17,4:00 pm,10359092,Ukraine,10359068,Great Lakes FC,4,0,played,,Rehm Road
+3075765,45262426,2nd Division,league,7628,,2012-06-17,6:00 pm,15296244,Wolf Mill,10359026,Elbow Soup FC,3,2,played,,Edison Elementary 1
+3075764,45262426,2nd Division,league,7627,,2012-06-17,6:00 pm,15294627,Niagara FC,15296943,Depew Village,2,8,played,,Niagara Falls High School 1
+3075766,45262426,2nd Division,league,7629,,2012-06-17,6:00 pm,15296948,MAC Eagles SC,12579571,Devils,0,1,played,,West Seneca Soccer Complex B
+3075763,45262426,2nd Division,league,7626,,2012-06-17,6:00 pm,10359123,Cheektowaga,10359114,Southtowns,4,0,played,,Woodrow Wilson Elementary
+3075772,45262426,2nd Division,league,7635,,2012-06-24,6:00 pm,12579571,Devils,10359092,Ukraine,1,1,played,,Edison Elementary 1
+3075768,45262426,2nd Division,league,7631,,2012-06-24,6:00 pm,10359026,Elbow Soup FC,15296948,MAC Eagles SC,2,2,played,,Fireman's Park (Depew) 1
+3075769,45262426,2nd Division,league,7632,,2012-06-24,6:00 pm,10359068,Great Lakes FC,15294627,Niagara FC,2,2,played,,Ives Pond 1
+3075770,45262426,2nd Division,league,7633,,2012-06-24,6:00 pm,10359114,Southtowns,15296943,Depew Village,0,4,played,,Orchard Park Soccer Complex 2
+3075771,45262426,2nd Division,league,7634,,2012-06-24,6:00 pm,10359123,Cheektowaga,15296244,Wolf Mill,1,1,played,,Woodrow Wilson Elementary
+3075773,45262426,2nd Division,league,7636,,2012-07-01,4:00 pm,15296244,Wolf Mill,10359068,Great Lakes FC,1,1,played,,Edison Elementary 1
+3075775,45262426,2nd Division,league,7638,,2012-07-01,6:00 pm,12579571,Devils,10359026,Elbow Soup FC,3,1,played,,Edison Elementary 1
+3075776,45262426,2nd Division,league,7639,,2012-07-01,6:00 pm,15296943,Depew Village,15296948,MAC Eagles SC,5,1,played,,Fireman's Park (Depew) 1
+3075774,45262426,2nd Division,league,7637,,2012-07-01,6:00 pm,15294627,Niagara FC,10359114,Southtowns,2,2,played,,Niagara Falls High School 1
+3075777,45262426,2nd Division,league,7640,,2012-07-01,6:00 pm,10359092,Ukraine,10359123,Cheektowaga,1,3,played,,Rehm Road
+3075782,45262426,2nd Division,league,7645,,2012-07-08,6:00 pm,10359026,Elbow Soup FC,10359092,Ukraine,1,1,played,,Fireman's Park (Depew) 1
+3075778,45262426,2nd Division,league,7641,,2012-07-08,6:00 pm,10359068,Great Lakes FC,12579571,Devils,0,1,played,,Ives Pond 2
+3075780,45262426,2nd Division,league,7643,,2012-07-08,6:00 pm,15294627,Niagara FC,15296244,Wolf Mill,0,0,played,,Niagara Falls High School 1
+3075781,45262426,2nd Division,league,7644,,2012-07-08,6:00 pm,15296948,MAC Eagles SC,10359114,Southtowns,3,0,played,,West Seneca Soccer Complex B
+3075779,45262426,2nd Division,league,7642,,2012-07-08,6:00 pm,10359123,Cheektowaga,15296943,Depew Village,2,5,played,,Woodrow Wilson Elementary
+3075786,45262426,2nd Division,league,7649,,2012-07-15,4:00 pm,10359092,Ukraine,10359114,Southtowns,9,1,played,,Rehm Road
+3075785,45262426,2nd Division,league,7648,,2012-07-15,6:00 pm,12579571,Devils,10359123,Cheektowaga,0,1,played,,Edison Elementary 1
+3075787,45262426,2nd Division,league,7650,,2012-07-15,6:00 pm,15296943,Depew Village,15296244,Wolf Mill,2,2,played,,Fireman's Park (Depew) 1
+3075783,45262426,2nd Division,league,7646,,2012-07-15,6:00 pm,10359068,Great Lakes FC,10359026,Elbow Soup FC,1,3,played,,Ives Pond 2
+3075784,45262426,2nd Division,league,7647,,2012-07-15,6:00 pm,15296948,MAC Eagles SC,15294627,Niagara FC,2,2,played,,West Seneca Soccer Complex B
+3075789,45262426,2nd Division,league,7652,,2012-07-22,6:00 pm,15296244,Wolf Mill,12579571,Devils,0,1,played,,Edison Elementary 1
+3075790,45262426,2nd Division,league,7653,,2012-07-22,6:00 pm,15294627,Niagara FC,10359123,Cheektowaga,2,3,played,,Niagara Falls High School 1
+3075792,45262426,2nd Division,league,7655,,2012-07-22,6:00 pm,10359114,Southtowns,10359026,Elbow Soup FC,1,5,played,,Orchard Park Soccer Complex 2
+3075788,45262426,2nd Division,league,7651,,2012-07-22,6:00 pm,10359092,Ukraine,15296943,Depew Village,1,3,played,,Rehm Road
+3075791,45262426,2nd Division,league,7654,,2012-07-22,6:00 pm,15296948,MAC Eagles SC,10359068,Great Lakes FC,2,1,played,,West Seneca Soccer Complex A
+3075794,45262426,2nd Division,league,7657,,2012-07-29,6:00 pm,10359026,Elbow Soup FC,15296244,Wolf Mill,2,1,played,FT,Fireman's Park (Depew) 1
+3075793,45262426,2nd Division,league,7656,,2012-07-29,6:00 pm,15296948,MAC Eagles SC,12579571,Devils,2,0,played,FT,West Seneca Soccer Complex A
+3081496,45262428,3rd Division,league,9450,SF1,2012-08-05,6:00 pm,10359111,SPAL Buffalo FC,10359117,Dutch FC,0,2,played,FT,Nichols School Strauss Truscott
+3081495,45262428,3rd Division,league,9449,SF2,2012-08-05,6:00 pm,10359105,C.S. Italia,10359108,Stone Jug,2,0,played,FT,Wendleville Fire Hall 1
+3081497,45262428,3rd Division,league,9451,CHMP,2012-08-12,6:00 pm,10359105,C.S. Italia,10359117,Dutch FC,2,1,played,FT,
+3081450,45262428,3rd Division,league,9404,,2012-05-06,2:00 pm,10359111,SPAL Buffalo FC,35216066,Meerkats FC,1,1,played,,Nichols School Peek
+3081449,45262428,3rd Division,league,9403,,2012-05-06,4:00 pm,31566782,Rust Belt United,10359108,Stone Jug,2,0,played,,Gateway-Longview 1
+3081447,45262428,3rd Division,league,9401,,2012-05-06,4:00 pm,10359117,Dutch FC,45429581,Karen FC,2,2,played,,Hamlin Park 1
+3081448,45262428,3rd Division,league,9402,,2012-05-06,6:00 pm,26892099,Rampart FC,10359105,C.S. Italia,3,1,played,,Gateway-Longview 1
+3081454,45262428,3rd Division,league,9408,,2012-05-13,6:00 pm,45429581,Karen FC,26892099,Rampart FC,0,1,played,,Front Park 1
+3081453,45262428,3rd Division,league,9407,,2012-05-13,6:00 pm,31566782,Rust Belt United,10359111,SPAL Buffalo FC,0,2,played,,Gateway-Longview 1
+3081451,45262428,3rd Division,league,9405,,2012-05-13,6:00 pm,10359108,Stone Jug,35216066,Meerkats FC,1,0,played,,Thomas Marks Elementary School 1
+3081452,45262428,3rd Division,league,9406,,2012-05-13,6:00 pm,10359105,C.S. Italia,10359117,Dutch FC,1,0,played,,Wendleville Fire Hall 1
+3081455,45262428,3rd Division,league,9409,,2012-05-20,4:00 pm,10359111,SPAL Buffalo FC,26892099,Rampart FC,2,1,played,,Nichols School Peek
+3081456,45262428,3rd Division,league,9410,,2012-05-20,6:00 pm,31566782,Rust Belt United,45429581,Karen FC,0,1,played,,Gateway-Longview 1
+3081457,45262428,3rd Division,league,9411,,2012-05-20,6:00 pm,35216066,Meerkats FC,10359105,C.S. Italia,1,1,played,,Niagara Falls High School 1
+3081458,45262428,3rd Division,league,9412,,2012-05-20,6:00 pm,10359108,Stone Jug,10359117,Dutch FC,1,3,played,,Thomas Marks Elementary School 1
+3081460,45262428,3rd Division,league,9414,,2012-06-03,4:00 pm,10359117,Dutch FC,35216066,Meerkats FC,1,2,played,,Hamlin Park 1
+3081461,45262428,3rd Division,league,9415,,2012-06-03,6:00 pm,45429581,Karen FC,10359111,SPAL Buffalo FC,1,2,played,,Front Park 1
+3081462,45262428,3rd Division,league,9416,,2012-06-03,6:00 pm,26892099,Rampart FC,10359108,Stone Jug,0,1,played,,Gateway-Longview 1
+3081459,45262428,3rd Division,league,9413,,2012-06-03,6:00 pm,10359105,C.S. Italia,31566782,Rust Belt United,5,3,played,,Wendleville Fire Hall 1
+3081463,45262428,3rd Division,league,9417,,2012-06-10,6:00 pm,45429581,Karen FC,10359108,Stone Jug,3,3,played,,Front Park 1
+3081466,45262428,3rd Division,league,9420,,2012-06-10,6:00 pm,26892099,Rampart FC,35216066,Meerkats FC,6,2,played,,Gateway-Longview 1
+3081465,45262428,3rd Division,league,9419,,2012-06-10,6:00 pm,10359117,Dutch FC,31566782,Rust Belt United,2,0,played,,Hamlin Park 1
+3081464,45262428,3rd Division,league,9418,,2012-06-10,6:00 pm,10359105,C.S. Italia,10359111,SPAL Buffalo FC,2,2,played,,Wendleville Fire Hall 1
+3081468,45262428,3rd Division,league,9422,,2012-06-17,4:00 pm,35216066,Meerkats FC,45429581,Karen FC,2,2,played,,Niagara Falls High School 1
+3081467,45262428,3rd Division,league,9421,,2012-06-17,4:00 pm,10359111,SPAL Buffalo FC,10359117,Dutch FC,2,3,played,,Nichols School Strauss Truscott
+3081469,45262428,3rd Division,league,9423,,2012-06-17,6:00 pm,26892099,Rampart FC,31566782,Rust Belt United,5,1,played,,Gateway-Longview 1
+3081470,45262428,3rd Division,league,9424,,2012-06-17,6:00 pm,10359105,C.S. Italia,10359108,Stone Jug,0,0,played,,Wendleville Fire Hall 1
+3081474,45262428,3rd Division,league,9428,,2012-06-24,6:00 pm,45429581,Karen FC,10359105,C.S. Italia,2,3,played,,Front Park 1
+3081471,45262428,3rd Division,league,9425,,2012-06-24,6:00 pm,31566782,Rust Belt United,35216066,Meerkats FC,3,2,played,,Gateway-Longview 1
+3081472,45262428,3rd Division,league,9426,,2012-06-24,6:00 pm,10359117,Dutch FC,26892099,Rampart FC,7,3,played,,Hamlin Park 1
+3081473,45262428,3rd Division,league,9427,,2012-06-24,6:00 pm,10359108,Stone Jug,10359111,SPAL Buffalo FC,0,3,played,,Thomas Marks Elementary School 1
+3083398,45262436,Over 35,over35,1,,2012-05-18,6:30 pm,46512660,Valicella,46512663,Azzurri,5,4,played,,Sahlen's Sportspark 1
+3083400,45262436,Over 35,over35,3,,2012-05-18,6:30 pm,46512672,Blue,46512675,West United,6,0,played,,Sahlen's Sportspark 1
+3083399,45262436,Over 35,over35,2,,2012-05-18,6:30 pm,46512666,Aliens,46512669,Oranje,4,0,played,,Sahlen's Sportspark 2
+3083401,45262436,Over 35,over35,4,,2012-05-25,6:30 pm,46512660,Valicella,46512666,Aliens,2,1,played,,Sahlen's Sportspark 1
+3083402,45262436,Over 35,over35,5,,2012-05-25,6:30 pm,46512663,Azzurri,46512672,Blue,3,3,played,,Sahlen's Sportspark 2
+3083403,45262436,Over 35,over35,6,,2012-05-25,6:30 pm,46512669,Oranje,46512675,West United,1,2,played,,Sahlen's Sportspark 2
+3083404,45262436,Over 35,over35,7,,2012-06-01,6:30 pm,46512666,Aliens,46512672,Blue,1,5,played,,Sahlen's Sportspark 1
+3083405,45262436,Over 35,over35,8,,2012-06-01,6:30 pm,46512663,Azzurri,46512675,West United,3,5,played,,Sahlen's Sportspark 2
+3083407,45262436,Over 35,over35,10,,2012-06-08,6:30 pm,46512669,Oranje,46512663,Azzurri,2,5,played,,Sahlen's Sportspark 1
+3083406,45262436,Over 35,over35,9,,2012-06-08,6:30 pm,46512660,Valicella,46512672,Blue,2,3,played,,Sahlen's Sportspark 2
+3083408,45262436,Over 35,over35,11,,2012-06-15,6:30 pm,46512660,Valicella,46512675,West United,5,1,played,,Sahlen's Sportspark 1
+3083409,45262436,Over 35,over35,12,,2012-06-15,6:30 pm,46512663,Azzurri,46512666,Aliens,7,3,played,,Sahlen's Sportspark 2
+3083410,45262436,Over 35,over35,13,,2012-06-15,6:30 pm,46512669,Oranje,46512672,Blue,2,8,played,,Sahlen's Sportspark 2
+3083411,45262436,Over 35,over35,14,,2012-06-22,6:30 pm,46512660,Valicella,46512663,Azzurri,3,0,played,,Sahlen's Sportspark 1
+3083412,45262436,Over 35,over35,15,,2012-06-22,6:30 pm,46512666,Aliens,46512669,Oranje,0,3,played,,Sahlen's Sportspark 2
+3083413,45262436,Over 35,over35,16,,2012-06-22,6:30 pm,46512672,Blue,46512675,West United,10,3,played,,Sahlen's Sportspark 2
+3083414,45262436,Over 35,over35,17,,2012-06-29,6:30 pm,46512660,Valicella,46512666,Aliens,7,4,played,,Sahlen's Sportspark 1
+3083416,45262436,Over 35,over35,19,,2012-06-29,6:30 pm,46512669,Oranje,46512675,West United,2,3,played,,Sahlen's Sportspark 1
+3083415,45262436,Over 35,over35,18,,2012-06-29,6:30 pm,46512663,Azzurri,46512672,Blue,0,2,played,,Sahlen's Sportspark 2
+3083417,45262436,Over 35,over35,20,,2012-07-06,6:30 pm,46512660,Valicella,46512669,Oranje,10,1,played,,Sahlen's Sportspark 1
+3083418,45262436,Over 35,over35,21,,2012-07-06,6:30 pm,46512666,Aliens,46512672,Blue,0,3,played,,Sahlen's Sportspark 2
+3083419,45262436,Over 35,over35,22,,2012-07-06,6:30 pm,46512663,Azzurri,46512675,West United,2,4,played,,Sahlen's Sportspark 2
+3083421,45262436,Over 35,over35,24,,2012-07-13,6:30 pm,46512669,Oranje,46512663,Azzurri,0,8,played,,Sahlen's Sportspark 1
+3083422,45262436,Over 35,over35,25,,2012-07-13,6:30 pm,46512666,Aliens,46512675,West United,3,2,played,,Sahlen's Sportspark 1
+3083420,45262436,Over 35,over35,23,,2012-07-13,6:30 pm,46512660,Valicella,46512672,Blue,4,1,played,,Sahlen's Sportspark 2
+3083423,45262436,Over 35,over35,26,,2012-07-20,6:30 pm,46512660,Valicella,46512669,Oranje,7,0,played,,Sahlen's Sportspark 1
+3083424,45262436,Over 35,over35,27,,2012-07-20,6:30 pm,46512666,Aliens,46512675,West United,5,2,played,,Sahlen's Sportspark 2
+3083427,45262436,Over 35,over35,30,,2012-07-27,6:30 pm,46512669,Oranje,46512672,Blue,1,7,played,,Sahlen's Sportspark 1
+3083425,45262436,Over 35,over35,28,,2012-07-27,6:30 pm,46512660,Valicella,46512675,West United,4,2,played,,Sahlen's Sportspark 2
+3083426,45262436,Over 35,over35,29,,2012-07-27,6:30 pm,46512663,Azzurri,46512666,Aliens,4,3,played,,Sahlen's Sportspark 2
+3083428,45262436,Over 35,over35,31,,2012-08-03,6:30 pm,,,,,,,scheduled,,Sahlen's Sportspark 1
+3083429,45262436,Over 35,over35,32,,2012-08-03,6:30 pm,,,,,,,scheduled,,Sahlen's Sportspark 1
+3083430,45262436,Over 35,over35,33,,2012-08-03,6:30 pm,,,,,,,scheduled,,Sahlen's Sportspark 2
+5198547,75479635,BDSL Tehel Cup Bracket,cup,1,,2012-05-10,6:30 pm,26404479,Rush FC,10359086,Rangers,1,2,played,FT,
+5198565,75479635,BDSL Tehel Cup Bracket,cup,2,,2012-05-10,6:30 pm,10350976,SoHo FC,45428654,Lonestar,2,0,played,FT,
+5198578,75479635,BDSL Tehel Cup Bracket,cup,10,,2012-05-24,6:30 pm,10359008,Roos FC,12579600,Wolfpack,4,1,played,,
+5198567,75479635,BDSL Tehel Cup Bracket,cup,135,,2012-05-24,6:30 pm,26891552,Buffalo Celtic,26895907,Amherst Sharpshooters,0,1,played,,
+5198548,75479635,BDSL Tehel Cup Bracket,cup,3,,2012-05-24,6:30 pm,10359020,Aurora,10359035,Queenston FC,2,1,played,PK,
+5198566,75479635,BDSL Tehel Cup Bracket,cup,4,,2012-05-24,6:30 pm,15294612,Tonawanda City,10359005,Clarence,0,7,played,,
+5198568,75479635,BDSL Tehel Cup Bracket,cup,6,,2012-05-24,6:30 pm,10359120,NS Alliance,10359050,Yemen Elite,1,5,played,,
+5198569,75479635,BDSL Tehel Cup Bracket,cup,7,,2012-05-24,6:30 pm,10350982,Lazio,10359062,Tonawanda United,2,0,played,FT,
+5198570,75479635,BDSL Tehel Cup Bracket,cup,8,,2012-05-24,6:30 pm,10359074,Lykan FC,18647016,Buffalo United SS,2,1,played,FT,
+5198549,75479635,BDSL Tehel Cup Bracket,cup,9,,2012-05-24,6:30 pm,10359047,BSC International,10359029,Panthers,0,2,played,FT,
+5198579,75479635,BDSL Tehel Cup Bracket,cup,11,,2012-05-31,6:30 pm,10350976,SoHo FC,10359086,Rangers,2,0,played,FT,
+5198556,75479635,BDSL Tehel Cup Bracket,cup,12,,2012-05-31,6:30 pm,35214669,Nickel City Wanderers,26891564,FC Yemen,1,2,played,FT,
+5198550,75479635,BDSL Tehel Cup Bracket,cup,13,,2012-05-31,6:30 pm,10359080,Alden Eclipse,10350979,Azzurri,0,2,played,FT,
+5198551,75479635,BDSL Tehel Cup Bracket,cup,14,,2012-05-31,6:30 pm,10350991,BSC Raiders,10358999,Lakeside FC,2,1,played,FT,
+5198552,75479635,BDSL Tehel Cup Bracket,cup,15,,2012-05-31,6:30 pm,10359017,Celtic United,10359102,WNY United,2,0,played,FT,
+5198553,75479635,BDSL Tehel Cup Bracket,cup,16,,2012-05-31,6:30 pm,10359011,District 5,10359023,Polonia,1,2,played,FT,
+5198554,75479635,BDSL Tehel Cup Bracket,cup,17,,2012-05-31,6:30 pm,15295049,Chelsea,10359038,Hamburg Monarchs,2,0,played,FT,
+5198555,75479635,BDSL Tehel Cup Bracket,cup,18,,2012-05-31,6:30 pm,10359077,WNY United Reds,10359002,West Seneca Strikers,0,2,played,FT,
+5198557,75479635,BDSL Tehel Cup Bracket,cup,19,,2012-06-14,6:30 pm,26895907,Amherst Sharpshooters,10359029,Panthers,1,5,played,,
+5198558,75479635,BDSL Tehel Cup Bracket,cup,20,,2012-06-14,6:30 pm,10350982,Lazio,10359008,Roos FC,2,0,played,,
+5198559,75479635,BDSL Tehel Cup Bracket,cup,21,,2012-06-14,6:30 pm,10359020,Aurora,10350991,BSC Raiders,0,6,played,,
+5198560,75479635,BDSL Tehel Cup Bracket,cup,22,,2012-06-14,6:30 pm,10359050,Yemen Elite,10359005,Clarence,0,4,played,,
+5198561,75479635,BDSL Tehel Cup Bracket,cup,23,,2012-06-21,6:30 pm,10359023,Polonia,10350976,SoHo FC,0,2,played,FT,
+5198562,75479635,BDSL Tehel Cup Bracket,cup,24,,2012-06-21,6:30 pm,10359002,West Seneca Strikers,26891564,FC Yemen,1,2,played,FT,
+5198563,75479635,BDSL Tehel Cup Bracket,cup,25,,2012-06-21,6:30 pm,10359017,Celtic United,15295049,Chelsea,2,1,played,FT,
+5198564,75479635,BDSL Tehel Cup Bracket,cup,26,,2012-06-21,6:30 pm,10359074,Lykan FC,10350979,Azzurri,2,1,played,FT,
+5198571,75479635,BDSL Tehel Cup Bracket,cup,27,QF1,2012-07-12,6:30 pm,10359005,Clarence,10350976,SoHo FC,3,0,played,,
+5198572,75479635,BDSL Tehel Cup Bracket,cup,28,QF2,2012-07-12,6:30 pm,26891564,FC Yemen,10359029,Panthers,1,4,played,,
+5198573,75479635,BDSL Tehel Cup Bracket,cup,29,QF3,2012-07-19,6:30 pm,10350991,BSC Raiders,10350982,Lazio,2,1,played,FT,
+5198574,75479635,BDSL Tehel Cup Bracket,cup,30,QF4,2012-07-19,6:30 pm,10359074,Lykan FC,10359017,Celtic United,0,2,played,FT,
+5198576,75479635,BDSL Tehel Cup Bracket,cup,31,SF1,2012-07-26,6:30 pm,10359017,Celtic United,10359005,Clarence,1,0,played,,
+5198577,75479635,BDSL Tehel Cup Bracket,cup,32,SF2,2012-07-26,6:30 pm,10350991,BSC Raiders,10359029,Panthers,2,1,played,,
+5198575,75479635,BDSL Tehel Cup Bracket,cup,33,CHMP,2012-08-02,6:30 pm,10350991,BSC Raiders,10359017,Celtic United,2,0,played,,

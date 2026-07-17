@@ -1,0 +1,50 @@
+[
+  {
+    "competition": "Premier",
+    "comp_type": "league",
+    "tg": "34957335",
+    "champion_club_id": "10350991",
+    "champion_name": "BSC Raiders",
+    "champion_via": "playoff"
+  },
+  {
+    "competition": "Championship",
+    "comp_type": "league",
+    "tg": "34957339",
+    "champion_club_id": "18647016",
+    "champion_name": "Buffalo United SS",
+    "champion_via": "playoff"
+  },
+  {
+    "competition": "1st Division",
+    "comp_type": "league",
+    "tg": "34957337",
+    "champion_club_id": "26895907",
+    "champion_name": "Amherst Sharpshooters",
+    "champion_via": "playoff"
+  },
+  {
+    "competition": "2nd Division",
+    "comp_type": "league",
+    "tg": "34957338",
+    "champion_club_id": "10359092",
+    "champion_name": "Ukraine",
+    "champion_via": "playoff"
+  },
+  {
+    "competition": "3rd Division",
+    "comp_type": "league",
+    "tg": "34957340",
+    "champion_club_id": "10359114",
+    "champion_name": "Southtowns",
+    "champion_via": "regular"
+  },
+  {
+    "competition": "Tehel Cup Bracket",
+    "comp_type": "cup",
+    "tg": "75381613",
+    "champion_club_id": "10350991",
+    "champion_name": "BSC Raiders",
+    "champion_via": "playoff"
+  }
+]

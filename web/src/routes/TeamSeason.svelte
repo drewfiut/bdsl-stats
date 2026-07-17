@@ -51,8 +51,14 @@
     ...(data.standings.length ? [{ id: 'standings', label: 'League Standings' }] : []),
     ...(data.games.length ? [{ id: 'schedule', label: 'Schedule & Results' }] : []),
     ...(data.playoffs.brackets.length ? [{ id: 'playoffs', label: 'Playoffs' }] : []),
-    { id: 'players', label: 'Players' },
+    ...(data.roster.length ? [{ id: 'players', label: 'Players' }] : []),
   ] : []);
+
+  // For team-data-only seasons we still show the roster, minus the (unrecorded) scoring, so
+  // order by appearances instead of points.
+  const rosterByGames = $derived(
+    data ? data.roster.slice().sort((x, y) => (y.gp - x.gp) || x.name.localeCompare(y.name)) : []
+  );
 
   // scrollIntoView aligns the target to the viewport top, but the sticky jump nav then overlaps
   // it -- measure the nav's actual height and offset the scroll by that (matches Season.svelte).
@@ -69,7 +75,7 @@
 {#if !loading && !error && data}
   <div class="pagehead">
     <div class="wrap">
-      <h1 class:live={data.live}>{data.name} &middot; {data.label}{#if data.live}&nbsp;&middot; In progress{/if}</h1>
+      <h1 class:live={data.live}>{data.name} &middot; {data.label}{#if data.live}&nbsp;&middot; In progress{/if}{#if data.teamDataOnly}<span class="tdo" title="Standings, schedule and team goals only — individual scorers aren't recorded before 2014">Team data only</span>{/if}</h1>
       <div class="sub">
         <a class="headlink" href={`#/club/${data.clubId}`}>All-time club page</a>
         &middot;
@@ -276,6 +282,35 @@
       {/each}
     {/if}
 
+    {#if data.teamDataOnly}
+      {#if data.roster.length}
+        <h2 class="section" id="players">Players ({data.roster.length})</h2>
+        <section class="season">
+          <p class="rnote">
+            Goal and assist stats aren&rsquo;t recorded for {data.label} &mdash; roster and games
+            played only.
+          </p>
+          <div class="tablewrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="l">Player</th>
+                  <th>GP</th>
+                </tr>
+              </thead>
+              <tbody>
+                {#each rosterByGames as p (p.pk)}
+                  <tr>
+                    <td class="l"><a class="pname" href={`#/player/${p.pk}`}>{p.name}</a></td>
+                    <td>{p.gp}</td>
+                  </tr>
+                {/each}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      {/if}
+    {:else}
     <h2 class="section" id="players">Players ({data.roster.length})</h2>
     <section class="season">
       <div class="controls">
@@ -314,10 +349,14 @@
         {/if}
       </div>
     </section>
+    {/if}
   {/if}
 </main>
 
 <style>
+  /* Explains the stats-free roster shown for pre-2014 (team-data-only) seasons. */
+  .rnote { margin: 0 0 12px; color: var(--muted); font-size: 13px; }
+
   /* Header links back to the all-time club page and the full season page. */
   .headlink { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
   .headlink:hover { opacity: 0.85; }

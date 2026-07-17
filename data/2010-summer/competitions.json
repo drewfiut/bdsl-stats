@@ -1,0 +1,50 @@
+[
+  {
+    "competition": "Premier",
+    "comp_type": "league",
+    "tg": "26404415",
+    "champion_club_id": "10350991",
+    "champion_name": "BSC Raiders",
+    "champion_via": "regular"
+  },
+  {
+    "competition": "Championship",
+    "comp_type": "league",
+    "tg": "26404427",
+    "champion_club_id": "10359074",
+    "champion_name": "Lykan FC",
+    "champion_via": "playoff"
+  },
+  {
+    "competition": "1st Division",
+    "comp_type": "league",
+    "tg": "26404423",
+    "champion_club_id": "10359086",
+    "champion_name": "Rangers",
+    "champion_via": "regular"
+  },
+  {
+    "competition": "2nd Division",
+    "comp_type": "league",
+    "tg": "26404425",
+    "champion_club_id": "10359077",
+    "champion_name": "WNY United Reds",
+    "champion_via": "playoff"
+  },
+  {
+    "competition": "3rd Division",
+    "comp_type": "league",
+    "tg": "26438897",
+    "champion_club_id": "15296948",
+    "champion_name": "MAC Eagles SC",
+    "champion_via": "regular"
+  },
+  {
+    "competition": "Tehel Cup Teams",
+    "comp_type": "cup",
+    "tg": "75383025",
+    "champion_club_id": "10359005",
+    "champion_name": "Clarence",
+    "champion_via": "playoff"
+  }
+]

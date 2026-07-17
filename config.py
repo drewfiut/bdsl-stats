@@ -42,9 +42,11 @@ CUP_INDEX_ELEMENT = SEASON["cup_index_element"]
 # bdsl.org itself. Historical seasons are discovered from these public pages.
 SITE_BASE = "https://bdsl.org"
 
-# Past seasons to backfill. Individual goal/assist stats in Demosphere only begin in 2014;
-# earlier years have rosters/standings but no scoring. 2020 was cancelled (COVID).
-HISTORY_YEARS = [2014, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025]
+# Past seasons to backfill. Team-level data (standings, champions, team goals) goes back to
+# 2008; individual goal/assist stats in Demosphere only begin in 2014 (earlier years have
+# standings but no player scoring). 2020 was cancelled (COVID).
+HISTORY_YEARS = [2008, 2009, 2010, 2011, 2012, 2013,
+                 2014, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025]
 
 # BDSL's own "Points Leaders" table scores a goal as 2 and an assist as 1.
 POINTS_PER_GOAL = 2

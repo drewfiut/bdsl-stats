@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """Backfill past BDSL seasons into the data store.
 
-bdsl.org keeps every season since 2008, but individual goal/assist stats only begin in 2014
-(earlier years have rosters/standings but no scoring), so this ingests 2014-2025 (2020 was
-cancelled -- see config.HISTORY_YEARS). Historical data never changes, so each season is
-collected once, marked `final`, and skipped on later runs.
+bdsl.org keeps every season since 2008. Team-level data (standings, champions, team goals)
+is available for all of them, so this ingests 2008-2025 (2020 was cancelled -- see
+config.HISTORY_YEARS). Individual goal/assist stats only begin in 2014; earlier seasons have
+standings but no player scoring, so their stats snapshot is empty (the store and frontend
+handle that gracefully). Historical data never changes, so each season is collected once,
+marked `final`, and skipped on later runs.
 
 Discovery is entirely off public bdsl.org pages (no auth, plain GETs):
   * /standings/<year>            -> that year's league/Over-35 section (element 47107)

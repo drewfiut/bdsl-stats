@@ -1,0 +1,58 @@
+[
+  {
+    "competition": "Premier",
+    "comp_type": "league",
+    "tg": "59259519",
+    "champion_club_id": "10350976",
+    "champion_name": "SoHo FC",
+    "champion_via": "regular"
+  },
+  {
+    "competition": "Championship",
+    "comp_type": "league",
+    "tg": "59259523",
+    "champion_club_id": "26895907",
+    "champion_name": "Amherst Sharpshooters",
+    "champion_via": "regular"
+  },
+  {
+    "competition": "1st Division",
+    "comp_type": "league",
+    "tg": "59259521",
+    "champion_club_id": "10359047",
+    "champion_name": "BSC International",
+    "champion_via": "playoff"
+  },
+  {
+    "competition": "2nd Division",
+    "comp_type": "league",
+    "tg": "59259522",
+    "champion_club_id": "10359062",
+    "champion_name": "Tonawanda United",
+    "champion_via": "regular"
+  },
+  {
+    "competition": "3rd Division",
+    "comp_type": "league",
+    "tg": "59259524",
+    "champion_club_id": "35216066",
+    "champion_name": "Meerkats FC",
+    "champion_via": "regular"
+  },
+  {
+    "competition": "Over 35",
+    "comp_type": "over35",
+    "tg": "59259525",
+    "champion_club_id": "46512672",
+    "champion_name": "Blue Stars FC",
+    "champion_via": "regular"
+  },
+  {
+    "competition": "BDSL Tehel Cup Bracket",
+    "comp_type": "cup",
+    "tg": "59797826",
+    "champion_club_id": "26895907",
+    "champion_name": "Amherst Sharpshooters",
+    "champion_via": "history-table"
+  }
+]

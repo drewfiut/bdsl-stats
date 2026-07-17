@@ -1,0 +1,42 @@
+[
+  {
+    "competition": "Premier",
+    "comp_type": "league",
+    "tg": "15292112",
+    "champion_club_id": "10350976",
+    "champion_name": "SoHo FC",
+    "champion_via": "playoff"
+  },
+  {
+    "competition": "Championship",
+    "comp_type": "league",
+    "tg": "15294189",
+    "champion_club_id": "10358999",
+    "champion_name": "Lakeside FC",
+    "champion_via": "playoff"
+  },
+  {
+    "competition": "1st Division",
+    "comp_type": "league",
+    "tg": "15292122",
+    "champion_club_id": "10359086",
+    "champion_name": "Rangers",
+    "champion_via": "regular"
+  },
+  {
+    "competition": "2nd Division",
+    "comp_type": "league",
+    "tg": "15292124",
+    "champion_club_id": "12579571",
+    "champion_name": "Devils",
+    "champion_via": "playoff"
+  },
+  {
+    "competition": "BDSL Tehel Cup Bracket",
+    "comp_type": "cup",
+    "tg": "75386449",
+    "champion_club_id": "10358999",
+    "champion_name": "Lakeside FC",
+    "champion_via": "playoff"
+  }
+]

@@ -1,0 +1,112 @@
+game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id,home_name,away_club_id,away_name,home_score,away_score,status,result_note,location
+3818317,59259519,Premier,league,7059,,2013-08-04,6:00 pm,10350991,BSC Raiders,10359017,Celtic United,4,5,played,PK,Nichols School Peek
+3818316,59259519,Premier,league,7058,,2013-08-04,6:00 pm,10350976,SoHo FC,10359005,Clarence,3,1,played,,Nichols School Strauss Truscott
+3818318,59259519,Premier,league,7060,,2013-08-11,5:00 pm,10350976,SoHo FC,10359017,Celtic United,2,0,played,OT,Nichols School Strauss Truscott
+3809398,59259523,Championship,league,7270,,2013-08-04,4:00 pm,10359050,Yemen Elite,10359035,Queenston FC,1,0,played,,Lehigh South Street
+3809397,59259523,Championship,league,7269,,2013-08-04,4:00 pm,26895907,Amherst Sharpshooters,10359008,Roos FC,2,0,played,OT,Nichols School Strauss Truscott
+3809399,59259523,Championship,league,7271,,2013-08-11,4:00 pm,26895907,Amherst Sharpshooters,10359050,Yemen Elite,0,2,played,,Nichols School Peek
+3809776,59259521,1st Division,league,7481,,2013-08-04,4:00 pm,10359047,BSC International,10359026,Elbow Soup FC,2,0,played,,Nichols School Peek
+3809777,59259521,1st Division,league,7482,,2013-08-04,6:00 pm,35214669,Nickel City Wanderers,59261102,Rogue FC,2,1,played,PK,West Seneca Soccer Complex A
+3809778,59259521,1st Division,league,7483,CHMP,2013-08-11,3:00 pm,10359047,BSC International,35214669,Nickel City Wanderers,3,1,played,,Nichols School Strauss Truscott
+3809469,59259522,2nd Division,league,7670,,2013-08-04,6:00 pm,10359092,Ukraine,10359111,SPAL Buffalo FC,2,3,played,,Dingens Street Field 1
+3809468,59259522,2nd Division,league,7669,,2013-08-04,6:00 pm,10359062,Tonawanda United,10359123,Cheektowaga,1,2,played,,Ives Pond 1
+3809470,59259522,2nd Division,league,7671,,2013-08-11,2:00 pm,10359111,SPAL Buffalo FC,10359123,Cheektowaga,4,0,played,,Nichols School Peek
+3809519,59259524,3rd Division,league,9449,,2013-08-04,4:00 pm,35216066,Meerkats FC,10359068,Great Lakes FC,3,0,played,,Niagara University 1
+3809520,59259524,3rd Division,league,9450,,2013-08-04,4:00 pm,10359117,Dutch FC,10359108,Stone Jug,0,2,played,,West Seneca Soccer Complex E
+3809521,59259524,3rd Division,league,9451,,2013-08-11,1:00 pm,35216066,Meerkats FC,10359108,Stone Jug,1,0,played,,Nichols School Strauss Truscott
+3809472,59259524,3rd Division,league,9402,,2013-05-05,4:00 pm,26892099,Rampart FC,10359105,C.S. Italia,4,1,played,,Gateway-Longview 1
+3809473,59259524,3rd Division,league,9403,,2013-05-05,6:00 pm,31566782,Rust Belt United,10359108,Stone Jug,1,0,played,,Gateway-Longview 1
+3809474,59259524,3rd Division,league,9404,,2013-05-05,6:00 pm,10359114,Southtowns,35216066,Meerkats FC,0,2,played,,Orchard Park Soccer Complex 2
+3809471,59259524,3rd Division,league,9401,,2013-05-05,6:00 pm,10359117,Dutch FC,10359068,Great Lakes FC,4,0,played,,West Seneca Soccer Complex A
+3809477,59259524,3rd Division,league,9407,,2013-05-12,4:00 pm,10359114,Southtowns,31566782,Rust Belt United,0,1,played,,Orchard Park Soccer Complex 2
+3809478,59259524,3rd Division,league,9408,,2013-05-12,6:00 pm,10359068,Great Lakes FC,26892099,Rampart FC,3,0,played,,Ives Pond 2
+3809475,59259524,3rd Division,league,9405,,2013-05-12,6:00 pm,10359108,Stone Jug,35216066,Meerkats FC,0,0,played,,Thomas Marks Elementary School 1
+3809476,59259524,3rd Division,league,9406,,2013-05-12,6:00 pm,10359105,C.S. Italia,10359117,Dutch FC,1,4,played,,Wendleville Fire Hall 1
+3809479,59259524,3rd Division,league,9409,,2013-05-19,4:00 pm,10359114,Southtowns,26892099,Rampart FC,4,1,played,,Orchard Park Soccer Complex 2
+3809480,59259524,3rd Division,league,9410,,2013-05-19,6:00 pm,31566782,Rust Belt United,10359068,Great Lakes FC,2,2,played,,Gateway-Longview 1
+3809481,59259524,3rd Division,league,9411,,2013-05-19,6:00 pm,35216066,Meerkats FC,10359105,C.S. Italia,6,1,played,,Niagara University 1
+3809482,59259524,3rd Division,league,9412,,2013-05-19,6:00 pm,10359108,Stone Jug,10359117,Dutch FC,0,3,played,,Thomas Marks Elementary School 1
+3809486,59259524,3rd Division,league,9416,,2013-06-02,6:00 pm,26892099,Rampart FC,10359108,Stone Jug,2,1,played,,Gateway-Longview 1
+3809484,59259524,3rd Division,league,9414,,2013-06-02,6:00 pm,35216066,Meerkats FC,10359117,Dutch FC,0,0,played,,Niagara University 1
+3809485,59259524,3rd Division,league,9415,,2013-06-02,6:00 pm,10359114,Southtowns,10359068,Great Lakes FC,1,1,played,,Orchard Park Soccer Complex 2
+3809483,59259524,3rd Division,league,9413,,2013-06-02,6:00 pm,10359105,C.S. Italia,31566782,Rust Belt United,3,0,played,,Wendleville Fire Hall 1
+3809490,59259524,3rd Division,league,9420,,2013-06-09,6:00 pm,26892099,Rampart FC,35216066,Meerkats FC,1,7,played,,Gateway-Longview 1
+3809487,59259524,3rd Division,league,9417,,2013-06-09,6:00 pm,10359068,Great Lakes FC,10359108,Stone Jug,2,3,played,,Ives Pond 2
+3809488,59259524,3rd Division,league,9418,,2013-06-09,6:00 pm,10359105,C.S. Italia,10359114,Southtowns,1,5,played,,Wendleville Fire Hall 1
+3809489,59259524,3rd Division,league,9419,,2013-06-09,6:00 pm,10359117,Dutch FC,31566782,Rust Belt United,4,0,played,,West Seneca Soccer Complex B
+3809493,59259524,3rd Division,league,9423,,2013-06-16,6:00 pm,26892099,Rampart FC,31566782,Rust Belt United,0,2,played,,Gateway-Longview 1
+3809492,59259524,3rd Division,league,9422,,2013-06-16,6:00 pm,35216066,Meerkats FC,10359068,Great Lakes FC,6,1,played,,Niagara University 1
+3809494,59259524,3rd Division,league,9424,,2013-06-16,6:00 pm,10359105,C.S. Italia,10359108,Stone Jug,0,0,played,,Wendleville Fire Hall 1
+3809491,59259524,3rd Division,league,9421,,2013-06-16,6:00 pm,10359117,Dutch FC,10359114,Southtowns,4,1,played,,West Seneca Soccer Complex H
+3809495,59259524,3rd Division,league,9425,,2013-06-23,6:00 pm,31566782,Rust Belt United,35216066,Meerkats FC,0,2,played,,Gateway-Longview 1
+3809498,59259524,3rd Division,league,9428,,2013-06-23,6:00 pm,10359068,Great Lakes FC,10359105,C.S. Italia,0,3,played,,Ives Pond 1
+3809497,59259524,3rd Division,league,9427,,2013-06-23,6:00 pm,10359108,Stone Jug,10359114,Southtowns,2,1,played,,Thomas Marks Elementary School 1
+3809496,59259524,3rd Division,league,9426,,2013-06-23,6:00 pm,10359117,Dutch FC,26892099,Rampart FC,4,0,played,,West Seneca Soccer Complex B
+3809499,59259524,3rd Division,league,9429,,2013-06-30,6:00 pm,10359068,Great Lakes FC,10359117,Dutch FC,3,2,played,,Ives Pond 2
+3809502,59259524,3rd Division,league,9432,,2013-06-30,6:00 pm,10359114,Southtowns,35216066,Meerkats FC,4,4,played,,Orchard Park Soccer Complex 1
+3809501,59259524,3rd Division,league,9431,,2013-06-30,6:00 pm,10359108,Stone Jug,31566782,Rust Belt United,3,2,played,,Thomas Marks Elementary School 1
+3809500,59259524,3rd Division,league,9430,,2013-06-30,6:00 pm,10359105,C.S. Italia,26892099,Rampart FC,1,1,played,,Wendleville Fire Hall 1
+3818356,59259525,Over 35,over35,3502,,2013-05-17,6:30 pm,46512666,Aliens,46512669,Oranje,0,4,played,,Sahlen's Sportspark 1
+3818355,59259525,Over 35,over35,3501,,2013-05-17,6:30 pm,46512660,Valicella,46512663,Azzurri,4,3,played,,Sahlen's Sportspark 2
+3818357,59259525,Over 35,over35,3503,,2013-05-17,6:30 pm,46512675,West United,46512672,Blue,0,4,played,,Sahlen's Sportspark 3
+3818358,59259525,Over 35,over35,3504,,2013-05-24,6:30 pm,46512660,Valicella,46512672,Blue,1,3,played,,Sahlen's Sportspark 1
+3818359,59259525,Over 35,over35,3505,,2013-05-24,6:30 pm,46512669,Oranje,46512663,Azzurri,1,6,played,,Sahlen's Sportspark 2
+3818362,59259525,Over 35,over35,3508,,2013-05-31,6:30 pm,46512669,Oranje,46512675,West United,1,5,played,,Sahlen's Sportspark 1
+3818360,59259525,Over 35,over35,3506,,2013-05-31,6:30 pm,46512660,Valicella,46512666,Aliens,3,0,played,,Sahlen's Sportspark 2
+3818361,59259525,Over 35,over35,3507,,2013-05-31,6:30 pm,46512663,Azzurri,46512672,Blue,0,4,played,,Sahlen's Sportspark 3
+3818364,59259525,Over 35,over35,3510,,2013-06-07,6:30 pm,46512663,Azzurri,46512666,Aliens,8,0,played,,Sahlen's Sportspark 1
+3818363,59259525,Over 35,over35,3509,,2013-06-07,6:30 pm,46512660,Valicella,46512675,West United,3,3,played,,Sahlen's Sportspark 2
+3818365,59259525,Over 35,over35,3511,,2013-06-07,6:30 pm,46512669,Oranje,46512672,Blue,1,3,played,,Sahlen's Sportspark 3
+3818366,59259525,Over 35,over35,3512,,2013-06-14,6:30 pm,46512669,Oranje,46512663,Azzurri,,,scheduled,,Sahlen's Sportspark 1
+3818367,59259525,Over 35,over35,3513,,2013-06-14,6:30 pm,46512660,Valicella,46512672,Blue,0,1,played,,Sahlen's Sportspark 2
+3818368,59259525,Over 35,over35,3514,,2013-06-14,6:30 pm,46512666,Aliens,46512675,West United,0,5,played,,Sahlen's Sportspark 3
+3818369,59259525,Over 35,over35,3515,,2013-06-21,6:30 pm,46512660,Valicella,46512663,Azzurri,6,3,played,,Sahlen's Sportspark 1
+3818370,59259525,Over 35,over35,3516,,2013-06-21,6:30 pm,46512666,Aliens,46512669,Oranje,1,1,played,,Sahlen's Sportspark 2
+3818371,59259525,Over 35,over35,3517,,2013-06-21,6:30 pm,46512672,Blue,46512675,West United,7,3,played,,Sahlen's Sportspark 3
+3818372,59259525,Over 35,over35,3518,,2013-06-28,6:30 pm,46512660,Valicella,46512666,Aliens,3,1,played,,Sahlen's Sportspark 1
+3818374,59259525,Over 35,over35,3520,,2013-06-28,6:30 pm,46512669,Oranje,46512675,West United,0,1,played,,Sahlen's Sportspark 2
+3818373,59259525,Over 35,over35,3519,,2013-06-28,6:30 pm,46512663,Azzurri,46512672,Blue,1,5,played,,Sahlen's Sportspark 3
+3818375,59259525,Over 35,over35,3521,,2013-07-05,6:30 pm,46512660,Valicella,46512669,Oranje,3,1,played,,Sahlen's Sportspark 1
+3818376,59259525,Over 35,over35,3522,,2013-07-05,6:30 pm,46512666,Aliens,46512675,West United,2,2,played,,Sahlen's Sportspark 2
+3818377,59259525,Over 35,over35,3523,,2013-07-12,6:30 pm,46512666,Aliens,46512672,Blue,1,2,played,,Sahlen's Sportspark 1
+3818378,59259525,Over 35,over35,3524,,2013-07-12,6:30 pm,46512663,Azzurri,46512675,West United,2,2,played,,Sahlen's Sportspark 2
+3818380,59259525,Over 35,over35,3526,,2013-07-19,6:30 pm,46512666,Aliens,46512663,Azzurri,5,2,played,,Sahlen's Sportspark 1
+3818379,59259525,Over 35,over35,3525,,2013-07-19,6:30 pm,46512660,Valicella,46512675,West United,4,1,played,,Sahlen's Sportspark 2
+3818381,59259525,Over 35,over35,3527,,2013-07-19,6:30 pm,46512669,Oranje,46512672,Blue,0,5,played,,Sahlen's Sportspark 3
+3818382,59259525,Over 35,over35,3528,,2013-07-26,6:30 pm,46512660,Valicella,46512669,Oranje,,,scheduled,,Sahlen's Sportspark 1
+3818383,59259525,Over 35,over35,3529,,2013-07-26,6:30 pm,46512666,Aliens,46512672,Blue,0,5,played,,Sahlen's Sportspark 2
+3818384,59259525,Over 35,over35,3530,,2013-07-26,6:30 pm,46512663,Azzurri,46512675,West United,,,scheduled,,Sahlen's Sportspark 3
+3818385,59259525,Over 35,over35,3531,,2013-08-02,6:30 pm,-101,1st Place,-102,2nd Place,,,scheduled,,Sahlen's Sportspark 1
+3818387,59259525,Over 35,over35,3533,,2013-08-02,6:30 pm,-105,5th Place,-106,6th Place,,,scheduled,,Sahlen's Sportspark 2
+3818386,59259525,Over 35,over35,3532,,2013-08-02,6:30 pm,-103,3rd Place,-104,4th Place,,,scheduled,,Sahlen's Sportspark 3
+4137918,59797826,BDSL Tehel Cup Bracket,cup,1,,2013-05-16,,10359026,Elbow Soup FC,59260534,FC Buffalo Reserves,2,4,played,FT,
+4137919,59797826,BDSL Tehel Cup Bracket,cup,2,,2013-05-16,,15296943,Depew Village,10359017,Celtic United,0,2,played,FT,
+4137920,59797826,BDSL Tehel Cup Bracket,cup,3,,2013-05-16,,10350991,BSC Raiders,10359080,Alden Eclipse,2,0,played,FT,
+4137921,59797826,BDSL Tehel Cup Bracket,cup,4,,2013-05-16,,10359050,Yemen Elite,10359038,Hamburg Monarchs,8,1,played,FT,
+4137922,59797826,BDSL Tehel Cup Bracket,cup,5,,2013-05-16,,10359035,Queenston FC,10359002,West Seneca Strikers,1,2,played,FT,
+4137923,59797826,BDSL Tehel Cup Bracket,cup,6,,2013-05-16,,26891552,Buffalo Celtic,10358999,Lakeside FC,1,3,played,FT,
+4137924,59797826,BDSL Tehel Cup Bracket,cup,7,,2013-05-16,,12579600,Wolfpack,10359008,Roos FC,1,0,played,FT,
+4137925,59797826,BDSL Tehel Cup Bracket,cup,8,,2013-05-16,,35214669,Nickel City Wanderers,10359047,BSC International,0,2,played,FT,
+4137927,59797826,BDSL Tehel Cup Bracket,cup,10,,2013-05-23,,10359086,Rangers,26895907,Amherst Sharpshooters,1,3,played,FT,
+4137928,59797826,BDSL Tehel Cup Bracket,cup,11,,2013-05-23,,10359011,District 5,10350982,Lazio,1,8,played,FT,
+4137929,59797826,BDSL Tehel Cup Bracket,cup,12,,2013-05-23,,15295049,Chelsea,10350976,SoHo FC,1,0,played,FT,
+4137930,59797826,BDSL Tehel Cup Bracket,cup,13,,2013-05-23,,26404479,Rush FC,59261102,Rogue FC,4,0,played,FT,
+4137931,59797826,BDSL Tehel Cup Bracket,cup,14,,2013-05-23,,10359023,Polonia,18647016,Buffalo United SS,1,10,played,FT,
+4137932,59797826,BDSL Tehel Cup Bracket,cup,15,,2013-05-23,,26891564,FC Yemen,10359005,Clarence,3,2,played,FT,
+4137933,59797826,BDSL Tehel Cup Bracket,cup,16,,2013-05-23,,10359120,NS Alliance,10359074,Lykan FC,1,6,played,FT,
+4137926,59797826,BDSL Tehel Cup Bracket,cup,9,,2013-05-23,,10350979,Azzurri,59261105,Celtic Hoops,1,0,played,FT,
+4137934,59797826,BDSL Tehel Cup Bracket,cup,17,,2013-06-13,,59260534,FC Buffalo Reserves,10359017,Celtic United,5,6,played,OT,
+4137935,59797826,BDSL Tehel Cup Bracket,cup,18,,2013-06-13,,10350991,BSC Raiders,10359050,Yemen Elite,3,2,played,FT,
+4137936,59797826,BDSL Tehel Cup Bracket,cup,19,,2013-06-13,,10359002,West Seneca Strikers,10358999,Lakeside FC,0,6,played,FT,
+4137937,59797826,BDSL Tehel Cup Bracket,cup,20,,2013-06-13,,12579600,Wolfpack,10359047,BSC International,1,0,played,FT,
+4137938,59797826,BDSL Tehel Cup Bracket,cup,21,,2013-06-20,,10350979,Azzurri,26895907,Amherst Sharpshooters,0,4,played,FT,
+4137939,59797826,BDSL Tehel Cup Bracket,cup,22,,2013-06-20,,10350982,Lazio,15295049,Chelsea,2,0,played,FT,
+4137940,59797826,BDSL Tehel Cup Bracket,cup,23,,2013-06-20,,26404479,Rush FC,18647016,Buffalo United SS,1,3,played,FT,
+4137941,59797826,BDSL Tehel Cup Bracket,cup,24,,2013-06-20,,26891564,FC Yemen,10359074,Lykan FC,1,3,played,FT,
+4137942,59797826,BDSL Tehel Cup Bracket,cup,25,QF1,2013-07-11,,10359017,Celtic United,10350991,BSC Raiders,0,2,played,,
+4137943,59797826,BDSL Tehel Cup Bracket,cup,26,QF2,2013-07-11,,10358999,Lakeside FC,12579600,Wolfpack,7,0,played,,
+4137944,59797826,BDSL Tehel Cup Bracket,cup,27,QF3,2013-07-11,,26895907,Amherst Sharpshooters,10350982,Lazio,2,1,played,,
+4137945,59797826,BDSL Tehel Cup Bracket,cup,28,QF4,2013-07-11,,18647016,Buffalo United SS,10359074,Lykan FC,4,2,played,,
+4137946,59797826,BDSL Tehel Cup Bracket,cup,29,SF1,2013-07-25,,10350991,BSC Raiders,10358999,Lakeside FC,0,2,played,,
+4137947,59797826,BDSL Tehel Cup Bracket,cup,30,SF2,2013-07-25,,26895907,Amherst Sharpshooters,18647016,Buffalo United SS,3,2,played,,
+4137948,59797826,BDSL Tehel Cup Bracket,cup,31,CH,2013-08-01,,10358999,Lakeside FC,26895907,Amherst Sharpshooters,0,0,played,PK,

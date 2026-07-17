@@ -28,7 +28,7 @@
     ...(data?.brackets?.length ? [{ id: 'playoffs', label: 'Playoffs' }] : []),
     ...(data?.fixtures?.length ? [{ id: 'fixtures', label: 'Upcoming Matches' }] : []),
     ...(data?.results?.length ? [{ id: 'results', label: 'Recent Results' }] : []),
-    { id: 'leaders', label: 'Top Performers' },
+    ...(data?.teamDataOnly ? [] : [{ id: 'leaders', label: 'Top Performers' }]),
   ]);
 
   const fmtDate = (iso) => {
@@ -95,8 +95,14 @@
 {#if !loading && !error && data}
   <div class="pagehead">
     <div class="wrap">
-      <h1 class:live={data.live}>{data.label}{#if data.live} &middot; In progress{/if}</h1>
-      <div class="sub">Standings, champions and top individual performances for this season</div>
+      <h1 class:live={data.live}>{data.label}{#if data.live} &middot; In progress{/if}{#if data.teamDataOnly}<span class="tdo">Team data only</span>{/if}</h1>
+      <div class="sub">
+        {#if data.teamDataOnly}
+          Standings, champions and team goals for this season &mdash; individual scorers aren&rsquo;t recorded before 2014
+        {:else}
+          Standings, champions and top individual performances for this season
+        {/if}
+      </div>
     </div>
   </div>
 
@@ -347,6 +353,15 @@
       </section>
     {/if}
 
+    {#if data.teamDataOnly}
+      <h2 class="section" id="leaders">Top Performers</h2>
+      <section class="season">
+        <div class="empty">
+          Individual goal and assist stats aren&rsquo;t recorded for {data.label}. This season has
+          standings, champions and team goals only.
+        </div>
+      </section>
+    {:else}
     <h2 class="section" id="leaders">Top Performers</h2>
     <div class="leadctrl">
       <label>
@@ -395,6 +410,7 @@
         {/if}
       </div>
     </section>
+    {/if}
   {/if}
 </main>
 

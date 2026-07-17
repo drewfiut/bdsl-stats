@@ -1,0 +1,327 @@
+game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id,home_name,away_club_id,away_name,home_score,away_score,status,result_note,location
+4640303,15292112,Premier,league,7672,SF1,2009-08-02,6:00 pm,10350976,SoHo FC,10350979,Azzurri,3,1,played,FT,Nichols School Peek
+4640304,15292112,Premier,league,7673,SF2,2009-08-02,6:00 pm,10350988,Black Watch Mutiny,10350991,BSC Raiders,3,2,played,FT,Nichols School Strauss Truscott
+4640305,15292112,Premier,league,7674,CHMP,2009-08-09,6:00 pm,10350976,SoHo FC,10350988,Black Watch Mutiny,3,1,played,,Nichols School Peek
+1129311,15292112,Premier,league,7003,,2009-05-03,6:00 pm,10359002,West Seneca Panthers,10350991,BSC Raiders,3,1,played,FT,East and West 1
+1129312,15292112,Premier,league,7004,,2009-05-03,6:00 pm,10350976,SoHo FC,10350982,Lazio,2,1,played,FT,Nichols School Strauss Truscott
+1129309,15292112,Premier,league,7001,,2009-05-03,6:00 pm,10350979,Azzurri,10359020,Aurora,4,4,played,FT,Rehm Road
+1129310,15292112,Premier,league,7002,,2009-05-03,6:00 pm,10359023,Polonia,10350988,Black Watch Mutiny,3,7,played,FT,Tri Town United Fields A
+1129316,15292112,Premier,league,7008,,2009-05-10,4:00 pm,10350982,Lazio,10350991,BSC Raiders,0,0,played,,Clarence Town Hall Park 1
+1129314,15292112,Premier,league,7006,,2009-05-10,6:00 pm,10359002,West Seneca Panthers,10350988,Black Watch Mutiny,1,1,played,,East and West 1
+1129315,15292112,Premier,league,7007,,2009-05-10,6:00 pm,10359020,Aurora,10350976,SoHo FC,1,4,played,,Hamlin Park 1
+1129313,15292112,Premier,league,7005,,2009-05-10,6:00 pm,10350979,Azzurri,10359023,Polonia,2,0,played,,Rehm Road
+1129317,15292112,Premier,league,7009,,2009-05-17,6:00 pm,10359002,West Seneca Panthers,10359023,Polonia,2,0,played,,East and West 1
+1129319,15292112,Premier,league,7011,,2009-05-17,6:00 pm,10359020,Aurora,10350991,BSC Raiders,1,2,played,,Hamlin Park 1
+1129320,15292112,Premier,league,7012,,2009-05-17,6:00 pm,10350976,SoHo FC,10350988,Black Watch Mutiny,4,3,played,,Nichols School Strauss Truscott
+1129318,15292112,Premier,league,7010,,2009-05-17,6:00 pm,10350979,Azzurri,10350982,Lazio,2,3,played,,Rehm Road
+1129324,15292112,Premier,league,7016,,2009-05-31,6:00 pm,10350982,Lazio,10359002,West Seneca Panthers,0,1,played,,Clarence Town Hall Park 1
+1129321,15292112,Premier,league,7013,,2009-05-31,6:00 pm,10359020,Aurora,10350988,Black Watch Mutiny,2,3,played,,Hamlin Park 1
+1129323,15292112,Premier,league,7015,,2009-05-31,6:00 pm,10350976,SoHo FC,10359023,Polonia,3,1,played,,Nichols School Strauss Truscott
+1129322,15292112,Premier,league,7014,,2009-05-31,6:00 pm,10350979,Azzurri,10350991,BSC Raiders,1,1,played,,Rehm Road
+1129326,15292112,Premier,league,7018,,2009-06-03,6:30 pm,10350982,Lazio,10359020,Aurora,3,0,played,,Clarence Town Hall Park 1
+1129325,15292112,Premier,league,7017,,2009-06-03,6:30 pm,10359002,West Seneca Panthers,10350976,SoHo FC,1,2,played,,East and West 1
+1129328,15292112,Premier,league,7020,,2009-06-03,6:30 pm,10359023,Polonia,10350991,BSC Raiders,1,8,played,,Tri Town United Fields A
+1129327,15292112,Premier,league,7019,,2009-06-03,6:30 pm,10350979,Azzurri,10350988,Black Watch Mutiny,2,2,played,,Walden Pond Park 1
+1129330,15292112,Premier,league,7022,,2009-06-07,6:00 pm,10350976,SoHo FC,10350991,BSC Raiders,2,6,played,,Nichols School Strauss Truscott
+1129332,15292112,Premier,league,7024,,2009-06-07,6:00 pm,10359023,Polonia,10359020,Aurora,2,3,played,,Tri Town United Fields A
+1129329,15292112,Premier,league,7021,,2009-06-07,6:00 pm,10350988,Black Watch Mutiny,10350982,Lazio,5,1,played,,UB North Stadium Field
+1129331,15292112,Premier,league,7023,,2009-06-07,6:00 pm,10350979,Azzurri,10359002,West Seneca Panthers,4,2,played,,Walden Pond Park 1
+1129333,15292112,Premier,league,7025,,2009-06-14,6:00 pm,10359002,West Seneca Panthers,10359020,Aurora,2,1,played,,East and West 1
+1129335,15292112,Premier,league,7027,,2009-06-14,6:00 pm,10359023,Polonia,10350982,Lazio,4,2,played,,Tri Town United Fields A
+1129334,15292112,Premier,league,7026,,2009-06-14,6:00 pm,10350988,Black Watch Mutiny,10350991,BSC Raiders,0,2,played,,UB North Stadium Field
+1129336,15292112,Premier,league,7028,,2009-06-14,6:00 pm,10350979,Azzurri,10350976,SoHo FC,3,1,played,,Walden Pond Park 1
+1129340,15292112,Premier,league,7032,,2009-06-21,4:00 pm,10350982,Lazio,10350976,SoHo FC,2,6,played,,Clarence Town Hall Park 1
+1129337,15292112,Premier,league,7029,,2009-06-21,6:00 pm,10359020,Aurora,10350979,Azzurri,0,1,played,,Hamlin Park 1
+1129338,15292112,Premier,league,7030,,2009-06-21,6:00 pm,10350988,Black Watch Mutiny,10359023,Polonia,6,1,played,,UB North Stadium Field
+1129339,15292112,Premier,league,7031,,2009-06-21,6:00 pm,10350991,BSC Raiders,10359002,West Seneca Panthers,3,0,played,,West Seneca Soccer Complex A
+1129344,15292112,Premier,league,7036,,2009-06-28,4:00 pm,10350991,BSC Raiders,10350982,Lazio,1,1,played,,Nichols School Strauss Truscott
+1129343,15292112,Premier,league,7035,,2009-06-28,6:00 pm,10350976,SoHo FC,10359020,Aurora,3,1,played,,Nichols School Strauss Truscott
+1129341,15292112,Premier,league,7033,,2009-06-28,6:00 pm,10359023,Polonia,10350979,Azzurri,2,4,played,,Tri Town United Fields A
+1129342,15292112,Premier,league,7034,,2009-06-28,6:00 pm,10350988,Black Watch Mutiny,10359002,West Seneca Panthers,3,1,played,,UB North Stadium Field
+1129346,15292112,Premier,league,7038,,2009-07-08,6:30 pm,10350982,Lazio,10350979,Azzurri,0,1,played,,Clarence Town Hall Park 1
+1129347,15292112,Premier,league,7039,,2009-07-08,6:30 pm,10350991,BSC Raiders,10359020,Aurora,2,1,played,,Nichols School Strauss Truscott
+1129345,15292112,Premier,league,7037,,2009-07-08,6:30 pm,10359023,Polonia,10359002,West Seneca Panthers,3,10,played,,Tri Town United Fields A
+1129348,15292112,Premier,league,7040,,2009-07-08,6:30 pm,10350988,Black Watch Mutiny,10350976,SoHo FC,3,1,played,,UB North Stadium Field
+1129352,15292112,Premier,league,7044,,2009-07-12,6:00 pm,10359002,West Seneca Panthers,10350982,Lazio,1,4,played,,East and West 1
+1129350,15292112,Premier,league,7042,,2009-07-12,6:00 pm,10350991,BSC Raiders,10350979,Azzurri,5,0,played,,Nichols School Strauss Truscott
+1129351,15292112,Premier,league,7043,,2009-07-12,6:00 pm,10359023,Polonia,10350976,SoHo FC,0,2,played,,Tri Town United Fields A
+1129349,15292112,Premier,league,7041,,2009-07-12,6:00 pm,10350988,Black Watch Mutiny,10359020,Aurora,6,2,played,,UB North Stadium Field
+1129356,15292112,Premier,league,7048,,2009-07-19,4:00 pm,10350991,BSC Raiders,10359023,Polonia,3,1,played,,Nichols School Strauss Truscott
+1129354,15292112,Premier,league,7046,,2009-07-19,6:00 pm,10359020,Aurora,10350982,Lazio,1,4,played,,Hamlin Park 1
+1129353,15292112,Premier,league,7045,,2009-07-19,6:00 pm,10350976,SoHo FC,10359002,West Seneca Panthers,4,0,played,,Nichols School Strauss Truscott
+1129355,15292112,Premier,league,7047,,2009-07-19,6:00 pm,10350988,Black Watch Mutiny,10350979,Azzurri,4,0,played,,Walden Pond Park 1
+1129357,15292112,Premier,league,7049,,2009-07-26,6:00 pm,10350982,Lazio,10350988,Black Watch Mutiny,3,3,played,,Clarence Town Hall Park 1
+1129359,15292112,Premier,league,7051,,2009-07-26,6:00 pm,10359002,West Seneca Panthers,10350979,Azzurri,2,3,played,,East and West 1
+1129360,15292112,Premier,league,7052,,2009-07-26,6:00 pm,10359020,Aurora,10359023,Polonia,3,4,played,,Hamlin Park 1
+1129358,15292112,Premier,league,7050,,2009-07-26,6:00 pm,10350991,BSC Raiders,10350976,SoHo FC,2,3,played,,Nichols School Strauss Truscott
+1129363,15292112,Premier,league,7055,,2009-07-29,6:30 pm,10350982,Lazio,10359023,Polonia,5,2,played,,Clarence Town Hall Park 1
+1129361,15292112,Premier,league,7053,,2009-07-29,6:30 pm,10359020,Aurora,10359002,West Seneca Panthers,5,1,played,,Hamlin Park 1
+1129362,15292112,Premier,league,7054,,2009-07-29,6:30 pm,10350991,BSC Raiders,10350988,Black Watch Mutiny,2,3,played,,Nichols School Strauss Truscott
+1129364,15292112,Premier,league,7056,,2009-07-29,6:30 pm,10350976,SoHo FC,10350979,Azzurri,3,3,played,,Nichols School Strauss Truscott
+4639780,15294189,Championship,league,7669,SF1,2009-08-02,6:00 pm,15295049,Chelsea,10358999,Lakeside FC,0,1,played,FT,Green Acres School 1
+4639781,15294189,Championship,league,7670,SF2,2009-08-02,6:00 pm,15294617,Empire 90,10359029,Panthers,3,0,played,FT,Newstead Town Park
+4639782,15294189,Championship,league,7671,CHMP,2009-08-09,6:00 pm,15294617,Empire 90,10358999,Lakeside FC,1,2,played,,Newstead Town Park
+1130378,15294189,Championship,league,7203,,2009-05-03,6:00 pm,10359029,Panthers,10359074,Lykan FC,0,2,played,,Ellicott Creek Park 1
+1130385,15294189,Championship,league,7210,,2009-05-03,6:00 pm,10359026,Elbow Soup FC,15295049,Chelsea,2,3,played,,Fireman's Park (Depew) 1
+1130382,15294189,Championship,league,7207,,2009-05-03,6:00 pm,15294622,Hawks,10359014,Grand Island,1,0,played,,Hilbert College
+1130377,15294189,Championship,league,7202,,2009-05-03,6:00 pm,15294612,Tonawanda City,10359038,Hamburg FC,3,2,played,,Ives Pond 1
+1130384,15294189,Championship,league,7209,,2009-05-03,6:00 pm,10359062,Tonawanda United,10359011,District 5,2,0,played,,Ives Pond 1
+1130376,15294189,Championship,league,7201,,2009-05-03,6:00 pm,10359050,Lackawanna FCY,10359047,Inter SC,5,1,played,,Lehigh The Cage
+1130380,15294189,Championship,league,7205,,2009-05-03,6:00 pm,10358999,Lakeside FC,10359005,Clarence Coyotes,1,2,played,,Nichols School Strauss Truscott
+1130379,15294189,Championship,league,7204,,2009-05-03,6:00 pm,10359008,Roos FC,10359017,Celtic United,2,3,played,FT,Orchard Park Soccer Complex 1
+1130383,15294189,Championship,league,7208,,2009-05-03,6:00 pm,10358996,OP Quake,10359035,Queenston FC,2,0,played,,Orchard Park Soccer Complex 3
+1130381,15294189,Championship,league,7206,,2009-05-03,6:00 pm,15294627,Niagara FC,15294617,Empire 90,2,5,played,,Reservoir Park
+1130387,15294189,Championship,league,7212,,2009-05-10,6:00 pm,10359005,Clarence Coyotes,15294622,Hawks,3,1,played,,Clarence Town Hall Park 1
+1130395,15294189,Championship,league,7220,,2009-05-10,6:00 pm,10359047,Inter SC,15294627,Niagara FC,2,1,played,,Delaware Park 1
+1130388,15294189,Championship,league,7213,,2009-05-10,6:00 pm,10359074,Lykan FC,10359026,Elbow Soup FC,2,3,played,,East and West 2
+1130392,15294189,Championship,league,7217,,2009-05-10,6:00 pm,15295049,Chelsea,10359017,Celtic United,4,0,played,,Green Acres School 1
+1130391,15294189,Championship,league,7216,,2009-05-10,6:00 pm,10359062,Tonawanda United,10358999,Lakeside FC,0,0,played,,Ives Pond 1
+1130393,15294189,Championship,league,7218,,2009-05-10,6:00 pm,15294612,Tonawanda City,10359029,Panthers,1,3,played,,Ives Pond 1
+1130386,15294189,Championship,league,7211,,2009-05-10,6:00 pm,15294617,Empire 90,10359050,Lackawanna FCY,4,6,played,,Newstead Town Park
+1130390,15294189,Championship,league,7215,,2009-05-10,6:00 pm,10359038,Hamburg FC,10359008,Roos FC,1,0,played,,Nike Base 1
+1130389,15294189,Championship,league,7214,,2009-05-10,6:00 pm,10359011,District 5,10358996,OP Quake,0,1,played,,Orchard Park Soccer Complex 4
+1130394,15294189,Championship,league,7219,,2009-05-10,6:00 pm,10359035,Queenston FC,10359014,Grand Island,1,0,played,,Ransomville Fire Hall 1
+1130400,15294189,Championship,league,7225,,2009-05-17,6:00 pm,10359005,Clarence Coyotes,10359026,Elbow Soup FC,2,0,played,,Clarence Town Hall Park 1
+1130405,15294189,Championship,league,7230,,2009-05-17,6:00 pm,10359047,Inter SC,10359035,Queenston FC,2,2,played,,Delaware Park 1
+1130396,15294189,Championship,league,7221,,2009-05-17,6:00 pm,10359074,Lykan FC,10359050,Lackawanna FCY,0,1,played,,East and West 2
+1130403,15294189,Championship,league,7228,,2009-05-17,6:00 pm,10359017,Celtic United,15294612,Tonawanda City,2,1,played,,Ellicott Creek Park 1
+1130401,15294189,Championship,league,7226,,2009-05-17,6:00 pm,10359014,Grand Island,10359062,Tonawanda United,1,2,played,,Grand Island Veteran's Park Front Field 1
+1130399,15294189,Championship,league,7224,,2009-05-17,6:00 pm,15294622,Hawks,10359011,District 5,3,7,played,,Hilbert College
+1130398,15294189,Championship,league,7223,,2009-05-17,6:00 pm,15294617,Empire 90,10359008,Roos FC,3,2,played,,Newstead Town Park
+1130402,15294189,Championship,league,7227,,2009-05-17,6:00 pm,10358999,Lakeside FC,10359029,Panthers,2,0,played,,Nichols School Strauss Truscott
+1130397,15294189,Championship,league,7222,,2009-05-17,6:00 pm,10359038,Hamburg FC,10358996,OP Quake,0,2,played,,Nike Base 1
+1130404,15294189,Championship,league,7229,,2009-05-17,6:00 pm,15294627,Niagara FC,15295049,Chelsea,2,5,played,,Reservoir Park
+1130415,15294189,Championship,league,7240,,2009-05-31,6:00 pm,10359047,Inter SC,10359062,Tonawanda United,3,3,played,,Delaware Park 1
+1130408,15294189,Championship,league,7233,,2009-05-31,6:00 pm,10359074,Lykan FC,15294617,Empire 90,2,4,played,,East and West 2
+1130412,15294189,Championship,league,7237,,2009-05-31,6:00 pm,10359029,Panthers,10359014,Grand Island,3,1,played,,Ellicott Creek Park 1
+1130410,15294189,Championship,league,7235,,2009-05-31,6:00 pm,10359026,Elbow Soup FC,10359011,District 5,2,1,played,,Fireman's Park (Depew) 1
+1130413,15294189,Championship,league,7238,,2009-05-31,6:00 pm,15294612,Tonawanda City,15295049,Chelsea,1,3,played,,Ives Pond 1
+1130406,15294189,Championship,league,7231,,2009-05-31,6:00 pm,10359050,Lackawanna FCY,10359005,Clarence Coyotes,3,1,played,,Lehigh The Cage
+1130411,15294189,Championship,league,7236,,2009-05-31,6:00 pm,10359017,Celtic United,10358999,Lakeside FC,0,1,played,,Nichols School Strauss Truscott
+1130407,15294189,Championship,league,7232,,2009-05-31,6:00 pm,10359038,Hamburg FC,15294622,Hawks,3,2,played,,Nike Base 1
+1130409,15294189,Championship,league,7234,,2009-05-31,6:00 pm,10358996,OP Quake,10359008,Roos FC,2,0,played,,Orchard Park Soccer Complex 3
+1130414,15294189,Championship,league,7239,,2009-05-31,6:00 pm,10359035,Queenston FC,15294627,Niagara FC,4,1,played,,Ransomville Fire Hall 1
+1130417,15294189,Championship,league,7242,,2009-06-07,4:00 pm,10359011,District 5,10359050,Lackawanna FCY,2,2,played,,Orchard Park Soccer Complex 4
+1130416,15294189,Championship,league,7241,,2009-06-07,6:00 pm,10359074,Lykan FC,10359005,Clarence Coyotes,2,2,played,,East and West 2
+1130424,15294189,Championship,league,7249,,2009-06-07,6:00 pm,10359029,Panthers,10359047,Inter SC,4,2,played,,Ellicott Creek Park 1
+1130420,15294189,Championship,league,7245,,2009-06-07,6:00 pm,10359026,Elbow Soup FC,10359038,Hamburg FC,1,2,played,,Fireman's Park (Depew) 1
+1130422,15294189,Championship,league,7247,,2009-06-07,6:00 pm,10359014,Grand Island,10359017,Celtic United,1,2,played,,Grand Island Veteran's Park Front Field 1
+1130423,15294189,Championship,league,7248,,2009-06-07,6:00 pm,10359062,Tonawanda United,15294627,Niagara FC,6,1,played,,Ives Pond 1
+1130418,15294189,Championship,league,7243,,2009-06-07,6:00 pm,15294617,Empire 90,10358996,OP Quake,6,1,played,,Newstead Town Park
+1130421,15294189,Championship,league,7246,,2009-06-07,6:00 pm,10358999,Lakeside FC,15294612,Tonawanda City,1,0,played,,Nichols School Strauss Truscott
+1130419,15294189,Championship,league,7244,,2009-06-07,6:00 pm,10359008,Roos FC,15294622,Hawks,3,3,played,,Orchard Park Soccer Complex 1
+1130425,15294189,Championship,league,7250,,2009-06-07,6:00 pm,10359035,Queenston FC,15295049,Chelsea,1,4,played,,Ransomville Fire Hall 1
+1130428,15294189,Championship,league,7253,,2009-06-14,4:00 pm,10359011,District 5,10359074,Lykan FC,2,5,played,,Orchard Park Soccer Complex 4
+1130426,15294189,Championship,league,7251,,2009-06-14,6:00 pm,10359005,Clarence Coyotes,15294617,Empire 90,2,4,played,,Clarence Town Hall Park 1
+1130433,15294189,Championship,league,7258,,2009-06-14,6:00 pm,10359047,Inter SC,10359017,Celtic United,2,5,played,,Delaware Park 1
+1130432,15294189,Championship,league,7257,,2009-06-14,6:00 pm,10359029,Panthers,15294627,Niagara FC,4,0,played,,Ellicott Creek Park 1
+1130431,15294189,Championship,league,7256,,2009-06-14,6:00 pm,15295049,Chelsea,10358999,Lakeside FC,2,1,played,,Green Acres School 1
+1130434,15294189,Championship,league,7259,,2009-06-14,6:00 pm,15294612,Tonawanda City,10359014,Grand Island,3,1,played,,Ives Pond 1
+1130427,15294189,Championship,league,7252,,2009-06-14,6:00 pm,10359038,Hamburg FC,10359050,Lackawanna FCY,1,2,played,,Nike Base 1
+1130430,15294189,Championship,league,7255,,2009-06-14,6:00 pm,10359008,Roos FC,10359026,Elbow Soup FC,2,2,played,,Orchard Park Soccer Complex 1
+1130429,15294189,Championship,league,7254,,2009-06-14,6:00 pm,10358996,OP Quake,15294622,Hawks,3,2,played,,Orchard Park Soccer Complex 3
+1130435,15294189,Championship,league,7260,,2009-06-14,6:00 pm,10359035,Queenston FC,10359062,Tonawanda United,0,3,played,,Ransomville Fire Hall 1
+1130438,15294189,Championship,league,7263,,2009-06-21,6:00 pm,10359005,Clarence Coyotes,10359011,District 5,4,0,played,,Clarence Town Hall Park 1
+1130445,15294189,Championship,league,7270,,2009-06-21,6:00 pm,10359047,Inter SC,15294612,Tonawanda City,0,5,played,,Delaware Park 1
+1130436,15294189,Championship,league,7261,,2009-06-21,6:00 pm,10359074,Lykan FC,10359038,Hamburg FC,3,1,played,,East and West 2
+1130443,15294189,Championship,league,7268,,2009-06-21,6:00 pm,10359029,Panthers,10359035,Queenston FC,8,1,played,,Ellicott Creek Park 1
+1130440,15294189,Championship,league,7265,,2009-06-21,6:00 pm,10359026,Elbow Soup FC,10358996,OP Quake,4,2,played,,Fireman's Park (Depew) 1
+1130441,15294189,Championship,league,7266,,2009-06-21,6:00 pm,10359014,Grand Island,10358999,Lakeside FC,0,3,played,,Grand Island Veteran's Park Front Field 1
+1130437,15294189,Championship,league,7262,,2009-06-21,6:00 pm,15294622,Hawks,15294617,Empire 90,0,5,played,,Hilbert College
+1130444,15294189,Championship,league,7269,,2009-06-21,6:00 pm,10359062,Tonawanda United,15295049,Chelsea,2,4,played,,Ives Pond 1
+1130439,15294189,Championship,league,7264,,2009-06-21,6:00 pm,10359050,Lackawanna FCY,10359008,Roos FC,1,2,played,,Lehigh The Cage
+1130442,15294189,Championship,league,7267,,2009-06-21,6:00 pm,15294627,Niagara FC,10359017,Celtic United,0,4,played,,Reservoir Park
+1130451,15294189,Championship,league,7276,,2009-06-28,4:00 pm,10358999,Lakeside FC,10359047,Inter SC,2,1,played,,Nichols School Strauss Truscott
+1130452,15294189,Championship,league,7277,,2009-06-28,6:00 pm,10359017,Celtic United,10359035,Queenston FC,2,1,played,,Ellicott Creek Park 1
+1130453,15294189,Championship,league,7278,,2009-06-28,6:00 pm,15295049,Chelsea,10359014,Grand Island,5,0,played,,Green Acres School 1
+1130450,15294189,Championship,league,7275,,2009-06-28,6:00 pm,15294622,Hawks,10359026,Elbow Soup FC,1,6,played,,Hilbert College
+1130454,15294189,Championship,league,7279,,2009-06-28,6:00 pm,10359062,Tonawanda United,10359029,Panthers,0,1,played,,Ives Pond 1
+1130447,15294189,Championship,league,7272,,2009-06-28,6:00 pm,15294617,Empire 90,10359011,District 5,3,1,played,,Newstead Town Park
+1130446,15294189,Championship,league,7271,,2009-06-28,6:00 pm,10359038,Hamburg FC,10359005,Clarence Coyotes,0,3,played,,Nike Base 1
+1130449,15294189,Championship,league,7274,,2009-06-28,6:00 pm,10359008,Roos FC,10359074,Lykan FC,1,1,played,,Orchard Park Soccer Complex 1
+1130448,15294189,Championship,league,7273,,2009-06-28,6:00 pm,10358996,OP Quake,10359050,Lackawanna FCY,2,0,played,,Orchard Park Soccer Complex 3
+1130455,15294189,Championship,league,7280,,2009-06-28,6:00 pm,15294627,Niagara FC,15294612,Tonawanda City,6,11,played,,Reservoir Park
+1130458,15294189,Championship,league,7283,,2009-07-12,4:00 pm,10359011,District 5,10359038,Hamburg FC,0,2,played,,Orchard Park Soccer Complex 4
+1130462,15294189,Championship,league,7287,,2009-07-12,6:00 pm,10359017,Celtic United,10359062,Tonawanda United,2,0,played,,Ellicott Creek Park 1
+1130460,15294189,Championship,league,7285,,2009-07-12,6:00 pm,10359026,Elbow Soup FC,15294617,Empire 90,1,4,played,,Fireman's Park (Depew) 1
+1130465,15294189,Championship,league,7290,,2009-07-12,6:00 pm,10359014,Grand Island,10359047,Inter SC,2,6,played,,Grand Island Veteran's Park Front Field 1
+1130464,15294189,Championship,league,7289,,2009-07-12,6:00 pm,15295049,Chelsea,10359029,Panthers,1,3,played,,Green Acres School 1
+1130456,15294189,Championship,league,7281,,2009-07-12,6:00 pm,10359050,Lackawanna FCY,15294622,Hawks,6,3,played,,Lehigh The Cage
+1130459,15294189,Championship,league,7284,,2009-07-12,6:00 pm,10359008,Roos FC,10359005,Clarence Coyotes,0,2,played,,Orchard Park Soccer Complex 1
+1130457,15294189,Championship,league,7282,,2009-07-12,6:00 pm,10358996,OP Quake,10359074,Lykan FC,1,2,played,,Orchard Park Soccer Complex 3
+1130463,15294189,Championship,league,7288,,2009-07-12,6:00 pm,10359035,Queenston FC,15294612,Tonawanda City,2,6,played,,Ransomville Fire Hall 1
+1130461,15294189,Championship,league,7286,,2009-07-12,6:00 pm,15294627,Niagara FC,10358999,Lakeside FC,0,9,played,,Reservoir Park
+1130468,15294189,Championship,league,7293,,2009-07-19,6:00 pm,10359005,Clarence Coyotes,10358996,OP Quake,3,1,played,,Clarence Town Hall Park 1
+1130472,15294189,Championship,league,7297,,2009-07-19,6:00 pm,10359017,Celtic United,10359029,Panthers,0,2,played,,Ellicott Creek Park 1
+1130475,15294189,Championship,league,7300,,2009-07-19,6:00 pm,10359014,Grand Island,15294627,Niagara FC,4,0,played,,Grand Island Veteran's Park Front Field 1
+1130473,15294189,Championship,league,7298,,2009-07-19,6:00 pm,15295049,Chelsea,10359047,Inter SC,2,1,played,,Green Acres School 1
+1130467,15294189,Championship,league,7292,,2009-07-19,6:00 pm,15294622,Hawks,10359074,Lykan FC,1,1,played,,Hilbert College
+1130474,15294189,Championship,league,7299,,2009-07-19,6:00 pm,15294612,Tonawanda City,10359062,Tonawanda United,3,3,played,,Ives Pond 1
+1130470,15294189,Championship,league,7295,,2009-07-19,6:00 pm,10359050,Lackawanna FCY,10359026,Elbow Soup FC,2,6,played,,Lehigh The Cage
+1130466,15294189,Championship,league,7291,,2009-07-19,6:00 pm,15294617,Empire 90,10359038,Hamburg FC,1,0,played,,Newstead Town Park
+1130471,15294189,Championship,league,7296,,2009-07-19,6:00 pm,10358999,Lakeside FC,10359035,Queenston FC,2,1,played,,Nichols School Strauss Truscott
+1130469,15294189,Championship,league,7294,,2009-07-19,6:00 pm,10359011,District 5,10359008,Roos FC,4,0,played,,Orchard Park Soccer Complex 4
+4639779,15294189,Championship,league,7668,QF2,2009-07-26,6:00 pm,10359005,Clarence Coyotes,10358999,Lakeside FC,0,2,played,FT,Clarence Town Hall Park 1
+4639778,15294189,Championship,league,7667,QF1,2009-07-26,6:00 pm,10359029,Panthers,10359050,Lackawanna FCY,2,0,played,FT,Ellicott Creek Park 1
+1130611,15292122,1st Division,league,7453,,2009-07-12,4:00 pm,10359071,Baker City FC,15296244,Wolf Mill,0,5,played,,Ellicott Creek Park 1
+1130612,15292122,1st Division,league,7454,,2009-07-12,4:00 pm,10359095,Elbow Soup SC,10359032,Lakeshore,2,2,played,,Fireman's Park (Depew) 1
+1130608,15292122,1st Division,league,7450,,2009-07-12,4:00 pm,10359120,NS Alliance,10359080,Eclipse,2,3,played,,Orchard Park Soccer Complex 5
+1130609,15292122,1st Division,league,7451,,2009-07-12,4:00 pm,10359092,Ukraine,10359077,WNY United Reds,3,2,played,,Rehm Road
+1130607,15292122,1st Division,league,7449,,2009-07-12,6:00 pm,10359086,Rangers,10359083,Lancaster,2,0,played,,Rehm Road
+1130610,15292122,1st Division,league,7452,,2009-07-12,6:30 pm,10359068,Great Lakes FC,15296249,Hamburg 2,0,2,played,,St. Christophers
+1130616,15292122,1st Division,league,7458,,2009-07-19,4:00 pm,10359071,Baker City FC,10359083,Lancaster,2,0,played,,Ellicott Creek Park 1
+1130614,15292122,1st Division,league,7456,,2009-07-19,6:00 pm,10359086,Rangers,10359068,Great Lakes FC,1,0,played,,Irvington
+1130615,15292122,1st Division,league,7457,,2009-07-19,6:00 pm,15296249,Hamburg 2,10359092,Ukraine,7,0,played,,Nike Base 1
+1130618,15292122,1st Division,league,7460,,2009-07-19,6:00 pm,10359077,WNY United Reds,10359095,Elbow Soup SC,2,1,played,,UB Main Rotary Field
+1130617,15292122,1st Division,league,7459,,2009-07-19,6:00 pm,10359032,Lakeshore,10359120,NS Alliance,0,1,played,,Wendt Beach 1
+1130613,15292122,1st Division,league,7455,,2009-07-19,6:00 pm,15296244,Wolf Mill,10359080,Eclipse,2,3,played,,Willow Ridge Elementary 1
+1130624,15292122,1st Division,league,7466,,2009-07-26,4:00 pm,10359095,Elbow Soup SC,15296249,Hamburg 2,1,1,played,,Fireman's Park (Depew) 1
+1130622,15292122,1st Division,league,7464,,2009-07-26,6:00 pm,10359068,Great Lakes FC,10359071,Baker City FC,2,2,played,,Ives Pond 1
+1130621,15292122,1st Division,league,7463,,2009-07-26,6:00 pm,10359120,NS Alliance,10359077,WNY United Reds,3,2,played,,Orchard Park Soccer Complex 5
+1130620,15292122,1st Division,league,7462,,2009-07-26,6:00 pm,10359092,Ukraine,10359086,Rangers,3,6,played,,Rehm Road
+1130623,15292122,1st Division,league,7465,,2009-07-26,6:00 pm,10359080,Eclipse,10359032,Lakeshore,1,1,played,,Robert Smith Park (Alden)
+1130619,15292122,1st Division,league,7461,,2009-07-26,6:00 pm,15296244,Wolf Mill,10359083,Lancaster,3,2,played,,Willow Ridge Elementary 1
+1130564,15292122,1st Division,league,7406,,2009-05-03,4:00 pm,10359095,Elbow Soup SC,10359086,Rangers,0,2,played,,Fireman's Park (Depew) 1
+1130562,15292122,1st Division,league,7404,,2009-05-03,6:00 pm,15296249,Hamburg 2,10359120,NS Alliance,0,3,played,,Nike Base 1
+1130560,15292122,1st Division,league,7402,,2009-05-03,6:00 pm,10359092,Ukraine,10359071,Baker City FC,4,2,played,,Rehm Road
+1130561,15292122,1st Division,league,7403,,2009-05-03,6:00 pm,10359080,Eclipse,10359077,WNY United Reds,7,0,played,,Robert Smith Park (Alden)
+1130559,15292122,1st Division,league,7401,,2009-05-03,6:00 pm,10359068,Great Lakes FC,10359083,Lancaster,2,1,played,,St. Christophers
+1130563,15292122,1st Division,league,7405,,2009-05-03,6:00 pm,10359032,Lakeshore,15296244,Wolf Mill,3,2,played,,Wendt Beach 1
+1130570,15292122,1st Division,league,7412,,2009-05-10,4:00 pm,10359071,Baker City FC,10359095,Elbow Soup SC,1,1,played,,Ellicott Creek Park 1
+1130565,15292122,1st Division,league,7407,,2009-05-10,4:00 pm,10359092,Ukraine,10359083,Lancaster,6,0,played,,Rehm Road
+1130568,15292122,1st Division,league,7410,,2009-05-10,6:00 pm,15296249,Hamburg 2,10359080,Eclipse,0,3,played,,Nike Base 1
+1130567,15292122,1st Division,league,7409,,2009-05-10,6:00 pm,10359086,Rangers,10359120,NS Alliance,1,1,played,FT,Rehm Road
+1130569,15292122,1st Division,league,7411,,2009-05-10,6:00 pm,10359077,WNY United Reds,10359032,Lakeshore,3,2,played,,UB Main Rotary Field
+1130566,15292122,1st Division,league,7408,,2009-05-10,6:00 pm,15296244,Wolf Mill,10359068,Great Lakes FC,2,2,played,,Willow Ridge Elementary 1
+1130575,15292122,1st Division,league,7417,,2009-05-17,6:00 pm,10359083,Lancaster,10359095,Elbow Soup SC,0,2,played,,Lancaster High School 1
+1130573,15292122,1st Division,league,7415,,2009-05-17,6:00 pm,10359120,NS Alliance,10359071,Baker City FC,3,1,played,,Orchard Park Soccer Complex 5
+1130571,15292122,1st Division,league,7413,,2009-05-17,6:00 pm,10359080,Eclipse,10359086,Rangers,1,4,played,,Robert Smith Park (Alden)
+1130576,15292122,1st Division,league,7418,,2009-05-17,6:00 pm,10359068,Great Lakes FC,10359092,Ukraine,2,0,played,,St. Christophers
+1130572,15292122,1st Division,league,7414,,2009-05-17,6:00 pm,10359077,WNY United Reds,15296244,Wolf Mill,2,1,played,,UB Main Rotary Field
+1130574,15292122,1st Division,league,7416,,2009-05-17,6:00 pm,10359032,Lakeshore,15296249,Hamburg 2,0,2,played,,Wendt Beach 1
+1130580,15292122,1st Division,league,7422,,2009-05-31,4:00 pm,10359071,Baker City FC,10359080,Eclipse,2,2,played,,Ellicott Creek Park 1
+1130582,15292122,1st Division,league,7424,,2009-05-31,4:00 pm,10359095,Elbow Soup SC,10359068,Great Lakes FC,1,2,played,,Fireman's Park (Depew) 1
+1130579,15292122,1st Division,league,7421,,2009-05-31,6:00 pm,15296249,Hamburg 2,10359077,WNY United Reds,1,0,played,,Nike Base 1
+1130578,15292122,1st Division,league,7420,,2009-05-31,6:00 pm,10359120,NS Alliance,10359083,Lancaster,3,1,played,,Orchard Park Soccer Complex 5
+1130577,15292122,1st Division,league,7419,,2009-05-31,6:00 pm,10359092,Ukraine,15296244,Wolf Mill,4,1,played,,Rehm Road
+1130581,15292122,1st Division,league,7423,,2009-05-31,6:00 pm,10359086,Rangers,10359032,Lakeshore,8,1,played,,Rehm Road
+1130587,15292122,1st Division,league,7429,,2009-06-07,4:00 pm,10359071,Baker City FC,10359032,Lakeshore,1,1,played,,Ellicott Creek Park 1
+1130588,15292122,1st Division,league,7430,,2009-06-07,4:00 pm,10359095,Elbow Soup SC,10359092,Ukraine,3,0,played,,Fireman's Park (Depew) 1
+1130583,15292122,1st Division,league,7425,,2009-06-07,6:00 pm,10359083,Lancaster,10359080,Eclipse,1,6,played,,Lancaster High School 1
+1130586,15292122,1st Division,league,7428,,2009-06-07,6:00 pm,15296249,Hamburg 2,15296244,Wolf Mill,0,0,played,,Nike Base 1
+1130585,15292122,1st Division,league,7427,,2009-06-07,6:00 pm,10359077,WNY United Reds,10359086,Rangers,1,2,played,,UB Main Rotary Field
+1130584,15292122,1st Division,league,7426,,2009-06-07,6:30 pm,10359068,Great Lakes FC,10359120,NS Alliance,1,1,played,,St. Christophers
+1130590,15292122,1st Division,league,7432,,2009-06-14,4:00 pm,10359120,NS Alliance,10359092,Ukraine,4,1,played,,Orchard Park Soccer Complex 5
+1130591,15292122,1st Division,league,7433,,2009-06-14,6:00 pm,10359086,Rangers,15296249,Hamburg 2,3,4,played,,Rehm Road
+1130589,15292122,1st Division,league,7431,,2009-06-14,6:00 pm,10359080,Eclipse,10359068,Great Lakes FC,2,0,played,,Robert Smith Park (Alden)
+1130592,15292122,1st Division,league,7434,,2009-06-14,6:00 pm,10359077,WNY United Reds,10359071,Baker City FC,2,2,played,,UB Main Rotary Field
+1130593,15292122,1st Division,league,7435,,2009-06-14,6:00 pm,10359032,Lakeshore,10359083,Lancaster,2,1,played,,Wendt Beach 1
+1130594,15292122,1st Division,league,7436,,2009-06-14,6:00 pm,15296244,Wolf Mill,10359095,Elbow Soup SC,2,0,played,,Willow Ridge Elementary 1
+1130598,15292122,1st Division,league,7440,,2009-06-21,4:00 pm,10359071,Baker City FC,15296249,Hamburg 2,3,0,played,,Ellicott Creek Park 1
+1130600,15292122,1st Division,league,7442,,2009-06-21,4:00 pm,10359095,Elbow Soup SC,10359120,NS Alliance,1,1,played,,Fireman's Park (Depew) 1
+1130597,15292122,1st Division,league,7439,,2009-06-21,6:00 pm,10359083,Lancaster,10359077,WNY United Reds,2,5,played,,Lancaster High School 1
+1130596,15292122,1st Division,league,7438,,2009-06-21,6:00 pm,10359092,Ukraine,10359080,Eclipse,2,3,played,,Rehm Road
+1130595,15292122,1st Division,league,7437,,2009-06-21,6:00 pm,15296244,Wolf Mill,10359086,Rangers,0,2,played,,Willow Ridge Elementary 1
+1130599,15292122,1st Division,league,7441,,2009-06-21,6:30 pm,10359068,Great Lakes FC,10359032,Lakeshore,1,1,played,,St. Christophers
+1130603,15292122,1st Division,league,7445,,2009-06-28,6:00 pm,10359083,Lancaster,15296249,Hamburg 2,1,4,played,,Lancaster High School 1
+1130604,15292122,1st Division,league,7446,,2009-06-28,6:00 pm,10359086,Rangers,10359071,Baker City FC,2,0,played,,Rehm Road
+1130606,15292122,1st Division,league,7448,,2009-06-28,6:00 pm,10359080,Eclipse,10359095,Elbow Soup SC,3,0,played,,Robert Smith Park (Alden)
+1130605,15292122,1st Division,league,7447,,2009-06-28,6:00 pm,10359032,Lakeshore,10359092,Ukraine,2,2,played,,Wendt Beach 1
+1130601,15292122,1st Division,league,7443,,2009-06-28,6:00 pm,15296244,Wolf Mill,10359120,NS Alliance,2,2,played,,Willow Ridge Elementary 1
+1130602,15292122,1st Division,league,7444,,2009-06-28,6:30 pm,10359068,Great Lakes FC,10359077,WNY United Reds,1,1,played,,St. Christophers
+5995595,15292124,2nd Division,league,7677,CHMP,2016-08-09,4:00 pm,12579571,Devils,12579600,Wolves FC,2,1,played,,Nichols School Peek
+1130627,15292124,2nd Division,league,7603,,2009-05-03,6:00 pm,10359111,Crimson Fire FC,15296943,Depew Village,1,3,played,,Front Park 1
+1130626,15292124,2nd Division,league,7602,,2009-05-03,6:00 pm,12579571,Devils,12579600,Wolves FC,2,1,played,,Gateway-Longview 1
+1130628,15292124,2nd Division,league,7604,,2009-05-03,6:00 pm,10359117,Buffalo Italia FC,10359108,Stone Jug,1,4,played,,Hamlin Park 1
+1130625,15292124,2nd Division,league,7601,,2009-05-03,6:00 pm,10359102,WNY United,26892099,Rampart FC,0,1,played,,Hillview Elementary School 1
+1130630,15292124,2nd Division,league,7606,,2009-05-03,6:00 pm,15296948,MAC Eagles SC,10359105,CS Italia,1,1,played,,Sciole Elementary
+1130629,15292124,2nd Division,league,7605,,2009-05-03,6:00 pm,10359123,Cheektowaga White Eagles,10359114,Southtowns,4,3,played,,Woodrow Wilson Elementary
+1130634,15292124,2nd Division,league,7610,,2009-05-10,6:00 pm,15296943,Depew Village,10359108,Stone Jug,0,1,played,,Fireman's Park (Depew) 1
+1130631,15292124,2nd Division,league,7607,,2009-05-10,6:00 pm,10359111,Crimson Fire FC,12579600,Wolves FC,0,1,played,,Front Park 1
+1130632,15292124,2nd Division,league,7608,,2009-05-10,6:00 pm,26892099,Rampart FC,10359105,CS Italia,0,5,played,,Gateway-Longview 1
+1130635,15292124,2nd Division,league,7611,,2009-05-10,6:00 pm,10359102,WNY United,12579571,Devils,1,2,played,,Hillview Elementary School 1
+1130636,15292124,2nd Division,league,7612,,2009-05-10,6:00 pm,10359114,Southtowns,15296948,MAC Eagles SC,2,1,played,,Orchard Park Soccer Complex 2
+1130633,15292124,2nd Division,league,7609,,2009-05-10,6:00 pm,10359123,Cheektowaga White Eagles,10359117,Buffalo Italia FC,2,2,played,,Woodrow Wilson Elementary
+1130641,15292124,2nd Division,league,7617,,2009-05-17,6:00 pm,15296943,Depew Village,10359123,Cheektowaga White Eagles,2,1,played,,Fireman's Park (Depew) 1
+1130637,15292124,2nd Division,league,7613,,2009-05-17,6:00 pm,12579571,Devils,10359111,Crimson Fire FC,3,1,played,,Gateway-Longview 1
+1130639,15292124,2nd Division,league,7615,,2009-05-17,6:00 pm,10359114,Southtowns,26892099,Rampart FC,3,2,played,,Orchard Park Soccer Complex 2
+1130642,15292124,2nd Division,league,7618,,2009-05-17,6:00 pm,15296948,MAC Eagles SC,10359117,Buffalo Italia FC,6,0,played,,Sciole Elementary
+1130640,15292124,2nd Division,league,7616,,2009-05-17,6:00 pm,10359108,Stone Jug,12579600,Wolves FC,5,0,played,,Thomas Marks Elementary School 1
+1130638,15292124,2nd Division,league,7614,,2009-05-17,6:00 pm,10359105,CS Italia,10359102,WNY United,4,0,played,,Wendleville Fire Hall 1
+1130647,15292124,2nd Division,league,7623,,2009-05-31,6:00 pm,12579600,Wolves FC,10359123,Cheektowaga White Eagles,3,3,played,,East and West 2
+1130645,15292124,2nd Division,league,7621,,2009-05-31,6:00 pm,26892099,Rampart FC,10359117,Buffalo Italia FC,1,7,played,,Gateway-Longview 1
+1130644,15292124,2nd Division,league,7620,,2009-05-31,6:00 pm,10359102,WNY United,10359114,Southtowns,1,1,played,,Hillview Elementary School 1
+1130648,15292124,2nd Division,league,7624,,2009-05-31,6:00 pm,15296948,MAC Eagles SC,15296943,Depew Village,1,2,played,,Sciole Elementary
+1130646,15292124,2nd Division,league,7622,,2009-05-31,6:00 pm,10359108,Stone Jug,10359111,Crimson Fire FC,0,1,played,,Thomas Marks Elementary School 1
+1130643,15292124,2nd Division,league,7619,,2009-05-31,6:00 pm,10359105,CS Italia,12579571,Devils,1,0,played,,Wendleville Fire Hall 1
+1130654,15292124,2nd Division,league,7630,,2009-06-07,6:00 pm,12579600,Wolves FC,15296948,MAC Eagles SC,3,1,played,,East and West 2
+1130649,15292124,2nd Division,league,7625,,2009-06-07,6:00 pm,26892099,Rampart FC,15296943,Depew Village,0,7,played,,Gateway-Longview 1
+1130651,15292124,2nd Division,league,7627,,2009-06-07,6:00 pm,10359117,Buffalo Italia FC,10359102,WNY United,4,3,played,,Hamlin Park 1
+1130650,15292124,2nd Division,league,7626,,2009-06-07,6:00 pm,10359114,Southtowns,10359105,CS Italia,0,3,played,,Orchard Park Soccer Complex 2
+1130652,15292124,2nd Division,league,7628,,2009-06-07,6:00 pm,10359108,Stone Jug,12579571,Devils,1,1,played,,Thomas Marks Elementary School 1
+1130653,15292124,2nd Division,league,7629,,2009-06-07,6:00 pm,10359123,Cheektowaga White Eagles,10359111,Crimson Fire FC,3,0,played,,Woodrow Wilson Elementary
+1130655,15292124,2nd Division,league,7631,,2009-06-14,6:00 pm,12579600,Wolves FC,26892099,Rampart FC,7,1,played,,East and West 2
+1130656,15292124,2nd Division,league,7632,,2009-06-14,6:00 pm,15296943,Depew Village,10359102,WNY United,2,0,played,,Fireman's Park (Depew) 1
+1130657,15292124,2nd Division,league,7633,,2009-06-14,6:00 pm,12579571,Devils,10359114,Southtowns,3,1,played,,Gateway-Longview 1
+1130658,15292124,2nd Division,league,7634,,2009-06-14,6:00 pm,10359117,Buffalo Italia FC,10359105,CS Italia,1,4,played,,Hamlin Park 1
+1130660,15292124,2nd Division,league,7636,,2009-06-14,6:00 pm,15296948,MAC Eagles SC,10359111,Crimson Fire FC,3,4,played,,Sciole Elementary
+1130659,15292124,2nd Division,league,7635,,2009-06-14,6:00 pm,10359123,Cheektowaga White Eagles,10359108,Stone Jug,3,1,played,,Woodrow Wilson Elementary
+1130661,15292124,2nd Division,league,7637,,2009-06-21,6:00 pm,10359111,Crimson Fire FC,26892099,Rampart FC,7,0,played,,Front Park 1
+1130664,15292124,2nd Division,league,7640,,2009-06-21,6:00 pm,12579571,Devils,10359123,Cheektowaga White Eagles,3,2,played,,Gateway-Longview 1
+1130665,15292124,2nd Division,league,7641,,2009-06-21,6:00 pm,10359102,WNY United,12579600,Wolves FC,1,7,played,,Hillview Elementary School 1
+1130663,15292124,2nd Division,league,7639,,2009-06-21,6:00 pm,10359114,Southtowns,10359117,Buffalo Italia FC,4,1,played,,Orchard Park Soccer Complex 2
+1130666,15292124,2nd Division,league,7642,,2009-06-21,6:00 pm,15296948,MAC Eagles SC,10359108,Stone Jug,1,3,played,,Sciole Elementary
+1130662,15292124,2nd Division,league,7638,,2009-06-21,6:00 pm,10359105,CS Italia,15296943,Depew Village,2,2,played,,Wendleville Fire Hall 1
+1130669,15292124,2nd Division,league,7645,,2009-06-28,6:00 pm,15296943,Depew Village,10359114,Southtowns,2,2,played,,Fireman's Park (Depew) 1
+1130667,15292124,2nd Division,league,7643,,2009-06-28,6:00 pm,10359111,Crimson Fire FC,10359102,WNY United,3,0,played,,Front Park 1
+1130671,15292124,2nd Division,league,7647,,2009-06-28,6:00 pm,26892099,Rampart FC,10359108,Stone Jug,0,4,played,,Gateway-Longview 1
+1130670,15292124,2nd Division,league,7646,,2009-06-28,6:00 pm,10359117,Buffalo Italia FC,12579571,Devils,2,7,played,,Hamlin Park 1
+1130668,15292124,2nd Division,league,7644,,2009-06-28,6:00 pm,10359105,CS Italia,12579600,Wolves FC,0,2,played,,Wendleville Fire Hall 1
+1130672,15292124,2nd Division,league,7648,,2009-06-28,6:00 pm,10359123,Cheektowaga White Eagles,15296948,MAC Eagles SC,2,5,played,,Woodrow Wilson Elementary
+1130674,15292124,2nd Division,league,7650,,2009-07-12,6:00 pm,12579600,Wolves FC,10359114,Southtowns,1,1,played,,East and West 2
+1130677,15292124,2nd Division,league,7653,,2009-07-12,6:00 pm,26892099,Rampart FC,10359123,Cheektowaga White Eagles,0,2,played,,Gateway-Longview 1
+1130675,15292124,2nd Division,league,7651,,2009-07-12,6:00 pm,10359117,Buffalo Italia FC,15296943,Depew Village,2,3,played,,Hamlin Park 1
+1130678,15292124,2nd Division,league,7654,,2009-07-12,6:00 pm,15296948,MAC Eagles SC,12579571,Devils,1,1,played,,Sciole Elementary
+1130676,15292124,2nd Division,league,7652,,2009-07-12,6:00 pm,10359108,Stone Jug,10359102,WNY United,5,2,played,,Thomas Marks Elementary School 1
+1130673,15292124,2nd Division,league,7649,,2009-07-12,6:00 pm,10359105,CS Italia,10359111,Crimson Fire FC,1,0,played,,Wendleville Fire Hall 1
+1130682,15292124,2nd Division,league,7658,,2009-07-19,6:00 pm,12579600,Wolves FC,10359117,Buffalo Italia FC,3,2,played,,East and West 2
+1130679,15292124,2nd Division,league,7655,,2009-07-19,6:00 pm,15296943,Depew Village,12579571,Devils,2,2,played,,Fireman's Park (Depew) 1
+1130684,15292124,2nd Division,league,7660,,2009-07-19,6:00 pm,26892099,Rampart FC,15296948,MAC Eagles SC,0,10,played,,Gateway-Longview 1
+1130681,15292124,2nd Division,league,7657,,2009-07-19,6:00 pm,10359102,WNY United,10359123,Cheektowaga White Eagles,1,4,played,,Hillview Elementary School 1
+1130680,15292124,2nd Division,league,7656,,2009-07-19,6:00 pm,10359114,Southtowns,10359111,Crimson Fire FC,1,1,played,,Orchard Park Soccer Complex 2
+1130683,15292124,2nd Division,league,7659,,2009-07-19,6:00 pm,10359108,Stone Jug,10359105,CS Italia,1,1,played,,Thomas Marks Elementary School 1
+1130685,15292124,2nd Division,league,7661,,2009-07-26,6:00 pm,12579600,Wolves FC,15296943,Depew Village,1,1,played,,East and West 2
+1130696,15292124,2nd Division,league,7664,,2009-07-26,6:00 pm,10359111,Crimson Fire FC,10359117,Buffalo Italia FC,6,2,played,,Front Park 1
+1130694,15292124,2nd Division,league,7662,,2009-07-26,6:00 pm,12579571,Devils,26892099,Rampart FC,15,0,played,,Gateway-Longview 1
+1130698,15292124,2nd Division,league,7666,,2009-07-26,6:00 pm,10359102,WNY United,15296948,MAC Eagles SC,11,1,played,,Hillview Elementary School 1
+1130697,15292124,2nd Division,league,7665,,2009-07-26,6:00 pm,10359114,Southtowns,10359108,Stone Jug,4,3,played,,Orchard Park Soccer Complex 2
+1130695,15292124,2nd Division,league,7663,,2009-07-26,6:00 pm,10359123,Cheektowaga White Eagles,10359105,CS Italia,3,4,played,,Woodrow Wilson Elementary
+5995593,15292124,2nd Division,league,7675,SF1,2009-08-02,6:00 pm,10359105,CS Italia,12579600,Wolves FC,1,2,played,FT,
+5995594,15292124,2nd Division,league,7676,SF1,2009-08-02,6:00 pm,12579571,Devils,15296943,Depew Village,2,1,played,FT,
+5179972,75386449,BDSL Tehel Cup Bracket,cup,1,,2014-05-22,6:30 pm,10359020,Aurora,10359005,Clarence,4,1,played,,
+5179973,75386449,BDSL Tehel Cup Bracket,cup,2,,2014-05-22,6:30 pm,10359026,Elbow Soup FC,10350979,Azzurri,2,7,played,,
+5179974,75386449,BDSL Tehel Cup Bracket,cup,3,,2014-05-22,6:30 pm,10359029,Panthers,10359047,BSC International,4,2,played,,
+5179975,75386449,BDSL Tehel Cup Bracket,cup,4,,2014-05-22,6:30 pm,10359017,Celtic United,10350982,Lazio,3,1,played,,
+5179976,75386449,BDSL Tehel Cup Bracket,cup,5,,2014-05-22,6:30 pm,15294617,Empire 90,15295049,Chelsea,6,1,played,,
+5179977,75386449,BDSL Tehel Cup Bracket,cup,6,,2014-05-22,6:30 pm,10359011,District 5,10359038,Hamburg Monarchs,0,2,played,FT,
+5179978,75386449,BDSL Tehel Cup Bracket,cup,7,,2014-05-22,6:30 pm,10359014,Grand Island,10359062,Tonawanda United,2,0,played,FT,
+5179979,75386449,BDSL Tehel Cup Bracket,cup,8,,2014-05-22,6:30 pm,15294622,Hawks,10359050,Yemen Elite,0,4,played,,
+5179982,75386449,BDSL Tehel Cup Bracket,cup,10,,2014-05-29,6:30 pm,15294627,Niagara FC,10359002,West Seneca Strikers,1,6,played,,
+5179983,75386449,BDSL Tehel Cup Bracket,cup,11,,2014-05-29,6:30 pm,10359023,Polonia,10358999,Lakeside FC,0,2,played,FT,
+5179984,75386449,BDSL Tehel Cup Bracket,cup,12,,2014-05-29,6:30 pm,10359008,Roos FC,15294612,Tonawanda City,2,3,played,,
+5179981,75386449,BDSL Tehel Cup Bracket,cup,9,,2014-05-29,6:30 pm,10359074,Lykan FC,10359035,Queenston FC,3,0,played,,
+5179988,75386449,BDSL Tehel Cup Bracket,cup,13,,2014-06-12,6:30 pm,10359020,Aurora,10358999,Lakeside FC,1,4,played,,
+5179989,75386449,BDSL Tehel Cup Bracket,cup,14,,2014-06-12,6:30 pm,10350979,Azzurri,15294612,Tonawanda City,2,0,played,,
+5179990,75386449,BDSL Tehel Cup Bracket,cup,15,,2014-06-12,6:30 pm,10350991,BSC Raiders,10359017,Celtic United,7,1,played,,
+5179991,75386449,BDSL Tehel Cup Bracket,cup,16,,2014-06-12,6:30 pm,10359014,Grand Island,10350988,Black Watch Mutiny,0,2,played,FT,
+5179992,75386449,BDSL Tehel Cup Bracket,cup,17,,2014-06-19,6:30 pm,10359050,Yemen Elite,10359038,Hamburg Monarchs,2,0,played,FT,
+5179993,75386449,BDSL Tehel Cup Bracket,cup,18,,2014-06-19,6:30 pm,67527670,FC Quake,15294617,Empire 90,0,3,played,,
+5179994,75386449,BDSL Tehel Cup Bracket,cup,19,,2014-06-19,6:30 pm,10359074,Lykan FC,10359029,Panthers,1,0,played,,
+5179995,75386449,BDSL Tehel Cup Bracket,cup,20,,2014-06-19,6:30 pm,10350976,SoHo FC,10359002,West Seneca Strikers,1,0,played,,
+5179996,75386449,BDSL Tehel Cup Bracket,cup,21,QF1,2014-07-17,6:30 pm,10359074,Lykan FC,10350988,Black Watch Mutiny,0,2,played,FT,
+5179997,75386449,BDSL Tehel Cup Bracket,cup,22,QF2,2014-07-17,6:30 pm,10350976,SoHo FC,10359050,Yemen Elite,5,1,played,,
+5179998,75386449,BDSL Tehel Cup Bracket,cup,23,QF3,2014-07-17,6:30 pm,10358999,Lakeside FC,10350979,Azzurri,2,0,played,,
+5179999,75386449,BDSL Tehel Cup Bracket,cup,24,QF4,2014-07-17,6:30 pm,15294617,Empire 90,10350991,BSC Raiders,0,2,played,,
+5180001,75386449,BDSL Tehel Cup Bracket,cup,25,SF1,2014-07-24,6:30 pm,10350988,Black Watch Mutiny,10350976,SoHo FC,2,0,played,,
+5180002,75386449,BDSL Tehel Cup Bracket,cup,26,SF2,2014-07-24,6:30 pm,10350991,BSC Raiders,10358999,Lakeside FC,1,2,played,,
+5180000,75386449,BDSL Tehel Cup Bracket,cup,27,,2014-07-31,6:30 pm,10358999,Lakeside FC,10350988,Black Watch Mutiny,3,2,played,,

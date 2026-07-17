@@ -223,6 +223,26 @@ async function buildBoard() {
   // only player-seasons where someone actually took the field (render_html.render)
   const active = allPlayers.filter((p) => p.gp > 0 || p.pts > 0);
 
+  // Seasons with real individual scoring. Pre-2014 seasons carry standings/champions/team
+  // goals (and even games-played rosters), but goal/assist attribution is negligible or
+  // absent, so their "top scorers" sections would be empty or misleadingly sparse. Detect
+  // this self-calibrating: compare goals credited to players against the true team-goal total
+  // (sum of GF in the standings). When players account for only a tiny fraction of the goals
+  // actually scored, scoring wasn't tracked -- the season is "team data only" and the UI flags
+  // it. Observed ratios: <=0.08 for 2008-2013, >=0.45 from 2014 on (see the SCORING_COVERAGE
+  // gap), so the threshold sits comfortably between the two eras.
+  const SCORING_COVERAGE = 0.2;
+  const playerGoalsBySid = new Map();
+  for (const p of allPlayers) playerGoalsBySid.set(p.sid, (playerGoalsBySid.get(p.sid) || 0) + p.g);
+  const teamGoalsBySid = new Map();
+  for (const t of allTeamStandings) teamGoalsBySid.set(t.sid, (teamGoalsBySid.get(t.sid) || 0) + num(t.gf));
+  const scoringSeasons = new Set();
+  for (const [sid, teamGoals] of teamGoalsBySid) {
+    if (teamGoals > 0 && (playerGoalsBySid.get(sid) || 0) / teamGoals >= SCORING_COVERAGE) {
+      scoringSeasons.add(sid);
+    }
+  }
+
   const seasonLabels = ids
     .slice()
     .reverse()
@@ -230,7 +250,7 @@ async function buildBoard() {
 
   const bracketsBySeason = buildAllBrackets(allFixtures, allCompetitions);
 
-  return { players: active, allPlayers, allTeamStandings, allGames, allFixtures, allGameStats, gameReportsByKey, championsByClub, allCompetitions, bracketsBySeason, playersRegistry, seasonLabels, dataAsOf };
+  return { players: active, allPlayers, allTeamStandings, allGames, allFixtures, allGameStats, gameReportsByKey, championsByClub, allCompetitions, bracketsBySeason, scoringSeasons, playersRegistry, seasonLabels, dataAsOf };
 }
 
 // Fetch + aggregate once, then share across route navigations (board <-> profile).
@@ -2079,7 +2099,7 @@ export function buildRetentionTrend(board) {
 // Newest-first summary of every season in the board: division/champion/player counts and the
 // season's leading scorer. Drives the season list/picker.
 export function buildSeasonIndex(board) {
-  const { allTeamStandings, allCompetitions, allPlayers } = board;
+  const { allTeamStandings, allCompetitions, allPlayers, scoringSeasons } = board;
 
   const sids = new Set();
   for (const r of allTeamStandings) sids.add(r.sid);
@@ -2125,7 +2145,9 @@ export function buildSeasonIndex(board) {
       }
     }
 
-    out.push({ sid, label, live, divisions, champions, teams, players, topScorer });
+    const teamDataOnly = !(scoringSeasons && scoringSeasons.has(sid));
+
+    out.push({ sid, label, live, divisions, champions, teams, players, topScorer, teamDataOnly });
   }
 
   out.sort((a, b) => b.sid.localeCompare(a.sid));
@@ -2135,7 +2157,7 @@ export function buildSeasonIndex(board) {
 // Full detail for one season: standings by division, the champions grid row, and top
 // scorers/assisters. Returns null if the sid has no data anywhere in the board.
 export function buildSeason(board, sid) {
-  const { allTeamStandings, allCompetitions, allPlayers, allFixtures, bracketsBySeason } = board;
+  const { allTeamStandings, allCompetitions, allPlayers, allFixtures, bracketsBySeason, scoringSeasons } = board;
 
   const standingsRows = allTeamStandings.filter((r) => r.sid === sid);
   const compRows = allCompetitions.filter((c) => c.sid === sid);
@@ -2292,8 +2314,9 @@ export function buildSeason(board, sid) {
     .sort((a, b) => a.order - b.order || a.label.localeCompare(b.label));
 
   const brackets = (bracketsBySeason && bracketsBySeason.get(sid)) || [];
+  const teamDataOnly = !(scoringSeasons && scoringSeasons.has(sid));
 
-  return { sid, label, live, standings, champions, players, divisions, results, fixtures, brackets };
+  return { sid, label, live, standings, champions, players, divisions, results, fixtures, brackets, teamDataOnly };
 }
 
 // ---- team-season (one club, one season) ----
@@ -2442,8 +2465,9 @@ export function buildClubSeason(board, clubId, sid) {
     resultLabel = results.reduce((best, r) => (RESULT_RANK[r.result] > RESULT_RANK[best] ? r.result : best), results[0].result);
   }
   const playoffs = { brackets, results, resultLabel };
+  const teamDataOnly = !(board.scoringSeasons && board.scoringSeasons.has(sid));
 
-  return { clubId, sid, label, live, name, totals, titles, standings, roster, games, playoffs };
+  return { clubId, sid, label, live, name, totals, titles, standings, roster, games, playoffs, teamDataOnly };
 }
 
 // ---- per-game scoring/discipline (game_stats.csv + game_reports.csv backfill) ----

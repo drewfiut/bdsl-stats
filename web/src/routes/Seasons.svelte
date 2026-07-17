@@ -43,6 +43,7 @@
               <tr class:live={s.live}>
                 <td class="l" class:live={s.live}>
                   <a class="pname" href={`#/season/${s.sid}`}>{s.label}</a>
+                  {#if s.teamDataOnly}<span class="tdo" title="Standings, champions and team goals only — individual scorers aren't recorded before 2014">Team data only</span>{/if}
                 </td>
                 <td class="narrow">{s.divisions}</td>
                 <td class="narrow">{s.champions}</td>
