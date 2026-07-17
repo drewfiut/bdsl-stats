@@ -86,7 +86,7 @@ main.home { }
 
 /* ---- player profile ---- */
 main.profile { }
-.profile .phead h1 { font-size:26px; }
+.phead h1 { font-size:26px; }
 .section { max-width:1120px; margin:22px auto 8px; padding:0 14px; font-size:14px;
   text-transform:uppercase; letter-spacing:.6px; color:var(--muted); }
 .profile section.season { max-width:1120px; margin:0 auto 16px; padding:0 14px; }

@@ -243,7 +243,7 @@
             <tr>
               <th class="l">Club</th>
               <th class="l mobhide">Season</th>
-              <th class="l">Competitions</th>
+              <th class="l mobhide">Competitions</th>
             </tr>
           </thead>
           <tbody>

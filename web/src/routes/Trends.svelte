@@ -64,6 +64,33 @@
   const iw = W - M.left - M.right;
   const ih = H - M.top - M.bottom;
 
+  // The SVG scales down with the container (viewBox + width:100%), so on narrow phone widths
+  // the fixed-size axis/value text shrinks to near-illegible pixels, and a dozen season points
+  // packed into that width overlap. Track narrow viewports so label rendering below can thin out
+  // to roughly one in every few points -- CSS (see <style>) separately bumps the base font size.
+  let narrow = $state(false);
+  $effect(() => {
+    const mq = window.matchMedia('(max-width: 640px)');
+    const update = () => (narrow = mq.matches);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  });
+
+  // Most trend charts have one point per season (a dozen or so) and fit fine unthinned. The age
+  // curve, though, has one point per age (~45), which overlap badly even at full desktop width.
+  // Cap the label count so points beyond it thin out to evenly-spaced labels (always including
+  // the last point) -- narrower budget on phones, where the shrunk SVG has less room per label.
+  function showLabel(i, n) {
+    const max = narrow ? 6 : 14;
+    if (n <= max) return true;
+    const step = Math.ceil(n / max);
+    if (i === n - 1) return true;
+    // Drop a stepped label if it'd land within a full step of the (always-shown) final point --
+    // otherwise the last two labels crowd together right at the line's end.
+    return i % step === 0 && n - 1 - i >= step;
+  }
+
   // Reactive plot model: y-axis runs 0..(padded max gpg), x spread evenly across seasons.
   const chart = $derived.by(() => {
     if (!data || data.length === 0) return null;
@@ -230,12 +257,14 @@
 
             <!-- series -->
             <polyline class="line" points={chart.poly} />
-            {#each chart.points as p}
+            {#each chart.points as p, i}
               <circle class="dot" class:live={p.live} cx={p.cx} cy={p.cy} r="4">
                 <title>{p.label}: {gpg2(p.gpg)} goals/game ({p.goals} in {p.games})</title>
               </circle>
-              <text class="vlab" class:live={p.live} x={p.cx} y={p.cy - 10}>{gpg2(p.gpg)}</text>
-              <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+              {#if showLabel(i, chart.points.length)}
+                <text class="vlab" class:live={p.live} class:first={i === 0} x={p.cx} y={p.cy - 10}>{gpg2(p.gpg)}</text>
+                <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+              {/if}
             {/each}
           </svg>
         </div>
@@ -294,12 +323,14 @@
               <text class="ylab" x={M.left - 8} y={t.gy} dominant-baseline="middle">{gpg2(t.v)}</text>
             {/each}
             <polyline class="line" points={ageChart.poly} />
-            {#each ageChart.points as p}
+            {#each ageChart.points as p, i}
               <circle class="dot" cx={p.cx} cy={p.cy} r="4">
                 <title>Age {p.age}: {gpg2(p.gpg)} goals/game ({p.g} in {p.gp}, {p.players} players)</title>
               </circle>
-              <text class="vlab" x={p.cx} y={p.cy - 10}>{gpg2(p.gpg)}</text>
-              <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{p.age}</text>
+              {#if showLabel(i, ageChart.points.length)}
+                <text class="vlab" class:first={i === 0} x={p.cx} y={p.cy - 10}>{gpg2(p.gpg)}</text>
+                <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{p.age}</text>
+              {/if}
             {/each}
           </svg>
         </div>
@@ -352,12 +383,14 @@
                 <text class="ylab" x={M.left - 8} y={t.gy} dominant-baseline="middle">{t.v}</text>
               {/each}
               <polyline class="line" points={playersChart.poly} />
-              {#each playersChart.points as p}
+              {#each playersChart.points as p, i}
                 <circle class="dot" class:live={p.live} cx={p.cx} cy={p.cy} r="4">
                   <title>{p.label}: {p.players} players</title>
                 </circle>
-                <text class="vlab" class:live={p.live} x={p.cx} y={p.cy - 10}>{p.players}</text>
-                <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+                {#if showLabel(i, playersChart.points.length)}
+                  <text class="vlab" class:live={p.live} class:first={i === 0} x={p.cx} y={p.cy - 10}>{p.players}</text>
+                  <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+                {/if}
               {/each}
             </svg>
           </div>
@@ -373,12 +406,14 @@
                 <text class="ylab" x={M.left - 8} y={t.gy} dominant-baseline="middle">{t.v}</text>
               {/each}
               <polyline class="line" points={teamsChart.poly} />
-              {#each teamsChart.points as p}
+              {#each teamsChart.points as p, i}
                 <circle class="dot" class:live={p.live} cx={p.cx} cy={p.cy} r="4">
                   <title>{p.label}: {p.teams} teams</title>
                 </circle>
-                <text class="vlab" class:live={p.live} x={p.cx} y={p.cy - 10}>{p.teams}</text>
-                <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+                {#if showLabel(i, teamsChart.points.length)}
+                  <text class="vlab" class:live={p.live} class:first={i === 0} x={p.cx} y={p.cy - 10}>{p.teams}</text>
+                  <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+                {/if}
               {/each}
             </svg>
           </div>
@@ -432,12 +467,14 @@
               <text class="ylab" x={M.left - 8} y={t.gy} dominant-baseline="middle">{t.v}</text>
             {/each}
             <polyline class="line" points={avgAgeChart.poly} />
-            {#each avgAgeChart.points as p}
+            {#each avgAgeChart.points as p, i}
               <circle class="dot" class:live={p.live} cx={p.cx} cy={p.cy} r="4">
                 <title>{p.label}: {p.avgAge.toFixed(1)} yrs avg ({p.ageSample} players)</title>
               </circle>
-              <text class="vlab" class:live={p.live} x={p.cx} y={p.cy - 10}>{p.avgAge.toFixed(1)}</text>
-              <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+              {#if showLabel(i, avgAgeChart.points.length)}
+                <text class="vlab" class:live={p.live} class:first={i === 0} x={p.cx} y={p.cy - 10}>{p.avgAge.toFixed(1)}</text>
+                <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+              {/if}
             {/each}
           </svg>
         </div>
@@ -484,12 +521,14 @@
                 <text class="ylab" x={M.left - 8} y={t.gy} dominant-baseline="middle">{t.v}%</text>
               {/each}
               <polyline class="line" points={drawChart.poly} />
-              {#each drawChart.points as p}
+              {#each drawChart.points as p, i}
                 <circle class="dot" class:live={p.live} cx={p.cx} cy={p.cy} r="4">
                   <title>{p.label}: {pct1(p.drawRate)}% ({p.draws} of {p.games})</title>
                 </circle>
-                <text class="vlab" class:live={p.live} x={p.cx} y={p.cy - 10}>{pct1(p.drawRate)}%</text>
-                <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+                {#if showLabel(i, drawChart.points.length)}
+                  <text class="vlab" class:live={p.live} class:first={i === 0} x={p.cx} y={p.cy - 10}>{pct1(p.drawRate)}%</text>
+                  <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+                {/if}
               {/each}
             </svg>
           </div>
@@ -505,12 +544,14 @@
                 <text class="ylab" x={M.left - 8} y={t.gy} dominant-baseline="middle">{t.v}%</text>
               {/each}
               <polyline class="line" points={blowoutChart.poly} />
-              {#each blowoutChart.points as p}
+              {#each blowoutChart.points as p, i}
                 <circle class="dot" class:live={p.live} cx={p.cx} cy={p.cy} r="4">
                   <title>{p.label}: {pct1(p.blowoutRate)}% ({p.blowouts} of {p.games})</title>
                 </circle>
-                <text class="vlab" class:live={p.live} x={p.cx} y={p.cy - 10}>{pct1(p.blowoutRate)}%</text>
-                <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+                {#if showLabel(i, blowoutChart.points.length)}
+                  <text class="vlab" class:live={p.live} class:first={i === 0} x={p.cx} y={p.cy - 10}>{pct1(p.blowoutRate)}%</text>
+                  <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+                {/if}
               {/each}
             </svg>
           </div>
@@ -564,12 +605,14 @@
               <text class="ylab" x={M.left - 8} y={t.gy} dominant-baseline="middle">{gpg2(t.v)}</text>
             {/each}
             <polyline class="line" points={spreadChart.poly} />
-            {#each spreadChart.points as p}
+            {#each spreadChart.points as p, i}
               <circle class="dot" class:live={p.live} cx={p.cx} cy={p.cy} r="4">
                 <title>{p.label}: {gpg2(p.spread)} pts/game gap across {p.divisions} divisions</title>
               </circle>
-              <text class="vlab" class:live={p.live} x={p.cx} y={p.cy - 10}>{gpg2(p.spread)}</text>
-              <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+              {#if showLabel(i, spreadChart.points.length)}
+                <text class="vlab" class:live={p.live} class:first={i === 0} x={p.cx} y={p.cy - 10}>{gpg2(p.spread)}</text>
+                <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+              {/if}
             {/each}
           </svg>
         </div>
@@ -615,12 +658,14 @@
               <text class="ylab" x={M.left - 8} y={t.gy} dominant-baseline="middle">{t.v}%</text>
             {/each}
             <polyline class="line" points={concentrationChart.poly} />
-            {#each concentrationChart.points as p}
+            {#each concentrationChart.points as p, i}
               <circle class="dot" class:live={p.live} cx={p.cx} cy={p.cy} r="4">
                 <title>{p.label}: {pct1(p.share)}% ({p.topGoals} of {p.goals} goals, {p.scorers} scorers)</title>
               </circle>
-              <text class="vlab" class:live={p.live} x={p.cx} y={p.cy - 10}>{pct1(p.share)}%</text>
-              <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+              {#if showLabel(i, concentrationChart.points.length)}
+                <text class="vlab" class:live={p.live} class:first={i === 0} x={p.cx} y={p.cy - 10}>{pct1(p.share)}%</text>
+                <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+              {/if}
             {/each}
           </svg>
         </div>
@@ -669,12 +714,14 @@
               <text class="ylab" x={M.left - 8} y={t.gy} dominant-baseline="middle">{t.v}%</text>
             {/each}
             <polyline class="line" points={retentionChart.poly} />
-            {#each retentionChart.points as p}
+            {#each retentionChart.points as p, i}
               <circle class="dot" class:live={p.live} cx={p.cx} cy={p.cy} r="4">
                 <title>{p.label}: {pct1(p.retentionRate)}% ({p.returning} of {p.prevActive})</title>
               </circle>
-              <text class="vlab" class:live={p.live} x={p.cx} y={p.cy - 10}>{pct1(p.retentionRate)}%</text>
-              <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+              {#if showLabel(i, retentionChart.points.length)}
+                <text class="vlab" class:live={p.live} class:first={i === 0} x={p.cx} y={p.cy - 10}>{pct1(p.retentionRate)}%</text>
+                <text class="xlab" x={p.cx} y={H - M.bottom + 20}>{yearOf(p.sid)}</text>
+              {/if}
             {/each}
           </svg>
         </div>
@@ -753,10 +800,23 @@
   .dot.live { fill: var(--gold); }
   .vlab { fill: var(--text); font-size: 11px; font-weight: 600; text-anchor: middle; }
   .vlab.live { fill: var(--gold); }
+  /* the first point's value label sits at the same x as the y-axis labels -- anchor it to the
+     right of its dot instead of centering, so it can't overlap the y-axis text to its left. */
+  .vlab.first { text-anchor: start; }
   .chartgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
   .chartgrid .chartwrap { margin-bottom: 0; }
   .chart-label { font-size: 12px; font-weight: 600; color: var(--muted); padding: 4px 6px 0; }
   @media (max-width: 720px) {
     .chartgrid { grid-template-columns: 1fr; }
+  }
+  /* the SVG scales down with its container (viewBox + width:100%), so fixed-size text below
+     ~360px of chart width shrinks to near-illegible pixels -- bump the viewBox-unit font sizes
+     so rendered text stays readable; label thinning (see showLabel in the script) keeps the
+     bigger text from overlapping. */
+  @media (max-width: 640px) {
+    .ylab, .xlab, .vlab { font-size: 18px; }
+    .chart-label { font-size: 13px; }
+    .dot { r: 5.5px; }
+    .line { stroke-width: 3.5px; }
   }
 </style>
