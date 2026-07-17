@@ -2105,6 +2105,10 @@ export function buildSeasonIndex(board) {
 
     const champions = allCompetitions.filter((c) => c.sid === sid && c.clubId).length;
 
+    const teams = new Set(
+      allTeamStandings.filter((r) => r.sid === sid).map((r) => r.club_id)
+    ).size;
+
     const activePlayers = allPlayers.filter((p) => p.sid === sid && (p.gp > 0 || p.pts > 0));
     const players = activePlayers.length;
 
@@ -2121,7 +2125,7 @@ export function buildSeasonIndex(board) {
       }
     }
 
-    out.push({ sid, label, live, divisions, champions, players, topScorer });
+    out.push({ sid, label, live, divisions, champions, teams, players, topScorer });
   }
 
   out.sort((a, b) => b.sid.localeCompare(a.sid));

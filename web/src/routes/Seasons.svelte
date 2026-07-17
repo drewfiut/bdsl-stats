@@ -16,7 +16,7 @@
 <div class="pagehead">
   <div class="wrap">
     <h1>Seasons</h1>
-    <div class="sub">Every BDSL season, newest first &mdash; standings, champions and top scorers/assisters in one place</div>
+    <div class="sub">Every BDSL season, newest first &mdash; standings and champions in one place</div>
   </div>
 </div>
 
@@ -34,7 +34,8 @@
               <th class="l">Season</th>
               <th class="narrow">Divisions</th>
               <th class="narrow">Champions</th>
-              <th class="l">Top Scorer</th>
+              <th class="narrow">Teams</th>
+              <th class="narrow">Players</th>
             </tr>
           </thead>
           <tbody>
@@ -45,15 +46,8 @@
                 </td>
                 <td class="narrow">{s.divisions}</td>
                 <td class="narrow">{s.champions}</td>
-                <td class="l">
-                  {#if s.topScorer}
-                    <a class="pname" href={`#/player/${s.topScorer.pk}`}>{s.topScorer.name}</a>
-                    <span class="gcount">({s.topScorer.g})</span>
-                    <div class="tsdiv">{s.topScorer.division}</div>
-                  {:else}
-                    <span class="gcount">&ndash;</span>
-                  {/if}
-                </td>
+                <td class="narrow">{s.teams}</td>
+                <td class="narrow">{s.players}</td>
               </tr>
             {/each}
           </tbody>
@@ -67,8 +61,6 @@
 </main>
 
 <style>
-  .gcount { color: var(--muted); }
-  .tsdiv { color: var(--muted); font-size: 12px; margin-top: 2px; }
   .tablewrap.full { max-height: none; overflow-y: visible; }
   th.narrow, td.narrow { width: 1%; white-space: nowrap; }
 </style>
