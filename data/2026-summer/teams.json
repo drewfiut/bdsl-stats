@@ -402,7 +402,7 @@
     "away_d": 0,
     "yellows": 6,
     "reds": 0,
-    "position": 6
+    "position": 7
   },
   {
     "team_id": "106801546-116112418",
@@ -456,7 +456,7 @@
     "away_d": 0,
     "yellows": 7,
     "reds": 0,
-    "position": 5
+    "position": 6
   },
   {
     "team_id": "10359092-116112418",
@@ -510,7 +510,7 @@
     "away_d": 0,
     "yellows": 3,
     "reds": 0,
-    "position": 4
+    "position": 5
   },
   {
     "team_id": "106801557-116112418",
@@ -521,19 +521,19 @@
     "competition": "Championship",
     "comp_type": "league",
     "name": "Cattaraugus County FC",
-    "gp": 9,
+    "gp": 10,
     "w": 2,
-    "l": 7,
+    "l": 8,
     "d": 0,
     "pts": 6,
     "gf": 14,
-    "ga": 45,
-    "gd": -31,
+    "ga": 50,
+    "gd": -36,
     "home_w": 2,
     "home_l": 3,
     "home_d": 0,
     "away_w": 0,
-    "away_l": 4,
+    "away_l": 5,
     "away_d": 0,
     "yellows": 2,
     "reds": 2,
@@ -899,23 +899,23 @@
     "competition": "2nd Division",
     "comp_type": "league",
     "name": "Buffalo Cosmos",
-    "gp": 8,
-    "w": 4,
+    "gp": 9,
+    "w": 5,
     "l": 2,
     "d": 2,
-    "pts": 14,
-    "gf": 18,
+    "pts": 17,
+    "gf": 23,
     "ga": 20,
-    "gd": -2,
+    "gd": 3,
     "home_w": 2,
     "home_l": 1,
     "home_d": 1,
-    "away_w": 2,
+    "away_w": 3,
     "away_l": 1,
     "away_d": 1,
     "yellows": 7,
     "reds": 1,
-    "position": 5
+    "position": 3
   },
   {
     "team_id": "100608342-116112417",
@@ -996,7 +996,7 @@
     "away_d": 1,
     "yellows": 5,
     "reds": 1,
-    "position": 4
+    "position": 5
   },
   {
     "team_id": "114564787-116112417",
@@ -1520,16 +1520,16 @@
     "competition": "2nd Division",
     "comp_type": "league",
     "name": "Buffalo Stallions",
-    "gp": 9,
+    "gp": 10,
     "w": 0,
-    "l": 7,
+    "l": 8,
     "d": 2,
     "pts": 2,
     "gf": 5,
-    "ga": 38,
-    "gd": -33,
+    "ga": 43,
+    "gd": -38,
     "home_w": 0,
-    "home_l": 3,
+    "home_l": 4,
     "home_d": 1,
     "away_w": 0,
     "away_l": 4,
@@ -1817,15 +1817,15 @@
     "competition": "Championship",
     "comp_type": "league",
     "name": "Sporting Cavs",
-    "gp": 8,
-    "w": 3,
+    "gp": 9,
+    "w": 4,
     "l": 4,
     "d": 1,
-    "pts": 10,
-    "gf": 11,
+    "pts": 13,
+    "gf": 16,
     "ga": 10,
-    "gd": 1,
-    "home_w": 1,
+    "gd": 6,
+    "home_w": 2,
     "home_l": 2,
     "home_d": 0,
     "away_w": 2,
@@ -1833,7 +1833,7 @@
     "away_d": 1,
     "yellows": 9,
     "reds": 0,
-    "position": 7
+    "position": 4
   },
   {
     "team_id": "10359111-116112417",
@@ -1860,7 +1860,7 @@
     "away_d": 0,
     "yellows": 3,
     "reds": 0,
-    "position": 3
+    "position": 4
   },
   {
     "team_id": "100608336-116112421",

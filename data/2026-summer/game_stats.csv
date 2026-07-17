@@ -58,7 +58,6 @@ game_key,tg,competition,comp_type,date,round_label,side,club_id,person_key,name,
 11566179,116112418,Championship,league,2026-07-12,,home,91257538,91328792,"Husung, Greg",12,1,0,0,0,name
 11566179,116112418,Championship,league,2026-07-12,,home,91257538,110987692,"Martillotta, Peter",5,1,0,0,0,name
 11566179,116112418,Championship,league,2026-07-12,,away,82992129,101947376,"Colca, Max",19,1,0,0,0,name
-11566179,116112418,Championship,league,2026-07-12,,away,82992129,116497250,"Nayak, Navaneet",19,1,0,0,0,name
 11566180,116112418,Championship,league,2026-07-12,,home,10359117,15874367,"Andrews, Derek",14,0,1,0,0,name
 11566180,116112418,Championship,league,2026-07-12,,home,10359117,101707976,"Bona, Matthew",21,0,0,1,0,name
 11566180,116112418,Championship,league,2026-07-12,,home,10359117,107871370,"Enock, Emmanuel",29,1,0,0,0,name
@@ -169,6 +168,7 @@ game_key,tg,competition,comp_type,date,round_label,side,club_id,person_key,name,
 11566402,116112417,2nd Division,league,2026-07-12,,away,75479659,113384042,"Weimer, Daniel",88,0,0,0,1,name
 11566397,116112417,2nd Division,league,2026-07-12,,home,100608342,100680778,"Beale, Evan",24,0,0,1,0,name
 11566397,116112417,2nd Division,league,2026-07-12,,home,100608342,100681304,"Ingraham, Kyle",7,1,0,0,0,name
+11566397,116112417,2nd Division,league,2026-07-12,,away,12579571,88757419,"Fusani, Alex",24,0,1,0,0,name
 11566397,116112417,2nd Division,league,2026-07-12,,away,12579571,116651306,"McAuliffe, Corey",10,1,0,0,0,name
 11566370,116112417,2nd Division,league,2026-07-12,,home,98469017,88044638,"Alba, Pedro",13,0,1,0,0,name
 11566370,116112417,2nd Division,league,2026-07-12,,home,98469017,91781820,"Grimaldi, Gabe",10,1,0,0,0,name
@@ -224,7 +224,6 @@ game_key,tg,competition,comp_type,date,round_label,side,club_id,person_key,name,
 11566469,116112421,3rd Division,league,2026-07-12,,away,114564784,115180621,"Jennings, Liam",66,0,0,1,0,name
 11566469,116112421,3rd Division,league,2026-07-12,,away,114564784,111055312,"Kohl, Tyler",4,0,1,0,0,name
 11566469,116112421,3rd Division,league,2026-07-12,,away,114564784,116669843,"Mulderig, Patrick",7,0,1,0,0,name
-11566469,116112421,3rd Division,league,2026-07-12,,away,114564784,107813683,"Schreiber, Noah",18,0,0,0,1,name
 11566472,116112421,3rd Division,league,2026-07-12,,home,100608336,76352940,"Linsley, Parker",14,0,0,1,0,name
 11566472,116112421,3rd Division,league,2026-07-12,,away,75479677,112823177,"Black, Max",11,1,1,0,0,name
 11566472,116112421,3rd Division,league,2026-07-12,,away,75479677,113324234,"Franclemont, Austin",12,1,1,0,0,name
@@ -338,8 +337,19 @@ game_key,tg,competition,comp_type,date,round_label,side,club_id,person_key,name,
 11595279,116112420,Over 35,over35,2026-07-10,,away,116116673,10981645,"Knezevic, Danko",10,1,0,0,0,name
 11595279,116112420,Over 35,over35,2026-07-10,,away,116116673,116622103,"Natale, Jon",17,1,0,0,0,name
 11595279,116112420,Over 35,over35,2026-07-10,,away,116116673,116622158,"Perez, Gerardo",6,1,0,0,0,name
+11595281,116112420,Over 35,over35,2026-07-10,,home,112652922,76298520,"Carl, Adam",3,0,1,0,0,name
 11595281,116112420,Over 35,over35,2026-07-10,,home,112652922,91945735,"DeGroff, Steven",14,1,0,0,0,name
-11595281,116112420,Over 35,over35,2026-07-10,,home,112652922,35873281,"Sperrazza, Nick",21,2,0,0,0,name
+11595281,116112420,Over 35,over35,2026-07-10,,home,112652922,95528790,"Jamesson, Ben",18,0,1,0,0,name
+11595281,116112420,Over 35,over35,2026-07-10,,home,112652922,13305448,"Ryan, Bernard Jay",4,1,0,0,0,name
+11595281,116112420,Over 35,over35,2026-07-10,,home,112652922,35873281,"Sperrazza, Nick",21,1,0,0,0,name
+11595281,116112420,Over 35,over35,2026-07-10,,home,112652922,26994919,"Suazo, Rony",9,0,1,0,0,name
+11595282,116112420,Over 35,over35,2026-07-10,,home,46512669,15874367,"Andrews, Derek",3,3,0,0,0,name
+11595282,116112420,Over 35,over35,2026-07-10,,home,46512669,11108469,"Barrett, Phil",23,0,2,0,0,name
+11595282,116112420,Over 35,over35,2026-07-10,,home,46512669,95802664,"Faria, Rogerio",7,0,2,0,0,name
+11595282,116112420,Over 35,over35,2026-07-10,,home,46512669,59542930,"Fresnel, Jackson",9,2,1,0,0,name
+11595282,116112420,Over 35,over35,2026-07-10,,home,46512669,63476639,"Jawad, Ali",25,0,1,0,0,name
+11595282,116112420,Over 35,over35,2026-07-10,,home,46512669,116611930,"Rivera Camargo, Anderson",77,2,0,0,0,name
+11595282,116112420,Over 35,over35,2026-07-10,,home,46512669,110868475,"Torrianni, Kyle",8,2,2,0,0,name
 11595273,116112420,Over 35,over35,2026-06-26,,home,106900649,26901623,"Riley, Charlie",4,0,0,1,0,name
 11595274,116112420,Over 35,over35,2026-06-26,,home,46512675,112967919,"Couell, Ryan",12,0,1,0,0,name
 11595274,116112420,Over 35,over35,2026-06-26,,home,46512675,15870257,"Iwankow, Jason",11,1,0,0,0,name
