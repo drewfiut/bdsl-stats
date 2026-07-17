@@ -2292,6 +2292,156 @@ export function buildSeason(board, sid) {
   return { sid, label, live, standings, champions, players, divisions, results, fixtures, brackets };
 }
 
+// ---- team-season (one club, one season) ----
+// The Club page's per-season drill-down: this club's record, roster, schedule, standings context
+// and playoff run for a single sid, assembled entirely from the already-loaded board (no fetches).
+// Returns null if the (clubId, sid) pair has no data anywhere in the board.
+export function buildClubSeason(board, clubId, sid) {
+  const standingsRows = (board.allTeamStandings || []).filter((r) => r.sid === sid && r.club_id === clubId);
+  // True game log (played only), scoped to this club+season -- same source aggregateClubGames
+  // walks for the all-time record, just pre-filtered to one sid.
+  const clubGames = (board.allGames || []).filter(
+    (g) => g.sid === sid && (g.home_club_id === clubId || g.away_club_id === clubId)
+  );
+  // Every fixture (played, scheduled, etc.) for the schedule tab below.
+  const fixtureRows = (board.allFixtures || []).filter(
+    (g) => g.sid === sid && (g.home_club_id === clubId || g.away_club_id === clubId)
+  );
+  // Titles this club won this season (league, Over-35 or cup).
+  const titleRows = (board.allCompetitions || []).filter((c) => c.sid === sid && c.clubId === clubId);
+  // Roster rows: this club's slice of each player-season's comps, for players who actually have one.
+  const clubPlayerRows = (board.allPlayers || [])
+    .filter((p) => p.sid === sid)
+    .map((p) => ({ p, mine: (p.comps || []).filter((c) => c.club === clubId) }))
+    .filter((row) => row.mine.length);
+
+  if (!standingsRows.length && !clubGames.length && !titleRows.length && !clubPlayerRows.length) return null;
+
+  const meta = standingsRows[0] || titleRows[0] || clubPlayerRows[0]?.p || fixtureRows[0];
+  const label = meta?.seasonLabel || meta?.label || meta?.season || sid;
+  const live = !!meta?.live;
+
+  // Name as of this season: the standings spelling, else a schedule row's spelling, else the
+  // club's newest-ever standings spelling (some clubs were renamed over the years), else unknown.
+  let name = standingsRows[0]?.name;
+  if (!name) {
+    const gameRow = clubGames[0] || fixtureRows[0];
+    if (gameRow) name = gameRow.home_club_id === clubId ? gameRow.home_name : gameRow.away_name;
+  }
+  if (!name) {
+    let newestSid = '';
+    for (const r of board.allTeamStandings || []) {
+      if (r.club_id === clubId && r.sid >= newestSid) { newestSid = r.sid; name = r.name; }
+    }
+  }
+  if (!name) name = '(unknown)';
+
+  // ---- totals: the true game log for this season, mirroring aggregateClubGames ----
+  const totals = { gp: 0, w: 0, l: 0, d: 0, gf: 0, ga: 0 };
+  for (const g of clubGames) {
+    let gf, ga;
+    if (g.home_club_id === clubId) { gf = num(g.home_score); ga = num(g.away_score); }
+    else { gf = num(g.away_score); ga = num(g.home_score); }
+    totals.gp += 1; totals.gf += gf; totals.ga += ga;
+    if (gf > ga) totals.w += 1; else if (gf < ga) totals.l += 1; else totals.d += 1;
+  }
+  totals.gd = totals.gf - totals.ga;
+
+  // ---- titles ----
+  const titles = titleRows.map((c) => {
+    const canon = canonicalCompetition(c.competition, c.comp_type);
+    return { competition: c.competition, label: canon.label, group: canon.group };
+  });
+
+  // ---- standings: reuse buildSeason's already-grouped, canonically-ordered tables, keeping only
+  // the groups this club actually appears in and tagging its row for the component to highlight ----
+  const seasonStandings = buildSeason(board, sid)?.standings || [];
+  const standings = seasonStandings
+    .filter((g) => g.rows.some((r) => r.clubId === clubId))
+    .map((g) => ({
+      key: g.key, label: g.label, group: g.group,
+      rows: g.rows.map((r) => ({ ...r, isClub: r.clubId === clubId })),
+    }));
+
+  // ---- roster: per-player totals across just this club's comps this season (mirrors
+  // buildClubProfile's roster loop, but single-season -- no seasonsPlayed) ----
+  const roster = clubPlayerRows.map(({ p, mine }) => {
+    let g = 0, a = 0, gp = 0;
+    for (const c of mine) { g += c.g; a += c.a; gp += c.gp; }
+    const reg = board.playersRegistry?.[p.pk];
+    return {
+      pk: p.pk,
+      name: displayName(reg, p.name) || '(unknown)',
+      g, a, pts: POINTS_PER_GOAL * g + POINTS_PER_ASSIST * a, gp,
+      comps: mine.map((c) => ({ c: c.c, type: c.type, g: c.g, a: c.a, gp: c.gp })),
+    };
+  });
+
+  // ---- games: this club's schedule this season, every status, oldest first (undated last) ----
+  // A game can leak into two competitions' schedules sharing one game_key (see buildSeason/
+  // buildTeamRecords) -- dedupe, keeping the first seen.
+  const seenGameKeys = new Set();
+  const games = [];
+  for (const g of fixtureRows) {
+    const key = `${g.sid}||${g.game_key}`;
+    if (seenGameKeys.has(key)) continue;
+    seenGameKeys.add(key);
+    const hs = num(g.home_score), as = num(g.away_score);
+    let result = '';
+    if (g.status === 'played') {
+      let gf, ga;
+      if (g.home_club_id === clubId) { gf = hs; ga = as; } else { gf = as; ga = hs; }
+      result = gf > ga ? 'W' : gf < ga ? 'L' : 'D';
+    }
+    games.push({
+      gameKey: g.game_key, date: g.date, time: g.time,
+      competition: g.competition, comp_type: g.comp_type,
+      home: g.home_name, homeClubId: g.home_club_id,
+      away: g.away_name, awayClubId: g.away_club_id,
+      hs, as, status: g.status, result,
+    });
+  }
+  games.sort((a, b) => {
+    if (!a.date || !b.date) return (!a.date ? 1 : 0) - (!b.date ? 1 : 0);
+    return a.date.localeCompare(b.date) || parseTimeMinutes(a.time) - parseTimeMinutes(b.time);
+  });
+
+  // ---- playoffs: this season's brackets the club actually played in, plus how far it got ----
+  // (per-bracket result logic mirrors buildClubPlayoffs, scoped to just this sid's brackets)
+  const seasonBrackets = board.bracketsBySeason?.get(sid) || [];
+  const brackets = seasonBrackets.filter((b) =>
+    b.boards.some((bd) => bd.rounds.some((rd) => rd.matches.some((m) => m.homeId === clubId || m.awayId === clubId)))
+  );
+  const results = [];
+  for (const b of brackets) {
+    let played = false, deepest = -1, wonFinal = false, lostFinal = false;
+    for (const bd of b.boards) for (const rd of bd.rounds) for (const m of rd.matches) {
+      const isHome = m.homeId === clubId, isAway = m.awayId === clubId;
+      if ((!isHome && !isAway) || !m.played) continue;
+      played = true;
+      if (ROUND_ORDER[m.round] > deepest) deepest = ROUND_ORDER[m.round];
+      if (m.round === 'F') {
+        if (m.winnerId === clubId) wonFinal = true;
+        else if (m.winnerId) lostFinal = true;
+      }
+    }
+    if (!played) continue; // club was slotted (e.g. TBD placeholder) but never actually played
+    const result = wonFinal ? 'Champion' : (lostFinal || deepest === ROUND_ORDER.F) ? 'Runner-up'
+      : deepest === ROUND_ORDER.SF ? 'Semifinalist' : 'Quarterfinalist';
+    results.push({ key: b.key, label: b.label, group: b.group, result, champion: wonFinal });
+  }
+  // Best single-line summary across every bracket the club entered this season: Champion beats
+  // any other result; otherwise the deepest round reached wins.
+  let resultLabel = '';
+  if (results.length) {
+    const RESULT_RANK = { Champion: 3, 'Runner-up': 2, Semifinalist: 1, Quarterfinalist: 0 };
+    resultLabel = results.reduce((best, r) => (RESULT_RANK[r.result] > RESULT_RANK[best] ? r.result : best), results[0].result);
+  }
+  const playoffs = { brackets, results, resultLabel };
+
+  return { clubId, sid, label, live, name, totals, titles, standings, roster, games, playoffs };
+}
+
 // ---- golden-boot race (live season only) ----
 // stats.csv accumulates one full-roster snapshot per day (store.py: "append-only ... nothing is
 // overwritten"), each row's g/a/gp already a season-to-date cumulative total. buildBoard() only

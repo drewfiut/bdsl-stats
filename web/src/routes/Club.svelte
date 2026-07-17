@@ -250,7 +250,7 @@
             {#each club.seasons as s}
               {#each s.comps as c}
                 <tr class:champ={c.title} class:live={s.live}>
-                  <td class="l"><a class="pname" href={`#/season/${s.sid}`}>{s.label}</a></td>
+                  <td class="l"><a class="pname" href={`#/club/${club.clubId}/${s.sid}`}>{s.label}</a></td>
                   <td class="l">{c.c}{#if c.title}<span class="trophy" title="Champion">🏆</span>{/if}</td>
                   <td class="rank" class:m1={c.position === 1} class:m2={c.position === 2} class:m3={c.position === 3}>{c.position || '–'}</td>
                   <td>{c.w}</td>

@@ -17,6 +17,13 @@ export function parse(hash) {
   if (parts[0] === 'power-rankings') return { name: 'powerRankings', params: {} };
   if (parts[0] === 'player-records') return { name: 'playerRecords', params: {} };
   if (parts[0] === 'clubs') return { name: 'clubs', params: {} };
+  // Team-season: one club in one season (#/club/:clubId/:sid). Must precede the 2-part club
+  // branch below, which only checks parts[1] and would otherwise swallow the 3-part path.
+  if (parts[0] === 'club' && parts[1] && parts[2]) {
+    return { name: 'teamSeason', params: {
+      clubId: decodeURIComponent(parts[1]), sid: decodeURIComponent(parts[2]),
+    } };
+  }
   if (parts[0] === 'club' && parts[1]) {
     return { name: 'club', params: { clubId: decodeURIComponent(parts[1]) } };
   }

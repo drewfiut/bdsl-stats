@@ -234,9 +234,10 @@
                 <tr class:live={r.champion}>
                   <td class="rank" class:m1={r.position === 1} class:m2={r.position === 2} class:m3={r.position === 3}>{r.position || '–'}</td>
                   <td class="l">
-                    <a class="pname" href={`#/club/${r.clubId}`}>
+                    <a class="pname" href={`#/club/${r.clubId}/${sid}`}>
                       {#if r.champion}<span class="trophy">&#127942;</span>{/if}{r.name}
                     </a>
+                    <a class="clublink" href={`#/club/${r.clubId}`} title="All-time club page" aria-label="All-time club page">&#8599;</a>
                   </td>
                   <td>{r.gp}</td>
                   <td>{r.w}</td>
@@ -599,4 +600,9 @@
   .bteam.win .bsc { color: var(--navy2); font-weight: 750; }
   .bnote { position: absolute; top: -8px; right: 8px; background: var(--card); border: 1px solid var(--line);
     border-radius: 6px; padding: 0 5px; font-size: 9.5px; font-weight: 700; letter-spacing: .3px; color: var(--muted); }
+
+  /* Secondary link from a standings row to the club's all-time page (the club name itself
+     links to that club's season view). */
+  .clublink { margin-left: 6px; font-size: 12px; color: var(--muted); text-decoration: none; }
+  .clublink:hover { color: var(--navy2); }
 </style>

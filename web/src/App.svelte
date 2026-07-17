@@ -8,6 +8,7 @@
   import Player from './routes/Player.svelte';
   import Clubs from './routes/Clubs.svelte';
   import Club from './routes/Club.svelte';
+  import TeamSeason from './routes/TeamSeason.svelte';
   import Compare from './routes/Compare.svelte';
   import TeamRecords from './routes/TeamRecords.svelte';
   import PowerRankings from './routes/PowerRankings.svelte';
@@ -41,7 +42,9 @@
     { href: '#/best-single-seasons', label: 'Best Single Season (All Comps)', name: 'board' },
     { href: '#/player-records', label: 'Player Records', name: 'playerRecords' },
   ];
-  const teamActive = $derived(TEAM_PAGES.some((p) => p.name === route.name) || route.name === 'club');
+  const teamActive = $derived(
+    TEAM_PAGES.some((p) => p.name === route.name) || route.name === 'club' || route.name === 'teamSeason'
+  );
   const individualActive = $derived(
     INDIVIDUAL_PAGES.some((p) => p.name === route.name) || route.name === 'player'
   );
@@ -76,6 +79,7 @@
     player: 'Player · BDSL Stats',
     clubs: 'Clubs · BDSL Stats',
     club: 'Club · BDSL Stats',
+    teamSeason: 'Team Season · BDSL Stats',
     compare: 'Head-to-Head · BDSL Stats',
     teamRecords: 'Team Records · BDSL Stats',
     powerRankings: 'Power Rankings · BDSL Stats',
@@ -163,6 +167,10 @@
 {:else if route.name === 'club'}
   {#key route.params.clubId}
     <Club clubId={route.params.clubId} />
+  {/key}
+{:else if route.name === 'teamSeason'}
+  {#key `${route.params.clubId}|${route.params.sid}`}
+    <TeamSeason clubId={route.params.clubId} sid={route.params.sid} />
   {/key}
 {:else if route.name === 'compare'}
   {#key `${route.params.clubAId}|${route.params.clubBId}`}
