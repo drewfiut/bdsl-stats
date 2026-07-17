@@ -17,6 +17,7 @@
     if (isNaN(d)) return iso || '';
     return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
   };
+  const pct = (v) => `${Math.round((v || 0) * 100)}%`;
 
   // Division-history chart geometry, in viewBox units (mirrors Trends.svelte's chart pattern).
   const DW = 720, DH = 220;
@@ -55,7 +56,7 @@
     eloHistory = [];
     loadBoard()
       .then((b) => {
-        club = buildClubProfile(b.allTeamStandings, b.allPlayers, b.playersRegistry, id, b.championsByClub, b.allGames);
+        club = buildClubProfile(b.allTeamStandings, b.allPlayers, b.playersRegistry, id, b.championsByClub, b.allGames, b.bracketsBySeason);
         const liveSids = new Set(b.allTeamStandings.filter((r) => r.live).map((r) => r.sid));
         eloHistory = buildClubEloHistory(b.allGames, id, liveSids);
       })
@@ -100,6 +101,7 @@
     ...(eloChart ? [{ id: 'elo-rating', label: 'Elo Rating' }] : []),
     { id: 'division-history', label: 'Division History' },
     { id: 'league-history', label: 'League History' },
+    ...(club.playoffs.gp ? [{ id: 'playoffs', label: 'Playoffs' }] : []),
     ...(club.cups.length ? [{ id: 'cup-history', label: 'Cup History' }] : []),
     ...(club.allOpponents.length ? [{ id: 'top-opponents', label: 'Opponents' }] : []),
     { id: 'players', label: 'Players' },
@@ -264,6 +266,42 @@
         </table>
       </div>
     </section>
+
+    {#if club.playoffs.gp}
+      <h2 class="section" id="playoffs">Playoffs</h2>
+      <p class="recdesc">
+        Postseason record across league &amp; Over-35 brackets (cups excluded). Win&nbsp;% counts a
+        game lost on penalties as a draw. &ldquo;Finals&rdquo; shows finals won&ndash;lost.
+      </p>
+      <section class="season">
+        <div class="stats divstats">
+          <div class="stat"><b>{club.playoffs.appearances}</b><span>Appearances</span></div>
+          <div class="stat"><b>{club.playoffs.w}&ndash;{club.playoffs.l}&ndash;{club.playoffs.d}</b><span>W&ndash;L&ndash;D</span></div>
+          <div class="stat"><b>{pct(club.playoffs.winPct)}</b><span>Win&nbsp;%</span></div>
+          <div class="stat"><b>{club.playoffs.finalsW}&ndash;{club.playoffs.finalsL}</b><span>Finals&nbsp;(W&ndash;L)</span></div>
+        </div>
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th class="l">Season</th>
+                <th class="l">Competition</th>
+                <th class="l">Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              {#each club.playoffs.perSeason as p}
+                <tr class:champ={p.champion}>
+                  <td class="l"><a class="pname" href={`#/season/${p.sid}`}>{p.label}</a></td>
+                  <td class="l">{p.comp}</td>
+                  <td class="l">{p.result}{#if p.champion}<span class="trophy" title="Champion">🏆</span>{/if}</td>
+                </tr>
+              {/each}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    {/if}
 
     {#if club.cups.length}
       <h2 class="section" id="cup-history">Cup History</h2>

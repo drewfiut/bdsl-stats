@@ -31,6 +31,7 @@
   const jumpLinks = $derived([
     { id: 'champions', label: 'Champions' },
     { id: 'standings', label: 'Standings' },
+    ...(data?.brackets?.length ? [{ id: 'playoffs', label: 'Playoffs' }] : []),
     ...(race ? [{ id: 'golden-boot-race', label: 'Golden Boot Race' }] : []),
     ...(data?.fixtures?.length ? [{ id: 'fixtures', label: 'Upcoming Matches' }] : []),
     ...(data?.results?.length ? [{ id: 'results', label: 'Recent Results' }] : []),
@@ -68,10 +69,15 @@
   let standingsDivKey = $state('');
   let fixturesDivKey = $state('');
   let resultsDivKey = $state('');
+  let bracketDivKey = $state('');
 
   const selectedStandings = $derived.by(() => {
     if (!data?.standings?.length) return null;
     return data.standings.find((c) => c.key === standingsDivKey) || data.standings[0];
+  });
+  const selectedBracket = $derived.by(() => {
+    if (!data?.brackets?.length) return null;
+    return data.brackets.find((c) => c.key === bracketDivKey) || data.brackets[0];
   });
   const selectedFixtures = $derived.by(() => {
     if (!data?.fixtures?.length) return null;
@@ -249,6 +255,51 @@
       </section>
     {:else}
       <p class="recdesc">No standings recorded this season.</p>
+    {/if}
+
+    {#if data.brackets.length > 0}
+      <h2 class="section" id="playoffs">Playoffs</h2>
+      <p class="recdesc">
+        The playoff bracket for each competition. Bold marks the team that advanced; a level game
+        settled on penalties is tagged <b>PK</b>. Empty slots are still to be decided.
+      </p>
+      <div class="divbtns">
+        {#each data.brackets as b}
+          <button class:on={selectedBracket?.key === b.key} onclick={() => (bracketDivKey = b.key)}>{b.label}</button>
+        {/each}
+      </div>
+      {#if selectedBracket}
+        <section class="season">
+          {#each selectedBracket.boards as board}
+            <div class="bracketwrap">
+              <div class="bracket">
+                {#each board.rounds as rnd}
+                  <div class="bround">
+                    <div class="brtitle">{rnd.label}</div>
+                    {#each rnd.matches as m}
+                      <div class="bmatch">
+                        <div class="bteam" class:win={m.winnerId && m.winnerId === m.homeId} class:lose={m.played && m.winnerId && m.winnerId !== m.homeId}>
+                          {#if m.homeId}
+                            <a class="pname" href={`#/club/${m.homeId}`}>{m.home}</a>
+                          {:else}<span class="tbd">TBD</span>{/if}
+                          <span class="bsc">{m.played ? m.hs : ''}</span>
+                        </div>
+                        <div class="bteam" class:win={m.winnerId && m.winnerId === m.awayId} class:lose={m.played && m.winnerId && m.winnerId !== m.awayId}>
+                          {#if m.awayId}
+                            <a class="pname" href={`#/club/${m.awayId}`}>{m.away}</a>
+                          {:else}<span class="tbd">TBD</span>{/if}
+                          <span class="bsc">{m.played ? m.as : ''}</span>
+                        </div>
+                        {#if m.note}<span class="bnote">{m.note}</span>{/if}
+                      </div>
+                    {/each}
+                  </div>
+                {/each}
+              </div>
+            </div>
+          {/each}
+        </section>
+      {/if}
     {/if}
 
     {#if race}
@@ -523,4 +574,29 @@
   .racelegend li { display: flex; align-items: center; gap: 6px; font-size: 13px; }
   .racelegend .swatch { width: 10px; height: 10px; border-radius: 50%; flex: none; }
   .racelegend b { color: var(--text); }
+
+  /* Playoff bracket: one flex column per round (Quarterfinals -> Semifinals -> Final), each match
+     a small card with two team rows. Columns keep a fixed width and the whole bracket scrolls
+     horizontally on narrow screens rather than the page itself. No SVG connectors -- space-around
+     vertically centers later rounds against the earlier ones for a bracket-like read. */
+  .bracketwrap { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 4px; margin-bottom: 14px; }
+  .bracketwrap + .bracketwrap { border-top: 1px solid var(--line); padding-top: 12px; }
+  .bracket { display: flex; gap: 16px; min-width: min-content; align-items: stretch; }
+  .bround { display: flex; flex-direction: column; justify-content: space-around; gap: 12px;
+    flex: 1 0 200px; min-width: 200px; }
+  .brtitle { font-size: 11px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted);
+    font-weight: 700; text-align: center; }
+  .bmatch { position: relative; background: var(--card); border: 1px solid var(--line);
+    border-radius: 10px; padding: 6px 10px; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+  .bteam { display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    font-size: 13px; padding: 4px 0; }
+  .bteam + .bteam { border-top: 1px dashed var(--line); }
+  .bteam .pname { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .bteam.win { font-weight: 750; }
+  .bteam.win .pname { color: var(--navy2); }
+  .bteam.lose { color: var(--muted); }
+  .bsc { flex: 0 0 auto; font-variant-numeric: tabular-nums; color: var(--muted); }
+  .bteam.win .bsc { color: var(--navy2); font-weight: 750; }
+  .bnote { position: absolute; top: -8px; right: 8px; background: var(--card); border: 1px solid var(--line);
+    border-radius: 6px; padding: 0 5px; font-size: 9.5px; font-weight: 700; letter-spacing: .3px; color: var(--muted); }
 </style>

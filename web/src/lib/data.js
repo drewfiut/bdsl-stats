@@ -228,7 +228,9 @@ async function buildBoard() {
     .reverse()
     .map((sid) => seasons[sid]?.label || sid); // newest-first, for the filter dropdown
 
-  return { players: active, allPlayers, allTeamStandings, allGames, allFixtures, allGameStats, gameReportsByKey, championsByClub, allCompetitions, playersRegistry, seasonLabels, dataAsOf, seasonRawRows };
+  const bracketsBySeason = buildAllBrackets(allFixtures, allCompetitions);
+
+  return { players: active, allPlayers, allTeamStandings, allGames, allFixtures, allGameStats, gameReportsByKey, championsByClub, allCompetitions, bracketsBySeason, playersRegistry, seasonLabels, dataAsOf, seasonRawRows };
 }
 
 // Fetch + aggregate once, then share across route navigations (board <-> profile).
@@ -514,9 +516,11 @@ function computeClubStreaks(allGames, clubId, liveSids) {
 // Full profile for one club: all-time totals, per-season competition history (from teams.json,
 // newest first), and the roster of every player who appeared for the club (from stats.csv, rolled
 // up per person over only that club's competitions). Returns null if the club_id isn't found.
-export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, clubId, championsByClub, allGames) {
+export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, clubId, championsByClub, allGames, bracketsBySeason) {
   const standings = allTeamStandings.filter((r) => r.club_id === clubId);
   if (!standings.length) return null;
+
+  const playoffs = buildClubPlayoffs(bracketsBySeason, clubId);
 
   const { name } = aggregateClub(standings);
   // Header totals cover every game the club has ever played -- league, playoffs and cups --
@@ -620,7 +624,7 @@ export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, 
     .sort((a, b) => b.played - a.played || (b.gf - b.ga) - (a.gf - a.ga) || a.name.localeCompare(b.name));
   const topOpponents = allOpponents.slice(0, 5);
 
-  return { clubId, name, totals, seasons, cups, roster, topOpponents, allOpponents, divisionTimeline, streaks };
+  return { clubId, name, totals, seasons, cups, roster, topOpponents, allOpponents, divisionTimeline, streaks, playoffs };
 }
 
 // ---- team records ----
@@ -646,7 +650,7 @@ function rankedBy(list, key, dir) {
     .slice(0, RANK_N);
 }
 
-export function buildTeamRecords(allTeamStandings, allGames) {
+export function buildTeamRecords(allTeamStandings, allGames, bracketsBySeason) {
   const liveSids = new Set(allTeamStandings.filter((r) => r.live).map((r) => r.sid));
 
   const seasons = allTeamStandings
@@ -797,10 +801,65 @@ export function buildTeamRecords(allTeamStandings, allGames) {
     .sort((a, b) => b.cs - a.cs || a.name.localeCompare(b.name))
     .slice(0, RANK_N);
 
+  // ---- playoff records (league + Over-35 brackets; cups excluded, matching this page's scope) ----
+  // Per club, aggregate every bracket match across all seasons: appearances (distinct competitions
+  // entered), win/loss/draw over played matches, and finals reached/won. A club is tagged O35 only
+  // if it has never played a league playoff (a pure Over-35 side), so league clubs stay untagged.
+  const PLAYOFF_MIN_GP = 5;
+  const byPlayoffClub = new Map();
+  for (const [sid, brackets] of bracketsBySeason || []) {
+    for (const b of brackets) {
+      if (b.group === 'cup') continue;
+      for (const board of b.boards) for (const rd of board.rounds) for (const m of rd.matches) {
+        if (!m.played) continue;
+        for (const side of [
+          { id: m.homeId, name: m.home },
+          { id: m.awayId, name: m.away },
+        ]) {
+          if (!side.id) continue;
+          let acc = byPlayoffClub.get(side.id);
+          if (!acc) {
+            acc = { clubId: side.id, name: side.name, lastSid: '', apps: new Set(), leagueApps: 0, o35Apps: 0, gp: 0, w: 0, l: 0, d: 0, finals: 0, finalsW: 0, finalsL: 0 };
+            byPlayoffClub.set(side.id, acc);
+          }
+          if (sid >= acc.lastSid) { acc.name = side.name; acc.lastSid = sid; }
+          acc.gp += 1;
+          if (m.winnerId === side.id) acc.w += 1;
+          else if (m.winnerId) acc.l += 1;
+          else acc.d += 1;
+          if (m.round === 'F') {
+            acc.finals += 1;
+            if (m.winnerId === side.id) acc.finalsW += 1;
+            else if (m.winnerId) acc.finalsL += 1;
+          }
+          const appKey = `${side.id}||${sid}||${b.key}`;
+          if (!acc.apps.has(appKey)) {
+            acc.apps.add(appKey);
+            if (b.group === 'over35') acc.o35Apps += 1; else acc.leagueApps += 1;
+          }
+        }
+      }
+    }
+  }
+  const playoffClubs = [...byPlayoffClub.values()].map((a) => ({
+    clubId: a.clubId, name: a.name, o35: a.leagueApps === 0 && a.o35Apps > 0,
+    appearances: a.apps.size, gp: a.gp, w: a.w, l: a.l, d: a.d,
+    winPct: a.gp ? a.w / a.gp : 0, finals: a.finals, finalsW: a.finalsW, finalsL: a.finalsL,
+  }));
+  const mostPlayoffAppearances = playoffClubs
+    .slice().sort((a, b) => b.appearances - a.appearances || b.gp - a.gp || a.name.localeCompare(b.name)).slice(0, RANK_N);
+  const bestPlayoffWinPct = playoffClubs
+    .filter((c) => c.gp >= PLAYOFF_MIN_GP)
+    .sort((a, b) => b.winPct - a.winPct || b.gp - a.gp || a.name.localeCompare(b.name)).slice(0, RANK_N);
+  const mostFinals = playoffClubs
+    .filter((c) => c.finals > 0)
+    .sort((a, b) => b.finals - a.finals || b.finalsW - a.finalsW || a.name.localeCompare(b.name)).slice(0, RANK_N);
+
   return {
     mostGF, fewestGF, mostGA, fewestGA, bestGD, worstGD, mostPts,
     perfect, winless, biggestWins, highestScoring, longestWinStreak, longestUnbeatenStreak,
     mostCleanSheets, careerCleanSheets, luckiest, unluckiest,
+    mostPlayoffAppearances, bestPlayoffWinPct, mostFinals, playoffMinGp: PLAYOFF_MIN_GP,
   };
 }
 
@@ -1027,6 +1086,214 @@ export function canonicalCompetition(name, comp_type) {
   // Unrecognized league name: fall back to a cleaned own-key column rather than dropping it.
   const key = `league-${cleaned.toLowerCase().replace(/\s+/g, '-')}`;
   return { key, label: cleaned || n, group: 'league', order: 98 };
+}
+
+// ---- playoff brackets ----
+// Turn the round-labelled playoff games (QF*/SF*/S1-S2/CHMP/CHAMP) already present in games.csv
+// into rendered brackets, mirroring standings.py's champion/final semantics. Computed once in
+// buildBoard and shared by the Season, Club and Team Records pages. See DATA.md §4.4/§5.6 and
+// standings.py (_winner / _infer_final / champion_for) for the authoritative rules.
+
+const ROUND_ORDER = { QF: 0, SF: 1, F: 2 };
+const ROUND_LABEL = { QF: 'Quarterfinals', SF: 'Semifinals', F: 'Final' };
+
+// A round label -> bracket round, or null for anything that isn't a QF/SF/final (PROMO, RELEG,
+// 3RD, "3 VS 4", 5v6, 7v8, the bare "1"/"2" of 2014's 3rd Division, or an empty label). S1/S2 are
+// how 2014/2015 tagged their semifinals; CHMP/CHAMP are the two spellings of the final.
+export function classifyRound(roundLabel) {
+  const u = (roundLabel || '').trim().toUpperCase();
+  if (/^QF\d*$/.test(u)) return 'QF';
+  if (u === 'S1' || u === 'S2' || /^SF\d*$/.test(u)) return 'SF';
+  if (u === 'CHMP' || u === 'CHAMP') return 'F';
+  return null;
+}
+
+// Union-find split of a competition's tagged games into independent brackets by shared clubs --
+// only needed for the Over-35 split years (2024/2025), which put two 4-team brackets under one
+// canonical "Over-35" key. Games with no known club (all-TBD live slots) attach to the largest.
+function splitByClub(games) {
+  const parent = new Map();
+  const find = (x) => { while (parent.get(x) !== x) { parent.set(x, parent.get(parent.get(x))); x = parent.get(x); } return x; };
+  for (const g of games) for (const id of [g.home_club_id, g.away_club_id]) if (id && !parent.has(id)) parent.set(id, id);
+  for (const g of games) if (g.home_club_id && g.away_club_id) parent.set(find(g.home_club_id), find(g.away_club_id));
+  const byRoot = new Map();
+  const orphans = [];
+  for (const g of games) {
+    const id = g.home_club_id || g.away_club_id;
+    if (!id) { orphans.push(g); continue; }
+    const r = find(id);
+    if (!byRoot.has(r)) byRoot.set(r, []);
+    byRoot.get(r).push(g);
+  }
+  const comps = [...byRoot.values()].sort((a, b) => b.length - a.length);
+  if (orphans.length) { if (comps.length) comps[0].push(...orphans); else comps.push(orphans); }
+  return comps;
+}
+
+// One bracket board (QF -> SF -> Final) from a component's games. `allGames` is the full
+// competition game log (used to reconstruct an untagged final); `champByComp` maps a raw
+// competition name -> champion club_id (from competitions.json) to settle finals decided on
+// penalties, whose scoreline is level.
+function buildBracketBoard(comp, allGames, champByComp) {
+  const byRound = { QF: [], SF: [], F: [] };
+  for (const g of comp) { const r = classifyRound(g.round_label); if (r) byRound[r].push(g); }
+  for (const r of ['QF', 'SF', 'F']) {
+    byRound[r].sort((a, b) => num(a.game_number) - num(b.game_number) || (a.round_label || '').localeCompare(b.round_label || ''));
+  }
+  const mk = (g, round) => ({
+    round, label: ROUND_LABEL[round], game: g,
+    homeId: g.home_club_id || '', home: g.home_name || '',
+    awayId: g.away_club_id || '', away: g.away_name || '',
+    hs: num(g.home_score), as: num(g.away_score),
+    note: (g.result_note || '').trim(),
+    played: g.status === 'played',
+    tbd: !g.home_club_id || !g.away_club_id,
+    winnerId: null,
+  });
+  const rounds = ['QF', 'SF', 'F']
+    .filter((r) => byRound[r].length)
+    .map((r) => ({ round: r, label: ROUND_LABEL[r], matches: byRound[r].map((g) => mk(g, r)) }));
+
+  // Clubs playing in any round strictly after `round` -- a level (penalty) QF/SF is settled by
+  // whichever team turns up in a later round (they advanced), mirroring bracket progression.
+  const laterParticipants = (round) => {
+    const s = new Set();
+    for (const rd of rounds) if (ROUND_ORDER[rd.round] > ROUND_ORDER[round]) {
+      for (const m of rd.matches) { if (m.homeId) s.add(m.homeId); if (m.awayId) s.add(m.awayId); }
+    }
+    return s;
+  };
+  const resolve = (m) => {
+    if (!m.played) return;
+    if (m.hs > m.as) { m.winnerId = m.homeId || null; return; }
+    if (m.as > m.hs) { m.winnerId = m.awayId || null; return; }
+    if (m.round === 'F') {
+      const champ = champByComp.get(m.game.competition);
+      if (champ && (champ === m.homeId || champ === m.awayId)) m.winnerId = champ;
+      return;
+    }
+    const later = laterParticipants(m.round);
+    const homeAdv = m.homeId && later.has(m.homeId);
+    const awayAdv = m.awayId && later.has(m.awayId);
+    if (homeAdv && !awayAdv) m.winnerId = m.homeId;
+    else if (awayAdv && !homeAdv) m.winnerId = m.awayId;
+  };
+  for (const rd of rounds) for (const m of rd.matches) resolve(m);
+
+  // Untagged final (2016/2019): if both semifinals were decisive, the two SF winners are the only
+  // finalists -- the final is the untagged played game between exactly those two on/after the last
+  // semifinal (standings.py:_infer_final). Bail if a semifinal was a level PK (finalist unknown).
+  if (!rounds.some((rd) => rd.round === 'F')) {
+    const sf = rounds.find((rd) => rd.round === 'SF');
+    if (sf && sf.matches.length) {
+      const winners = sf.matches.map((m) => m.winnerId);
+      const uniq = [...new Set(winners)];
+      if (winners.every(Boolean) && uniq.length === 2) {
+        const lastSf = sf.matches.reduce((mx, m) => (m.game.date > mx ? m.game.date : mx), '');
+        const wset = new Set(uniq);
+        const cands = allGames.filter((g) =>
+          g.status === 'played' && g.date && g.date >= lastSf &&
+          classifyRound(g.round_label) === null && !(g.round_label || '').trim() &&
+          g.home_club_id && g.away_club_id && g.home_club_id !== g.away_club_id &&
+          wset.has(g.home_club_id) && wset.has(g.away_club_id));
+        if (cands.length) {
+          cands.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : num(b.game_number) - num(a.game_number)));
+          const m = mk(cands[0], 'F');
+          resolve(m);
+          rounds.push({ round: 'F', label: ROUND_LABEL.F, matches: [m] });
+        }
+      }
+    }
+  }
+
+  rounds.sort((a, b) => ROUND_ORDER[a.round] - ROUND_ORDER[b.round]);
+  return { rounds: rounds.map((rd) => ({ round: rd.round, label: rd.label, matches: rd.matches.map(({ game, ...m }) => m) })) };
+}
+
+// All bracket boards for one canonical competition in one season. A single competition is one
+// bracket; only when there are >=2 tagged finals (the Over-35 split years) do we separate the
+// games into independent brackets. Returns [] when nothing is tagged as a playoff round.
+export function buildBracket(compGames, champByComp) {
+  const seen = new Set();
+  const games = [];
+  for (const g of compGames) { if (seen.has(g.game_key)) continue; seen.add(g.game_key); games.push(g); }
+  const tagged = games.filter((g) => classifyRound(g.round_label) !== null);
+  if (!tagged.length) return [];
+  const finalsCount = tagged.filter((g) => classifyRound(g.round_label) === 'F').length;
+  const components = finalsCount >= 2 ? splitByClub(tagged) : [tagged];
+  return components.map((comp) => buildBracketBoard(comp, games, champByComp)).filter((b) => b.rounds.length);
+}
+
+// sid -> [{ key, label, group, order, seasonLabel, boards }] : every season's playoff brackets,
+// keyed and ordered like the standings/champions competition lists so pages can reuse the switcher.
+export function buildAllBrackets(allFixtures, allCompetitions) {
+  const bySeason = new Map();
+  for (const g of allFixtures || []) {
+    let seasonMap = bySeason.get(g.sid);
+    if (!seasonMap) { seasonMap = new Map(); bySeason.set(g.sid, seasonMap); }
+    const canon = canonicalCompetition(g.competition, g.comp_type);
+    let entry = seasonMap.get(canon.key);
+    if (!entry) { entry = { canon, seasonLabel: g.seasonLabel, games: [] }; seasonMap.set(canon.key, entry); }
+    entry.games.push(g);
+  }
+  const champBySeason = new Map(); // sid -> Map(rawCompetition -> championId)
+  for (const c of allCompetitions || []) {
+    if (!c.clubId) continue;
+    let m = champBySeason.get(c.sid);
+    if (!m) { m = new Map(); champBySeason.set(c.sid, m); }
+    m.set(c.competition, c.clubId);
+  }
+  const result = new Map();
+  for (const [sid, seasonMap] of bySeason) {
+    const champByComp = champBySeason.get(sid) || new Map();
+    const brackets = [];
+    for (const { canon, seasonLabel, games } of seasonMap.values()) {
+      const boards = buildBracket(games, champByComp);
+      if (boards.length) brackets.push({ key: canon.key, label: canon.label, group: canon.group, order: canon.order, seasonLabel, boards });
+    }
+    brackets.sort((a, b) => a.order - b.order || a.label.localeCompare(b.label));
+    if (brackets.length) result.set(sid, brackets);
+  }
+  return result;
+}
+
+// A club's playoff record across league + Over-35 brackets (cups excluded, matching the Team
+// Records scope). Appearances = distinct competitions entered (>=1 played match); win% counts a
+// level PK match the club didn't advance from as neither a win nor loss (a draw). perSeason lists
+// how far the club got in each, newest first.
+export function buildClubPlayoffs(bracketsBySeason, clubId) {
+  const out = { appearances: 0, gp: 0, w: 0, l: 0, d: 0, winPct: 0, finals: 0, finalsW: 0, finalsL: 0, perSeason: [] };
+  if (!bracketsBySeason || !clubId) return out;
+  const rows = [];
+  for (const [sid, brackets] of bracketsBySeason) {
+    for (const b of brackets) {
+      if (b.group === 'cup') continue;
+      let played = false, deepest = -1, wonFinal = false, lostFinal = false;
+      for (const board of b.boards) for (const rd of board.rounds) for (const m of rd.matches) {
+        const isHome = m.homeId === clubId, isAway = m.awayId === clubId;
+        if ((!isHome && !isAway) || !m.played) continue;
+        played = true;
+        out.gp += 1;
+        if (m.winnerId === clubId) out.w += 1;
+        else if (m.winnerId) out.l += 1;
+        else out.d += 1;
+        if (ROUND_ORDER[m.round] > deepest) deepest = ROUND_ORDER[m.round];
+        if (m.round === 'F') {
+          out.finals += 1;
+          if (m.winnerId === clubId) { out.finalsW += 1; wonFinal = true; }
+          else if (m.winnerId) { out.finalsL += 1; lostFinal = true; }
+        }
+      }
+      if (!played) continue;
+      const result = wonFinal ? 'Champion' : (lostFinal || deepest === ROUND_ORDER.F) ? 'Runner-up'
+        : deepest === ROUND_ORDER.SF ? 'Semifinalist' : 'Quarterfinalist';
+      rows.push({ sid, label: b.seasonLabel, comp: b.label, group: b.group, result, champion: wonFinal });
+    }
+  }
+  out.appearances = rows.length;
+  out.winPct = out.gp ? out.w / out.gp : 0;
+  out.perSeason = rows.sort((a, b) => b.sid.localeCompare(a.sid) || a.comp.localeCompare(b.comp));
+  return out;
 }
 
 // Newest-season display name for every club_id: prefer allTeamStandings (authoritative team
@@ -1864,7 +2131,7 @@ export function buildSeasonIndex(board) {
 // Full detail for one season: standings by division, the champions grid row, and top
 // scorers/assisters. Returns null if the sid has no data anywhere in the board.
 export function buildSeason(board, sid) {
-  const { allTeamStandings, allCompetitions, allPlayers, allFixtures } = board;
+  const { allTeamStandings, allCompetitions, allPlayers, allFixtures, bracketsBySeason } = board;
 
   const standingsRows = allTeamStandings.filter((r) => r.sid === sid);
   const compRows = allCompetitions.filter((c) => c.sid === sid);
@@ -2020,7 +2287,9 @@ export function buildSeason(board, sid) {
     }))
     .sort((a, b) => a.order - b.order || a.label.localeCompare(b.label));
 
-  return { sid, label, live, standings, champions, players, divisions, results, fixtures };
+  const brackets = (bracketsBySeason && bracketsBySeason.get(sid)) || [];
+
+  return { sid, label, live, standings, champions, players, divisions, results, fixtures, brackets };
 }
 
 // ---- golden-boot race (live season only) ----

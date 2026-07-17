@@ -10,7 +10,7 @@
   $effect(() => {
     loadBoard()
       .then((b) => {
-        recs = buildTeamRecords(b.allTeamStandings, b.allGames);
+        recs = buildTeamRecords(b.allTeamStandings, b.allGames, b.bracketsBySeason);
         champs = buildChampions(b.allCompetitions, b.allTeamStandings);
       })
       .catch((e) => (error = e.message || String(e)))
@@ -46,6 +46,9 @@
     { id: 'longest-winning-streak', label: 'Longest Winning Streak' },
     { id: 'longest-unbeaten-streak', label: 'Longest Unbeaten Streak' },
     { id: 'longest-championship-streak', label: 'Longest Championship Streak' },
+    { id: 'most-playoff-appearances', label: 'Most Playoff Appearances' },
+    { id: 'best-playoff-win-pct', label: 'Best Playoff Win %' },
+    { id: 'most-finals', label: 'Most Finals' },
     { id: 'biggest-win', label: 'Biggest Win' },
     { id: 'highest-scoring-game', label: 'Highest Scoring Game' },
     { id: 'luckiest-seasons', label: 'Luckiest Seasons' },
@@ -53,6 +56,7 @@
   ] : []);
 
   const fmt1 = (n) => (Math.round(n * 10) / 10).toFixed(1);
+  const pct = (v) => `${Math.round((v || 0) * 100)}%`;
 
   // scrollIntoView aligns the target to the viewport top, but the sticky jump nav then overlaps
   // it -- measure the nav's actual (row-count-dependent) height and offset the scroll by that.
@@ -399,6 +403,124 @@
         </table>
         {#if !champs?.dynasties?.length}
           <div class="empty">No back-to-back title runs yet.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="most-playoff-appearances">Most Playoff Appearances</h2>
+    <p class="recdesc">Most league/O35 playoff brackets reached &mdash; one appearance per competition entered.</p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Team</th>
+              <th>Apps</th>
+              <th class="mobhide">Games</th>
+              <th class="mobhide">Record</th>
+              <th>Finals</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each recs.mostPlayoffAppearances as r, i}
+              {@const rk = i + 1}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l">
+                  <a class="pname" href={`#/club/${r.clubId}`}>{r.name}</a>
+                  {#if r.o35}<span class="o35tag">O35</span>{/if}
+                  <div class="submeta"><span class="season">{r.w}&ndash;{r.l}&ndash;{r.d} &middot; {r.finals} finals</span></div>
+                </td>
+                <td class="pts">{r.appearances}</td>
+                <td class="mobhide">{r.gp}</td>
+                <td class="mobhide">{r.w}&ndash;{r.l}&ndash;{r.d}</td>
+                <td>{r.finals}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if recs.mostPlayoffAppearances.length === 0}
+          <div class="empty">No playoff games recorded yet.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="best-playoff-win-pct">Best Playoff Win %</h2>
+    <p class="recdesc">
+      Highest win rate across league/O35 playoff games (minimum {recs.playoffMinGp} played). A game
+      lost on penalties counts as a draw, not a win.
+    </p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Team</th>
+              <th class="mobhide">Games</th>
+              <th class="mobhide">Record</th>
+              <th>Win&nbsp;%</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each recs.bestPlayoffWinPct as r, i}
+              {@const rk = i + 1}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l">
+                  <a class="pname" href={`#/club/${r.clubId}`}>{r.name}</a>
+                  {#if r.o35}<span class="o35tag">O35</span>{/if}
+                  <div class="submeta"><span class="season">{r.gp} games &middot; {r.w}&ndash;{r.l}&ndash;{r.d}</span></div>
+                </td>
+                <td class="mobhide">{r.gp}</td>
+                <td class="mobhide">{r.w}&ndash;{r.l}&ndash;{r.d}</td>
+                <td class="pts">{pct(r.winPct)}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if recs.bestPlayoffWinPct.length === 0}
+          <div class="empty">No team has played {recs.playoffMinGp} playoff games yet.</div>
+        {/if}
+      </div>
+    </section>
+
+    <h2 class="section" id="most-finals">Most Finals</h2>
+    <p class="recdesc">Most league/O35 finals reached, with the finals won&ndash;lost record alongside.</p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Team</th>
+              <th class="mobhide">Appearances</th>
+              <th>Finals</th>
+              <th>Won</th>
+              <th>Lost</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each recs.mostFinals as r, i}
+              {@const rk = i + 1}
+              <tr>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l">
+                  <a class="pname" href={`#/club/${r.clubId}`}>{r.name}</a>
+                  {#if r.o35}<span class="o35tag">O35</span>{/if}
+                  <div class="submeta"><span class="season">{r.finalsW}&ndash;{r.finalsL} in finals</span></div>
+                </td>
+                <td class="mobhide">{r.appearances}</td>
+                <td class="pts">{r.finals}</td>
+                <td>{r.finalsW}</td>
+                <td>{r.finalsL}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if recs.mostFinals.length === 0}
+          <div class="empty">No finals recorded yet.</div>
         {/if}
       </div>
     </section>
