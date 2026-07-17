@@ -139,6 +139,9 @@ const isLive = (meta) => meta && meta.final !== true;
 // stats.csv is an append-only daily time series of *cumulative* season totals (store.py:22).
 // Only the latest snapshot is "the current table"; summing every snapshot double-counts the
 // live season. Mirror store.load_snapshot: keep only rows from the max snapshot_date.
+// The production build already slims each stats.csv to its latest snapshot (see vite.config.js's
+// slimStatsSnapshots plugin), so in prod this is a no-op; it still matters for `vite dev`, which
+// serves the full append-only source store straight through the public/data symlink.
 function latestSnapshotRows(rows) {
   let latest = '';
   for (const r of rows) if (r.snapshot_date > latest) latest = r.snapshot_date;
@@ -163,12 +166,9 @@ async function buildBoard() {
         fetchCsv(`${sid}/game_reports.csv`).catch(() => []), // per-game backfill; some seasons still missing
       ]);
       const label = seasons[sid]?.label || sid;
-      return { sid, label, live: isLive(seasons[sid]), rawRows: rows, rows: latestSnapshotRows(rows), teams, comps, games, gameStats, gameReports };
+      return { sid, label, live: isLive(seasons[sid]), rows: latestSnapshotRows(rows), teams, comps, games, gameStats, gameReports };
     })
   );
-
-  const seasonRawRows = new Map(); // sid -> every stats.csv row, all snapshot_dates (for the golden-boot race)
-  for (const s of perSeason) seasonRawRows.set(s.sid, s.rawRows);
 
   const allPlayers = [];
   const allTeamStandings = []; // flat teams.json rows tagged with season context
@@ -230,7 +230,7 @@ async function buildBoard() {
 
   const bracketsBySeason = buildAllBrackets(allFixtures, allCompetitions);
 
-  return { players: active, allPlayers, allTeamStandings, allGames, allFixtures, allGameStats, gameReportsByKey, championsByClub, allCompetitions, bracketsBySeason, playersRegistry, seasonLabels, dataAsOf, seasonRawRows };
+  return { players: active, allPlayers, allTeamStandings, allGames, allFixtures, allGameStats, gameReportsByKey, championsByClub, allCompetitions, bracketsBySeason, playersRegistry, seasonLabels, dataAsOf };
 }
 
 // Fetch + aggregate once, then share across route navigations (board <-> profile).
@@ -2444,57 +2444,6 @@ export function buildClubSeason(board, clubId, sid) {
   const playoffs = { brackets, results, resultLabel };
 
   return { clubId, sid, label, live, name, totals, titles, standings, roster, games, playoffs };
-}
-
-// ---- golden-boot race (live season only) ----
-// stats.csv accumulates one full-roster snapshot per day (store.py: "append-only ... nothing is
-// overwritten"), each row's g/a/gp already a season-to-date cumulative total. buildBoard() only
-// keeps the latest day for the main aggregation (summing every day would double-count), but the
-// full history survives in board.seasonRawRows -- this walks all of it to trace the top scorers'
-// goal totals day by day, i.e. the golden-boot race as it's actually unfolded.
-const GOLDEN_RACE_TOP_N = 5;
-
-export function buildGoldenBootRace(board, sid, topN = GOLDEN_RACE_TOP_N) {
-  const rows = board?.seasonRawRows?.get(sid);
-  if (!rows || !rows.length) return null;
-
-  const dates = [...new Set(rows.map((r) => r.snapshot_date))].filter(Boolean).sort();
-  if (dates.length < 2) return null; // need at least two days to show a race
-
-  // person_key -> { name, byDate: Map(date -> that day's total goals, all competitions) }
-  const byPk = new Map();
-  for (const r of rows) {
-    const pk = r.person_key;
-    if (!pk) continue;
-    let acc = byPk.get(pk);
-    if (!acc) { acc = { pk, name: r.name, byDate: new Map() }; byPk.set(pk, acc); }
-    if (r.name) acc.name = r.name;
-    acc.byDate.set(r.snapshot_date, (acc.byDate.get(r.snapshot_date) || 0) + num(r.g));
-  }
-
-  // Rank by the most recent day's total; carry each player's last-known total forward across any
-  // day they're missing a row for (e.g. joined the league partway through), never backward.
-  const latestDate = dates[dates.length - 1];
-  const ranked = [...byPk.values()]
-    .map((p) => ({ ...p, finalG: p.byDate.get(latestDate) || 0 }))
-    .filter((p) => p.finalG > 0)
-    .sort((a, b) => b.finalG - a.finalG || a.name.localeCompare(b.name))
-    .slice(0, topN);
-
-  const playersRegistry = board.playersRegistry;
-  const series = ranked.map((p) => {
-    const reg = playersRegistry?.[p.pk];
-    const name = displayName(reg, p.name) || '(unknown)';
-    let running = 0;
-    const points = dates.map((d) => {
-      if (p.byDate.has(d)) running = p.byDate.get(d);
-      return { date: d, g: running };
-    });
-    return { pk: p.pk, name, g: p.finalG, points };
-  });
-
-  const maxG = Math.max(...series.map((s) => s.g), 0);
-  return { dates, series, maxG };
 }
 
 // ---- per-game scoring/discipline (game_stats.csv + game_reports.csv backfill) ----

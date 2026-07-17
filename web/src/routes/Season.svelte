@@ -1,5 +1,5 @@
 <script>
-  import { loadBoard, buildSeason, buildGoldenBootRace } from '../lib/data.js';
+  import { loadBoard, buildSeason } from '../lib/data.js';
   import { hscroll } from '../lib/scrollShadow.js';
 
   let { sid } = $props();
@@ -7,7 +7,6 @@
   let loading = $state(true);
   let error = $state('');
   let data = $state(null);
-  let board = $state(null);
 
   $effect(() => {
     // re-run whenever the routed sid changes
@@ -17,22 +16,16 @@
     data = null;
     loadBoard()
       .then((b) => {
-        board = b;
         data = buildSeason(b, id);
       })
       .catch((e) => (error = e.message || String(e)))
       .finally(() => (loading = false));
   });
 
-  // Only meaningful for the live season -- historical seasons carry just one stats.csv snapshot,
-  // so there's no day-by-day history to trace a race through.
-  const race = $derived(board && data?.live ? buildGoldenBootRace(board, sid) : null);
-
   const jumpLinks = $derived([
     { id: 'champions', label: 'Champions' },
     { id: 'standings', label: 'Standings' },
     ...(data?.brackets?.length ? [{ id: 'playoffs', label: 'Playoffs' }] : []),
-    ...(race ? [{ id: 'golden-boot-race', label: 'Golden Boot Race' }] : []),
     ...(data?.fixtures?.length ? [{ id: 'fixtures', label: 'Upcoming Matches' }] : []),
     ...(data?.results?.length ? [{ id: 'results', label: 'Recent Results' }] : []),
     { id: 'leaders', label: 'Top Performers' },
@@ -97,49 +90,6 @@
       .slice(0, LEADER_LIMIT);
   });
 
-  // Golden Boot race chart: one line per top scorer, x = snapshot day, y = cumulative goals.
-  // Cycles through the site's existing themed accent colors rather than introducing new ones.
-  const RACE_COLORS = ['var(--navy2)', 'var(--gold)', 'var(--g)', 'var(--a)', 'var(--bad)'];
-  const RW = 720, RH = 320;
-  const RM = { top: 24, right: 20, bottom: 34, left: 34 };
-  const riw = RW - RM.left - RM.right;
-  const rih = RH - RM.top - RM.bottom;
-
-  const fmtShortDate = (iso) => {
-    const d = new Date(`${iso}T00:00:00`);
-    if (isNaN(d)) return iso || '';
-    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-  };
-
-  const raceChart = $derived.by(() => {
-    if (!race || !race.series.length) return null;
-    const n = race.dates.length;
-    const yMax = Math.max(race.maxG + 1, 1);
-    const x = (i) => RM.left + (n === 1 ? riw / 2 : (riw * i) / (n - 1));
-    const y = (v) => RM.top + rih - (yMax > 0 ? (v / yMax) * rih : 0);
-    const ticks = [];
-    const step = Math.max(1, Math.ceil(yMax / 5));
-    for (let t = 0; t <= yMax + 1e-9; t += step) ticks.push({ v: Math.round(t), gy: y(t) });
-
-    const lines = race.series.map((s, i) => ({
-      pk: s.pk,
-      name: s.name,
-      g: s.g,
-      color: RACE_COLORS[i % RACE_COLORS.length],
-      poly: s.points.map((p, j) => `${x(j)},${y(p.g)}`).join(' '),
-      last: { cx: x(n - 1), cy: y(s.points[n - 1].g) },
-    }));
-
-    // Thin the x-axis labels so dense day-by-day data doesn't overlap: always show the first and
-    // last day, plus evenly-spaced days in between (about one label per 60px of chart width).
-    const maxLabels = Math.max(2, Math.floor(riw / 60));
-    const labelEvery = Math.max(1, Math.ceil((n - 1) / (maxLabels - 1)));
-    const xLabels = race.dates
-      .map((d, i) => ({ d, i }))
-      .filter(({ i }) => i === 0 || i === n - 1 || i % labelEvery === 0);
-
-    return { lines, ticks, xLabels, x, yMax };
-  });
 </script>
 
 {#if !loading && !error && data}
@@ -301,47 +251,6 @@
           {/each}
         </section>
       {/if}
-    {/if}
-
-    {#if race}
-      <h2 class="section" id="golden-boot-race">Golden Boot Race</h2>
-      <p class="recdesc">
-        Cumulative goals for the season&rsquo;s top {race.series.length} scorers, day by day
-        &mdash; across every competition they&rsquo;ve played.
-      </p>
-      <section class="season">
-        <div class="chartwrap">
-          <svg viewBox={`0 0 ${RW} ${RH}`} preserveAspectRatio="xMidYMid meet" role="img"
-               aria-label="Golden Boot race: cumulative goals by day">
-            {#if raceChart}
-              {#each raceChart.ticks as t}
-                <line class="grid" x1={RM.left} x2={RW - RM.right} y1={t.gy} y2={t.gy} />
-                <text class="ylab" x={RM.left - 8} y={t.gy} dominant-baseline="middle">{t.v}</text>
-              {/each}
-              {#each raceChart.xLabels as xl}
-                <text class="xlab" x={raceChart.x(xl.i)} y={RH - RM.bottom + 20}>{fmtShortDate(xl.d)}</text>
-              {/each}
-              {#each raceChart.lines as l}
-                <polyline class="raceline" points={l.poly} style={`stroke: ${l.color}`} />
-                <circle class="racedot" cx={l.last.cx} cy={l.last.cy} r="4" style={`fill: ${l.color}`}>
-                  <title>{l.name}: {l.g} goals</title>
-                </circle>
-              {/each}
-            {/if}
-          </svg>
-        </div>
-        {#if raceChart}
-          <ul class="racelegend">
-            {#each raceChart.lines as l}
-              <li>
-                <span class="swatch" style={`background: ${l.color}`}></span>
-                <a class="pname" href={`#/player/${l.pk}`}>{l.name}</a>
-                <b>{l.g}</b>
-              </li>
-            {/each}
-          </ul>
-        {/if}
-      </section>
     {/if}
 
     {#if data.fixtures.length > 0}
@@ -559,22 +468,6 @@
   th.sorted { color: var(--navy2); }
   td.sorted { font-weight: 800; color: var(--text); }
   .arr { font-size: 9px; margin-left: 2px; vertical-align: middle; }
-
-  /* Golden Boot race chart (mirrors Trends.svelte's chart CSS -- no shared component, ported
-     locally like Club.svelte's division-history chart does). */
-  .chartwrap { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
-    padding: 8px 10px; margin-bottom: 12px; }
-  .chartwrap svg { display: block; width: 100%; height: auto; }
-  .grid { stroke: var(--line); stroke-width: 1; }
-  .ylab { fill: var(--muted); font-size: 11px; text-anchor: end; }
-  .xlab { fill: var(--muted); font-size: 11px; text-anchor: middle; }
-  .raceline { fill: none; stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
-  .racedot { stroke: var(--card); stroke-width: 1.5; }
-
-  .racelegend { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 18px; }
-  .racelegend li { display: flex; align-items: center; gap: 6px; font-size: 13px; }
-  .racelegend .swatch { width: 10px; height: 10px; border-radius: 50%; flex: none; }
-  .racelegend b { color: var(--text); }
 
   /* Playoff bracket: one flex column per round (Quarterfinals -> Semifinals -> Final), each match
      a small card with two team rows. Columns keep a fixed width and the whole bracket scrolls
