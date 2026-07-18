@@ -124,6 +124,14 @@
   <div class="pagehead">
     <div class="wrap">
       <h1>{club.name}</h1>
+      {#if club.nameHistory.length > 1}
+        <div class="namehistory">
+          Formerly
+          {#each club.nameHistory.slice(0, -1).reverse() as era, i}
+            {i > 0 ? ', ' : ' '}{era.name} ({era.seasons})
+          {/each}
+        </div>
+      {/if}
       <div class="sub">All-time record across every BDSL season</div>
       <div class="stats">
         <div class="stat"><b>{club.seasons?.length ?? 0}</b><span>Seasons</span></div>

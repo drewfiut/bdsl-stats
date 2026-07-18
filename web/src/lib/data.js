@@ -373,6 +373,26 @@ function aggregateClub(rows) {
   return { name: name || '(unknown)', totals: t, seasons: sids.size };
 }
 
+// Collapse a club's standings into name eras, oldest first: a run of consecutive seasons under
+// the same recorded name. A handful of clubs have been renamed over the years (or, per the
+// 2026 Nanner FC/Meerkats FC case, folded a differently-named cup side's name into the league
+// entry) -- this powers the "formerly" note on the Club page. Single-era clubs return a
+// one-element array, which callers treat as "no rename to show".
+function buildNameHistory(standings) {
+  const nameBySid = new Map();
+  for (const r of standings) if (!nameBySid.has(r.sid)) nameBySid.set(r.sid, r.name);
+  const sids = [...nameBySid.keys()].sort();
+
+  const runs = [];
+  for (const sid of sids) {
+    const name = nameBySid.get(sid);
+    const last = runs[runs.length - 1];
+    if (last && last.name === name) last.sids.add(sid);
+    else runs.push({ name, sids: new Set([sid]) });
+  }
+  return runs.map((r) => ({ name: r.name, seasons: formatSeasonRanges(r.sids) }));
+}
+
 // One row per club: all-time standings totals, sorted alphabetically by name (like buildAllPlayers).
 // Titles = number of competitions the club won (championsByClub), across league, Over-35 and cups.
 export function buildAllClubs(allTeamStandings, championsByClub) {
@@ -543,6 +563,7 @@ export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, 
   const playoffs = buildClubPlayoffs(bracketsBySeason, clubId);
 
   const { name } = aggregateClub(standings);
+  const nameHistory = buildNameHistory(standings);
   // Header totals cover every game the club has ever played -- league, playoffs and cups --
   // rather than just the regular-season standings.
   const totals = aggregateClubGames(allGames, clubId);
@@ -644,7 +665,7 @@ export function buildClubProfile(allTeamStandings, allPlayers, playersRegistry, 
     .sort((a, b) => b.played - a.played || (b.gf - b.ga) - (a.gf - a.ga) || a.name.localeCompare(b.name));
   const topOpponents = allOpponents.slice(0, 5);
 
-  return { clubId, name, totals, seasons, cups, roster, topOpponents, allOpponents, divisionTimeline, streaks, playoffs };
+  return { clubId, name, nameHistory, totals, seasons, cups, roster, topOpponents, allOpponents, divisionTimeline, streaks, playoffs };
 }
 
 // ---- team records ----

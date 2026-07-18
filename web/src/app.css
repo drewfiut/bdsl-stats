@@ -25,6 +25,7 @@ body { margin:0; background:var(--bg); color:var(--text);
   background:var(--live); border:1px solid var(--gold); }
 h1 { margin:0 0 4px; font-size:22px; letter-spacing:.2px; }
 .pagehead .sub, .phead .sub { opacity:.85; font-size:13px; }
+.pagehead .namehistory { opacity:.7; font-size:12px; margin:0 0 4px; font-style:italic; }
 
 /* ---- site header / nav bar ---- */
 header.site { background:var(--navy); color:#fff; border-bottom:1px solid rgba(255,255,255,.08); }
