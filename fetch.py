@@ -9,7 +9,13 @@ import warnings
 
 import requests
 
-warnings.filterwarnings("ignore")  # silence LibreSSL urllib3 notice on system Python
+try:
+    # Silence LibreSSL's NotOpenSSLWarning on system Python, and only that warning -- a blanket
+    # filterwarnings("ignore") would also mute unrelated warnings we'd want to see.
+    from urllib3.exceptions import NotOpenSSLWarning
+    warnings.filterwarnings("ignore", category=NotOpenSSLWarning)
+except ImportError:
+    pass  # older urllib3 has no such class; nothing to silence
 
 USER_AGENT = "bdsl-stats/1.0 (personal league leaderboard; +https://bdsl.org)"
 _POLITE_DELAY = 0.4  # seconds between live network fetches
@@ -41,10 +47,13 @@ def get(url: str, retries: int = 3) -> str:
 
 
 def get_optional(url: str, retries: int = 3):
-    """Fetch `url`, returning its text or `None` if it 404s (no retry on a 404).
+    """Fetch `url`, returning its text, or `None` if it 404s (no retry on a 404).
 
     Used to probe per-month schedule buckets, most of which don't exist for a given competition;
-    a missing month is expected, not an error, so it returns None immediately instead of retrying.
+    a missing month is expected, not an error, so a 404 returns None immediately instead of
+    retrying. Any other persistent failure (timeout, connection error, 5xx, ...) is a real
+    problem, not a missing month -- after exhausting retries it raises, the same as `get_final`,
+    so a server outage can't be silently mistaken for an absent month and drop a month of games.
     """
     last_err = None
     for attempt in range(retries):
@@ -58,4 +67,4 @@ def get_optional(url: str, retries: int = 3):
         except requests.RequestException as err:
             last_err = err
             time.sleep(1.5 * (attempt + 1))
-    return None
+    raise RuntimeError(f"failed to fetch {url} after {retries} attempts: {last_err}")

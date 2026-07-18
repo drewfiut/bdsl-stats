@@ -121,13 +121,22 @@ def _capture_reports(sid: str, game_rows: List[dict], rows: List[dict], players:
                       progress: bool = False) -> None:
     """Fetch new/late Match Reports, attribute their scoring lines, and write game_stats/game_reports.
 
-    Incremental: a played game with a report_path is (re)captured if it isn't already in
-    game_reports.csv's ledger, or if it's within the last REPORT_RECAPTURE_DAYS days (Match
-    Reports are sometimes filled in a few days after the game -- the "late-stat-entry window" --
-    so recent games are always re-fetched even if already captured). Games not (re)captured this
-    run keep their previously stored game_stats/game_reports rows, so both files stay complete.
-    A single game's fetch/parse failure is recorded as an "error" ledger row and does not stop
-    the rest of the run.
+    Incremental: a played game with a report_path is (re)captured if it has never been
+    successfully captured (no ledger row, or a ledger row with status "error" -- errors are
+    always retried, no matter how old the game is, since we never want a transient fetch
+    failure to permanently strand a game unfetched), or if it's within the last
+    REPORT_RECAPTURE_DAYS days despite already being captured (Match Reports are sometimes
+    filled in a few days after the game -- the "late-stat-entry window" -- so recent games are
+    always re-fetched even if already captured). Games not (re)captured this run keep their
+    previously stored game_stats/game_reports rows, so both files stay complete.
+
+    A single game's fetch/parse failure never destroys previously captured data: if the game
+    already has a "captured" ledger row, that row and its game_stats rows are left untouched
+    (no "error" row is appended, so the carry-forward below preserves them as-is) and the game
+    is simply retried again next run within another recapture-window check. Only a game that has
+    never been successfully captured gets an "error" ledger row recorded, so it's easy to see
+    which games still need attention while still being retried every run. A single failure does
+    not stop the rest of the run.
     """
     roster_index = attribution.build_roster_index(rows, players)
 
@@ -136,7 +145,10 @@ def _capture_reports(sid: str, game_rows: List[dict], rows: List[dict], players:
     for r in store.load_game_stats(sid):
         existing_stats_by_key[r["game_key"]].append(r)
 
-    cutoff = (dt.date.today() - dt.timedelta(days=REPORT_RECAPTURE_DAYS)).isoformat()
+    # Use the league-day boundary (not the calendar date) so the recapture window lines up with
+    # the rest of the pipeline's notion of "today" (see store.league_date).
+    league_today = dt.date.fromisoformat(store.league_date(config.STATS_REFRESH_HOUR))
+    cutoff = (league_today - dt.timedelta(days=REPORT_RECAPTURE_DAYS)).isoformat()
 
     to_capture = []
     for g in game_rows:
@@ -144,7 +156,9 @@ def _capture_reports(sid: str, game_rows: List[dict], rows: List[dict], players:
             continue
         key = g["game_key"]
         recent = bool(g.get("date")) and g["date"] >= cutoff
-        if key in existing_reports_by_key and not recent:
+        existing = existing_reports_by_key.get(key)
+        # Only a genuinely captured, non-recent game is skipped; "error" rows are always retried.
+        if existing is not None and existing.get("status") == "captured" and not recent:
             continue
         to_capture.append(g)
 
@@ -170,6 +184,12 @@ def _capture_reports(sid: str, game_rows: List[dict], rows: List[dict], players:
             })
             captured += 1
         except Exception:
+            existing = existing_reports_by_key.get(key)
+            if existing is not None and existing.get("status") == "captured":
+                # Already have good data for this game -- a transient failure on a recapture
+                # attempt must not overwrite it. Leave the ledger/stats rows out of new_reports
+                # so the carry-forward below keeps the previously captured data as-is.
+                continue
             new_reports.append({
                 "game_key": key, "tg": g["tg"], "report_url": url,
                 "captured_at": dt.datetime.now().isoformat(timespec="seconds"),
@@ -247,6 +267,20 @@ def collect(season: Optional[dict] = None, progress: bool = False,
 
     store.save_competitions(sid, comps)
     store.save_teams(sid, teams)
+
+    # save_games rewrites games.csv wholesale, so a silent upstream fetch problem that drops
+    # games would otherwise quietly regress the store (and the scheduled GitHub Action would
+    # commit the regression). Scheduled games may legitimately disappear (e.g. postponed off
+    # the schedule), but a played game must never vanish -- guard on that count specifically.
+    existing_played = sum(1 for g in store.load_games(sid) if g.get("status") == "played")
+    new_played = sum(1 for g in game_rows if g.get("status") == "played")
+    if new_played < existing_played:
+        raise RuntimeError(
+            f"refusing to save games for season {sid!r}: played-game count would drop from "
+            f"{existing_played} to {new_played}. The store was left untouched to protect it. "
+            f"If this shrink is intentional, delete the season's games.csv to override manually."
+        )
+
     store.save_games(sid, game_rows)
 
     rows = []
