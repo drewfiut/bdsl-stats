@@ -45,6 +45,7 @@
     { id: 'winless-seasons', label: 'Winless Seasons' },
     { id: 'longest-winning-streak', label: 'Longest Winning Streak' },
     { id: 'longest-unbeaten-streak', label: 'Longest Unbeaten Streak' },
+    { id: 'longest-scoring-streak', label: 'Longest Scoring Streak' },
     { id: 'longest-championship-streak', label: 'Longest Championship Streak' },
     { id: 'most-playoff-appearances', label: 'Most Playoff Appearances' },
     { id: 'best-playoff-win-pct', label: 'Best Playoff Win %' },
@@ -305,7 +306,7 @@
     </section>
 
     <h2 class="section" id="longest-winning-streak">Longest Winning Streak</h2>
-    <p class="recdesc">Most consecutive league/O35 wins, spanning any number of seasons.</p>
+    <p class="recdesc">Most consecutive league/O35 wins (cup games included), spanning any number of seasons.</p>
     <section class="season">
       <div class="tablewrap">
         <table>
@@ -338,7 +339,7 @@
     </section>
 
     <h2 class="section" id="longest-unbeaten-streak">Longest Unbeaten Streak</h2>
-    <p class="recdesc">Most consecutive league/O35 games without a loss (wins + draws), spanning any number of seasons.</p>
+    <p class="recdesc">Most consecutive league/O35 games without a loss (wins + draws, cup games included), spanning any number of seasons.</p>
     <section class="season">
       <div class="tablewrap">
         <table>
@@ -352,6 +353,39 @@
           </thead>
           <tbody>
             {#each recs.longestUnbeatenStreak as r, i}
+              {@const rk = i + 1}
+              {@const range = r.startLabel === r.endLabel ? r.startLabel : `${r.startLabel} – ${r.endLabel}`}
+              <tr class:live={r.live}>
+                <td class="l rank" class:m1={rk === 1} class:m2={rk === 2} class:m3={rk === 3}>{rk}</td>
+                <td class="l">
+                  <a class="pname" href={`#/club/${r.clubId}`}>{r.name}</a>
+                  {#if r.o35}<span class="o35tag">O35</span>{/if}
+                  <div class="submeta"><span class="season">{range}</span></div>
+                </td>
+                <td class="l mobhide">{range}</td>
+                <td class="pts">{r.len} games</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <h2 class="section" id="longest-scoring-streak">Longest Scoring Streak</h2>
+    <p class="recdesc">Most consecutive league/O35 games scoring at least one goal (cup games included), spanning any number of seasons.</p>
+    <section class="season">
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="l rank">#</th>
+              <th class="l">Team</th>
+              <th class="l mobhide">Seasons</th>
+              <th>Streak</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each recs.longestScoringStreak as r, i}
               {@const rk = i + 1}
               {@const range = r.startLabel === r.endLabel ? r.startLabel : `${r.startLabel} – ${r.endLabel}`}
               <tr class:live={r.live}>

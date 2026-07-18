@@ -777,12 +777,24 @@ export function buildTeamRecords(allTeamStandings, allGames, bracketsBySeason) {
     .sort((a, b) => b.cs - a.cs || b.pts - a.pts || a.name.localeCompare(b.name))
     .slice(0, RANK_N);
 
-  // ---- career streaks (win / unbeaten), spanning every season ----
+  // ---- career streaks (win / unbeaten / scoring), spanning every season ----
   // Grouped by club+competition-type only -- NOT by season -- so a streak can run straight through
   // a year boundary (or a promotion/relegation). League and O35 stay separate tracks since they're
-  // different competitions for the same club.
-  const byTeam = new Map();
-  for (const g of games) {
+  // different competitions for the same club. Cup games count toward whichever track(s) the club
+  // already has -- a cup result breaks or extends the same streak as a league game, matching the
+  // "true all-time record" convention used on the Club page -- but cups don't get a track of their
+  // own since a club's cup roster isn't distinguishable from its league/O35 roster in this data.
+  const seenStreakGameKeys = new Set();
+  const streakGames = (allGames || []).filter((g) => {
+    if (g.comp_type !== 'league' && g.comp_type !== 'over35' && g.comp_type !== 'cup') return false;
+    const key = `${g.sid}||${g.game_key}`;
+    if (seenStreakGameKeys.has(key)) return false;
+    seenStreakGameKeys.add(key);
+    return true;
+  });
+  const byTeamStreak = new Map();
+  for (const g of streakGames) {
+    if (g.comp_type === 'cup') continue;
     const hs = num(g.home_score), as = num(g.away_score);
     const sides = [
       { clubId: g.home_club_id, name: g.home_name, gf: hs, ga: as },
@@ -791,26 +803,46 @@ export function buildTeamRecords(allTeamStandings, allGames, bracketsBySeason) {
     for (const side of sides) {
       if (!side.clubId) continue;
       const key = `${side.clubId}||${g.comp_type}`;
-      let acc = byTeam.get(key);
+      let acc = byTeamStreak.get(key);
       if (!acc) {
-        acc = { clubId: side.clubId, name: side.name, o35: g.comp_type === 'over35', lastSid: '', games: [], cs: 0 };
-        byTeam.set(key, acc);
+        acc = { clubId: side.clubId, name: side.name, o35: g.comp_type === 'over35', lastSid: '', games: [] };
+        byTeamStreak.set(key, acc);
       }
       if (g.sid >= acc.lastSid) { acc.name = side.name; acc.lastSid = g.sid; }
-      if (side.ga === 0) acc.cs++;
       acc.games.push({
         date: g.date, sid: g.sid, seasonLabel: g.seasonLabel, live: liveSids.has(g.sid),
-        result: side.gf > side.ga ? 'W' : side.gf < side.ga ? 'L' : 'D',
+        result: side.gf > side.ga ? 'W' : side.gf < side.ga ? 'L' : 'D', scored: side.gf > 0,
       });
+    }
+  }
+  for (const g of streakGames) {
+    if (g.comp_type !== 'cup') continue;
+    const hs = num(g.home_score), as = num(g.away_score);
+    const sides = [
+      { clubId: g.home_club_id, gf: hs, ga: as },
+      { clubId: g.away_club_id, gf: as, ga: hs },
+    ];
+    for (const side of sides) {
+      if (!side.clubId) continue;
+      for (const track of ['league', 'over35']) {
+        const acc = byTeamStreak.get(`${side.clubId}||${track}`);
+        if (!acc) continue;
+        acc.games.push({
+          date: g.date, sid: g.sid, seasonLabel: g.seasonLabel, live: liveSids.has(g.sid),
+          result: side.gf > side.ga ? 'W' : side.gf < side.ga ? 'L' : 'D', scored: side.gf > 0,
+        });
+      }
     }
   }
   const winStreaks = [];
   const unbeatenStreaks = [];
-  for (const acc of byTeam.values()) {
+  const scoringStreaks = [];
+  for (const acc of byTeamStreak.values()) {
     const sorted = acc.games.slice().sort((a, b) => a.date.localeCompare(b.date));
     const mostRecent = sorted[sorted.length - 1];
     const win = longestRun(sorted, (g) => g.result === 'W');
     const unbeaten = longestRun(sorted, (g) => g.result !== 'L');
+    const scoring = longestRun(sorted, (g) => g.scored);
     // "In progress" only means the streak is still active right now -- i.e. its last game IS the
     // team's most recent game overall (nothing since has broken it), not merely that its last game
     // happened to fall in a season that isn't finished yet (a later loss in that same season could
@@ -829,15 +861,44 @@ export function buildTeamRecords(allTeamStandings, allGames, bracketsBySeason) {
         live: unbeaten.end === mostRecent && unbeaten.end.live,
       });
     }
+    if (scoring) {
+      scoringStreaks.push({
+        clubId: acc.clubId, name: acc.name, o35: acc.o35, len: scoring.len,
+        startLabel: scoring.start.seasonLabel, endLabel: scoring.end.seasonLabel,
+        live: scoring.end === mostRecent && scoring.end.live,
+      });
+    }
   }
   const longestWinStreak = winStreaks
+    .sort((a, b) => b.len - a.len || a.name.localeCompare(b.name))
+    .slice(0, RANK_N);
+  const longestScoringStreak = scoringStreaks
     .sort((a, b) => b.len - a.len || a.name.localeCompare(b.name))
     .slice(0, RANK_N);
   const longestUnbeatenStreak = unbeatenStreaks
     .sort((a, b) => b.len - a.len || a.name.localeCompare(b.name))
     .slice(0, RANK_N);
-  const careerCleanSheets = [...byTeam.values()]
-    .map((acc) => ({ clubId: acc.clubId, name: acc.name, o35: acc.o35, cs: acc.cs, gp: acc.games.length }))
+  const csByTeam = new Map();
+  for (const g of games) {
+    const hs = num(g.home_score), as = num(g.away_score);
+    const sides = [
+      { clubId: g.home_club_id, name: g.home_name, ga: as, o35: g.comp_type === 'over35' },
+      { clubId: g.away_club_id, name: g.away_name, ga: hs, o35: g.comp_type === 'over35' },
+    ];
+    for (const side of sides) {
+      if (!side.clubId) continue;
+      const key = `${side.clubId}||${g.comp_type}`;
+      let acc = csByTeam.get(key);
+      if (!acc) {
+        acc = { clubId: side.clubId, name: side.name, o35: side.o35, lastSid: '', gp: 0, cs: 0 };
+        csByTeam.set(key, acc);
+      }
+      if (g.sid >= acc.lastSid) { acc.name = side.name; acc.lastSid = g.sid; }
+      acc.gp += 1;
+      if (side.ga === 0) acc.cs++;
+    }
+  }
+  const careerCleanSheets = [...csByTeam.values()]
     .filter((r) => r.cs > 0)
     .sort((a, b) => b.cs - a.cs || a.name.localeCompare(b.name))
     .slice(0, RANK_N);
@@ -898,7 +959,7 @@ export function buildTeamRecords(allTeamStandings, allGames, bracketsBySeason) {
 
   return {
     mostGF, fewestGF, mostGA, fewestGA, bestGD, worstGD, mostPts,
-    perfect, winless, biggestWins, highestScoring, longestWinStreak, longestUnbeatenStreak,
+    perfect, winless, biggestWins, highestScoring, longestWinStreak, longestUnbeatenStreak, longestScoringStreak,
     mostCleanSheets, careerCleanSheets, luckiest, unluckiest,
     mostPlayoffAppearances, bestPlayoffWinPct, mostFinals, playoffMinGp: PLAYOFF_MIN_GP,
   };
