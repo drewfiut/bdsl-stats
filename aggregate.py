@@ -6,6 +6,10 @@ the sum across all three. No name matching is involved -- the person key is stab
 present on every record -- so distinct people who happen to share a name stay separate.
 
 Reads only from the data store (see collect.py for the network side).
+
+This predates the website and isn't imported by it -- the site ports this same aggregation
+logic to JavaScript in web/src/lib/data.js and runs it client-side. Kept around as a
+standalone CLI for ad-hoc inspection and debugging against the data store.
 """
 from collections import defaultdict
 from dataclasses import dataclass, field

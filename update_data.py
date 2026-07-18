@@ -56,6 +56,24 @@ def main():
     print("\nNext: commit the data so GitHub Pages can serve it:")
     print("    git add data/ && git commit -m \"Refresh BDSL data\" && git push")
 
+    _warn_if_season_looks_finished()
+
+
+def _warn_if_season_looks_finished():
+    """Print a heads-up once every competition in the live season has crowned a champion.
+
+    config.SEASON is hand-maintained (see its docstring), so nothing here flips `"final"`
+    automatically -- the scheduled action would otherwise keep re-collecting a season that's
+    already over. This just makes the "time to roll over" moment loud instead of silent.
+    """
+    comps = store.load_competitions(config.SEASON_ID)
+    if comps and all(c.get("champion_via") for c in comps):
+        print(f"\n*** {config.SEASON_LABEL} looks complete: every competition "
+              f"({len(comps)}) has a champion. ***")
+        print("    If the season is truly over, mark \"final\": True in config.SEASON and add")
+        print("    the new season's ids (see the module docstring in config.py for how to read")
+        print("    them off bdsl.org).")
+
 
 if __name__ == "__main__":
     main()

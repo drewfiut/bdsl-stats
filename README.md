@@ -82,6 +82,15 @@ git add data/ && git commit -m "Refresh BDSL data" && git push
 Pushing to `main` triggers the deploy workflow, which rebuilds and republishes the site. A
 scheduled GitHub Action also refreshes the data twice weekly (see `.github/workflows/`).
 
+### Rolling over to a new season
+
+The active season is hand-maintained in `config.py`'s `SEASON` dict, so nothing switches
+automatically when a season ends — the scheduled action would otherwise keep re-collecting a
+season that's already over. When every division and cup has crowned its champion,
+`update_data.py` prints a prominent warning after its run telling you the season looks
+complete. At that point, mark `"final": True` in `config.SEASON` and update it with the new
+season's ids (`config.py`'s module docstring explains how to read those ids off bdsl.org).
+
 ### Run the app locally (Node)
 
 ```bash
