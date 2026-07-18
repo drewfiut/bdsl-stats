@@ -29,6 +29,15 @@
 
   const route = $derived(parse(hash));
 
+  // Scroll to top whenever the page (not just query params within the same page) changes.
+  let prevRouteName = route.name;
+  $effect(() => {
+    if (route.name !== prevRouteName) {
+      prevRouteName = route.name;
+      window.scrollTo(0, 0);
+    }
+  });
+
   // Header nav groups pages into two dropdowns: Team stats vs Individual stats.
   const TEAM_PAGES = [
     { href: '#/champions', label: 'Champions', name: 'champions' },
