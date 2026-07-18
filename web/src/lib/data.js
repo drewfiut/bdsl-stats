@@ -760,20 +760,26 @@ export function buildTeamRecords(allTeamStandings, allGames, bracketsBySeason) {
 
   // ---- clean sheets (shutouts) ----
   // Season-total: per club-season, count of games where the opponent was held scoreless.
-  const csBySeasonKey = new Map(); // `${clubId}||${sid}` -> count
+  // Keyed by club + season + comp_type (not just club + season): a club fielding both a league
+  // side and an Over-35 side under the same club_id would otherwise have both `seasons` rows
+  // (one league, one O35) collide on the same key and each get the club's combined total. Also
+  // excludes playoff games (non-empty round_label) since the `seasons` rows this is joined
+  // against come from standings, which are regular-season only.
+  const csBySeasonKey = new Map(); // `${clubId}||${sid}||${comp_type}` -> count
   for (const g of games) {
+    if ((g.round_label || '').trim()) continue;
     const hs = num(g.home_score), as = num(g.away_score);
     if (as === 0 && g.home_club_id) {
-      const key = `${g.home_club_id}||${g.sid}`;
+      const key = `${g.home_club_id}||${g.sid}||${g.comp_type}`;
       csBySeasonKey.set(key, (csBySeasonKey.get(key) || 0) + 1);
     }
     if (hs === 0 && g.away_club_id) {
-      const key = `${g.away_club_id}||${g.sid}`;
+      const key = `${g.away_club_id}||${g.sid}||${g.comp_type}`;
       csBySeasonKey.set(key, (csBySeasonKey.get(key) || 0) + 1);
     }
   }
   const mostCleanSheets = seasons
-    .map((s) => ({ ...s, cs: csBySeasonKey.get(`${s.clubId}||${s.sid}`) || 0 }))
+    .map((s) => ({ ...s, cs: csBySeasonKey.get(`${s.clubId}||${s.sid}||${s.o35 ? 'over35' : 'league'}`) || 0 }))
     .sort((a, b) => b.cs - a.cs || b.pts - a.pts || a.name.localeCompare(b.name))
     .slice(0, RANK_N);
 
@@ -966,8 +972,8 @@ export function buildTeamRecords(allTeamStandings, allGames, bracketsBySeason) {
 }
 
 // ---- Elo ratings / power rankings ----
-// A chronological Elo rating for every club, walking the complete, date-ordered game log since
-// 2014. Elo is a self-correcting strength estimate: beat a stronger club and you gain more than
+// A chronological Elo rating for every club, walking the complete, date-ordered game log
+// (2008-present). Elo is a self-correcting strength estimate: beat a stronger club and you gain more than
 // beating a weaker one; the winner's gain is the loser's loss (zero-sum), so the league's average
 // stays anchored at ELO_INITIAL. Only competitive first-team games count -- league (incl. playoffs)
 // and cups. Over-35 is a separate, age-restricted squad sharing the club_id, so mixing it in would

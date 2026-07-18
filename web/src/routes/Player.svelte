@@ -24,6 +24,12 @@
       .finally(() => (loading = false));
   });
 
+  // Once the profile loads, sharpen the generic App.svelte fallback title into this player's
+  // name. Leave the fallback alone if the person isn't found.
+  $effect(() => {
+    if (profile) document.title = `${profile.name} · BDSL Stats`;
+  });
+
   const ageLabel = (age) => (age == null ? 'Age unknown' : `Age ${age}`);
 
   const fmtDate = (iso) => {

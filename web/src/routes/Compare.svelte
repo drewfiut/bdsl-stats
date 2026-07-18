@@ -84,6 +84,16 @@
     return buildHeadToHead(allGames, selA, selB);
   });
 
+  // Once both clubs are chosen and their names are known, sharpen the generic App.svelte
+  // fallback title into "<club A> vs <club B>". Leave the fallback alone otherwise (e.g. only
+  // one side picked yet, or the two picks match).
+  $effect(() => {
+    if (!selA || !selB || selA === selB) return;
+    const nameA = nameOf(selA), nameB = nameOf(selB);
+    if (!nameA || !nameB) return;
+    document.title = `${nameA} vs ${nameB} · BDSL Stats`;
+  });
+
   const fmtDate = (iso) => {
     const d = new Date(`${iso}T00:00:00`);
     if (isNaN(d)) return iso || '';

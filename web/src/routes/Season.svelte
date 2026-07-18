@@ -22,6 +22,12 @@
       .finally(() => (loading = false));
   });
 
+  // Once the season loads, sharpen the generic App.svelte fallback title into this season's
+  // label. Leave the fallback alone if the season isn't found.
+  $effect(() => {
+    if (data) document.title = `${data.label} · BDSL Stats`;
+  });
+
   const jumpLinks = $derived([
     { id: 'champions', label: 'Champions' },
     { id: 'standings', label: 'Standings' },

@@ -21,6 +21,13 @@
       .finally(() => (loading = false));
   });
 
+  // Once the report loads, sharpen the generic App.svelte fallback title into
+  // "<home> vs <away>". Falls back to "Home"/"Away" if a side's name is missing, matching
+  // scoreLabel below. Leave the fallback alone if the game isn't found.
+  $effect(() => {
+    if (report) document.title = `${report.homeName || 'Home'} vs ${report.awayName || 'Away'} · BDSL Stats`;
+  });
+
   const fmtDate = (iso) => {
     const d = new Date(`${iso}T00:00:00`);
     if (isNaN(d)) return iso || '';

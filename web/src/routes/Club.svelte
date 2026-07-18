@@ -64,6 +64,12 @@
       .finally(() => (loading = false));
   });
 
+  // Once the profile loads, sharpen the generic App.svelte fallback title into this club's
+  // name. Leave the fallback alone if the club isn't found.
+  $effect(() => {
+    if (club) document.title = `${club.name} · BDSL Stats`;
+  });
+
   // Elo rating-over-time chart: y = rating (padded to clean 50s around the club's range and the
   // 1500 baseline), x = evenly-spaced games in date order. Mirrors the division chart's geometry.
   const RW = 720, RH = 220;

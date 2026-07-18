@@ -22,6 +22,12 @@
       .finally(() => (loading = false));
   });
 
+  // Once the club-season loads, sharpen the generic App.svelte fallback title into
+  // "<club> <season label>". Leave the fallback alone if the team season isn't found.
+  $effect(() => {
+    if (data) document.title = `${data.name} ${data.label} · BDSL Stats`;
+  });
+
   const fmtDate = (iso) => {
     const d = new Date(`${iso}T00:00:00`);
     if (isNaN(d)) return iso || '';
