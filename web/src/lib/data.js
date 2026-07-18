@@ -1100,8 +1100,14 @@ export function canonicalCompetition(name, comp_type) {
   const n = (name || '').trim();
 
   if (comp_type === 'over35') {
-    // All Over-35 flavors (single "Over 35" or the later Premier/Championship split) collapse
-    // into one grid column; the split-year sub-division shows up as a cell subLabel instead.
+    // Over-35 ran as a single division until 2025, when it split into distinct Premier and
+    // Championship tiers -- each with its own standings table, playoff bracket, champion and
+    // scorers. Give the two tiers distinct keys/labels so they're treated as separate divisions
+    // sitewide (the switcher on the Season page keys buttons off `key`); the legacy single
+    // division keeps the bare 'over35' key.
+    const cleaned = n.replace(/Divison/gi, 'Division');
+    if (/premier/i.test(cleaned)) return { key: 'over35-premier', label: 'Over-35 Premier', group: 'over35', order: 10 };
+    if (/champ/i.test(cleaned)) return { key: 'over35-championship', label: 'Over-35 Championship', group: 'over35', order: 11 };
     return { key: 'over35', label: 'Over-35', group: 'over35', order: 10 };
   }
 
@@ -1150,8 +1156,9 @@ export function classifyRound(roundLabel) {
 }
 
 // Union-find split of a competition's tagged games into independent brackets by shared clubs --
-// only needed for the Over-35 split years (2024/2025), which put two 4-team brackets under one
-// canonical "Over-35" key. Games with no known club (all-TBD live slots) attach to the largest.
+// only needed when one canonical key carries two 4-team brackets, i.e. 2024's single "Over 35"
+// name covering two tiers (2025+ names them distinctly, so they key apart on their own). Games
+// with no known club (all-TBD live slots) attach to the largest.
 function splitByClub(games) {
   const parent = new Map();
   const find = (x) => { while (parent.get(x) !== x) { parent.set(x, parent.get(parent.get(x))); x = parent.get(x); } return x; };
@@ -1252,8 +1259,9 @@ function buildBracketBoard(comp, allGames, champByComp) {
 }
 
 // All bracket boards for one canonical competition in one season. A single competition is one
-// bracket; only when there are >=2 tagged finals (the Over-35 split years) do we separate the
-// games into independent brackets. Returns [] when nothing is tagged as a playoff round.
+// bracket; only when there are >=2 tagged finals under one key (2024's single-named Over-35
+// covering two tiers) do we separate the games into independent brackets. Returns [] when nothing
+// is tagged as a playoff round.
 export function buildBracket(compGames, champByComp) {
   const seen = new Set();
   const games = [];
