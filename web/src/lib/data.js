@@ -1500,9 +1500,16 @@ export function buildChampions(allCompetitions, allTeamStandings) {
 
   // ---- longest active droughts ----
   // Same per-club "seasons since last title" figure already shown on the leaderboard, ranked as
-  // a first-class record. A drought of 0 means reigning champion, so those are excluded.
+  // a first-class record. A drought of 0 means reigning champion, so those are excluded. Clubs
+  // that folded and no longer field a side in the most recent season aren't "active" droughts --
+  // they can't break the streak, so they're excluded here (though they still count in the
+  // leaderboard and in allTimeDroughts, which are historical, not ongoing).
+  const latestSid = allTeamStandings?.reduce((max, r) => (r.sid > max ? r.sid : max), '') || '';
+  const currentClubIds = new Set(
+    (allTeamStandings || []).filter((r) => r.sid === latestSid).map((r) => r.club_id)
+  );
   const activeDroughts = leaderboard
-    .filter((r) => r.drought > 0)
+    .filter((r) => r.drought > 0 && currentClubIds.has(r.clubId))
     .map((r) => ({ clubId: r.clubId, name: r.name, len: r.drought, lastLabel: r.lastLabel, lastSid: r.lastSid }))
     .sort((a, b) => b.len - a.len || a.name.localeCompare(b.name))
     .slice(0, RANK_N);
