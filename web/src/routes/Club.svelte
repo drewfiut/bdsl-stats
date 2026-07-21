@@ -18,6 +18,11 @@
     return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
   };
   const pct = (v) => `${Math.round((v || 0) * 100)}%`;
+  const fmtMonthYear = (iso) => {
+    const d = new Date(`${iso}T00:00:00`);
+    if (isNaN(d)) return iso || '';
+    return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+  };
 
   // Division-history chart geometry, in viewBox units (mirrors Trends.svelte's chart pattern).
   const DW = 720, DH = 220;
@@ -89,7 +94,17 @@
     const ticks = [];
     for (let v = yMin; v <= yMax + 1e-9; v += 50) ticks.push({ v, gy: y(v) });
     const baseline = ELO_INITIAL >= yMin && ELO_INITIAL <= yMax ? y(ELO_INITIAL) : null;
-    return { points, ticks, baseline, poly: points.map((p) => `${p.cx},${p.cy}`).join(' '),
+    // Date x-axis: a handful of evenly-spaced ticks (by index, not by calendar time) rather than
+    // one label per game, since a club can have dozens of rated games.
+    const tickCount = Math.min(6, n);
+    const xTickIdx = [...new Set(
+      n === 1 ? [0] : Array.from({ length: tickCount }, (_, i) => Math.round((i * (n - 1)) / (tickCount - 1)))
+    )];
+    const xTicks = xTickIdx.map((i, k) => ({
+      gx: x(i), label: fmtMonthYear(h[i].date),
+      anchor: k === 0 ? 'start' : k === xTickIdx.length - 1 ? 'end' : 'middle',
+    }));
+    return { points, ticks, xTicks, baseline, poly: points.map((p) => `${p.cx},${p.cy}`).join(' '),
       current: Math.round(h[h.length - 1].rating),
       peak: Math.round(Math.max(...ratings)) };
   });
@@ -197,6 +212,9 @@
             {#if eloChart.baseline !== null}
               <line class="baseline" x1={RM.left} x2={RW - RM.right} y1={eloChart.baseline} y2={eloChart.baseline} />
             {/if}
+            {#each eloChart.xTicks as t}
+              <text class="xlab" x={t.gx} y={RH - RM.bottom + 18} style={`text-anchor:${t.anchor}`}>{t.label}</text>
+            {/each}
             <polyline class="line" points={eloChart.poly} />
             {#each eloChart.points as p}
               <circle class="dot" class:live={p.live} cx={p.cx} cy={p.cy} r="2.5">
