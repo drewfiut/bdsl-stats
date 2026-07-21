@@ -520,6 +520,14 @@ function longestRun(sortedGames, ok) {
   return best;
 }
 
+// Length of the run of games satisfying `ok` trailing the end of `sortedGames` -- i.e. the
+// streak that is currently active right now (0 if the most recent game breaks it).
+function currentRun(sortedGames, ok) {
+  let len = 0;
+  for (let i = sortedGames.length - 1; i >= 0 && ok(sortedGames[i]); i--) len += 1;
+  return len;
+}
+
 // Longest win / unbeaten / winless / scoring streaks for a single club, across every game it's
 // ever played -- league, playoffs, cups and Over-35 alike -- matching the "true all-time record"
 // convention used by aggregateClubGames above (rather than the league+O35-only scope the
@@ -541,15 +549,19 @@ function computeClubStreaks(allGames, clubId, liveSids) {
   const mostRecent = sorted[sorted.length - 1];
   // "In progress" only means the streak is still active right now -- its last game IS the club's
   // most recent game overall -- not merely that it falls within a season that isn't finished yet.
-  const toRecord = (run) => run && {
+  const toRecord = (run, active) => run && {
     len: run.len, startLabel: run.start.seasonLabel, endLabel: run.end.seasonLabel,
-    live: run.end === mostRecent && run.end.live,
+    live: run.end === mostRecent && run.end.live, active,
   };
+  const winOk = (g) => g.result === 'W';
+  const unbeatenOk = (g) => g.result !== 'L';
+  const winlessOk = (g) => g.result !== 'W';
+  const scoringOk = (g) => g.scored;
   return {
-    win: toRecord(longestRun(sorted, (g) => g.result === 'W')),
-    unbeaten: toRecord(longestRun(sorted, (g) => g.result !== 'L')),
-    winless: toRecord(longestRun(sorted, (g) => g.result !== 'W')),
-    scoring: toRecord(longestRun(sorted, (g) => g.scored)),
+    win: toRecord(longestRun(sorted, winOk), currentRun(sorted, winOk)),
+    unbeaten: toRecord(longestRun(sorted, unbeatenOk), currentRun(sorted, unbeatenOk)),
+    winless: toRecord(longestRun(sorted, winlessOk), currentRun(sorted, winlessOk)),
+    scoring: toRecord(longestRun(sorted, scoringOk), currentRun(sorted, scoringOk)),
   };
 }
 

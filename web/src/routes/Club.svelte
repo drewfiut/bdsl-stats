@@ -449,6 +449,7 @@
                 <th class="l">Streak</th>
                 <th class="l mobhide">Seasons</th>
                 <th>Games</th>
+                <th>Active</th>
               </tr>
             </thead>
             <tbody>
@@ -467,6 +468,7 @@
                   </td>
                   <td class="l mobhide">{range}</td>
                   <td class="pts">{r?.len ?? 0}</td>
+                  <td class="pts">{r?.active ?? 0}</td>
                 </tr>
               {/each}
             </tbody>
