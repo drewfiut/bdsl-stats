@@ -3,7 +3,8 @@ game_key,tg,competition,comp_type,date,round_label,side,club_id,person_key,name,
 11566105,116112414,Premier,league,2026-07-06,,away,10359035,82703206,"Juszczak, Mike",23,0,0,1,0,name
 11566105,116112414,Premier,league,2026-07-06,,away,10359035,95591837,"Mulderig, Liam",10,2,0,0,0,name
 11566120,116112414,Premier,league,2026-07-12,,home,110307225,116518443,"Beshaw, Jadyn",7,1,0,0,0,name
-11566120,116112414,Premier,league,2026-07-12,,home,110307225,113279197,"Leardini, Drew",17,1,0,0,0,name
+11566120,116112414,Premier,league,2026-07-12,,home,110307225,116517996,"Hermann, Keegan",66,0,1,0,0,name
+11566120,116112414,Premier,league,2026-07-12,,home,110307225,113279197,"Leardini, Drew",17,1,1,0,0,name
 11566120,116112414,Premier,league,2026-07-12,,away,45429017,101157678,"Hernandez, Witman",17,1,1,0,0,name
 11566120,116112414,Premier,league,2026-07-12,,away,45429017,110890615,"Montero Guererro, Dennis",7,1,1,0,0,name
 11566120,116112414,Premier,league,2026-07-12,,away,45429017,111016976,"Rehwaldt, Collin",29,0,0,1,0,name
@@ -17,22 +18,26 @@ game_key,tg,competition,comp_type,date,round_label,side,club_id,person_key,name,
 11566122,116112414,Premier,league,2026-07-13,,home,10359035,69350475,"Rougeux, Seth",28,1,0,0,0,name
 11566122,116112414,Premier,league,2026-07-13,,home,10359035,95458556,"Zachary, Joey",9,1,0,0,0,name
 11566122,116112414,Premier,league,2026-07-13,,away,10350991,108145719,"Juma, Ramazani",19,3,0,0,0,name
-11566118,116112414,Premier,league,2026-06-29,,home,18647016,113354655,"Caceres, Nacho",9,1,0,1,0,name
-11566118,116112414,Premier,league,2026-06-29,,home,18647016,26986828,"Hofschneider, Justin",18,0,1,0,0,name
-11566118,116112414,Premier,league,2026-06-29,,home,18647016,116707352,"Kitengie, Joseph",32,1,0,0,0,name
-11566118,116112414,Premier,league,2026-06-29,,home,18647016,83464080,"Walsh, Hunter",10,0,1,0,0,name
-11566118,116112414,Premier,league,2026-06-29,,away,75159915,107705011,"Amato, Anthony",22,0,0,1,0,name
-11566118,116112414,Premier,league,2026-06-29,,away,75159915,76276551,"Corretore, Brian",00,0,0,1,0,name
-11566118,116112414,Premier,league,2026-06-29,,away,75159915,116622267,"Korte, Evan",67,0,0,1,0,name
-11566118,116112414,Premier,league,2026-06-29,,away,75159915,110833812,"Warmington, Tyler",11,0,0,1,0,name
-11566117,116112414,Premier,league,2026-06-29,,home,10350991,102043121,"Quinn, Riley",16,0,0,1,0,name
-11566117,116112414,Premier,league,2026-06-29,,home,10350991,84224094,"Stephan, Alex",14,0,0,1,0,name
-11566117,116112414,Premier,league,2026-06-29,,home,10350991,83463980,"Walsh, Evan",21,1,0,0,0,name
-11566117,116112414,Premier,league,2026-06-29,,away,45429017,95813090,"Grizanti, Ralph",0,0,0,1,0,name
-11566117,116112414,Premier,league,2026-06-29,,away,45429017,101157678,"Hernandez, Witman",17,1,1,0,0,name
-11566117,116112414,Premier,league,2026-06-29,,away,45429017,101707974,"Swiatkowski, Jonathan",4,0,1,0,0,name
-11566117,116112414,Premier,league,2026-06-29,,away,45429017,115260843,"Trushell, Max",14,1,1,0,0,name
-11566117,116112414,Premier,league,2026-06-29,,away,45429017,92913762,"Wright, Oliver",12,1,0,0,0,name
+11566127,116112414,Premier,league,2026-07-19,,home,10359035,98687440,"Reinagel, Brady",11,1,0,0,0,name
+11566127,116112414,Premier,league,2026-07-19,,home,10359035,35560854,"Rougeux, Noah",17,0,0,1,0,name
+11566127,116112414,Premier,league,2026-07-19,,away,110307225,116518443,"Beshaw, Jadyn",7,1,1,0,0,name
+11566127,116112414,Premier,league,2026-07-19,,away,110307225,116518411,"Del Vecchio, Noah",70,0,0,1,0,name
+11566127,116112414,Premier,league,2026-07-19,,away,110307225,110863161,"Hofschneider, Dawson",12,0,0,1,0,name
+11566127,116112414,Premier,league,2026-07-19,,away,110307225,113279197,"Leardini, Drew",17,1,0,0,0,name
+11566127,116112414,Premier,league,2026-07-19,,away,110307225,112816709,"McDonald, Dylan",00,1,1,0,0,name
+11566127,116112414,Premier,league,2026-07-19,,away,110307225,116543731,"Varallo, Steve",2,0,1,0,0,name
+11566128,116112414,Premier,league,2026-07-19,,home,26895907,107697754,"Voyer, Maxwell",34,3,0,0,0,name
+11566128,116112414,Premier,league,2026-07-19,,away,18647016,116707352,"Kitengie, Joseph",32,0,2,0,0,name
+11566128,116112414,Premier,league,2026-07-19,,away,18647016,87948749,"Loftus, Kevin",31,1,0,0,0,name
+11566128,116112414,Premier,league,2026-07-19,,away,18647016,114943174,"MacDonald, Dominic",19,1,0,0,0,name
+11566128,116112414,Premier,league,2026-07-19,,away,18647016,87550351,"Simic, Nemanja",35,0,0,1,0,name
+11566125,116112414,Premier,league,2026-07-20,,home,75479674,101951793,"Timbello, Joe",3,0,0,1,0,name
+11566125,116112414,Premier,league,2026-07-20,,home,75479674,96111226,"Walsh, Camron",19,0,0,1,0,name
+11566125,116112414,Premier,league,2026-07-20,,away,95088661,110758004,"Dik, Jack",10,2,0,0,0,name
+11566126,116112414,Premier,league,2026-07-20,,home,10350991,92430004,"Finn, August",13,0,0,1,0,name
+11566126,116112414,Premier,league,2026-07-20,,home,10350991,102346914,"Keita, Mohamodu",20,1,0,0,0,name
+11566126,116112414,Premier,league,2026-07-20,,home,10350991,115180777,"Tshibuyi, Douglass",18,1,0,1,0,name
+11566126,116112414,Premier,league,2026-07-20,,away,91256980,91992695,"Mullen, Jordan",10,1,0,1,0,name
 11566167,116112418,Championship,league,2026-07-02,,home,75159993,108261733,"Barone, John",2,1,0,0,0,name
 11566167,116112418,Championship,league,2026-07-02,,home,75159993,110695604,"Murdie, Cam",7,2,0,1,0,name
 11566167,116112418,Championship,league,2026-07-02,,away,82992129,83436500,"Clarke, Joel",34,0,2,0,0,name
@@ -71,6 +76,16 @@ game_key,tg,competition,comp_type,date,round_label,side,club_id,person_key,name,
 11566183,116112418,Championship,league,2026-07-13,,away,10359092,116689569,"Cardona, Juan",16,0,6,0,0,name
 11566183,116112418,Championship,league,2026-07-13,,away,10359092,113365696,"Muginov, Artur",71,3,2,0,0,name
 11566183,116112418,Championship,league,2026-07-13,,away,10359092,107524536,"Yan, Allee",21,0,2,0,0,name
+11566186,116112418,Championship,league,2026-07-19,,home,110307361,75344311,"Crane, Aaron",27,1,0,0,0,name
+11566186,116112418,Championship,league,2026-07-19,,home,110307361,115155540,"Gilbert, James",2,0,1,0,0,name
+11566186,116112418,Championship,league,2026-07-19,,home,110307361,113368666,"Horton, Brandon",22,2,0,0,0,name
+11566186,116112418,Championship,league,2026-07-19,,home,110307361,101950525,"Hoxha, Laert",8,0,0,1,0,name
+11566186,116112418,Championship,league,2026-07-19,,home,110307361,101758341,"Kurowski, Dan",88,1,1,0,0,name
+11566186,116112418,Championship,league,2026-07-19,,home,110307361,102019732,"Schelble, Colton",11,1,1,0,0,name
+11566186,116112418,Championship,league,2026-07-19,,away,106801546,95699673,"Ahmed, Taha",11,1,1,0,0,name
+11566186,116112418,Championship,league,2026-07-19,,away,106801546,115228151,"Battaglia, Alessio",31,0,1,0,0,name
+11566186,116112418,Championship,league,2026-07-19,,away,106801546,107326437,"Biddlecom, Elijah",23,1,0,0,0,name
+11566186,116112418,Championship,league,2026-07-19,,away,106801546,107326506,"Cappellucci, Matt",4,2,0,0,0,name
 11566187,116112418,Championship,league,2026-07-19,,home,82992129,101947376,"Colca, Max",19,1,0,0,0,name
 11566187,116112418,Championship,league,2026-07-19,,away,10359092,116668998,"Jenkinson, Keegan",12,4,0,0,0,name
 11566226,116112416,1st Division,league,2026-07-07,,home,46021389,110796178,"Moeller, Justin",3,0,2,0,0,name
@@ -97,7 +112,8 @@ game_key,tg,competition,comp_type,date,round_label,side,club_id,person_key,name,
 11566240,116112416,1st Division,league,2026-07-12,,home,110307763,116695402,"Orlando, Connor",10,1,0,0,0,name
 11566240,116112416,1st Division,league,2026-07-12,,home,110307763,110309769,"Paryz, Brandon",17,0,0,1,0,name
 11566240,116112416,1st Division,league,2026-07-12,,home,110307763,115165278,"Sengbusch, Declan",11,1,0,0,0,name
-11566240,116112416,1st Division,league,2026-07-12,,away,46021389,116510756,"Kirk, Landon",8,0,1,0,0,name
+11566240,116112416,1st Division,league,2026-07-12,,away,46021389,116510628,"Baun, Brady",5,0,1,0,0,name
+11566240,116112416,1st Division,league,2026-07-12,,away,46021389,116510756,"Kirk, Landon",8,1,0,0,0,name
 11566243,116112416,1st Division,league,2026-07-13,,home,75479680,115048272,"Bufalino, Enzo",9,1,0,0,0,name
 11566243,116112416,1st Division,league,2026-07-13,,home,75479680,87500963,"Diebold, Tyler",99,1,0,0,0,name
 11566243,116112416,1st Division,league,2026-07-13,,home,75479680,92190272,"Green, Eric",6,0,1,0,0,name
@@ -107,9 +123,11 @@ game_key,tg,competition,comp_type,date,round_label,side,club_id,person_key,name,
 11566243,116112416,1st Division,league,2026-07-13,,away,116113094,101707977,"Fulciniti, Gianluca",14,0,0,1,0,name
 11566243,116112416,1st Division,league,2026-07-13,,away,116113094,114953624,"Zgoda, Sawyer",2,2,0,0,0,name
 11566198,116112416,1st Division,league,2026-07-19,,home,75479638,113260149,"Bertrand, Marx",7,0,0,1,0,name
+11566198,116112416,1st Division,league,2026-07-19,,home,75479638,113357704,"Forni, Isaac",4,0,1,0,0,name
 11566198,116112416,1st Division,league,2026-07-19,,home,75479638,110890863,"Frontuto, Evan",11,1,0,0,0,name
 11566198,116112416,1st Division,league,2026-07-19,,home,75479638,83432501,"Muniz, Alejandro",15,1,0,0,0,name
 11566198,116112416,1st Division,league,2026-07-19,,home,75479638,115160475,"Peterson, Kayden",5,0,0,1,0,name
+11566198,116112416,1st Division,league,2026-07-19,,home,75479638,87609499,"West, Tyler",10,0,1,0,0,name
 11566198,116112416,1st Division,league,2026-07-19,,away,46021389,115048901,"Bellis, Canyon",19,0,0,1,0,name
 11566198,116112416,1st Division,league,2026-07-19,,away,46021389,115048891,"Fadale, Alex",11,1,0,0,0,name
 11566198,116112416,1st Division,league,2026-07-19,,away,46021389,98896696,"Smith, Chris",24,0,0,1,0,name
@@ -156,6 +174,12 @@ game_key,tg,competition,comp_type,date,round_label,side,club_id,person_key,name,
 11566383,116112417,2nd Division,league,2026-07-19,,away,75159990,115187496,"Gaynor, Erwan",23,1,0,0,0,name
 11566383,116112417,2nd Division,league,2026-07-19,,away,75159990,116786100,"Kjorven, Johan",13,1,0,0,0,name
 11566383,116112417,2nd Division,league,2026-07-19,,away,75159990,116668426,"Korte, Adam",21,0,0,1,0,name
+11566388,116112417,2nd Division,league,2026-07-19,,away,98469009,116514069,"Endich, Jacob",8,0,1,0,0,name
+11566388,116112417,2nd Division,league,2026-07-19,,away,98469009,110798936,"Endich, Matthew",20,0,1,0,0,name
+11566388,116112417,2nd Division,league,2026-07-19,,away,98469009,10819992,"Griffiths, Christopher",95,4,0,0,0,name
+11566388,116112417,2nd Division,league,2026-07-19,,away,98469009,95528790,"Jamesson, Ben",5,1,0,0,0,name
+11566388,116112417,2nd Division,league,2026-07-19,,away,98469009,111098469,"Schmidt, Ben",12,1,1,0,0,name
+11566388,116112417,2nd Division,league,2026-07-19,,away,98469009,16940611,"Waddington, Mathew",23,0,1,0,0,name
 11566410,116112417,2nd Division,league,2026-07-19,,home,95088658,115372905,"Fiatepe, Lucas",20,1,0,0,0,name
 11566410,116112417,2nd Division,league,2026-07-19,,home,95088658,116660032,"Maonewa, Yohana",24,0,1,0,0,name
 11566410,116112417,2nd Division,league,2026-07-19,,home,95088658,116659736,"Mateng, Vital",7,2,0,0,0,name
@@ -165,15 +189,15 @@ game_key,tg,competition,comp_type,date,round_label,side,club_id,person_key,name,
 11566410,116112417,2nd Division,league,2026-07-19,,away,100608342,87785358,"Ingraham, Cullen",8,1,0,0,0,name
 11566410,116112417,2nd Division,league,2026-07-19,,away,100608342,100681304,"Ingraham, Kyle",7,1,1,1,0,name
 11566418,116112417,2nd Division,league,2026-07-19,,home,114564787,113035570,"Fisher, Aj",27,0,0,1,0,name
+11566418,116112417,2nd Division,league,2026-07-19,,home,114564787,101868221,"Fleck, Jacob",9,0,1,0,0,name
 11566418,116112417,2nd Division,league,2026-07-19,,home,114564787,87884766,"Garlock, Dylan",24,1,0,0,0,name
 11566418,116112417,2nd Division,league,2026-07-19,,home,114564787,113378290,"Hakizimana, Isaac",28,0,0,1,0,name
 11566418,116112417,2nd Division,league,2026-07-19,,home,114564787,116773480,"Mitwe, Faustin",3,1,0,0,0,name
+11566418,116112417,2nd Division,league,2026-07-19,,home,114564787,115345938,"Vanderzell, Kyle",18,0,1,0,0,name
 11566418,116112417,2nd Division,league,2026-07-19,,away,67527667,75301663,"Hoffmann, Justus",15,1,0,0,0,name
 11566418,116112417,2nd Division,league,2026-07-19,,away,67527667,107645008,"Radecki, Joel",4,0,0,0,1,name
 11566418,116112417,2nd Division,league,2026-07-19,,away,67527667,47498876,"Scott, Stephen",12,1,0,0,0,name
 11566418,116112417,2nd Division,league,2026-07-19,,away,67527667,46194161,"Tytka, Brandon",11,0,0,1,0,name
-11566398,116112417,2nd Division,league,2026-06-29,,away,75159990,116694495,"Cirino, Lucas",43,0,0,1,0,name
-11566398,116112417,2nd Division,league,2026-06-29,,away,75159990,11212303,"Fetterman, Nick",31,1,0,0,0,name
 11566455,116112421,3rd Division,league,2026-07-06,,away,75479677,112823177,"Black, Max",11,0,1,0,0,name
 11566455,116112421,3rd Division,league,2026-07-06,,away,75479677,113318533,"Hillman, Brady",23,1,0,0,0,name
 11566455,116112421,3rd Division,league,2026-07-06,,away,75479677,116736959,"Kathman, Isaac",91,0,1,0,0,name
@@ -206,13 +230,23 @@ game_key,tg,competition,comp_type,date,round_label,side,club_id,person_key,name,
 11566473,116112421,3rd Division,league,2026-07-12,,away,31566782,83554688,"Linder, Zach",10,0,0,1,0,name
 11566473,116112421,3rd Division,league,2026-07-12,,away,31566782,116509567,"North, Eli",73,1,1,1,0,name
 11566473,116112421,3rd Division,league,2026-07-12,,away,31566782,101913209,"Roesser, Ben",12,0,0,1,0,name
+11566474,116112421,3rd Division,league,2026-07-19,,home,75479677,10794047,"Andrews, Seth",2,0,0,0,1,name
+11566474,116112421,3rd Division,league,2026-07-19,,home,75479677,113324234,"Franclemont, Austin",12,0,1,0,0,name
+11566474,116112421,3rd Division,league,2026-07-19,,home,75479677,113318533,"Hillman, Brady",23,1,1,0,0,name
+11566474,116112421,3rd Division,league,2026-07-19,,home,75479677,114949117,"Pickering, Evan",99,1,0,0,0,name
+11566474,116112421,3rd Division,league,2026-07-19,,home,75479677,115297327,"Rai, Ryan",17,0,1,0,0,name
+11566474,116112421,3rd Division,league,2026-07-19,,home,75479677,112823205,"Stefanski, Evan",1,1,0,0,0,name
+11566474,116112421,3rd Division,league,2026-07-19,,away,35216066,87949189,"Reid, Greg",18,0,0,1,0,name
 11566478,116112421,3rd Division,league,2026-07-19,,home,95088487,92241461,"Mann, Patrick",8,0,0,1,0,name
 11566478,116112421,3rd Division,league,2026-07-19,,away,112652891,115016574,"Di Perna, Alexander",22,2,0,0,0,name
 11566478,116112421,3rd Division,league,2026-07-19,,away,112652891,115016570,"Hislop, Alex",15,0,1,0,0,name
-11566478,116112421,3rd Division,league,2026-07-19,,away,112652891,113363353,"Marchant, Sam",5,0,1,0,0,name
-11566468,116112421,3rd Division,league,2026-06-29,,home,95088487,116614997,"Rasool, Noor",4,1,0,0,0,name
-11566468,116112421,3rd Division,league,2026-06-29,,home,95088487,76416893,"Rueger, Torrey",13,0,0,1,0,name
-11566468,116112421,3rd Division,league,2026-06-29,,away,75479665,116701499,"Passalacqua, Marco",80,1,0,0,0,name
+11566477,116112421,3rd Division,league,2026-07-19,,home,114564784,101784873,"Cianciosa, Jacob",92,1,0,1,0,name
+11566477,116112421,3rd Division,league,2026-07-19,,home,114564784,115180621,"Jennings, Liam",66,0,2,0,0,name
+11566477,116112421,3rd Division,league,2026-07-19,,home,114564784,115180262,"McPartland, Sean",13,0,2,0,0,name
+11566477,116112421,3rd Division,league,2026-07-19,,home,114564784,115165526,"Snider, Vince",69,1,0,0,0,name
+11566477,116112421,3rd Division,league,2026-07-19,,away,75479665,107690093,"Cooper, Dillion",23,0,0,1,0,name
+11566477,116112421,3rd Division,league,2026-07-19,,away,75479665,88249777,"Vargas, Jonathan",9,0,0,1,0,name
+11566477,116112421,3rd Division,league,2026-07-19,,away,75479665,15878815,"Ventresca, Curt",7,1,0,0,0,name
 11566528,116112419,4th Divison,league,2026-07-06,,home,10359077,68506728,"Duerr, Chris",10,1,0,1,0,name
 11566528,116112419,4th Divison,league,2026-07-06,,home,10359077,115076915,"Kelly, Holden",24,1,0,0,0,name
 11566528,116112419,4th Divison,league,2026-07-06,,home,10359077,68301549,"Twaragowski, Paul",25,0,0,1,0,name
@@ -254,6 +288,7 @@ game_key,tg,competition,comp_type,date,round_label,side,club_id,person_key,name,
 11566535,116112419,4th Divison,league,2026-07-19,,away,106802178,116667781,"Lyons, Jude",20,1,0,0,0,name
 11566535,116112419,4th Divison,league,2026-07-19,,away,106802178,10981643,"Rowe, Jeff",2,0,0,1,0,name
 11566535,116112419,4th Divison,league,2026-07-19,,away,106802178,116667863,"nkurunziza, vincent",18,1,0,0,0,name
+11566529,116112419,4th Divison,league,2026-07-20,,away,116113120,116535755,"Curbelo, Dominic",17,3,0,0,0,name
 11595275,116112420,Over 35,over35,2026-07-07,,home,106830132,46400208,"Escobar, Mateo",23,2,0,0,0,name
 11595275,116112420,Over 35,over35,2026-07-07,,home,106830132,15895862,"Hughes, J.J.",11,0,1,0,0,name
 11595275,116112420,Over 35,over35,2026-07-07,,home,106830132,95809995,"Leighton, Gavin",27,2,0,0,0,name
@@ -288,6 +323,27 @@ game_key,tg,competition,comp_type,date,round_label,side,club_id,person_key,name,
 11595282,116112420,Over 35,over35,2026-07-10,,home,46512669,110868475,"Torrianni, Kyle",8,2,2,0,0,name
 11595240,116112420,Over 35,over35,2026-06-30,,away,106830132,31485667,"Mangano, Ryan",9,1,0,0,0,name
 11595240,116112420,Over 35,over35,2026-06-30,,away,106830132,62122596,"Vosburg, Graham",6,1,0,0,0,name
+11566118,116112414,Premier,league,2026-06-29,,home,18647016,113354655,"Caceres, Nacho",9,1,0,1,0,name
+11566118,116112414,Premier,league,2026-06-29,,home,18647016,26986828,"Hofschneider, Justin",18,0,1,0,0,name
+11566118,116112414,Premier,league,2026-06-29,,home,18647016,116707352,"Kitengie, Joseph",32,1,0,0,0,name
+11566118,116112414,Premier,league,2026-06-29,,home,18647016,83464080,"Walsh, Hunter",10,0,1,0,0,name
+11566118,116112414,Premier,league,2026-06-29,,away,75159915,107705011,"Amato, Anthony",22,0,0,1,0,name
+11566118,116112414,Premier,league,2026-06-29,,away,75159915,76276551,"Corretore, Brian",00,0,0,1,0,name
+11566118,116112414,Premier,league,2026-06-29,,away,75159915,116622267,"Korte, Evan",67,0,0,1,0,name
+11566118,116112414,Premier,league,2026-06-29,,away,75159915,110833812,"Warmington, Tyler",11,0,0,1,0,name
+11566117,116112414,Premier,league,2026-06-29,,home,10350991,102043121,"Quinn, Riley",16,0,0,1,0,name
+11566117,116112414,Premier,league,2026-06-29,,home,10350991,84224094,"Stephan, Alex",14,0,0,1,0,name
+11566117,116112414,Premier,league,2026-06-29,,home,10350991,83463980,"Walsh, Evan",21,1,0,0,0,name
+11566117,116112414,Premier,league,2026-06-29,,away,45429017,95813090,"Grizanti, Ralph",0,0,0,1,0,name
+11566117,116112414,Premier,league,2026-06-29,,away,45429017,101157678,"Hernandez, Witman",17,1,1,0,0,name
+11566117,116112414,Premier,league,2026-06-29,,away,45429017,101707974,"Swiatkowski, Jonathan",4,0,1,0,0,name
+11566117,116112414,Premier,league,2026-06-29,,away,45429017,115260843,"Trushell, Max",14,1,1,0,0,name
+11566117,116112414,Premier,league,2026-06-29,,away,45429017,92913762,"Wright, Oliver",12,1,0,0,0,name
+11566398,116112417,2nd Division,league,2026-06-29,,away,75159990,116694495,"Cirino, Lucas",43,0,0,1,0,name
+11566398,116112417,2nd Division,league,2026-06-29,,away,75159990,11212303,"Fetterman, Nick",31,1,0,0,0,name
+11566468,116112421,3rd Division,league,2026-06-29,,home,95088487,116614997,"Rasool, Noor",4,1,0,0,0,name
+11566468,116112421,3rd Division,league,2026-06-29,,home,95088487,76416893,"Rueger, Torrey",13,0,0,1,0,name
+11566468,116112421,3rd Division,league,2026-06-29,,away,75479665,116701499,"Passalacqua, Marco",80,1,0,0,0,name
 11566116,116112414,Premier,league,2026-06-28,,home,26891552,107734867,"Ruggiero, Michael",10,0,0,1,0,name
 11566174,116112418,Championship,league,2026-06-28,,away,95088186,98843393,"Hall, Zakariah",12,0,0,1,0,name
 11566174,116112418,Championship,league,2026-06-28,,away,95088186,113165806,"Lochocki, Jake",21,1,0,0,0,name
