@@ -1480,30 +1480,51 @@ function computeDynasties(comps) {
   return dynasties.slice(0, RANK_N);
 }
 
-// Seasons where one club won 2+ distinct competitions (any mix of league division, Over-35 or
-// cup) -- doubles, trebles and beyond. Cross-competition-group by design: a club sweeping both
-// league divisions it entered counts just as much as a league+cup double.
-function computeMultiTitleSeasons(comps, clubNames) {
+// Seasons where one club claimed 3+ distinct honors -- trebles (and beyond). The three honors
+// counted are: (1) a league-division playoff win (the CHMP winner), (2) a cup win, and
+// (3) finishing top of a league division's regular-season table (position 1, which can differ
+// from the playoff winner). Over-35 is deliberately excluded -- only the open-age league and
+// cups count here. Topping the table AND winning that same division's playoff are two separate
+// honors, so those two plus a cup make a treble.
+function computeMultiTitleSeasons(comps, allTeamStandings, clubNames) {
   const bySeasonClub = new Map(); // `${sid}||${clubId}` -> acc
+  const acc = (sid, label, live, clubId) => {
+    const mkey = `${sid}||${clubId}`;
+    let a = bySeasonClub.get(mkey);
+    if (!a) { a = { sid, label, live, clubId, comps: new Set() }; bySeasonClub.set(mkey, a); }
+    return a;
+  };
+
   for (const c of comps) {
     if (!c.clubId) continue;
+    if (c.comp_type !== 'league' && c.comp_type !== 'cup') continue; // no Over-35
     const canon = canonicalCompetition(c.competition, c.comp_type);
-    const mkey = `${c.sid}||${c.clubId}`;
-    let acc = bySeasonClub.get(mkey);
-    if (!acc) acc = { sid: c.sid, label: c.label, live: c.live, clubId: c.clubId, comps: new Set() };
-    acc.comps.add(canon.label);
-    bySeasonClub.set(mkey, acc);
+    // Cups keep their own name; league playoff wins are tagged to distinguish them from the
+    // regular-season table title in the same division.
+    const honor = c.comp_type === 'cup' ? canon.label : `${canon.label} Playoff`;
+    acc(c.sid, c.label, c.live, c.clubId).comps.add(honor);
   }
+
+  // Regular-season table-toppers: position 1 in a league division (Over-35 and cups excluded --
+  // cups have no table anyway).
+  for (const t of allTeamStandings || []) {
+    if (t.comp_type !== 'league') continue;
+    if (num(t.position) !== 1) continue;
+    if (!t.club_id) continue;
+    const canon = canonicalCompetition(t.competition, t.comp_type);
+    acc(t.sid, t.seasonLabel, t.live, t.club_id).comps.add(`${canon.label} Regular Season`);
+  }
+
   const rows = [];
-  for (const acc of bySeasonClub.values()) {
-    if (acc.comps.size < 2) continue;
+  for (const a of bySeasonClub.values()) {
+    if (a.comps.size < 3) continue; // trebles only
     rows.push({
-      clubId: acc.clubId, name: clubNames.get(acc.clubId) || '(unknown)',
-      sid: acc.sid, label: acc.label, live: acc.live,
-      count: acc.comps.size, competitions: [...acc.comps].sort(),
+      clubId: a.clubId, name: clubNames.get(a.clubId) || '(unknown)',
+      sid: a.sid, label: a.label, live: a.live,
+      count: a.comps.size, competitions: [...a.comps].sort(),
     });
   }
-  rows.sort((a, b) => b.count - a.count || b.sid.localeCompare(a.sid) || a.name.localeCompare(b.name));
+  rows.sort((a, b) => b.sid.localeCompare(a.sid) || b.count - a.count || a.name.localeCompare(b.name));
   return rows;
 }
 
@@ -1630,7 +1651,7 @@ export function buildChampions(allCompetitions, allTeamStandings) {
   allTimeDroughts.sort((a, b) => b.len - a.len || a.name.localeCompare(b.name));
 
   const dynasties = computeDynasties(comps);
-  const multiTitleSeasons = computeMultiTitleSeasons(comps, clubNames);
+  const multiTitleSeasons = computeMultiTitleSeasons(comps, allTeamStandings, clubNames);
 
   return { grid, leaderboard, dynasties, activeDroughts, allTimeDroughts: allTimeDroughts.slice(0, RANK_N), multiTitleSeasons };
 }

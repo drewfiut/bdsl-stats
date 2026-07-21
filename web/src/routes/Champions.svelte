@@ -32,7 +32,7 @@
     { id: 'roll-of-honor', label: 'Roll of Honor' },
     { id: 'most-decorated-clubs', label: 'Most Decorated Clubs' },
     { id: 'dynasties', label: 'Dynasties' },
-    { id: 'doubles-and-trebles', label: 'Doubles & Trebles' },
+    { id: 'trebles', label: 'Trebles' },
     { id: 'longest-active-droughts', label: 'Longest Active Droughts' },
     { id: 'longest-all-time-droughts', label: 'Longest All-Time Droughts' },
   ];
@@ -234,8 +234,8 @@
       </div>
     </section>
 
-    <h2 class="section" id="doubles-and-trebles">Doubles &amp; Trebles</h2>
-    <p class="recdesc">Seasons where a club won two or more competitions &mdash; any mix of league division, Over-35 or cup.</p>
+    <h2 class="section" id="trebles">Trebles</h2>
+    <p class="recdesc">Seasons where a club swept all three honors &mdash; a league playoff win, a cup win and finishing top of a division&rsquo;s regular-season table. Over-35 is excluded.</p>
     <section class="season">
       <div class="tablewrap">
         <table>
@@ -253,14 +253,14 @@
                   <a class="pname" href={`#/club/${r.clubId}`}>{r.name}</a>
                   <div class="submeta"><span class="season">{r.label} &middot; {r.competitions.join(', ')}</span></div>
                 </td>
-                <td class="l mobhide">{r.label}</td>
+                <td class="l mobhide"><a class="pname" href={`#/season/${r.sid}`}>{r.label}</a></td>
                 <td class="l mobhide">{r.competitions.join(', ')}</td>
               </tr>
             {/each}
           </tbody>
         </table>
         {#if data.multiTitleSeasons.length === 0}
-          <div class="empty">No multi-title seasons yet.</div>
+          <div class="empty">No trebles yet.</div>
         {/if}
       </div>
     </section>
