@@ -370,7 +370,7 @@ function aggregateClub(rows) {
     if (r.sid >= newestSid) { newestSid = r.sid; name = r.name; }
   }
   t.gd = t.gf - t.ga;
-  return { name: name || '(unknown)', totals: t, seasons: sids.size };
+  return { name: name || '(unknown)', totals: t, seasons: formatSeasonRanges(sids) };
 }
 
 // Collapse a club's standings into name eras, oldest first: a run of consecutive seasons under

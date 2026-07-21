@@ -54,10 +54,6 @@
             <th>W</th>
             <th>L</th>
             <th>D</th>
-            <th class="mobhide">GF</th>
-            <th class="mobhide">GA</th>
-            <th class="mobhide">GD</th>
-            <th>Pts</th>
             <th class="mobhide">Titles</th>
           </tr>
         </thead>
@@ -69,10 +65,6 @@
               <td>{c.w}</td>
               <td>{c.l}</td>
               <td>{c.d}</td>
-              <td class="mobhide">{c.gf}</td>
-              <td class="mobhide">{c.ga}</td>
-              <td class="mobhide">{c.gd > 0 ? '+' : ''}{c.gd}</td>
-              <td class="pts">{c.pts}</td>
               <td class="mobhide">{#if c.titles}{c.titles}{:else}<span class="z">0</span>{/if}</td>
             </tr>
           {/each}
