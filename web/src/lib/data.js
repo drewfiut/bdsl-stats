@@ -1992,6 +1992,7 @@ export function buildAgeTrend(board, compType = 'all') {
   }
 
   return [...meta.entries()]
+    .filter(([sid]) => sid >= '2010') // earlier seasons have too few birthdate matches to trust
     .map(([sid, m]) => {
       const acc = ageAccBySid.get(sid);
       return {
@@ -2171,6 +2172,7 @@ export function buildScoringConcentrationTrend(board, topN = 10) {
   }
 
   return [...meta.entries()]
+    .filter(([sid]) => sid >= '2014') // pre-2014 seasons have negligible goal-scorer data (see scoringSeasons above)
     .map(([sid, m]) => {
       const goals = (goalsBySid.get(sid) || []).slice().sort((a, b) => b - a);
       const totalGoals = goals.reduce((a, b) => a + b, 0);
