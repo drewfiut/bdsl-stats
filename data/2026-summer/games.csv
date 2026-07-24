@@ -5,7 +5,7 @@ game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id
 11566120,116112414,Premier,league,7047,,2026-07-12,7:00 pm,110307225,Buffalo Stallions FC,45429017,Borussia Bees,2,4,played,,Sahlen's Sports Park Flash Fields 1
 11566123,116112414,Premier,league,7050,,2026-07-13,8:00 pm,18647016,Buffalo United SS,95088661,Westside Blitz,2,0,played,,D'Youville College Dobson Field
 11566122,116112414,Premier,league,7049,,2026-07-13,8:30 pm,10359035,Queenston FC,10350991,BSC Raiders,2,3,played,,Buffalo State Coyer Field
-11566124,116112414,Premier,league,7051,,2026-07-19,6:00 pm,45429017,Borussia Bees,75159915,NMB FC,,,scheduled,,Buffalo State Coyer Field
+11566124,116112414,Premier,league,7051,,2026-07-19,6:00 pm,45429017,Borussia Bees,75159915,NMB FC,0,5,played,FT,Buffalo State Coyer Field
 11566127,116112414,Premier,league,7054,,2026-07-19,8:00 pm,10359035,Queenston FC,110307225,Buffalo Stallions FC,1,3,played,,Buffalo State Coyer Field
 11566128,116112414,Premier,league,7055,,2026-07-19,8:00 pm,26895907,Amherst Sharpshooters,18647016,Buffalo United SS,3,2,played,,D'Youville College Dobson Field
 11566125,116112414,Premier,league,7052,,2026-07-20,6:30 pm,75479674,Los Chupacabras,95088661,Westside Blitz,0,1,played,,Buffalo State Coyer Field
@@ -69,11 +69,11 @@ game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id
 11566185,116112418,Championship,league,7252,,2026-07-19,4:00 pm,95088186,Sporting Cavs,106801557,Cattaraugus County FC,5,0,played,FT,Nichols School Strauss Truscott
 11566186,116112418,Championship,league,7253,,2026-07-19,6:00 pm,110307361,Queen City Gunners,106801546,Rance FC,5,4,played,,Nichols School Strauss Truscott
 11566187,116112418,Championship,league,7254,,2026-07-19,8:00 pm,82992129,Mes Que FC,10359092,Ukraine,1,4,played,,Sahlen's Sports Park Flash Fields 2
-11566188,116112418,Championship,league,7255,,2026-07-19,8:00 pm,75479641,Williamsville Willies,75159993,Revolution SC,,,scheduled,,Tapestry Charter School Field
-11566184,116112418,Championship,league,7251,,2026-07-20,8:15 pm,91257538,Medina Mustangs FC,10359117,Buffalo Italia FC,,,scheduled,,Medina High School
+11566188,116112418,Championship,league,7255,,2026-07-19,8:00 pm,75479641,Williamsville Willies,75159993,Revolution SC,3,4,played,,Tapestry Charter School Field
+11566184,116112418,Championship,league,7251,,2026-07-20,8:15 pm,91257538,Medina Mustangs FC,10359117,Buffalo Italia FC,2,2,played,,Medina High School
 11566164,116112418,Championship,league,7231,,2026-07-23,8:30 pm,95088186,Sporting Cavs,106801546,Rance FC,,,scheduled,,Sahlen's Sports Park Flash Fields 1
-11566190,116112418,Championship,league,7257,,2026-07-26,,,,,,,,scheduled,,
-11566189,116112418,Championship,league,7256,QF1,2026-07-26,4:00 pm,75159993,Revolution SC,,,,,scheduled,,Nichols School Strauss Truscott
+11566189,116112418,Championship,league,7256,QF1,2026-07-26,4:00 pm,75159993,Revolution SC,91257538,Medina Mustangs FC,,,scheduled,,Nichols School Strauss Truscott
+11566190,116112418,Championship,league,7257,QF2,2026-07-26,6:00 pm,110307361,Queen City Gunners,95088186,Sporting Cavs,,,scheduled,,Nichols School Strauss Truscott
 11566138,116112418,Championship,league,7205,,2026-04-26,2:00 pm,106801546,Rance FC,75479641,Williamsville Willies,2,1,played,,Sahlen's Sports Park Flash Fields 1
 11566134,116112418,Championship,league,7201,,2026-04-26,4:00 pm,110307361,Queen City Gunners,10359092,Ukraine,0,1,played,,Nichols School Peek
 11566136,116112418,Championship,league,7203,,2026-04-26,4:00 pm,75159993,Revolution SC,91257538,Medina Mustangs FC,5,0,played,,Nichols School Strauss Truscott
@@ -126,9 +126,9 @@ game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id
 11566240,116112416,1st Division,league,7447,,2026-07-12,8:00 pm,110307763,Buffalo Night,46021389,Outlaws,5,1,played,,Sahlen's Sports Park Flash Fields 2
 11566243,116112416,1st Division,league,7450,,2026-07-13,8:00 pm,75479680,Honey Badgers,116113094,Stallions FC,4,2,played,,Sahlen's Sports Park Flash Fields 2
 11566198,116112416,1st Division,league,7405,,2026-07-19,10:00 am,75479638,Southern Tier FC,46021389,Outlaws,2,1,played,,SUNY Fredonia University Stadium
-11566225,116112416,1st Division,league,7432,,2026-07-20,8:00 pm,75479680,Honey Badgers,110307763,Buffalo Night,,,scheduled,,Sahlen's Sports Park Flash Fields 1
-11566206,116112416,1st Division,league,7413,,2026-07-20,8:00 pm,114564610,Mandem FC,75479662,Celtic Brigade,,,scheduled,,Sahlen's Sports Park Flash Fields 2
-11566234,116112416,1st Division,league,7441,,2026-07-23,8:30 pm,10359005,Clarence Coyotes,110307763,Buffalo Night,,,scheduled,,Mulroy Park Pierce Field
+11566225,116112416,1st Division,league,7432,,2026-07-20,8:00 pm,75479680,Honey Badgers,110307763,Buffalo Night,2,3,played,,Sahlen's Sports Park Flash Fields 1
+11566206,116112416,1st Division,league,7413,,2026-07-20,8:00 pm,114564610,Mandem FC,75479662,Celtic Brigade,5,0,played,,Sahlen's Sports Park Flash Fields 2
+11566234,116112416,1st Division,league,7441,,2026-07-23,8:30 pm,10359005,Clarence Coyotes,110307763,Buffalo Night,2,2,played,,Mulroy Park Pierce Field
 11566245,116112416,1st Division,league,7452,QF2,2026-07-26,8:00 pm,110307763,Buffalo Night,75479638,Southern Tier FC,,,scheduled,,Sahlen's Sports Park Flash Fields 1
 11566244,116112416,1st Division,league,7451,QF1,2026-07-26,8:00 pm,116113094,Stallions FC,46021389,Outlaws,,,scheduled,,Sahlen's Sports Park Flash Fields 2
 11566194,116112416,1st Division,league,7401,,2026-04-26,2:00 pm,10359005,Clarence Coyotes,114564698,Kunz Premier,4,3,played,,Nichols School Strauss Truscott
@@ -184,9 +184,9 @@ game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id
 11566388,116112417,2nd Division,league,7625,,2026-07-19,6:00 pm,12579571,Devils,98469009,Infinity FC,0,6,played,,Kenney Field 3
 11566410,116112417,2nd Division,league,7647,,2026-07-19,6:00 pm,95088658,United Warriors,100608342,Hamburg Monarchs SC,3,2,played,,Nichols School Peek
 11566418,116112417,2nd Division,league,7655,,2026-07-19,6:00 pm,114564787,WNY Phoenix,67527667,JL Dutch,2,2,played,,Sahlen's Sports Park Flash Fields 2
-11566371,116112417,2nd Division,league,7608,,2026-07-23,8:30 pm,98469017,Buffalo Cosmos,98469009,Infinity FC,,,scheduled,,Tapestry Charter School Field
-11566419,116112417,2nd Division,league,7656,QF1,2026-07-26,,98469017,Buffalo Cosmos,95088658,United Warriors,,,scheduled,,
-11566420,116112417,2nd Division,league,7657,,2026-07-26,,10359111,Crimson Fire FC,67527667,JL Dutch,,,scheduled,,
+11566371,116112417,2nd Division,league,7608,,2026-07-23,8:30 pm,98469017,Buffalo Cosmos,98469009,Infinity FC,0,5,played,FT,Tapestry Charter School Field
+11566420,116112417,2nd Division,league,7657,QF2,2026-07-26,6:00 pm,10359111,Crimson Fire FC,67527667,JL Dutch,,,scheduled,,Grand Island Veteran's Park Back Field 6/8
+11566419,116112417,2nd Division,league,7656,QF1,2026-07-26,6:00 pm,98469017,Buffalo Cosmos,95088658,United Warriors,,,scheduled,,Sahlen's Sports Park Flash Fields 1
 11566364,116112417,2nd Division,league,7601,,2026-04-26,2:00 pm,75479659,Bangarang FC,12579571,Devils,1,1,played,,Tapestry Charter School Field
 11566395,116112417,2nd Division,league,7632,,2026-04-26,6:00 pm,100608342,Hamburg Monarchs SC,10359111,Crimson Fire FC,1,2,played,,Mulroy Park Pierce Field
 11566369,116112417,2nd Division,league,7606,,2026-04-26,8:00 pm,98469017,Buffalo Cosmos,75159990,Great White Buffalo,7,5,played,,Mulroy Park Pierce Field
@@ -231,7 +231,7 @@ game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id
 11566387,116112417,2nd Division,league,7624,,2026-06-28,6:00 pm,12579571,Devils,67527667,JL Dutch,1,4,played,,Kenney Field 3
 11566398,116112417,2nd Division,league,7635,,2026-06-29,8:00 pm,100608342,Hamburg Monarchs SC,75159990,Great White Buffalo,1,1,played,,Sahlen's Sports Park Flash Fields 2
 11566401,116112417,2nd Division,league,7638,,2026-06-29,8:30 pm,98469009,Infinity FC,116113105,Buffalo Stallions,5,0,played,FT,Tapestry Charter School Field
-11566422,116112417,2nd Division,league,7659,SF2,2026-08-02,,114564787,WNY Phoenix,,,,,scheduled,,
+11566422,116112417,2nd Division,league,7659,SF2,2026-08-02,4:00 pm,114564787,WNY Phoenix,,,,,scheduled,,Sahlen's Sports Park Flash Fields 1
 11566421,116112417,2nd Division,league,7658,SF1,2026-08-02,6:00 pm,98469009,Infinity FC,,,,,scheduled,,Sahlen's Sports Park Flash Fields 1
 11566423,116112417,2nd Division,league,7660,CHAMP,2026-08-09,3:30 pm,,,,,,,scheduled,,Nichols School Peek
 11566455,116112421,3rd Division,league,32,,2026-07-06,6:30 pm,31566782,Rust Belt United,75479677,nWo FC,2,2,played,,Sahlen's Sports Park Flash Fields 1
@@ -240,14 +240,14 @@ game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id
 11566469,116112421,3rd Division,league,46,,2026-07-12,6:00 pm,116113111,Midnimo FC,114564784,Buffalo Evening,4,2,played,,Buffalo State Coyer Field
 11566472,116112421,3rd Division,league,49,,2026-07-12,6:00 pm,100608336,FC Munster,75479677,nWo FC,0,6,played,,Sahlen's Sports Park Flash Fields 2
 11566473,116112421,3rd Division,league,50,,2026-07-12,6:00 pm,112652891,Mavericks FC,31566782,Rust Belt United,0,2,played,,Tapestry Charter School Field
-11566476,116112421,3rd Division,league,53,,2026-07-19,12:30 pm,100608336,FC Munster,112652871,Badger Academy,,,scheduled,,Mulroy Park Pierce Field
+11566476,116112421,3rd Division,league,53,,2026-07-19,12:30 pm,100608336,FC Munster,112652871,Badger Academy,1,2,played,,Mulroy Park Pierce Field
 11566474,116112421,3rd Division,league,51,,2026-07-19,6:00 pm,75479677,nWo FC,35216066,Nanner FC,3,1,played,,Grand Island High School
-11566475,116112421,3rd Division,league,52,,2026-07-19,6:00 pm,100607781,Lake Shore FC,116113111,Midnimo FC,,,scheduled,,Sahlen's Sports Park Flash Fields 1
+11566475,116112421,3rd Division,league,52,,2026-07-19,6:00 pm,100607781,Lake Shore FC,116113111,Midnimo FC,2,2,played,,Sahlen's Sports Park Flash Fields 1
 11566478,116112421,3rd Division,league,55,,2026-07-19,6:00 pm,95088487,Buffalo Brighten Stars FC,112652891,Mavericks FC,0,2,played,,Tapestry Charter School Field
 11566477,116112421,3rd Division,league,54,,2026-07-19,8:00 pm,114564784,Buffalo Evening,75479665,Lasalle FC,2,1,played,,Sahlen's Sports Park Flash Fields 1
-11566457,116112421,3rd Division,league,34,,2026-07-23,6:30 pm,112652871,Badger Academy,112652891,Mavericks FC,,,scheduled,,Mulroy Park Pierce Field
-11566479,116112421,3rd Division,league,56,QF1,2026-07-26,,75479677,nWo FC,,,,,scheduled,,
+11566457,116112421,3rd Division,league,34,,2026-07-23,6:30 pm,112652871,Badger Academy,112652891,Mavericks FC,1,0,played,,Mulroy Park Pierce Field
 11566480,116112421,3rd Division,league,57,QF2,2026-07-26,6:00 pm,35216066,Nanner FC,100607781,Lake Shore FC,,,scheduled,,Buffalo State Coyer Field
+11566479,116112421,3rd Division,league,56,QF1,2026-07-26,6:00 pm,75479677,nWo FC,112652871,Badger Academy,,,scheduled,,Grand Island High School
 11566425,116112421,3rd Division,league,2,,2026-04-26,2:00 pm,100608336,FC Munster,35216066,Nanner FC,1,2,played,,Mulroy Park Pierce Field
 11566427,116112421,3rd Division,league,4,,2026-04-26,4:00 pm,112652871,Badger Academy,95088487,Buffalo Brighten Stars FC,0,0,played,,Sahlen's Sports Park Flash Fields 1
 11566424,116112421,3rd Division,league,1,,2026-04-26,6:00 pm,75479677,nWo FC,100607781,Lake Shore FC,3,1,played,,Grand Island High School
@@ -360,18 +360,16 @@ game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id
 11595281,116112420,Over 35,over35,3544,,2026-07-10,6:30 pm,112652922,West United Rowdies,98469084,Thundercats FC,3,0,played,,Sahlen's Sports Park Flash Fields 2
 11595280,116112420,Over 35,over35,3543,,2026-07-10,8:30 pm,46512675,Lykan Next,10350976,SoHo FC,5,0,played,FT,Sahlen's Sports Park Flash Fields 1
 11595282,116112420,Over 35,over35,3545,,2026-07-10,8:30 pm,46512669,Oranje,106900649,OLDevils FC,9,1,played,,Sahlen's Sports Park Flash Fields 2
-11595283,116112420,Over 35,over35,3546,,2026-07-17,6:30 pm,114564965,International Friendlies,106900649,OLDevils FC,,,scheduled,,Nichols School Peek
-11595284,116112420,Over 35,over35,3547,,2026-07-17,6:30 pm,10350976,SoHo FC,46512672,Blue Stars FC,,,scheduled,,Sahlen's Sports Park Flash Fields 1
-11595286,116112420,Over 35,over35,3549,,2026-07-17,6:30 pm,112652919,Blue Heavy FC,46512675,Lykan Next,,,scheduled,,Sahlen's Sports Park Flash Fields 2
-11595285,116112420,Over 35,over35,3548,,2026-07-17,8:30 pm,116116673,Azzurri Stallions,112652922,West United Rowdies,,,scheduled,,Sahlen's Sports Park Flash Fields 1
-11595287,116112420,Over 35,over35,3550,,2026-07-17,8:30 pm,46512669,Oranje,106830132,Enigma FC,,,scheduled,,Sahlen's Sports Park Flash Fields 2
 11595288,116112420,Over 35,over35,3551,,2026-07-24,6:30 pm,46512672,Blue Stars FC,106830132,Enigma FC,,,scheduled,,Nichols School Peek
 11595289,116112420,Over 35,over35,3552,,2026-07-24,6:30 pm,106900649,OLDevils FC,114564965,International Friendlies,,,scheduled,,Sahlen's Sports Park Flash Fields 1
 11595291,116112420,Over 35,over35,3554,,2026-07-24,6:30 pm,112652922,West United Rowdies,116116673,Azzurri Stallions,,,scheduled,,Sahlen's Sports Park Flash Fields 2
 11595290,116112420,Over 35,over35,3553,,2026-07-24,8:30 pm,10350976,SoHo FC,98469084,Thundercats FC,,,scheduled,,Sahlen's Sports Park Flash Fields 1
 11595292,116112420,Over 35,over35,3555,,2026-07-24,8:30 pm,46512669,Oranje,46512675,Lykan Next,,,scheduled,,Sahlen's Sports Park Flash Fields 2
-11595293,116112420,Over 35,over35,3556,,2026-07-31,7:30 pm,,,,,,,scheduled,,Sahlen's Sports Park Flash Fields 1
-11595294,116112420,Over 35,over35,3557,,2026-07-31,7:30 pm,,,,,,,scheduled,,Sahlen's Sports Park Flash Fields 2
+11595283,116112420,Over 35,over35,3546,,2026-07-31,6:30 pm,114564965,International Friendlies,106900649,OLDevils FC,,,scheduled,,Mulroy Park Pierce Field
+11595284,116112420,Over 35,over35,3547,,2026-07-31,6:30 pm,10350976,SoHo FC,46512672,Blue Stars FC,,,scheduled,,Sahlen's Sports Park Flash Fields 1
+11595286,116112420,Over 35,over35,3549,,2026-07-31,6:30 pm,112652919,Blue Heavy FC,46512675,Lykan Next,,,scheduled,,Sahlen's Sports Park Flash Fields 2
+11595285,116112420,Over 35,over35,3548,,2026-07-31,8:30 pm,116116673,Azzurri Stallions,112652922,West United Rowdies,,,scheduled,,Sahlen's Sports Park Flash Fields 1
+11595287,116112420,Over 35,over35,3550,,2026-07-31,8:30 pm,46512669,Oranje,106830132,Enigma FC,,,scheduled,,Sahlen's Sports Park Flash Fields 2
 11595239,116112420,Over 35,over35,3502,,2026-05-01,6:30 pm,10350976,SoHo FC,112652922,West United Rowdies,4,0,played,,Sahlen's Sports Park Flash Fields 1
 11595241,116112420,Over 35,over35,3504,,2026-05-01,6:30 pm,112652919,Blue Heavy FC,114564965,International Friendlies,0,0,played,,Sahlen's Sports Park Flash Fields 2
 11595238,116112420,Over 35,over35,3501,,2026-05-01,8:30 pm,116116673,Azzurri Stallions,106900649,OLDevils FC,2,0,played,,Mulroy Park Pierce Field
@@ -411,8 +409,10 @@ game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id
 11595276,116112420,Over 35,over35,3539,,2026-06-26,6:30 pm,98469084,Thundercats FC,112652919,Blue Heavy FC,2,1,played,,Sahlen's Sports Park Flash Fields 2
 11595277,116112420,Over 35,over35,3540,,2026-06-26,8:30 pm,10350976,SoHo FC,114564965,International Friendlies,2,1,played,,Sahlen's Sports Park Flash Fields 2
 11595240,116112420,Over 35,over35,3503,,2026-06-30,7:30 pm,46512675,Lykan Next,106830132,Enigma FC,0,2,played,,Tapestry Charter School Field
-11595295,116112420,Over 35,over35,3558,,2026-08-07,7:30 pm,,,,,,,scheduled,,Sahlen's Sports Park Flash Fields 1
-11595296,116112420,Over 35,over35,3559,,2026-08-07,8:00 pm,,,,,,,scheduled,,Sahlen's Sports Park Flash Fields 2
+11595293,116112420,Over 35,over35,3556,,2026-08-07,7:30 pm,,,,,,,scheduled,,Sahlen's Sports Park Flash Fields 1
+11595294,116112420,Over 35,over35,3557,,2026-08-07,7:30 pm,,,,,,,scheduled,,Sahlen's Sports Park Flash Fields 2
+11595295,116112420,Over 35,over35,3558,,2026-08-14,7:30 pm,,,,,,,scheduled,,Sahlen's Sports Park Flash Fields 1
+11595296,116112420,Over 35,over35,3559,,2026-08-14,8:00 pm,,,,,,,scheduled,,Sahlen's Sports Park Flash Fields 2
 11574587,116537290,Tehel Cup,cup,502,,2026-05-14,6:30 pm,26891552,Buffalo Celtic,110307361,Queen City Gunners,5,1,played,,Buffalo State Coyer Field
 11574589,116537290,Tehel Cup,cup,504,,2026-05-14,6:30 pm,75159993,Revolution SC,75479674,Los Chupacabras,1,0,played,,Nichols School Strauss Truscott
 11574586,116537290,Tehel Cup,cup,501,,2026-05-14,8:30 pm,10359092,Ukraine,116113075,Germania FC,1,1,played,PK,Tapestry Charter School Field
@@ -435,11 +435,11 @@ game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id
 11574604,116537290,Tehel Cup,cup,519,,2026-06-25,9:00 pm,116113075,Germania FC,10350991,BSC Raiders,0,3,played,FT,Sahlen's Sports Park Flash Fields 1
 11574605,116537290,Tehel Cup,cup,520,,2026-06-25,9:00 pm,18647016,Buffalo United SS,75159993,Revolution SC,2,1,played,,Sahlen's Sports Park Flash Fields 2
 11574607,116537290,Tehel Cup,cup,522,QF4,2026-07-16,8:30 pm,18647016,Buffalo United SS,95088186,Sporting Cavs,3,0,played,FT,
-11574608,116537290,Tehel Cup,cup,523,QF2,2026-07-23,6:30 pm,75159915,NMB FC,26895907,Amherst Sharpshooters,,,scheduled,,Sahlen's Sports Park Flash Fields 1
-11574606,116537290,Tehel Cup,cup,521,QF1,2026-07-23,6:30 pm,26891552,Buffalo Celtic,95088661,Westside Blitz,,,scheduled,,Tapestry Charter School Field
-11574609,116537290,Tehel Cup,cup,524,QF3,2026-07-23,8:30 pm,10350991,BSC Raiders,10359035,Queenston FC,,,scheduled,,Sahlen's Sports Park Flash Fields 2
-11574611,116537290,Tehel Cup,cup,526,SF1,2026-07-30,8:30 pm,,,,,,,scheduled,,Sahlen's Sports Park Flash Fields 1
-11574610,116537290,Tehel Cup,cup,525,SF2,2026-07-30,8:30 pm,,,,,,,scheduled,,Sahlen's Sports Park Flash Fields 2
+11574608,116537290,Tehel Cup,cup,523,QF2,2026-07-23,6:30 pm,75159915,NMB FC,26895907,Amherst Sharpshooters,0,5,played,,Sahlen's Sports Park Flash Fields 1
+11574606,116537290,Tehel Cup,cup,521,QF1,2026-07-23,6:30 pm,26891552,Buffalo Celtic,95088661,Westside Blitz,0,5,played,,Tapestry Charter School Field
+11574609,116537290,Tehel Cup,cup,524,QF3,2026-07-23,8:30 pm,10350991,BSC Raiders,10359035,Queenston FC,5,3,played,,Sahlen's Sports Park Flash Fields 2
+11574610,116537290,Tehel Cup,cup,525,SF2,2026-07-30,6:30 pm,18647016,Buffalo United SS,26895907,Amherst Sharpshooters,,,scheduled,,Sahlen's Sports Park Flash Fields 1
+11574611,116537290,Tehel Cup,cup,526,SF1,2026-07-30,8:30 pm,10350991,BSC Raiders,95088661,Westside Blitz,,,scheduled,,Sahlen's Sports Park Flash Fields 1
 11574612,116537290,Tehel Cup,cup,527,CHMP,2026-08-06,8:30 pm,,,,,,,scheduled,,Sahlen's Sports Park Flash Fields 1
 11574641,116537289,Wood Cup,cup,300,,2026-04-30,9:00 pm,114564698,Kunz Premier,114564787,WNY Phoenix,1,2,played,,Sahlen's Sports Park Flash Fields 2
 11574642,116537289,Wood Cup,cup,301,,2026-05-07,6:30 pm,110307763,Buffalo Night,12579571,Devils,4,1,played,,Buffalo State Coyer Field
@@ -462,8 +462,8 @@ game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id
 11574660,116537289,Wood Cup,cup,319,QF2,2026-07-09,8:30 pm,95088658,United Warriors,10359111,Crimson Fire FC,0,6,played,,Buffalo State Coyer Field
 11574662,116537289,Wood Cup,cup,321,QF3,2026-07-09,8:30 pm,110307763,Buffalo Night,114564610,Mandem FC,1,3,played,,Sahlen's Sports Park Flash Fields 2
 11574659,116537289,Wood Cup,cup,318,QF4,2026-07-09,8:30 pm,46021389,Outlaws,75159990,Great White Buffalo,0,3,played,,Tapestry Charter School Field
-11574663,116537289,Wood Cup,cup,322,SF1,2026-07-30,6:30 pm,,,,,,,scheduled,,Sahlen's Sports Park Flash Fields 2
-11574664,116537289,Wood Cup,cup,323,SF2,2026-07-30,8:30 pm,,,,,,,scheduled,,Tapestry Charter School Field
+11574663,116537289,Wood Cup,cup,322,SF1,2026-07-30,8:30 pm,75159990,Great White Buffalo,114564610,Mandem FC,,,scheduled,,Sahlen's Sports Park Flash Fields 2
+11574664,116537289,Wood Cup,cup,323,SF2,2026-07-30,8:30 pm,10359111,Crimson Fire FC,98469009,Infinity FC,,,scheduled,,Tapestry Charter School Field
 11574665,116537289,Wood Cup,cup,324,CHMP,2026-08-06,8:15 pm,,,,,,,scheduled,,Sahlen's Sports Park Flash Fields 2
 11574646,116537289,Wood Cup,cup,305,,,,114564614,Chargers FC,100608342,Hamburg Monarchs SC,0,0,played,FT,
 11574615,116537291,Matthews Cup,cup,402,,2026-04-30,6:30 pm,10359062,Tonawanda United,112652894,Huskies FC,4,2,played,,Buffalo State Coyer Field
@@ -491,6 +491,6 @@ game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id
 11574636,116537291,Matthews Cup,cup,423,QF4,2026-07-09,6:30 pm,31566782,Rust Belt United,10359062,Tonawanda United,3,1,played,,Tapestry Charter School Field
 11574634,116537291,Matthews Cup,cup,421,QF2,2026-07-09,7:00 pm,116113111,Midnimo FC,100607781,Lake Shore FC,2,3,played,,Mulroy Park Pierce Field
 11574637,116537291,Matthews Cup,cup,424,QF3,2026-07-09,8:30 pm,112652891,Mavericks FC,75479677,nWo FC,4,5,played,,Sahlen's Sports Park Flash Fields 1
-11574639,116537291,Matthews Cup,cup,426,SF1,2026-07-30,6:30 pm,,,,,,,scheduled,,Tapestry Charter School Field
-11574638,116537291,Matthews Cup,cup,425,SF2,2026-07-30,7:30 pm,,,,,,,scheduled,,Mulroy Park Pierce Field
-11574640,116537291,Matthews Cup,cup,427,CHMP,2026-07-30,6:30 pm,,,,,,,scheduled,,Sahlen's Sports Park Flash Fields 1
+11574639,116537291,Matthews Cup,cup,426,SF1,2026-07-30,6:30 pm,31566782,Rust Belt United,75479677,nWo FC,,,scheduled,,Tapestry Charter School Field
+11574638,116537291,Matthews Cup,cup,425,SF2,2026-07-30,7:30 pm,35216066,Nanner FC,100607781,Lake Shore FC,,,scheduled,,Mulroy Park Pierce Field
+11574640,116537291,Matthews Cup,cup,427,CHMP,2026-08-06,6:30 pm,,,,,,,scheduled,,Sahlen's Sports Park Flash Fields 1
