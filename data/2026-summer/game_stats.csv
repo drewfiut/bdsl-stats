@@ -338,14 +338,6 @@ game_key,tg,competition,comp_type,date,round_label,side,club_id,person_key,name,
 11566479,116112421,3rd Division,league,2026-07-26,QF1,home,75479677,112823205,"Stefanski, Evan",1,1,1,0,0,name
 11566479,116112421,3rd Division,league,2026-07-26,QF1,away,112652871,83556960,"Bartz, Andrew",9,1,0,0,0,name
 11566479,116112421,3rd Division,league,2026-07-26,QF1,away,112652871,101998659,"Pokriki, Bryan",10,1,0,0,0,name
-11566509,116112419,4th Divison,league,2026-07-09,,home,75479695,115075029,"Betlewicz, Nicolas",77,1,0,0,0,name
-11566509,116112419,4th Divison,league,2026-07-09,,home,75479695,108006231,"Kaczorowski, John",26,0,0,1,0,name
-11566509,116112419,4th Divison,league,2026-07-09,,home,75479695,87161397,"Somerville, Sean",15,0,0,1,0,name
-11566509,116112419,4th Divison,league,2026-07-09,,home,75479695,102567157,"Weiskerger, Nathan",3,0,0,1,0,name
-11566509,116112419,4th Divison,league,2026-07-09,,away,116113108,110777871,"Goeddertz, Jonathan",3,0,0,1,0,name
-11566509,116112419,4th Divison,league,2026-07-09,,away,116113108,115186834,"Rai, Gopal",11,1,0,0,0,name
-11566509,116112419,4th Divison,league,2026-07-09,,away,116113108,116539186,"Waiba, Dal",5,1,0,0,0,name
-11566509,116112419,4th Divison,league,2026-07-09,,away,116113108,116539465,"chapagai, Dasharath",9,1,0,0,0,name
 11566534,116112419,4th Divison,league,2026-07-12,,home,59262126,95528789,"Penrose, Doug",33,0,0,1,0,name
 11566534,116112419,4th Divison,league,2026-07-12,,away,116113117,116519699,"Castro, David",2,1,1,0,0,name
 11566534,116112419,4th Divison,league,2026-07-12,,away,116113117,116519702,"Jacobs, Wyatt",6,0,1,0,0,name
@@ -432,6 +424,14 @@ game_key,tg,competition,comp_type,date,round_label,side,club_id,person_key,name,
 11595292,116112420,Over 35,over35,2026-07-24,,away,46512675,15870257,"Iwankow, Jason",11,1,0,0,0,name
 11595292,116112420,Over 35,over35,2026-07-24,,away,46512675,116705871,"Ortega Rios, Daniel",26,1,1,0,0,name
 11595292,116112420,Over 35,over35,2026-07-24,,away,46512675,64106314,"Walker, Cody",17,1,1,0,0,name
+11566509,116112419,4th Divison,league,2026-07-09,,home,75479695,115075029,"Betlewicz, Nicolas",77,1,0,0,0,name
+11566509,116112419,4th Divison,league,2026-07-09,,home,75479695,108006231,"Kaczorowski, John",26,0,0,1,0,name
+11566509,116112419,4th Divison,league,2026-07-09,,home,75479695,87161397,"Somerville, Sean",15,0,0,1,0,name
+11566509,116112419,4th Divison,league,2026-07-09,,home,75479695,102567157,"Weiskerger, Nathan",3,0,0,1,0,name
+11566509,116112419,4th Divison,league,2026-07-09,,away,116113108,110777871,"Goeddertz, Jonathan",3,0,0,1,0,name
+11566509,116112419,4th Divison,league,2026-07-09,,away,116113108,115186834,"Rai, Gopal",11,1,0,0,0,name
+11566509,116112419,4th Divison,league,2026-07-09,,away,116113108,116539186,"Waiba, Dal",5,1,0,0,0,name
+11566509,116112419,4th Divison,league,2026-07-09,,away,116113108,116539465,"chapagai, Dasharath",9,1,0,0,0,name
 11566105,116112414,Premier,league,2026-07-06,,home,75479674,110816404,"Teijeira, Carson",29,1,0,0,0,name
 11566105,116112414,Premier,league,2026-07-06,,away,10359035,82703206,"Juszczak, Mike",23,0,0,1,0,name
 11566105,116112414,Premier,league,2026-07-06,,away,10359035,95591837,"Mulderig, Liam",10,2,0,0,0,name
