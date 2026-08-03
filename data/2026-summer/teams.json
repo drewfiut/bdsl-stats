@@ -76,8 +76,8 @@
     "away_w": 2,
     "away_l": 2,
     "away_d": 1,
-    "yellows": 19,
-    "reds": 1,
+    "yellows": 21,
+    "reds": 2,
     "position": 3
   },
   {
@@ -103,7 +103,7 @@
     "away_w": 2,
     "away_l": 2,
     "away_d": 1,
-    "yellows": 4,
+    "yellows": 5,
     "reds": 0,
     "position": 2
   },
@@ -670,7 +670,7 @@
     "away_w": 5,
     "away_l": 0,
     "away_d": 0,
-    "yellows": 6,
+    "yellows": 7,
     "reds": 0,
     "position": 1
   },
@@ -859,7 +859,7 @@
     "away_w": 1,
     "away_l": 3,
     "away_d": 1,
-    "yellows": 4,
+    "yellows": 5,
     "reds": 1,
     "position": 6
   },
@@ -886,7 +886,7 @@
     "away_w": 3,
     "away_l": 0,
     "away_d": 2,
-    "yellows": 3,
+    "yellows": 4,
     "reds": 0,
     "position": 1
   },
@@ -1021,7 +1021,7 @@
     "away_w": 3,
     "away_l": 1,
     "away_d": 1,
-    "yellows": 8,
+    "yellows": 10,
     "reds": 0,
     "position": 2
   },
@@ -1048,7 +1048,7 @@
     "away_w": 5,
     "away_l": 0,
     "away_d": 0,
-    "yellows": 17,
+    "yellows": 23,
     "reds": 1,
     "position": 1
   },
@@ -1075,7 +1075,7 @@
     "away_w": 3,
     "away_l": 2,
     "away_d": 0,
-    "yellows": 3,
+    "yellows": 4,
     "reds": 0,
     "position": 4
   },
@@ -1102,7 +1102,7 @@
     "away_w": 3,
     "away_l": 0,
     "away_d": 2,
-    "yellows": 5,
+    "yellows": 6,
     "reds": 2,
     "position": 3
   },
@@ -1561,7 +1561,7 @@
     "away_w": 4,
     "away_l": 0,
     "away_d": 1,
-    "yellows": 9,
+    "yellows": 12,
     "reds": 0,
     "position": 2
   },
@@ -1644,7 +1644,7 @@
     "away_d": 0,
     "yellows": 3,
     "reds": 0,
-    "position": 5
+    "position": 6
   },
   {
     "team_id": "46512669-116112420",
@@ -1655,23 +1655,23 @@
     "competition": "Over 35",
     "comp_type": "over35",
     "name": "Oranje",
-    "gp": 9,
+    "gp": 10,
     "w": 5,
-    "l": 4,
+    "l": 5,
     "d": 0,
     "pts": 15,
-    "gf": 33,
-    "ga": 18,
-    "gd": 15,
+    "gf": 34,
+    "ga": 22,
+    "gd": 12,
     "home_w": 3,
-    "home_l": 2,
+    "home_l": 3,
     "home_d": 0,
     "away_w": 2,
     "away_l": 2,
     "away_d": 0,
     "yellows": 7,
     "reds": 0,
-    "position": 4
+    "position": 5
   },
   {
     "team_id": "46512672-116112420",
@@ -1698,7 +1698,7 @@
     "away_d": 0,
     "yellows": 4,
     "reds": 1,
-    "position": 1
+    "position": 2
   },
   {
     "team_id": "46512675-116112420",
@@ -1709,23 +1709,23 @@
     "competition": "Over 35",
     "comp_type": "over35",
     "name": "Lykan Next",
-    "gp": 9,
-    "w": 4,
+    "gp": 10,
+    "w": 5,
     "l": 4,
     "d": 1,
-    "pts": 13,
-    "gf": 23,
+    "pts": 16,
+    "gf": 28,
     "ga": 13,
-    "gd": 10,
+    "gd": 15,
     "home_w": 3,
     "home_l": 2,
     "home_d": 0,
-    "away_w": 1,
+    "away_w": 2,
     "away_l": 2,
     "away_d": 1,
-    "yellows": 2,
+    "yellows": 3,
     "reds": 0,
-    "position": 6
+    "position": 3
   },
   {
     "team_id": "106830132-116112420",
@@ -1736,23 +1736,23 @@
     "competition": "Over 35",
     "comp_type": "over35",
     "name": "Enigma FC",
-    "gp": 9,
-    "w": 7,
+    "gp": 10,
+    "w": 8,
     "l": 1,
     "d": 1,
-    "pts": 22,
-    "gf": 35,
-    "ga": 7,
-    "gd": 28,
+    "pts": 25,
+    "gf": 39,
+    "ga": 8,
+    "gd": 31,
     "home_w": 4,
     "home_l": 1,
     "home_d": 0,
-    "away_w": 3,
+    "away_w": 4,
     "away_l": 0,
     "away_d": 1,
     "yellows": 1,
     "reds": 0,
-    "position": 2
+    "position": 1
   },
   {
     "team_id": "98469084-116112420",
@@ -1979,21 +1979,21 @@
     "competition": "Over 35",
     "comp_type": "over35",
     "name": "Blue Heavy FC",
-    "gp": 9,
+    "gp": 10,
     "w": 0,
-    "l": 6,
+    "l": 7,
     "d": 3,
     "pts": 3,
     "gf": 4,
-    "ga": 29,
-    "gd": -25,
+    "ga": 34,
+    "gd": -30,
     "home_w": 0,
-    "home_l": 2,
+    "home_l": 3,
     "home_d": 2,
     "away_w": 0,
     "away_l": 4,
     "away_d": 1,
-    "yellows": 0,
+    "yellows": 1,
     "reds": 1,
     "position": 11
   },
@@ -2049,6 +2049,6 @@
     "away_d": 0,
     "yellows": 1,
     "reds": 0,
-    "position": 3
+    "position": 4
   }
 ]
