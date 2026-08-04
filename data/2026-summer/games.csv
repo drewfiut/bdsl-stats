@@ -1,6 +1,6 @@
 game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id,home_name,away_club_id,away_name,home_score,away_score,status,result_note,location
 11566132,116112414,Premier,league,7059,SF2,2026-08-02,4:00 pm,26895907,Amherst Sharpshooters,18647016,Buffalo United SS,4,1,played,,Nichols School Strauss Truscott
-11566131,116112414,Premier,league,7058,SF1,2026-08-02,8:00 pm,45429017,Borussia Bees,75159915,NMB FC,,,scheduled,,Buffalo State Coyer Field
+11566131,116112414,Premier,league,7058,SF1,2026-08-06,7:30 pm,45429017,Borussia Bees,75159915,NMB FC,,,scheduled,,D'Youville College Dobson Field
 11566133,116112414,Premier,league,7060,CHAMP,2026-08-09,6:00 pm,,,,,,,scheduled,,Nichols School Strauss Truscott
 11566115,116112414,Premier,league,7042,,,,110307225,Buffalo Stallions FC,75479674,Los Chupacabras,,,scheduled,,
 11566075,116112414,Premier,league,7002,,2026-04-26,4:00 pm,26895907,Amherst Sharpshooters,75479674,Los Chupacabras,2,1,played,,Tapestry Charter School Field
@@ -59,8 +59,8 @@ game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id
 11566126,116112414,Premier,league,7053,,2026-07-20,8:30 pm,10350991,BSC Raiders,91256980,Olean 1854 FC,2,1,played,,Buffalo State Coyer Field
 11566130,116112414,Premier,league,7057,QF2,2026-07-26,4:00 pm,75159915,NMB FC,91256980,Olean 1854 FC,4,3,played,,Nichols School Peek
 11566129,116112414,Premier,league,7056,QF1,2026-07-26,7:30 pm,18647016,Buffalo United SS,10350991,BSC Raiders,4,3,played,,D'Youville College Dobson Field
-11566192,116112418,Championship,league,7259,SF2,2026-08-02,7:30 pm,10359092,Ukraine,95088186,Sporting Cavs,,,scheduled,,D'Youville College Dobson Field
-11566191,116112418,Championship,league,7258,SF1,2026-08-02,8:00 pm,10359117,Buffalo Italia FC,91257538,Medina Mustangs FC,,,scheduled,,Sahlen's Sports Park Flash Fields 1
+11566191,116112418,Championship,league,7258,SF1,2026-08-04,8:30 pm,10359117,Buffalo Italia FC,91257538,Medina Mustangs FC,,,scheduled,,Buffalo State Coyer Field
+11566192,116112418,Championship,league,7259,SF2,2026-08-05,7:30 pm,10359092,Ukraine,95088186,Sporting Cavs,,,scheduled,,D'Youville College Dobson Field
 11566193,116112418,Championship,league,7260,CHAMP,2026-08-09,5:45 pm,,,,,,,scheduled,,Nichols School Peek
 11566138,116112418,Championship,league,7205,,2026-04-26,2:00 pm,106801546,Rance FC,75479641,Williamsville Willies,2,1,played,,Sahlen's Sports Park Flash Fields 1
 11566134,116112418,Championship,league,7201,,2026-04-26,4:00 pm,110307361,Queen City Gunners,10359092,Ukraine,0,1,played,,Nichols School Peek
@@ -294,8 +294,8 @@ game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id
 11566457,116112421,3rd Division,league,34,,2026-07-23,6:30 pm,112652871,Badger Academy,112652891,Mavericks FC,1,0,played,,Mulroy Park Pierce Field
 11566480,116112421,3rd Division,league,57,QF2,2026-07-26,6:00 pm,35216066,Nanner FC,100607781,Lake Shore FC,8,1,played,,Buffalo State Coyer Field
 11566479,116112421,3rd Division,league,56,QF1,2026-07-26,6:00 pm,75479677,nWo FC,112652871,Badger Academy,2,2,played,,Grand Island High School
-11566541,116112419,4th Divison,league,9458,SF1,2026-08-02,6:00 pm,106802178,Queen City AFC,10359062,Tonawanda United,,,scheduled,,Buffalo State Coyer Field
-11566542,116112419,4th Divison,league,9459,SF2,2026-08-02,8:00 pm,116113117,Flamingo FC,110307848,North Collins United,,,scheduled,,Sahlen's Sports Park Flash Fields 2
+11566541,116112419,4th Divison,league,9458,SF1,2026-08-02,6:00 pm,106802178,Queen City AFC,10359062,Tonawanda United,1,1,played,,Buffalo State Coyer Field
+11566542,116112419,4th Divison,league,9459,SF2,2026-08-06,8:30 pm,116113117,Flamingo FC,110307848,North Collins United,,,scheduled,,Tapestry Charter School Field
 11566543,116112419,4th Divison,league,9460,CHAMP,2026-08-09,1:15 pm,106802178,Queen City AFC,,,,,scheduled,,Nichols School Peek
 11566517,116112419,4th Divison,league,9434,,2026-04-26,2:00 pm,106802178,Queen City AFC,10359077,WNY United Reds,4,0,played,,Nichols School Peek
 11566525,116112419,4th Divison,league,9442,,2026-04-26,2:00 pm,116113117,Flamingo FC,75479695,Big Green SC,3,0,played,,Sahlen's Sports Park Flash Fields 2
