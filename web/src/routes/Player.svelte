@@ -102,6 +102,9 @@
             </tbody>
           </table>
         </div>
+        {#if s.note}
+          <div class="prov">{s.note}</div>
+        {/if}
       </section>
     {/each}
 

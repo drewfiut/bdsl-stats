@@ -1,5 +1,5 @@
 <script>
-  import { loadBoard, POINTS_PER_GOAL, POINTS_PER_ASSIST } from '../lib/data.js';
+  import { loadBoard, withPending, pendingNote, POINTS_PER_GOAL, POINTS_PER_ASSIST } from '../lib/data.js';
 
   // Cap rows injected into the DOM so 12 seasons stay snappy; search filters the full set
   // first, so anyone can still reach a specific player/season (render_html.DISPLAY_CAP).
@@ -35,10 +35,20 @@
   );
   const nScorers = $derived(players.filter((p) => p.pts > 0).length);
 
+  // Record-chase rows use PROVISIONAL totals: the confirmed stats.csv figure plus whatever
+  // bdsl.org's own roster pages already show but the stats element hasn't recomputed yet
+  // (data.js:pendingByPerson, DATA.md §5.8). Without this the page ranks a live-season player
+  // against settled historical seasons using a number bdsl.org itself has already moved past.
+  // Marked with a small dot in the table so the figure is never passed off as confirmed; the
+  // pending count is spelled out on hover. Only the live season ever has a non-zero pend.
+  // Totals, the Lg/Cup/O35 split and the panel breakdown all move together (data.js:withPending),
+  // so a provisional figure still equals the sum of its own parts. Shared with the player page.
+  const provisional = $derived(players.map(withPending));
+
   // ---- derived, filtered + sorted + capped list (render_html.render) ----
   const filtered = $derived.by(() => {
     const term = search.trim().toLowerCase();
-    let list = players.filter((p) => {
+    let list = provisional.filter((p) => {
       if (scorersOnly && p.pts <= 0) return false;
       if (season && p.season !== season) return false;
       if (!term) return true;
@@ -165,6 +175,9 @@
                         <div class="r">{c.gp || '–'}</div>
                       {/each}
                     </div>
+                    {#if p.pendG || p.pendA}
+                      <div class="prov">{pendingNote(p)}</div>
+                    {/if}
                   </div>
                 </td>
               </tr>

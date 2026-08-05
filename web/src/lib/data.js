@@ -72,7 +72,77 @@ function pythagoreanExpectedPoints(gf, ga, gp) {
 
 // Aggregate one season's tidy stats rows into player-season objects (aggregate.build_from_store
 // + Player.add_row/finalize), then shape each like render_html._player_json.
-function aggregateSeason(rows, sid, seasonLabel, live) {
+// Goals/assists bdsl.org's live per-club roster pages already show that the stats element -- the
+// source of stats.csv -- hasn't recomputed yet. Written by lagcheck.py; see DATA.md §4.7/§5.8.
+// Netted per person, so a manager's downward correction subtracts as well as a new game adding.
+// Only the newest check_date counts (the file is append-only across days, like stats.csv), and
+// rows with no person_key are skipped -- cup roster pages carry no player links, so an unmatched
+// cup line can't be attributed to anyone.
+// Each row carries its own competition and comp_type, so the deltas split the same three ways
+// the board's Lg/Cup/O35 columns do -- without that, a provisional total wouldn't equal the sum
+// of its own per-competition parts.
+function pendingByPerson(lagRows) {
+  const out = new Map();
+  if (!lagRows.length) return out;
+  let latest = '';
+  for (const r of lagRows) if (r.check_date > latest) latest = r.check_date;
+  for (const r of lagRows) {
+    if (r.check_date !== latest || !r.person_key) continue;
+    let cur = out.get(r.person_key);
+    if (!cur) {
+      cur = { g: 0, a: 0, byType: { league: [0, 0], cup: [0, 0], over35: [0, 0] }, byComp: new Map() };
+      out.set(r.person_key, cur);
+    }
+    const g = num(r.d_g), a = num(r.d_a);
+    cur.g += g;
+    cur.a += a;
+    const bt = cur.byType[r.comp_type];
+    if (bt) { bt[0] += g; bt[1] += a; }
+    const bc = cur.byComp.get(r.competition) || [0, 0];
+    bc[0] += g; bc[1] += a;
+    cur.byComp.set(r.competition, bc);
+  }
+  return out;
+}
+
+const EMPTY_PENDING = { g: 0, a: 0, byType: { league: [0, 0], cup: [0, 0], over35: [0, 0] }, byComp: new Map() };
+
+// Apply a player-season's pending deltas, returning a provisional copy (or the row untouched when
+// nothing is pending). Totals, the Lg/Cup/O35 split and the per-competition breakdown all move
+// together, so a provisional figure still equals the sum of its own parts. New arrays/objects
+// throughout: the [g, a] pairs come straight off the shared board objects, and mutating them would
+// leak provisional numbers into views that deliberately show confirmed figures.
+export function withPending(p) {
+  const pendG = p.pendG || 0, pendA = p.pendA || 0;
+  if (!pendG && !pendA) return p;
+  const g = p.g + pendG, a = p.a + pendA;
+  const pt = p.pendByType || EMPTY_PENDING.byType;
+  const pc = p.pendByComp || EMPTY_PENDING.byComp;
+  const add = (pair, d) => [pair[0] + d[0], pair[1] + d[1]];
+  return {
+    ...p,
+    g, a,
+    pts: POINTS_PER_GOAL * g + POINTS_PER_ASSIST * a,
+    lg: add(p.lg, pt.league),
+    cup: add(p.cup, pt.cup),
+    o35: add(p.o35, pt.over35),
+    comps: p.comps.map((c) => {
+      const d = pc.get(c.c);
+      return d ? { ...c, g: c.g + d[0], a: c.a + d[1] } : c;
+    }),
+  };
+}
+
+// One sentence reconciling a provisional figure back to the confirmed one it came from, for the
+// note shown under whichever view is displaying it. `p` must be a withPending() result.
+export function pendingNote(p) {
+  const bits = [];
+  if (p.pendG) bits.push(`${p.pendG > 0 ? '+' : ''}${p.pendG} goal${Math.abs(p.pendG) === 1 ? '' : 's'}`);
+  if (p.pendA) bits.push(`${p.pendA > 0 ? '+' : ''}${p.pendA} assist${Math.abs(p.pendA) === 1 ? '' : 's'}`);
+  return `Provisional: ${p.g - (p.pendG || 0)}G ${p.a - (p.pendA || 0)}A confirmed, ${bits.join(' and ')} showing on bdsl.org's team pages but not yet in the league's season totals.`;
+}
+
+function aggregateSeason(rows, sid, seasonLabel, live, pending = new Map()) {
   const players = new Map(); // person_key -> accumulator
 
   for (const row of rows) {
@@ -113,6 +183,8 @@ function aggregateSeason(rows, sid, seasonLabel, live) {
       .slice()
       .sort((x, y) => (-(x.g + x.a) - -(y.g + y.a)) || x.c.localeCompare(y.c));
 
+    const pend = pending.get(p.pk) || EMPTY_PENDING;
+
     out.push({
       pk: p.pk,
       name,
@@ -122,6 +194,13 @@ function aggregateSeason(rows, sid, seasonLabel, live) {
       teams,
       g: p.g,
       a: p.a,
+      // Not folded into g/a/pts: those stay the confirmed, stats.csv-sourced figures every other
+      // view reads. A view that wants the provisional total adds these itself (see
+      // BestSingleSeasons.svelte) so the choice is explicit at the point of display.
+      pendG: pend.g,
+      pendA: pend.a,
+      pendByType: pend.byType,
+      pendByComp: pend.byComp,
       pts: POINTS_PER_GOAL * p.g + POINTS_PER_ASSIST * p.a,
       gp: p.gp,
       lg: p.byType.league,
@@ -157,16 +236,19 @@ async function buildBoard() {
 
   const perSeason = await Promise.all(
     ids.map(async (sid) => {
-      const [rows, teams, comps, games, gameStats, gameReports] = await Promise.all([
+      const [rows, teams, comps, games, gameStats, gameReports, lagCheck] = await Promise.all([
         fetchCsv(`${sid}/stats.csv`),
         fetchJson(`${sid}/teams.json`).catch(() => []), // some seasons may lack standings
         fetchJson(`${sid}/competitions.json`).catch(() => []), // carries each comp's champion
         fetchCsv(`${sid}/games.csv`).catch(() => []),
         fetchCsv(`${sid}/game_stats.csv`).catch(() => []), // per-game backfill; some seasons still missing
         fetchCsv(`${sid}/game_reports.csv`).catch(() => []), // per-game backfill; some seasons still missing
+        // Only the live season can have pending numbers, and a dev server answers a missing file
+        // with the SPA's index.html (a 200 full of HTML) rather than a 404, so skip the other 17.
+        isLive(seasons[sid]) ? fetchCsv(`${sid}/lag_check.csv`).catch(() => []) : [],
       ]);
       const label = seasons[sid]?.label || sid;
-      return { sid, label, live: isLive(seasons[sid]), rows: latestSnapshotRows(rows), teams, comps, games, gameStats, gameReports };
+      return { sid, label, live: isLive(seasons[sid]), rows: latestSnapshotRows(rows), teams, comps, games, gameStats, gameReports, pending: pendingByPerson(lagCheck) };
     })
   );
 
@@ -186,7 +268,7 @@ async function buildBoard() {
   const allCompetitions = [];
   let dataAsOf = '';
   for (const s of perSeason) {
-    allPlayers.push(...aggregateSeason(s.rows, s.sid, s.label, s.live));
+    allPlayers.push(...aggregateSeason(s.rows, s.sid, s.label, s.live, s.pending));
     for (const t of s.teams) {
       allTeamStandings.push({ ...t, sid: s.sid, seasonLabel: s.label, live: s.live });
     }
@@ -301,7 +383,9 @@ function displayName(reg, fallback) {
 }
 
 export function buildProfile(allPlayers, playersRegistry, personKey) {
-  const rows = allPlayers.filter((p) => p.pk === personKey);
+  // Provisional, matching the Best Single Season board: a player's own page showing a smaller
+  // total than the board that links to it would read as a bug (see withPending / DATA.md §5.8).
+  const rows = allPlayers.filter((p) => p.pk === personKey).map(withPending);
   if (!rows.length) return null;
 
   // Identity: prefer the registry (authoritative), fall back to the CSV display name.
@@ -312,16 +396,21 @@ export function buildProfile(allPlayers, playersRegistry, personKey) {
   // Newest season first (sid like "2026-summer" sorts correctly as a string).
   rows.sort((a, b) => b.sid.localeCompare(a.sid));
 
-  const career = { g: 0, a: 0, pts: 0, gp: 0, seasons: rows.length, comps: 0 };
+  const career = { g: 0, a: 0, pts: 0, gp: 0, seasons: rows.length, comps: 0, pendG: 0, pendA: 0 };
   const seasons = rows.map((r) => {
     career.g += r.g; career.a += r.a; career.pts += r.pts; career.gp += r.gp;
     career.comps += r.comps.length;
+    career.pendG += r.pendG || 0; career.pendA += r.pendA || 0;
     return {
       sid: r.sid,
       label: r.season,
       live: !!r.live,
       agg: { g: r.g, a: r.a, pts: r.pts, gp: r.gp },
       comps: r.comps,
+      // Non-zero only for the live season; drives the provisional note under that season's block.
+      pendG: r.pendG || 0,
+      pendA: r.pendA || 0,
+      note: (r.pendG || r.pendA) ? pendingNote(r) : '',
     };
   });
 

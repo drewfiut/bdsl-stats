@@ -181,6 +181,16 @@ tr.champ td.l { font-weight:700; }
 .pts { font-weight:750; color:var(--navy2); }
 .g { color:var(--g); font-weight:650; } .a { color:var(--a); font-weight:650; }
 .z { color:var(--muted); opacity:.5; }
+/* Note shown inside a row's expanded panel when that player-season's totals include goals/assists
+   bdsl.org's team pages show but the league's season totals haven't picked up yet (DATA.md §5.8).
+   Kept out of the main row so the table stays clean -- the qualifier is there for anyone who
+   opens the row, without putting an asterisk on the headline number. */
+.prov { margin-top:10px; padding-top:8px; border-top:1px solid var(--line); color:var(--muted);
+  font-size:11px; line-height:1.45; }
+/* Inside a Best Single Season row's expanded panel the note sits under the narrow competition
+   grid, so it keeps that grid's measure rather than stretching the full table width. On the
+   player page it sits at section level with no such neighbour, and runs full width. */
+.box .prov { max-width:560px; }
 .caret { display:inline-block; width:10px; color:var(--muted); font-size:10px; transition:transform .15s; }
 tr.main.open .caret { transform:rotate(90deg); }
 tr.detail td { background:var(--hover); padding:0; }
