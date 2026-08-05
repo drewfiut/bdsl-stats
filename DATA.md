@@ -46,6 +46,7 @@ data/
     games.csv                  every game played, with score / round label (the game fact table)
     game_stats.csv             per-player scoring lines from each game's Match Report
     game_reports.csv           capture ledger for Match Reports (which games are done)
+    lag_check.csv              diagnostic only: element-vs-roster-page disagreements (§4.7)
 ```
 
 Seasons currently present: `2014-summer` … `2026-summer` (11 historical + the live season).
@@ -143,7 +144,7 @@ Header order is fixed:
 | Column | Type on disk | Meaning |
 |---|---|---|
 | `snapshot_date` | `YYYY-MM-DD` | The "league day" this snapshot belongs to (see §5.1). Group/filter on this. |
-| `fetched_at` | ISO datetime | Wall-clock time the snapshot was fetched. |
+| `fetched_at` | ISO datetime | Wall-clock time the snapshot was fetched, in `config.LEAGUE_TZ` with a UTC offset (`2026-08-04T19:53:24-04:00`). Rows written before Aug 2026 have no offset and are league-local. |
 | `person_key` | string | Global person id → join to `players.json` and across seasons. |
 | `name` | string | Display name at fetch time (nickname if the person has one, else first + last). Convenience copy; `players.json` is authoritative for identity. |
 | `tg` | string | Competition team-group id → join to `competitions.json` / `teams.json`. |
@@ -240,9 +241,33 @@ its own run. Not a fact table for analysis — `game_stats.csv` is. Header order
 | `game_key` | string | → join to `games.csv` / `game_stats.csv`. |
 | `tg` | string | Competition team-group id (denormalized). |
 | `report_url` | string | Full URL fetched, `config.ELEMENTS_BASE + report_path`. |
-| `captured_at` | ISO datetime | Wall-clock time of this capture attempt. |
+| `captured_at` | ISO datetime | Wall-clock time of this capture attempt, same format as `fetched_at` (the two are compared directly in `update_data.py`). |
 | `status` | string | `"captured"` (parsed successfully — any scoring lines are in `game_stats.csv`; a clean 0–0-type report with no recorded events is still "captured" with no rows), `"missing"` (no Match Report exists under any candidate section — `backfill_reports.py` probes the season's league/cup section ids), or `"error"` (fetch/parse failed). All three put the game_key *in the ledger*, so — like a `"captured"` row — it's only retried within the recent-game recapture window (see §5.7), not on every run. |
 | `referees` | string | `"Name (ROLE); Name (ROLE)"` for however many officials the report lists; `""` if none or on error. |
+
+---
+
+### 4.7 `<season>/lag_check.csv`
+
+**Diagnostic only — nothing reads this to build the site.** Written by `lagcheck.py`, which is
+deliberately *not* wired into `collect.py`. It records how far the stats element (the source of
+`stats.csv`) trails the live per-club Team Roster pages, which render the same manager-entered
+numbers without waiting for Demosphere to recompute — see §5.8 for what the file is for and how
+to read a lag out of it. One dated row per player whose two readings disagree; players who agree
+are not written, and re-running on the same `check_date` replaces that date's rows.
+
+| Column | Type on disk | Meaning |
+|---|---|---|
+| `check_date` | date | League-day of the check (same 3am boundary as `snapshot_date`, §5.1). |
+| `checked_at` | ISO datetime | Wall-clock time of the run. |
+| `tg` / `competition` / `comp_type` | string | The competition (denormalized, as elsewhere). |
+| `club_id` / `team_name` | string | The club whose roster page was read. |
+| `person_key` | string | The element's key when the row matched; the roster page's own key when it didn't; `""` for an unmatched cup row (cup roster pages carry no player links — see §5.8). |
+| `name` | string | Name verbatim from the roster page, `"Last, First"`. |
+| `page_gp` / `page_g` / `page_a` | int | Games played / goals / assists as the roster page shows them. |
+| `el_gp` / `el_g` / `el_a` | int | The same three from the stats element, fetched in the same run. `0/0/0` when the player has no element record at all. |
+| `d_gp` / `d_g` / `d_a` | int | `page − element`. Positive = the roster page is ahead (the usual case: entered but not yet recomputed); negative = the element is ahead (an earlier entry was edited downward). |
+| `matched` | string | How the two rows were joined: `"key"` (person key, league/Over-35), `"name"` (normalized name, the only option on cup pages), or `""` (no element record found). |
 
 ---
 
@@ -354,6 +379,44 @@ exist for the platform to have rendered it at all, so `game_stats.csv` coverage 
 `stats.csv`'s g/a availability (league from 2014, cups from ~2016) but can be sparser within
 that range wherever a report page is missing, malformed, or a jersey/name collides ambiguously
 on the roster.
+
+### 5.8 Why the stats element stays the source of truth (important)
+
+There are three views of the same per-player numbers on bdsl.org, and they do **not** agree at
+any given moment:
+
+| Source | What it is | Fresh? | Complete? |
+|---|---|---|---|
+| **Stats element (E 928)** — `parse_stats.py` → `stats.csv` | Pre-aggregated season totals per competition. Also what bdsl.org's own "Top 10 Stats" leaders page renders. | No — recomputed on Demosphere's schedule | Yes, every competition |
+| **Team Roster page** — `teampages.py` | Per-club table on `TEAM.html`, rendered live from the same manager-entered data. | Yes | Yes, but no person keys on cup pages |
+| **Match Reports** — `matchreports.py` → `game_stats.csv` | Per-game scoring lines. | Yes | **No** — see below |
+
+`stats.csv` is sourced from the element, and that is a deliberate choice on **completeness and
+identity**, not freshness:
+
+* **Match Reports cannot replace it.** Cup reports render `** Players are hidden **` — no
+  PLAYED/STATS tables at all — so `game_stats.csv` has *zero* cup rows league-wide. In league +
+  Over-35 play, reports frequently carry only one of the two teams' lines. Measured across
+  2026-summer, match reports undercount the element by ~198 goals over ~151 players, while the
+  element undercounts reports by ~3 goals over 3 players.
+* **Roster pages cannot replace it either.** They're live and complete, but cup roster rows are
+  plain text with no player link, so they carry no `person_key` — exactly the competitions where
+  there are no Match Reports to fall back on. Switching to them means fuzzy name-matching for
+  cup identity, which breaks §5.5's cross-season joins. They also cost one request per club per
+  competition (~150/run) instead of one per competition (~10).
+
+The element's cost is a **lag**: after a manager enters or edits a game, the roster page moves
+immediately and the element follows some time later. During that window the site shows a figure
+a user can see is different on bdsl.org's team page — though it still agrees with bdsl.org's own
+leaders page, which reads the same element.
+
+**The length of that lag is not currently established**, which is what `lag_check.csv` (§4.7)
+exists to measure. To read a lag out of it: a disagreement's *first* `check_date` is roughly when
+the manager entered the change, and the day after its *last* `check_date` is when the element
+caught up. Run `python3 lagcheck.py` daily and the distribution builds itself. Do **not** infer
+lag from `stats.csv` snapshots alone — the element is the only time series there, so a late jump
+is equally explained by a manager entering late, and the two are indistinguishable without the
+roster-page probe.
 
 ---
 
