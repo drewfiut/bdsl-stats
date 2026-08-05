@@ -5,6 +5,14 @@ on:
     branches: [main]
   workflow_dispatch:
   workflow_call:
+    inputs:
+      ref:
+        description: >-
+          Commit/branch to build. A reusable workflow otherwise inherits the CALLER's commit,
+          which for the refresh workflow predates the data commit it just pushed -- so without
+          this Pages would publish data one refresh stale.
+        type: string
+        required: false
 
 # Allow the workflow to publish to Pages.
 permissions:
@@ -22,6 +30,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.ref || github.sha }}
       - uses: actions/setup-node@v7
         with:
           node-version: 20
