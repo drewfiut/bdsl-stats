@@ -104,7 +104,7 @@ def backfill_season(sid: str, force: bool = False) -> None:
     matched_rows = 0
 
     def stamp():
-        return dt.datetime.now().isoformat(timespec="seconds")
+        return store.league_now().isoformat(timespec="seconds")
 
     for c in comps:
         played = [g for g in games_by_tg.get(c["tg"], []) if g.status == "played"]

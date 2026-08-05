@@ -31,6 +31,9 @@ import datetime as dt
 import json
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
+from zoneinfo import ZoneInfo
+
+import config
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 
@@ -94,13 +97,22 @@ def _save_json(path: Path, obj) -> None:
 
 # ---- snapshot dating -----------------------------------------------------------------
 
+def league_now() -> dt.datetime:
+    """Current time in the league's timezone, offset-aware.
+
+    Always use this instead of dt.datetime.now(): collection runs both on a laptop in
+    America/New_York and on a UTC CI runner, and the two must agree on what "now" means.
+    """
+    return dt.datetime.now(ZoneInfo(config.LEAGUE_TZ))
+
+
 def league_date(cutoff_hour: int, now: Optional[dt.datetime] = None) -> str:
     """The 'league day' an instant belongs to: the date of the most recent `cutoff_hour`:00.
 
     With cutoff_hour=3, everything from 3am today until 3am tomorrow is dated today, so the
     first run after 3am produces a new day's snapshot and later runs reuse it.
     """
-    now = now or dt.datetime.now()
+    now = now or league_now()
     d = now.date()
     if now.hour < cutoff_hour:
         d = d - dt.timedelta(days=1)

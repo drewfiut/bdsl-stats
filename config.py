@@ -52,8 +52,13 @@ HISTORY_YEARS = [2008, 2009, 2010, 2011, 2012, 2013,
 POINTS_PER_GOAL = 2
 POINTS_PER_ASSIST = 1
 
-# A new stats snapshot is collected on the first run after this local hour each day, so the
-# first run of the day refreshes results and later runs reuse the day's snapshot. 3 = 3am.
+# The league's timezone. Every "local" time in this project means this zone, NOT the machine's:
+# collection runs on a UTC CI runner, so relying on the system clock's zone would shift the
+# snapshot cutoff and stamp timestamps ~4-5 hours ahead of the league's actual wall clock.
+LEAGUE_TZ = "America/New_York"
+
+# A new stats snapshot is collected on the first run after this hour (in LEAGUE_TZ) each day, so
+# the first run of the day refreshes results and later runs reuse the day's snapshot. 3 = 3am.
 STATS_REFRESH_HOUR = 3
 
 # Label used for the Over-35 competition in the standings JSON (tgnm value).

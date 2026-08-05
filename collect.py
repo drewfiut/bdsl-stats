@@ -179,7 +179,7 @@ def _capture_reports(sid: str, game_rows: List[dict], rows: List[dict], players:
             referees = "; ".join(f"{name} ({role})" for name, role in report.referees)
             new_reports.append({
                 "game_key": key, "tg": g["tg"], "report_url": url,
-                "captured_at": dt.datetime.now().isoformat(timespec="seconds"),
+                "captured_at": store.league_now().isoformat(timespec="seconds"),
                 "status": "captured", "referees": referees,
             })
             captured += 1
@@ -192,7 +192,7 @@ def _capture_reports(sid: str, game_rows: List[dict], rows: List[dict], players:
                 continue
             new_reports.append({
                 "game_key": key, "tg": g["tg"], "report_url": url,
-                "captured_at": dt.datetime.now().isoformat(timespec="seconds"),
+                "captured_at": store.league_now().isoformat(timespec="seconds"),
                 "status": "error", "referees": "",
             })
 
@@ -233,7 +233,10 @@ def collect(season: Optional[dict] = None, progress: bool = False,
 
     # Historical seasons don't change, so their snapshot date is just the collection date.
     snapshot_date = store.league_date(config.STATS_REFRESH_HOUR)
-    fetched_at = dt.datetime.now().isoformat(timespec="seconds")
+    # Offset-aware (e.g. ...T19:53:24-04:00) so the site renders the right instant no matter
+    # which timezone the collector ran in. A bare local time would be read as the *viewer's*
+    # local time, showing CI-collected data ~4 hours in the future.
+    fetched_at = store.league_now().isoformat(timespec="seconds")
 
     store.upsert_season(season)
     year = int(sid.split("-")[0])
