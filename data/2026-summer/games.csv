@@ -59,9 +59,9 @@ game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id
 11566126,116112414,Premier,league,7053,,2026-07-20,8:30 pm,10350991,BSC Raiders,91256980,Olean 1854 FC,2,1,played,,Buffalo State Coyer Field
 11566130,116112414,Premier,league,7057,QF2,2026-07-26,4:00 pm,75159915,NMB FC,91256980,Olean 1854 FC,4,3,played,,Nichols School Peek
 11566129,116112414,Premier,league,7056,QF1,2026-07-26,7:30 pm,18647016,Buffalo United SS,10350991,BSC Raiders,4,3,played,,D'Youville College Dobson Field
-11566191,116112418,Championship,league,7258,SF1,2026-08-04,8:30 pm,10359117,Buffalo Italia FC,91257538,Medina Mustangs FC,,,scheduled,,Buffalo State Coyer Field
-11566192,116112418,Championship,league,7259,SF2,2026-08-05,7:30 pm,10359092,Ukraine,95088186,Sporting Cavs,,,scheduled,,D'Youville College Dobson Field
-11566193,116112418,Championship,league,7260,CHAMP,2026-08-09,5:45 pm,,,,,,,scheduled,,Nichols School Peek
+11566191,116112418,Championship,league,7258,SF1,2026-08-04,8:30 pm,10359117,Buffalo Italia FC,91257538,Medina Mustangs FC,0,1,played,,Buffalo State Coyer Field
+11566192,116112418,Championship,league,7259,SF2,2026-08-05,7:30 pm,10359092,Ukraine,95088186,Sporting Cavs,0,2,played,,D'Youville College Dobson Field
+11566193,116112418,Championship,league,7260,CHAMP,2026-08-09,5:45 pm,95088186,Sporting Cavs,91257538,Medina Mustangs FC,,,scheduled,,Nichols School Peek
 11566138,116112418,Championship,league,7205,,2026-04-26,2:00 pm,106801546,Rance FC,75479641,Williamsville Willies,2,1,played,,Sahlen's Sports Park Flash Fields 1
 11566134,116112418,Championship,league,7201,,2026-04-26,4:00 pm,110307361,Queen City Gunners,10359092,Ukraine,0,1,played,,Nichols School Peek
 11566136,116112418,Championship,league,7203,,2026-04-26,4:00 pm,75159993,Revolution SC,91257538,Medina Mustangs FC,5,0,played,,Nichols School Strauss Truscott
@@ -120,7 +120,7 @@ game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id
 11566189,116112418,Championship,league,7256,QF1,2026-07-26,4:00 pm,75159993,Revolution SC,91257538,Medina Mustangs FC,0,2,played,,Nichols School Strauss Truscott
 11566190,116112418,Championship,league,7257,QF2,2026-07-26,6:00 pm,110307361,Queen City Gunners,95088186,Sporting Cavs,1,2,played,,Nichols School Strauss Truscott
 11566247,116112416,1st Division,league,7454,SF2,2026-08-02,6:00 pm,114564610,Mandem FC,46021389,Outlaws,,,scheduled,,Nichols School Peek
-11566246,116112416,1st Division,league,7453,SF1,2026-08-02,6:00 pm,75479680,Honey Badgers,110307763,Buffalo Night,,,scheduled,,Nichols School Strauss Truscott
+11566246,116112416,1st Division,league,7453,SF1,2026-08-02,6:00 pm,75479680,Honey Badgers,110307763,Buffalo Night,0,1,played,,Nichols School Strauss Truscott
 11566248,116112416,1st Division,league,7455,CHAMP,2026-08-09,3:45 pm,110307763,Buffalo Night,46021389,Outlaws,,,scheduled,,Nichols School Strauss Truscott
 11566194,116112416,1st Division,league,7401,,2026-04-26,2:00 pm,10359005,Clarence Coyotes,114564698,Kunz Premier,4,3,played,,Nichols School Strauss Truscott
 11566195,116112416,1st Division,league,7402,,2026-04-26,6:00 pm,75479680,Honey Badgers,75479662,Celtic Brigade,5,1,played,,Sahlen's Sports Park Flash Fields 1
@@ -440,7 +440,7 @@ game_key,tg,competition,comp_type,game_number,round_label,date,time,home_club_id
 11574606,116537290,Tehel Cup,cup,521,QF1,2026-07-23,6:30 pm,26891552,Buffalo Celtic,95088661,Westside Blitz,0,5,played,,Tapestry Charter School Field
 11574609,116537290,Tehel Cup,cup,524,QF3,2026-07-23,8:30 pm,10350991,BSC Raiders,10359035,Queenston FC,5,3,played,,Sahlen's Sports Park Flash Fields 2
 11574610,116537290,Tehel Cup,cup,525,SF2,2026-07-30,6:30 pm,18647016,Buffalo United SS,26895907,Amherst Sharpshooters,0,2,played,,Sahlen's Sports Park Flash Fields 1
-11574611,116537290,Tehel Cup,cup,526,SF1,2026-07-30,8:30 pm,10350991,BSC Raiders,95088661,Westside Blitz,,,scheduled,,Sahlen's Sports Park Flash Fields 1
+11574611,116537290,Tehel Cup,cup,526,SF1,2026-07-30,8:30 pm,10350991,BSC Raiders,95088661,Westside Blitz,5,3,played,,Sahlen's Sports Park Flash Fields 1
 11574612,116537290,Tehel Cup,cup,527,CHMP,2026-08-06,8:30 pm,26895907,Amherst Sharpshooters,10350991,BSC Raiders,,,scheduled,,Sahlen's Sports Park Flash Fields 1
 11574641,116537289,Wood Cup,cup,300,,2026-04-30,9:00 pm,114564698,Kunz Premier,114564787,WNY Phoenix,1,2,played,,Sahlen's Sports Park Flash Fields 2
 11574642,116537289,Wood Cup,cup,301,,2026-05-07,6:30 pm,110307763,Buffalo Night,12579571,Devils,4,1,played,,Buffalo State Coyer Field

@@ -319,7 +319,7 @@
     "away_w": 4,
     "away_l": 0,
     "away_d": 1,
-    "yellows": 8,
+    "yellows": 9,
     "reds": 0,
     "position": 1
   },
@@ -508,7 +508,7 @@
     "away_w": 1,
     "away_l": 4,
     "away_d": 0,
-    "yellows": 4,
+    "yellows": 5,
     "reds": 0,
     "position": 6
   },
@@ -643,7 +643,7 @@
     "away_w": 1,
     "away_l": 1,
     "away_d": 3,
-    "yellows": 11,
+    "yellows": 12,
     "reds": 0,
     "position": 3
   },
@@ -1831,8 +1831,8 @@
     "away_w": 2,
     "away_l": 2,
     "away_d": 1,
-    "yellows": 10,
-    "reds": 0,
+    "yellows": 12,
+    "reds": 1,
     "position": 5
   },
   {

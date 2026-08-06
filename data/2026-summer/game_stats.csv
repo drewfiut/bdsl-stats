@@ -47,6 +47,14 @@ game_key,tg,competition,comp_type,date,round_label,side,club_id,person_key,name,
 11566129,116112414,Premier,league,2026-07-26,QF1,away,10350991,102043121,"Quinn, Riley",16,0,0,1,0,name
 11566129,116112414,Premier,league,2026-07-26,QF1,away,10350991,115245786,"Stokes, Anfernee",17,0,0,1,0,name
 11566129,116112414,Premier,league,2026-07-26,QF1,away,10350991,92106208,"Williamson, Robert",5,2,0,0,0,name
+11566191,116112418,Championship,league,2026-08-04,SF1,home,10359117,98647818,"Marino, Dominic",4,0,0,1,0,name
+11566191,116112418,Championship,league,2026-08-04,SF1,away,91257538,116665026,"Eisenhauer, Jameson",21,1,0,0,0,name
+11566191,116112418,Championship,league,2026-08-04,SF1,away,91257538,91680836,"Leonard, Ethan",23,0,0,1,0,name
+11566192,116112418,Championship,league,2026-08-05,SF2,away,95088186,75432073,"Cordovani, Matt",1,1,0,0,0,name
+11566192,116112418,Championship,league,2026-08-05,SF2,away,95088186,68486922,"Dadswell, Jake",17,0,0,1,0,name
+11566192,116112418,Championship,league,2026-08-05,SF2,away,95088186,113165806,"Lochocki, Jake",21,0,0,1,0,name
+11566192,116112418,Championship,league,2026-08-05,SF2,away,95088186,116791696,"Sulemani, Kapela",6,1,0,0,0,name
+11566192,116112418,Championship,league,2026-08-05,SF2,away,95088186,113002480,"Yoerg, Joshua",9,0,0,0,1,name
 11566186,116112418,Championship,league,2026-07-19,,home,110307361,75344311,"Crane, Aaron",27,1,0,0,0,name
 11566186,116112418,Championship,league,2026-07-19,,home,110307361,115155540,"Gilbert, James",2,0,1,0,0,name
 11566186,116112418,Championship,league,2026-07-19,,home,110307361,113368666,"Horton, Brandon",22,2,1,0,0,name
@@ -91,6 +99,8 @@ game_key,tg,competition,comp_type,date,round_label,side,club_id,person_key,name,
 11566190,116112418,Championship,league,2026-07-26,QF2,away,95088186,116664202,"Celik, Alper",4,1,0,0,0,name
 11566190,116112418,Championship,league,2026-07-26,QF2,away,95088186,116664286,"Siford, Noah",33,0,1,0,0,name
 11566190,116112418,Championship,league,2026-07-26,QF2,away,95088186,116791696,"Sulemani, Kapela",6,1,0,0,0,name
+11566246,116112416,1st Division,league,2026-08-02,SF1,away,110307763,116693646,"Aoussim, Sami",13,1,0,0,0,name
+11566246,116112416,1st Division,league,2026-08-02,SF1,away,110307763,110798004,"Dickey, Steven-Lewis",93,0,0,1,0,name
 11566198,116112416,1st Division,league,2026-07-19,,home,75479638,113260149,"Bertrand, Marx",7,0,0,1,0,name
 11566198,116112416,1st Division,league,2026-07-19,,home,75479638,113357704,"Forni, Isaac",4,0,1,0,0,name
 11566198,116112416,1st Division,league,2026-07-19,,home,75479638,110890863,"Frontuto, Evan",11,1,0,0,0,name
