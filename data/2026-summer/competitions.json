@@ -59,24 +59,24 @@
     "competition": "Tehel Cup",
     "comp_type": "cup",
     "tg": "116537290",
-    "champion_club_id": "",
-    "champion_name": "",
-    "champion_via": ""
+    "champion_club_id": "26895907",
+    "champion_name": "Amherst Sharpshooters",
+    "champion_via": "playoff"
   },
   {
     "competition": "Wood Cup",
     "comp_type": "cup",
     "tg": "116537289",
-    "champion_club_id": "",
-    "champion_name": "",
-    "champion_via": ""
+    "champion_club_id": "98469009",
+    "champion_name": "Infinity FC",
+    "champion_via": "playoff"
   },
   {
     "competition": "Matthews Cup",
     "comp_type": "cup",
     "tg": "116537291",
-    "champion_club_id": "",
-    "champion_name": "",
-    "champion_via": ""
+    "champion_club_id": "75479677",
+    "champion_name": "nWo FC",
+    "champion_via": "playoff"
   }
 ]
