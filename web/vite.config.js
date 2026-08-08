@@ -4,19 +4,28 @@ import { readFileSync, writeFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 // The data store lives in ./public/data (a symlink to ../../data), so Vite copies it verbatim
-// into dist/. But each season's stats.csv is an append-only daily time series of *cumulative*
-// season totals (store.py) -- the live season accumulates one full-roster snapshot per day and
-// grows without bound. The app only ever reads the latest snapshot (see latestSnapshotRows in
-// src/lib/data.js), so shipping the older days is pure redundant payload.
+// into dist/. But two of its files are append-only daily time series that grow without bound
+// while the app only ever reads their newest day:
 //
-// This plugin rewrites each dist/data/*/stats.csv after the build copies it, keeping only the
-// header + rows from the newest snapshot_date. The source store under ./data is untouched (it
-// stays the append-only source of truth); only the deployed copy is slimmed. snapshot_date is the
-// first CSV column and is a plain YYYY-MM-DD (never quoted/comma-bearing), so a simple first-field
-// read per line is safe -- no full CSV parse needed.
-function slimStatsSnapshots() {
+//   stats.csv     -- one full-roster snapshot of *cumulative* season totals per day (store.py);
+//                    the app keeps only the max snapshot_date (latestSnapshotRows, data.js).
+//   lag_check.csv -- one roster-vs-element disagreement row per player per day (lagcheck.py),
+//                    written on every scheduled refresh; the app keeps only the max check_date
+//                    (pendingByPerson, data.js), since an older day's deltas describe an element
+//                    state that has since moved on.
+//
+// Shipping the older days is pure redundant payload. This plugin rewrites each copy under dist/
+// after the build, keeping the header + rows from the newest date. The source store under ./data
+// is untouched -- it stays the append-only source of truth, and lag_check.csv's history is what
+// the lag distribution is read out of (DATA.md 5.8); only the deployed copy is slimmed.
+//
+// Both files carry that date as their first CSV column, a plain YYYY-MM-DD that is never quoted
+// or comma-bearing, so a simple first-field read per line is safe -- no full CSV parse needed.
+const DAILY_SERIES_FILES = ['stats.csv', 'lag_check.csv'];
+
+function slimDailySeries() {
   return {
-    name: 'slim-stats-snapshots',
+    name: 'slim-daily-series',
     apply: 'build',
     // closeBundle runs after Vite has copied publicDir into outDir, so dist/data exists here.
     closeBundle() {
@@ -30,38 +39,40 @@ function slimStatsSnapshots() {
 
       let savedBytes = 0;
       for (const dir of seasonDirs) {
-        const file = join(dataDir, dir, 'stats.csv');
-        let raw;
-        try {
-          if (!statSync(file).isFile()) continue;
-          raw = readFileSync(file, 'utf8');
-        } catch {
-          continue; // not every season dir has a stats.csv
+        for (const name of DAILY_SERIES_FILES) {
+          const file = join(dataDir, dir, name);
+          let raw;
+          try {
+            if (!statSync(file).isFile()) continue;
+            raw = readFileSync(file, 'utf8');
+          } catch {
+            continue; // not every season dir has every file (only the live one has lag_check.csv)
+          }
+
+          const lines = raw.split('\n');
+          // Drop a trailing empty line from a final newline so it doesn't count as a data row.
+          if (lines.length && lines[lines.length - 1] === '') lines.pop();
+          if (lines.length <= 1) continue; // header only (or empty) -- nothing to trim
+
+          const [header, ...rows] = lines;
+          const dateOf = (line) => line.slice(0, line.indexOf(','));
+          let latest = '';
+          for (const r of rows) {
+            const d = dateOf(r);
+            if (d > latest) latest = d;
+          }
+          const kept = rows.filter((r) => dateOf(r) === latest);
+          if (kept.length === rows.length) continue; // already a single day -- no change
+
+          const out = `${header}\n${kept.join('\n')}\n`;
+          savedBytes += Buffer.byteLength(raw) - Buffer.byteLength(out);
+          writeFileSync(file, out);
         }
-
-        const lines = raw.split('\n');
-        // Drop a trailing empty line from a final newline so it doesn't count as a data row.
-        if (lines.length && lines[lines.length - 1] === '') lines.pop();
-        if (lines.length <= 1) continue; // header only (or empty) -- nothing to trim
-
-        const [header, ...rows] = lines;
-        const snapshotDateOf = (line) => line.slice(0, line.indexOf(','));
-        let latest = '';
-        for (const r of rows) {
-          const d = snapshotDateOf(r);
-          if (d > latest) latest = d;
-        }
-        const kept = rows.filter((r) => snapshotDateOf(r) === latest);
-        if (kept.length === rows.length) continue; // already a single snapshot -- no change
-
-        const out = `${header}\n${kept.join('\n')}\n`;
-        savedBytes += Buffer.byteLength(raw) - Buffer.byteLength(out);
-        writeFileSync(file, out);
       }
 
       if (savedBytes > 0) {
         // eslint-disable-next-line no-console
-        console.log(`slim-stats-snapshots: trimmed ${(savedBytes / 1024).toFixed(0)} KiB of redundant stats.csv snapshots`);
+        console.log(`slim-daily-series: trimmed ${(savedBytes / 1024).toFixed(0)} KiB of superseded daily rows`);
       }
     },
   };
@@ -71,5 +82,5 @@ function slimStatsSnapshots() {
 // data fetch must resolve under this base. Use import.meta.env.BASE_URL in app code.
 export default defineConfig({
   base: '/bdsl-stats/',
-  plugins: [svelte(), slimStatsSnapshots()],
+  plugins: [svelte(), slimDailySeries()],
 });

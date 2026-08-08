@@ -81,19 +81,41 @@ function pythagoreanExpectedPoints(gf, ga, gp) {
 // Each row carries its own competition and comp_type, so the deltas split the same three ways
 // the board's Lg/Cup/O35 columns do -- without that, a provisional total wouldn't equal the sum
 // of its own per-competition parts.
-function pendingByPerson(lagRows) {
+// The stored d_g/d_a are NOT used as-is: they were measured against the element snapshot that
+// existed at check time, and lagcheck.py is deliberately not wired into collect.py, so stats.csv
+// refreshes daily while lag_check.csv can sit still for days. Once the element catches up, the
+// stored delta is already baked into the confirmed total and adding it again double-counts (a
+// player whose 4 pending Over-35 goals landed in stats.csv would show 12 instead of 8). So each
+// row's still-outstanding remainder is recomputed against the *current* confirmed figure --
+// page_g - confirmed_g -- which decays to zero on its own the moment the element catches up.
+// `shrink` clamps that remainder into the direction the check actually observed: a stale page
+// number that the element has since overtaken would otherwise flip sign and hide confirmed goals.
+const shrink = (raw, stored) =>
+  stored > 0 ? Math.max(0, Math.min(raw, stored))
+  : stored < 0 ? Math.min(0, Math.max(raw, stored))
+  : 0;
+
+function pendingByPerson(lagRows, statsRows) {
   const out = new Map();
   if (!lagRows.length) return out;
+  // Confirmed g/a per person per team_id ("<club_id>-<tg>"), the same grain a lag row carries.
+  const confirmed = new Map();
+  for (const r of statsRows) {
+    if (r.person_key) confirmed.set(`${r.person_key}|${r.team_id}`, [num(r.g), num(r.a)]);
+  }
   let latest = '';
   for (const r of lagRows) if (r.check_date > latest) latest = r.check_date;
   for (const r of lagRows) {
     if (r.check_date !== latest || !r.person_key) continue;
+    const [confG, confA] = confirmed.get(`${r.person_key}|${r.club_id}-${r.tg}`) || [0, 0];
+    const g = shrink(num(r.page_g) - confG, num(r.d_g));
+    const a = shrink(num(r.page_a) - confA, num(r.d_a));
+    if (!g && !a) continue;
     let cur = out.get(r.person_key);
     if (!cur) {
       cur = { g: 0, a: 0, byType: { league: [0, 0], cup: [0, 0], over35: [0, 0] }, byComp: new Map() };
       out.set(r.person_key, cur);
     }
-    const g = num(r.d_g), a = num(r.d_a);
     cur.g += g;
     cur.a += a;
     const bt = cur.byType[r.comp_type];
@@ -248,7 +270,8 @@ async function buildBoard() {
         isLive(seasons[sid]) ? fetchCsv(`${sid}/lag_check.csv`).catch(() => []) : [],
       ]);
       const label = seasons[sid]?.label || sid;
-      return { sid, label, live: isLive(seasons[sid]), rows: latestSnapshotRows(rows), teams, comps, games, gameStats, gameReports, pending: pendingByPerson(lagCheck) };
+      const latest = latestSnapshotRows(rows);
+      return { sid, label, live: isLive(seasons[sid]), rows: latest, teams, comps, games, gameStats, gameReports, pending: pendingByPerson(lagCheck, latest) };
     })
   );
 

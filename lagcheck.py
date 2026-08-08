@@ -13,8 +13,14 @@ store file are untouched, and the element remains the source of truth (see DATA.
 
 Reading the output: a disagreement's *first* `check_date` is roughly when the manager entered
 it; the day after its *last* `check_date` is when the element caught up. The span between them
-is the lag. A player who never disagrees never appears. Run it daily (it is deliberately not
-wired into collect.py) and the distribution builds itself:
+is the lag. A player who never disagrees never appears, and the distribution builds itself as the
+rows accumulate.
+
+The scheduled refresh (.github/workflows/refresh-data.yml) runs this right after update_data.py,
+so the roster reading always sits next to the element snapshot it was measured against. It stays
+out of collect.py itself: that remains a pure element collect, and this probe costs ~150 requests
+(one per club per competition) against collect's ~10, so a failure here must not take the stats
+refresh down with it. Run it by hand any time for an off-schedule reading:
 
     python3 lagcheck.py                # active season
     python3 lagcheck.py --season 2025-summer

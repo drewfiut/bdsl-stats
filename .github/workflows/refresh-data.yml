@@ -36,6 +36,17 @@ jobs:
       - name: Refresh data
         run: python update_data.py ${{ inputs.force && '--force' || '' }}
 
+      # Must run AFTER the collect, in the same job: the roster-vs-element comparison is only
+      # meaningful next to the element snapshot it was measured against, and the web app's
+      # provisional totals subtract the confirmed stats.csv figures from these roster numbers
+      # (DATA.md 5.8). Kept out of collect.py itself -- that stays a pure element collect --
+      # and non-fatal on purpose: it makes ~150 requests (one per club per competition), so a
+      # single bdsl.org hiccup must never block committing the stats refresh that already
+      # succeeded. A skipped run just leaves yesterday's rows, which the app handles.
+      - name: Roster-page lag check
+        continue-on-error: true
+        run: python lagcheck.py
+
       - name: Commit and push if changed
         id: commit
         run: |

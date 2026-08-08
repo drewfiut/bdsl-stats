@@ -249,12 +249,19 @@ its own run. Not a fact table for analysis — `game_stats.csv` is. Header order
 
 ### 4.7 `<season>/lag_check.csv`
 
-**Diagnostic only — nothing reads this to build the site.** Written by `lagcheck.py`, which is
-deliberately *not* wired into `collect.py`. It records how far the stats element (the source of
+Written by `lagcheck.py`, which the scheduled refresh runs right after `update_data.py` (it stays
+out of `collect.py` itself — see §5.8). It records how far the stats element (the source of
 `stats.csv`) trails the live per-club Team Roster pages, which render the same manager-entered
 numbers without waiting for Demosphere to recompute — see §5.8 for what the file is for and how
 to read a lag out of it. One dated row per player whose two readings disagree; players who agree
 are not written, and re-running on the same `check_date` replaces that date's rows.
+
+Two consumers, and they want different things from it. The **lag measurement** reads the whole
+append-only history (§5.8). The **web app** reads only the newest `check_date`, to show provisional
+totals on the Best Single Seasons board and player pages — and it does *not* trust the stored
+deltas; see the end of §5.8 for the rule it applies instead. The deployed copy under `dist/` is
+slimmed to that newest day by the `slim-daily-series` Vite plugin, exactly as `stats.csv` is; the
+store here keeps every day.
 
 | Column | Type on disk | Meaning |
 |---|---|---|
@@ -413,10 +420,23 @@ leaders page, which reads the same element.
 **The length of that lag is not currently established**, which is what `lag_check.csv` (§4.7)
 exists to measure. To read a lag out of it: a disagreement's *first* `check_date` is roughly when
 the manager entered the change, and the day after its *last* `check_date` is when the element
-caught up. Run `python3 lagcheck.py` daily and the distribution builds itself. Do **not** infer
+caught up. The scheduled refresh runs `python3 lagcheck.py` on every collect, so the distribution
+builds itself at that cadence — every other day, which bounds how finely a lag can be resolved.
+Run it by hand in between for a tighter reading. Do **not** infer
 lag from `stats.csv` snapshots alone — the element is the only time series there, so a late jump
 is equally explained by a manager entering late, and the two are indistinguishable without the
 roster-page probe.
+
+**Consuming `lag_check.csv` for provisional totals** (the web app's Best Single Seasons board and
+player pages): do not add a row's `d_g`/`d_a` to a confirmed `stats.csv` figure. `d_g` was measured
+against the element as it stood on that `check_date`, and the two files are not guaranteed to move
+together — the scheduled refresh runs `lagcheck.py` right after the collect, but that step is
+non-fatal, so a failed probe leaves yesterday's rows beside today's snapshot. Once the element
+catches up, the delta is already inside the confirmed total and adding it again double-counts it.
+Instead compute the still-outstanding remainder against the *current* confirmed
+figure — `page_g − confirmed_g` for that person and `team_id` (`<club_id>-<tg>`) — which decays to
+zero on its own the moment the element catches up, and clamp it into the direction the check
+observed so a page number the element has since overtaken can't flip sign and hide confirmed goals.
 
 ---
 
