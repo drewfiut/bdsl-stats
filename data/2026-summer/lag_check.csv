@@ -286,3 +286,159 @@ check_date,checked_at,tg,competition,comp_type,club_id,team_name,person_key,name
 2026-08-05,2026-08-05T08:12:09-04:00,116537291,Matthews Cup,cup,75479677,nWo FC,110991459,"Snyder, Graham",2,0,0,1,0,0,1,0,0,name
 2026-08-05,2026-08-05T08:12:09-04:00,116537291,Matthews Cup,cup,75479677,nWo FC,112823205,"Stefanski, Evan",3,3,3,2,1,3,1,2,0,name
 2026-08-05,2026-08-05T08:12:09-04:00,116537291,Matthews Cup,cup,75479677,nWo FC,11228579,"Weinert, Doug",3,0,0,2,0,0,1,0,0,name
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,91257538,Medina Mustangs FC,91680724,"Albone, Coby",11,0,0,9,0,0,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,91257538,Medina Mustangs FC,116625540,"Ardle, Oliver",6,0,2,4,0,2,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,91257538,Medina Mustangs FC,116625566,"Bligh, Aidan",6,0,1,5,0,1,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,91257538,Medina Mustangs FC,115165650,"Callard, Cole",10,8,5,8,8,3,2,0,2,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,91257538,Medina Mustangs FC,111059655,"Choate, Trent",10,0,0,8,0,0,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,91257538,Medina Mustangs FC,116665037,"Duffina, Luke",7,0,0,5,0,0,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,91257538,Medina Mustangs FC,116665026,"Eisenhauer, Jameson",7,2,1,6,2,1,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,91257538,Medina Mustangs FC,115126569,"Foley, James",12,0,0,10,0,0,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,91257538,Medina Mustangs FC,91328792,"Husung, Greg",12,3,1,10,3,1,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,91257538,Medina Mustangs FC,91680800,"Jones, Trenton",11,0,0,10,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,91257538,Medina Mustangs FC,91680836,"Leonard, Ethan",10,0,2,9,0,2,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,91257538,Medina Mustangs FC,110987692,"Martillotta, Peter",7,7,2,6,5,2,1,2,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,91257538,Medina Mustangs FC,107734772,"Mathieu, Kyan",8,0,1,6,0,1,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,91257538,Medina Mustangs FC,113362317,"Prince, Aiden",9,0,2,7,0,1,2,0,1,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,91257538,Medina Mustangs FC,101663878,"Ribbeck, Tyler",12,0,0,10,0,0,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,91257538,Medina Mustangs FC,113283331,"Rowekamp, Zak",7,0,0,6,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,91257538,Medina Mustangs FC,116671686,"Smith, Colton",4,0,0,3,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,91257538,Medina Mustangs FC,116665023,"Stern, Noah",6,0,1,4,0,1,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,91257538,Medina Mustangs FC,110798005,"Suckow, Caleb",7,0,1,6,0,1,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,95088186,Sporting Cavs,116664023,"Carriero, Danny",6,0,0,5,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,95088186,Sporting Cavs,116664202,"Celik, Alper",3,1,1,2,1,1,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,95088186,Sporting Cavs,91327260,"Cesar, Gabe",10,0,0,9,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,95088186,Sporting Cavs,111142359,"DiGaudio, Nathan",4,0,0,3,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,95088186,Sporting Cavs,115162508,"Dipalma, Cole",11,0,0,10,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,95088186,Sporting Cavs,60310797,"Drainville, Alex",10,0,3,9,0,3,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,95088186,Sporting Cavs,98843393,"Hall, Zakariah",11,2,0,10,2,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,95088186,Sporting Cavs,102145403,"Iheke, David",7,0,0,6,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,95088186,Sporting Cavs,91945781,"Lecceadone, Jarrett",11,0,0,10,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,95088186,Sporting Cavs,113165806,"Lochocki, Jake",10,2,2,10,2,1,0,0,1,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,95088186,Sporting Cavs,76385398,"Morris, Zachary",8,0,0,7,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,95088186,Sporting Cavs,68014755,"Reid, Alex",8,0,1,7,0,1,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,95088186,Sporting Cavs,116664286,"Siford, Noah",9,0,2,8,0,2,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,95088186,Sporting Cavs,102026976,"Stephany, Austin",10,0,1,9,0,1,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,95088186,Sporting Cavs,116791696,"Sulemani, Kapela",6,2,1,6,2,0,0,0,1,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,95088186,Sporting Cavs,95676849,"Tanner, Jimmy",10,0,2,9,0,2,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112418,Championship,league,95088186,Sporting Cavs,59635956,"Wittig, Max",9,1,0,8,1,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112416,1st Division,league,114564610,Mandem FC,115078395,"Webster, Alec",11,4,8,10,4,8,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,10359111,Crimson Fire FC,75230484,"Altman-Cosgrove, Brendan",10,2,0,9,1,0,1,1,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,10359111,Crimson Fire FC,35822083,"Altman-Cosgrove, Mitch",10,0,0,9,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,10359111,Crimson Fire FC,75238301,"Asbach, Michael",7,0,1,6,0,0,1,0,1,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,10359111,Crimson Fire FC,75238320,"Billica, Jared",7,0,0,6,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,10359111,Crimson Fire FC,116614051,"Coleman, Declan",8,0,1,7,0,1,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,10359111,Crimson Fire FC,116614046,"Connors, Patrick",4,0,0,3,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,10359111,Crimson Fire FC,116748541,"Diebold, Jonah",7,7,4,6,5,3,1,2,1,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,10359111,Crimson Fire FC,107733527,"Grondin, Avery",8,2,6,7,2,5,1,0,1,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,10359111,Crimson Fire FC,69252569,"Hannon, Doug",10,0,3,9,0,3,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,10359111,Crimson Fire FC,76389180,"Holler, Nate",7,3,1,6,3,1,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,10359111,Crimson Fire FC,83451052,"Librock, Brett",8,3,2,7,2,2,1,1,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,10359111,Crimson Fire FC,83377445,"McCabe, Trevor",1,0,0,0,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,10359111,Crimson Fire FC,92211360,"O'Conner, Sean",8,0,0,7,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,10359111,Crimson Fire FC,83275151,"Passantino, Mark",9,0,0,8,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,10359111,Crimson Fire FC,107338582,"Sieracki, Christopher",7,0,0,6,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,10359111,Crimson Fire FC,87285939,"Stryker, Chris",10,7,4,9,7,3,1,0,1,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,10359111,Crimson Fire FC,15874309,"Weigand, Robert",2,0,0,1,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,98469009,Infinity FC,91696051,"Cappuccio, Dave",7,0,1,6,0,1,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,98469009,Infinity FC,87422534,"Doak, Jeremy",8,0,1,7,0,1,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,98469009,Infinity FC,101930086,"Dos Santos, Lucimar",9,3,0,8,3,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,98469009,Infinity FC,116514069,"Endich, Jacob",8,3,2,7,3,2,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,98469009,Infinity FC,98647624,"Fiutko, Drew",9,0,1,8,0,1,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,98469009,Infinity FC,91329322,"Jordan, Tim",7,2,0,6,2,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,98469009,Infinity FC,95809995,"Leighton, Gavin",7,1,0,6,0,0,1,1,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,98469009,Infinity FC,35406491,"Lennox, Luke",9,2,9,8,2,7,1,0,2,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,98469009,Infinity FC,10822268,"Love, Kirk",7,0,1,6,0,1,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,98469009,Infinity FC,10813847,"Morrissey, Colin",8,0,0,7,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,98469009,Infinity FC,68382214,"Norman, Brian",8,0,1,7,0,1,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,98469009,Infinity FC,35873281,"Sperrazza, Nick",7,1,1,6,0,1,1,1,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,98469009,Infinity FC,68382237,"Volpe, Tommy",5,1,2,4,1,1,1,0,1,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112417,2nd Division,league,98469009,Infinity FC,16940611,"Waddington, Mathew",2,0,1,3,2,1,-1,-2,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,35216066,Nanner FC,107797960,"Brennen, Daniel",9,0,2,7,0,2,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,35216066,Nanner FC,87625679,"Browning, Collin",11,0,0,8,0,0,3,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,35216066,Nanner FC,87625523,"Burns, Jared",11,19,8,9,14,8,2,5,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,35216066,Nanner FC,76276557,"Carducci, Tony",8,0,3,5,0,1,3,0,2,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,35216066,Nanner FC,116610926,"Carlo, Nick",8,1,1,5,1,1,3,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,35216066,Nanner FC,101904083,"Casey, Josh",11,2,0,8,1,0,3,1,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,35216066,Nanner FC,116615241,"Garnett, Rodney",10,2,1,7,1,1,3,1,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,35216066,Nanner FC,113355853,"Gruber, Joey",11,1,2,9,1,2,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,35216066,Nanner FC,115164429,"Guarino, Vinny",6,1,0,5,1,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,35216066,Nanner FC,59629007,"Hall, Matt",5,2,0,4,2,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,35216066,Nanner FC,113600064,"Kantor, Brad",12,1,0,9,1,0,3,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,35216066,Nanner FC,116615215,"Kelley, Izaiah",12,4,3,9,3,3,3,1,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,35216066,Nanner FC,78239012,"Kersten, Daniel",10,0,1,7,0,0,3,0,1,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,35216066,Nanner FC,113355854,"Luzio, Carl",12,0,2,9,0,2,3,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,35216066,Nanner FC,115336414,"Molloy, Abby",10,1,2,8,1,0,2,0,2,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,35216066,Nanner FC,87949189,"Reid, Greg",10,0,0,9,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,35216066,Nanner FC,113355856,"Ross, Aidan",12,2,0,9,2,0,3,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,35216066,Nanner FC,107785564,"Schaefer, Jack",8,2,8,5,1,4,3,1,4,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,35216066,Nanner FC,46367868,"Wackenheim, Andrew",9,1,1,6,1,1,3,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,35216066,Nanner FC,35403035,"Wackenheim, Eric",9,0,0,7,0,0,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,75479677,nWo FC,10794047,"Andrews, Seth",10,2,1,9,2,1,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,75479677,nWo FC,112823177,"Black, Max",12,3,4,11,2,3,1,1,1,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,75479677,nWo FC,113555776,"Decker, Bryan",6,0,2,5,0,1,1,0,1,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,75479677,nWo FC,113324234,"Franclemont, Austin",11,2,3,11,3,3,0,-1,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,75479677,nWo FC,114949117,"Pickering, Evan",9,3,3,9,5,2,0,-2,1,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,75479677,nWo FC,115297327,"Rai, Ryan",11,1,2,11,1,1,0,0,1,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112421,3rd Division,league,75479677,nWo FC,112823205,"Stefanski, Evan",12,10,8,12,8,8,0,2,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112419,4th Divison,league,116113117,Flamingo FC,116519699,"Castro, David",7,10,3,6,6,3,1,4,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112419,4th Divison,league,116113117,Flamingo FC,116519724,"Dennis, Brooks",3,0,2,2,0,2,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112419,4th Divison,league,116113117,Flamingo FC,116519726,"Dickson, Tristian",6,0,0,5,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112419,4th Divison,league,116113117,Flamingo FC,116519764,"Eusanio, Nick",7,2,4,6,0,2,1,2,2,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112419,4th Divison,league,116113117,Flamingo FC,116519703,"Jacobs, Brett",8,0,0,7,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112419,4th Divison,league,116113117,Flamingo FC,116792432,"Morris, Matthew",3,0,2,2,0,0,1,0,2,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112419,4th Divison,league,116113117,Flamingo FC,116659697,"Morton, Cheyne",8,1,0,7,1,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112419,4th Divison,league,116113117,Flamingo FC,116519693,"Murty, Brendan",10,6,3,9,6,3,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112419,4th Divison,league,116113117,Flamingo FC,101013521,"Nikolov, Konstantin",10,0,0,9,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112419,4th Divison,league,116113117,Flamingo FC,116506368,"Nikolov, Nikola",8,12,5,7,8,5,1,4,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112419,4th Divison,league,116113117,Flamingo FC,116496944,"Patcherezov, Martin",10,0,0,9,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112419,4th Divison,league,116113117,Flamingo FC,116496912,"Petrov, Petar",8,0,0,7,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112419,4th Divison,league,116113117,Flamingo FC,116659696,"Stanczewski, Chase",8,1,2,7,1,2,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112419,4th Divison,league,116113117,Flamingo FC,116519701,"Stanczewski, Logan",10,1,0,9,1,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112419,4th Divison,league,116113117,Flamingo FC,116519767,"Surdej, Jonathan",6,0,1,5,0,1,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112419,4th Divison,league,116113117,Flamingo FC,116519700,"Tabak, Nick",6,0,3,5,0,1,1,0,2,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112419,4th Divison,league,116113117,Flamingo FC,116817265,"Wolowski, Colten",2,0,2,1,0,0,1,0,2,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112419,4th Divison,league,116113117,Flamingo FC,112869789,"Zarcone, Carl",1,0,0,0,0,0,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112420,Over 35,over35,46512672,Blue Stars FC,10794047,"Andrews, Seth",10,0,0,8,0,0,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112420,Over 35,over35,46512672,Blue Stars FC,101950500,"Begany, Ryan",8,0,1,6,0,1,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112420,Over 35,over35,46512672,Blue Stars FC,15864122,"Billoni, Chris",6,2,1,5,2,1,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112420,Over 35,over35,46512672,Blue Stars FC,32044351,"Celentano, Richard",10,2,1,8,2,1,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112420,Over 35,over35,46512672,Blue Stars FC,13305402,"Gordon, Richie",7,0,0,5,0,0,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112420,Over 35,over35,46512672,Blue Stars FC,46450009,"Grabowski, John",6,0,0,4,0,0,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112420,Over 35,over35,46512672,Blue Stars FC,26963149,"Grabowski, Matt",7,6,7,5,4,5,2,2,2,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112420,Over 35,over35,46512672,Blue Stars FC,46450012,"Johnson, Mbwana",8,0,0,6,0,0,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112420,Over 35,over35,46512672,Blue Stars FC,10853732,"Occhiuto, Patrick",10,2,0,8,2,0,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112420,Over 35,over35,46512672,Blue Stars FC,102008023,"Showalter, Todd",8,5,2,6,3,2,2,2,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112420,Over 35,over35,46512672,Blue Stars FC,84224094,"Stephan, Alex",5,0,0,3,0,0,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112420,Over 35,over35,46512672,Blue Stars FC,26994822,"Suazo, Gilberto",8,5,6,7,5,6,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112420,Over 35,over35,46512672,Blue Stars FC,15875435,"Tiedt, Andrew",10,11,9,8,9,5,2,2,4,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112420,Over 35,over35,46512672,Blue Stars FC,10853740,"Titus, Joseph",8,0,0,6,0,0,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112420,Over 35,over35,46512672,Blue Stars FC,10853737,"Walter, Joe",8,1,2,7,1,2,1,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112420,Over 35,over35,46512672,Blue Stars FC,15874309,"Weigand, Robert",10,0,0,8,0,0,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116112420,Over 35,over35,46512672,Blue Stars FC,13299316,"Williams, Rich",8,0,0,6,0,0,2,0,0,key
+2026-08-08,2026-08-08T19:46:42-04:00,116537290,Tehel Cup,cup,10359035,Queenston FC,,"Buscaglia, Trey",2,0,0,0,0,0,2,0,0,
+2026-08-08,2026-08-08T19:46:42-04:00,116537290,Tehel Cup,cup,18647016,Buffalo United SS,,"Suazo, Gilberto",2,0,0,0,0,0,2,0,0,
+2026-08-08,2026-08-08T19:46:42-04:00,116537290,Tehel Cup,cup,95088661,Westside Blitz,,"Wangue, Ivan",1,0,0,0,0,0,1,0,0,
+2026-08-08,2026-08-08T19:46:42-04:00,116537289,Wood Cup,cup,10359111,Crimson Fire FC,,"Asbach, Michael",1,0,0,0,0,0,1,0,0,
+2026-08-08,2026-08-08T19:46:42-04:00,116537289,Wood Cup,cup,75479680,Honey Badgers,,"Jauch, Alex",2,0,0,0,0,0,2,0,0,
+2026-08-08,2026-08-08T19:46:42-04:00,116537289,Wood Cup,cup,75479680,Honey Badgers,,"LaBarbera, Isabelle",1,0,0,0,0,0,1,0,0,
+2026-08-08,2026-08-08T19:46:42-04:00,116537289,Wood Cup,cup,75479680,Honey Badgers,,"Schieber, Michael",2,0,0,0,0,0,2,0,0,
+2026-08-08,2026-08-08T19:46:42-04:00,116537289,Wood Cup,cup,75479680,Honey Badgers,,"Sofola, Olurotimi",1,0,0,0,0,0,1,0,0,
+2026-08-08,2026-08-08T19:46:42-04:00,116537289,Wood Cup,cup,95088658,United Warriors,,"Mukumbira, Adan",1,0,0,0,0,0,1,0,0,
+2026-08-08,2026-08-08T19:46:42-04:00,116537289,Wood Cup,cup,98469009,Infinity FC,91696051,"Cappuccio, Dave",4,0,1,3,0,1,1,0,0,name
+2026-08-08,2026-08-08T19:46:42-04:00,116537289,Wood Cup,cup,98469009,Infinity FC,101930086,"Dos Santos, Lucimar",5,1,0,4,1,0,1,0,0,name
+2026-08-08,2026-08-08T19:46:42-04:00,116537289,Wood Cup,cup,98469009,Infinity FC,116514069,"Endich, Jacob",5,0,3,4,0,3,1,0,0,name
+2026-08-08,2026-08-08T19:46:42-04:00,116537289,Wood Cup,cup,98469009,Infinity FC,98647624,"Fiutko, Drew",5,0,0,4,0,0,1,0,0,name
+2026-08-08,2026-08-08T19:46:42-04:00,116537289,Wood Cup,cup,98469009,Infinity FC,10819992,"Griffiths, Christopher",5,11,2,4,9,2,1,2,0,name
+2026-08-08,2026-08-08T19:46:42-04:00,116537289,Wood Cup,cup,98469009,Infinity FC,91329322,"Jordan, Tim",4,2,1,3,2,1,1,0,0,name
+2026-08-08,2026-08-08T19:46:42-04:00,116537289,Wood Cup,cup,98469009,Infinity FC,35406491,"Lennox, Luke",5,0,3,4,0,2,1,0,1,name
+2026-08-08,2026-08-08T19:46:42-04:00,116537289,Wood Cup,cup,98469009,Infinity FC,10822268,"Love, Kirk",3,1,1,2,1,1,1,0,0,name
+2026-08-08,2026-08-08T19:46:42-04:00,116537289,Wood Cup,cup,98469009,Infinity FC,10813847,"Morrissey, Colin",5,0,1,4,0,1,1,0,0,name
+2026-08-08,2026-08-08T19:46:42-04:00,116537289,Wood Cup,cup,98469009,Infinity FC,68382214,"Norman, Brian",5,0,0,4,0,0,1,0,0,name
+2026-08-08,2026-08-08T19:46:42-04:00,116537289,Wood Cup,cup,98469009,Infinity FC,107008841,"Notto, Thomas",3,0,0,2,0,0,1,0,0,name
+2026-08-08,2026-08-08T19:46:42-04:00,116537289,Wood Cup,cup,98469009,Infinity FC,35873281,"Sperrazza, Nick",5,1,2,4,1,1,1,0,1,name
+2026-08-08,2026-08-08T19:46:42-04:00,116537289,Wood Cup,cup,98469009,Infinity FC,68382237,"Volpe, Tommy",4,0,0,3,0,0,1,0,0,name
+2026-08-08,2026-08-08T19:46:42-04:00,116537289,Wood Cup,cup,98469009,Infinity FC,16940611,"Waddington, Mathew",2,0,0,1,0,0,1,0,0,name
+2026-08-08,2026-08-08T19:46:42-04:00,116537291,Matthews Cup,cup,112652891,Mavericks FC,,"Suen, Kenneth",1,0,0,0,0,0,1,0,0,
+2026-08-08,2026-08-08T19:46:42-04:00,116537291,Matthews Cup,cup,116113111,Midnimo FC,,"Campo villa, Mario Alberto",1,0,0,0,0,0,1,0,0,
+2026-08-08,2026-08-08T19:46:42-04:00,116537291,Matthews Cup,cup,116113111,Midnimo FC,,"Osman, Mohamed",1,0,0,0,0,0,1,0,0,
