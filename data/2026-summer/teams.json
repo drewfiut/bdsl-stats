@@ -103,7 +103,7 @@
     "away_w": 2,
     "away_l": 2,
     "away_d": 1,
-    "yellows": 5,
+    "yellows": 6,
     "reds": 0,
     "position": 2
   },
@@ -508,7 +508,7 @@
     "away_w": 1,
     "away_l": 4,
     "away_d": 0,
-    "yellows": 5,
+    "yellows": 6,
     "reds": 0,
     "position": 6
   },
@@ -643,7 +643,7 @@
     "away_w": 1,
     "away_l": 1,
     "away_d": 3,
-    "yellows": 12,
+    "yellows": 15,
     "reds": 0,
     "position": 3
   },
@@ -724,7 +724,7 @@
     "away_w": 2,
     "away_l": 2,
     "away_d": 1,
-    "yellows": 6,
+    "yellows": 9,
     "reds": 0,
     "position": 5
   },
@@ -1048,7 +1048,7 @@
     "away_w": 5,
     "away_l": 0,
     "away_d": 0,
-    "yellows": 23,
+    "yellows": 25,
     "reds": 1,
     "position": 1
   },
@@ -1102,7 +1102,7 @@
     "away_w": 3,
     "away_l": 0,
     "away_d": 2,
-    "yellows": 6,
+    "yellows": 8,
     "reds": 2,
     "position": 3
   },
@@ -1831,7 +1831,7 @@
     "away_w": 2,
     "away_l": 2,
     "away_d": 1,
-    "yellows": 12,
+    "yellows": 15,
     "reds": 1,
     "position": 5
   },

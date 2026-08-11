@@ -3,25 +3,25 @@
     "competition": "Premier",
     "comp_type": "league",
     "tg": "116112414",
-    "champion_club_id": "",
-    "champion_name": "",
-    "champion_via": ""
+    "champion_club_id": "26895907",
+    "champion_name": "Amherst Sharpshooters",
+    "champion_via": "playoff"
   },
   {
     "competition": "Championship",
     "comp_type": "league",
     "tg": "116112418",
-    "champion_club_id": "",
-    "champion_name": "",
-    "champion_via": ""
+    "champion_club_id": "95088186",
+    "champion_name": "Sporting Cavs",
+    "champion_via": "playoff"
   },
   {
     "competition": "1st Division",
     "comp_type": "league",
     "tg": "116112416",
-    "champion_club_id": "",
-    "champion_name": "",
-    "champion_via": ""
+    "champion_club_id": "46021389",
+    "champion_name": "Outlaws",
+    "champion_via": "playoff"
   },
   {
     "competition": "2nd Division",
@@ -35,9 +35,9 @@
     "competition": "3rd Division",
     "comp_type": "league",
     "tg": "116112421",
-    "champion_club_id": "",
-    "champion_name": "",
-    "champion_via": ""
+    "champion_club_id": "75479677",
+    "champion_name": "nWo FC",
+    "champion_via": "history-table"
   },
   {
     "competition": "4th Divison",
