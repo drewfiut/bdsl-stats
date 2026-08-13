@@ -115,6 +115,8 @@ game_key,tg,competition,comp_type,date,round_label,side,club_id,person_key,name,
 11566421,116112417,2nd Division,league,2026-08-02,SF1,home,98469009,68382237,"Volpe, Tommy",10,0,1,0,0,name
 11566421,116112417,2nd Division,league,2026-08-02,SF1,away,95088658,116660032,"Maonewa, Yohana",24,2,0,0,0,name
 11566421,116112417,2nd Division,league,2026-08-02,SF1,away,95088658,35460213,"Mukumbira, Adan",10,0,0,1,0,name
+11566423,116112417,2nd Division,league,2026-08-09,CHAMP,home,98469009,91329322,"Jordan, Tim",7,1,0,0,0,name
+11566423,116112417,2nd Division,league,2026-08-09,CHAMP,away,10359111,83377445,"McCabe, Trevor",7,0,0,1,0,name
 11566420,116112417,2nd Division,league,2026-07-26,QF2,home,10359111,116748541,"Diebold, Jonah",99,1,0,0,0,name
 11566420,116112417,2nd Division,league,2026-07-26,QF2,home,10359111,107733527,"Grondin, Avery",14,0,1,0,0,name
 11566420,116112417,2nd Division,league,2026-07-26,QF2,home,10359111,69252569,"Hannon, Doug",6,0,3,0,0,name
