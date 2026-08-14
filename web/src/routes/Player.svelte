@@ -43,7 +43,9 @@
   <div class="phead">
     <div class="wrap">
       <h1>{profile.name}</h1>
-      <div class="sub">{ageLabel(profile.age)}</div>
+      <div class="sub">
+        {ageLabel(profile.age)}{#if profile.nickname}{' · '}Known as &ldquo;{profile.nickname}&rdquo;{/if}
+      </div>
       <div class="stats">
         <div class="stat"><b>{profile.career.g}</b><span>Goals</span></div>
         <div class="stat"><b>{profile.career.a}</b><span>Assists</span></div>

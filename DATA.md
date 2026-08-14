@@ -84,7 +84,7 @@ optional fields may be missing on some entries.
 | `last` | string | always | Last name. |
 | `first` | string | always | First (legal) name. |
 | `middle` | string | optional | Middle name. Rare. |
-| `nickname` | string | optional | Preferred display name; when present it's the better name to show. |
+| `nickname` | string | optional | What the player goes by (`"AJ"` for Ivan Wangue). Shown on their profile only — every table and stat line uses `first` + `last`. |
 | `birthdate` | string | usually | `"MM/DD/YYYY"`. Nearly always present; useful for Over-35 checks. |
 
 Note: this registry stores **identity only** (who the person is). Their stats live in each
@@ -146,7 +146,7 @@ Header order is fixed:
 | `snapshot_date` | `YYYY-MM-DD` | The "league day" this snapshot belongs to (see §5.1). Group/filter on this. |
 | `fetched_at` | ISO datetime | Wall-clock time the snapshot was fetched, in `config.LEAGUE_TZ` with a UTC offset (`2026-08-04T19:53:24-04:00`). Rows written before Aug 2026 have no offset and are league-local. |
 | `person_key` | string | Global person id → join to `players.json` and across seasons. |
-| `name` | string | Display name at fetch time (nickname if the person has one, else first + last). Convenience copy; `players.json` is authoritative for identity. |
+| `name` | string | Display name at fetch time: first + last (nickname only if there's no first name). Convenience copy; `players.json` is authoritative for identity. **Rows written before Aug 2026 used the nickname when the person had one**, so ~176 people appear under a nickname in older snapshots — join to `players.json` rather than trusting this column for identity. |
 | `tg` | string | Competition team-group id → join to `competitions.json` / `teams.json`. |
 | `competition` | string | Competition name (denormalized). |
 | `comp_type` | string | `"league"` / `"over35"` / `"cup"`. |

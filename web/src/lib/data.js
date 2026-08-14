@@ -398,10 +398,11 @@ export function ageAtSeason(birthdate, sid) {
 
 // Build one player's profile from the aggregated player-season objects (all comps they were
 // rostered for, incl. games-played-only rows). Returns null if the person_key isn't found.
-// Best display name: prefer the registry (authoritative) — nickname, else first + last —
-// and fall back to the CSV display name when the registry has no usable value.
+// Best display name: prefer the registry (authoritative) — first + last, else the nickname —
+// and fall back to the CSV display name when the registry has no usable value. Everything on
+// the site names people by their real name; a player's nickname is shown on their profile only.
 function displayName(reg, fallback) {
-  if (reg) return reg.nickname || [reg.first, reg.last].filter(Boolean).join(' ') || fallback;
+  if (reg) return [reg.first, reg.last].filter(Boolean).join(' ') || reg.nickname || fallback;
   return fallback;
 }
 
@@ -414,6 +415,8 @@ export function buildProfile(allPlayers, playersRegistry, personKey) {
   // Identity: prefer the registry (authoritative), fall back to the CSV display name.
   const reg = playersRegistry?.[personKey];
   const name = displayName(reg, rows[0].name) || '(unknown)';
+  // Shown on the profile only, and only when it actually adds something beyond `name`.
+  const nickname = reg?.nickname && reg.nickname !== reg.first ? reg.nickname : '';
   const age = ageFromBirthdate(reg?.birthdate);
 
   // Newest season first (sid like "2026-summer" sorts correctly as a string).
@@ -437,7 +440,7 @@ export function buildProfile(allPlayers, playersRegistry, personKey) {
     };
   });
 
-  return { pk: personKey, name, age, career, seasons };
+  return { pk: personKey, name, nickname, age, career, seasons };
 }
 
 // One row per person: their all-time totals summed across every season, sorted by last name.
@@ -456,6 +459,9 @@ export function buildAllPlayers(allPlayers, playersRegistry) {
       pk: acc.pk,
       name: displayName(reg, acc.csvName) || '(unknown)',
       last: (reg?.last || '').trim(),
+      // Not displayed -- the players list shows real names -- but kept so searching the
+      // nickname people actually know them by still finds them.
+      nickname: (reg?.nickname || '').trim(),
       g: acc.g, a: acc.a, pts: acc.pts, gp: acc.gp, seasons: acc.seasons,
     });
   }

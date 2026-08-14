@@ -21,7 +21,9 @@
   const filtered = $derived.by(() => {
     const term = search.trim().toLowerCase();
     if (!term) return all;
-    return all.filter((p) => p.name.toLowerCase().includes(term));
+    return all.filter(
+      (p) => p.name.toLowerCase().includes(term) || (p.nickname || '').toLowerCase().includes(term),
+    );
   });
 
   const sorted = $derived.by(() => {

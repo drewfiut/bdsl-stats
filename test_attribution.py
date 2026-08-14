@@ -136,6 +136,21 @@ def test_swapped_report_order_is_corrected():
     assert {r["person_key"] for r in rows} == {"600", "601"}
 
 
+def test_nickname_alias_matches_report_line():
+    # Stats rows carry the real name ("Ivan Wangue"), but the hand-written Match Report names him
+    # the way bdsl.org used to -- by nickname. The registry's nickname alias must still resolve it,
+    # and the jersey here is deliberately absent from the roster so only the name can match.
+    stats_rows = [_stats_row("300", "Ivan Wangue", "T1", "H", "7")]
+    registry = {"300": {"first": "Ivan", "last": "Wangue", "nickname": "AJ"}}
+    idx = attribution.build_roster_index(stats_rows, registry)
+    report = MatchReport(
+        home=[ReportLine(side="home", jersey="", name="Wangue, AJ", pos="", g=2, a=0, y=0, r=0)],
+        away=[], referees=[],
+    )
+    rows = attribution.attribute_report(report, _game(), idx)
+    assert [(r["person_key"], r["matched"]) for r in rows] == [("300", "name")]
+
+
 def _run_all():
     tests = [v for k, v in globals().items() if k.startswith("test_") and callable(v)]
     for t in tests:

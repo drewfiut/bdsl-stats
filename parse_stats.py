@@ -39,7 +39,14 @@ class StatRecord:
 
     @property
     def full_name(self) -> str:
-        first = self.nickname or self.first_name or ""
+        """Given name + last name. The nickname is deliberately NOT used here.
+
+        Demosphere carries both FIRSTNAME and an optional NICKNAME ("Ivan" / "AJ" Wangue),
+        and bdsl.org's own tables show the nickname. We store the real name instead, so
+        stats rows and every view built on them identify people consistently; the nickname
+        is still kept on the player registry and shown on their profile.
+        """
+        first = self.first_name or self.nickname or ""
         name = f"{first} {self.last_name}".strip()
         return name or self.last_name or "(unknown)"
 

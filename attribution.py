@@ -28,9 +28,12 @@ def _normname(name: str) -> str:
 def build_roster_index(stats_rows: List[dict], players_registry: Optional[Dict[str, dict]] = None) -> dict:
     """Index stats rows by `(tg, club_id)` -> {"by_jersey": {jersey: [pk,...]}, "by_name": {normname: [pk,...]}}.
 
-    `club_id` is derived from `team_id.split('-')[0]`. `by_name` is built from both the stats
-    row's display `name` and, when `players_registry` has an entry for the person, their
-    `"{first} {last}"` -- so either display convention can match a report's "Last, First" line.
+    `club_id` is derived from `team_id.split('-')[0]`. `by_name` is built from the stats row's
+    display `name` and, when `players_registry` has an entry for the person, from both their
+    `"{first} {last}"` and `"{nickname} {last}"` -- so either display convention can match a
+    report's "Last, First" line. The nickname alias matters because stats rows carry the real
+    first name (see parse_stats.StatRecord.full_name) while a Match Report is written by hand
+    and often names the player the way bdsl.org shows them, i.e. by nickname.
     """
     index: dict = {}
     players_registry = players_registry or {}
@@ -59,8 +62,10 @@ def build_roster_index(stats_rows: List[dict], players_registry: Optional[Dict[s
         if r.get("name"):
             names.add(_normname(r["name"]))
         info = players_registry.get(pk)
-        if info and info.get("first") and info.get("last"):
-            names.add(_normname(f"{info['first']} {info['last']}"))
+        if info and info.get("last"):
+            for given in (info.get("first"), info.get("nickname")):
+                if given:
+                    names.add(_normname(f"{given} {info['last']}"))
         for n in names:
             if not n:
                 continue
